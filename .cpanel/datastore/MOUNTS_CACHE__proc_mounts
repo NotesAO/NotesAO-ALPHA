@@ -40,4 +40,3 @@ tracefs /sys/kernel/debug/tracing tracefs rw,relatime 0 0
 tmpfs /run/user/1006 tmpfs rw,nosuid,nodev,relatime,size=6550552k,mode=700,uid=1006,gid=1009 0 0
 tmpfs /run/user/1001 tmpfs rw,nosuid,nodev,relatime,size=6550552k,mode=700,uid=1001,gid=1003 0 0
 tmpfs /run/user/1007 tmpfs rw,nosuid,nodev,relatime,size=6550552k,mode=700,uid=1007,gid=1010 0 0
-tmpfs /run/user/0 tmpfs rw,nosuid,nodev,relatime,size=6550552k,mode=700 0 0

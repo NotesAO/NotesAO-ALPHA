@@ -48,3 +48,15 @@ venv*/
 *.orig
 ~$*.*
 .~lock*.#
+.vscode-server/
+Downloads/
+patch_work/
+# NPRG installers and bundles
+NotePro-Report-Generator/LibreOffice_*/
+NotePro-Report-Generator/**/*.rpm
+NotePro-Report-Generator/**/*.deb
+NotePro-Report-Generator/**/*.pkg
+NotePro-Report-Generator/**/*.tar
+NotePro-Report-Generator/**/*.tar.*
+NotePro-Report-Generator/**/*.tgz
+NotePro-Report-Generator/**/*.zip
