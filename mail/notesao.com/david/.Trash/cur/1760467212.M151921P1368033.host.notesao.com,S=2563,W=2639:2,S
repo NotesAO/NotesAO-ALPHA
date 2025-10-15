@@ -1,0 +1,76 @@
+Return-Path: <>
+Delivered-To: david@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id oTg7CAyZ7mjh3xQAIW4ynA
+	(envelope-from <>)
+	for <david@notesao.com>; Tue, 14 Oct 2025 13:40:12 -0500
+Return-path: <>
+Envelope-to: david@notesao.com
+Delivery-date: Tue, 14 Oct 2025 13:40:12 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1v8jwS-00000005jsx-06qR
+	for david@notesao.com;
+	Tue, 14 Oct 2025 13:40:12 -0500
+X-Failed-Recipients: tucdvp@sr66.com,
+  Bipp@newxroads.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: david@notesao.com
+References: <9cb07aea3b7733bca62fbb3029d1297c@notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1760467212-eximdsn-927232902
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1v8jwS-00000005jsx-06qR@host.notesao.com>
+Date: Tue, 14 Oct 2025 13:40:12 -0500
+
+--1760467212-eximdsn-927232902
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  tucdvp@sr66.com
+    Domain notesao.com has exceeded the max defers and failures per hour (5/5 (100%)) allowed. Message discarded.
+  Bipp@newxroads.com
+    Domain notesao.com has exceeded the max defers and failures per hour (5/5 (100%)) allowed. Message discarded.
+
+--1760467212-eximdsn-927232902
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;Bipp@newxroads.com
+Status: 5.0.0
+
+Action: failed
+Final-Recipient: rfc822;tucdvp@sr66.com
+Status: 5.0.0
+
+--1760467212-eximdsn-927232902
+Content-type: text/rfc822-headers
+
+Return-path: <david@notesao.com>
+Received: from [::1] (port=50010 helo=host.notesao.com)
+	by host.notesao.com with esmtpa (Exim 4.98.2)
+	(envelope-from <david@notesao.com>)
+	id 1v8iU8-00000005ZI4-3mvs;
+	Tue, 14 Oct 2025 12:06:51 -0500
+MIME-Version: 1.0
+Date: Tue, 14 Oct 2025 12:06:49 -0500
+From: David House <david@notesao.com>
+To: Vanericmartin <vanericmartin@gmail.com>
+Subject: Notes AO
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <9cb07aea3b7733bca62fbb3029d1297c@notesao.com>
+X-Sender: david@notesao.com
+Organization: NotesAO
+Content-Type: multipart/mixed;
+ boundary="=_7109a8ed08fed2a20b091fd98251bbc1"
+X-Exim-DSN-Information: Due to administrative limits only headers are returned
+
+
+--1760467212-eximdsn-927232902--

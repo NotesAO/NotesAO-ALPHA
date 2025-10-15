@@ -1,0 +1,388 @@
+Return-Path: <01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000@amazonses.messaging.squareup.com>
+Delivered-To: vanmartin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id k9PcGb6tsWjaijwAIW4ynA
+	(envelope-from <01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000@amazonses.messaging.squareup.com>)
+	for <vanmartin@notesao.com>; Fri, 29 Aug 2025 08:40:14 -0500
+Return-path: <01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000@amazonses.messaging.squareup.com>
+Envelope-to: vanmartin@notesao.com
+Delivery-date: Fri, 29 Aug 2025 08:40:14 -0500
+Received: from a27-226.smtp-out.us-west-2.amazonses.com ([54.240.27.226]:55553)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000@amazonses.messaging.squareup.com>)
+	id 1urzKr-0000000GeB3-0Flo
+	for vanmartin@notesao.com;
+	Fri, 29 Aug 2025 08:40:14 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zkmtl6gy2hsfdpedstduzebbkq3duxs4; d=messaging.squareup.com;
+	t=1756474807;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=iQQm467T4SIlTD5DTgKxUZBkHDtx+FGvgvQwAWKAyhU=;
+	b=oRHVlXpuV17QZ5bK55S4efz8PXDMh5jofIXi9F0rxELtE7NOWAtq5VIwn7i6uZfT
+	cahz2HCzgaTuR6uSY8jXpnOGRLZe6q8e2lDSO7NPCwRfYcM+8wOFdqwD74VZUbUpylb
+	ZK2Hx2y52bPYQLYbeepp2iFbUqfbqDq9JKDdWd7Q=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1756474807;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=iQQm467T4SIlTD5DTgKxUZBkHDtx+FGvgvQwAWKAyhU=;
+	b=QsRXRVONgbuaghd1u3xOHlxgPBJL86NBCPJGBmPxUjlrjlGlSf50tfCkiQWmWDsv
+	Xvpsg/cfn/tNwB11BILH7/fUGHySgsu9tu51k1WtYp0V9kVRCmfqvgAeFhTywHn6ywa
+	ngIvdgRQq6tti4euncgV/YFg9L2V/ub9eck7pDxU=
+Date: Fri, 29 Aug 2025 13:40:07 +0000
+From: Square <noreply@messaging.squareup.com>
+To: vanmartin@notesao.com
+Message-ID: <01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000@us-west-2.amazonses.com>
+Subject: Your free trial of Square Online Plus Plan has started
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_13513360_385657056.1756474807665"
+X-EMS-Request-ID: 6a21a453-152b-483d-aae0-e469eff5cab8
+X-Butter-Ignore-Undeliverable: true
+X-ERS-Token: CCAQ3IilwIbXqb72ARi43fu9hqONsIsB
+Feedback-ID: ::1.us-west-2.Ys0TtaV3ThrL9KaebebAtwQ8vYTqz4B6QHfonsV/uOw=:AmazonSES
+X-SES-Outgoing: 2025.08.29-54.240.27.226
+X-Spam-Status: No, score=-0.1
+X-Spam-Score: 0
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Thank you for signing up for Square Online Plus Plan. Your
+    Square Online Plus Plan free trial ends on September 13, 2025. After that,
+    we'll automatically charge your bank account ending in 893 a prorated amount
+    for the rest of the month. On the 1st of ea [...] 
+ Content analysis details:   (-0.1 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.27.226 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.27.226 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [54.240.27.226 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: x.com]
+                             [URI: squareupmessaging.com]
+                             [URI: squareup.com]
+                             [URI: squarecdn.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 KAM_SHORT              Use of a URL Shortener for very short URL
+X-Spam-Flag: NO
+
+------=_Part_13513360_385657056.1756474807665
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+
+Thank you for signing up for Square Online Plus Plan.
+
+Your Square Online Plus Plan free trial ends on September 13, 2025.
+After that, we'll automatically charge your bank account ending in 893 a pr=
+orated amount for the rest of the month. On the 1st of each month you'll be=
+ charged $32 and any applicable sales tax.
+
+
+Cancel your subscription anytime by visiting Pricing and Subscriptions in y=
+our Square Dashboard at https://squareup.com/dashboard/account/pricing. Que=
+stions? Visit our Support Center at https://squareup.com/help/us/en/article=
+/5252.
+
+Thanks,
+
+The Square Team
+
+
+=C2=A9 2025 Block, Inc.
+
+
+------=_Part_13513360_385657056.1756474807665
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Square</title>
+  <!--[if !mso]><!-->
+  <style type="text/css" data-premailer="ignore">a, a[href^="tel"], a[href^="mailto"], a[href*="//maps.apple.com"] { color: #5f6a7c; text-decoration: none; }
+
+  #outlook a { padding: 0; }
+
+  body { width: 100% !important; margin: 0; padding: 0; }
+
+  .ExternalClass { width: 100%; line-height: 100%; }
+  .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+
+  table td { border-collapse: collapse; }
+
+  @media only screen and (min-width: 281px) { div[id="container"] { position: relative; top: 0; left: 0; right: 0; bottom: 0; }
+      @font-face { font-family: "sqmarket"; src: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/sqmarket/sqmarket-light-4c85d721c3cfb736f9b6801ac4c88938.woff) format("woff"); font-weight: 300; font-style: normal; }
+      @font-face { font-family: "sqmarket"; src: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/sqmarket/sqmarket-regular-284383a5ec4f3a6dcc4bddf2181b1038.woff) format("woff"); font-weight: 400; font-style: normal; }
+      @font-face { font-family: "sqmarket-medium"; src: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/sqmarket/sqmarket-medium-e96bd63ea7cab72522e66f9402985ce8.woff) format("woff"); font-weight: bold; font-style: normal; }
+      @font-face { font-family: "sqmarket-bold"; src: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/sqmarket/sqmarket-bold-fb21e9986e03173ab02612b1303626d5.woff) format("woff"); font-weight: bold; font-style: normal; } }
+  @font-face { font-family: "SquareSansText-Regular"; src: url("https://square-mailstrom-production-s.squarecdn.com/_shared/fonts/square-sans/SquareSansText-Regular.woff") format("woff"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "SquareSansText-SemiBold"; src: url("https://square-mailstrom-production-s.squarecdn.com/_shared/fonts/square-sans/SquareSansText-SemiBold.woff") format("woff"); font-weight: bold; font-style: normal; }
+  @font-face { font-family: "SquareSansDisplay-Medium"; src: url("https://square-mailstrom-production-s.squarecdn.com/_shared/fonts/square-sans/SquareSansDisplay-Medium.woff") format("woff"); font-weight: bold; font-style: normal; }
+  @media only screen and (min-width: 281px) and (max-width: 559px) { div[id="container"] #soloJewel { float: right; }
+      div[id="container"] .column .contains_text td { width: 560px !important; }
+      div[id="container"] .column .button .contains_text td { width: inherit !important; }
+      div[id="container"] .leftcolumn, div[id="container"] .column { width: 100% !important; }
+      div[id="container"] .embiggen { width: 100% !important; height: auto; } }
+
+  </style>
+  <!--<![endif]-->
+
+  <!--[if gte mso 9]>
+  <style type="text/css" data-premailer="ignore">
+    .nomso { display: none; font-size: 0; line-height: 0 }
+  </style>
+  <![endif]-->
+  <!--[if gte mso 15]>
+  <style type="text/css" data-premailer="ignore">  table { font-size: 1px; line-height:0; mso-margin-top-alt: 1px; }  </style>
+  <![endif]-->
+</head>
+<body>
+<div id="container" style="-ms-text-size-adjust: none;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none">
+  <table style="background-color: white;table-layout: fixed; margin-bottom: 40px"
+         width="100%" class="single light header default"
+         cellpadding="0"
+         cellspacing="0">
+    <tr>
+      <td align="center" style="padding: 0 16px" class="singlePadding">
+        <table cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="600" style="padding: 0px 0" class="singleCell">
+              <table width="100%" class="left" style="text-align: left" cellpadding="0"
+                     cellspacing="0">
+                <tbody>
+                <tr>
+                  <td align="left" style="padding: 40px 0 0">
+                    <table style="text-align: left" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="88" align="left" style="mix-blend-mode: difference"
+                            class="fluidImage"><a id="logo-white" href="https://a.squareupmessaging.com/CL0/https:%2F%2Fsquareup.com%2Fus%2Fen/1/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/NRHSQgQHNxjHAwqxnHbYiVEzP23ABAfKmH29DI7LQfg=420"
+                                                  style="display: inline-block;text-decoration: none">
+                          <!--[if !mso]><!--><img
+                          src="https://square-mailstrom-production-s.squarecdn.com/_shared/logo/sans-white.png"
+                          width="88" height="22" alt="Square"
+                          style="mix-blend-mode: difference;display: block"><!--<![endif]-->
+                          <!--[if gte mso 9]><img
+                            src="https://square-mailstrom-production-s.squarecdn.com/_shared/logo/sans-black.png"
+                            width="88" height="22" alt="Square"/><![endif]--></a></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <td style="color: #1a1a1a; font-family: SquareSansDisplay-Medium, Arial, Helvetica, sans-serif;
+                  font-size: 36px; line-height: 42px; letter-spacing: 0; font-weight: 600; padding: 40px 0 0" class="h1 headline">
+                  Your free trial of Square Online Plus Plan has started
+                  </a>
+                </td>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <table style="background: #ffffff" class="single default" bgcolor="#ffffff" width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" style="padding: 0 20px">
+      <table style="" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="600">
+            <table width="100%" class="contains_text left" style="font-family: SquareSansText-Regular, Arial, Helvetica, sans-serif; text-align: left; font-weight: 400" cellpadding="0" cellspacing="0">
+              <!-- Only show the greeting in Japan for politeness reasons -->
+
+              <tr>
+                <td style="color: #1a1a1a;font-size: 16px;line-height: 24px;padding: 0px 0 16px" class="p">
+                    Thank you for signing up for Square Online Plus Plan.
+                </td>
+              </tr>
+              <tr>
+                  <td style="color: #1a1a1a;font-size: 16px;line-height: 24px;padding: 0px 0 16px" class="p">
+                    Your Square Online Plus Plan free trial ends on September 13, 2025.
+                    After that, we&#39;ll automatically charge your bank account ending in 893 a prorated amount for the rest of the month. On the 1st of each month you&#39;ll be charged $32 and any applicable sales tax.
+                  </td>
+              </tr>
+              <tr>
+              </tr>
+              <tr>
+                <td style="color: #1a1a1a;font-size: 16px;line-height: 24px;padding: 24px 0 40px;font-family: SquareSansText-Regular, Arial, Helvetica, sans-serif;font-weight: 600" class="p">
+                  <a
+                    href="https://a.squareupmessaging.com/CL0/https:%2F%2Fsquareup.com%2Fdashboard%2Faccount%2Fpricing/1/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/sIfsUGJsTHOSSL_a2j6Au0qhRjY32B2N9zOhyHDd2VQ=420" target="_blank"
+                    style="color: #FFFFFF;background-color: #006AFF;padding: 12px 16px 12px 16px;border-radius: 6px"
+                  >
+                    View plan details
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: #1a1a1a;font-size: 16px;line-height: 24px;padding: 0px 0 16px" class="p">
+                  Cancel your subscription anytime by visiting Pricing and Subscriptions in your Square Dashboard. Questions? Visit our <a href="https://a.squareupmessaging.com/CL0/https:%2F%2Fsquareup.com%2Fhelp%2Fus%2Fen%2Farticle%2F5252/1/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/-YL0b2g8CC-FF4QD6fSOrkqtzDiNGgfWAvWMsCH62-0=420" style="text-decoration:none"><span style="color:#005AD9">Support Center</span></a>.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table style="background: #ffffff" class="single default" bgcolor="#ffffff" width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" style="padding: 0 20px">
+      <table style="" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="600">
+            <table width="100%" class="contains_text left" style="font-family: SquareSansText-Regular, Arial, Helvetica, sans-serif;text-align: left" cellpadding="0" cellspacing="0">
+
+              <tr>
+                <td style="color: #1a1a1a;font-size: 16px;line-height: 24px" class="p">
+                  Thanks,<br>
+The Square Team<br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+  <table class="footerSnippet" style="table-layout: fixed; background-color: white;" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center">
+        <table cellpadding="0" cellspacing="0" style="background-color: white;">
+          <tr>
+            <td style="padding: 64px 16px 0px 16px">
+              <table cellpadding="0" cellspacing="0" style="background-color: white;">
+                <tr>
+                  <td width="600" style="border-top-style: solid;border-top-width: 1px;border-top-color: #B3B3B3; background-color: white;">
+                    <table cellpadding="0" cellspacing="0">
+                      <!-- logo -->
+                      <tr>
+                        <td style="padding: 40px 0; mix-blend-mode: difference">
+                          <a href="https://a.squareupmessaging.com/CL0/https:%2F%2Fsquareup.com%2Fus%2Fen/2/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/XejCX3FLQX6CTXPt_5ptdEp4xcFY2NCFK0ydEva98cM=420" id="logo" style="text-decoration: none;display: inline-block">
+                            <!--[if !mso]><!--><img
+                              src="https://square-mailstrom-production-s.squarecdn.com/_shared/logo/sans-white.png"
+                              width="88" height="22" alt="Square"
+                              style="mix-blend-mode: difference;display: block"><!--<![endif]-->
+                            <!--[if gte mso 9]><img
+                              src="https://square-mailstrom-production-s.squarecdn.com/_shared/logo/sans-black.png"
+                              width="88" height="22" alt="Square"/><![endif]-->
+                          </a>
+                        </td>
+                      </tr>
+                      <!-- end logo -->
+                      <tr>
+                        <td style="padding-bottom: 16px" class="social">
+                          <table cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td style="padding: 0 8px 0 0; mix-blend-mode: difference">
+                                <a target="_blank" rel="noopener noreferrer" href="https://a.squareupmessaging.com/CL0/https:%2F%2Ffacebook.com%2Fsquare/1/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/G49u1QWQZBO3p3KLYJp6kZZ1TCH7CwhxisCxxcdabIE=420"
+                                   style="text-decoration: none;color: #1a1a1a;display: inline-block">
+                                  <!--[if !mso]><!--><img
+                                    src="https://square-mailstrom-production-s.squarecdn.com/market/icon/facebook-smw.png"
+                                    width="24" height="24" alt="Facebook"
+                                    style="mix-blend-mode: difference;display: block"><!--<![endif]-->
+                                  <!--[if gte mso 9]><img
+                                    src="https://square-mailstrom-production-s.squarecdn.com/market/icon/facebook-smb.png"
+                                    width="24" height="24" alt="Facebook"/><![endif]-->
+                                </a>
+                              </td>
+                              <td style="padding: 0 8px 0 0; mix-blend-mode: difference">
+                                <a target="_blank" rel="noopener noreferrer" href="https://a.squareupmessaging.com/CL0/https:%2F%2Finstagram.com%2Fsquare/1/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/IVuOX5XRHfuntve51nG6kg2vlfoppjfx7izVwXrDAs8=420"
+                                   style="text-decoration: none;color: #1a1a1a;display: inline-block">
+                                  <!--[if !mso]><!--><img
+                                    src="https://square-mailstrom-production-s.squarecdn.com/market/icon/instagram-smw.png"
+                                    width="24" height="24" alt="Instagram"
+                                    style="mix-blend-mode: difference;display: block"><!--<![endif]-->
+                                  <!--[if gte mso 9]><img
+                                    src="https://square-mailstrom-production-s.squarecdn.com/market/icon/instagram-smb.png"
+                                    width="24" height="24" alt="Instagram"/><![endif]-->
+                                </a>
+                              </td>
+                              <td style="padding: 0 8px 0 0; mix-blend-mode: difference">
+                                <a target="_blank" rel="noopener noreferrer" href="https://a.squareupmessaging.com/CL0/https:%2F%2Fx.com%2Fsquare/1/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/Ujpv5MyvaheNy5Y15qIWUR7acoZ-c2g29hGsm-3wbFE=420"
+                                   style="text-decoration: none;color: #1a1a1a;display: inline-block">
+                                  <!--[if !mso]><!--><img
+                                    src="https://square-mailstrom-production-s.squarecdn.com/market/icon/x-social-smw.png"
+                                    width="24" height="24" alt="X"
+                                    style="mix-blend-mode: difference;display: block"><!--<![endif]-->
+                                  <!--[if gte mso 9]><img
+                                    src="https://square-mailstrom-production-s.squarecdn.com/market/icon/x-social-smb.png"
+                                    width="24" height="24" alt="X"/><![endif]-->
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0 0 24px">
+                          <table cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td style="font-family: SquareSansText-Regular, Arial, Helvetica, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: normal;font-size: 14px;line-height: 21px;color: #1a1a1a;padding: 0px 0 16px"
+                                  class="textBlock paragraph-20">
+                                <a style="font-family: SquareSansText-Regular, Arial, Helvetica, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: normal;text-decoration: none;letter-spacing: -0.01em;color: #1a1a1a">
+                                    <div class="standard-address">
+                                      Square<br/>
+                                      1955 Broadway, Suite 600,<br/>
+                                      Oakland, CA 94612
+                                    </div>
+                                </a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="font-family: SquareSansText-Regular, Arial, Helvetica, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: normal;font-size: 14px;line-height: 21px;color: #1a1a1a;padding: 0px 0 16px"
+                                  class="textBlock paragraph-20">
+                                <a href="https://a.squareupmessaging.com/CL0/https:%2F%2Fsquareup.com%2Fus%2Fen%2Flegal%2Fgeneral%2Fprivacy/1/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/XezLLoC603KUcPsObgZaVqbEz-FXGQwB-RCAWhQrCf8=420"
+                                   style="text-decoration: none;font-family: SquareSansText-Regular, Arial, Helvetica, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: bold;letter-spacing: -0.01em;color: #1a1a1a">
+                                  Square Privacy Policy
+                                </a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+<img alt="" src="http://a.squareupmessaging.com/CI0/01010198f60e9577-1861b5e3-497d-4d53-ae87-95990796426b-000000/ZI6rIIBYVWaIGrpEf8zhw_MIEWvA866GbNw6v8T83QE=420" style="display: none; width: 1px; height: 1px;">
+</body>
+</html>
+------=_Part_13513360_385657056.1756474807665--

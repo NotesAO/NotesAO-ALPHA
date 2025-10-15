@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id LryrIRZKx2h34A0AIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Sun, 14 Sep 2025 18:04:54 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 14 Sep 2025 18:04:54 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uxvmA-00000003oa9-2Bgc
+	for admin@notesao.com;
+	Sun, 14 Sep 2025 18:04:54 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Javian Liggins
+X-PHP-Script: ffl.notesao.com/intake.php for 173.172.28.248
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: javianboy@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uxvmA-00000003oa9-2Bgc@host.notesao.com>
+Date: Sun, 14 Sep 2025 18:04:54 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

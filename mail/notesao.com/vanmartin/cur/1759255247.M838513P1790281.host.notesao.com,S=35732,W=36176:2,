@@ -1,0 +1,444 @@
+Return-Path: <010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a-000000@amazonses.messaging.squareup.com>
+Delivered-To: vanmartin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id xf9mMc8a3GhJURsAIW4ynA
+	(envelope-from <010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a-000000@amazonses.messaging.squareup.com>)
+	for <vanmartin@notesao.com>; Tue, 30 Sep 2025 13:00:47 -0500
+Return-path: <010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a-000000@amazonses.messaging.squareup.com>
+Envelope-to: vanmartin@notesao.com
+Delivery-date: Tue, 30 Sep 2025 13:00:47 -0500
+Received: from a116-226.smtp-out.us-west-2.amazonses.com ([54.240.116.226]:37355)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a-000000@amazonses.messaging.squareup.com>)
+	id 1v3eeQ-00000007VhJ-0WUa
+	for vanmartin@notesao.com;
+	Tue, 30 Sep 2025 13:00:47 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=clz7t3pgfbh32jgz3sgosjlq64ni7aba; d=messaging.squareup.com;
+	t=1759255221;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=6wbd3ZzFR8cbyOwFiecznZmwNDYia9of2zKTq9xtuEg=;
+	b=j9JCx+4zO9Pp9u0ZQL5UeZrF3mPLo41kIRz7uNIceH/clOqxJ6hNLz5xOYf5gEcf
+	2BcuR10lnJwS/x/WHVCb9VDXAjc/0rCXblYnGksbg/v1aNdObT2TT+8FZ79urxk9YXD
+	heYmbfYD6bh4w/d9NxDRkYgEEiOxMJB8Gg8WdNg4=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1759255221;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=6wbd3ZzFR8cbyOwFiecznZmwNDYia9of2zKTq9xtuEg=;
+	b=XS8YrAvRogIzUmwD5bpDEh1J3ip1CugHY/r0u7h0t/uFzKIjoT7kayl7JAVmzJ/P
+	4uCLzaB570+cTrW7jPHzxmbTWH5FDiYIS24ajG19PQPqwtKQOaegu+o2bj5G+MWYHWN
+	oS0O8lAVKPwuyWrbjm4Eoah7Wwy8AISAQCNXFC9s=
+Date: Tue, 30 Sep 2025 18:00:21 +0000
+From: Square | Savings <noreply@messaging.squareup.com>
+To: vanmartin@notesao.com
+Message-ID: <010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a-000000@us-west-2.amazonses.com>
+Subject: Automated savings, Van: Easier to save, faster to grow
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-EMS-Request-ID: 34b680f5-e910-498b-81c6-179e1972e83b
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-ERS-Token: CCAQ3IilwIbXqb72ARi43fu9hqONsIsB
+List-Unsubscribe: <https://squareup.com/email/subscriptions/unsubscribe?scope=marketing&subcategory=product_updates_get_money&locale=&request_id=34b680f5-e910-498b-81c6-179e1972e83b&recipient=CCAQ3IilwIbXqb72ARi43fu9hqONsIsB&wastruncated=0>,
+ <mailto:CAEacAokMzRiNjgwZjUtZTkxMC00OThiLTgxYzYtMTc5ZTE5NzJlODNiEiYKCW1hcmtldGluZxIZcHJvZHVjdF91cGRhdGVzX2dldF9tb25leRogQ0NBUTNJaWx3SWJYcWI3MkFSaTQzZnU5aHFPTnNJc0IiIBTTJT6BaFgBKapyrdjDa6oEXy4b2N3t67oCQZVZP6fj@reply2.squareup.com>
+Feedback-ID: ::1.us-west-2.+kCNGv0wlznHgVfb/dmZu6QdzMqHR+fLcxV3+TNug8w=:AmazonSES
+X-SES-Outgoing: 2025.09.30-54.240.116.226
+X-Spam-Status: No, score=1.8
+X-Spam-Score: 18
+X-Spam-Bar: +
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__Squar?= =?ISO-8859-1?Q?e_Less_spreadsheets=2C_more_savings=2E_Automatically_?= =?ISO-8859-1?Q?save=0A____with_every_sale_With_Square_Savings=2C_you?= =?ISO-8859-1?Q?_can_automatically_set_aside_a_fixed=0A____percentage?= =?ISO-8859-1?Q?_of_your_daily_card_sales_=E2=80=94_whether_it=E2=80=99s?= =?ISO-8859-1?Q?_a_little_or_a_l_=5B=2E=2E=2E=5D=0A____=0A_Content_an?= =?ISO-8859-1?Q?alysis_details=3A___=281=2E8_points=2C_5=2E0_required?= =?ISO-8859-1?Q?=29=0A__pts_rule_name______________description=0A_---?= =?ISO-8859-1?Q?-_----------------------_----------------------------?= =?ISO-8859-1?Q?----------------------=0A__0=2E0_T=5FSPF=5FHELO=5FTEM?= =?ISO-8859-1?Q?PERROR___SPF=3A_test_of_HELO_record_failed_=28temperr?= =?ISO-8859-1?Q?or=29=0A__0=2E0_T=5FSPF=5FTEMPERROR________SPF=3A_tes?= =?ISO-8859-1?Q?t_of_record_failed_=28temperror=29=0A__0=2E1_DKIM=5FS?= =?ISO-8859-1?Q?IGNED____________Message_has_a_DKIM_or_DK_signature=2C_?= =?ISO-8859-1?Q?not_necessarily_valid=0A__0=2E1_DKIM=5FINVALID_______?= =?ISO-8859-1?Q?____DKIM_or_DK_signature_exists=2C_but_is_not_valid=0A_?= =?ISO-8859-1?Q?_0=2E8_KAM=5FADVERT2____________BODY=3A_This_is_proba?= =?ISO-8859-1?Q?bly_an_unwanted_commercial_email=2E=2E=2E=0A__0=2E0_H?= =?ISO-8859-1?Q?TML=5FMESSAGE___________BODY=3A_HTML_included_in_mess?= =?ISO-8859-1?Q?age=0A__0=2E1_MIME=5FHTML=5FONLY_________BODY=3A_Mess?= =?ISO-8859-1?Q?age_only_has_text/html_MIME_parts=0A__0=2E0_HTML=5FFO?= =?ISO-8859-1?Q?NT=5FLOW=5FCONTRAST_BODY=3A_HTML_font_color_similar_o?= =?ISO-8859-1?Q?r_identical_to=0A_____________________________backgro?= =?ISO-8859-1?Q?und=0A__0=2E8_KAM=5FINFOUSMEBIZ________Prevalent_use_?= =?ISO-8859-1?Q?of=0A_____________________________=2Einfo|=2Eus|=2Eme?= =?ISO-8859-1?Q?|=2Eme=2Euk|=2Ebiz|xyz|id|rocks|life=0A______________?= =?ISO-8859-1?Q?_______________domains_in_spam/malware=0A__0=2E0_LOTS?= =?ISO-8859-1?Q?=5FOF=5FMONEY__________Huge=2E=2E=2E_sums_of_money=0A_?= =?ISO-8859-1?Q?_0=2E0_KAM=5FDMARC=5FSTATUS_______Test_Rule_for_DKIM_?= =?ISO-8859-1?Q?or_SPF_Failure_with_Strict=0A________________________?= =?ISO-8859-1?Q?_____Alignment?=
+X-Spam-Flag: NO
+
+<!DOCTYPE html> <html lang=3D"en-US"> <head> <meta name=3D"viewport" conten=
+t=3D"width=3Ddevice-width"> <meta http-equiv=3D"Content-Type" content=3D"te=
+xt/html;charset=3Dutf-8"> <title>Square</title> <!--[if mso]><style type=3D=
+"text/css" data-premailer=3D"ignore">.codelink a{color:#006aff;text-decorat=
+ion:none}a{color:#006aff;text-decoration:none}.button td{background-color:#=
+006aff}.nomso{display:none;font-size:0;line-height:0}table{font-size:1px;li=
+ne-height:0;mso-margin-top-alt:1px}table.MsoNormalTable{font-family:esqmark=
+et,Helvetica,sans-serif}.durv{line-height:14px!important}</style><![endif]-=
+-><!--[if !mso]><!--><link rel=3D"stylesheet" type=3D"text/css" href=3D"htt=
+ps://square-mailstrom-production-s.squarecdn.com/_style/esq-market.css" dat=
+a-premailer=3D"ignore"> <!--<![endif]--><style type=3D"text/css" data-prema=
+iler=3D"ignore">.button td td:hover,.button a:hover{background-color:#05c!i=
+mportant}.button a:hover{border:1px solid #05c!important}.invert .button td=
+ td:hover,.invert .button a:hover{background-color:!important}.invert .butt=
+on a:hover{border:1px solid!important}a[x-apple-data-detectors]{color:inher=
+it!important;text-decoration:none!important;font-size:inherit!important;fon=
+t-family:inherit!important;font-weight:inherit!important;line-height:inheri=
+t!important}.invert a,.invert a[href^=3D"tel"],.invert a[href^=3D"mailto"],=
+.invert a[href*=3D"//maps.apple.com"]{color:#fff;text-decoration:none}b a{c=
+olor:#121212}#hero a{color:#fff}#outlook a{padding:0}body{width:100%!import=
+ant;margin:0 auto!important;padding:0}.ExternalClass{width:100%;line-height=
+:100%}.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalCla=
+ss td,.ExternalClass div{line-height:100%}table,td{border-collapse:collapse=
+;mso-table-lspace:0;mso-table-rspace:0}@media only screen and (min-width:28=
+1px){#container{position:relative;top:0;left:0;right:0;bottom:0}}div[style*=
+=3D"margin: 16px 0"]{margin:0!important}@media screen and (max-width:480px)=
+{u ~ div{min-width:100vw}}</style> <style type=3D"text/css" data-premailer=
+=3D"ignore">@media screen and (min-width:281px) and (max-width:519px){#cont=
+ainer .fullWidth a{display:block!important}#container .column{width:inherit=
+!important}#container .column .embiggen{width:420px!important;max-width:420=
+px!important}#container .column .embiggen .list td:first-child{width:inheri=
+t!important}#container .column .embiggen .list td:last-child{width:500px!im=
+portant}#container .column .embiggen .button td{width:inherit!important}#co=
+ntainer .column .embiggen img{max-width:100%!important}#container .column .=
+embiggen .icon{max-width:inherit!important}.h2{font-size:24px!important;lin=
+e-height:28px!important}}</style> </head> <body style=3D"background-color: =
+#fafafa" bgcolor=3D"#fafafa"><span style=3D"color:transparent;visibility:hi=
+dden;display:none;opacity:0;height:0;width:0;font-size:0;">Less spreadsheet=
+s, more savings.</span><img src=3D"https://links.squareupmessaging.com/s/eo=
+/dLfgz0xXhVrmFULtNWr-S-bcwLoPTBjH-b2u1nsSQscdDW8H_STmmXnuRbydx9miA06X6Xd4IB=
+cOEfnTY8BPtdvYLA7nE29yhIe5bXQceN-SJCGHRDEIWCN3uFf58kNbhU4CR-w2QAji590XQJF1_=
+NDmcP33mxxG-LZlfZtqyLQ-wLy6CSoRMWR2LfWeZUKLZcwJ96-9OBQ0iQ/92VuUlpw00QuhpwBZ=
+AW12ZDhMYhS8M4e/13" style=3D"border:0;width:1px;height:1px;border-width:0px=
+!important;display:none!important;line-height:0!important;" width=3D"1" hei=
+ght=3D"1"/><div id=3D"container" style=3D"background-color: #fafafa;-webkit=
+-text-size-adjust: none;-ms-text-size-adjust: none;-webkit-font-smoothing: =
+antialiased"> <table style=3D"background-color: #ffffff;table-layout: fixed=
+" width=3D"100%" class=3D"single default" bgcolor=3D"#ffffff" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td align=3D"center" style=3D"padding: 0 20px"=
+><table cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"540" style=3D"=
+padding: 0px 0" class=3D"singleCell"><table width=3D"100%" class=3D"left" s=
+tyle=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"> <tr><td alig=
+n=3D"left" style=3D"padding: 64px 0 0px"><table style=3D"text-align: left" =
+cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"80" align=3D"left" cla=
+ss=3D"fluidImage"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/ht=
+tps:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FkiEdEG5vuvI6S1Beo4HqRkAo6AE=
+CVzoV5aFGq8tLshPyjMOPQv3OXk9kdtGl0xFaLNxpC-8JNJo5AEbMfdKriZtmKAkXYuwSoBhPvn=
+5d8QbJmc_syLxH_b2aiaGr-8KLXkdAQX93v8GOEGsgphR-OGSRGGg6cYYfI6lCfeYYHn45vnrx0=
+XDq5_yNch35Ws_VV8K5HeXqyUdMR20jWQPdaZU8COxMoSpn_N5WVqT-TpoyMDF3-497d1e-PcWN=
+QHg%2FoIoyGikFcUm2oHzuq7liLY5wVxOsGDZa%2F13/1/010101999bc85649-574d9b0b-c4b=
+9-4d31-a910-06a5ba84e34a-000000/AzvozAWfsrKK2x4an3IUCDHLB6Q=3D446" id=3D"im=
+age-1" style=3D"text-decoration: none"><img src=3D"https://square-mailstrom=
+-production-s.squarecdn.com/_shared/logo/logo-black.png" width=3D"80" alt=
+=3D"Square" style=3D"width: 100%;height: auto;-ms-interpolation-mode: bicub=
+ic;font-family: sans-serif;font-size: 14px;line-height: 22px;display: block=
+" border=3D"0"></a></td></tr></table></td></tr> <tr><td align=3D"left"><tab=
+le width=3D"inherit" style=3D"text-align: left" cellpadding=3D"0" cellspaci=
+ng=3D"0"><tr><td width=3D"420" style=3D"text-align: left;padding: 48px 0 32=
+px;color: #121212;font-family: esqmarket-medium, -apple-system, BlinkMacSys=
+temFont, Helvetica, sans-serif;font-weight: bold;font-size: 35px;line-heigh=
+t: 40px;letter-spacing: -0.016em" class=3D"h1 left" align=3D"left"><a href=
+=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupm=
+essaging.com%2Fs%2Fc%2FrIBjFzpRhT7nPrAFIRHvvqrSe7dAnY80-KZgQ59shpLSp63pld0H=
+PuLWkME1RfsiI9HOr3pEXyvIa3ka_nvv1uF9VxDBBoeHAx7mGtJdfQ95DsLgmwXsMXhoXYA-pzn=
+UPwkmXUBVqZgHoD5JRo8g4N2XUDdQEr0Sqw53wfC5M_ndN8lhj4GGGBTA5IzQ6QDCBPV7eWWtBp=
+DZlFXCaknZ4v4x_7-3ZhVlMHOdtoQlHZJQsMKOYx4qVqNEGfFbMdFSNX-YzvTJ4EmQaICZckoT%=
+2FgdrnTJjgn7rJyGoOtUJFPsvklXfeKAVz%2F13/1/010101999bc85649-574d9b0b-c4b9-4d=
+31-a910-06a5ba84e34a-000000/flFP5E-da6vSi7XtZlfF4sL53XU=3D446" id=3D"h1-1" =
+style=3D"text-decoration: none;color: #121212">Automatically save with ever=
+y sale</a></td></tr></table></td></tr> <tr><td style=3D"font-size: 18px;lin=
+e-height: 28px;letter-spacing: -0.002em;font-family: esqmarket, -apple-syst=
+em, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: normal;color: #3=
+33333;padding: 0px 0 16px" class=3D"p">With Square Savings, you can automat=
+ically set aside a fixed percentage of your daily card sales&#160;=E2=80=94=
+ whether it=E2=80=99s a little or a lot =E2=80=94 and we=E2=80=99ll make su=
+re it moves right into your account.</td></tr> <tr><td style=3D"padding: 8p=
+x 0 80px" align=3D"center" class=3D"button "><table width=3D"inherit" align=
+=3D"left" style=3D"text-align: left" class=3D"buttonTable" cellpadding=3D"0=
+" cellspacing=3D"0"><tr><td><table align=3D"center" style=3D"text-align: le=
+ft" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"background-color: =
+#006aff;width: 100%;text-align: center;font-family: esqmarket-medium, -appl=
+e-system, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: bold;-webk=
+it-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;font-size:=
+ 16px;line-height: 20px" align=3D"center" bgcolor=3D"#006aff"><a href=3D"ht=
+tps://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessagi=
+ng.com%2Fs%2Fc%2FEpHBXg8o8Ipwyaht-9Wi51hRExFqXLcaYwRkybNn_md1AkUW9LiKthTTHY=
+Rv6TemfjLa04EfJlOhzEWmOlCbj5pOAGb7EvYqGqyve7d-t9HDvZFuf3NKr_nWszLCLZJIPkvFy=
+GtjlHX4gG6d1uCW4ouluv3IQqeXvObIao6aDh2vdI5b0GHNSVsU8wNdM0ky97fscBGBNux-b3bh=
+4ajMJNKFTH-lIbc3YM4jib0SqgkqfdFASZmP_HCW_ecrndV33hLFPLedCp74IqxFGKgV%2Fj3GK=
+Ga7HP_EaislHJmX5QiDj4fUD_QRI%2F13/1/010101999bc85649-574d9b0b-c4b9-4d31-a91=
+0-06a5ba84e34a-000000/PS0qJWpUfJG20VutF2Pv9FmjHvA=3D446" style=3D"backgroun=
+d-color: #006aff;padding: 18px 38px;border: 1px solid #006aff;color: #fffff=
+f;text-decoration: none;-webkit-border-radius: 4px;-moz-border-radius: 4px;=
+border-radius: 4px;display: inline-block" id=3D"button-1"><!--[if gte mso 9=
+]>&#160;<![endif]-->Get started<!--[if gte mso 9]>&#160;<![endif]--></a></t=
+d></tr></table></td></tr></table></td></tr> </table></td></tr></table></td>=
+</tr></table> <table style=3D"background-color: #ffffff;table-layout: fixed=
+" width=3D"100%" class=3D"double default" bgcolor=3D"#ffffff" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td align=3D"center"><table cellpadding=3D"0" =
+cellspacing=3D"0"><tr><td align=3D"center" class=3D"doubleCell"><table cell=
+padding=3D"0" cellspacing=3D"0"><tr><td align=3D"center" style=3D"padding: =
+0px 4px"><table cellpadding=3D"0" cellspacing=3D"0"><tr style=3D"font-size:=
+ 0"><td style=3D"text-align: left;padding: 0px 0 32px" align=3D"left"><tabl=
+e style=3D"text-align: left" align=3D"center" class=3D"ltr" cellpadding=3D"=
+0" cellspacing=3D"0"><tr valign=3D"middle"> <th style=3D"display: inline-bl=
+ock;vertical-align: top;padding: 0px 16px 16px" valign=3D"top"><table class=
+=3D"column" cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"254"><tabl=
+e width=3D"100%" class=3D"center" style=3D"text-align: center" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td align=3D"center" style=3D"padding: 0px 0">=
+<table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0"><tr=
+><td width=3D"520" align=3D"center" style=3D"-webkit-border-radius: 12px;-m=
+oz-border-radius: 12px;border-radius: 12px;overflow: hidden" class=3D"fluid=
+Image"><img src=3D"https://square-mailstrom-production-s.squarecdn.com/bank=
+ing/GRM-3335/PD05557-sav-testimonial-update_ACQ2-hero-global.jpg" width=3D"=
+520" alt=3D"Image" style=3D"width: 100%;height: auto;-ms-interpolation-mode=
+: bicubic;display: block"></td></tr></table></td></tr></table></td></tr></t=
+able></th> <th style=3D"display: inline-block;vertical-align: top;padding: =
+0px 16px 16px" valign=3D"top"><table class=3D"column" cellpadding=3D"0" cel=
+lspacing=3D"0"><tr><td width=3D"254"><table width=3D"100%" class=3D"left" s=
+tyle=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"> <tr><td styl=
+e=3D"font-weight: bold;font-size: 18px;line-height: 28px;letter-spacing: -0=
+.002em;font-family: esqmarket, -apple-system, BlinkMacSystemFont, Helvetica=
+, sans-serif;color: #333333;padding: 0px 0 16px" class=3D"p">=E2=80=9CI got=
+ into Square Savings when someone on the Square Community Board recommended=
+ it for saving for sales tax =E2=80=94 and sales tax is the worst. It was g=
+enius that I could just set it up and automatically deduct 10% of my daily =
+earnings or sales. It made this last tax filing so easy; it was incredible.=
+=E2=80=9D</td></tr> <tr><td style=3D"font-weight: bold;font-size: 18px;line=
+-height: 28px;letter-spacing: -0.002em;font-family: esqmarket, -apple-syste=
+m, BlinkMacSystemFont, Helvetica, sans-serif;color: #333333" class=3D"p">Do=
+ran Tomoko</td></tr> <tr><td style=3D"font-weight: bold;font-size: 18px;lin=
+e-height: 28px;letter-spacing: -0.002em;font-family: esqmarket, -apple-syst=
+em, BlinkMacSystemFont, Helvetica, sans-serif;color: #333333" class=3D"p">H=
+aute Beauty</td></tr> </table></td></tr></table></th> </tr></table></td></t=
+r></table></td></tr></table></td></tr></table></td></tr></table> <table sty=
+le=3D"background-color: #ffffff;table-layout: fixed" width=3D"100%" class=
+=3D"single default" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0"=
+><tr><td align=3D"center" style=3D"padding: 0 20px"><table cellpadding=3D"0=
+" cellspacing=3D"0"><tr><td width=3D"540" style=3D"padding: 0px 0" class=3D=
+"singleCell"><table width=3D"100%" class=3D"left" style=3D"text-align: left=
+" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"color: #b2b2b2;font-=
+family: esqmarket-medium, -apple-system, BlinkMacSystemFont, Helvetica, san=
+s-serif;font-weight: bold;font-size: 35px;line-height: 40px" class=3D"h2">W=
+atch it all add up, pull out funds to cover taxes or a slow month, or pause=
+ at any time.</td></tr></table></td></tr></table></td></tr></table> <table =
+style=3D"background-color: #ffffff;table-layout: fixed" width=3D"100%" clas=
+s=3D"double default" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td align=3D"center"><table cellpadding=3D"0" cellspacing=3D"0"><tr><=
+td align=3D"center" class=3D"doubleCell"><table cellpadding=3D"0" cellspaci=
+ng=3D"0"><tr><td align=3D"center" style=3D"padding: 48px 8px 40px"><table c=
+ellpadding=3D"0" cellspacing=3D"0"> <tr style=3D"font-size: 0"><td style=3D=
+"text-align: center" align=3D"center"><table style=3D"text-align: center" a=
+lign=3D"center" class=3D"ltr" cellpadding=3D"0" cellspacing=3D"0"><tr valig=
+n=3D"top"><th style=3D"display: inline-block;vertical-align: top;padding: 0=
+px 20px 24px" valign=3D"top"><table class=3D"column" cellpadding=3D"0" cell=
+spacing=3D"0"><tr><td width=3D"540"><table width=3D"100%" class=3D"left" st=
+yle=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=
+=3D"color: #121212;font-family: esqmarket-medium, -apple-system, BlinkMacSy=
+stemFont, Helvetica, sans-serif;font-weight: bold;font-size: 35px;line-heig=
+ht: 40px" class=3D"h2">Grow faster with Square Savings:</td></tr></table></=
+td></tr></table></th></tr></table></td></tr> <tr style=3D"font-size: 0"><td=
+ style=3D"text-align: left;padding: 0px 0 24px" align=3D"left"><table style=
+=3D"text-align: left" align=3D"center" class=3D"ltr" cellpadding=3D"0" cell=
+spacing=3D"0"><tr valign=3D"middle"> <th style=3D"display: inline-block;ver=
+tical-align: middle;padding: 0px 12px 16px" valign=3D"middle"><table class=
+=3D"column" cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"96"><table=
+ width=3D"100%" class=3D"center" style=3D"text-align: center" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td align=3D"center" style=3D"padding: 0px 0">=
+<table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0"><tr=
+><td width=3D"96" align=3D"center" class=3D"fluidImage"><a href=3D"https://=
+kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com=
+%2Fs%2Fc%2FI59_vUF5shlitaZ_pXpKCWGwn8uAEfzUe57710NNdzM0-NBecoKBIVlaIxq8-jjP=
+ASCCTYYcjT-NuPSahLTzKk1YsSwrO8gevldNHgFReRcCtg8-Qc-JxmH6YuhENHxMUc08aXs7idS=
+mAtpUBuYA9Dfvrpjlm21W6CtQcVVctyNWO9UM5UTpV1ZjQIpYRZqaCpAqLHQ462aCiOme033XkZ=
+Lq5SbmMkbFx-sI9qL1SuCx2PAFoiaVEGLmeUi3pvJxSBTlfR-IzDozqc1D8sjB%2F2cNERuGycJ=
+ME9IRnIgB20n8attnl7r6w%2F13/1/010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5=
+ba84e34a-000000/c0mhi9logLp0itE6fg-xNG8PGAs=3D446" id=3D"image-3" style=3D"=
+text-decoration: none"><img src=3D"https://square-mailstrom-production-s.sq=
+uarecdn.com/banking/GRM-3335/icon-bars.png" width=3D"96" alt=3D"Image" styl=
+e=3D"width: 100%;height: auto;-ms-interpolation-mode: bicubic;display: bloc=
+k" border=3D"0"></a></td></tr></table></td></tr></table></td></tr></table><=
+/th> <th style=3D"display: inline-block;vertical-align: middle;padding: 0px=
+ 12px 16px" valign=3D"middle"><table class=3D"column" cellpadding=3D"0" cel=
+lspacing=3D"0"><tr><td width=3D"420"><table width=3D"100%" class=3D"left" s=
+tyle=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=
+=3D"color: #121212;font-size: 24px;line-height: 28px;letter-spacing: -0.002=
+em;font-family: esqmarket-medium, -apple-system, BlinkMacSystemFont, Helvet=
+ica, sans-serif;font-weight: bold" class=3D"h3">Earn 1.00% APY=C2=B9 and or=
+ganize your funds in folders</td></tr></table></td></tr></table></th> </tr>=
+</table></td></tr> <tr style=3D"font-size: 0"><td style=3D"text-align: left=
+;padding: 0px 0 24px" align=3D"left"><table style=3D"text-align: left" alig=
+n=3D"center" class=3D"ltr" cellpadding=3D"0" cellspacing=3D"0"><tr valign=
+=3D"middle"> <th style=3D"display: inline-block;vertical-align: middle;padd=
+ing: 0px 12px 16px" valign=3D"middle"><table class=3D"column" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td width=3D"96"><table width=3D"100%" class=
+=3D"center" style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td align=3D"center" style=3D"padding: 0px 0"><table style=3D"text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"96" align=
+=3D"center" class=3D"fluidImage"><a href=3D"https://kjfjb2yk.r.us-west-2.aw=
+strack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FI5CUPvCj_HI1=
+YclYOHacwSrs-Hb7V07BQUEWwLhInkJHS5SOKfb9KzKm-FBulf1DngnJDz0tMwHHmMB-VMWvNMY=
+g9AWpN6Aekz5X3Ajjhvof-r110Ck-c-Np6sr-3uJvei21giFB7q8BbPdt0RuIixxDkD5qJrpHPp=
+zSBdIHdvuSjgom8edNdIEfh0wb6ESckAAKRIJeHEv-KxTZgF2MZvYF5KyMkAZx6GM_ziZGDz-Tp=
+4NUbt72AL8t9YCtDW2EN67kAh6aZr3QeihStvUj%2F7lvn28cXqjIgxOWEk5H9_vnmCGshUiEq%=
+2F13/1/010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a-000000/-x1-lSO=
+O2iigrc-NQnQpw_RH-IU=3D446" id=3D"image-4" style=3D"text-decoration: none">=
+<img src=3D"https://square-mailstrom-production-s.squarecdn.com/banking/GRM=
+-3335/icon-deny.png" width=3D"96" alt=3D"Image" style=3D"width: 100%;height=
+: auto;-ms-interpolation-mode: bicubic;display: block" border=3D"0"></a></t=
+d></tr></table></td></tr></table></td></tr></table></th> <th style=3D"displ=
+ay: inline-block;vertical-align: middle;padding: 0px 12px 16px" valign=3D"m=
+iddle"><table class=3D"column" cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+width=3D"420"><table width=3D"100%" class=3D"left" style=3D"text-align: lef=
+t" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"color: #121212;font=
+-size: 24px;line-height: 28px;letter-spacing: -0.002em;font-family: esqmark=
+et-medium, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-we=
+ight: bold" class=3D"h3">There are no fees or minimum required to open an a=
+ccount, and you can sign up in just a few taps</td></tr></table></td></tr><=
+/table></th> </tr></table></td></tr> <tr style=3D"font-size: 0"><td style=
+=3D"text-align: left;padding: 0px 0 24px" align=3D"left"><table style=3D"te=
+xt-align: left" align=3D"center" class=3D"ltr" cellpadding=3D"0" cellspacin=
+g=3D"0"><tr valign=3D"middle"> <th style=3D"display: inline-block;vertical-=
+align: middle;padding: 0px 12px 16px" valign=3D"middle"><table class=3D"col=
+umn" cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"96"><table width=
+=3D"100%" class=3D"center" style=3D"text-align: center" cellpadding=3D"0" c=
+ellspacing=3D"0"><tr><td align=3D"center" style=3D"padding: 0px 0"><table s=
+tyle=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0"><tr><td wid=
+th=3D"96" align=3D"center" class=3D"fluidImage"><a href=3D"https://kjfjb2yk=
+.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc=
+%2Fn49lq6gt1ckk_1905M60Z29WUEmHlq-ZeMs85romb2LR0itXQy2IJF5N3HqNw3PKNzHR6BAG=
+k2koANohu1TcudcVWuNFAkEATAZUqEmg-Q1v5WNJS7r9t1r5HL6eT9N5XISuKPFfGZJuztBnz3f=
+S3-2dC9ANckMRyEvg5azddR4Z_4lYTA4fPeAoVUyzq5792_M1-iOS153OUXWCqv8Q7AttJ9CbjK=
+c_Ja5sCT7HPhmFQYj676XSJ2mE0AI9FoPbp2zOXL3YwmSrHMuo2xmr%2FVlzyyjEtvLGngYxSJP=
+67jswVAZKtT_Ev%2F13/1/010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a=
+-000000/Pcl4VKJsIhrwa8-M2lFi9i-s_oM=3D446" id=3D"image-5" style=3D"text-dec=
+oration: none"><img src=3D"https://square-mailstrom-production-s.squarecdn.=
+com/banking/GRM-3335/icon-home.png" width=3D"96" alt=3D"Image" style=3D"wid=
+th: 100%;height: auto;-ms-interpolation-mode: bicubic;display: block" borde=
+r=3D"0"></a></td></tr></table></td></tr></table></td></tr></table></th> <th=
+ style=3D"display: inline-block;vertical-align: middle;padding: 0px 12px 16=
+px" valign=3D"middle"><table class=3D"column" cellpadding=3D"0" cellspacing=
+=3D"0"><tr><td width=3D"420"><table width=3D"100%" class=3D"left" style=3D"=
+text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"colo=
+r: #121212;font-size: 24px;line-height: 28px;letter-spacing: -0.002em;font-=
+family: esqmarket-medium, -apple-system, BlinkMacSystemFont, Helvetica, san=
+s-serif;font-weight: bold" class=3D"h3">Simplify your savings, sales, and c=
+ash flow on one platform</td></tr></table></td></tr></table></th> </tr></ta=
+ble></td></tr> </table></td></tr></table></td></tr></table></td></tr></tabl=
+e> <table style=3D"background-color: #ffffff;table-layout: fixed" width=3D"=
+100%" class=3D"single default" bgcolor=3D"#ffffff" cellpadding=3D"0" cellsp=
+acing=3D"0"><tr><td align=3D"center" style=3D"padding: 0 20px"><table cellp=
+adding=3D"0" cellspacing=3D"0"><tr><td width=3D"540" style=3D"padding: 0px =
+0 96px" class=3D"singleCell"><table width=3D"100%" class=3D"left" style=3D"=
+text-align: left" cellpadding=3D"0" cellspacing=3D"0"> <tr><td style=3D"pad=
+ding: 8px 0 80px" align=3D"center" class=3D"button "><table width=3D"inheri=
+t" align=3D"left" style=3D"text-align: left" class=3D"buttonTable" cellpadd=
+ing=3D"0" cellspacing=3D"0"><tr><td><table align=3D"center" style=3D"text-a=
+lign: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"background=
+-color: #006aff;width: 100%;text-align: center;font-family: esqmarket-mediu=
+m, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: bo=
+ld;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;fo=
+nt-size: 16px;line-height: 20px" align=3D"center" bgcolor=3D"#006aff"><a hr=
+ef=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareu=
+pmessaging.com%2Fs%2Fc%2F_REQvtmUMJCyiNTAtr2mT92o5Jr4Rwj5ZjFFbE_-sncCn6SLVt=
+qdXWAS_XyaSp58mdLqtWyAH0p4qO76c1mwpv-nSj3y9JGGO5O88k5jpLSOikrbIKnMJNg5QCpxu=
+8URzieqLMIuA5ItJnRHQsKYs-qmUrERn64Q7ruD0i2K2z_k4cQEj2hJVMSaaWQxFWKvU7THmYnR=
+Tz3tVS9lFMI5AmrakaUwEX2TQDxcJ3RJyHFOFaccFIF6y0uyYIJFxhg15FMhQLYIxqqTlXSVxaC=
+A%2FtGArRfDl6evoWoKamJ7Tz_SF1znYf5mq%2F13/1/010101999bc85649-574d9b0b-c4b9-=
+4d31-a910-06a5ba84e34a-000000/5K0fJCD1dDjmvO_YectwT3vcDOk=3D446" style=3D"b=
+ackground-color: #006aff;padding: 18px 38px;border: 1px solid #006aff;color=
+: #ffffff;text-decoration: none;-webkit-border-radius: 4px;-moz-border-radi=
+us: 4px;border-radius: 4px;display: inline-block" id=3D"button-2"><!--[if g=
+te mso 9]>&#160;<![endif]-->Get started<!--[if gte mso 9]>&#160;<![endif]--=
+></a></td></tr></table></td></tr></table></td></tr> <tr><td style=3D"font-s=
+ize: 16px;line-height: 24px;letter-spacing: -0.002em;font-family: esqmarket=
+, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: nor=
+mal;color: #333333;padding: 0px 0 16px" class=3D"p"> <b style=3D"color: #12=
+1212;font-family: esqmarket-medium, -apple-system, BlinkMacSystemFont, Helv=
+etica, sans-serif;font-weight: bold">Questions?</b> Check out our <a href=
+=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupm=
+essaging.com%2Fs%2Fc%2FhnV8UKLxpGsGZzwCAHGViurXaj-PcSOk4KmO_UA-B9Ml0-EWQ7qX=
+KCkS6nTIBYImdXcnvfbsTuvLWpuhCp-TnsYsKfzJyA6yXfmQZ64KqwnYo5hoJmDC7XJC_IFxzyh=
+NstXJwRmXmqwhDhl9284-o56WpjcRtdHUz2jaaflctsUc90v6XbxRc99lrmakrJX8aCbaLwpgAD=
+yUojl4vAzZVg_Y_V3bug_UZlyii6InSPaMzMEko5hQVB6ExgllDr9PVHim42y7LDJYvkyhUjvxb=
+iyxvL0fVYT4%2F1dxT_f-gFl9elhDDQIyQfI213ityYJoV%2F13/1/010101999bc85649-574d=
+9b0b-c4b9-4d31-a910-06a5ba84e34a-000000/V-tGOMK8o61pzWPNWJ6VPiRCvGE=3D446" =
+style=3D"color: #006aff;text-decoration: none;font-family: esqmarket-medium=
+, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: bol=
+d">Savings FAQ</a>.</td></tr> </table></td></tr></table></td></tr></table> =
+<table width=3D"100%" class=3D"footer" style=3D"table-layout: fixed" cellpa=
+dding=3D"0" cellspacing=3D"0"><tr><td align=3D"center" style=3D"background-=
+color: #000001;padding: 30px 20px 38px" bgcolor=3D"#000001"><table cellpadd=
+ing=3D"0" cellspacing=3D"0"><tr><td width=3D"540" style=3D"text-align: left=
+" align=3D"left"> <table class=3D"footerSnippet" style=3D"table-layout: fix=
+ed" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tr><td align=3D"le=
+ft"><table style=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><=
+tr><td width=3D"95" align=3D"left" style=3D"padding: 34px 0 64px" class=3D"=
+fluidImage"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2=
+F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FVQEDxDTsrz71s3EFeDhH2ePqjFFlW4WdF=
+E3hkuCfrHyjKMtbRkJXTA8scbBtSJQ8Kr2uCE97Bidb3qzxiUm2CLDbk_fdRToMv9EPSwQMZNAr=
+RP_o8kQIh1yVNdvUErPk0_ipRb2RCJIoMtlfZVeX2bK8genAXlP1f0DqTQJV7FaxDvRFmBKYVQS=
+PgGgrNfuSCvPy70MJzu8ZkGEQ2EC3mKXb57b_y9uPo-swDmwD08Y-yJqdJrj7v63WLA6zwTM%2F=
+aiRWc2-C6-FGjsyH2h8Z6P-UrpvhT3O4%2F13/1/010101999bc85649-574d9b0b-c4b9-4d31=
+-a910-06a5ba84e34a-000000/dj3EXOYsMcmLAT2zLCUE3V9NfSQ=3D446" id=3D"image-1"=
+ style=3D"text-decoration: none"><img src=3D"https://square-mailstrom-produ=
+ction-s.squarecdn.com/_shared/logo/sans-white.png" width=3D"95" alt=3D"Imag=
+e" style=3D"width: 100%;height: auto;-ms-interpolation-mode: bicubic;displa=
+y: block;mix-blend-mode:difference" border=3D"0"></a></td></tr></table></td=
+></tr> <tr> <td align=3D"left"> <table cellpadding=3D"0" cellspacing=3D"0">=
+ <tr> <td width=3D"400" style=3D"color: #7b7f83;font-size: 14px;line-height=
+: 22px;letter-spacing: -0.002em;font-family: esqmarket, -apple-system, Blin=
+kMacSystemFont, Helvetica, sans-serif;font-weight: normal;padding: 0px 0 16=
+px" class=3D"p"> =C2=A9 2025 Square Financial Services, Inc. All rights res=
+erved. <br> <a style=3D"color: #7b7f83;text-decoration: none;font-family: e=
+sqmarket, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-wei=
+ght: normal">3165 E. Millrock Drive, Suite 160</a> <br> <a style=3D"color: =
+#7b7f83;text-decoration: none;font-family: esqmarket, -apple-system, BlinkM=
+acSystemFont, Helvetica, sans-serif;font-weight: normal">Salt Lake City, UT=
+ 84121 </a> </td> </tr> </table> </td> </tr> <tr> <td style=3D"color: #7b7f=
+83;font-size: 14px;line-height: 22px;letter-spacing: -0.002em;font-family: =
+esqmarket, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-we=
+ight: normal;padding: 0px 0 32px" class=3D"p"> <a href=3D"https://kjfjb2yk.=
+r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%=
+2F7i4whh4m-2JF4T8a6egPtt2mXdqaqtoSb64KU_8pKEh1eH2kRzUwopDpHUfSP4MA0xmJtw0Hk=
+Z6fVYmB1CpIl5yFcJPKCa44lbDwC0XTPPmiRzKDWwD2B4SbAISNoerUq0Ht_bOacWLVW2PejYZ2=
+G1D1_95ID31T3PV0szrjqhl629d1JcD1Ue_MnnBW1SaC9j4i5StJ0SDXBEjZCSXZjzKruNEiQuX=
+DfviS1cX4G1zHEj0Dp5qZrkjyJXgpiU-64L2LpH2y8KUGD5IvgQA7v8b-dXdDah6Y-sCWew%2FA=
+Lrjm1HUmnlQ-u8sQJjPnZ7INMNdV0O2%2F13/1/010101999bc85649-574d9b0b-c4b9-4d31-=
+a910-06a5ba84e34a-000000/yhhm1Ys4Q1TtVJg5C4N2EJHWzPk=3D446" style=3D"color:=
+ #ffffff;text-decoration: none;font-family: esqmarket, -apple-system, Blink=
+MacSystemFont, Helvetica, sans-serif;font-weight: normal">Privacy Policy</a=
+>&#160; &#160;|&#160; &#160;<a href=3D"https://kjfjb2yk.r.us-west-2.awstrac=
+k.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FYN7NF0zfLDc659KH0=
+YL88s6Tzab96B9QlCuKdKZjUC6Ay9-XHL6MfQQmBhaliSlvCww_VZNPogaGqqyGJJzu7ittb17j=
+pM1gUrKsqUWdriPQDRTEkwvRwVmx5qmSRaniT6RSZd22dNMKc3lo2Ar1RRX_zgEedCASTB2mquF=
+FJSSRFiu9gX_dynbAkSxhNdKnBDGM_lahKgSo-5uF7Fc1qjr-lWQQ_HxbxZ8_8mmVlYlJTGHH5L=
+9U2infiOnl4M_tikUjxEW2swcBEhYD33xRbaLxyHlxucQ6DJ10Ag%2FYAWTUWlmzjg8SEgHUzAs=
+3euiXcKA89Xa%2F13/1/010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a-0=
+00000/JrMlb8hf5guSVC_T2WEKIJwfv_k=3D446" style=3D"color: #ffffff;text-decor=
+ation: none;font-family: esqmarket, -apple-system, BlinkMacSystemFont, Helv=
+etica, sans-serif;font-weight: normal;white-space: nowrap">Terms of Service=
+</a> </td> </tr> <tr> <td style=3D"color: #7b7f83;font-size: 14px;line-heig=
+ht: 22px;letter-spacing: -0.002em;font-family: esqmarket, -apple-system, Bl=
+inkMacSystemFont, Helvetica, sans-serif;font-weight: normal;padding: 0px 0 =
+16px" class=3D"p"> Square, the Square logo, Square Financial Services, Squa=
+re Capital, and others are trademarks of Block, Inc. and/or its subsidiarie=
+s. Square Financial Services, Inc. is a wholly owned subsidiary of Block, I=
+nc. </td> </tr> </table><table cellpadding=3D"0" cellspacing=3D"0"> <tr><td=
+ style=3D"color: #7b7f83;padding: 0px 0 16px;text-align: left;font-size: 14=
+px;line-height: 22px;letter-spacing: -0.002em;font-family: esqmarket, -appl=
+e-system, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: normal" cl=
+ass=3D"p" align=3D"left">Savings accounts are provided by Square Financial =
+Services, Inc. Member FDIC.</td></tr> <tr><td style=3D"color: #7b7f83;paddi=
+ng: 0px 0 16px;text-align: left;font-size: 14px;line-height: 22px;letter-sp=
+acing: -0.002em;font-family: esqmarket, -apple-system, BlinkMacSystemFont, =
+Helvetica, sans-serif;font-weight: normal" class=3D"p" align=3D"left">=C2=
+=B9 Accrue annual percentage yield (APY) of 1.00% per folder on folder bala=
+nces over $10. APY subject to change, current as of 2/18/2025. No minimum d=
+eposit is required to open an account. Accounts will not be charged monthly=
+ fees. Accounts are FDIC-insured up to $2,500,000. Pending balances are not=
+ subject to FDIC insurance.</td></tr> </table> <table class=3D"footerSnippe=
+t" style=3D"table-layout: fixed" width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0"> <tr><td style=3D"color: #7b7f83;font-size: 14px;line-height: 22px=
+;letter-spacing: -0.002em;font-family: esqmarket, -apple-system, BlinkMacSy=
+stemFont, Helvetica, sans-serif;font-weight: normal;padding: 0px 0 27px" cl=
+ass=3D"p">This email is an advertisement communication.<br><a href=3D"https=
+://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.=
+com%2Fs%2Feh%2F4L50x-CT0h60RbcIpHGcrFSLEIqjOjJapYnJhfWEHkmQPppX-4T_6wdH0xS2=
+ShZkdyFF2727rcTqd4cxY1m-92iR9aVvT7_Iwp-3aPjLkUJYkXtZvTJFXcqxbz2oQ9RC3ZaLsjH=
+fpc8c7neTUvGFXc1NlUI5405BUvMXYq-z3C8j4P-0wylJoi9Q4SzyfaXGFRCme8vlCC3O4vMFGo=
+1tFH6SLePfRIK3Lyrp79JzDX7ekRTs1vVZiWyKlfFY-3hBVwjftN4pH30V248UnFmeqElqm2lI6=
+74gGCaAAjd4mdjQv-AJYA6Nu9owtcFM-WI2Y__iXpcoWINX%2FqsapYaIuR-jA_EXrcoUow-QQO=
+L69nUm7%2F13/1/010101999bc85649-574d9b0b-c4b9-4d31-a910-06a5ba84e34a-000000=
+/JLvuTCvNazT3rRBsqFUh4sBni-A=3D446" style=3D"color: #ffffff;text-decoration=
+: none;font-family: esqmarket, -apple-system, BlinkMacSystemFont, Helvetica=
+, sans-serif;font-weight: normal">Unsubscribe or manage your preferences.</=
+a></td></tr> </table></td></tr></table></td></tr></table> </div><img alt=3D=
+"" src=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/I0/010101999bc85649-574d=
+9b0b-c4b9-4d31-a910-06a5ba84e34a-000000/hkaVcpHOJRYmmTS_asNfWvmaggU=3D446" =
+style=3D"display: none; width: 1px; height: 1px;">
+</body> </html>

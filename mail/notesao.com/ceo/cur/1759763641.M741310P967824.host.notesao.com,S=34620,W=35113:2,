@@ -1,0 +1,493 @@
+Return-Path: <bounces+46091638-35a9-ceo=notesao.com@gsnemail.intuit.com>
+Delivered-To: ceo@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id btSYK7nc42iQxA4AIW4ynA
+	(envelope-from <bounces+46091638-35a9-ceo=notesao.com@gsnemail.intuit.com>)
+	for <ceo@notesao.com>; Mon, 06 Oct 2025 10:14:01 -0500
+Return-path: <bounces+46091638-35a9-ceo=notesao.com@gsnemail.intuit.com>
+Envelope-to: ceo@notesao.com
+Delivery-date: Mon, 06 Oct 2025 10:14:01 -0500
+Received: from o1.sgemail.gainsightapp.com ([198.37.159.181]:54414)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <bounces+46091638-35a9-ceo=notesao.com@gsnemail.intuit.com>)
+	id 1v5muV-000000043lo-2MDa
+	for ceo@notesao.com;
+	Mon, 06 Oct 2025 10:14:01 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=intuit.com;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:from:subject:to;
+	s=GSN; bh=Lp19eXB90ftWfH/B52NsUzMdB62x1lcdo4b7RTVRPwU=;
+	b=PbKElt6OZP9ynmXeeWgKCs0PUU8qBF+vAdWAg+R8T8wsFHBidLmRjmpnRIlI2KNG4u5W
+	e+llSf2V0Mlq1WxLRFQtd2NOkG2v6MkbcJh6c9jQYK0rEQ0l/icr4LjwlExtGeP0gHhYZd
+	88uwVMee27auMa2iVEy+WSWbYpe9AHRQOxVKEH0+HPRbL+01p0ptvsTQSekQKUEUv1E7m4
+	5SyxZ9CpNQ9IZ3H9kv+ZqJosASOBc2WRjkKVHTvJXQNONMgS+yX0rLwu/mFdozU4b0oXaT
+	oEHetxydg86HyUtj3t5gfqbBgd2Wc7kq12NWzxCL4UAp9w8MEtC9OGqk8RlwJbpw==
+Received: by recvd-74f499db6f-z8z2p with SMTP id recvd-74f499db6f-z8z2p-1-68E3DCB2-20
+	2025-10-06 15:13:54.066192307 +0000 UTC m=+10708171.774165271
+Received: from NDYwOTE2Mzg (unknown)
+	by geopod-ismtpd-4 (SG) with HTTP
+	id _jmA-Bs_SYmYY2Q9o8y-Bw
+	Mon, 06 Oct 2025 15:13:53.999 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=91fd676ff6e9cbb3e6ad0b5fb218b927a05f7fd115741fe6948bb92db584
+Date: Mon, 06 Oct 2025 15:13:56 +0000 (UTC)
+From: Mailchimp Customer Success Team <mc-success@intuit.com>
+Mime-Version: 1.0
+Message-ID: <8d589ee2-4674-44ef-90a3-2ad60a295d58@gsemail.gainsightapp.com>
+Subject: Get the Most Out of Mailchimp: A Free Webinar for Beginners
+Reply-To: success@mailchimp.com
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fgateway=2Eus2=2Egainsightcloud=2Ecom=2Fv1=2Fcommunications=2Fsubs?=
+ =?us-ascii?Q?cription=2Flist-header-unsubscribe=3Ft=3DYmE1?=
+ =?us-ascii?Q?ZGZhYzktMDhkMS00ODZmLWJlOGQtY2RhYTQ3MGZ?=
+ =?us-ascii?Q?kNTc5&d=3DeyJQYWdlSWQiOiIxSTAwNjFCQzQ5SkN?=
+ =?us-ascii?Q?YQjNORUlCVjBCRFBEWkFMVU04SEw5Q1UiLCJnc2?=
+ =?us-ascii?Q?lkIjoiMUkwMDc1SUZEQk8zMzk5RUxRS1gwSU9TV?=
+ =?us-ascii?Q?VRIR1pKR0ZNUVhVIiwiU291cmNlIjoiR2FpbnNp?=
+ =?us-ascii?Q?Z2h0In0=3D&lnId=3Den=5Fus=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-GS-Message-ID: 
+ <8d589ee2-4674-44ef-90a3-2ad60a295d58@gsemail.gainsightapp.com>
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Enrn2m2gUUaEgNgNiETHsD8hyXpUSYjkbc=2FH82rRpnanDhxQF4kwpSg0XC?=
+ =?us-ascii?Q?suYjiKUBsLs=2FBma4WS4iFVa9t7udMs1Bou2TGVO?=
+ =?us-ascii?Q?Hsgo73OTlCA1LsEoJUgo7HVHTlEX8uqbqdkTrK6?=
+ =?us-ascii?Q?85PrDyxIOhNrLVnKQmJzTRaedNnu3uRmBTsjDSx?=
+ =?us-ascii?Q?fVLf6evVnAmEjvcUWbP9OhpNZiORrC6J2It4gYu?=
+ =?us-ascii?Q?arFeeIhSt1gZjbY5KZ38tlZ9usaH2dZflJQOBaJ?=
+ =?us-ascii?Q?VN79Me1JHmYy2Wgu6Us0v4pBFQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCuDdHpg4mR4a=2FLr?=
+ =?us-ascii?Q?5puC+iUtCaYM+Lounv2yqoaoyy5TqBaWQc2XFQO?=
+ =?us-ascii?Q?HYFSLO7mV0pJE2u2gBkAoUMqZpH3zhD1sQaz=2FpC?=
+ =?us-ascii?Q?oLOnS4UFbHU0llo8GxQsLZjW=2F8AwzCOEK3XSUIN?=
+ =?us-ascii?Q?Wjl9UOAB6sKliJO1K2BBG38uXjkPw3cUXjaBKeG?=
+ =?us-ascii?Q?eUeMWrLGwK6i24Yucw4NW219ARvABEuC3QW6lig?=
+ =?us-ascii?Q?ZRV5rNIDaGvCFmlDNxD=2FBuFGILCLo7aNfo3piBH?=
+ =?us-ascii?Q?iSXS4Q2zxJLeupN663cfINf9kfFM7mPN4QZ9R8z?=
+ =?us-ascii?Q?3eYvnsMnmqHA=3D=3D?=
+To: Van Martin <ceo@notesao.com>
+X-Entity-ID: u001.jfyluCiC6PGBNUmeEOavRA==
+X-Spam-Status: No, score=1.0
+X-Spam-Score: 10
+X-Spam-Bar: +
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__Hello?= =?ISO-8859-1?Q?_and_welcome_to_Mailchimp_=28again=29!_Getting_starte?= =?ISO-8859-1?Q?d_with=0A____a_new_platform_can_feel_overwhelming=2C_?= =?ISO-8859-1?Q?but_we're_here_to_help_you_get_the=0A___most_out_of_y?= =?ISO-8859-1?Q?our_account=2E_Join_us_for_a_free_webinar=2C_Back_to_?= =?ISO-8859-1?Q?Bas_=5B=2E=2E=2E=5D_=0A_Content_analysis_details=3A__?= =?ISO-8859-1?Q?_=281=2E0_points=2C_5=2E0_required=29=0A__pts_rule_na?= =?ISO-8859-1?Q?me______________description=0A_----_-----------------?= =?ISO-8859-1?Q?-----_-----------------------------------------------?= =?ISO-8859-1?Q?---=0A__0=2E0_PCCC=5FHDR=5FMARKETINGBL___RBL=3A_Addre?= =?ISO-8859-1?Q?ss_in_email_headers_associated_with=0A_______________?= =?ISO-8859-1?Q?______________mass-marketing_=28https=3A//raptor=2Epc?= =?ISO-8859-1?Q?cc=2Ecom/RBL=29=0A_____________________________=5Blis?= =?ISO-8859-1?Q?ted_in_mailchimp=2Ecom=2Ewild=2Epccc=2Ecom=5D=0A__0=2E0?= =?ISO-8859-1?Q?_RCVD=5FIN=5FVALIDITY=5FRPBL=5FBLOCKED_RBL=3A_ADMINIS?= =?ISO-8859-1?Q?TRATOR_NOTICE=3A_The_query_to=0A_____________________?= =?ISO-8859-1?Q?_________Validity_was_blocked=2E__See=0A_____________?= =?ISO-8859-1?Q?________________https=3A//knowledge=2Evalidity=2Ecom/?= =?ISO-8859-1?Q?hc/en-us/articles/20961730681243=0A__________________?= =?ISO-8859-1?Q?____________for_more_information=2E=0A_______________?= =?ISO-8859-1?Q?_____________=5B198=2E37=2E159=2E181_listed_in_bl=2Es?= =?ISO-8859-1?Q?core=2Esenderscore=2Ecom=5D=0A__0=2E0_RCVD=5FIN=5FVAL?= =?ISO-8859-1?Q?IDITY=5FSAFE=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_?= =?ISO-8859-1?Q?The_query_to=0A______________________________Validity?= =?ISO-8859-1?Q?_was_blocked=2E__See=0A_____________________________h?= =?ISO-8859-1?Q?ttps=3A//knowledge=2Evalidity=2Ecom/hc/en-us/articles?= =?ISO-8859-1?Q?/20961730681243=0A______________________________for_m?= =?ISO-8859-1?Q?ore_information=2E=0A_____________________________=5B1?= =?ISO-8859-1?Q?98=2E37=2E159=2E181_listed_in_sa-accredit=2Ehabeas=2Ec?= =?ISO-8859-1?Q?om=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FCERTIFIED=5FBL?= =?ISO-8859-1?Q?OCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The=0A__________?= =?ISO-8859-1?Q?___________________query_to_Validity_was_blocked=2E__?= =?ISO-8859-1?Q?See=0A_____________________________https=3A//knowledg?= =?ISO-8859-1?Q?e=2Evalidity=2Ecom/hc/en-us/articles/20961730681243=0A_?= =?ISO-8859-1?Q?_____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?_________________________=5B198=2E37=2E159=2E181_list?= =?ISO-8859-1?Q?ed_in_sa-trusted=2Ebondedsender=2Eorg=5D=0A__0=2E0_UR?= =?ISO-8859-1?Q?IBL=5FBLOCKED__________ADMINISTRATOR_NOTICE=3A_The_qu?= =?ISO-8859-1?Q?ery_to_URIBL_was_blocked=2E=0A_______________________?= =?ISO-8859-1?Q?______See=0A_____________________________http=3A//wik?= =?ISO-8859-1?Q?i=2Eapache=2Eorg/spamassassin/DnsBlocklists#dnsbl-blo?= =?ISO-8859-1?Q?ck=0A______________________________for_more_informati?= =?ISO-8859-1?Q?on=2E=0A_____________________________=5BURI=3A_intuit?= =?ISO-8859-1?Q?=2Ecom=5D=0A_____________________________=5BURI=3A_ga?= =?ISO-8859-1?Q?insightcloud=2Ecom=5D=0A_____________________________?= =?ISO-8859-1?Q?=5BURI=3A_goldcast=2Eio=5D=0A__0=2E0_KAM=5FBODY=5FMAR?= =?ISO-8859-1?Q?KETINGBL=5FPCCC_Body_contains_URI_associated_with=0A_?= =?ISO-8859-1?Q?____________________________mass-marketing_=28https=3A/?= =?ISO-8859-1?Q?/raptor=2Epccc=2Ecom/RBL=29=0A_______________________?= =?ISO-8859-1?Q?______=5BURI=3A_gainsightcloud=2Ecom=5D=0A_-0=2E0_SPF?= =?ISO-8859-1?Q?=5FPASS_______________SPF=3A_sender_matches_SPF_recor?= =?ISO-8859-1?Q?d=0A__0=2E1_DKIM=5FSIGNED____________Message_has_a_DK?= =?ISO-8859-1?Q?IM_or_DK_signature=2C_not_necessarily_valid=0A_-0=2E1?= =?ISO-8859-1?Q?_DKIM=5FVALID_____________Message_has_at_least_one_va?= =?ISO-8859-1?Q?lid_DKIM_or_DK_signature=0A_-0=2E1_DKIM=5FVALID=5FAU_?= =?ISO-8859-1?Q?_________Message_has_a_valid_DKIM_or_DK_signature_fro?= =?ISO-8859-1?Q?m_author's=0A_____________________________domain=0A__?= =?ISO-8859-1?Q?1=2E0_KAM=5FMARKETINGBL=5FPCCC___Message_contains_URI?= =?ISO-8859-1?Q?_associated_with=0A_____________________________mass-?= =?ISO-8859-1?Q?marketing_=28https=3A//raptor=2Epccc=2Ecom/RBL=29=0A_?= =?ISO-8859-1?Q?_0=2E0_HTML=5FFONT=5FLOW=5FCONTRAST_BODY=3A_HTML_font?= =?ISO-8859-1?Q?_color_similar_or_identical_to=0A____________________?= =?ISO-8859-1?Q?_________background=0A__0=2E0_HTML=5FMESSAGE_________?= =?ISO-8859-1?Q?__BODY=3A_HTML_included_in_message=0A__0=2E5_KAM=5FRE?= =?ISO-8859-1?Q?ALLYHUGEIMGSRC___RAW=3A_Spam_with_image_tags_with_rid?= =?ISO-8859-1?Q?iculously_huge=0A______________________________http_u?= =?ISO-8859-1?Q?rls=0A_-0=2E4_DKIMWL=5FWL=5FHIGH_________DKIMwl=2Eorg?= =?ISO-8859-1?Q?_-_High_trust_sender=0A_-0=2E0_DKIMWL=5FWL=5FMED_____?= =?ISO-8859-1?Q?_____DKIMwl=2Eorg_-_Medium_trust_sender?=
+X-Spam-Flag: NO
+
+--91fd676ff6e9cbb3e6ad0b5fb218b927a05f7fd115741fe6948bb92db584
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+ Hello and welcome to Mailchimp (again)! Getting started with a new platfor=
+m can
+feel overwhelming, but we're here to help you get the most out of your acco=
+unt.
+Join us for a free webinar, Back to Basics: Understanding Your Audience Too=
+lkit=20
+with Mailchimp, where we=E2=80=99ll walk you through the essential tools yo=
+u'll need to
+succeed. In this session, our Onboarding Specialists will cover the fundame=
+ntal
+building blocks of Mailchimp, including: * Tags: Learn how to organize your=
+ contacts, track their interests, and
+   simplify your communication.
+ * Segments: Discover how to create dynamic segments to send highly relevan=
+t
+   campaigns to specific groups of people.
+ * The Preference Center: Give your subscribers control over their email
+   preferences, which leads to higher engagement and fewer unsubscribes.
+
+We'll walk you through these concepts with clear, step-by-step guidance so =
+you
+can leave feeling confident and ready to send your first campaign. We can't=
+ wait
+to see you there! Date: Thursday, October 9th Time: 2-3pm EST Register Here
+Today
+[https://mailchimp.registration.goldcast.io/webinar/ee189740-aece-45d0-a532=
+-21fd3b4449c4]=20
+ We can't wait to see you there, Your Mailchimp Onboarding Team Click here
+ to unsubscribe from this list or manage your preferences here .
+--91fd676ff6e9cbb3e6ad0b5fb218b927a05f7fd115741fe6948bb92db584
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml"=
+ class=3D"gs-rte gs-rte-eb-html" style=3D"color: rgb(0, 0, 0); background-c=
+olor: rgb(255, 255, 255); font-family: arial, sans-serif; margin: 0px; bord=
+er: 0px; outline: 0px; font-size: 10px; -webkit-tap-highlight-color: rgba(0=
+, 0, 0, 0); text-size-adjust: 100%; line-height: 1.42857; padding: 0px;"><h=
+ead class=3D"gs-rte gs-rte-eb-head">  <meta charset=3D"utf-8"> <!-- utf-8 w=
+orks for most cases -->  <meta name=3D"preheader" content=3D" Hello and wel=
+come to Mailchimp (again)! Getting started with a new platform can
+feel overwhelming, but we're here to help you get the most out of your acco=
+unt.
+Join us for a free webinar, Back to Basics:"><meta name=3D"viewport" conten=
+t=3D"width=3Ddevice-width"> <!-- Forcing initial-scale shouldn't be necessa=
+ry -->  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <!-- Us=
+e the latest (edge) version of IE rendering engine -->  <meta name=3D"x-app=
+le-disable-message-reformatting"> <!-- Disable auto-scale in iOS 10 Mail en=
+tirely -->  <meta name=3D"format-detection" content=3D"telephone=3Dno,addre=
+ss=3Dno,email=3Dno,date=3Dno,url=3Dno">  <!-- Tell iOS not to automatically=
+ link certain text strings. -->  <title></title> <!-- The title tag shows i=
+n email notifications, like Android 4.4. -->  <!-- Web Font / @font-face : =
+BEGIN -->  <!-- NOTE: If web fonts are not required, lines 10 - 27 can be s=
+afely removed. -->  <!-- Desktop Outlook chokes on web font references and =
+defaults to Times New Roman, so we force a safe fallback font. -->  <!--[if=
+ mso]>  <style>    * {      font-family: arial, sans-serif !important;    }=
+  </style>  <![endif]-->  <!-- All other clients get the webfont reference;=
+ some will render the font and others will silently fail to the fallbacks. =
+More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in=
+-email/ -->  <!--[if !mso]><!-->  <!-- insert web font reference, eg: <link=
+ href=3D'https://fonts.googleapis.com/css?family=3DRoboto:400,700' rel=3D's=
+tylesheet' type=3D'text/css'> -->  <!--<![endif]-->  <!--[if mso]><![endif]=
+-->  <!-- for all outlook desktop client -->  <!--[if mso 12]><![endif]--> =
+ <!-- for all outlook 2007 desktop client -->  <!--[if mso 14]><![endif]-->=
+  <!-- for all outlook 2010 desktop client -->  <!--[if mso 15]><![endif]--=
+>  <!-- for all outlook 2013 desktop client -->  <!--[if mso 16]><![endif]-=
+->  <!-- for all outlook 2016 desktop client -->  <!-- Web Font / @font-fac=
+e : END -->  <!-- CSS Reset : BEGIN -->  <!-- What it does: Makes backgroun=
+d images in 72ppi Outlook render at correct size. -->  <!--[if gte mso 9]> =
+ <xml>    <o:OfficeDocumentSettings>      <o:AllowPNG/>      <o:PixelsPerIn=
+ch>96</o:PixelsPerInch>    </o:OfficeDocumentSettings>  </xml>  <![endif]--=
+>  <!-- CSS Reset : END -->  <style type=3D"text/css" rel=3D"stylesheet" ro=
+le=3D"inline">
+a:hover,
+a:focus {
+  color: rgb(17, 85, 204);
+  text-decoration: underline;
+}
+a:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-offset: -2px;
+}
+</style>    <style type=3D"text/css" rel=3D"stylesheet" role=3D"export">
+#outlook a { padding: 0px; }
+p.MsoNormal { margin: 0px; }
+.ReadMsgBody, .ExternalClass { width: 100%; }
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,=
+ .ExternalClass td, .ExternalClass div { line-height: 100%; }
+span.yshortcuts { color: rgb(0, 0, 0); border: none; }
+span.yshortcuts:hover, span.yshortcuts:active, span.yshortcuts:focus { colo=
+r: rgb(0, 0, 0); border: none; }
+a[x-apple-data-detectors=3D"true"] { color: inherit !important; text-decora=
+tion: inherit !important; border-bottom: none !important; font-size: inheri=
+t !important; font-family: inherit !important; font-weight: inherit !import=
+ant; line-height: inherit !important; }
+.webkit { width: 100%; table-layout: fixed; text-size-adjust: 100%; }
+div[style*=3D"margin: 16px 0"] { margin: 0px !important; }
+a[x-apple-data-detectors], .unstyle-auto-detected-links a, .aBn { border-bo=
+ttom: 0px !important; cursor: default !important; color: inherit !important=
+; text-decoration: none !important; font-size: inherit !important; font-fam=
+ily: inherit !important; font-weight: inherit !important; line-height: inhe=
+rit !important; }
+.a6S { display: none !important; opacity: 0.01 !important; }
+.im { color: inherit !important; }
+img.g-img + div { display: none !important; }
+* { -webkit-font-smoothing: antialiased; }
+body { -webkit-font-smoothing: antialiased; text-size-adjust: 100%; }
+@media only screen and (min-device-width: 320px) and (max-device-width: 374=
+px) {
+  u ~ table .emailbuilder_container { min-width: 320px !important; }
+  .gs-inline-survey-nps td { min-width: 90px !important; }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 413=
+px) {
+  u ~ table .emailbuilder_container { min-width: 375px !important; }
+  .gs-inline-survey-nps td { min-width: 90px !important; }
+}
+@media only screen and (min-device-width: 414px) {
+  u ~ table .emailbuilder_container { min-width: 414px !important; }
+  .gs-inline-survey-nps td { min-width: 90px !important; }
+}</style><style gs-style-type=3D"responsive" data-type=3D"responsive" type=
+=3D"text/css" role=3D"export" rel=3D"stylesheet">@media screen and (max-wid=
+th: 480px) {
+  #email-container-main {
+    width: 100% !important;
+  }
+
+  #email-container-table {
+    width: 100% !important;
+  }
+
+  .report-img {
+    width: 100% !important;
+  }
+
+  table.gs-responsive tbody td.gs-responsive {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .rte-img-container.gs-responsive {
+    width: 100% !important;
+  }
+
+  img.gs-responsive {
+    width: 100% !important;
+  }
+
+  [rte-inline-survey-placeholder] {
+    width: 100% !important;
+  }
+
+  .rte-divider-container {
+    width: 100% !important;
+  }
+  .rte-divider-container > * {
+    width: 100% !important;
+  }
+}
+/* These styles will only apply to Apple Mail and WebKit-based browsers */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  img {
+    margin-left: 0;
+  }
+}</style><style gs-style-type=3D"force" data-type=3D"force" type=3D"text/cs=
+s" role=3D"export" rel=3D"stylesheet">table[gs-eb-block] {
+  table-layout: fixed;
+}
+
+table[gs-eb-block] [eb-block-container] {
+  overflow: hidden;
+  word-wrap: break-word;
+}</style></head><body width=3D"100%" style=3D"color: rgb(0, 0, 0); border: =
+0px; outline: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font-family: arial, sans-serif; text-size-adjust: 100%; m=
+argin: 0; mso-line-height-rule: exactly; background-color: #ffffff; line-he=
+ight: 1.42857; padding: 0px; font-size: 13px;" class=3D"fluid-layout gs-rte=
+ gs-rte-eb-body gs-edit-mode" id=3D"ic0b"><div style=3D"display: none; font=
+-size: 0px; color: #ffffff; line-height: 0px; max-height: 0px; overflow: hi=
+dden; mso-hide:all;"> Hello and welcome to Mailchimp (again)! Getting start=
+ed with a new platform can
+feel overwhelming, but we're here to help you get the most out of your acco=
+unt.
+Join us for a free webinar, Back to Basics:</div><table width=3D"0%" cellpa=
+dding=3D"0" cellspacing=3D"0" align=3D"center"><tbody><tr><td style=3D"heig=
+ht:0;line-height:0;font-size:0;padding-bottom:0px;"><a aria-hidden=3D"true"=
+ tabindex=3D"-1" clicktracking=3D"off" href=3D"https://gateway.us2.gainsigh=
+tcloud.com/v1/communications/subscription/tracking?t=3DYmE1ZGZhYzktMDhkMS00=
+ODZmLWJlOGQtY2RhYTQ3MGZkNTc5&d=3DeyJnc2lkIjoiMUkwMDc1SUZEQk8zMzk5RUxRS1gwSU=
+9TVVRIR1pKR0ZNUVhVIn0=3D&ty=3DSW1hZ2UtQW5jaG9y"> <img clicktracking=3D"off"=
+ disable-tracking=3D"true" src=3D"https://gateway.us2.gainsightcloud.com/v1=
+/communications/subscription/trackingImg?t=3DYmE1ZGZhYzktMDhkMS00ODZmLWJlOG=
+QtY2RhYTQ3MGZkNTc5&d=3DeyJnc2lkIjoiMUkwMDc1SUZEQk8zMzk5RUxRS1gwSU9TVVRIR1pK=
+R0ZNUVhVIn0=3D&ty=3DSW1hZ2U=3D" alt=3D"" style=3D"border-bottom-width:0in;b=
+order-left-width:0in;border-right-width:0in;
+border-top-width:0in;height:1px;margin-bottom:0in;margin-left:0in;margin-ri=
+ght:
+0in;margin-top:0in;padding-bottom:0in;padding-left:0in;padding-right:0in;
+padding-top:0in;width:1px" border=3D"0" width=3D"1" height=3D"1">  </a> </t=
+d></tr></tbody></table><table id=3D"body-container-table" role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolo=
+r=3D"#ffffff" style=3D"text-size-adjust: 100%; background-color: #ffffff;">
+              <tbody style=3D"text-size-adjust: 100%;">
+                <tr style=3D"text-size-adjust: 100%;">
+                  <td id=3D"body-container-td" style=3D"text-size-adjust: 1=
+00%; padding: 0px; vertical-align: top; padding-left: 0px; padding-right: 0=
+px; padding-top: 0px; padding-bottom: 0px;" valign=3D"top">  <!--	      Set=
+ the email width. Defined in two places:	      1. max-width for all clients=
+ except Desktop Windows Outlook, allowing the email to squish on narrow but=
+ never go wider than 630px.	      2. MSO tags for Desktop Windows Outlook e=
+nforce a 630px width.	  -->  <table align=3D"center" id=3D"email-container-=
+table" role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" width=3D"100%" bgcolor=3D"#ffffff" style=3D"text-size-adjust: 100%; back=
+ground-color: #ffffff;">
+              <tbody style=3D"text-size-adjust: 100%;">
+                <tr style=3D"text-size-adjust: 100%;">
+                  <td id=3D"email-container-td" valign=3D"top" style=3D"tex=
+t-size-adjust: 100%; padding: 0px; vertical-align: top; padding-left: 0px; =
+padding-right: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Ari=
+al, sans-serif; color: rgb(0, 0, 0);">    <!-- Email Body : BEGIN -->    <d=
+iv id=3D"email-body-main" gs-editable=3D"true" style=3D"line-height: 1.4285=
+7; font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; tex=
+t-size-adjust: 100%;">        <div id=3D"iap4p" style=3D"line-height: 1.428=
+57; margin: 0px; text-size-adjust: 100%; padding-top: 0px; padding-right: 0=
+px; padding-bottom: 0px; padding-left: 0px; width: 100%; vertical-align: to=
+p; font-family: arial, sans-serif; font-size: 13px; min-height: 28px; box-s=
+izing: border-box;"><div dir=3D"ltr" id=3D"iqccc" style=3D"font-size: 13px;=
+ padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%=
+; line-height: 1.38; color: rgb(0, 0, 0);"><div data-text-merge=3D"" style=
+=3D"line-height: 1.42857; font-size: 13px; padding-top: 0px; padding-bottom=
+: 0px; margin: 0px; text-size-adjust: 100%;"><span id=3D"iog2h" style=3D"te=
+xt-size-adjust: 100%; color: rgb(0, 0, 0); background-color: transparent;">=
+Hello and welcome to Mailchimp </span><i id=3D"if9ux" style=3D"text-size-ad=
+just: 100%; color: rgb(0, 0, 0); background-color: transparent;">(again</i>=
+<span id=3D"ibahi" style=3D"text-size-adjust: 100%; color: rgb(0, 0, 0); ba=
+ckground-color: transparent;">)!<div custom-br=3D"" style=3D"line-height: 1=
+.42857; font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px=
+; text-size-adjust: 100%;"></div><div custom-br=3D"" style=3D"line-height: =
+1.42857; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adju=
+st: 100%; font-size: inherit;">&nbsp;</div></span></div></div><div dir=3D"l=
+tr" id=3D"ium8y" style=3D"font-size: 13px; padding-top: 0px; padding-bottom=
+: 0px; margin: 0px; text-size-adjust: 100%; line-height: 1.2; color: rgb(0,=
+ 0, 0);"><div data-text-merge=3D"" style=3D"line-height: 1.42857; font-size=
+: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjus=
+t: 100%;"><span id=3D"iud9z" style=3D"text-size-adjust: 100%; color: rgb(0,=
+ 0, 0); background-color: transparent;">Getting started with a new platform=
+ can feel overwhelming, but we're here to help you get the most out of your=
+ account. Join us for a free webinar, </span><i id=3D"ia6ge" style=3D"text-=
+size-adjust: 100%; color: rgb(0, 0, 0); background-color: transparent;">Bac=
+k to Basics: Understanding Your Audience Toolkit</i><span id=3D"iz4y8" styl=
+e=3D"text-size-adjust: 100%; color: rgb(0, 0, 0); background-color: transpa=
+rent;"> with Mailchimp, where we=E2=80=99ll walk you through the essential =
+tools you'll need to succeed.<div custom-br=3D"" style=3D"line-height: 1.42=
+857; font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; t=
+ext-size-adjust: 100%;"></div><div custom-br=3D"" style=3D"line-height: 1.4=
+2857; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust:=
+ 100%; font-size: inherit;">&nbsp;</div><div custom-br=3D"" style=3D"line-h=
+eight: 1.42857; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-si=
+ze-adjust: 100%; font-size: inherit;">&nbsp;</div></span></div></div><div d=
+ir=3D"ltr" id=3D"igp2h" style=3D"font-size: 13px; padding-top: 0px; padding=
+-bottom: 0px; margin: 0px; text-size-adjust: 100%; line-height: 1.2; color:=
+ rgb(0, 0, 0);"><span id=3D"ia63c" style=3D"text-size-adjust: 100%; color: =
+rgb(0, 0, 0); background-color: transparent;">In this session, our Onboardi=
+ng Specialists will cover the fundamental building blocks of Mailchimp, inc=
+luding:</span></div><ul style=3D"list-style-type: disc; font-size: 13px; ma=
+rgin-top: 0px; margin-bottom: 0px; padding-left: 40px;"><li dir=3D"ltr" id=
+=3D"ichgh" style=3D"text-size-adjust: 100%; margin: 0px; line-height: 1.428=
+57; color: rgb(0, 0, 255); background-color: transparent;"><span dir=3D"ltr=
+" id=3D"i3g7a" style=3D"text-size-adjust: 100%; line-height: 1.2; color: rg=
+b(0, 0, 0);"><span id=3D"i78ut" style=3D"text-size-adjust: 100%; background=
+-color: transparent; font-weight: 700; color: rgb(0, 0, 0);">Tags:</span><s=
+pan id=3D"i406i" style=3D"text-size-adjust: 100%; background-color: transpa=
+rent; color: rgb(0, 0, 0);"> Learn how to organize your contacts, track the=
+ir interests, and simplify your communication.</span></span></li><li dir=3D=
+"ltr" id=3D"i4a6i" style=3D"text-size-adjust: 100%; margin: 0px; line-heigh=
+t: 1.42857; color: rgb(0, 0, 255); background-color: transparent;"><span di=
+r=3D"ltr" id=3D"i75od" style=3D"text-size-adjust: 100%; line-height: 1.2; c=
+olor: rgb(0, 0, 0);"><span id=3D"i2oif" style=3D"text-size-adjust: 100%; ba=
+ckground-color: transparent; font-weight: 700; color: rgb(0, 0, 0);">Segmen=
+ts:</span><span id=3D"i0o4f" style=3D"text-size-adjust: 100%; background-co=
+lor: transparent; color: rgb(0, 0, 0);"> Discover how to create dynamic seg=
+ments to send highly relevant campaigns to specific groups of people.</span=
+></span></li><li dir=3D"ltr" id=3D"ifpek" style=3D"text-size-adjust: 100%; =
+margin: 0px; line-height: 1.42857; color: rgb(0, 0, 255); background-color:=
+ transparent;"><span dir=3D"ltr" id=3D"i9rxg" style=3D"text-size-adjust: 10=
+0%; line-height: 1.2; color: rgb(0, 0, 0);"><span id=3D"ism7t" style=3D"tex=
+t-size-adjust: 100%; background-color: transparent; font-weight: 700; color=
+: rgb(0, 0, 0);">The Preference Center:</span><span id=3D"inbxh" style=3D"t=
+ext-size-adjust: 100%; background-color: transparent; color: rgb(0, 0, 0);"=
+> Give your subscribers control over their email preferences, which leads t=
+o higher engagement and fewer unsubscribes.</span></span></li></ul><div sty=
+le=3D"line-height: 1.42857; font-size: 13px; padding-top: 0px; padding-bott=
+om: 0px; margin: 0px; text-size-adjust: 100%;"><font color=3D"#0000ff" styl=
+e=3D"text-size-adjust: 100%;"><div custom-br=3D"" style=3D"line-height: 1.4=
+2857; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust:=
+ 100%; font-size: inherit;">&nbsp;</div></font></div><div dir=3D"ltr" id=3D=
+"i2gf4" style=3D"font-size: 13px; padding-top: 0px; padding-bottom: 0px; ma=
+rgin: 0px; text-size-adjust: 100%; line-height: 1.2; color: rgb(0, 0, 0);">=
+<span id=3D"iaj3l" style=3D"text-size-adjust: 100%; color: rgb(0, 0, 0); ba=
+ckground-color: transparent;">We'll walk you through these concepts with cl=
+ear, step-by-step guidance so you can leave feeling confident and ready to =
+send your first campaign. We can't wait to see you there!<div custom-br=3D"=
+" style=3D"line-height: 1.42857; font-size: 13px; padding-top: 0px; padding=
+-bottom: 0px; margin: 0px; text-size-adjust: 100%;"></div><div custom-br=3D=
+"" style=3D"line-height: 1.42857; padding-top: 0px; padding-bottom: 0px; ma=
+rgin: 0px; text-size-adjust: 100%; font-size: inherit;">&nbsp;</div></span>=
+</div><div dir=3D"ltr" id=3D"ib2tu" style=3D"font-size: 13px; padding-top: =
+0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%; line-height:=
+ 1.2; color: rgb(0, 0, 0);"><span id=3D"itg61" style=3D"text-size-adjust: 1=
+00%; color: rgb(0, 0, 0); background-color: transparent;"><b style=3D"text-=
+size-adjust: 100%;">Date:</b> Thursday, October 9th <b style=3D"text-size-a=
+djust: 100%;">Time:</b> 2-3pm EST<div custom-br=3D"" style=3D"line-height: =
+1.42857; font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0p=
+x; text-size-adjust: 100%;"></div><div custom-br=3D"" style=3D"line-height:=
+ 1.42857; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adj=
+ust: 100%; font-size: inherit;">&nbsp;</div></span></div><div dir=3D"ltr" i=
+d=3D"iivl5" style=3D"font-size: 13px; padding-top: 0px; padding-bottom: 0px=
+; margin: 0px; text-size-adjust: 100%; line-height: 1.2;"><font color=3D"#0=
+00000" style=3D"text-size-adjust: 100%;"><a contenteditable=3D"false" id=3D=
+"ii7pv" target=3D"_blank" data-rte-link-token=3D"" data-rte-link-uuid=3D"gs=
+-bWKf7_DRADT1tH9np_Blvux8zk3vi3_a2" href=3D"http://gsnlink.intuit.com/ls/cl=
+ick?upn=3Du001.P7f6kRBo7kPyx9r33Gz57ZzoZVVy0-2Bl5HvIm37SNlG8hZ6VOJT9WyXuhjq=
+paoESMXDa6Oi3OvnhRK3uatu5b3U44NtENdqveIUcO4rFGG8mdmPRcAP6N7McEzFtVTvsBHfyia=
+-2Bu305CZTK0hj0sjlg-3D-3Dj6d-_JSBWwqaEwKRJGz7VRm3MOUr-2B04kaQPAhDkAaS-2BwJ2=
+Rt0sy8YsprTW5WcZ-2FoM45Ke6mdnRhk-2BJmQU3x3-2FcFzOI7iYZ9nmT8TLBNppntVYcfgvOe=
+2yoxNzdX-2Bv-2Bye6lLddRgj5khehzQLnSchtVPux4mrD-2FmYMOjz4zo3bJOldlOtqIjWLhKR=
+ApsyN14hID9lKA5Jtu6G7Nq5TB2SJZyamuwzvifLXOB2fbr2ugRkdDSF1xwt1aI5JnYuUVAkS67=
+RUJCIAIgrxv44wFtihx7a0tdcfOxVeH9JjTGqbmaq06Jie4iIKk2z2ESkLNtKc6iYbxlZ9G8xae=
+qV8T8Pk76Ubp5yUdDnpSo060c8aWsHtN2i7hTUAShOZOg-2FfCkQLWP-2BBlzicI-2Fe20FRc-2=
+BwUELOlgc34BDWKcu6tMwqNU3sa-2Bl164r2BGs54JCiJG6iHrRDdzjDvnSfDDBC63Krl843WtT=
+NuUocSpXzCSdFZ0sO8gqjBHat5zVFLObSeXiL3UmMe8" aria-label=3D"Register Here To=
+day" class=3D"" style=3D"cursor: pointer; text-decoration: underline; text-=
+size-adjust: 100%; color: rgb(0, 0, 0);"><font id=3D"ibe9l" color=3D"#3456c=
+8" style=3D"text-size-adjust: 100%;">Register Here Today</font></a><div cus=
+tom-br=3D"" style=3D"line-height: 1.42857; font-size: 13px; padding-top: 0p=
+x; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%;"></div><div cu=
+stom-br=3D"" style=3D"line-height: 1.42857; padding-top: 0px; padding-botto=
+m: 0px; margin: 0px; text-size-adjust: 100%; font-size: inherit;">&nbsp;</d=
+iv></font></div><div dir=3D"ltr" id=3D"ib5cw" style=3D"font-size: 13px; pad=
+ding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%; li=
+ne-height: 1.2; color: rgb(0, 0, 0);"><span id=3D"iprdm" style=3D"text-size=
+-adjust: 100%; color: rgb(0, 0, 0); background-color: transparent;">We can'=
+t wait to see you there,<div custom-br=3D"" style=3D"line-height: 1.42857; =
+font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-s=
+ize-adjust: 100%;"></div><div custom-br=3D"" style=3D"line-height: 1.42857;=
+ padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%=
+; font-size: inherit;">&nbsp;</div></span></div><div dir=3D"ltr" id=3D"ii8t=
+h" style=3D"font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin:=
+ 0px; text-size-adjust: 100%; line-height: 1.2; color: rgb(0, 0, 0);"><i id=
+=3D"iz34d" style=3D"text-size-adjust: 100%; color: rgb(0, 0, 0); background=
+-color: transparent;">Your Mailchimp Onboarding Team</i></div><div custom-b=
+r=3D"" style=3D"line-height: 1.42857; padding-top: 0px; padding-bottom: 0px=
+; margin: 0px; text-size-adjust: 100%; font-size: inherit;">&nbsp;</div></d=
+iv>    </div>    <!-- Email Body : END -->  </td>
+                </tr>
+              </tbody>
+            </table></td>
+                </tr>
+              </tbody>
+            </table><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"center"><tbody><tr><td style=3D"padding-bottom:10px;"><center s=
+tyle=3D"color:#999;"><small>Click <a href=3D"http://gsnlink.intuit.com/ls/c=
+lick?upn=3Du001.P7f6kRBo7kPyx9r33Gz57S7CpmjLdBTmohXj8ZUPVDeUOccnXStNimBxybB=
+hsIiTlIFB4G5ObWzOhdOFA5pEVMxAaZbY9DIvmFx4Egh0YVQGBbutdqvX2-2BYwsR2iMtyrTc5A=
+oc7wDsGWQcW3Q5KERnOcQ-2FaUbmxbxfecbut8ww1jM3Jslt9ZUVXFpyETlH09s6RjYcZQ36Gn8=
+lTm6-2FzJBQjIIUyzU5o9OhFG0btFTRsZbj-2B2leHVcgV15yC-2FMo5Y6QuIXJulPWnn5-2BDR=
+U3SziNqP2hDBFuXnStKYDp6Lfn-2F3j-2BVs24Vc8iBOqVJvBMQPee1j8A6saE6CE1xU7x9is-2=
+FiWot-2FgRlM9QnS21sHIRMhrmfLIQcMdszxacq-2BLj0elwo3G-2F1ZvwB5M4f9H69kwKpCmsz=
+DzvctANS6P5Hg-2BAaM-3Dkaqh_JSBWwqaEwKRJGz7VRm3MOUr-2B04kaQPAhDkAaS-2BwJ2Rt0=
+sy8YsprTW5WcZ-2FoM45Ke6mdnRhk-2BJmQU3x3-2FcFzOI7iYZ9nmT8TLBNppntVYcfgvOe2yo=
+xNzdX-2Bv-2Bye6lLddRgj5khehzQLnSchtVPux4mrD-2FmYMOjz4zo3bJOldlOtqIjWLhKRAps=
+yN14hID9lKA5Jtu6G7Nq5TB2SJZyamuwzvifLXOB2fbr2ugRkdDSF1xwt1aI5JnYuUVAkS67RUJ=
+CIAIgrxv44wFtihx7a0tdcfOxVeH9JjTGqbmaq06Jie4iIKk2z2ESkLNtKc6iYbxlZ9G8xaeqV8=
+T8Pk76Ubp5yUdDnpSo060c8aWsHtN2hfkkiXXJ4f2jNO8w7YOBLRsF-2F1-2BN4LQMmtoYuCJXQ=
+QKWKWQLYTiEgSEj-2BBaXc6jTRTROw0rxyPB-2FHZkZ0Eqv9tjqUVrvWor0ypiRWirntTjwoDpT=
+-2FzZvsBCRcyRAM-2B8S20ddp2SlgNiur67-2Bvt1-2FVk" aria-label=3D"Click here to=
+ unsubscribe from this list">here</a> to unsubscribe from this list or mana=
+ge your preferences <a href=3D"http://gsnlink.intuit.com/ls/click?upn=3Du00=
+1.P7f6kRBo7kPyx9r33Gz57S7CpmjLdBTmohXj8ZUPVDeUOccnXStNimBxybBhsIiTlIFB4G5Ob=
+WzOhdOFA5pEVJKWqY9wYPiPJo7N3r5Es3GQnn0mL6zxS8GDAoQRJEGKJ53hVtrb8Hm80npXgXtn=
+NyavDrWyQ3erpW0jnTI6-2Frqct4zhKxrks-2FC9jWVPymaTogA4mxRhRqamuaGy8p5zvu43r2a=
+NEttKOms4U0DlwxzXY8Nj6z313YcskJXDCsxY4PJh7U3G3uFMsrRoQv9akAdONv-2BdsBBlQFIE=
+FiPvYRBOwdy7csbtEzg57Br3-2F2RVM33n7tThzIk75J7cFagblFPb6OZBIsWSPzO06chRkto38=
+LoGOwxO9BN4Yo5xRP9Lq6Y-2F3XJPX7EuZEgm9YqpHfQIVAPagCDyxMm-2BA7-2B4WY4-3DThiS=
+_JSBWwqaEwKRJGz7VRm3MOUr-2B04kaQPAhDkAaS-2BwJ2Rt0sy8YsprTW5WcZ-2FoM45Ke6mdn=
+Rhk-2BJmQU3x3-2FcFzOI7iYZ9nmT8TLBNppntVYcfgvOe2yoxNzdX-2Bv-2Bye6lLddRgj5khe=
+hzQLnSchtVPux4mrD-2FmYMOjz4zo3bJOldlOtqIjWLhKRApsyN14hID9lKA5Jtu6G7Nq5TB2SJ=
+ZyamuwzvifLXOB2fbr2ugRkdDSF1xwt1aI5JnYuUVAkS67RUJCIAIgrxv44wFtihx7a0tdcfOxV=
+eH9JjTGqbmaq06Jie4iIKk2z2ESkLNtKc6iYbxlZ9G8xaeqV8T8Pk76Ubp5yUdDnpSo060c8aWs=
+HtN2jU3mQ29l9wCoISy19b0pVU-2B7v5O8qicr2Jk-2FaNPYG6HrDuFg8phihuWffDU5bKVLHdG=
+jAnsGShlN3Srmm53yPgFeelYcZLkHyaMiLJlJo3RBGeOwqYjADV-2FmcjzPDP6Y9Ix-2BCGJYa4=
+bKytsahuExPQ" aria-label=3D"Click here to manage your preferences">here</a>=
+.</small></center></td></tr></tbody></table><img src=3D"http://gsnlink.intu=
+it.com/wf/open?upn=3Du001.J-2B4fs91ukOyWCw2mlgAqN03nMN7XjkFQ-2F6Ru8vvLCDlg9=
+Du4yT-2FmtsRYZ0QbmamdSdw479yzsc-2BQs6CiE4jKbphkUE1ORun51qsGJBK-2FdH2prMXtk9=
+p55x3SwUbXscCNnJZoFXG9zh-2FwHskAGgYLxQEEuNTYN4x3IP3Fi8tDz8-2FkabFc-2BOy9Z-2=
+BhKRYx7dmY9kOVVg2vTitnCxz-2Bcz88hYOUw7-2B5K3NabLZ22EQNsmGfmfe28PzbmMbugxrBh=
+V-2Fy93Oe47-2F7E0WgUtTjXOKqrmGw2GQlE-2BD21AbfPqo9430xUdJ5uxyQL-2FNoKPsxfvJG=
+fHtOnwkUBQMLvaMvNFY7zJjxVVOiV1sEBoghNo1Wln5l6Y9-2Fh75TXOM3capC0SS3200Cfg3tq=
+jbxCzzbEe3AbdjLYU6avtu-2BQsPF-2BtSQgx2CfI6eU3ha-2BgQdFOZ6IQDO4OdFzousXEJfM-=
+2BgTq1xCHY3yU5-2BKFh1ug2RA0HB65egfruaXTeaLNphZTIEROQhgV" alt=3D"" width=3D"=
+1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !impo=
+rtant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !im=
+portant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !i=
+mportant;padding-bottom:0 !important;padding-right:0 !important;padding-lef=
+t:0 !important;"/></body></html>
+--91fd676ff6e9cbb3e6ad0b5fb218b927a05f7fd115741fe6948bb92db584--

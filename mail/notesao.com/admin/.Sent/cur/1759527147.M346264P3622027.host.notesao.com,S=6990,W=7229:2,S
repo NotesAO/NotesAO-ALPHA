@@ -1,0 +1,239 @@
+MIME-Version: 1.0
+Date: Fri, 03 Oct 2025 16:32:26 -0500
+From: Gabriel Thomas <admin@notesao.com>
+To: David <david@notesao.com>, Sales <sales@notesao.com>, Ceo
+ <ceo@notesao.com>
+Subject: The Best Option Current Status
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <470b992f1ea7b459bf5ffafc2023a9df@notesao.com>
+X-Sender: admin@notesao.com
+Organization: NotesAO
+Content-Type: multipart/alternative;
+ boundary="=_ba085bd50b543794f207ff6904028f8d"
+
+--=_ba085bd50b543794f207ff6904028f8d
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=UTF-8;
+ format=flowed
+
+Team,
+
+Here's the current state for The Best Option and what we still need.
+
+Configured
+
+	*
+
+Users: set up
+	*
+
+Referral Types: set up
+	*
+
+Groups: set up
+	*
+
+Facilitators: 4 listed
+	*
+
+Ethnicities: set up
+	*
+
+Curriculum: set up
+	*
+
+Case Managers: 1 listed
+	*
+
+Clients: present across all programs
+	*
+
+Templates: BIPP only -- Behavior Contracts, Completion, Entrance, Exit, 
+Progress, UA, Victim
+
+Missing
+
+	*
+
+Victim data
+	*
+
+Attendance data for all programs
+	*
+
+Intake Packet data
+	*
+
+Templates for SA and Anger (all document types)
+	*
+
+Stage of Change notes
+	*
+
+Curriculum notes
+
+Actions
+
+	*
+
+Data load: import victim, attendance, and intake packet datasets.
+	*
+
+Templates: create and upload SA and Anger packs mirroring BIPP set (BC, 
+Completion, Entrance, Exit, Progress, UA, Victim).
+	*
+
+Notes: add Stage of Change notes and Curriculum notes to client records 
+where applicable.
+	*
+
+Staffing: confirm if more case managers are needed or if one is 
+sufficient.
+	*
+
+QA: validate group mappings and template rendering across programs.
+
+Gabriel Thomas
+NotesAO Senior Developer 		 [1]
+
+  		682.201.6458 [2] · admin@notesao.com
+
+
+
+Links:
+------
+[1] https://notesao.com
+[2] tel:+16822016458
+--=_ba085bd50b543794f207ff6904028f8d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 10pt; font-family: Verdana,Gen=
+eva,sans-serif'>
+<p data-start=3D"50" data-end=3D"55">Team,</p>
+<p data-start=3D"57" data-end=3D"129">Here&rsquo;s the current state for <s=
+trong data-start=3D"86" data-end=3D"105">The Best Option</strong> and what =
+we still need.</p>
+<p data-start=3D"131" data-end=3D"141">Configured</p>
+<ul data-start=3D"142" data-end=3D"454">
+<li data-start=3D"142" data-end=3D"159">
+<p data-start=3D"144" data-end=3D"159">Users: set up</p>
+</li>
+<li data-start=3D"160" data-end=3D"186">
+<p data-start=3D"162" data-end=3D"186">Referral Types: set up</p>
+</li>
+<li data-start=3D"187" data-end=3D"205">
+<p data-start=3D"189" data-end=3D"205">Groups: set up</p>
+</li>
+<li data-start=3D"206" data-end=3D"236">
+<p data-start=3D"208" data-end=3D"236">Facilitators: <strong data-start=3D"=
+222" data-end=3D"227">4</strong> listed</p>
+</li>
+<li data-start=3D"237" data-end=3D"260">
+<p data-start=3D"239" data-end=3D"260">Ethnicities: set up</p>
+</li>
+<li data-start=3D"261" data-end=3D"283">
+<p data-start=3D"263" data-end=3D"283">Curriculum: set up</p>
+</li>
+<li data-start=3D"284" data-end=3D"315">
+<p data-start=3D"286" data-end=3D"315">Case Managers: <strong data-start=3D=
+"301" data-end=3D"306">1</strong> listed</p>
+</li>
+<li data-start=3D"316" data-end=3D"356">
+<p data-start=3D"318" data-end=3D"356">Clients: present across all programs=
+</p>
+</li>
+<li data-start=3D"357" data-end=3D"454">
+<p data-start=3D"359" data-end=3D"454">Templates: <strong data-start=3D"370=
+" data-end=3D"383">BIPP only</strong> &mdash; Behavior Contracts, Completio=
+n, Entrance, Exit, Progress, UA, Victim</p>
+</li>
+</ul>
+<p data-start=3D"456" data-end=3D"463">Missing</p>
+<ul data-start=3D"464" data-end=3D"648">
+<li data-start=3D"464" data-end=3D"479">
+<p data-start=3D"466" data-end=3D"479">Victim data</p>
+</li>
+<li data-start=3D"480" data-end=3D"520">
+<p data-start=3D"482" data-end=3D"520">Attendance data for <strong data-sta=
+rt=3D"502" data-end=3D"509">all</strong> programs</p>
+</li>
+<li data-start=3D"521" data-end=3D"543">
+<p data-start=3D"523" data-end=3D"543">Intake Packet data</p>
+</li>
+<li data-start=3D"544" data-end=3D"603">
+<p data-start=3D"546" data-end=3D"603">Templates for <strong data-start=3D"=
+560" data-end=3D"566">SA</strong> and <strong data-start=3D"571" data-end=
+=3D"580">Anger</strong> (all document types)</p>
+</li>
+<li data-start=3D"604" data-end=3D"629">
+<p data-start=3D"606" data-end=3D"629">Stage of Change notes</p>
+</li>
+<li data-start=3D"630" data-end=3D"648">
+<p data-start=3D"632" data-end=3D"648">Curriculum notes</p>
+</li>
+</ul>
+<p data-start=3D"650" data-end=3D"657">Actions</p>
+<ol data-start=3D"658" data-end=3D"1103">
+<li data-start=3D"658" data-end=3D"728">
+<p data-start=3D"661" data-end=3D"728">Data load: import victim, attendance=
+, and intake packet datasets.</p>
+</li>
+<li data-start=3D"729" data-end=3D"856">
+<p data-start=3D"732" data-end=3D"856">Templates: create and upload SA and =
+Anger packs mirroring BIPP set (BC, Completion, Entrance, Exit, Progress, U=
+A, Victim).</p>
+</li>
+<li data-start=3D"857" data-end=3D"951">
+<p data-start=3D"860" data-end=3D"951">Notes: add Stage of Change notes and=
+ Curriculum notes to client records where applicable.</p>
+</li>
+<li data-start=3D"952" data-end=3D"1032">
+<p data-start=3D"955" data-end=3D"1032">Staffing: confirm if more case mana=
+gers are needed or if one is sufficient.</p>
+</li>
+<li data-start=3D"1033" data-end=3D"1103">
+<p data-start=3D"1036" data-end=3D"1103">QA: validate group mappings and te=
+mplate rendering across programs.</p>
+</li>
+</ol>
+<div id=3D"signature">
+<table style=3D"font-family: Segoe UI, Arial, Helvetica, sans-serif; font-s=
+ize: 14px; line-height: 1.45; color: #1f2937;" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"width: 6px; background: #172a4d;">&nbsp;</td>
+<td style=3D"padding: 8px 12px;" valign=3D"top">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-right: 8px;" valign=3D"top">
+<div style=3D"font-size: 16px; font-weight: bold; line-height: 1.25; color:=
+ #111827;">Gabriel Thomas</div>
+<div style=3D"margin-top: 2px; line-height: 1.25; color: #374151;">NotesAO =
+Senior Developer</div>
+</td>
+<td style=3D"padding-left: 35px;" valign=3D"top"><a style=3D"text-decoratio=
+n: none;" href=3D"https://notesao.com"> <img style=3D"display: block; borde=
+r: 0; outline: none; text-decoration: none; height: 42px; width: auto;" src=
+=3D"https://notesao.com/img/email/logo-notesao.png" alt=3D"NotesAO" height=
+=3D"42" /> </a></td>
+</tr>
+<tr>
+<td style=3D"padding-top: 8px;" colspan=3D"2"><a style=3D"color: #111827; t=
+ext-decoration: none;" href=3D"tel:+16822016458">682.201.6458</a> <span sty=
+le=3D"color: #9ca3af;">&middot;</span> <a style=3D"color: #111827; text-dec=
+oration: none;" href=3D"mailto:admin@notesao.com">admin@notesao.com</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body></html>
+
+--=_ba085bd50b543794f207ff6904028f8d--

@@ -1,0 +1,544 @@
+Return-Path: <01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000@amazonses.messaging.squareup.com>
+Delivered-To: vanmartin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id WWHCAZvvuWibhTQAIW4ynA
+	(envelope-from <01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000@amazonses.messaging.squareup.com>)
+	for <vanmartin@notesao.com>; Thu, 04 Sep 2025 14:59:23 -0500
+Return-path: <01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000@amazonses.messaging.squareup.com>
+Envelope-to: vanmartin@notesao.com
+Delivery-date: Thu, 04 Sep 2025 14:59:23 -0500
+Received: from a119-14.smtp-out.us-west-2.amazonses.com ([54.240.119.14]:56105)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000@amazonses.messaging.squareup.com>)
+	id 1uuG78-0000000ERMQ-0VRz
+	for vanmartin@notesao.com;
+	Thu, 04 Sep 2025 14:59:23 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=clz7t3pgfbh32jgz3sgosjlq64ni7aba; d=messaging.squareup.com;
+	t=1757015958;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=p1AfW9Xz+m8dFlxLwPe0MjDic1ZCGmLF5nw9Ig46L8s=;
+	b=UtWDECjGl9MoCG7em9I+unrEz2r0epL+dXmGnQJ1xjR7Vmyv+MhEUdPmKB5fB76I
+	CkjZnFDrzcnEzWm2lyCBFhCuBIVX5jGJVASqCezzcAlFiZATN0TJte3M+3u9lX91pTt
+	frBewhH+VoNKc4mSkOsAOa39qE26Xiyglj69Mm8g=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1757015958;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=p1AfW9Xz+m8dFlxLwPe0MjDic1ZCGmLF5nw9Ig46L8s=;
+	b=nJ7o3wJ6zpn4NwlD1VHJFtgLGc0q0FIX9FemSEKncG0wHBCohmfiRw4Zr1Yrt36G
+	enOnus5nfUlkQ+uKPCO10cN3kGO8Hxs12ZBRhvnF+13qLBn3dApOE5ZA0+zJaN9Wmt9
+	n+0kcjP77i/LFUuqPXcWLSyRsohxyxTzp4j014QE=
+Date: Thu, 4 Sep 2025 19:59:17 +0000
+From: Square Online <noreply@messaging.squareup.com>
+To: vanmartin@notesao.com
+Message-ID: <01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000@us-west-2.amazonses.com>
+Subject: Finish setting up your site and make more sales
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-EMS-Request-ID: 0caccf88-55f6-42a9-b994-08e8aa073a08
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-ERS-Token: CCAQ3IilwIbXqb72ARi43fu9hqONsIsB
+List-Unsubscribe: <https://squareup.com/email/subscriptions/unsubscribe?scope=marketing&subcategory=square_pro_tips&locale=&request_id=0caccf88-55f6-42a9-b994-08e8aa073a08&recipient=CCAQ3IilwIbXqb72ARi43fu9hqONsIsB&wastruncated=0>,
+ <mailto:CAEaZgokMGNhY2NmODgtNTVmNi00MmE5LWI5OTQtMDhlOGFhMDczYTA4EhwKCW1hcmtldGluZxIPc3F1YXJlX3Byb190aXBzGiBDQ0FRM0lpbHdJYlhxYjcyQVJpNDNmdTlocU9Oc0lzQiIgTXQRqFlBIg6WvzAafOS8eivF169aaktyL60hUvDZxYU=@reply2.squareup.com>
+Feedback-ID: ::1.us-west-2.+kCNGv0wlznHgVfb/dmZu6QdzMqHR+fLcxV3+TNug8w=:AmazonSES
+X-SES-Outgoing: 2025.09.04-54.240.119.14
+X-Spam-Status: No, score=1.8
+X-Spam-Score: 18
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Square More features to help you attract more customers that
+    keep coming back. 
+ Content analysis details:   (1.8 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.119.14 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.119.14 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [54.240.119.14 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: squareupmessaging.com]
+                             [URI: awstrack.me]
+                             [URI: squareup.com]
+                             [URI: squarecdn.com]
+                             [URI: emlcdn.net]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: awstrack.me]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or identical to
+                             background
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.8 KAM_INFOUSMEBIZ        Prevalent use of
+                             .info|.us|.me|.me.uk|.biz|xyz|id|rocks|life
+                             domains in spam/malware
+X-Spam-Flag: NO
+
+<!DOCTYPE html> <html lang=3D"en-US" xmlns:v=3D"urn:schemas-microsoft-com:v=
+ml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"> <head> <meta name=
+=3D"viewport" content=3D"width=3Ddevice-width"> <meta http-equiv=3D"Content=
+-Type" content=3D"text/html;charset=3Dutf-8"> <title>Square</title> <!--[if=
+ mso]><style type=3D"text/css" data-premailer=3D"ignore">.codelink a{color:=
+;text-decoration:none}a{color:;text-decoration:none}.button td{background-c=
+olor:}.nomso{display:none;font-size:0;line-height:0}table{font-size:1px;lin=
+e-height:0;mso-margin-top-alt:1px}table.MsoNormalTable{font-family:Helvetic=
+a,sans-serif}.durv{line-height:14px!important}</style><![endif]--><!--[if !=
+mso]><!--><link rel=3D"stylesheet" type=3D"text/css" href=3D"https://square=
+-mailstrom-production-s.squarecdn.com/_shared/fonts/square-sans/square-sans=
+.css" data-premailer=3D"ignore"> <!--<![endif]--><style type=3D"text/css" d=
+ata-premailer=3D"ignore">.blueButton td td:hover,.blueButton a:hover{backgr=
+ound-color:#05c!important}.blueButton a:hover{border:1px solid #05c!importa=
+nt}.dark .blueButton td td:hover,.dark .blueButton a:hover{background-color=
+:#005fe5!important}.dark .blueButton a:hover{border:1px solid #005fe5!impor=
+tant}a[x-apple-data-detectors]{color:inherit!important;text-decoration:none=
+!important;font-size:inherit!important;font-family:inherit!important;font-w=
+eight:inherit!important;line-height:inherit!important}b a{color:#121212}#he=
+ro a{color:#fff}#outlook a{padding:0}body{width:100%!important;margin:0 aut=
+o!important;padding:0}.ExternalClass{width:100%;line-height:100%}.ExternalC=
+lass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalC=
+lass div{line-height:100%}table,td{border-collapse:collapse;mso-table-lspac=
+e:0;mso-table-rspace:0}@media only screen and (min-width:281px){#container{=
+position:relative;top:0;left:0;right:0;bottom:0}}div[style*=3D"margin: 16px=
+ 0"]{margin:0!important}@media screen and (max-width:480px){u+#body{width:1=
+00vw!important;max-width:100%!important}}</style> <style type=3D"text/css" =
+data-premailer=3D"ignore">@media screen and (min-width:281px) and (max-widt=
+h:631px){#container .super-eyebrow{font-size:38px!important;line-height:44p=
+x!important}#container .large-heading-30{font-size:32px!important;line-heig=
+ht:38px!important}#container .large-heading-20{font-size:28px!important;lin=
+e-height:34px!important}#container .large-heading-10{font-size:26px!importa=
+nt;line-height:32px!important}#container .small-heading-30{font-size:22px!i=
+mportant;line-height:26px!important}#container .small-heading-20{font-size:=
+18px!important;line-height:24px!important}#container .paragraph-40{font-siz=
+e:18px!important;line-height:28px!important}#container .paragraph-semibold-=
+40{font-size:18px!important;line-height:28px!important}#container .fullWidt=
+h a{display:block!important}#container .column{width:inherit!important}#con=
+tainer .column .embiggen{width:600px!important;max-width:600px!important}#c=
+ontainer .column .embiggen .list td:first-child{width:inherit!important}#co=
+ntainer .column .embiggen .list td:last-child{width:500px!important}#contai=
+ner .column .embiggen .button td{width:inherit!important}#container .column=
+ .embiggen img{max-width:100%!important}#container .column .embiggen .icon{=
+max-width:inherit!important}#container .bleed img{-webkit-border-radius:0!i=
+mportant;-moz-border-radius:0!important;border-radius:0!important}#containe=
+r .desktop{display:none!important}#container .mobile{display:block!importan=
+t;font-size:inherit!important;line-height:inherit!important}#container .mob=
+ileBlock{display:block!important;padding-top:16px!important}}</style> <!--[=
+if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch=
+></o:OfficeDocumentSettings></xml><![endif]--> </head> <body background=3D"=
+#ffffff" style=3D"background-color: #ffffff" bgcolor=3D"#ffffff"><span styl=
+e=3D"color:transparent;visibility:hidden;display:none;opacity:0;height:0;wi=
+dth:0;font-size:0;">More features to help you attract more customers that k=
+eep coming back.</span><img src=3D"https://links.squareupmessaging.com/s/eo=
+/zDZjnGF_2GPML2JcOC34ewtxKJd9Bxh72Fmw3JMqxs4GYCykY3vjvIPcothY4gGXz1p9btxFVd=
+HH2GqS7X7wcj4vKza0_jdQ1vUsJGLOfhoxz6zqSFYIHM0p26KRK_5-dXvvewsx9CGVuXYFsJbWt=
+Lva3s2rqfkm8MP_ClXuAxhMhOhL7QPEK0AfwpPBR1PQwRAaT2vRNunn2A/Fzyzebcz436J32f8i=
+tzktRZEXfFOdYgT/12" style=3D"border:0;width:1px;height:1px;border-width:0px=
+!important;display:none!important;line-height:0!important;" width=3D"1" hei=
+ght=3D"1"/> <!--[if !mso]><!--><div id=3D"preheader" style=3D"font-size: 0;=
+max-height: 0;overflow: hidden;display: none"></div> <!--<![endif]--><div i=
+d=3D"container" class=3D"light" style=3D"-webkit-text-size-adjust: none;-ms=
+-text-size-adjust: none;-webkit-font-smoothing: antialiased;background-colo=
+r: #ffffff"> <table id=3D"taxi hero" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0"><tr><td align=3D"center" style=3D"padding: 0 0 24px; "><table =
+cellpadding=3D"0" cellspacing=3D"0"> <tr><td><table cellpadding=3D"0" cells=
+pacing=3D"0"> <tr><td><table align=3D"center" style=3D"background-color: #f=
+fffff" class=3D"light" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D=
+"0"><tr><td><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"><tr=
+><td width=3D"632"><table align=3D"left" style=3D"text-align: left" cellpad=
+ding=3D"0" cellspacing=3D"0"><tr><td style=3D"padding: 24px 16px 0px"><tabl=
+e cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"106"><table cellpadd=
+ing=3D"0" cellspacing=3D"0"><tr><td style=3D"line-height: 1px;padding-right=
+: 18px"><a style=3D"display: inline-block;text-decoration: none;padding: 16=
+px 0" href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks=
+.squareupmessaging.com%2Fs%2Fc%2FeGSdAG3IHSUVV1TAc-GQyGlq5CIacWJ8xjoiMDNrTn=
+in_Qv-a8zzI7SzU5VUcteJHfs937tLwjVEH5zih8ejXNWmBcALlzglHv2xJUq8f_gQx1yGe9FDp=
+j0FrdqJkMb53Z8rELELhXpqiWab0O4AbagX9unQIPXR4OZxrJR7VBIW9X5gYS6EgTlD4W4JybeO=
+M2xpsoNbFhrVlg9-bb-HSjFp-_395wwJjxXFgdU51d2MoiYsK5gJwzrK4OV7H-beUU74bQ%2Fqq=
+D5RdikspugjVuuI6B7JydtcX3vX5B4%2F12/1/01010199164fdfc0-241b9c68-be26-477b-b=
+21c-6e1f24949b7b-000000/1yoIWggGKaYfv1Eule9VYlTc8vE=3D443"><!--[if !mso]><!=
+--><img src=3D"https://square-mailstrom-production-s.squarecdn.com/_shared/=
+logo/sans-white.png" width=3D"88" height=3D"22" alt=3D"Square" style=3D"mix=
+-blend-mode: difference;display: block"><!--<![endif]--><!--[if gte mso 9]>=
+<img src=3D"https://square-mailstrom-production-s.squarecdn.com/_shared/log=
+o/sans-black.png" width=3D"88" height=3D"22" alt=3D"Square"/><![endif]--></=
+a></td></tr></table></td></tr></table></td></tr></table></td></tr></table><=
+/td></tr></table></td></tr> </table></td></tr> <tr><td width=3D"632" align=
+=3D"left"><table cellpadding=3D"0" cellspacing=3D"0"><tbody> <tr><td align=
+=3D"left" style=3D"padding: 24px 16px 0"><table cellpadding=3D"0" cellspaci=
+ng=3D"0"> <tr><td width=3D"600" style=3D"color: #121212;font-family: Square=
+SansDisplay-Medium, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, s=
+ans-serif;font-weight: bold;font-size: 36px;line-height: 42px;padding: 0 0 =
+16px" class=3D"textBlock large-heading-30"><a href=3D"https://kjfjb2yk.r.us=
+-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FGr=
+sHkXnmsWTWqMiiJByOGy7T3U_wxkzhzr0kEx27HMgQ5IIgpJt34XiFxDnPIRi2ICwlRLOrzXf6E=
+3jXK543i2xhces7WoSsxWzbAXrp-FTPd851P3QDIKtIPFvl4Wu4XXxP3HyFnSEVazVpNkDhAUBv=
+dhmrf5khhDIGGejHq18OjmB_F5hoGfe97tdWf1CEyRvGe6fC4eKoY7g2oCuvtxqlnmpjvrQ1Vpo=
+JtOoCqfu9iOi_mV1OTryhBqGEVO8j59s3CJVVcWMp0Keo0YDhnw%2Fu7oFZdafaFpeDKBisrwbl=
+tDdxKKDa_6K%2F12/1/01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-00=
+0000/qYuFH7W_QM5hosGrKGywgiUUhrA=3D443" style=3D"color:#121212; text-decora=
+tion: none;">Create your site with features that keep customers coming back=
+</a></td></tr> </table></td></tr> <tr><td style=3D"padding: 24px 16px 16px"=
+ align=3D"center" class=3D"button"><table width=3D"100%" class=3D"buttonTab=
+le" cellpadding=3D"0" cellspacing=3D"0"> <tr><td><table align=3D"left" cell=
+padding=3D"0" cellspacing=3D"0"><tr><td style=3D"background-color: #006aff;=
+width: 100%;text-align: center;font-family: SquareSansText-SemiBold, Helvet=
+ica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: bol=
+d;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;fon=
+t-size: 16px;line-height: 24px" align=3D"center" bgcolor=3D"#006aff"><a hre=
+f=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareup=
+messaging.com%2Fs%2Fc%2FU3yjqaWSJ61o7FclWtB6HcJYzaU6dsi7C8V5Mk36nGgpvPbwuwp=
+89hjEhB6SAEISoFmF0euuiH56CsG1D507mhBTcMbEVfvNN43Uf2-Xj7HYzQ828bp4xPaiJFaTuH=
+gozIq-d3_I_n_ThTKziljHrTnNJhKrq002VJjPR60jGV_FFiYyFHz6yuyG_8oJC9bWUxCsY8dKs=
+x6FL-uP-UgWKcM5sTAW4Y2ENW26QMSFg52u6TwO-q12_mTIbCS6a4w-ucyhOFixHZ_9-WgoG4nG=
+FA%2FbLrNiDsZx9c6tLxvv8OP3Jx27zRN2zOM%2F12/1/01010199164fdfc0-241b9c68-be26=
+-477b-b21c-6e1f24949b7b-000000/SwNk8c_jvcjIDXirdZjYs5RmmP8=3D443" style=3D"=
+background-color: #006aff;padding: 12px 16px;border: 1px solid #006aff;colo=
+r: #ffffff;text-decoration: none;-webkit-border-radius: 6px;-moz-border-rad=
+ius: 6px;border-radius: 6px;display: inline-block" id=3D"button-hero"><!--[=
+if gte mso 9]>&nbsp;<![endif]-->Finish setting up your site<!--[if gte mso =
+9]>&nbsp;<![endif]--></a></td></tr></table></td></tr> </table></td></tr> <t=
+r><td align=3D"center" style=3D"padding: 24px 16px 0"><table cellpadding=3D=
+"0" cellspacing=3D"0"><tr><td width=3D"600" align=3D"left"><table cellpaddi=
+ng=3D"0" cellspacing=3D"0"> <tr><td width=3D"600" class=3D"fluidImage"><a h=
+ref=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.square=
+upmessaging.com%2Fs%2Fc%2F8OTKKF4cW1Jrjs8SNZ9PFQxcR4arZ3_VBnl0_AnUb4NqhbdKy=
+cWQu9YEtaBB9IgOagqDw1Z9Mclf5LtAP4Sz1J1CN9Kar5AiGDjzAlasuOcQx6src11mIyO_L24z=
+hEGwm9MvwEPy98TT7hca_AGFJx9rtHSZlUokaQIkGRNcGrLKJ12BcxzJ6evxHuMR-xBIJ3H696T=
+-1FBM4v5NFCLgtAZg_gUa9V2iQBL03G61MGYaw8B665-KNaKyC0ZI1EW3sa0Q7cwFVOVXEVtjVk=
+-icA%2Fl944FJPPILShR6f8VNU8QZu9c7LlQGKX%2F12/1/01010199164fdfc0-241b9c68-be=
+26-477b-b21c-6e1f24949b7b-000000/rDs0LAOyLjHNBj49jYbR9UdF204=3D443" style=
+=3D"text-decoration: none"><img src=3D"https://images.emlcdn.net/cdn/143/8d=
+f0af79-8d96-4b9c-bf7e-d3278325f65a/obcouponsusen.png" width=3D"600" alt=3D"=
+Image" style=3D"width: 100%;height: auto;-ms-interpolation-mode: bicubic;-w=
+ebkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px;over=
+flow: hidden;display: block" border=3D"0"></a></td></tr> </table></td></tr>=
+</table></td></tr> </tbody></table></td></tr> </table></td></tr></table><ta=
+ble width=3D"100%" style=3D"table-layout: fixed" cellpadding=3D"0" cellspac=
+ing=3D"0"><tr><td align=3D"center"><table cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td width=3D"632" style=3D"padding: 0px 0 40px"><table cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td style=3D"padding: 24px 16px 16px"><table c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"600"><table cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td width=3D"600" class=3D"textBlock small-hea=
+ding-20" style=3D"color: #1a1a1a; font-family: SquareSansDisplay-Medium, He=
+lvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-weight=
+: bold; font-size: 20px; line-height: 28px;">Let&#x2019;s finish setting up=
+ your storefront. We have some helpful features that will delight your cust=
+omers and bring you more sales.</td></tr></table></td></tr></table></td></t=
+r></table><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"><tr><td=
+ style=3D"padding: 0 16px 24px;"><table cellpadding=3D"0" cellspacing=3D"0"=
+><tr><td width=3D"600"><table cellpadding=3D"0" cellspacing=3D"0"><br> <tr =
+valign=3D"top"><td style=3D"padding: 0px 0 0;"><table cellpadding=3D"0" cel=
+lspacing=3D"0"><tr> <th style=3D"display: inline-block; padding: 0 16px 16p=
+x 0; vertical-align: top; line-height: 1px" valign=3D"top"> <img src=3D"htt=
+ps://square-mailstrom-production-s.squarecdn.com/market/icons/market/shoppi=
+ng-basket.png" width=3D"72" style=3D"display: block"> </th> <th style=3D"di=
+splay: inline-block; padding: 0 0 16[x; vertical-align: top; text-align: le=
+ft;" valign=3D"top" align=3D"left"><table cellpadding=3D"0" cellspacing=3D"=
+0"> <tr><td width=3D"512" class=3D"textBlock small-heading-20" style=3D"fon=
+t-family: SquareSansDisplay-Medium, Helvetica, Arial, 'Hiragino Kaku Gothic=
+ Pro', Meiryo, sans-serif;font-weight: bold;font-size: 20px;line-height: 28=
+px;color: #1a1a1a">Show off featured items and top-selling products</td></t=
+r> <tr><td width=3D"512" class=3D"textBlock paragraph-30" style=3D"font-fam=
+ily: SquareSansText-Regular, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', =
+Meiryo, sans-serif;font-weight: normal;font-size: 16px;line-height: 24px;co=
+lor: #1a1a1a">Create special sections on your site to highlight best-sellin=
+g products, featured items, and more.<div style=3D"line-height:16px">&nbsp;=
+</div><a style=3D"text-decoration: none;color: #005ad9;font-family: SquareS=
+ansText-SemiBold, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, san=
+s-serif;font-weight: bold" href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me=
+/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2F5s7uvDr3piiJjvrKLO6Fw=
+btb2aNHSUyzMthrLYRZfSEaM1HRbgO6NA5BnRid9UG33Mwv50O2awX1n5JSLV2Im99IaYMfCWlz=
+5fdgsHUoUC56AsHOM3Pontl6rDmXzKX2uHOFkrEOO5X6hVwnFpUyH0_YhNanvlW_-gIFAxI37yW=
+cYN7_Jw7IETZqGiZhoGAQXR2qXJYuYmU-vHytIXGfUyFQ-4izNnw_2KCfg5HeqbuH3YNUK88Rgm=
+USI_A78H6Ul6mqZhioJhmEuNcqbVGD7_1CBQAuneyEBQ9JG-k8nO0v9cDk7XFo_80jLRPPU-1xw=
+i74EN-6jllMEwsncraTnA%2F4bTRLURXxkOZA7OlobVGLN40fJPFPXR6%2F12/1/01010199164=
+fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000/Z4TUMLmIciiFn9QhPovLahA-j=
+JQ=3D443">Learn how to display featured items=E2=86=92</a><br></td></tr> </=
+table></th> </tr></table></td></tr> <tr valign=3D"top"><td style=3D"padding=
+: 40px 0 0;"><table cellpadding=3D"0" cellspacing=3D"0"><tr> <th style=3D"d=
+isplay: inline-block; padding: 0 16px 16px 0; vertical-align: top; line-hei=
+ght: 1px" valign=3D"top"> <img src=3D"https://square-mailstrom-production-s=
+.squarecdn.com/market/icons/market/loud-speaker.png" width=3D"72" style=3D"=
+display: block"> </th> <th style=3D"display: inline-block; padding: 0 0 16[=
+x; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"><t=
+able cellpadding=3D"0" cellspacing=3D"0"> <tr><td width=3D"512" class=3D"te=
+xtBlock small-heading-20" style=3D"font-family: SquareSansDisplay-Medium, H=
+elvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight=
+: bold;font-size: 20px;line-height: 28px;color: #1a1a1a">Use pop-ups and ba=
+nners to grab attention</td></tr> <tr><td width=3D"512" class=3D"textBlock =
+paragraph-30" style=3D"font-family: SquareSansText-Regular, Helvetica, Aria=
+l, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: normal;font-=
+size: 16px;line-height: 24px;color: #1a1a1a">Advertise discounts, sales, or=
+ collect email addresses with easy-to-make banners and pop-ups.<div style=
+=3D"line-height:16px">&nbsp;</div><a style=3D"text-decoration: none;color: =
+#005ad9;font-family: SquareSansText-SemiBold, Helvetica, Arial, 'Hiragino K=
+aku Gothic Pro', Meiryo, sans-serif;font-weight: bold" href=3D"https://kjfj=
+b2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs=
+%2Fc%2F0_uTTHZP-EdzMsjuYFtJnC0cL3PL-WkfMGBo4Wlkp2YtP171Uf8Gm5LpFCPZ5vgJ9N1W=
+Nqthk0kZVs3x5dENlRjD-UNR-JZPyLJVQxB5ZqQ2XxA8pVWek5NnYFxi3hgqdq2N8gk5ICGra4f=
+jSwcCRwM02CHG8thtHahy_74NgMj4C1QG2eg1DkiSmwAICRTcLnrZCjuSQvqVzFsEUXzC11QMTs=
+22C32O9S0dfJpKbhbeD578ZN52yjVnIhCJw7BkplAhTvpRxB9jjY-kEMvFNXKZHQY5X7Ui6JLxb=
+YfTgVhEtwUBxbAt%2FxBMHnx5GrpUolExkHUAcK0IAisWuaAHT%2F12/1/01010199164fdfc0-=
+241b9c68-be26-477b-b21c-6e1f24949b7b-000000/E5V9CHr2aPs74MGkChGOyKKUXSs=3D4=
+43">Create a pop-up or banner=E2=86=92</a><br></td></tr> </table></th> </tr=
+></table></td></tr> <tr valign=3D"top"><td style=3D"padding: 40px 0 0;"><ta=
+ble cellpadding=3D"0" cellspacing=3D"0"><tr> <th style=3D"display: inline-b=
+lock; padding: 0 16px 16px 0; vertical-align: top; line-height: 1px" valign=
+=3D"top"> <img src=3D"https://square-mailstrom-production-s.squarecdn.com/m=
+arket/icons/market/tablet.png" width=3D"72" style=3D"display: block"> </th>=
+ <th style=3D"display: inline-block; padding: 0 0 16[x; vertical-align: top=
+; text-align: left;" valign=3D"top" align=3D"left"><table cellpadding=3D"0"=
+ cellspacing=3D"0"> <tr><td width=3D"512" class=3D"textBlock small-heading-=
+20" style=3D"font-family: SquareSansDisplay-Medium, Helvetica, Arial, 'Hira=
+gino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: bold;font-size: 20px=
+;line-height: 28px;color: #1a1a1a">Personalize your site icon</td></tr> <tr=
+><td width=3D"512" class=3D"textBlock paragraph-30" style=3D"font-family: S=
+quareSansText-Regular, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo=
+, sans-serif;font-weight: normal;font-size: 16px;line-height: 24px;color: #=
+1a1a1a">Create a customized icon customers can install on their phone&#x201=
+9;s home screen and let them access your site just like using an app. Only =
+available with a paid plan. <div style=3D"line-height:16px">&nbsp;</div><a =
+style=3D"text-decoration: none;color: #005ad9;font-family: SquareSansText-S=
+emiBold, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;f=
+ont-weight: bold" href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https=
+:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FWI29kb2ThpBUbaG036T29p3IcWe44v=
+CpGRSx8ngGcTUkbaVv4mZLiY6pheGsH6kFmSV20mU6bYXo2T5em9LtVvCrGpvwJUf16OIgs2qBZ=
+CNIjQVcOEbKu63ys7HvaZFG8rJFNvNxJXUJio2rnturL3Db3mpviex60nwfYOd0WDqYP5jvNNwD=
+L96vZ-eyHViPPeM-yM692tr1iQZnuMLFPZn6VQtvig4u81m5r8-u7QJCjBbu6uarYC2m2Hl7NRp=
+bPTQXKqj1UXPej64kn4BXOYODCdhs3_PdHi9dh9CDH9XGtd2pYocAfdNWD4wab-nP-4JmuAoeBg=
+%2FMX-h5buwZG3gPbj2L_oDPLHOBxsazjSR%2F12/1/01010199164fdfc0-241b9c68-be26-4=
+77b-b21c-6e1f24949b7b-000000/naSoDkIkkmicHZTqUrcSlCmQkwY=3D443">Update your=
+ site icon -&gt;</a></td></tr> </table></th> </tr></table></td></tr> <tr va=
+lign=3D"top"><td style=3D"padding: 40px 0 0;"><table cellpadding=3D"0" cell=
+spacing=3D"0"><tr> <th style=3D"display: inline-block; padding: 0 16px 16px=
+ 0; vertical-align: top; line-height: 1px" valign=3D"top"> <img src=3D"http=
+s://square-mailstrom-production-s.squarecdn.com/market/icons/market/star.pn=
+g" width=3D"72" style=3D"display: block"> </th> <th style=3D"display: inlin=
+e-block; padding: 0 0 16[x; vertical-align: top; text-align: left;" valign=
+=3D"top" align=3D"left"><table cellpadding=3D"0" cellspacing=3D"0"> <tr><td=
+ width=3D"512" class=3D"textBlock small-heading-20" style=3D"font-family: S=
+quareSansDisplay-Medium, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meir=
+yo, sans-serif;font-weight: bold;font-size: 20px;line-height: 28px;color: #=
+1a1a1a">Feature customer reviews*</td></tr> <tr><td width=3D"512" class=3D"=
+textBlock paragraph-30" style=3D"font-family: SquareSansText-Regular, Helve=
+tica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: no=
+rmal;font-size: 16px;line-height: 24px;color: #1a1a1a">Add customer reviews=
+ to your products and easily show social proof to help shoppers make buying=
+ decisions. Only available with a paid plan. <div style=3D"line-height:16px=
+">&nbsp;</div><a style=3D"text-decoration: none;color: #005ad9;font-family:=
+ SquareSansText-SemiBold, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Mei=
+ryo, sans-serif;font-weight: bold" href=3D"https://kjfjb2yk.r.us-west-2.aws=
+track.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2F-tYAetnBnC5d6=
+P90vSm0BcA5iWrMAfjejAf2yqY0xP_T3auLKCE7duDebWRaAw_NJWWB51_hXj5nt6C44Uqc_GO8=
+0dYJmXpdaAKUoKiY-cUy16fvVohsC5HHEnUqef6oRQNI1dP6687G_uREgGaliM7DcRfuwQ7ZB_6=
+a7NM_0_YEl9mFyARTO8D-_vndHao7ZwjRWSO68B4u5apVYmSu0spJw4s3vYrQKcqEjhiq7mRhVg=
+J0GxTst4bzO3nB9H5TWvCKZx1jW852cR7idkdj2NTF4TitGuRQOsjd9gxzE-m3CSmGK8DD1FYIn=
+8_g%2FP-PHpR3nXe6ItyG-fayqL52s7Lt648eB%2F12/1/01010199164fdfc0-241b9c68-be2=
+6-477b-b21c-6e1f24949b7b-000000/iDsykgIGvQZOX4OvbaqotmwjRd0=3D443">Add cust=
+omer reviews -&gt;</a></td></tr> </table></th> </tr></table></td></tr> <tr =
+valign=3D"top"><td style=3D"padding: 40px 0 0;"><table cellpadding=3D"0" ce=
+llspacing=3D"0"><tr> <th style=3D"display: inline-block; padding: 0 16px 16=
+px 0; vertical-align: top; line-height: 1px" valign=3D"top"> <img src=3D"ht=
+tps://square-mailstrom-production-s.squarecdn.com/market/icons/market/shopp=
+ing-cart.png" width=3D"72" style=3D"display: block"> </th> <th style=3D"dis=
+play: inline-block; padding: 0 0 16[x; vertical-align: top; text-align: lef=
+t;" valign=3D"top" align=3D"left"><table cellpadding=3D"0" cellspacing=3D"0=
+"> <tr><td width=3D"512" class=3D"textBlock small-heading-20" style=3D"font=
+-family: SquareSansDisplay-Medium, Helvetica, Arial, 'Hiragino Kaku Gothic =
+Pro', Meiryo, sans-serif;font-weight: bold;font-size: 20px;line-height: 28p=
+x;color: #1a1a1a">Remind customers to buy with abandoned cart emails*</td><=
+/tr> <tr><td width=3D"512" class=3D"textBlock paragraph-30" style=3D"font-f=
+amily: SquareSansText-Regular, Helvetica, Arial, 'Hiragino Kaku Gothic Pro'=
+, Meiryo, sans-serif;font-weight: normal;font-size: 16px;line-height: 24px;=
+color: #1a1a1a">Drive more sales by reminding customers about items in thei=
+r cart with automatic customized emails. Only available with a paid plan. <=
+div style=3D"line-height:16px">&nbsp;</div><a style=3D"text-decoration: non=
+e;color: #005ad9;font-family: SquareSansText-SemiBold, Helvetica, Arial, 'H=
+iragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: bold" href=3D"htt=
+ps://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessagin=
+g.com%2Fs%2Fc%2F3rtfjPBUox2QLuBWx-XZ-geaW0d1Rr4zcTKMfOP93UHay-htylAr20rp2Og=
+gjTCwFJ3RLoHUtnAiXSd6hzrklN-odrFhLjmGgFqHPVfKKR7Q7BhczIRLDmm_RAXGyKZ6RGjSEm=
+6J0-TMr0ulgpOcdl_Ac-L3qW0ZE4-qlnEjhz9cHPlKWBPT0qBlQJtmr_bIn_BVb_5RLkp-WlBfu=
+54rj98WjRuNRNpZ3aBCZ_7yJXTOecnSXle2b91Ny0aE9dD_Mqt761fEP-CGGVd4YHNuc3dZ4LdK=
+zf1vuuXe52B5QqdcbOSrzzHCLDk-LQpaLAKH%2FS83BT6drBTMsGDANWkLNt2m2orVuuSio%2F1=
+2/1/01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000/moS9XgASBc=
+dIJDdXq2ACAN8jhDw=3D443">Create abandoned cart emails -&gt;</a></td></tr> <=
+/table></th> </tr></table></td></tr> </table></th> </tr></table></td></tr> =
+<table width=3D"100%" class=3D"single default" cellpadding=3D"0" cellspacin=
+g=3D"0"><tr><td align=3D"center" style=3D"padding: 0 0px 40px"><table cellp=
+adding=3D"0" cellspacing=3D"0"><tr><td width=3D"600" style=3D"border-radius=
+: 15px;background-color: #F5FC9F;padding: 16px" class=3D"singleCell" bgcolo=
+r=3D"#F5FC9F"><table width=3D"100%" class=3D"left" style=3D"text-align: lef=
+t" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"font-family: Square=
+SansText-Regular, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, san=
+s-serif;font-weight: normal;font-size: 14px;line-height: 21px;color: #1a1a1=
+a;padding: 0px 0 8px" class=3D"textBlock paragraph-20"> <span class=3D"16 b=
+old green" style=3D"font-size: 18px;line-height: 40px;font-weight: 600;colo=
+r: #1A4C37">*Drive more orders with an upgrade today!</span> <br><span clas=
+s=3D"16 green" style=3D"font-size: 16px;line-height: 24px;color: #1A4C37"> =
+Select features require an upgrade to the Plus plan. Drive orders, streamli=
+ne operations, and deliver a more personal experience to your customers wit=
+h an upgrade today!</span></br> <br><a style=3D"text-decoration: none; colo=
+r: rgb(0, 90, 217); font-family: SquareSansText-SemiBold, Helvetica, Arial,=
+ &quot;Hiragino Kaku Gothic Pro&quot;, Meiryo, sans-serif; font-weight: bol=
+d;" href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.s=
+quareupmessaging.com%2Fs%2Fc%2FH9RqWQNf9qoO03gwadRc2wFJggl73VjnNMlgNwwANAr2=
+BXNc8KR_Vk5KPxlPZ17b7C3rey0Zx_p-GRLcSGsR7BuipVvZAqy1afXQXk0jf3HdnhSnQcDNuu1=
+yqEwHVsX8M_r6bJJ2_v7HGGQ4PJIKxyC-Ad63X1t9jNNpFAT5KlCtRPhl_hd4KaCdk2zkICnnF6=
+3fHRgc7mSnBo-iFWwbI3ZeIBcOx58KD153qpQLKR2908fr2hzYE0LMwuo5X9x8ZHcjiz0WlUNO5=
+LdxVUNAmctRW9vKGx8zF8LZp39E1-fbGZ7SfDnmCDHvCpwBlLdxBDgP6w%2FQpJ2dtDPy--Fg9O=
+bCCV5SfAB_UWitjZ7%2F12/1/01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949=
+b7b-000000/GbgpxhwLlDAIye1TOLLFsrDcYjA=3D443">Upgrade today &gt;</a></br> <=
+/td></tr></table></td></tr></table></td></tr></table> </table></td></tr></t=
+able></td></tr></table></td></tr></table></td></tr></table> <table width=3D=
+"100%" style=3D"table-layout: fixed" cellpadding=3D"0" cellspacing=3D"0"><t=
+r><td style=3D"" align=3D"center" bgcolor=3D"#ffffff"><table cellpadding=3D=
+"0" cellspacing=3D"0"> <tr><td> <table width=3D"100%" style=3D"width: 100%;=
+ table-layout: fixed; background-color: #ffffff;" cellpadding=3D"0" cellspa=
+cing=3D"0" bgcolor=3D"#ffffff"> <tbody> <tr> <td align=3D"center" style=3D"=
+padding: 0 16px"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> =
+<td width=3D"600"> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+"><!----> <tbody> <tr> <td style=3D"font-size: 1px; line-height: 1px; borde=
+r-top: 1px solid #b3b3b3;" height=3D"1"> &nbsp;</td> </tr><!----> <tr> <td =
+style=3D"padding: 40px 0"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbo=
+dy> <tr> <td style=3D"line-height: 1px;"><a id=3D"logo" href=3D"https://kjf=
+jb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2F=
+s%2Fc%2FZIlbGEADl9Eu2D3bpQzTRwhkaHih6EZVfd1xuu6ynks9vberG5QciRqQZJjeis6_2e3=
+orudhJKjapPoxvfiTYIyRDLg3QNIVnHoFTIQcENzmuj6AG2jxFpDiLaFmQqjIvuIta8keSxuP4l=
+Ch6jqYyOA-DCOFA7tKBHG_-nYh2piep7tVwnmP9BIJWHLq_jdVTufXY6PVc_8l_7-L38BCgmeJx=
+26w5xtbA8-lLUIsbF4EDrPbxDlIen4vjqmIHIwkLAxC4ZxHL0Njl_xuff2JPUtP1QhpW5NbMFOP=
+GHaWViwRF7HYfAeRlFpp9PeeekoKUIHLFnOxrF8_DbYLSztUU2Lop5kalOEkD6s8XHoF6eU%2FP=
+GGUV2vm90kAJ6rRjqcd_K-puRMEF5RU%2F12/1/01010199164fdfc0-241b9c68-be26-477b-=
+b21c-6e1f24949b7b-000000/Skp-adh2a_C2Dj6w52vKLpg-ZOA=3D443" style=3D"displa=
+y: inline-block; text-decoration: none;"><span class=3D"gmail" style=3D"dis=
+play: none"><img src=3D"https://square-mailstrom-production-s.squarecdn.com=
+/_shared/logo/sans-white.png" width=3D"88" height=3D"22" alt=3D"Square" sty=
+le=3D"mix-blend-mode: difference; display: block;"></span><span class=3D"no=
+tGmail"><!----><img src=3D"https://square-mailstrom-production-s.squarecdn.=
+com/_shared/logo/sans-black.png" width=3D"88" height=3D"22" alt=3D"Square" =
+style=3D"display: block;"><!----></span></a></td> </tr> </tbody> </table> <=
+/td> </tr> </tbody> </table> <!----> <table width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0"> <tbody> <tr> <td class=3D"social"> <table cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody> <tr> <td style=3D"line-height: 1px;"><a h=
+ref=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.square=
+upmessaging.com%2Fs%2Fc%2FXR8Kb1tuHXlnWOoH73BI0nWENxs7jpyRt2qk-r-c-FAWqIMoD=
+Tfpf_Y3sVoxI6WT0YLMhEVRZh62-NukoJ38HIuycBYhAtgNDZma1n2KD6g2P-YcsJ-QAEuPL-zQ=
+xHVh-QDWqq4DM1LB8BkiyzVHAUGrSBDNcFhiOvXMlkWf9KnIv0-SKancmjVizGQcLU_1akbCYrZ=
+CV-b_0gpVIgY77I2DKqJM7-C2xrl2-4KD9uWq5-TGKF-unLsPXtslKgMMFqFkCQy_tpSHpRriKH=
+BE9ezp9Z6HOlZtBu-hJEEZAaP7YNfFwf6lGncBL0ZBLE3ounz8D-j_qiej3P33MXpsRUXCVcpLR=
+uj7o7amVy0IA7SbXLfsGA%2FEiAf0Z1_7LN6T6HABaECGPCNC3OSfMMr%2F12/1/01010199164=
+fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000/bB89oSyFsA9xBHP2Bk4VCAygR=
+eY=3D443" style=3D"text-decoration: none; color: #1a1a1a;"><span class=3D"g=
+mail" style=3D"display: none"><img src=3D"https://square-mailstrom-producti=
+on-s.squarecdn.com/market/icon/facebook-smw.png" width=3D"24" height=3D"24"=
+ alt=3D"Facebook" style=3D"mix-blend-mode: difference; display: block;"></s=
+pan><span class=3D"notGmail"><!----><img src=3D"https://square-mailstrom-pr=
+oduction-s.squarecdn.com/market/icon/facebook-smb.png" width=3D"24" height=
+=3D"24" alt=3D"Facebook" style=3D"display: block;"><!----></span></a></td> =
+<td style=3D"line-height: 1px; padding: 0 4px"><a href=3D"https://kjfjb2yk.=
+r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%=
+2FyA1PczRxglhCfRRQqT_DKok6asIFdmnLyGBsAHqjCqVBB4tn8vbuwTSr__QSCKFdXGlYr_-P8=
+yhShvIuCoZ43qINr2f7BLoiEYDVZDkYcxnqt8etJsWHZI6r3CY2QymmkQmG31tOQVJr-7BEHxZh=
+mq8md4Xqq8qgCwMMeNRip8hI2otj_HiYONw6oYUwez6CsWQnWJz4t83l0-AmHuOTQwfd6Miij2w=
+_6hZbQDj1749TDW734_Z6g5pukwLs3H5uRmYrHJXxwADJmjsFY8z92_a7Bqp_K6Lb1oax-AS-eQ=
+qQyodeJNxdOm125eVEI3vI9AFji5jPE-ghP1DxY6lLpKZxSdhVf59jthlMQZY-wL2lRWF6VaZs5=
+w%2FiXDx15dz6UUSeART1DwL97FTFeMYMYU0%2F12/1/01010199164fdfc0-241b9c68-be26-=
+477b-b21c-6e1f24949b7b-000000/s3b1fEFibBOfIrh5oIQWVWd8Aps=3D443" style=3D"t=
+ext-decoration: none; color: #1a1a1a;"><span class=3D"gmail" style=3D"displ=
+ay: none"><img src=3D"https://square-mailstrom-production-s.squarecdn.com/m=
+arket/icon/instagram-smw.png" width=3D"24" height=3D"24" alt=3D"Instagram" =
+style=3D"mix-blend-mode: difference; display: block;"></span><span class=3D=
+"notGmail"><!----><img src=3D"https://square-mailstrom-production-s.squarec=
+dn.com/market/icon/instagram-smb.png" width=3D"24" height=3D"24" alt=3D"Ins=
+tagram" style=3D"display: block;"><!----></span></a></td> <td style=3D"line=
+-height: 1px;"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https=
+:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FAepqGqRIgp1Gc15DSamCbJXRDPgNCj=
+UEsD0QFQQECcx6fXldwXxLtFoaCQHv_tc5d03L2YY3bkZNGptHNSMIsfnGXsovLYkKLbFiALwff=
+VYht3yui-t_2gfLwaLr0XtVeC37maICYyJtiZapTuH4VmNJREhtVpRWdGvHdGjubg3J8gUBi6JK=
+RA38qwJm0xNgq3ueSpgKGeUUWMxn2ms5QkElfHTVtlR56h7NrhkAS3JHQ_DYsiXBeEmz8nYLXkk=
+QUWaxVPgiFi30NRW9-lRzjgw98coGQFp5cYcqB8AtvuStGgmHy-aYKZH3BYcOhuhHm6cp_Vj8_o=
+U-mEkwMBA%2F377F7qSiWNZNxwJ12nmeP7Fw_-r9mCxb%2F12/1/01010199164fdfc0-241b9c=
+68-be26-477b-b21c-6e1f24949b7b-000000/KHollyBGeOT4SID-T62XHBrpq1k=3D443" st=
+yle=3D"text-decoration: none; color: #1a1a1a;"><span class=3D"gmail" style=
+=3D"display: none"><img src=3D"https://square-mailstrom-production-s.square=
+cdn.com/market/icon/x-social-smw.png" width=3D"24" height=3D"24" alt=3D"X" =
+style=3D"mix-blend-mode: difference; display: block;"></span><span class=3D=
+"notGmail"><!----><img src=3D"https://square-mailstrom-production-s.squarec=
+dn.com/market/icon/x-social-smb.png" width=3D"24" height=3D"24" alt=3D"X" s=
+tyle=3D"display: block;"><!----></span></a></td> </tr> </tbody> </table> </=
+td> </tr> </tbody> </table><!----> <table cellpadding=3D"0" cellspacing=3D"=
+0"> <tbody> <tr> <td style=3D"padding: 16px 0 40px"> <table cellpadding=3D"=
+0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"textBlock paragraph-20" sty=
+le=3D"font-family: SquareSansText-Regular, Helvetica, Arial, 'Hiragino Kaku=
+ Gothic Pro', Meiryo, sans-serif; font-weight: normal; font-size: 14px; lin=
+e-height: 21px; color: #1a1a1a; padding: 0px 0 16px;"> <!----> Square<br><!=
+----><a style=3D"text-decoration: none; letter-spacing: -0.01em; font-famil=
+y: SquareSansText-Regular, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Me=
+iryo, sans-serif; font-weight: normal; color: #1a1a1a;"> 1955 Broadway, Sui=
+te 600 <!----><br>Oakland, CA 94612 <!----> <!----></a> </td> </tr><!----> =
+<!----> <!----> <!----> <!----> <tr> <td class=3D"textBlock paragraph-20" s=
+tyle=3D"font-family: SquareSansText-Regular, Helvetica, Arial, 'Hiragino Ka=
+ku Gothic Pro', Meiryo, sans-serif; font-weight: normal; font-size: 14px; l=
+ine-height: 21px; color: #1a1a1a; padding: 0px 0 16px;"> <!----> <a href=3D=
+"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmess=
+aging.com%2Fs%2Fc%2FpJv76NpFulwv3JTVgNvYu2_DPWfefKenRaSAWO5mgRFuP5-R6nJxg59=
+tzAyyDWVYfdccHO0WPf8mVAa6Mm1L3WlKW9fumQaKOHRy77N-9iMSB2-6tZ5g69OEMEnjVNmFkJ=
+zgAKcPwxc1eCbpixsNF-wAJmh6VEKAJn9FF0g9f_omdbLZzjjeeBRp-RugHTrn_dE27TdbUFj3i=
+j7NNbomgHZmkCZ3cqqMJKJTBpRBHEHT0VLDQxWTorMBQ_XnJvYwHw4g63XFS4FDalKrm84ZnUVV=
+KR6TGktEQ2psfYFiYp5FJOIpeOeFjjArbLnbJ47zuW-oeNh1Ad02ga5Eb3q73U1Y3f-hki8iFMQ=
+j22Lcb9WzIOYLRE-ItMaznfU-l32X-znqNbS3UybHymw9-72Td0aszwLz2KNfgFazJRSA%2FNuh=
+c8BexZxkN_9AC2T9W7nMzxAN5qjik%2F12/1/01010199164fdfc0-241b9c68-be26-477b-b2=
+1c-6e1f24949b7b-000000/CyPO691IwHspZIqBqD10oMd0TzA=3D443" style=3D"text-dec=
+oration: none; font-family: SquareSansText-SemiBold, Helvetica, Arial, 'Hir=
+agino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: bold; letter-spaci=
+ng: -0.01em; color: #1a1a1a;">Square Privacy Policy</a> </td> </tr><!----> =
+<!----> <!----> <tr> <td class=3D"textBlock paragraph-20" style=3D"font-fam=
+ily: SquareSansText-Regular, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', =
+Meiryo, sans-serif; font-weight: normal; font-size: 14px; line-height: 21px=
+; color: #1a1a1a; padding: 0px 0 16px;"> <a href=3D"https://kjfjb2yk.r.us-w=
+est-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Feh%2FzLK=
+13UdlsibS6IFA1F4eXaRVDmZKwU14N6ViegMNaJAmMHrV33nyh3vWwcbKA2C9731Jj-Y155Y6Nt=
+W2CoZkDqWnF1E3576hlK2nypJmTImYTSM_WqKTZ80oHNb71fH_POLk1fsBs_VDBUSEzCuvhFIeg=
+-ukx7XlHpsZ-0QJMRCsRQcF1F7G0jxooM7j301xSydGzkyw2jNl_MZKgIgXmMHkNK5qdHd5OE7E=
+ozlsCSmznnOOVEzv_JGo5SMd2jlzYJEQNZYyKr4TEdPLopvCGhHqX7JiXq_ortYjOPgPpgmC06y=
+t2GQsBvKeYS7DExTIJFV_cKA-6j5tUKfv6q5_SlcLisPOl_iRWRVoffGMGbmB0WuOVJm2wCwvpb=
+wqjw5JVRKYyuSWuqpa3mZhTqvmB6hmiXn50c4JbPj3tLVS%2FA6v79XI0a78grwEYTFqzi-_JbF=
+OXqo3k%2F12/1/01010199164fdfc0-241b9c68-be26-477b-b21c-6e1f24949b7b-000000/=
+uTiQ0CJPLE2x_lHUOhGCpLvALT4=3D443" style=3D"text-decoration: none; font-fam=
+ily: SquareSansText-SemiBold, Helvetica, Arial, 'Hiragino Kaku Gothic Pro',=
+ Meiryo, sans-serif; font-weight: bold; letter-spacing: -0.01em; color: #1a=
+1a1a;">Unsubscribe or manage your preferences</a> </td> </tr><!----> </tbod=
+y> </table> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </t=
+d> </tr> </tbody> </table> </td></tr> <tr><td style=3D"font-size: 0;line-he=
+ight: 0">&nbsp;</td></tr> </table></td></tr></table> </div> <img alt=3D"" s=
+rc=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/I0/01010199164fdfc0-241b9c68=
+-be26-477b-b21c-6e1f24949b7b-000000/NKPJ4J1VzaBJsV2qaf3GJe7XQhY=3D443" styl=
+e=3D"display: none; width: 1px; height: 1px;">
+</body> </html>

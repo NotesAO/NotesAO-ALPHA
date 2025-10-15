@@ -1,0 +1,172 @@
+MIME-Version: 1.0
+Date: Wed, 27 Aug 2025 11:23:30 -0500
+From: admin@notesao.com
+To: Isa Bell <isa@twilio.com>
+Subject: Re: Twilio Followup
+In-Reply-To: <CAHbFJSMqB_aO73YQBnGWAWpxNfk_ozLRkqKNhtaWOZrxnCTT4A@mail.gmail.com>
+References: <CAHbFJSMqB_aO73YQBnGWAWpxNfk_ozLRkqKNhtaWOZrxnCTT4A@mail.gmail.com>
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <7b0c4bcc330a371abfdfee0136202dc1@notesao.com>
+X-Sender: admin@notesao.com
+Content-Type: multipart/alternative;
+ boundary="=_f5faf39d082fc899e26754a05b37b817"
+
+--=_f5faf39d082fc899e26754a05b37b817
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+
+Hi Isa,
+
+Yes, we are interested in having access to the API to build out an 
+automated daily group text reminder from our server.
+
+I would love any and all guides or how to material you can provide. I 
+created a trial account and look around the dashboard but that's about 
+it for now.
+
+We are currently using the service "Text-em-all" for our text reminders 
+and it works well, but the biggest constraint is that they do not offer 
+an integratable API to automate their process. We have to keep 
+spreadsheets with numbers and columns for text that we load into their 
+site manually and send. Since our system stores all this data its just a 
+lot of extra work. Also, we are paying about $200 to send unlimited 
+messages to about 700 unique numbers. We actually send about 7000 
+messages monthly.
+
+So my main question is 1. how exactly does your API work and what are 
+some of its requirements to run and 2. what type of pricing would we be 
+looking at monthly for all this?
+
+Best,
+
+Gabriel
+
+On 2025-08-26 16:02, Isa Bell wrote:
+
+> Hi Gabriel,
+> 
+> Just to make sure we're heading in the right direction for your SMS 
+> project in the US, there are basically two options for getting started 
+> with Twilio:
+> 
+> You can have developers build a custom SMS solution using our APIs, 
+> which is super flexible if you want something tailored to your exact 
+> needs. Or, if you don't want to deal with coding, you can use a 
+> ready-made solution from one of our partners that works right out of 
+> the box.
+> 
+> Do you have developer resources available, or are you looking for 
+> something that doesn't require any technical setup? Let me know which 
+> direction sounds more like what you need.
+> 
+> Isa Bell
+> Digital Sales
+> [1]
+> 
+> EMAIL
+> isa@twilio.com
+> 
+> Isa Bell is powered by AI and may generate information that is 
+> inaccurate or does not meet your needs or expectations. You should 
+> independently verify this information before using it. Twilio is not 
+> responsible for your use of this generated information, which does not 
+> modify your agreement with Twilio. For more information on how Isa Bell 
+> processes and protects your personal information, review Twilio's 
+> Privacy Notice.
+> Unsubscribe or manage email preferences [2]
+
+
+
+Links:
+------
+[1] https://www.twilio.com?utm_source=email_signature
+[2] 
+https://pages.twilio.com/TW_SG_Email-Preference-Center.html?mkt_unsubscribe=1
+--=_f5faf39d082fc899e26754a05b37b817
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 10pt; font-family: Verdana,Gen=
+eva,sans-serif'>
+<p>Hi Isa,</p>
+<p>Yes, we are interested in having access to the API to build out an autom=
+ated daily group text reminder from our server.</p>
+<p>I would love any and all guides or how to material you can provide. I cr=
+eated a trial account and look around the dashboard but that's about it for=
+ now.</p>
+<p>We are currently using the service "Text-em-all" for our text reminders =
+and it works well, but the biggest constraint is that they do not offer an =
+integratable API to automate their process. We have to keep spreadsheets wi=
+th numbers and columns for text that we load into their site manually and s=
+end. Since our system stores all this data its just a lot of extra work. Al=
+so, we are paying about $200 to send unlimited messages to about 700 unique=
+ numbers. We actually send about 7000 messages monthly.&nbsp;</p>
+<p>So my main question is 1. how exactly does your API work and what are so=
+me of its requirements to run and 2. what type of pricing would we be looki=
+ng at monthly for all this?</p>
+<p>Best,</p>
+<p>Gabriel</p>
+<p><br /></p>
+<p id=3D"reply-intro">On 2025-08-26 16:02, Isa Bell wrote:</p>
+<blockquote type=3D"cite" style=3D"padding: 0 0.4em; border-left: #1010ff 2=
+px solid; margin: 0">
+<div id=3D"replybody1">
+<p>Hi Gabriel,</p>
+<p>Just to make sure we're heading in the right direction for your SMS proj=
+ect in the US, there are basically two options for getting started with Twi=
+lio:</p>
+<p>You can have developers build a custom SMS solution using our APIs, whic=
+h is super flexible if you want something tailored to your exact needs. Or,=
+ if you don't want to deal with coding, you can use a ready-made solution f=
+rom one of our partners that works right out of the box.</p>
+<p>Do you have developer resources available, or are you looking for someth=
+ing that doesn't require any technical setup? Let me know which direction s=
+ounds more like what you need.</p>
+<div style=3D"font: 14px/1.4 -apple-system,BlinkMacSystemFont,'Helvetica Ne=
+ue',sans-serif; max-width: 500px; margin-top: 20px; border-top: 1px solid #=
+e5e5e5; padding-top: 15px;">
+<div style=3D"font: 400 1em -apple-system,BlinkMacSystemFont,'Helvetica Neu=
+e',sans-serif; padding-bottom: 2px; display: flex;"><span class=3D"v1pFulln=
+ame">Isa Bell</span>&nbsp;</div>
+<div class=3D"v1pTitle" style=3D"font: 300 0.95em -apple-system,BlinkMacSys=
+temFont,'Helvetica Neue',sans-serif; color: #94979b; padding-bottom: 15px;"=
+>Digital Sales</div>
+<div style=3D"padding-bottom: 0.5rem; max-width: 27rem;"><a href=3D"https:/=
+/www.twilio.com?utm_source=3Demail_signature" target=3D"_blank" rel=3D"noop=
+ener noreferrer"> <img src=3D"https://www.twilio.com/content/dam/twilio-int=
+ernal/email-signature/twilio-logo.png" alt=3D"logo" width=3D"140" height=3D=
+"42" /> </a></div>
+<table class=3D"v1promoInfo" style=3D"margin-top: 0.8rem;">
+<tbody style=3D"font: 12px -apple-system,BlinkMacSystemFont,'&quot;Helvetic=
+a Neue&quot;',sans-serif;">
+<tr>
+<td style=3D"color: #94979b; font-size: 11px; font-weight: 400; line-height=
+: 12px; padding: 6px 0 4px;" width=3D"60">EMAIL</td>
+<td><a class=3D"v1pEmailLink" style=3D"color: #0d122b; text-decoration: non=
+e!important;" href=3D"mailto:isa@twilio.com" rel=3D"noreferrer"> <span clas=
+s=3D"v1pEmail" style=3D"color: #0d122b;">isa@twilio.com</span> </a></td>
+</tr>
+</tbody>
+</table>
+<div style=3D"margin-top: 15px; font-size: 11px; color: #94979b; line-heigh=
+t: 1.4;">Isa Bell is powered by AI and may generate information that is ina=
+ccurate or does not meet your needs or expectations. You should independent=
+ly verify this information before using it. Twilio is not responsible for y=
+our use of this generated information, which does not modify your agreement=
+ with Twilio. For more information on how Isa Bell processes and protects y=
+our personal information, review Twilio's Privacy Notice.</div>
+<div style=3D"margin-top: 10px; font-size: 11px; color: #94979b;"><a style=
+=3D"color: #94979b; text-decoration: underline;" href=3D"https://pages.twil=
+io.com/TW_SG_Email-Preference-Center.html?mkt_unsubscribe=3D1" target=3D"_b=
+lank" rel=3D"noopener noreferrer"> Unsubscribe or manage email preferences =
+</a></div>
+</div>
+</div>
+</blockquote>
+<p><br /></p>
+
+</body></html>
+
+--=_f5faf39d082fc899e26754a05b37b817--

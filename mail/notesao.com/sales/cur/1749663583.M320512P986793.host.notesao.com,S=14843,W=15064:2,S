@@ -1,0 +1,221 @@
+Return-Path: <account-security-noreply@accountprotection.microsoft.com>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id O90NE1+/SWipDg8AIW4ynA
+	(envelope-from <account-security-noreply@accountprotection.microsoft.com>)
+	for <sales@notesao.com>; Wed, 11 Jun 2025 12:39:43 -0500
+Return-path: <account-security-noreply@accountprotection.microsoft.com>
+Envelope-to: sales@notesao.com
+Delivery-date: Wed, 11 Jun 2025 12:39:43 -0500
+Received: from mail-bn8nam11on2115.outbound.protection.outlook.com ([40.107.236.115]:24161 helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <account-security-noreply@accountprotection.microsoft.com>)
+	id 1uPPQN-000000048hu-2K81
+	for sales@notesao.com;
+	Wed, 11 Jun 2025 12:39:43 -0500
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=t5CDbHldH/2QahaAuFsfitZviRCGSd0iu//ZTUdvTgRtEoO843Xmo5fff6IEd2+KKOpNS4mD0qaPmwWBRowpICc72b2/TsHLNIrjdAx64UX79jhNF7IYcUf9MbznlNLQCsDVpesU57gz/kEiNSgzl/+n+dsgjX8w4FXofYtevrG6L5egbfKBTahj255yktCSSBkSi1BKYerm8C+G6A8+EKTS1+0w07FbEfd0lxr64uzkhVN5ewGjne0MmuA3tLBNkU7GH4J0jWeB+aS/ie6Sfj6x02tSX3qZ50VJOEX5ZY8o+P1+X2ms4y1m+cM2KqEoX/sfYEOS9ewZfi13Mpj3DA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=mHP4qHNeXW2l3vDZxcgLoaqejvPv4INHqF1jOTNjgPA=;
+ b=whE1U7JzfuoWn/7PcGwBIyK7x7ZhRUsQfOwa4lRC5BKGGIvsL4XKzo9bHkgSR8Wi2J2Pb16zZ2MLw1uT9nP77e/8NSPGdeGWLLe0zUOPQGW/eVU+elTLFf9TefVAioKI5NrsCNbErJXD4mOAJbB7OtQYTL/c40j8dS4nA86tLbwnvs0/iBlGmn4ireRBF0HQnQAbVYarYS0dGl4I+ce/ts58/MP6Mc+0WxTMOEWMpjdJnQuTfGx88v5EcX9KCkx5dr9hj0YFMfEvIGOvLq/wKN4xw5k5zzYF4IYesRLodBYYjA0tK5+DNFjCfHGT8pGf05SWvbhzF0H1Q4UljxhJfA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none
+ action=none header.from=accountprotection.microsoft.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=accountprotection.microsoft.com; s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mHP4qHNeXW2l3vDZxcgLoaqejvPv4INHqF1jOTNjgPA=;
+ b=bXZQiD5EPgcRR8J41H7D3pBlPtWAH/s7TGgjvr74tOHvRVDGiWWZKyV36mdbbGxaKd11M1qTDJ/OCklJEabPCZgsmCCgMjMNlMCY3Vwdw/KzEi2pJopcwinYJjjF8PPSGDk4Wbhc1giehIelJiNDh3bcqtfNMDkU5RLBZKoYC3k=
+Received: from BN9PR03CA0467.namprd03.prod.outlook.com (2603:10b6:408:139::22)
+ by MN6PR16MB5380.namprd16.prod.outlook.com (2603:10b6:208:476::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8792.35; Wed, 11 Jun
+ 2025 17:39:40 +0000
+Received: from BN1PEPF00004683.namprd03.prod.outlook.com
+ (2603:10b6:408:139:cafe::7a) by BN9PR03CA0467.outlook.office365.com
+ (2603:10b6:408:139::22) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.18 via Frontend Transport; Wed,
+ 11 Jun 2025 17:39:40 +0000
+X-MS-Exchange-Authentication-Results: spf=none (sender IP is 72.152.173.88)
+ smtp.mailfrom=accountprotection.microsoft.com; dkim=none (message not signed)
+ header.d=none;dmarc=none action=none
+ header.from=accountprotection.microsoft.com;
+Received: from accountprotection.microsoft.com (72.152.173.88) by
+ BN1PEPF00004683.mail.protection.outlook.com (10.167.243.89) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8835.15
+ via Frontend Transport; Wed, 11 Jun 2025 17:39:40 +0000
+From: Microsoft account team
+	<account-security-noreply@accountprotection.microsoft.com>
+Date: Wed, 11 Jun 2025 10:39:40 -0700
+Subject: Verify your email address
+To: sales@notesao.com
+X-Priority: 3
+X-MSAPipeline: MessageDispatcherEOP
+Message-ID: <GUIIXKICEQU4.TCH1XAGDU9ZO1@bl02epf00024f3d>
+X-MSAMetaData: =?utf-8?q?Di17wKQuB71WWbkRlUjynV641Won6jE8JmP2xPPyZ53tJkHqKApAZiXgMdonv?=
+ =?utf-8?q?EPyM*U7L!QWcuB3UWEcOshQsOkTGUeu1H75KDCp15lc4HP8*!7ENjBzfMAgth?=
+ =?utf-8?q?gDzapiEg$$?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=-PwWC2lfEnl7i5gTwKOU3Lg=="
+X-MS-TrafficTypeDiagnostic:
+	BN1PEPF00004683:EE_FirstParty-MicrosoftAccount-V3-System|MN6PR16MB5380:EE_FirstParty-MicrosoftAccount-V3-System
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: a4c38e8d-9674-49a9-77b8-08dda90ef17d
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|376014|61400799027|13003099007|8096899003;
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?WkxlQ3BVZGZBTmRxU0NzWHJuQjBxZkRwalEyT0UxWm9rRFhWL0JjVjVJdHZy?=
+ =?utf-8?B?eTRMQlFOOWdiamtYZFB6bXdIcmNhSXRZcldDbDNxcHd3Q2ZmUTRnV2tJQ2hJ?=
+ =?utf-8?B?NE1YVTBxbUplREFxK2VrTFJLbW5JellzQkJZcU9qbk1DUitsMlZwY3ZRelVX?=
+ =?utf-8?B?OW9GNEo2WFJacEFHWXNvR2ZVVUVFUW5HM29QSHFIRm9WQW50TzVQTFdwdjF4?=
+ =?utf-8?B?MW1rbi9kK1BPWWJYVlZmY1ZOT2diU2VlRk8vYWpodm1pS2JlYjczWVNDWmdt?=
+ =?utf-8?B?dmt4N2djOTl4Y2I2VFpkL3VvS0ZVTXRPMUduUnBxMyszeXh6bS9rL1lKajBG?=
+ =?utf-8?B?RUJobkgrUm5kQkpQODRXNU8rbjRPb3BBak5pQUpBNVJpT1RmVUREYlY2MFpD?=
+ =?utf-8?B?MkJKczJtcW1KYlE0aTRxR3Rtb1V6RU1wejA0eWlFQ01lb2psWXlIOTVSMkFh?=
+ =?utf-8?B?bVZMSytQWFVJYnN4OGhlSW9TYThsQVFRL2NXZXlHRXRCQlcyQTNUSUd1UWZu?=
+ =?utf-8?B?bGJZQUt1L3FXOXREdWh4MGlPT0JlL1RuL1lPUFBMaHI1Sk1PM1ZLWGpoSUYv?=
+ =?utf-8?B?cC9KZ29QUU1xaFVGT1l5SUs1WUJ4QXZHYzRqQkhhYkJVcjRYYmhFSlN6akZ3?=
+ =?utf-8?B?RkJHQmFzQW5rNU1UamdESHY4b3IxZ09hblpVeTVtSEZ2eXlDb3ZZVUNuOE94?=
+ =?utf-8?B?cXpOeTlGUTRqU1Nxc3VDY2xGZmc2aGRjbXpNcVIwQUNLRUc1NEtvMHpNQmZZ?=
+ =?utf-8?B?cXZOY3N1TE9jQTZBbXZudzc4bHBBT2txZFcxZGpsZlVIWTZPcEhNcCtQY3JC?=
+ =?utf-8?B?bGdKU3R5blZ5dDVRWXRHamF5OHduZ05LMTRFdHZLdm51eXFIYlBXd1VNNEF6?=
+ =?utf-8?B?T21QWDlSYVhLN05yaGVZMGs4eG5ndEpjMTZqZFJuQ04rVjB5eDhUMno4UFlu?=
+ =?utf-8?B?NThzTlo0aktNc05ha05oYkwwSGZSZWdBQndsQ29GRGs5MFdQdUdScC9YRDNW?=
+ =?utf-8?B?MGkyODZzRVZtYW4vZUtuMlVPYTRXbzFmaG1qZlpmMDlKZ25DVzJaUndvbjdi?=
+ =?utf-8?B?N3JieTJGc05nb2ZSbnhYbGNrcGVnMnRUbXgxWC9na1JHc20xQmxDQ1M0cTV2?=
+ =?utf-8?B?YkdLbGhZV2hkYmVIemRHc1VqL0JIZkNHbWRvTDA0OXVCL2UwYm1kYTF2UExz?=
+ =?utf-8?B?Q2t4VmdvNXFxamdJQmNjVkNRY3BLNmJIM1Ezcm9pTFlSSnZWKzkvTnpiSytw?=
+ =?utf-8?B?WEw1TTgxT1FFamZYNFhaZXBzY3kzK2lJT2NkVGhBekVEM2cyUDFRMHFUbWpu?=
+ =?utf-8?B?QnRiUkJHWWZQWndBWEJJL2ovRFF6Q3VyVGdnU0pJWkpoNlVldVh5VW5kcWYw?=
+ =?utf-8?B?ajhRQUkzZ2hqVjBqQ1JsNXgvcUxMdytvNS9rL1lZOFQ4Mkg0S3UyUVFOV2hH?=
+ =?utf-8?B?U1JvVk1KYlFxVDd3N0VTLzhTV0RHL09NZmRzdXg3SzFyVG1XdnB5cVlYa2E1?=
+ =?utf-8?B?NFdCc0laVitaWGV2RkN4VU9Zb29zZVNMaTFHclVRK1l5K0YrakxnWkVKMjFS?=
+ =?utf-8?B?dHFhVDVueTBaL1k0Q3pOQXhKNG1ieHI5WjFXR3dOVUJuR0VFbkszZGo1dXhT?=
+ =?utf-8?B?eGxxL3Zua21TWjB0MDQ1bDlwdllNTDlXRi9Ra0pLQjZlc3BiNnRQWmZJaDZG?=
+ =?utf-8?B?ODJWRkttTHRMM3pRT0VvMGF3OWlOTXgvd2QwMWZXSFZ6ZTFFdkFMRTJQc0J6?=
+ =?utf-8?B?YnNOUDArU296ekh0c2ZsdmE1K2dqclllS2hGYnFWVmpFWkh5ZFJQek9NZjJx?=
+ =?utf-8?B?UVhyTFdHQ0FaVlVLZFBEakhWRzMxWWcveWdIamZ2ZWNFSHR5UFpNNExsc1Z2?=
+ =?utf-8?B?d25tNEdwVFdLc2NqeCtsQzEybFVJSHhWRXM4VmN6c1M0aHBZaFJRSDlld3Ny?=
+ =?utf-8?B?SmNHVHR6K3NxYjh5VjBzY2NWTFowQk4xRS8xWmV4RGR6THlRS2l5WTFyVmxa?=
+ =?utf-8?B?Q1Q1M250a1ZrWHVtc0RVczBwUjRUdVg4U1RhRUFyd05aWU4rWmNKakRBV2VY?=
+ =?utf-8?B?dVM3K2NIRHErbVFHNytCYWZaSUFicExaYUxnK05xUm5xQ0QyY3JJcGRWQmIz?=
+ =?utf-8?Q?wmVCvsEjxQHW1jXwrt3nhZOhl?=
+X-Forefront-Antispam-Report:
+	CIP:72.152.173.88;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:accountprotection.microsoft.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(376014)(61400799027)(13003099007)(8096899003);DIR:OUT;SFP:1102;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	yuqlPEeBu+NQlnjOzNeLSzsxb3J/R+KzozkGS5lapumR/faTeAdphVoJ5e58Yr+yfNnQeBlx2HoJde4Cd7m0GkasReXjd+6G19GeGH5kr0hvgFP5cXFHSXhpIwC0kaKJj39aAoM28scTjdUhF4AocNQUv7ut3vJxWIb7uDlSscXoh2x/6b88Nwi8WpoKqc310Oe6qmniq5lDQPQYWYFxSZwkIZwb8GjBoarCVOUFr8fDWPffFB2gW4hROzJoW1SVfP/iGaS4Q+c/Lyfnpc33xtP2OfwPe41y4UgkIvNmYB1cQ1XWInbKxIt/LP7/E0KYQcHAc6DZpK23sOfAVw5Klvo5MP2jDnslnKxrck4yWEQ7cF5q5jCy10Mtn3j4XghayEcfG3MuKzoEob/agMzV5npAm3PvQo68Ig0qikCxJwleig64rEcssxA4zzb4woHKZ49lWxVr6qVlksE6hos3fmjbaBqVtN5kKH2rA/Nq0TzaLZbr1v9f0UgnEeNreAWYVIoXY2o8boUTlRY8oU6LnQ==
+X-OriginatorOrg: accountprotection.microsoft.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jun 2025 17:39:40.0894
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a4c38e8d-9674-49a9-77b8-08dda90ef17d
+X-MS-Exchange-CrossTenant-Id: 5ba90553-c2cd-460e-b5fd-ab93ad9155c7
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=5ba90553-c2cd-460e-b5fd-ab93ad9155c7;Ip=[72.152.173.88];Helo=[accountprotection.microsoft.com]
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TreatMessagesAsInternal-BN1PEPF00004683.namprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN6PR16MB5380
+X-Spam-Status: No, score=-15.7
+X-Spam-Score: -156
+X-Spam-Bar: ---------------
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Microsoft account Verify your email address To finish setting
+    up your Microsoft account, we just need to make sure this email address is
+    yours. 
+ Content analysis details:   (-15.7 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [40.107.236.115 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [40.107.236.115 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [40.107.236.115 listed in sa-accredit.habeas.com]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF welcome-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM welcome-list
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 ARC_SIGNED             Message has a ARC signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 ARC_VALID              Message has a valid ARC signature
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL Match
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Spam-Flag: NO
+
+--=-PwWC2lfEnl7i5gTwKOU3Lg==
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Microsoft account
+
+Verify your email address
+
+To finish setting up your Microsoft account, we just need to make sure this email address is yours.
+
+To verify your email address use this security code: 345645
+
+If you didn't request this code, you can safely ignore this email. Someone else might have typed your email address by mistake.
+
+Thanks,
+The Microsoft account team 
+Privacy Statement: https://go.microsoft.com/fwlink/?LinkId=521839
+Microsoft Corporation, One Microsoft Way, Redmond, WA 98052
+
+--=-PwWC2lfEnl7i5gTwKOU3Lg==
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr"> 
+<head>
+<style type="text/css">
+ .link:link, .link:active, .link:visited {
+       color:#2672ec !important;
+       text-decoration:none !important;
+ }
+
+ .link:hover {
+       color:#4284ee !important;
+       text-decoration:none !important;
+ }
+</style>
+<title></title>
+</head>
+<body>
+<table dir="ltr">
+      <tr><td id="i1" style="padding:0; font-family:'Segoe UI Semibold', 'Segoe UI Bold', 'Segoe UI', 'Helvetica Neue Medium', Arial, sans-serif; font-size:17px; color:#707070;">Microsoft account</td></tr>
+      <tr><td id="i2" style="padding:0; font-family:'Segoe UI Light', 'Segoe UI', 'Helvetica Neue Medium', Arial, sans-serif; font-size:41px; color:#2672ec;">Verify your email address</td></tr>
+      <tr><td id="i4" style="padding:0; padding-top:25px; font-family:'Segoe UI', Tahoma, Verdana, Arial, sans-serif; font-size:14px; color:#2a2a2a;">To finish setting up your Microsoft account, we just need to make sure this email address is yours.</td></tr>
+      <tr><td style="padding:0; padding-top:25px; font-family:'Segoe UI', Tahoma, Verdana, Arial, sans-serif; font-size:14px; color:#2a2a2a;">To verify your email address use this security code: <span style="font-family:'Segoe UI Bold', 'Segoe UI Semibold', 'Segoe UI', 'Helvetica Neue Medium', Arial, sans-serif; font-size:14px; font-weight:bold; color:#2a2a2a;">345645</span></td></tr>
+      <tr><td id="i6" style="padding:0; padding-top:25px; font-family:'Segoe UI', Tahoma, Verdana, Arial, sans-serif; font-size:14px; color:#2a2a2a;">If you didn't request this code, you can safely ignore this email. Someone else might have typed your email address by mistake.</td></tr>
+      <tr><td style="padding:0; padding-top:25px; font-family:'Segoe UI', Tahoma, Verdana, Arial, sans-serif; font-size:14px; color:#2a2a2a;">Thanks,</td></tr>
+      <tr><td id="i8" style="padding:0; font-family:'Segoe UI', Tahoma, Verdana, Arial, sans-serif; font-size:14px; color:#2a2a2a;">The Microsoft account team</td></tr>
+</table>
+<div lang="en" style="margin-top:20px;margin-bottom:10px;"><a class="link" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy Statement</a><div style="margin-top:10px;">Microsoft Corporation, One Microsoft Way, Redmond, WA 98052</div></div></body>
+</html>
+--=-PwWC2lfEnl7i5gTwKOU3Lg==--

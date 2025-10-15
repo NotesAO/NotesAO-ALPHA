@@ -1,0 +1,162 @@
+Return-Path: <>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id YKs9GVRgXGi+UwgAIW4ynA
+	(envelope-from <>)
+	for <sales@notesao.com>; Wed, 25 Jun 2025 15:47:16 -0500
+Return-path: <>
+Envelope-to: sales@notesao.com
+Delivery-date: Wed, 25 Jun 2025 15:47:16 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1uUX1Y-00000002Hxw-1b6n
+	for sales@notesao.com;
+	Wed, 25 Jun 2025 15:47:16 -0500
+X-Failed-Recipients: keyna.anderson@sagetx.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: sales@notesao.com
+References: <aaa1fd8bc75b7c8fdcfffd86b6d87c2b@notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1750884436-eximdsn-1617088309
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1uUX1Y-00000002Hxw-1b6n@host.notesao.com>
+Date: Wed, 25 Jun 2025 15:47:16 -0500
+
+--1750884436-eximdsn-1617088309
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  keyna.anderson@sagetx.com
+    host mx01.ionos.com [74.208.5.21]
+    SMTP error from remote mail server after RCPT TO:<keyna.anderson@sagetx.com>:
+    550-Requested action not taken: mailbox unavailable
+    550 For explanation visit https://postmaster.1und1.de/en/case?c=r1601&i=ip&v=50.28.37.79&r=1Mkq3f-1vAAqR1PYN-00o3sv
+
+--1750884436-eximdsn-1617088309
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;keyna.anderson@sagetx.com
+Status: 5.0.0
+Remote-MTA: dns; mx01.ionos.com
+Diagnostic-Code: smtp; 550-Requested action not taken: mailbox unavailable
+ 550 For explanation visit https://postmaster.1und1.de/en/case?c=r1601&i=ip&v=50.28.37.79&r=1Mkq3f-1vAAqR1PYN-00o3sv
+
+--1750884436-eximdsn-1617088309
+Content-type: message/rfc822
+
+Return-path: <sales@notesao.com>
+Received: from [::1] (port=41774 helo=host.notesao.com)
+	by host.notesao.com with esmtpa (Exim 4.98.2)
+	(envelope-from <sales@notesao.com>)
+	id 1uUX1Z-00000002HxT-14dT
+	for keyna.anderson@sagetx.com;
+	Wed, 25 Jun 2025 15:47:15 -0500
+MIME-Version: 1.0
+From: sales@notesao.com
+Date: Wed, 25 Jun 2025 15:47:15 -0500
+Message-ID: <aaa1fd8bc75b7c8fdcfffd86b6d87c2b@notesao.com>
+X-Sender: sales@notesao.com
+User-Agent: Roundcube Webmail/1.6.11
+To: keyna.anderson@sagetx.com
+Subject: You've been invited to "NotesAO In Person Meeting"
+Content-Type: multipart/alternative;
+ boundary="=_339a6e3ce7580f3539a5710ac0e17807"
+
+--=_339a6e3ce7580f3539a5710ac0e17807
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8;
+ format=flowed
+
+*NotesAO In Person Meeting*
+
+When: 2025-07-02 4:00 pm - 5:00 pm (America/Chicago)
+
+Invitees: sales@notesao.com,
+  Vanericmartin <vanericmartin@gmail.com>,
+  corre.brown@sagetx.org,
+  andrea.anderson@sagetx.org,
+  mila.sherman@sagetx.org,
+  brandee.faughn@sagetx.org,
+  keyna.anderson@sagetx.com
+
+Meeting with SAGE on NotesAO
+
+Please find attached an iCalendar file with all the event details which you=
+=20
+can import to your calendar application.
+--=_339a6e3ce7580f3539a5710ac0e17807
+Content-Transfer-Encoding: 8bit
+Content-Type: text/calendar; charset=UTF-8; method=REQUEST;
+ name=event.ics
+
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Roundcube 1.6.11//Sabre VObject 4.5.7//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+X-MICROSOFT-CDO-TZID:11
+BEGIN:STANDARD
+DTSTART:20241103T070000
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+END:STANDARD
+BEGIN:STANDARD
+DTSTART:20251102T070000
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+TZNAME:CST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20250309T080000
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+TZNAME:CDT
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:6E933CF3B9742A82944D6783255B3519-DA5315CD059A7D0A
+DTSTAMP:20250625T204715Z
+CREATED:20250626T014715Z
+LAST-MODIFIED:20250626T014715Z
+DTSTART;TZID=America/Chicago:20250702T160000
+DTEND;TZID=America/Chicago:20250702T170000
+SUMMARY:NotesAO In Person Meeting
+LOCATION:4601 Boat Club Road\, Fort Worth\, Texas 76135
+DESCRIPTION:Meeting with SAGE on NotesAO
+SEQUENCE:0
+TRANSP:OPAQUE
+PRIORITY:2
+ATTENDEE;CN=Vanericmartin;PARTSTAT=NEEDS-ACTION;ROLE=REQ-PARTICIPANT;CUTYPE
+ =INDIVIDUAL;RSVP=TRUE:mailto:vanericmartin@gmail.com
+ATTENDEE;PARTSTAT=NEEDS-ACTION;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;RSVP=
+ TRUE:mailto:corre.brown@sagetx.org
+ATTENDEE;PARTSTAT=NEEDS-ACTION;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;RSVP=
+ TRUE:mailto:andrea.anderson@sagetx.org
+ATTENDEE;PARTSTAT=NEEDS-ACTION;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;RSVP=
+ TRUE:mailto:mila.sherman@sagetx.org
+ATTENDEE;PARTSTAT=NEEDS-ACTION;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;RSVP=
+ TRUE:mailto:brandee.faughn@sagetx.org
+ATTENDEE;PARTSTAT=NEEDS-ACTION;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;RSVP=
+ TRUE:mailto:keyna.anderson@sagetx.com
+ORGANIZER:mailto:sales@notesao.com
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT60M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+
+--=_339a6e3ce7580f3539a5710ac0e17807--
+
+--1750884436-eximdsn-1617088309--

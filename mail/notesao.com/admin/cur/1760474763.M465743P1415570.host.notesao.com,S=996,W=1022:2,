@@ -1,0 +1,26 @@
+Return-Path: <reporting@dwag.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id XvZmGou27miSmRUAIW4ynA
+	(envelope-from <reporting@dwag.notesao.com>); Tue, 14 Oct 2025 15:46:03 -0500
+Return-path: <reporting@dwag.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Tue, 14 Oct 2025 15:46:03 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@dwag.notesao.com>)
+	id 1v8luF-00000005wFg-1O5t
+	for admin@notesao.com;
+	Tue, 14 Oct 2025 15:46:03 -0500
+To: admin@notesao.com
+Subject: DWAG Group has received a new Intake Packet for Gabriel Thomas
+X-PHP-Script: dwag.notesao.com/intake.php for 70.116.211.150
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@dwag.notesao.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v8luF-00000005wFg-1O5t@host.notesao.com>
+Date: Tue, 14 Oct 2025 15:46:03 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://dwag.notesao.com/intake-index.php

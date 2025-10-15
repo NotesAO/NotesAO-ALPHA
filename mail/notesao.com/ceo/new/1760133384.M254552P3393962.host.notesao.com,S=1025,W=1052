@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id sl/WDQiB6WiqyTMAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Fri, 10 Oct 2025 16:56:24 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Fri, 10 Oct 2025 16:56:24 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v7L68-0000000EEur-0VEQ
+	for admin@notesao.com;
+	Fri, 10 Oct 2025 16:56:24 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Jerry Reese
+X-PHP-Script: ffl.notesao.com/intake.php for 174.246.132.215
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: JLRHD.71@GMAIL.COM
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v7L68-0000000EEur-0VEQ@host.notesao.com>
+Date: Fri, 10 Oct 2025 16:56:24 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

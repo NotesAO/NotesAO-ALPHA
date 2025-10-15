@@ -1,0 +1,362 @@
+Return-Path: <droklankford@gmail.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 6l/rIe+Sdmj2mSwAIW4ynA
+	(envelope-from <droklankford@gmail.com>); Tue, 15 Jul 2025 12:42:07 -0500
+Return-path: <droklankford@gmail.com>
+Envelope-to: sales@notesao.com
+Delivery-date: Tue, 15 Jul 2025 12:42:07 -0500
+Received: from mail-yw1-f176.google.com ([209.85.128.176]:56416)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <droklankford@gmail.com>)
+	id 1ubjfK-0000000CGOy-3Qfs
+	for sales@notesao.com;
+	Tue, 15 Jul 2025 12:42:07 -0500
+Received: by mail-yw1-f176.google.com with SMTP id 00721157ae682-7170344c100so49845457b3.0
+        for <sales@notesao.com>; Tue, 15 Jul 2025 10:42:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1752601325; x=1753206125; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=NiafrG3WFqBweFayGmoeelVBCq0mmi2fMjUUtX62WL4=;
+        b=arXWla5/b4nbxrwLLjnn16rtFXOm91NbmQk/nNmtA359Y+/O9Xtcm5Z8UhPJBHeQqR
+         MWodilqv8mBeKrAlE7Z0we10Ijc+bKS99JdUjR81HuO60RlturZxll1lQ+qv7Ukx9YKg
+         3GEVz2xOogrwRmA0Y6bjMua7nnPLilPEDEWkdDkM4O6A1yU7HxSGovRlhlHCOUc8t4mD
+         cqum17aYOiBSoEUmKoATwaWfRvCTVR0q1TMYcsyAGxPUksK6zmUTzhiJaX7IgsLv1jF8
+         v9y38C5R2bV5ld4/t0z/q7pQRhT+fE+k8Kx7+5heM4kMIwHrRT2cVmJxRiQ0VALm3g3M
+         iaIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752601325; x=1753206125;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=NiafrG3WFqBweFayGmoeelVBCq0mmi2fMjUUtX62WL4=;
+        b=dxGf4FtNt6+j+M/WYQvG0Z1RyrAnEvLmqj9jklXqKLZYMDf17NWMzUoxi+rtgUnHfm
+         MKbbeDntuUOHn+NlTtsDmFpTwyOMgTEObAyEwKY8ELhDeRlnfYtgCIo8XnQQkIQcBAV4
+         jgH/rhNhPD70cVLI1odxvISlfEJ9nCVDzJY8Nd2eOZZ5kLWdgObuAApKHsccOxamm3hm
+         jLd5bOCqB3xMBpzzsVFYqjDp8DBsLzNQo1xspe0VqRhZMVz9ANo9ktw93whcLPSsWdsz
+         Bhyfbx1MFjPgsMRgU7jPAb7WdoC5kVumVqRtwCLJ2HQxKZKlkOfoZqbQoU1nnglsMy0z
+         7cwA==
+X-Gm-Message-State: AOJu0YxqmV09NyWsLisjtIF9R4TO3QypuO29NmhEzQEYCxkx9m1ZBs3K
+	c+oYBjwGMFLFNhHjeSwVymvdhP27ZwkqQuKE+XwyWhuUCLYZS2AV2EDg2eWl16083EwVpjZZ6CV
+	bUFCdXDRBa763oOoPNRRTH8ailba/F+7a1Q==
+X-Gm-Gg: ASbGncsfTcoBvqV9T/i3HOwNclaxaLaAYqJcVcP+aKJ9WAPz3gVWdeaiDYADmqdVtg/
+	06kn/Eu5Sxxm+O0vdrDzAimCHjpW2M3YPNjDNzoArkGEO4FKkptqTM4oRJE9RFeWXQGYolvYbIj
+	FZCsCX63cePPwNda+uPni7eHqJI+ELEr5fXG6Ehq4ejqY7FXVQxXN2ngQ8mOggnoFomnSx9G9nq
+	GvBufAhf1iDzpQHExeFpp9dZw==
+X-Google-Smtp-Source: AGHT+IE4fzfYDWjqeTRofusLRaKEPDWE9PnufbXmcE9prIewjlc+T7uqCveX0uVyVS+QwOsvVqLi+RG4s9PejMaM0DA=
+X-Received: by 2002:a05:690c:6302:b0:714:349:583d with SMTP id
+ 00721157ae682-71834f51fe7mr1625397b3.8.1752601324843; Tue, 15 Jul 2025
+ 10:42:04 -0700 (PDT)
+MIME-Version: 1.0
+References: <C425C703-37BE-4DB4-897C-BB6119591445@notesao.com>
+In-Reply-To: <C425C703-37BE-4DB4-897C-BB6119591445@notesao.com>
+From: Lankford Avenue <droklankford@gmail.com>
+Date: Tue, 15 Jul 2025 12:41:53 -0500
+X-Gm-Features: Ac12FXyZ-vFQV_wXtZBB0Mfd5ZtbGcrwgSRk4UTOWecgE_lAgMM52pRBWUCrKcY
+Message-ID: <CAN-yzYj0MGPFWLNokznSUc9skiCJSQXgHv3BszMQ_9=z=gRG9w@mail.gmail.com>
+Subject: Re: NotesAO
+To: sales@notesao.com
+Content-Type: multipart/alternative; boundary="0000000000006680600639fb4b49"
+X-Spam-Status: No, score=0.8
+X-Spam-Score: 8
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Yes, I agree. On Tue, Jul 15, 2025 at 12:40 wrote: > Dr. Lankford
+    on the payment processing it is an additional $20 per month > to run that
+    processing through NotesAO. I want to make sure you were aware. > My apologies
+    on not specifying that in the em [...] 
+ Content analysis details:   (0.8 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.128.176 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [209.85.128.176 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [209.85.128.176 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: lankfordavenue.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [droklankford(at)gmail.com]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  1.0 FREEMAIL_REPLY         From and body contain different freemails
+X-Spam-Flag: NO
+
+--0000000000006680600639fb4b49
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Yes, I agree.
+
+
+On Tue, Jul 15, 2025 at 12:40 <sales@notesao.com> wrote:
+
+> Dr. Lankford on the payment processing it is an additional $20 per month
+> to run that processing through NotesAO. I want to make sure you were awar=
+e.
+> My apologies on not specifying that in the email. So it will be $140 a
+> month to run the payment processing instead of $120. Please confirm that
+> you agree to this. Thank you for all the information.
+>
+> David House
+> 214.502.4322
+> NotesAO
+>
+> Sent from my iPhone
+>
+> On Jul 15, 2025, at 12:02=E2=80=AFPM, Lankford Avenue <droklankford@gmail=
+.com>
+> wrote:
+>
+>
+>
+> On Mon, Jul 14, 2025 at 4:25=E2=80=AFPM <sales@notesao.com> wrote:
+>
+> 7/14/25
+> Lankford Avenue LLC
+> 214-563-1995
+> droklankford@gmail.com
+> Serves 250-300
+> What address is your location?
+> What Programs do you currently offer?
+> Do you offer in-person and virtual classes?
+> What curriculum do you use for your programs?
+> What virtual platform do you currently use for your website? ie. GoDaddy
+> or Wordpress?
+> Who will be the admins? Please provide name and email.
+> Do you have facilitators? Please provide name and email.
+> How are you currently taking payments? What are the payment methods?
+> NotesAO will have payment processing within the next 60 days. Would you
+> like to run your payments through NotesAO? It will be an additional $20
+> for the payment processing.
+>
+> Please let me know all information when you can. Thank you so much.
+>
+> David House
+> 214-502-4322
+> NotesAO
+>
+>
+>
+>
+>
+> --
+> Lankford Avenue
+> 214-563-1995
+>
+> <https://www.google.com/maps/search/3010+Morgan+Drive+%0D%0A+Dallas,+TX+7=
+5241?entry=3Dgmail&source=3Dg>
+> 3010 Morgan Drive
+> <https://www.google.com/maps/search/3010+Morgan+Drive+%0D%0A+Dallas,+TX+7=
+5241?entry=3Dgmail&source=3Dg>
+> Dallas, TX 75241
+> <https://www.google.com/maps/search/3010+Morgan+Drive+%0D%0A+Dallas,+TX+7=
+5241?entry=3Dgmail&source=3Dg>
+> *Like & Follow Us:*
+> *Website:* lankfordavenue.org
+> *Facebook:* Lankford Avenue
+> *Instagram:* lankford_avenue
+> *Email: *droklankford@gmail.com
+>
+>
+> "Building Healthy Lives"
+>
+>
+>
+> *The information contained in this message may contain privileged and
+> confidential informationand is intended only for the individual named. **=
+If
+> you are not the named addressee you should *
+> *not disseminate, distribute or copy this email. Please notify the sender
+> immediately by email if you have received this email by mistake and delet=
+e
+> this email from your system.*
+>
+>
+> <NotesAO for Lankford Avenue.pdf>
+>
+>
+
+--0000000000006680600639fb4b49
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div>Yes, I agree.</div><div><br></div><div><br><div class=3D"gmail_quote g=
+mail_quote_container"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, Jul 15,=
+ 2025 at 12:40 &lt;<a href=3D"mailto:sales@notesao.com">sales@notesao.com</=
+a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 =
+0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div style=3D"font-si=
+ze:10pt;font-family:Verdana,Geneva,sans-serif">
+<div dir=3D"auto">
+<div dir=3D"ltr">Dr. Lankford on the payment processing it is an additional=
+ $20 per month to run that processing through NotesAO. I want to make sure =
+you were aware. My apologies on not specifying that in the email. So it wil=
+l be $140 a month to run the payment processing instead of $120. Please con=
+firm that you agree to this. Thank you for all the information.
+<div>=C2=A0</div>
+<div>David House=C2=A0</div>
+<div>214.502.4322</div>
+<div>NotesAO=C2=A0</div>
+<div><br id=3D"m_-1185955495453799509v1lineBreakAtBeginningOfSignature">
+<div dir=3D"ltr">Sent from my iPhone</div></div></div></div></div><div styl=
+e=3D"font-size:10pt;font-family:Verdana,Geneva,sans-serif"><div dir=3D"auto=
+"><div dir=3D"ltr"><div>
+<div dir=3D"ltr"><br>
+<blockquote type=3D"cite" style=3D"padding:0 0.4em;border-left:#1010ff 2px =
+solid;margin:0">On Jul 15, 2025, at 12:02=E2=80=AFPM, Lankford Avenue &lt;<=
+a href=3D"mailto:droklankford@gmail.com" target=3D"_blank">droklankford@gma=
+il.com</a>&gt; wrote:<br><br></blockquote>
+</div>
+</div></div></div></div><div style=3D"font-size:10pt;font-family:Verdana,Ge=
+neva,sans-serif"><div dir=3D"auto"><div dir=3D"ltr"><div><blockquote type=
+=3D"cite" style=3D"padding:0 0.4em;border-left:#1010ff 2px solid;margin:0">
+<div dir=3D"ltr"></div></blockquote></div></div></div></div><div style=3D"f=
+ont-size:10pt;font-family:Verdana,Geneva,sans-serif"><div dir=3D"auto"><div=
+ dir=3D"ltr"><div><blockquote type=3D"cite" style=3D"padding:0 0.4em;border=
+-left:#1010ff 2px solid;margin:0"><div dir=3D"ltr">
+<div dir=3D"ltr">=C2=A0</div>
+<br>
+<div>
+<div dir=3D"ltr">On Mon, Jul 14, 2025 at 4:25=E2=80=AFPM &lt;<a href=3D"mai=
+lto:sales@notesao.com" rel=3D"noreferrer" target=3D"_blank">sales@notesao.c=
+om</a>&gt; wrote:</div>
+<blockquote style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-=
+left-style:solid;border-left-color:#cccccc;padding-left:1ex">7/14/25<br>Lan=
+kford Avenue LLC<br>214-563-1995<br><a href=3D"mailto:droklankford@gmail.co=
+m" rel=3D"noreferrer" target=3D"_blank">droklankford@gmail.com</a><br>Serve=
+s 250-300<br>What address is your location?<br>What Programs do you current=
+ly offer?<br>Do you offer in-person and virtual classes?<br>What curriculum=
+ do you use for your programs?<br>What virtual platform do you currently us=
+e for your website? ie. GoDaddy <br>or Wordpress?<br>Who will be the admins=
+? Please provide name and email.<br>Do you have facilitators? Please provid=
+e name and email.<br>How are you currently taking payments? What are the pa=
+yment methods? <br>NotesAO will have payment processing within the next 60 =
+days. Would you <br>like to run your payments through NotesAO? It will be a=
+n additional $20 <br>for the payment processing.<br><br>Please let me know =
+all information when you can. Thank you so much.<br><br>David House<br>214-=
+502-4322<br>NotesAO<br><br><br><br></blockquote>
+</div>
+<div>=C2=A0</div>
+<div>=C2=A0</div>
+<span>-- </span><br>
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div>
+<div style=3D"color:#222222"><span style=3D"font-family:georgia,serif"><spa=
+n style=3D"background-color:transparent;color:#000000;white-space:pre-wrap"=
+>Lankford Avenue</span><br></span></div>
+<div><span style=3D"color:#000000;font-family:georgia,serif"><span style=3D=
+"white-space:pre-wrap">214-563-1995</span></span></div><a href=3D"https://w=
+ww.google.com/maps/search/3010+Morgan+Drive+%0D%0A+Dallas,+TX+75241?entry=
+=3Dgmail&amp;source=3Dg">
+</a><div style=3D"color:#222222"><span style=3D"background-color:transparen=
+t;color:#000000;white-space:pre-wrap"><span style=3D"font-family:georgia,se=
+rif"><a href=3D"https://www.google.com/maps/search/3010+Morgan+Drive+%0D%0A=
++Dallas,+TX+75241?entry=3Dgmail&amp;source=3Dg">3010 Morgan Drive</a></span=
+></span></div>
+<div style=3D"color:#222222"><span style=3D"background-color:transparent;co=
+lor:#000000;white-space:pre-wrap"><span style=3D"font-family:georgia,serif"=
+><a href=3D"https://www.google.com/maps/search/3010+Morgan+Drive+%0D%0A+Dal=
+las,+TX+75241?entry=3Dgmail&amp;source=3Dg">Dallas, TX 75241</a></span></sp=
+an></div>
+<div style=3D"color:#222222"><strong style=3D"font-family:georgia,serif;col=
+or:#1d2228">Like &amp; Follow Us:</strong></div>
+<div style=3D"color:#222222"><span style=3D"color:#202124;font-family:georg=
+ia,serif"><span style=3D"color:#1d2228"><strong>Website:</strong>=C2=A0</sp=
+an><a style=3D"color:#1155cc;white-space:pre-wrap" href=3D"http://lankforda=
+venue.org/" rel=3D"noopener noreferrer" target=3D"_blank">lankfordavenue.or=
+g</a><span style=3D"color:#1d2228"><br><strong>Facebook:</strong>=C2=A0Lank=
+ford Avenue<br><strong>Instagram:</strong>=C2=A0lankford_avenue</span></spa=
+n></div>
+</div>
+<div><strong style=3D"color:#1d2228;font-family:georgia,serif">Email: </str=
+ong><span style=3D"color:#1d2228;font-family:georgia,serif"><a href=3D"mail=
+to:droklankford@gmail.com" rel=3D"noreferrer" target=3D"_blank">droklankfor=
+d@gmail.com</a></span><span style=3D"color:#202124;font-family:georgia,seri=
+f"><span style=3D"color:#1d2228;font-size:13px"><br></span></span></div>
+<div style=3D"color:#222222">=C2=A0</div>
+<div><span style=3D"font-family:georgia,serif"><span style=3D"font-size:11p=
+t;color:#000000;background-color:transparent;vertical-align:baseline;white-=
+space:pre-wrap"><span style=3D"border:medium;display:inline-block;overflow:=
+hidden;width:231px;height:93px"><img style=3D"margin-left:0px;margin-top:0p=
+x" src=3D"https://lh3.googleusercontent.com/lcyOVjBOtsBFzr3vUqqkainj8rIWL9c=
+vggVxUmY3RHLhN8-QTHsjMfwOOSsJkveXogdpMeh7LQW6_yW7FTC7jViZpRjVUV-tnIdUBKr6QN=
+QycR4vPWqMGuLm1ZEL94iWzOpe9teC62Ew9a-UQdaBTzs" width=3D"231" height=3D"93">=
+</span></span><span style=3D"background-color:transparent;font-size:11pt;co=
+lor:#000000;white-space:pre-wrap"><br></span></span></div>
+<div><span style=3D"color:#000000;font-family:georgia,serif"><span style=3D=
+"white-space:pre-wrap"> &quot;Building Healthy Lives&quot;</span></span></d=
+iv>
+<div><span style=3D"color:#000000;font-family:georgia,serif"><span style=3D=
+"font-size:14.6667px;white-space:pre-wrap">=C2=A0</span></span></div>
+<div><span style=3D"color:#000000;font-family:georgia,serif"><span style=3D=
+"font-size:14.6667px;white-space:pre-wrap">=C2=A0</span></span></div>
+<div>
+<table style=3D"color:#1d2228;font-size:13px;font-family:Helvetica,Arial,sa=
+ns-serif;border-collapse:collapse;width:93pt" border=3D"0" width=3D"124" ce=
+llspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr style=3D"min-height:15pt">
+<td style=3D"word-break:normal;font-family:Calibri,sans-serif;min-height:15=
+pt;width:93pt;padding-top:1px;padding-right:1px;padding-left:1px;color:blac=
+k;vertical-align:bottom;border:medium;white-space:nowrap" width=3D"124" hei=
+ght=3D"20"><strong><em>The information contained in this message may contai=
+n privileged and confidential information<br>and is intended only for the i=
+ndividual named.=C2=A0</em></strong><strong style=3D"white-space:pre-wrap">=
+<em>If you are not the named addressee you should </em></strong></td>
+</tr>
+<tr style=3D"min-height:15pt">
+<td style=3D"word-break:normal;font-family:Calibri,sans-serif;min-height:15=
+pt;padding-top:1px;padding-right:1px;padding-left:1px;color:black;vertical-=
+align:bottom;border:medium;white-space:nowrap" height=3D"20"><span style=3D=
+"white-space:pre-wrap"><strong><em>not disseminate, distribute or copy this=
+ email. Please notify the sender immediately by email if you have received =
+this email by mistake and delete this email from your system.</em></strong>=
+</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<div style=3D"color:#1d2228;font-size:13px">=C2=A0</div>
+</div>
+</div>
+</div>
+</div></blockquote></div></div></div></div><div style=3D"font-size:10pt;fon=
+t-family:Verdana,Geneva,sans-serif"><div dir=3D"auto"><div dir=3D"ltr"><div=
+><blockquote type=3D"cite" style=3D"padding:0 0.4em;border-left:#1010ff 2px=
+ solid;margin:0"><div dir=3D"ltr"><div>&lt;NotesAO for Lankford Avenue.pdf&=
+gt;</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</blockquote></div></div>
+
+--0000000000006680600639fb4b49--

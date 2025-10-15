@@ -1,0 +1,502 @@
+Return-Path: <heather.alcala@plccrpllc.net>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id Zm5JMpzrdmh42i4AIW4ynA
+	(envelope-from <heather.alcala@plccrpllc.net>); Tue, 15 Jul 2025 19:00:28 -0500
+Return-path: <heather.alcala@plccrpllc.net>
+Envelope-to: sales@notesao.com
+Delivery-date: Tue, 15 Jul 2025 19:00:28 -0500
+Received: from dispatch1-us1.ppe-hosted.com ([67.231.154.183]:40406)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <heather.alcala@plccrpllc.net>)
+	id 1ubpZT-0000000CsnP-1avf
+	for sales@notesao.com;
+	Tue, 15 Jul 2025 19:00:28 -0500
+X-Virus-Scanned: Proofpoint Essentials engine
+Received: from NAM10-DM6-obe.outbound.protection.outlook.com (mail-dm6nam10on2109.outbound.protection.outlook.com [40.107.93.109])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTPS id 01853B80065;
+	Wed, 16 Jul 2025 00:00:23 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=HEvTDZPqSNJ/Va+A/ypGi67RyuAPa3EFgvdD1LSpFnzQH4OrgJwMOXS/HA3pfiiTpl5ipX8oTLYmbUT06sn9yBJvGnib/r5nTzLXmby5+/rvFB0MEf66XaU/RzMn4Dc9W6awpocBwreUOqzgZR8VPj0WCouAgLJWAb2pA2j9N9nztjxI1je6oeXLlQaA3UVSdbOx48UpwDgTPh7m/4AUd7MxBzk9JEW2ulFPmLhHThqceoRhf5bXxeESYCUA3HRlM5l13aPNCCJ5fBZD46gB9mMxraNioJOFfebSmZ4q8taTYF4k2WzclwRLelazkQ8yz3u+PDa+Xz/YzzYHfvYA4A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=t1Q6Fy2SRurD2gdfwtkRuk/oGzp0tMRBskrBt3mVQ+Y=;
+ b=HGg+XXVUMFC0IdmM9wIDMxpm36bu4sOkpV6sMR0vz9Q1FyW8hBUuZU+lBSv5FnZ82oN7lPPgCrC84kJkf3L+6ZiUPBvvEMQOMt0AZfmVqQlleGIYQKBKtN+hb/I1MzyZIqyWnd1qxjU1vjztaVn+dzsh9Wn/gZPXaIxRuuAITDMjNU7TY0cNBWripi17BUH7gSqyl0UUtTttE62taltAbBEUCpCLivB/izPPQnRLNgdsaRf+VgmMkhN+/UUGKmeTso2fQxxPTMmAcF2QTqZznMf+fWq30Bi8TNpc0O83GDpEpyplNTJaBbEvnDSWVdOp+WhL49eQVNKv7k732DPgLA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=plccrpllc.net; dmarc=pass action=none
+ header.from=plccrpllc.net; dkim=pass header.d=plccrpllc.net; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=netorgft9641715.onmicrosoft.com;
+ s=selector1-netorgft9641715-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=t1Q6Fy2SRurD2gdfwtkRuk/oGzp0tMRBskrBt3mVQ+Y=;
+ b=FjyxH5Zj4xXXiFdhYJyPsdF/r4dkjGbgeZLoEc8mlod/RnEbeBpgjVdwQVxlGx8SY9/yHorTHEMw+eWBs6hfPyHi4/BhfScO8X6qoxSzjAWAONBVVSz7fwcFW7y+LH3+nPLFZbMH7wz+2qqmeRj/VdYhOTMWk/x44F4fyZ6Zpuz5pNWwimTS+NCUyeEyDI7hwH80von+iwoPUY9Fd7rsWwdZOxL4DYlByj2DcVsxzIMSAzpwzzpM5oJuWq+JBXnQ8VA/ch1owkEFnmH1yyvDjPI/1rXWHRH2b27DH31AIckEy+dBqdwFFNii1BAfqbCr7pWxbYazLAfNxO230zlbVw==
+Received: from BLAPR10MB5298.namprd10.prod.outlook.com (2603:10b6:208:320::13)
+ by DS0PR10MB6973.namprd10.prod.outlook.com (2603:10b6:8:14d::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8922.25; Wed, 16 Jul
+ 2025 00:00:19 +0000
+Received: from BLAPR10MB5298.namprd10.prod.outlook.com
+ ([fe80::afc9:c589:cd0d:d5f]) by BLAPR10MB5298.namprd10.prod.outlook.com
+ ([fe80::afc9:c589:cd0d:d5f%4]) with mapi id 15.20.8922.028; Wed, 16 Jul 2025
+ 00:00:18 +0000
+From: Positive Life Changes Counseling and Recovery PLLC
+	<heather.alcala@plccrpllc.net>
+To: "sales@notesao.com" <sales@notesao.com>
+CC: Vanericmartin <vanericmartin@gmail.com>
+Subject: Re: Notes AO
+Thread-Topic: Notes AO
+Thread-Index: AQHb8nIqUIDz/FtUzEmOrJOwQxgmqLQtLircgAAGn4CABq8rAA==
+Date: Wed, 16 Jul 2025 00:00:18 +0000
+Message-ID:
+ <BLAPR10MB5298C36BC90D6F00A88734969D57A@BLAPR10MB5298.namprd10.prod.outlook.com>
+References: <0dd644a99b8cb48f1b8b2360045827ab@notesao.com>
+ <BLAPR10MB5298EA567FAC58CE580100F49D4BA@BLAPR10MB5298.namprd10.prod.outlook.com>
+ <897a9c84af784bac690fc989599814d1@notesao.com>
+In-Reply-To: <897a9c84af784bac690fc989599814d1@notesao.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=plccrpllc.net;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: BLAPR10MB5298:EE_|DS0PR10MB6973:EE_
+x-ms-office365-filtering-correlation-id: 6041e7b4-d7b0-4dee-efae-08ddc3fbc028
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|366016|1800799024|376014|8096899003|38070700018|13003099007|7053199007;
+x-microsoft-antispam-message-info:
+ =?us-ascii?Q?0UzH2MTkmNKkrvG7ZxqNLMXVDI3OLhnr1nzxjr6+fvAVVWKeK7hEumq3gBjR?=
+ =?us-ascii?Q?VHq4IiRW0WEIFixBo3dE7G3qfkSimSnnXqFt38Y+jAWCzcudB1zne+RjzeXt?=
+ =?us-ascii?Q?EG8laDtKnnOH0zS2m1QgmXLOXCwgYRdCWvW4gOJJVDNA6o/MSe0VMgL1fXGp?=
+ =?us-ascii?Q?b31cLO7Bdoyr1ljfkdwgLuClLvK/4eEfWlCRUh5HtoitnBE+8YqqZ1AZRWR+?=
+ =?us-ascii?Q?nDicOTlfJMl0nwpkVAHab03Lv2J/Ssq7O5Pd0JNkgKmD1tHmc1UlOe1Mnual?=
+ =?us-ascii?Q?cBq5pZkCreITxq5ou2+MiuZ5ojuMoCLMj/TLg/CWhsrY8RlSZfdUB7fqbjc2?=
+ =?us-ascii?Q?8mSKuQ0J+tDEt9Tw5nKIiDa0EiAOSRSyfy479O5Vp1HM3r6Wx1m6/38RlohE?=
+ =?us-ascii?Q?Td+NzZAZcFxxBv2dKGA84/AyWNb7Wmj1dRc4vgh3KbyPkJcEJM+x8Bd1fYNb?=
+ =?us-ascii?Q?TjaEX4CtMPWrY/5rO/ji3XoUfctDO4V1zrCWK3lSYmiQaM8LsAajTue6QZDx?=
+ =?us-ascii?Q?XH9ODo/TO4O7XQqxB+IxP1oq669SSo9MsRgEsuahqcPWn6L9+OrIYs3MNjS0?=
+ =?us-ascii?Q?KuIhz/p5CfAOd80z9zipP4tbaP47LZjTDNSc80WBYBJDwTNrTj3cHEW2MSlX?=
+ =?us-ascii?Q?FlG7WXWIM7gWBU5an1ZF40/z2KBFWuD7Ms2T0JUk0Bq7cFtb5Cedq+d+zqvz?=
+ =?us-ascii?Q?FtXNNERiJ/baVzBi0q4zDH4O3bnh1SBjO59qrIY58LQbOk4krHwlpdWkWM4G?=
+ =?us-ascii?Q?A2aeNDrYWHJ8+kY0eYtxhW2zrJEB2Tj84kuU6LWLl2G9ZD4j1Do4cLqD9d6z?=
+ =?us-ascii?Q?gTdJgQEE9gENs9/2Q9ZZ6KwgfL7UpFoftkAhn4tTx+eSuMseXCrHXOBv8Oky?=
+ =?us-ascii?Q?kIO6jDGuK05WxzXBJ9we1oEY+oiYm+pDebFC+eTRpXtQuWeGvHgl9hRw77Vy?=
+ =?us-ascii?Q?9mKs5r6FUkp50j2lI0xPDmOSAHbnWoGRzdGWrOoZPxj2uqXKm6ka93K18mql?=
+ =?us-ascii?Q?T9fpjc4aZ+tbxzCPJKk+pnMMAlZcjw3I5di0nxOpp3tAllCXYT+dVuY8HY1e?=
+ =?us-ascii?Q?fCkL/P9mYVAHRvQVcTHv2H6KVXvTzPSf+mkgDfx+qJJxo7cniOOstGiJr45R?=
+ =?us-ascii?Q?9WSiRdYlXI09KyOyVQoaRzJvFk0uRfXlBWgrEKUGO4hGLnfrO9nBMHjbZ/9Z?=
+ =?us-ascii?Q?dFgy2Ru9hTm6K1+fonXtNosNRUjWvtJ+Lnjge1laSQuAuK9t2+atPDPuVyao?=
+ =?us-ascii?Q?tdkcgoLcyiEuXtC4M1iy3rB5MmHxLUOrLSVhXqhlY3HJa8LiAOx3k7gjaQHC?=
+ =?us-ascii?Q?xiUcIObgyfFjkK8l7F3jDcN3YiLSgEvr4SoD8NOZqlx33u8Q4mcyZGQmAq6p?=
+ =?us-ascii?Q?XfevkxhfEX9BJT4HuGzm8dSRXaOQuLZdqi4uIJzCda528zwP7XvCdz36osJe?=
+ =?us-ascii?Q?ylUFgEiR+CU=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BLAPR10MB5298.namprd10.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(8096899003)(38070700018)(13003099007)(7053199007);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?us-ascii?Q?O7wyGVODHNVRXBqlCmskBQ3XgBIZPBu8qzCtXQEH/Q0D+kPzNPo5imWrAs70?=
+ =?us-ascii?Q?j00Wr8+Af9sP/y9G3T9RouzSUSOcnmSD/SczhmkFmiNyKu5kXNFuVzWlkiYc?=
+ =?us-ascii?Q?j4E/X74r7Do66qmGMYYDQZ44QHqoKORWFa/RDM8r4AZieBNP7fbslKvsHW/c?=
+ =?us-ascii?Q?9CQYVWtjdrV43x0QA5mxPptANQDplteH5j7G0MIh5GOTb7k7BQKXKdb1tMSK?=
+ =?us-ascii?Q?nklMX6tAX+Dz+YbW9aXNSIOD5b+GlZ7bvzBW/Xi80EOlbyKKTywsqOu0ONJK?=
+ =?us-ascii?Q?TwWOb2jrbuCw4nuqZKWZcU5iX5VcmiupZQcOwPnyKWF+nDBm8ofYM8Axz8gW?=
+ =?us-ascii?Q?dnFgQRl/xhsY6NWl9J03PdSsIkQqTMUwYJZHu6KBigNHNhGYFz+wM1aNfnRC?=
+ =?us-ascii?Q?vujZdy1QKx/Pz1lYAYrWqrXg9bLSKBYE7SsMJ1UWQFQ5GUaGZwYXvv/966Z1?=
+ =?us-ascii?Q?FoWIFEkd2CJnlQHPgBgOvq63Xc3fHZCDGeqn3Cw7nmh5QL3miJPZcM2xzsoc?=
+ =?us-ascii?Q?PLlKmeNVPUJPmFO5i0Ua3OLBonViTiFYfP8Kq/iC0Oj1zb7W1V6VpLiULoKk?=
+ =?us-ascii?Q?2J5evfOVyI55LMEwI/L/bSdEbxLTir3IGlo32/jbCftRd/g4LG/BaF9gbPgU?=
+ =?us-ascii?Q?eYLEWcY3hfg2X2/ysJPzY4UksXUxqedt16/qdCFCMobPbIPz5mCszqxTyUzg?=
+ =?us-ascii?Q?xAFTLcbcwatYLT5/GowiOvx1q6pUmXmvc0vC2VDv4IGvhH2cWmwo34JhwgpW?=
+ =?us-ascii?Q?RUXX1twOnrO2fWiLWaCy8qcsY6vN8f4XE/Qigo4OssAIQhm1xkgZKB+uLVU3?=
+ =?us-ascii?Q?PoQz7+WXGt5+G7b3tdoq8p5bq6YY0uub0nfBCKQX9MCE+HyjlSONTwVJO/BK?=
+ =?us-ascii?Q?B7Src0okLhY4BzUvk632mSJjXReQboYhhJy/PUSsTkiRmUVyottOB5JpO8W/?=
+ =?us-ascii?Q?AoEoz+VWGyDGDe7kzXpuqkgp1ZdtBRMGPfYLgNiifhLVqDwBMt8E1Fyuspxr?=
+ =?us-ascii?Q?b9szFzoYVXv/gAtu6eHC77VV8CC+pwMunACsl690UnVho8a3YmpHD1z9/6d/?=
+ =?us-ascii?Q?UTUpX8JeOcRJ/ENubVDeJfxAbABrXlKSX+vqF6ptYaPHLzevdybfYGs8njoA?=
+ =?us-ascii?Q?vqHYBQkXHDT7hMUnxWE6Mkub/kESFJ/H8X1Mj+PBSGfKxvkDfjGvX55o7LLV?=
+ =?us-ascii?Q?Wyfiivl789XlLKQgiZ4UWVkAIeX/zXHf7vRH3E2MiHv9RWpKsePQr7RwQwXu?=
+ =?us-ascii?Q?P/6uVy+aawXA9kCHVlapaj3BZLO7S/W//S7b6zOJzOd5G+vusulmJLYy0kwz?=
+ =?us-ascii?Q?94RHK10EP09S6C0ebK2DSJftjo1Cyc4eGVIRUyzOZi17Tu3r5WBQ7ujyCJGA?=
+ =?us-ascii?Q?SgHvlefY6v8qqBz+fuooi5MrBY980BO3U4WSIqY7V22Ks6F2nwu+fbvkMCrr?=
+ =?us-ascii?Q?4DXRsRrv3cJPwima+R8tEPDp6bIxpLMVgD8/svUTF5hRpn6wc2x8CMtYnWxt?=
+ =?us-ascii?Q?+MdtIiD1HxOIb72iZI0EhOi2HlHucftkb4o6AoRmunzfz3REqX2s9hHVd2J5?=
+ =?us-ascii?Q?kUXtC9MddhbJ3Q9ThwrgHRXQOAjMUiIoDgJkvqIC?=
+Content-Type: multipart/alternative;
+	boundary="_000_BLAPR10MB5298C36BC90D6F00A88734969D57ABLAPR10MB5298namp_"
+MIME-Version: 1.0
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0:
+	gmPzud/eqaDwwmdlf6QncvgtqeBYsGxak9QJ0Q1udVhZguX9PG9Q3dORxVyy2iw7NDcwmJetiiLcZfGm1cFRdOIgCEa+wH2jmhWu1d/DTmawyLX3f0uKn8HB2n083RyRmwrBpX94MCNdg2H5snX7zVSH3d4yARZ7HbOeDzzjlbhGMc4q44iQ0TApUxDRHzq2gJTKafCP1JucqWtvXuKq859fiozV3SiL9l1pzIDl7v7Oc1ns2HZsmuc94V2ijEPD/iQLD85dmtF+uNC/J7yE8H+BBkjymhAc7wFN18sOJ6VvAoXKhA6aTSVdUvcv744KpHQV2cJUamvWwTgHZwpWVP5Wq2fL1SnIdDvzrIa3mWJUCnw1DAccXKCRW4zOFjSNU+Zv9KgpuUenLNsV9DOEAndMrUcc1g8OyQGJlp4ckcH7R0INaBPeHhm8Uj2BbPFi5Xjt6IIJNMppp8w+3cZLOWGzwcDCvK3jDmdZPvcdgCXjoWOQy0qLJcZZo72WvOzGZgCratCZ6ndUw0icjlHZELhWcl4iVlQ5YrBET0inH0s+eoIPhx2Erqnpio4MFoUFkemHUfNBIjPCo7hTOJzu/8aMhiAHAdKkB8atX2DNles=
+X-OriginatorOrg: plccrpllc.net
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BLAPR10MB5298.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6041e7b4-d7b0-4dee-efae-08ddc3fbc028
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jul 2025 00:00:18.4347
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 02d0eb54-4e5e-4c7c-986e-f04e6ed3d39e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 45oIRztIe4NYJ6MpnDBOzSr/kZ8qCF3y3NQoKLyIbW1HQBRZTDd4OiK9OlI7MooVMwBTU8ooIzd+CgofXQKE3oCQO2kUOQSkzlFsjAggBG0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS0PR10MB6973
+X-MDID: 1752624024-G2fzWVOR4_qa
+X-PPE-STACK: {"stack":"us4"}
+X-MDID-O:
+ us4;at1;1752624024;G2fzWVOR4_qa;<heather.alcala@plccrpllc.net>;f992edb24764923e0fe6adec7e966eaf
+X-PPE-TRUSTED: V=1;DIR=OUT;
+X-Spam-Status: No, score=0.5
+X-Spam-Score: 5
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  I do apologize. I have been with clients all week. This week,
+    Friday morning at 10:15 am I will make myself available if you all would
+   like to speak about the platform and ask questions. I had a heavi [...] 
+ Content analysis details:   (0.5 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [67.231.154.183 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [67.231.154.183 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [67.231.154.183 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: proofpoint.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 ARC_SIGNED             Message has a ARC signature
+  0.0 ARC_VALID              Message has a valid ARC signature
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  0.5 FROM_DOMAIN_NOVOWEL    From: domain has series of non-vowel letters
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+X-Spam-Flag: NO
+
+--_000_BLAPR10MB5298C36BC90D6F00A88734969D57ABLAPR10MB5298namp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+I do apologize. I have been with clients all week. This week, Friday mornin=
+g at 10:15 am I will make myself available if you all would like to speak a=
+bout the platform and ask questions. I had a heavier than normal schedule t=
+his week.
+
+Thank you for considering my input.
+
+Heather
+
+Heather D Alcala, MS, NCC, LPC, LCDC, ICADC, SAP
+
+Positive Life Changes Counseling and Recovery PLLC
+701 Santa Isabel Blvd, Suite 4
+Laguna Vista, TX 78578
+
+Cell: 361-489-5371
+Office: 956-299-4258
+Fax: 956-435-0135
+
+
+WARNING: CONFIDENTIALITY NOTICE - The information enclosed with this transm=
+ission are the private, confidential property of the sender, and the materi=
+al is privileged communication intended solely for the individual indicated=
+. If you are not the intended recipient, you are notified that any review, =
+disclosure, copying, distribution, or the taking of any other action releva=
+nt to the contents of this transmission are strictly prohibited. If you hav=
+e received this transmission in error, please notify me immediately at 361-=
+489-5371 or heather.alcala@plccrpllc.net.
+
+________________________________
+From: sales@notesao.com <sales@notesao.com>
+Sent: Friday, July 11, 2025 12:54 PM
+To: Positive Life Changes Counseling and Recovery PLLC <heather.alcala@plcc=
+rpllc.net>
+Cc: Vanericmartin <vanericmartin@gmail.com>
+Subject: Re: Notes AO
+
+Yes absolutely. Please send me a time you are available and I can get on
+calendar. Thank you
+
+David House
+
+
+On 2025-07-11 12:32 pm, Positive Life Changes Counseling and Recovery
+PLLC wrote:
+> Good afternoon all. I apologize for the delay in response. I am tied
+> up today. Is there another time we could meet. I would love to discuss
+> this with you and see if this will develop into something I can
+> utilize for the SUDs work in my organization.
+>
+>  Heather
+>
+> Heather D Alcala, MS, NCC, LPC, LCDC, ICADC, SAP
+>
+> Positive Life Changes Counseling and Recovery PLLC
+> 701 Santa Isabel Blvd, Suite 4
+> Laguna Vista, TX 78578
+>
+> Cell: 361-489-5371
+> Office: 956-299-4258
+> Fax: 956-435-0135
+>
+> WARNING: CONFIDENTIALITY NOTICE - The information enclosed with this
+> transmission are the private, confidential property of the sender, and
+> the material is privileged communication intended solely for the
+> individual indicated. If you are not the intended recipient, you are
+> notified that any review, disclosure, copying, distribution, or the
+> taking of any other action relevant to the contents of this
+> transmission are strictly prohibited. If you have received this
+> transmission in error, please notify me immediately at 361-489-5371 or
+> heather.alcala@plccrpllc.net.
+> -------------------------
+>
+> From: sales@notesao.com <sales@notesao.com>
+> Sent: Friday, July 11, 2025 9:43:16 AM
+> To: Positive Life Changes Counseling and Recovery PLLC
+> <https://urldefense.proofpoint.com/v2/url?u=3Dhttp-3A__heather.alcala-40p=
+lccrpllc.net&d=3DDwICAg&c=3DeuGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&r=
+=3DpH-mHNV-sB0Pv7-CpcteUgiKyyunwkyR1MTY2CFNI10&m=3DwTXYN_dNG9foVMIL1SCZV-Di=
+822eQpZu-MtTzexpoBBRblXUvf5uucy2Bvgs_dyN&s=3DZRtEIY3a4BkkLJ7qrc9xsYe-8ugVon=
+Z8JrJq1rRQ7Rc&e=3D>
+> Cc: Vanericmartin <vanericmartin@gmail.com>
+> Subject: Notes AO
+>
+> Heather,
+> Good morning. It was wonderful talking with you a couple days ago. I
+> would like to see if you would like to jump on a call at your
+> convenience with Van and I. We would like to discuss your thoughts on
+> what it is you would like to see on the program and just have a
+> conversation to help us get it right. Look forward to hearing from
+> you.
+>
+> David House
+> 214.502.4322
+> NotesAO
+
+--_000_BLAPR10MB5298C36BC90D6F00A88734969D57ABLAPR10MB5298namp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+I do apologize. I have been with clients all week. This week, Friday mornin=
+g at 10:15 am I will make myself available if you all would like to speak a=
+bout the platform and ask questions. I had a heavier than normal schedule t=
+his week.&nbsp;</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+Thank you for considering my input.</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+Heather</div>
+<div id=3D"Signature" class=3D"elementToProof">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: &quot;Arial Black&quot;=
+, Arial, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<span style=3D"background-color: rgb(255, 255, 255);"><b>Heather D Alcala, =
+MS, NCC, LPC, LCDC, ICADC, SAP</b></span></div>
+<div class=3D"elementToProof" style=3D"background-color: rgb(255, 255, 255)=
+; margin: 0px;">
+<div class=3D"elementToProof" style=3D"text-align: left; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<span style=3D"font-family: &quot;Lucida Handwriting&quot;, &quot;Apple Cha=
+ncery&quot;, cursive;"><br>
+</span><span style=3D"font-family: Calibri, Arial, Helvetica, sans-serif;">=
+</span></div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: &quot;Arial Black&quot;, Arial, sans-serif; font-size: 12pt; color:=
+ rgb(0, 0, 0);">
+<b>Positive Life Changes Counseling and Recovery PLLC</b></div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: &quot;Arial Black&quot;, Arial, sans-serif; font-size: 12pt; color:=
+ rgb(0, 0, 0);">
+701 Santa Isabel Blvd, Suite 4</div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: &quot;Arial Black&quot;, Arial, sans-serif; font-size: 12pt; color:=
+ rgb(0, 0, 0);">
+Laguna Vista, TX 78578</div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: &quot;Lucida Handwriting&quot;, &quot;Apple Chancery&quot;, cursive=
+; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: &quot;Arial Black&quot;, Arial, sans-serif; font-size: 12pt; color:=
+ rgb(0, 0, 0);">
+Cell: 361-489-5371</div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: &quot;Arial Black&quot;, Arial, sans-serif; font-size: 12pt; color:=
+ rgb(0, 0, 0);">
+Office: 956-299-4258</div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: &quot;Arial Black&quot;, Arial, sans-serif; font-size: 12pt; color:=
+ rgb(0, 0, 0);">
+Fax: 956-435-0135</div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: Calibri, Arial, Helvetica, sans-serif; font-size: 12pt; color: rgb(=
+0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"text-align: left; margin: 0px; font-=
+family: Calibri, Arial, Helvetica, sans-serif; font-size: 12pt; color: rgb(=
+0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"text-align: left; font-family: Calib=
+ri, Arial, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+WARNING: CONFIDENTIALITY NOTICE - The information enclosed with this transm=
+ission are the private, confidential property of the sender, and the materi=
+al is privileged communication intended solely for the individual indicated=
+. If you are not the intended recipient,
+ you are notified that any review, disclosure, copying, distribution, or th=
+e taking of any other action relevant to the contents of this transmission =
+are strictly prohibited. If you have received this transmission in error, p=
+lease notify me immediately at 361-489-5371
+ or heather.alcala@plccrpllc.net.&nbsp;</div>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Calibri, Arial, Helveti=
+ca, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+</div>
+<div id=3D"appendonsend"></div>
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
+yle=3D"font-size:11pt" color=3D"#000000"><b>From:</b> sales@notesao.com &lt=
+;sales@notesao.com&gt;<br>
+<b>Sent:</b> Friday, July 11, 2025 12:54 PM<br>
+<b>To:</b> Positive Life Changes Counseling and Recovery PLLC &lt;heather.a=
+lcala@plccrpllc.net&gt;<br>
+<b>Cc:</b> Vanericmartin &lt;vanericmartin@gmail.com&gt;<br>
+<b>Subject:</b> Re: Notes AO</font>
+<div>&nbsp;</div>
+</div>
+<div class=3D"BodyFragment"><font size=3D"2"><span style=3D"font-size:11pt;=
+">
+<div class=3D"PlainText">Yes absolutely. Please send me a time you are avai=
+lable and I can get on
+<br>
+calendar. Thank you<br>
+<br>
+David House<br>
+<br>
+<br>
+On 2025-07-11 12:32 pm, Positive Life Changes Counseling and Recovery <br>
+PLLC wrote:<br>
+&gt; Good afternoon all. I apologize for the delay in response. I am tied<b=
+r>
+&gt; up today. Is there another time we could meet. I would love to discuss=
+<br>
+&gt; this with you and see if this will develop into something I can<br>
+&gt; utilize for the SUDs work in my organization.<br>
+&gt; <br>
+&gt;&nbsp; Heather<br>
+&gt; <br>
+&gt; Heather D Alcala, MS, NCC, LPC, LCDC, ICADC, SAP<br>
+&gt; <br>
+&gt; Positive Life Changes Counseling and Recovery PLLC<br>
+&gt; 701 Santa Isabel Blvd, Suite 4<br>
+&gt; Laguna Vista, TX 78578<br>
+&gt; <br>
+&gt; Cell: 361-489-5371<br>
+&gt; Office: 956-299-4258<br>
+&gt; Fax: 956-435-0135<br>
+&gt; <br>
+&gt; WARNING: CONFIDENTIALITY NOTICE - The information enclosed with this<b=
+r>
+&gt; transmission are the private, confidential property of the sender, and=
+<br>
+&gt; the material is privileged communication intended solely for the<br>
+&gt; individual indicated. If you are not the intended recipient, you are<b=
+r>
+&gt; notified that any review, disclosure, copying, distribution, or the<br=
+>
+&gt; taking of any other action relevant to the contents of this<br>
+&gt; transmission are strictly prohibited. If you have received this<br>
+&gt; transmission in error, please notify me immediately at 361-489-5371 or=
+<br>
+&gt; heather.alcala@plccrpllc.net.<br>
+&gt; -------------------------<br>
+&gt; <br>
+&gt; From: sales@notesao.com &lt;sales@notesao.com&gt;<br>
+&gt; Sent: Friday, July 11, 2025 9:43:16 AM<br>
+&gt; To: Positive Life Changes Counseling and Recovery PLLC<br>
+&gt; &lt;<a href=3D"https://urldefense.proofpoint.com/v2/url?u=3Dhttp-3A__h=
+eather.alcala-40plccrpllc.net&amp;d=3DDwICAg&amp;c=3DeuGZstcaTDllvimEN8b7jX=
+rwqOf-v5A_CdpgnVfiiMM&amp;r=3DpH-mHNV-sB0Pv7-CpcteUgiKyyunwkyR1MTY2CFNI10&a=
+mp;m=3DwTXYN_dNG9foVMIL1SCZV-Di822eQpZu-MtTzexpoBBRblXUvf5uucy2Bvgs_dyN&amp=
+;s=3DZRtEIY3a4BkkLJ7qrc9xsYe-8ugVonZ8JrJq1rRQ7Rc&amp;e=3D">https://urldefen=
+se.proofpoint.com/v2/url?u=3Dhttp-3A__heather.alcala-40plccrpllc.net&amp;d=
+=3DDwICAg&amp;c=3DeuGZstcaTDllvimEN8b7jXrwqOf-v5A_CdpgnVfiiMM&amp;r=3DpH-mH=
+NV-sB0Pv7-CpcteUgiKyyunwkyR1MTY2CFNI10&amp;m=3DwTXYN_dNG9foVMIL1SCZV-Di822e=
+QpZu-MtTzexpoBBRblXUvf5uucy2Bvgs_dyN&amp;s=3DZRtEIY3a4BkkLJ7qrc9xsYe-8ugVon=
+Z8JrJq1rRQ7Rc&amp;e=3D</a>&gt;<br>
+&gt; Cc: Vanericmartin &lt;vanericmartin@gmail.com&gt;<br>
+&gt; Subject: Notes AO<br>
+&gt; <br>
+&gt; Heather,<br>
+&gt; Good morning. It was wonderful talking with you a couple days ago. I<b=
+r>
+&gt; would like to see if you would like to jump on a call at your<br>
+&gt; convenience with Van and I. We would like to discuss your thoughts on<=
+br>
+&gt; what it is you would like to see on the program and just have a<br>
+&gt; conversation to help us get it right. Look forward to hearing from<br>
+&gt; you.<br>
+&gt; <br>
+&gt; David House<br>
+&gt; 214.502.4322<br>
+&gt; NotesAO<br>
+</div>
+</span></font></div>
+</body>
+</html>
+
+--_000_BLAPR10MB5298C36BC90D6F00A88734969D57ABLAPR10MB5298namp_--

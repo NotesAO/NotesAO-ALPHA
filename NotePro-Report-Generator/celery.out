@@ -1,0 +1,78 @@
+DEBUG:celery.utils.functional:
+def accumulate(self, *args, **kwargs):
+    return 1
+
+DEBUG:celery.utils.functional:
+def generate_t4c_progress_reports(self, csv_file_path, start_date, end_date):
+    return 1
+
+DEBUG:celery.utils.functional:
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+DEBUG:celery.utils.functional:
+def chunks(task, it, n):
+    return 1
+
+DEBUG:celery.utils.functional:
+def run_bipp_progress_report(self, csv_file_path, script_info_list):
+    return 1
+
+DEBUG:celery.utils.functional:
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+DEBUG:celery.utils.functional:
+def generate_ac_progress_reports(self, csv_file_path, start_date, end_date):
+    return 1
+
+DEBUG:celery.utils.functional:
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+DEBUG:celery.utils.functional:
+def xmap(task, it):
+    return 1
+
+DEBUG:celery.utils.functional:
+def backend_cleanup():
+    return 1
+
+DEBUG:celery.utils.functional:
+def chain(*args, **kwargs):
+    return 1
+
+DEBUG:celery.utils.functional:
+def xstarmap(task, it):
+    return 1
+
+DEBUG:celery.utils.functional:
+def generate_bipp_progress_reports(self, csv_file_path, start_date, end_date, soft_time_limit=0, time_limit=1):
+    return 1
+
+ 
+ -------------- celery@host.ekwk7v-lwsites.com v5.4.0 (opalescent)
+--- ***** ----- 
+-- ******* ---- Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28 2024-11-05 16:52:50
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         Reporting_GUI:0x7efc68818bd0
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     redis://localhost:6379/0
+- *** --- * --- .> concurrency: 12 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . Reporting_GUI.generate_ac_progress_reports
+  . Reporting_GUI.generate_bipp_progress_reports
+  . Reporting_GUI.generate_t4c_progress_reports
+  . Reporting_GUI.run_bipp_progress_report
+
+[2024-11-05 16:52:50,486: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2024-11-05 16:52:50,487: INFO/MainProcess] mingle: searching for neighbors
+[2024-11-05 16:52:51,492: INFO/MainProcess] mingle: all alone
+[2024-11-05 16:52:51,496: INFO/MainProcess] celery@host.ekwk7v-lwsites.com ready.

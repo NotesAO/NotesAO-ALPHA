@@ -1,0 +1,130 @@
+MIME-Version: 1.0
+Date: Wed, 10 Sep 2025 13:57:27 -0500
+From: Gabriel Thomas <admin@notesao.com>
+To: Admin <admin@notesao.com>, Sales <sales@notesao.com>, david@notesao.com
+Subject: Action Required: Card Authorization for NotesAO Subscription
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <bccf5ffddc0c51c4844b9359e8a5d3bb@notesao.com>
+X-Sender: admin@notesao.com
+Organization: NotesAO
+Content-Type: multipart/alternative;
+ boundary="=_69998cf2d971103fe9638abb9c363a01"
+
+--=_69998cf2d971103fe9638abb9c363a01
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=UTF-8;
+ format=flowed
+
+Hi {{Clinic Name}},
+
+We're finalizing your NotesAO subscription. This takes about 2 minutes.
+
+Step 1 - Card Authorization (1 minute):
+Open this link and complete the form:
+https://na2.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhB3B0_a_52AKVuA6hy8F58IuYn0ErWa44P6bThAU344oGwyb1dCq5L7Fpesy6FVk8Q 
+[1]*
+
+Step 2 - Add Card Securely (on a brief call):
+Once the form is submitted, we'll add your card by phone and confirm the 
+last 4 digits match the authorization. Please don't email card numbers 
+or CVV.
+
+Plan: {{Plan Name}}
+Rate: ${{Amount}}/month
+First Charge: {{Start Date}} (renews monthly)
+
+If you prefer not to provide the card by phone, search your email for 
+"Subscription created with NotesAO" and use the "Update Payment Method" 
+link in that email.
+
+Security reminder: We don't store full card numbers. Please never email 
+PAN or CVV.
+
+Gabriel Thomas
+NotesAO Senior Developer 		 [2]
+
+  		682.201.6458 [3] · admin@notesao.com
+
+
+
+Links:
+------
+[1] 
+https://na2.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhB3B0_a_52AKVuA6hy8F58IuYn0ErWa44P6bThAU344oGwyb1dCq5L7Fpesy6FVk8Q
+[2] https://notesao.com
+[3] tel:+16822016458
+--=_69998cf2d971103fe9638abb9c363a01
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 10pt; font-family: Verdana,Gen=
+eva,sans-serif'>
+<p data-start=3D"75" data-end=3D"94">Hi {{Clinic Name}},</p>
+<p data-start=3D"96" data-end=3D"167">We&rsquo;re finalizing your NotesAO s=
+ubscription. This takes about 2 minutes.</p>
+<p data-start=3D"169" data-end=3D"395"><strong data-start=3D"169" data-end=
+=3D"212">Step 1 &ndash; Card Authorization (1 minute):</strong><br data-sta=
+rt=3D"212" data-end=3D"215" />Open this link and complete the form:<br data=
+-start=3D"252" data-end=3D"255" /><a class=3D"decorated-link" href=3D"https=
+://na2.documents.adobe.com/public/esignWidget?wid=3DCBFCIBAA3AAABLblqZhB3B0=
+_a_52AKVuA6hy8F58IuYn0ErWa44P6bThAU344oGwyb1dCq5L7Fpesy6FVk8Q" target=3D"_n=
+ew" rel=3D"noopener" data-start=3D"255" data-end=3D"394">https://na2.docume=
+nts.adobe.com/public/esignWidget?wid=3DCBFCIBAA3AAABLblqZhB3B0_a_52AKVuA6hy=
+8F58IuYn0ErWa44P6bThAU344oGwyb1dCq5L7Fpesy6FVk8Q<span class=3D"ms-0.5 inlin=
+e-block align-middle leading-none" aria-hidden=3D"true"></span></a>*</p>
+<p data-start=3D"397" data-end=3D"600"><strong data-start=3D"397" data-end=
+=3D"446">Step 2 &ndash; Add Card Securely (on a brief call):</strong><br da=
+ta-start=3D"446" data-end=3D"449" />Once the form is submitted, we&rsquo;ll=
+ add your card by phone and confirm the last 4 digits match the authorizati=
+on. Please don&rsquo;t email card numbers or CVV.</p>
+<p data-start=3D"602" data-end=3D"707"><strong data-start=3D"602" data-end=
+=3D"611">Plan:</strong> {{Plan Name}}<br data-start=3D"625" data-end=3D"628=
+" /><strong data-start=3D"628" data-end=3D"637">Rate:</strong> ${{Amount}}/=
+month<br data-start=3D"655" data-end=3D"658" /><strong data-start=3D"658" d=
+ata-end=3D"675">First Charge:</strong> {{Start Date}} (renews monthly)</p>
+<p>If you prefer not to provide the card by phone, search your email for "S=
+ubscription created with NotesAO" and use the "Update Payment Method" link =
+in that email.</p>
+<p data-start=3D"968" data-end=3D"1051" data-is-last-node=3D"" data-is-only=
+-node=3D"">Security reminder: We don&rsquo;t store full card numbers. Pleas=
+e never email PAN or CVV.</p>
+<div id=3D"signature">
+<table style=3D"font-family: Segoe UI, Arial, Helvetica, sans-serif; font-s=
+ize: 14px; line-height: 1.45; color: #1f2937;" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"width: 6px; background: #172a4d;">&nbsp;</td>
+<td style=3D"padding: 8px 12px;" valign=3D"top">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-right: 8px;" valign=3D"top">
+<div style=3D"font-size: 16px; font-weight: bold; line-height: 1.25; color:=
+ #111827;">Gabriel Thomas</div>
+<div style=3D"margin-top: 2px; line-height: 1.25; color: #374151;">NotesAO =
+Senior Developer</div>
+</td>
+<td style=3D"padding-left: 35px;" valign=3D"top"><a style=3D"text-decoratio=
+n: none;" href=3D"https://notesao.com"> <img style=3D"display: block; borde=
+r: 0; outline: none; text-decoration: none; height: 42px; width: auto;" src=
+=3D"https://notesao.com/img/email/logo-notesao.png" alt=3D"NotesAO" height=
+=3D"42" /> </a></td>
+</tr>
+<tr>
+<td style=3D"padding-top: 8px;" colspan=3D"2"><a style=3D"color: #111827; t=
+ext-decoration: none;" href=3D"tel:+16822016458">682.201.6458</a> <span sty=
+le=3D"color: #9ca3af;">&middot;</span> <a style=3D"color: #111827; text-dec=
+oration: none;" href=3D"mailto:admin@notesao.com">admin@notesao.com</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body></html>
+
+--=_69998cf2d971103fe9638abb9c363a01--

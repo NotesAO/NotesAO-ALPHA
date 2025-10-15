@@ -1,0 +1,570 @@
+/* main.css */
+
+/* ──────────────────────────────────────────
+   Global Resets & Base Styles
+   ────────────────────────────────────────── */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #f7f9fa;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  /* ──────────────────────────────────────────
+     Header  (legacy single-row version, still
+     used by login page until you migrate it)
+     ────────────────────────────────────────── */
+  header {
+    width: 100%;
+    background-color: #fff;
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #211c56;
+  }
+  
+  /* Offset page content for the fixed header */
+  main {
+    margin-top: 80px;
+  }
+  
+  /* ──────────────────────────────────────────
+     Hero Section
+     ────────────────────────────────────────── */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background: #eef3f8;
+  }
+  
+  .hero-text {
+    max-width: 550px;
+  }
+  
+  .hero-text h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+  
+  .hero-text p {
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  .hero-cta .btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  
+  .hero-cta .btn:hover {
+    background-color: #211c56;
+    box-shadow: 0 5px 15px rgba(0, 91, 187, 0.3);
+  }
+  
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-image img {
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  /* ──────────────────────────────────────────
+     Trust Logos Section
+     ────────────────────────────────────────── */
+  .trust-logos {
+    background: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+  }
+  
+  .trust-logos img {
+    height: 40px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  .trust-logos img:hover {
+    opacity: 1;
+  }
+  
+  /* ──────────────────────────────────────────
+     Features Section
+     ────────────────────────────────────────── */
+  .features {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .features p.section-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feature-card {
+    background: #f7f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    color: #007BFF;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .feature-card p {
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  /* ──────────────────────────────────────────
+     Testimonials Section
+     ────────────────────────────────────────── */
+  .testimonials {
+    padding: 4rem 2rem;
+    background: #eef3f8;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonials p.section-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .testimonial-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+  }
+  
+  .testimonial-card .quote {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .author-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .author-details {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .author-details span {
+    display: block;
+    color: #777;
+    font-size: 0.8rem;
+  }
+  
+  /* ──────────────────────────────────────────
+     CTA / Signup Section
+     ────────────────────────────────────────── */
+  .cta-section {
+    padding: 4rem 2rem;
+    background: #007BFF;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-section p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-section .btn {
+    display: inline-block;
+    background: #fff;
+    color: #007BFF;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: color 0.3s, background 0.3s, box-shadow 0.3s;
+  }
+  
+  .cta-section .btn:hover {
+    background: #f2f2f2;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* ──────────────────────────────────────────
+     Footer
+     ────────────────────────────────────────── */
+  footer {
+    background: #1c1c1c;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  footer .footer-links {
+    margin-bottom: 1rem;
+  }
+  
+  footer .footer-links a {
+    margin: 0 1rem;
+    color: #ccc;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  
+  footer .footer-links a:hover {
+    color: #fff;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  /* ──────────────────────────────────────────
+     Responsive Adjustments
+     ────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-image {
+      margin-top: 2rem;
+    }
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* ──────────────────────────────────────────
+     Cookie-Consent (unchanged styles)
+     ────────────────────────────────────────── */
+  #cookie-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #0c0a24;
+    color: #fff;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  #cookie-bar.show {
+    transform: translateY(0);
+  }
+  
+  #cookie-bar button {
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  #btn-accept {
+    background: #00d08b;
+    color: #000;
+  }
+  
+  #btn-reject {
+    background: #f8f9fa;
+    color: #211c56;
+  }
+  
+  #btn-settings {
+    background: #ffc107;
+    color: #211c56;
+  }
+  
+  a.cookie-policy {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  #cookie-fab {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #0c0a24;
+    color: #fff;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  #cookie-fab.show {
+    display: flex;
+  }
+  
+  /* ──────────────────────────────────────────
+     NEW:  Shared Navbar (dropdown) styles
+     ────────────────────────────────────────── */
+  .site-header {
+    background: #fff;
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .nav-list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-list a,
+  .drop-toggle {
+    font-weight: 500;
+    color: #333;
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0.25rem 0.1rem;
+    transition: color 0.3s;
+  }
+  
+  /* Alignment & brand-purple hover colour */
+  .nav-list a,
+  .drop-toggle {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.4;
+  }
+  
+  .nav-list a:hover,
+  .drop-toggle:hover,
+  .nav-list a:focus-visible,
+  .drop-toggle:focus-visible {
+    color: #211c56;  /* brand purple */
+  }
+  
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 11rem;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+  
+  .dropdown-menu a {
+    padding: 0.35rem 1rem;
+    white-space: nowrap;
+  }
+  
+  .dropdown-menu a:hover {
+    background: #f7f9fa;
+  }
+  
+  .dropdown.open > .dropdown-menu {
+    display: flex;
+  }
+  
+  /* Show dropdown on pointer hover (desktop) */
+  @media (hover: hover) {
+    .dropdown:hover > .dropdown-menu {
+      display: flex;
+    }
+  }
+  
+  /* Keyboard focus ring */
+  .drop-toggle:focus-visible {
+    outline: 2px solid #211c56;
+    outline-offset: 2px;
+  }
+  /* ───── NAV-BAR PATCH 2025-05-08 ───────────────────────────── */
+
+/* 1) identical vertical alignment for every top-bar item */
+.nav-list > li{position:relative;display:flex;align-items:center;}     /* keep <li> the same height */
+.nav-list a,
+.drop-toggle{
+  display:flex;align-items:center;height:40px;                         /* 40 px = logo height       */
+  font-weight:500;color:#211c56;background:transparent;border:0;
+  padding:0 .15rem;cursor:pointer;transition:color .2s;
+}
+.nav-list a:hover,
+.drop-toggle:hover,
+.nav-list a:focus-visible,
+.drop-toggle:focus-visible{color:#211c56;}                             /* brand-purple on hover/focus */
+
+/* 2) dropdown menu styling (unchanged look, but slightly tweaked box-shadow) */
+.dropdown-menu{
+  position:absolute;left:0;top:100%;min-width:11rem;
+  background:#fff;border:1px solid #e5e5e5;border-radius:6px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  display:none;flex-direction:column;padding:.5rem 0;z-index:1000;
+}
+.dropdown.open>.dropdown-menu{display:flex;}
+.dropdown-menu a{padding:.35rem 1rem;white-space:nowrap;}
+.dropdown-menu a:hover{background:#f7f9fa;}
+
+/* 3) keep RIGHT-MOST menu inside the viewport */
+.nav-list>li:last-child .dropdown-menu{left:auto;right:0;}

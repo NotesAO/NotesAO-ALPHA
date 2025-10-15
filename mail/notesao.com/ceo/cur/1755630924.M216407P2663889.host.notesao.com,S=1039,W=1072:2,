@@ -1,0 +1,33 @@
+Return-Path: <notesao@host.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id pOh/C0zNpGjRpSgAIW4ynA
+	(envelope-from <notesao@host.notesao.com>); Tue, 19 Aug 2025 14:15:24 -0500
+Return-path: <notesao@host.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Tue, 19 Aug 2025 14:15:24 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <notesao@host.notesao.com>)
+	id 1uoRno-0000000BAzp-0d0U
+	for admin@notesao.com;
+	Tue, 19 Aug 2025 14:15:24 -0500
+To: admin@notesao.com
+Subject: New NotesAO Interest Lead
+X-PHP-Script: notesao.com/signup.php for 99.77.95.143
+ X-PHP-Originating-Script: 1007:signup.php
+From: no-reply@notesao.com
+Reply-To: dinahlbostic@gmail.com
+Content-Type: text/plain; charset=utf-8
+Message-Id: <E1uoRno-0000000BAzp-0d0U@host.notesao.com>
+Date: Tue, 19 Aug 2025 14:15:24 -0500
+
+Name:       Dinah Bostic
+Clinic:     Above and beyond
+# Clients:  500
+Software:   Simple practice
+E-Mail:     dinahlbostic@gmail.com
+Phone:      6157752356
+
+Message:
+
+

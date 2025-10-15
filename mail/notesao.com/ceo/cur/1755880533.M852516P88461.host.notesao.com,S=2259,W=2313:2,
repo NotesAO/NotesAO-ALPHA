@@ -1,0 +1,54 @@
+Return-Path: <no-reply@notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id CWu/MlWcqGiNWQEAIW4ynA
+	(envelope-from <no-reply@notesao.com>); Fri, 22 Aug 2025 11:35:33 -0500
+Return-path: <no-reply@notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Fri, 22 Aug 2025 11:35:33 -0500
+Received: from [50.28.37.79] (port=54376 helo=sage.notesao.com)
+	by host.notesao.com with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <no-reply@notesao.com>)
+	id 1upUjp-00000000N0f-02uq
+	for admin@notesao.com;
+	Fri, 22 Aug 2025 11:35:33 -0500
+Date: Fri, 22 Aug 2025 11:35:33 -0500
+To: admin@notesao.com
+From: NotesAO <no-reply@notesao.com>
+Subject: Activate your NotesAO account
+Message-ID: <EHu6ySmWA56jcTntD1uROVtFmnyFvoov6jKo1A9pVk@sage.notesao.com>
+X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="b1=_EHu6ySmWA56jcTntD1uROVtFmnyFvoov6jKo1A9pVk"
+Content-Transfer-Encoding: 8bit
+
+--b1=_EHu6ySmWA56jcTntD1uROVtFmnyFvoov6jKo1A9pVk
+Content-Type: text/plain; charset=us-ascii
+
+
+                      Hello admin,
+                      An administrator just created an account for you on NotesAO.
+                      Click the button below to activate your account and choose your password:
+                      
+                        Activate Account
+                      
+                      This link works only once.
+
+--b1=_EHu6ySmWA56jcTntD1uROVtFmnyFvoov6jKo1A9pVk
+Content-Type: text/html; charset=us-ascii
+
+
+                      <p>Hello admin,</p>
+                      <p>An administrator just created an account for you on <strong>NotesAO</strong>.</p>
+                      <p>Click the button below to activate your account and choose your password:</p>
+                      <p>
+                        <a href='https://notesao.com/activate.php?clinic=sage&code=f493759de7a1033ee98b9a173da0e6b3f4c33d42b7bbe8f8ebb177dc8e26c8c0' style='padding:10px 18px;background:#211c56;color:#fff;
+                          text-decoration:none;border-radius:6px;'>Activate Account</a>
+                      </p>
+                      <p>This link works only once.</p>
+
+
+--b1=_EHu6ySmWA56jcTntD1uROVtFmnyFvoov6jKo1A9pVk--
+

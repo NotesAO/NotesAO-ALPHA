@@ -1,0 +1,110 @@
+Return-Path: <>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id IGcmNAaDi2gofjsAIW4ynA
+	(envelope-from <>); Thu, 31 Jul 2025 09:51:50 -0500
+Return-path: <>
+Envelope-to: no-reply@notesao.com
+Delivery-date: Thu, 31 Jul 2025 09:51:50 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1uhUdK-0000000GMI7-3VLV
+	for no-reply@notesao.com;
+	Thu, 31 Jul 2025 09:51:50 -0500
+X-Failed-Recipients: arathemell@saferpathfvs.org
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@notesao.com
+References: <E1uhUdI-0000000GMHq-2OHY@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1753973510-eximdsn-676927042
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1uhUdK-0000000GMI7-3VLV@host.notesao.com>
+Date: Thu, 31 Jul 2025 09:51:50 -0500
+
+--1753973510-eximdsn-676927042
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  arathemell@saferpathfvs.org
+    host d257878a.ess.barracudanetworks.com [209.222.82.253]
+    SMTP error from remote mail server after end of data:
+    550 permanent failure for one or more recipients (arathemell@saferpathfvs.org:550 5.4.1 Recipient address rejected:
+    Access denied. For more information see https://aka...)
+
+--1753973510-eximdsn-676927042
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;arathemell@saferpathfvs.org
+Status: 5.0.0
+Remote-MTA: dns; d257878a.ess.barracudanetworks.com
+Diagnostic-Code: smtp; 550 permanent failure for one or more recipients (arathemell@saferpathfvs.org:550 5.4.1 Recipient address rejected: Access denied. For more information see https://aka...)
+
+--1753973510-eximdsn-676927042
+Content-type: message/rfc822
+
+Return-path: <no-reply@notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@notesao.com>)
+	id 1uhUdI-0000000GMHq-2OHY
+	for arathemell@saferpathfvs.org;
+	Thu, 31 Jul 2025 09:51:48 -0500
+To: arathemell@saferpathfvs.org
+Subject: Thank you for contacting NotesAO
+X-PHP-Script: notesao.com/signup.php for 12.5.181.74
+ X-PHP-Originating-Script: 1007:signup.php
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+From: NotesAO <no-reply@notesao.com>
+Reply-To: support@notesao.com
+Message-Id: <E1uhUdI-0000000GMHq-2OHY@host.notesao.com>
+Date: Thu, 31 Jul 2025 09:51:48 -0500
+
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>NotesAO – Thank You</title></head>
+<body style="margin:0;padding:0;background:#f0f4f8;font-family:Montserrat,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" style="padding:40px 16px;">
+        <table width="600" cellpadding="0" cellspacing="0"
+               style="background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08);">
+          <tr>
+            <td align="center" style="padding:32px 32px 24px;">
+              <img src="https://notesao.com/assets/images/NotesAO%20Logo.png"
+                   alt="NotesAO Logo" style="height:48px;margin-bottom:20px">
+              <h1 style="margin:0;font-size:22px;color:#211c56;">Thank you for reaching out!</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 48px 32px;font-size:15px;line-height:1.6;color:#444;">
+              <p style="margin-top:0;">Hi <strong>Andrea Rathmell</strong>,</p>
+              <p>Thanks for your interest in <strong>NotesAO</strong>. A member of our sales
+              team will review the details you provided and get in touch shortly to answer
+              questions and schedule a live demo.</p>
+              <p>We look forward to showing you how NotesAO can streamline documentation,
+              automate reporting, and simplify your workflow.</p>
+              <p style="margin:28px 0 0;">Warm regards,<br>The NotesAO Team</p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="background:#211c56;color:#fff;padding:14px;
+                                      border-bottom-left-radius:8px;border-bottom-right-radius:8px;
+                                      font-size:13px;">
+              NotesAO — Streamlining Therapeutic Documentation
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+--1753973510-eximdsn-676927042--

@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id PbtKHWFx7miExhMAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Tue, 14 Oct 2025 10:50:57 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Tue, 14 Oct 2025 10:50:57 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v8hIf-00000005R9C-1aVw
+	for admin@notesao.com;
+	Tue, 14 Oct 2025 10:50:57 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Lamair Scott
+X-PHP-Script: ffl.notesao.com/intake.php for 166.196.65.37
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: lamarscott1983@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v8hIf-00000005R9C-1aVw@host.notesao.com>
+Date: Tue, 14 Oct 2025 10:50:57 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

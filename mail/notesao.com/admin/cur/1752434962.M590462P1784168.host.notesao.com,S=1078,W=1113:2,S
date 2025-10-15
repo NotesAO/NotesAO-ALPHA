@@ -1,0 +1,35 @@
+Return-Path: <notesao@host.notesao.com>
+Delivered-To: admin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id ohSFA1vBHGhDXx4AIW4ynA
+	(envelope-from <notesao@host.notesao.com>)
+	for <admin@notesao.com>; Thu, 08 May 2025 09:36:11 -0500
+Return-path: <notesao@host.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Thu, 08 May 2025 09:36:11 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.1)
+	(envelope-from <notesao@host.notesao.com>)
+	id 1uD2M7-00000008LoB-04Eu
+	for admin@notesao.com;
+	Thu, 08 May 2025 09:36:11 -0500
+To: admin@notesao.com
+Subject: New NotesAO Interest Lead
+X-PHP-Script: notesao.com/signup.php for 70.116.211.150
+ X-PHP-Originating-Script: 1007:signup.php
+From: no-reply@notesao.com
+Reply‑To: gabecthomas@gmail.com
+Content‑Type: text/plain; charset=utf‑8
+Message-Id: <E1uD2M7-00000008LoB-04Eu@host.notesao.com>
+Date: Thu, 08 May 2025 09:36:11 -0500
+
+Name:       Gabriel
+Clinic:     FFL
+# Clients:  900
+Software:   NotesAO
+E-Mail:     gabecthomas@gmail.com
+Phone:      6822016458
+
+Message:
+hi
+

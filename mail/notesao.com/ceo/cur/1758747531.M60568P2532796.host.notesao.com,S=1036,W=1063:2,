@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id VDxEAotb1Gi8pSYAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 24 Sep 2025 15:58:51 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 24 Sep 2025 15:58:51 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v1WZe-0000000ActQ-3sT4
+	for admin@notesao.com;
+	Wed, 24 Sep 2025 15:58:50 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Taliyah Bennett
+X-PHP-Script: ffl.notesao.com/intake.php for 72.158.228.106
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: taliyahbennett77@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v1WZe-0000000ActQ-3sT4@host.notesao.com>
+Date: Wed, 24 Sep 2025 15:58:50 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

@@ -1,0 +1,141 @@
+Return-Path: <AllisonG@avda-tx.org>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 4CUzKYYqUGjFmjgAIW4ynA
+	(envelope-from <AllisonG@avda-tx.org>)
+	for <sales@notesao.com>; Mon, 16 Jun 2025 09:30:30 -0500
+Return-path: <AllisonG@avda-tx.org>
+Envelope-to: sales@notesao.com
+Delivery-date: Mon, 16 Jun 2025 09:30:30 -0500
+Received: from filter02.quasardata.com ([204.61.223.10]:42459 helo=filter.quasardata.com)
+	by host.notesao.com with esmtp (Exim 4.98.2)
+	(envelope-from <AllisonG@avda-tx.org>)
+	id 1uRAqy-0000000FZ2h-2Wbi
+	for sales@notesao.com;
+	Mon, 16 Jun 2025 09:30:30 -0500
+Authentication-Results: filter02.quasardata.com;
+        x-trusted-ip=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=avda-tx.org;
+	s=default2; t=1750083952;
+	bh=0VBstdNu0JGHeVxZrZIFTlmPhBdGHYO/6fpdsPMlZy0=;
+	h=From:To:Subject:Date:References:In-Reply-To;
+	b=xBEGn09FabWrbX2nVLSWogk9y9aoMhLFWc9hV8JS50119w+yz/N3ddghYNAKPs5at
+	 SCV0mGdtMRNWweV2NJdnXMxxY5DKvAPoGSwXpMFJA/Vb61TbH6UcImw4Xv0kOW29Sl
+	 sQDZaVicaCtpPcc2VEx8ODNzivmtFtVnD7248k2o=
+Received: from mail.avda-tx.org (mail.avda-tx.org [198.176.31.252])
+	by filter02.quasardata.com (Postfix) with ESMTP id 6D9871EA6A3
+	for <sales@notesao.com>; Mon, 16 Jun 2025 09:25:52 -0500 (CDT)
+Received: from EXCH1601.avda.local (192.168.1.143) by EXCH1601.avda.local
+ (192.168.1.143) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.55; Mon, 16 Jun
+ 2025 09:29:52 -0500
+Received: from EXCH1601.avda.local ([fe80::4953:2497:24ad:9dea]) by
+ EXCH1601.avda.local ([fe80::4953:2497:24ad:9dea%5]) with mapi id
+ 15.01.2507.055; Mon, 16 Jun 2025 09:29:52 -0500
+From: Allison Guerra <AllisonG@avda-tx.org>
+To: "'sales@notesao.com'" <sales@notesao.com>
+Subject: RE: Notes AO
+Thread-Topic: Notes AO
+Thread-Index: AQHb1t2efmrUx3rIsU+j6g3J4Ko7kbP84QfAgABlsYCAAPhvkIAAgmuAgAcm3lA=
+Date: Mon, 16 Jun 2025 14:29:52 +0000
+Message-ID: <ddcee3540e904320874d232139017238@avda-tx.org>
+References: <a39195fbaf18555fb110cc01b5a26e9d@notesao.com>
+ <f7e8df5042b54390b49e3cb2019a8f15@avda-tx.org>
+ <f54c03515b56c960b0581480cc5e9ffa@notesao.com>
+ <17cb08b058e14d6bb16af8374cd1e0f9@avda-tx.org>
+ <f5bd9ca0552364c9018e10c99ca4a60c@notesao.com>
+In-Reply-To: <f5bd9ca0552364c9018e10c99ca4a60c@notesao.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [192.168.1.37]
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+X-Spam-Status: No, score=-0.2
+X-Spam-Score: -1
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Hi David, Are we still on for tomorrow at 11 am? 
+ Content analysis details:   (-0.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [204.61.223.10 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [204.61.223.10 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [204.61.223.10 listed in sa-accredit.habeas.com]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: avda.org]
+                             [URI: avda-tx.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+X-Spam-Flag: NO
+
+SGkgRGF2aWQsDQoNCkFyZSB3ZSBzdGlsbCBvbiBmb3IgdG9tb3Jyb3cgYXQgMTEgYW0/DQoNCi0t
+LS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQpGcm9tOiBzYWxlc0Bub3Rlc2FvLmNvbSA8c2FsZXNA
+bm90ZXNhby5jb20+IA0KU2VudDogV2VkbmVzZGF5LCBKdW5lIDExLCAyMDI1IDM6MTcgUE0NClRv
+OiBBbGxpc29uIEd1ZXJyYSA8QWxsaXNvbkdAYXZkYS10eC5vcmc+DQpTdWJqZWN0OiBSZTogTm90
+ZXMgQU8NCg0KQWJzb2x1dGVseSwgVGhhdCB3b3Jrcy4gSSB3aWxsIHNlbmQgb3ZlciBhbiBpbnZp
+dGUuDQoNCkRhdmlkIEhvdXNlDQoNCg0KT24gMjAyNS0wNi0xMSAxMjozMCBwbSwgQWxsaXNvbiBH
+dWVycmEgd3JvdGU6DQo+IFdvdWxkIFR1ZXNkYXkgNi8xNyBhdCAxMSBhbSB3b3JrPw0KPiANCj4g
+DQo+IA0KPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBGcm9tOiBzYWxlc0Bub3Rlc2Fv
+LmNvbSA8c2FsZXNAbm90ZXNhby5jb20+DQo+IFNlbnQ6IFR1ZXNkYXksIEp1bmUgMTAsIDIwMjUg
+NDo0MSBQTQ0KPiBUbzogQWxsaXNvbiBHdWVycmEgPEFsbGlzb25HQGF2ZGEtdHgub3JnPg0KPiBT
+dWJqZWN0OiBSZTogTm90ZXMgQU8NCj4gDQo+IEFsbGlzb24sDQo+IFRoYW5rIHlvdSBmb3IgeW91
+ciBlbWFpbC4gRG8geW91IGhhdmUgdGltZSBmb3IgYSBwaG9uZSBjYWxsPyBXZSBjYW4gDQo+IHNl
+dCB1cCBhIHRpbWUgb3ZlciB0aGUgcGhvbmUuIENhbGwgbWUgYW55dGltZSAyMTQtNTAyLTQzMjIN
+Cj4gDQo+IElmIHBob25lIGNhbGwgZG9lcyBub3Qgd29yaywgbXkgc2NoZWR1bGUgaXMgcHJldHR5
+IG9wZW4uIE9ubHkgdGltZSBJIA0KPiBhbSBub3QgYXZhaWxhYmxlIGlzIHRoaXMgVGh1cnNkYXkg
+YWZ0ZXJub29uLiBQbGVhc2UgbG9vayBhdCB5b3VyIA0KPiBjYWxlbmRhciBhbmQgbGV0IG1lIGtu
+b3cgb2YgYSBkYXRlIGFuZCBJIGNhbiBwdXQgaXQgb24gY2FsZW5kYXIuIFRoYW5rIA0KPiB5b3UN
+Cj4gDQo+IERhdmlkIEhvdXNlDQo+IA0KPiANCj4gDQo+IE9uIDIwMjUtMDYtMTAgMzozNyBwbSwg
+QWxsaXNvbiBHdWVycmEgd3JvdGU6DQo+PiBHb29kIGFmdGVybm9vbiwNCj4+IA0KPj4gV2hlbiB3
+b3VsZCBiZSBhIGdvb2QgdGltZSB0byBzZXQgdXAgYSBkZW1vPw0KPj4gDQo+PiBUaGFua3MtDQo+
+PiANCj4+IA0KPj4gUmVzcGVjdGZ1bGx5LA0KPj4gDQo+PiBBbGxpc29uIEd1ZXJyYSwgTS5FZCwg
+TFBDLUFzc29jaWF0ZQ0KPj4gRGlyZWN0b3Igb2YgQklQUCB8IEdyb3VwIEZhY2lsaXRhdG9yDQo+
+PiAxMDAxIFRleGFzIEF2ZS4sIFN1aXRlIDYwMCDCoEhvdXN0b24sIFRleGFzwqAgNzcwMDIgbWFp
+biA3MTMtMjI0LTk5MTEgfCANCj4+IGRpcmVjdCA3MTMtNzE1LTY5NDIgZmF4IDcxMy03MTUtNjk0
+NSB3d3cuYXZkYS5vcmcNCj4+IA0KPj4gDQo+PiBBIFVuaXRlZCBXYXkgcGFydG5lcg0KPj4gwqAN
+Cj4+IA0KPj4gDQo+PiANCj4+IA0KPj4gDQo+PiANCj4+IA0KPj4gLS0tLS1PcmlnaW5hbCBNZXNz
+YWdlLS0tLS0NCj4+IEZyb206IHNhbGVzQG5vdGVzYW8uY29tIDxzYWxlc0Bub3Rlc2FvLmNvbT4N
+Cj4+IFNlbnQ6IFRodXJzZGF5LCBKdW5lIDUsIDIwMjUgMTA6NDEgUE0NCj4+IFRvOiBNYWlzaGEg
+Q29sdGVyIDxNYWlzaGFDQGF2ZGEtdHgub3JnPjsgQWxsaXNvbiBHdWVycmEgDQo+PiA8QWxsaXNv
+bkdAYXZkYS10eC5vcmc+DQo+PiBTdWJqZWN0OiBOb3RlcyBBTw0KPj4gDQo+PiBIZWxsbywNCj4+
+IEkgaG9wZSB0aGlzIGVtYWlsIGZpbmRzIHlvdSB3ZWxsLiBNeSBuYW1lIGlzIERhdmlkIEhvdXNl
+LiBJIGFtIHdpdGggDQo+PiBOb3RlcyBBTy4gTm90ZXMgQU8gaXMgYSB3ZWIgYXBwbGljYXRpb24g
+dGhhdCBjYW4gZ2VuZXJhdGUgdXAgdG8gYSANCj4+IHRob3VzYW5kIG5vdGVzIGluIGxlc3MgdGhh
+biAxNSBtaW51dGVzIHRoYXQgYXJlIFREQ0otQ0pBRCBjb21wbGlhbnQuDQo+PiBJdA0KPj4gYWxz
+byBoYXMgdGhlIGNhcGFiaWxpdHkgdG8gdHJhY2sgYXR0ZW5kYW5jZSBhbmQgSW5zdGFudCBNQVIg
+YW5kIG1hbnkgDQo+PiBtb3JlIGZlYXR1cmVzLiAgSSB3b3VsZCBsb3ZlIHRvIHNldCB1cCBhIGRl
+bW8gd2l0aCB5b3UgYW5kIHlvdXIgDQo+PiBhZG1pbmlzdHJhdGlvbiBhbmQgc2hvdyB5b3UganVz
+dCBob3cgdGhpcyBwcm9ncmFtIHdvcmtzLiBJIGJlbGlldmUgDQo+PiB5b3Ugd2lsbCBiZSBibG93
+biBhd2F5LCBhbmQgaXQgd2lsbCByZWxpZXZlIHRoZSBhZG1pbmlzdHJhdGl2ZSBidXJkZW4gDQo+
+PiB0aGF0IHlvdSBtYXkgYmUgZmFjaW5nIG5vdy4gUGxlYXNlIGdpdmUgbWUgYSBjYWxsIHRvIHRh
+bGsgbW9yZSBhYm91dCANCj4+IGl0LiBJIGFtIGF2YWlsYWJsZSBhbnl0aW1lLiBUaGFuayB5b3Ug
+c28gbXVjaA0KPj4gDQo+PiBEYXZpZCBIb3VzZQ0KPj4gMjE0LTUwMi00MzIyDQo+PiBOb3RlcyBB
+Tw0K

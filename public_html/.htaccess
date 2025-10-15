@@ -1,0 +1,60 @@
+#SetEnv RECAPTCHA_SECRET 6Leo34ErAAAAAEJQX7WC6Xnud_VzrjoyMTVZ5aa7
+
+# Force requests made to IP 50.28.37.79 -> notepro.co
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^50\.28\.37\.79$
+RewriteRule ^(.*)$ http://notepro.co/$1 [R=301,L]
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|htm)$">
+        Header set Content-Type "text/html; charset=UTF-8"
+    </FilesMatch>
+
+    <FilesMatch "\.(js)$">
+        Header set Content-Type "application/javascript; charset=UTF-8"
+    </FilesMatch>
+
+    <FilesMatch "\.(json)$">
+        Header set Content-Type "application/json; charset=UTF-8"
+    </FilesMatch>
+
+    <FilesMatch "\.(css)$">
+        Header set Content-Type "text/css; charset=UTF-8"
+    </FilesMatch>
+</IfModule>
+
+# Enable mod_expires and mod_headers if not already
+# In WHM, you can enable these via EasyApache 4, or via command line:
+#   sudo a2enmod expires
+#   sudo a2enmod headers
+#   sudo service apache2 restart
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Set default expiry of 1 month for images
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  
+  # ...and so on for CSS, JS:
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Add a Cache-Control header for the same file types
+  <FilesMatch "\.(png|jpe?g|gif|css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+    # 2592000 seconds = 30 days
+  </FilesMatch>
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

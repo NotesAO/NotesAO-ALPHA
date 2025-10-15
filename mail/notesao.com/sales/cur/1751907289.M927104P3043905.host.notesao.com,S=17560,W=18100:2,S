@@ -1,0 +1,540 @@
+Return-Path: <mila.sherman@sagetx.org>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id t4UMN9n7a2hBci4AIW4ynA
+	(envelope-from <mila.sherman@sagetx.org>)
+	for <sales@notesao.com>; Mon, 07 Jul 2025 11:54:49 -0500
+Return-path: <mila.sherman@sagetx.org>
+Envelope-to: sales@notesao.com
+Delivery-date: Mon, 07 Jul 2025 11:54:49 -0500
+Received: from se03.mfg.siteprotect.com ([64.26.60.166]:42925)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <mila.sherman@sagetx.org>)
+	id 1uYp7A-0000000Clqc-0np5
+	for sales@notesao.com;
+	Mon, 07 Jul 2025 11:54:49 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=mfg.outbound; s=default; h=Content-Type:MIME-Version:Subject:References:
+	In-Reply-To:Message-ID:To:Reply-To:Sender:From:Date:cc:bcc:
+	content-transfer-encoding; bh=1amnqbyGV13CJKR6dWCJPXSNyWru4V3LPAtVEdVVHXE=; 
+	b=YeyAnjhbrXqiduWBA3Va++WPRJOIWAr/dH9sgUWH0dEnD+6tJVWw+Cp+f7rlt7KmEEQmghieIUT
+	8xzaIC0NOleqffD/PzgsAuipC9G3BgoRAphJ+kdKcrN8p7NFo11n+gwnhHO/YBa+oh0s08Yjt9ucz
+	yhCQPPkaf5OWF5Toyk2iKj2kkewwRBX7G63osoFaAWO8aom1Twwu9/AVN+cA7kBlZtdTqxc79ggpj
+	c1DoilUKAJGY7Z9qXYGiIhgUbiTcwlHiz9RS1iNZRoYHz81Ql1X9DvJ1bdmBxr33HItABvNL9CrV4
+	SrWi5joItz0zX+ScHkiB7M9Bgb/yqV5EZ0Bg==;
+Received: from smtpauth01.mfg.siteprotect.com ([64.26.60.150])
+	by se03.mfg.siteprotect.com with esmtp (Exim 4.94.2)
+	(envelope-from <mila.sherman@sagetx.org>)
+	id 1uYp75-002jh8-KQ
+	for sales@notesao.com; Mon, 07 Jul 2025 12:54:46 -0400
+Received: from oxapp02.mfg.tampa.hostway (unknown [64.41.126.41])
+	(Authenticated sender: mila.sherman@sagetx.org)
+	by smtpauth01.mfg.siteprotect.com (Postfix) with ESMTPSA id 4bbVhg3HD8z9hyqs1
+	for <sales@notesao.com>; Mon,  7 Jul 2025 12:54:43 -0400 (EDT)
+Date: Mon, 7 Jul 2025 11:54:43 -0500 (CDT)
+From: "mila.sherman@sagetx.org" <mila.sherman@sagetx.org>
+Sender: "mila.sherman@sagetx.org" <mila.sherman@sagetx.org>
+Reply-To: "mila.sherman@sagetx.org" <mila.sherman@sagetx.org>
+To: sales@notesao.com
+Message-ID: <Appointment.835597E05C9035AE70BD9F058DE280A3-DA5315CD059A7D0A.1751907283323@open-xchange.com>
+In-Reply-To: <Appointment.835597E05C9035AE70BD9F058DE280A3-DA5315CD059A7D0A@open-xchange.com>
+References: <Appointment.835597E05C9035AE70BD9F058DE280A3-DA5315CD059A7D0A@open-xchange.com>
+Subject: mila.sherman@sagetx.org accepted the invitation: SAGE NotesAO
+ Meeting
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_925396_616509425.1751907283320"
+X-Priority: 3 (normal)
+X-Mailer: Open-Xchange Mailer v7.10.6-Rev57
+Auto-Submitted: auto-generated
+X-Originating-Client: open-xchange-appsuite
+Authentication-Results: mfg.siteprotect.com; auth=pass smtp.auth=mila.sherman@sagetx.org
+X-Originating-IP: 64.26.60.150
+X-SpamExperts-Domain: mfg.outbound
+X-SpamExperts-Username: 64.26.60.150/31
+Authentication-Results: mfg.siteprotect.com; auth=pass smtp.auth=64.26.60.150/31@mfg.outbound
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.16)
+X-Recommended-Action: accept
+X-Filter-ID: 9kzQTOBWQUFZTohSKvQbgI7ZDo5ubYELi59AwcWUnuXx7Wd7dPicD3FzsdkBH3cL20obNDFX8WlH
+ CSCNFzxAnyu2SmbhJN1U9FKs8X3+Nt1k2er0DEyk2jNW2BcO1hw5gToRt/TpVOBhaMUWliOKZI3I
+ KX0UVZPrWxEAsdvV/hwjcAaCjgoiqGIAab2sVqKvTyPIx4DZtCEn1ACC7fqX9CJwlNFET8uqlhb1
+ UKo++JguVraKRE/pSsN7DZwq0Fq31Teq+LOCvY9cjSQPo03Oz7AWZPxwQ8wCzut2NwHv0YwB/qL3
+ OrVCxkwbawqHu7KFPmukvzEzdhT6oqwOs/KI/SU9n537p1CW2dbfl1gcOLh86axUW6RUEznBBnkD
+ mNyHnBUeWIPsSyWMCkplUXGkvA5U9t4xcCUOm4tiv78RtCo2hUDWc7R53A2FTJ+VjFBsdBByyGPg
+ Lx002ZtqPFz06DMBuXLp29As3/nTVhK5X1heKOApUxneuxEIAHVTv7V45YE5enyccp7RH4WQio3u
+ GVRIv0/cJWRhVHR/qNyeDHahgs6NSkGB2MtsqA/jeUr3LFpFCyJ/9hQbxd9VB27J3Y+kXrZFxPNM
+ j+t8oOjdJ7JzHDeqqFz43py4SDhdaHkWAJgG5U6KpdRB3LOIHgtl2NY+bEWqQocQwcWDdCzcGHkN
+ s/OGMpNyQ5QhyDsz4K28b3UQT3xbkHqpqmyCe4PiKeuwZeD2iOyXNUtZXf5B6HvG9QBqF8uk67Yd
+ t4cjlRdO2SVHnBh5QimAuh5ostEL+hK0Am4G3whXG/SltCgoCxsLARd3M6pqX1NCSv/LkaPfg0qt
+ 0PlintGDAKzUEPnP3JuYGAQyADCz6I+xLHb+XTS1a4AAwEC3OnkPdwkIi89/w8Fe/oP+YDceMPyL
+ cQJOImbjO41FyBEqIaDudcVplPEtt9W1gnxurANFwe55S0SjcsNeAjsV8e1HTGa27/HkYzQCUvKr
+ xrnkq+NlF8Ob3D3RfHeGCzP5JZdEO1k+myhDJw3/w1ReFHLlZ9CxJS+Ek53NH+NQbPomg7sAiVvT
+ REZ8K4EgtgsN2Ij6q4Ui0HC+N6mgRXwmhaF+5Wzan3Zps9lOlAelJocAmAzKnRSij1IXTIJFR5/H
+ fFoWIZPfks/B
+X-Report-Abuse-To: spam@se02.mfg.siteprotect.com
+X-Complaints-To: abuse@se01.mfg.siteprotect.com
+X-Spam-Status: No, score=0.2
+X-Spam-Score: 2
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  mila.sherman@sagetx.org has accepted the invitation: ====[
+    SAGE NotesAO Meeting ]==== All times will be shown in the timezone Central
+    Standard Time 
+ Content analysis details:   (0.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [64.26.60.166 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                           [64.26.60.166 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [64.26.60.166 listed in bl.score.senderscore.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  0.0 KAM_DMARC_STATUS       Test Rule for DKIM or SPF Failure with Strict
+                             Alignment
+  0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+X-Spam-Flag: NO
+
+------=_Part_925396_616509425.1751907283320
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_925397_1817069500.1751907283320"
+
+------=_Part_925397_1817069500.1751907283320
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+mila.sherman@sagetx.org has accepted the invitation:
+
+
+
+====[       SAGE NotesAO Meeting       ]====
+
+All times will be shown in the timezone Central Standard Time
+
+When: Monday, July 14, 2025 2:00 PM - 3:00 PM
+Where: 4601 Boat Club Road, Fort Worth, Texas 76135
+
+
+====================================
+NotesAO meeting
+====================================
+
+
+== Participants ==
+
+mila.sherman@sagetx.org (accepted)
+andrea.anderson@sagetx.org (waiting)
+brandee.faughn@sagetx.org (waiting)
+corre.brown@sagetx.org (waiting)
+keyna.anderson@sagetx.org (waiting)
+Vanericmartin (waiting)
+
+== Resources ==
+
+
+== Details ==
+
+Show as: Reserved
+Created: Monday, July 7, 2025 11:54 AM - sales@notesao.com
+
+
+
+
+
+You have received this E-Mail because you are the organizer of this appointment.
+
+
+
+
+------=_Part_925397_1817069500.1751907283320
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+ <head>=20
+  <title></title>=20
+  <meta charset=3D"UTF-8">=20
+  <style type=3D"text/css">
+.content {
+white-space: normal;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+cursor: default;
+}
+/* shown_as */
+
+
+.shown_as.reserved { background-color: #08c; } /* blue */
+.shown_as.temporary { background-color: #fc0; } /* yellow */
+.shown_as.absent { background-color: #913F3F; } /* red */
+.shown_as.free { background-color: #8EB360; } /* green */
+
+.shown_as_label.reserved { color: #08c; } /* blue */
+.shown_as_label.temporary { color: #fc0; } /* yellow */
+.shown_as_label.absent { color: #913F3F; } /* red */
+.shown_as_label.free { color: #8EB360; } /* green */
+
+em {
+font-weight: bold;
+}
+
+/* Detail view */
+
+.timezone {
+margin-bottom: 2em;
+}
+
+.justification, .attachmentNote {
+margin-top: 2em;
+margin-bottom: 2em;
+}
+
+.calendar-detail .action {
+float: right;
+margin-right: 1em;
+}
+
+.calendar-detail .link {
+cursor: pointer;
+text-decoration: underline;
+color: #00a0cd;
+}
+
+.calendar-detail .calendar-buttons {
+height: 2em;
+text-align: right;
+line-height: 2em;
+border-bottom: 1px solid #f0f0f0;
+}
+
+.calendar-detail .date {
+font-size: 11pt;
+color: #ccc;
+}
+
+.calendar-detail .interval {
+color: #555;
+white-space: nowrap;
+float: right;
+}
+
+.calendar-detail .day {
+color: #888;
+}
+
+.calendar-detail .title {
+font-size: 18pt;
+line-height: 22pt;
+margin: 0.25em 0 0.25em 0;
+}
+
+.calendar-detail .location {
+font-size: 11pt;
+color: #888;
+margin-bottom: 1em;
+}
+
+.calendar-detail .label {
+font-size: 9pt;
+color: #888;
+clear: both;
+border-bottom: 1px solid #ccc;
+padding: 1em 0 0.25em 0em;
+margin-bottom: 0.5em;
+}
+
+.calendar-detail .note {
+max-width: 550px;
+margin: 2em 0 1em 0;
+-webkit-user-select: text;
+-moz-user-select: text;
+user-select: text;
+cursor: text;
+}
+
+.calendar-detail .participants {
+min-height: 2em;
+}
+
+.calendar-detail .participants table {
+text-align: left;
+vertical-align: left;
+}
+
+.calendar-detail .participant {
+line-height: 1.2 em;
+}
+
+.calendar-detail .detail-label {
+display: inline-block;
+width: 110px;
+white-space: nowrap;
+color: #666;
+}
+
+.calendar-detail .detail {
+white-space: nowrap;
+}
+
+.calendar-detail .detail.shown_as {
+display: inline-block;
+height: 1em;
+width: 1em;
+}
+
+.calendar-detail .participant .status { font-weight: bold; }
+.calendar-detail .participant .status.accepted { color: #8EB360; } /* green=
+ */
+.calendar-detail .participant .status.declined { color: #913F3F; } /* red *=
+/
+.calendar-detail .participant .status.tentative { color: #c80; } /* orange =
+*/
+
+.calendar-detail .participant .comment {
+color: #888;
+display: block;
+white-space: normal;
+padding-left: 1em;
+}
+
+.calendar-detail .group {
+margin: 0.75em 0 0.25em 0;
+color: #333;
+}
+
+.person, .person-link {
+color: #00A0CD;
+}
+
+.clear-title {
+font-family: OpenSans, Helvetica, Arial, sans-serif;
+font-weight: 200;
+font-size: 20pt;
+line-height: 1.15em;
+}
+
+.calendar-action {
+margin-bottom: 2em;
+font-family: OpenSans, Helvetica, Arial, sans-serif;
+font-weight: 200;
+font-size: 12pt;
+}
+
+.calendar-action .changes{
+margin-top: 2em;
+font-size: 11pt;
+}
+
+.calendar-action .changes .original {
+font-weight: bold;
+}
+
+.calendar-action .changes .recurrencePosition {
+font-weight: bold;
+}
+
+.calendar-action .changes .updated {
+color: green;
+font-weight: bold;
+}
+
+.calendar-action .comment {
+margin-top: 1em;
+font-size: 10pt;
+text-indent: 3em;
+}
+
+.calendar-action .status {  }
+.calendar-action  .status.accepted { color: #8EB360; } /* green */
+.calendar-action  .status.declined { color: #913F3F; } /* red */
+.calendar-action  .status.tentative { color: #c80; } /* orange */
+
+
+</style>=20
+ </head>
+ <body>=20
+  <div class=3D"content">=20
+   <div class=3D"timezone">
+     All times will be shown in the timezone <em>Central Standard Time</em>=
+=20
+   </div>=20
+   <div class=3D"calendar-action">
+    <span class=3D"person">mila.sherman@sagetx.org</span> has <span class=
+=3D"status accepted">accepted</span> the invitation:
+   </div>=20
+   <div class=3D"calendar-detail">=20
+    <div class=3D"date">=20
+     <div class=3D"interval">
+       2:00 PM - 3:00 PM=20
+     </div>=20
+     <div class=3D"day">
+       Monday, July 14, 2025=20
+     </div>=20
+    </div>=20
+    <div class=3D"title clear-title">
+      SAGE NotesAO Meeting=20
+    </div>=20
+    <div class=3D"location">
+      4601 Boat Club Road, Fort Worth, Texas 76135=20
+    </div>=20
+    <div class=3D"calendar-buttons" style=3D"display:none"></div>=20
+    <div class=3D"note">
+      NotesAO meeting=20
+    </div>=20
+    <div class=3D"participants">=20
+    </div>=20
+    <div class=3D"participants">=20
+     <div class=3D"label">
+       Participants=20
+     </div>=20
+     <div class=3D"participant-list">=20
+      <div class=3D"participant"> <span class=3D"person">mila.sherman@saget=
+x.org</span> <span class=3D"status accepted">=E2=9C=93</span> <span class=
+=3D"comment"></span>=20
+      </div>=20
+      <div class=3D"participant"> <span class=3D"person">andrea.anderson@sa=
+getx.org</span> <span class=3D"comment"></span>=20
+      </div>=20
+      <div class=3D"participant"> <span class=3D"person">brandee.faughn@sag=
+etx.org</span> <span class=3D"comment"></span>=20
+      </div>=20
+      <div class=3D"participant"> <span class=3D"person">corre.brown@sagetx=
+.org</span> <span class=3D"comment"></span>=20
+      </div>=20
+      <div class=3D"participant"> <span class=3D"person">keyna.anderson@sag=
+etx.org</span> <span class=3D"comment"></span>=20
+      </div>=20
+      <div class=3D"participant"> <span class=3D"person">Vanericmartin</spa=
+n> <span class=3D"comment"></span>=20
+      </div>=20
+     </div>=20
+     <div class=3D"participants-clear"></div>=20
+    </div>=20
+    <div class=3D"participants">=20
+     <div class=3D"participants-clear"></div>=20
+    </div>=20
+    <div>=20
+     <div class=3D"label">
+       Details=20
+     </div> <span class=3D"detail-label">Show as:&nbsp;</span><span class=
+=3D"detail"><span class=3D"shown_as_label reserved">Reserved</span></span>
+     <br> <span class=3D"detail-label">Created:&nbsp;</span><span class=3D"=
+detail"><span>Monday, July 7, 2025 11:54 AM</span> <span>-</span> <span>sal=
+es@notesao.com</span></span>=20
+    </div>=20
+    <div class=3D"attachmentNote">=20
+    </div>=20
+    <div class=3D"justification">
+      You have received this E-Mail because you are the organizer of this a=
+ppointment.=20
+    </div>=20
+   </div>=20
+  </div>=20
+ </body>
+</html>
+------=_Part_925397_1817069500.1751907283320
+Content-Type: text/calendar; charset=UTF-8; method=REPLY
+Content-Transfer-Encoding: 7bit
+
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Open-Xchange//7.10.6-Rev57//EN
+METHOD:REPLY
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+LAST-MODIFIED:20250410T142247Z
+TZURL:https://www.tzurl.org/zoneinfo-outlook/America/Chicago
+X-LIC-LOCATION:America/Chicago
+BEGIN:DAYLIGHT
+TZNAME:CDT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CST
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20250707T165443Z
+ATTENDEE;CN=mila.sherman@sagetx.org;PARTSTAT=ACCEPTED;ROLE=REQ-PARTICIPANT;
+ CUTYPE=INDIVIDUAL;EMAIL=mila.sherman@sagetx.org:mailto:mila.sherman@sagetx
+ .org
+CATEGORIES:Work
+CLASS:PUBLIC
+CREATED:20250707T165433Z
+DESCRIPTION:NotesAO meeting
+DTEND;TZID=America/Chicago:20250714T150000
+DTSTART;TZID=America/Chicago:20250714T140000
+LAST-MODIFIED:20250707T165443Z
+LOCATION:4601 Boat Club Road\, Fort Worth\, Texas 76135
+ORGANIZER;EMAIL=sales@notesao.com:mailto:sales@notesao.com
+SEQUENCE:0
+SUMMARY:SAGE NotesAO Meeting
+TRANSP:OPAQUE
+UID:835597E05C9035AE70BD9F058DE280A3-DA5315CD059A7D0A
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+PRIORITY:2
+END:VEVENT
+END:VCALENDAR
+
+------=_Part_925397_1817069500.1751907283320--
+
+------=_Part_925396_616509425.1751907283320
+Content-Type: application/ics; charset=UTF-8; method=REPLY;
+ name=response.ics
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=response.ics
+
+QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL09wZW4tWGNoYW5nZS8vNy4x
+MC42LVJldjU3Ly9FTg0KTUVUSE9EOlJFUExZDQpCRUdJTjpWVElNRVpPTkUNClRaSUQ6QW1lcmlj
+YS9DaGljYWdvDQpMQVNULU1PRElGSUVEOjIwMjUwNDEwVDE0MjI0N1oNClRaVVJMOmh0dHBzOi8v
+d3d3LnR6dXJsLm9yZy96b25laW5mby1vdXRsb29rL0FtZXJpY2EvQ2hpY2Fnbw0KWC1MSUMtTE9D
+QVRJT046QW1lcmljYS9DaGljYWdvDQpCRUdJTjpEQVlMSUdIVA0KVFpOQU1FOkNEVA0KVFpPRkZT
+RVRGUk9NOi0wNjAwDQpUWk9GRlNFVFRPOi0wNTAwDQpEVFNUQVJUOjE5NzAwMzA4VDAyMDAwMA0K
+UlJVTEU6RlJFUT1ZRUFSTFk7QllNT05USD0zO0JZREFZPTJTVQ0KRU5EOkRBWUxJR0hUDQpCRUdJ
+TjpTVEFOREFSRA0KVFpOQU1FOkNTVA0KVFpPRkZTRVRGUk9NOi0wNTAwDQpUWk9GRlNFVFRPOi0w
+NjAwDQpEVFNUQVJUOjE5NzAxMTAxVDAyMDAwMA0KUlJVTEU6RlJFUT1ZRUFSTFk7QllNT05USD0x
+MTtCWURBWT0xU1UNCkVORDpTVEFOREFSRA0KRU5EOlZUSU1FWk9ORQ0KQkVHSU46VkVWRU5UDQpE
+VFNUQU1QOjIwMjUwNzA3VDE2NTQ0M1oNCkFUVEVOREVFO0NOPW1pbGEuc2hlcm1hbkBzYWdldHgu
+b3JnO1BBUlRTVEFUPUFDQ0VQVEVEO1JPTEU9UkVRLVBBUlRJQ0lQQU5UOw0KIENVVFlQRT1JTkRJ
+VklEVUFMO0VNQUlMPW1pbGEuc2hlcm1hbkBzYWdldHgub3JnOm1haWx0bzptaWxhLnNoZXJtYW5A
+c2FnZXR4DQogLm9yZw0KQ0FURUdPUklFUzpXb3JrDQpDTEFTUzpQVUJMSUMNCkNSRUFURUQ6MjAy
+NTA3MDdUMTY1NDMzWg0KREVTQ1JJUFRJT046Tm90ZXNBTyBtZWV0aW5nDQpEVEVORDtUWklEPUFt
+ZXJpY2EvQ2hpY2FnbzoyMDI1MDcxNFQxNTAwMDANCkRUU1RBUlQ7VFpJRD1BbWVyaWNhL0NoaWNh
+Z286MjAyNTA3MTRUMTQwMDAwDQpMQVNULU1PRElGSUVEOjIwMjUwNzA3VDE2NTQ0M1oNCkxPQ0FU
+SU9OOjQ2MDEgQm9hdCBDbHViIFJvYWRcLCBGb3J0IFdvcnRoXCwgVGV4YXMgNzYxMzUNCk9SR0FO
+SVpFUjtFTUFJTD1zYWxlc0Bub3Rlc2FvLmNvbTptYWlsdG86c2FsZXNAbm90ZXNhby5jb20NClNF
+UVVFTkNFOjANClNVTU1BUlk6U0FHRSBOb3Rlc0FPIE1lZXRpbmcNClRSQU5TUDpPUEFRVUUNClVJ
+RDo4MzU1OTdFMDVDOTAzNUFFNzBCRDlGMDU4REUyODBBMy1EQTUzMTVDRDA1OUE3RDBBDQpYLU1J
+Q1JPU09GVC1DRE8tQlVTWVNUQVRVUzpCVVNZDQpQUklPUklUWToyDQpFTkQ6VkVWRU5UDQpFTkQ6
+VkNBTEVOREFSDQo=
+------=_Part_925396_616509425.1751907283320--

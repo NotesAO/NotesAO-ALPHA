@@ -1,0 +1,536 @@
+Return-Path: <01010199a0647cb5-05458be0-dccb-4de3-a59a-b5f713cef000-000000@amazonses.squareupsandbox.com>
+Delivered-To: gabriel@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id Lig4J9hI3Wg7/SIAIW4ynA
+	(envelope-from <01010199a0647cb5-05458be0-dccb-4de3-a59a-b5f713cef000-000000@amazonses.squareupsandbox.com>)
+	for <gabriel@notesao.com>; Wed, 01 Oct 2025 10:29:28 -0500
+Return-path: <01010199a0647cb5-05458be0-dccb-4de3-a59a-b5f713cef000-000000@amazonses.squareupsandbox.com>
+Envelope-to: gabriel@notesao.com
+Delivery-date: Wed, 01 Oct 2025 10:29:28 -0500
+Received: from a27-29.smtp-out.us-west-2.amazonses.com ([54.240.27.29]:42787)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <01010199a0647cb5-05458be0-dccb-4de3-a59a-b5f713cef000-000000@amazonses.squareupsandbox.com>)
+	id 1v3ylj-00000009cWU-0Gjg
+	for gabriel@notesao.com;
+	Wed, 01 Oct 2025 10:29:28 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=5parr5db3j6yupjdnqcchnmf7eomlbcd; d=squareupsandbox.com;
+	t=1759332564;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=Qgd6DMR/6hB7emEkGXmDRX9CVYLhyqDY3hq3xuNUiQ4=;
+	b=TD2ZXVB7seejEePexfOddy5SB0nNuLGEDPyvgHr/uHQwaeroPDkms2ojR1kpBkWd
+	i1P29tqf/SJOOMvfzrcHeb31GA383SzGlaXg1vMtfk4I3mCcLZiiF+k+0vemDcNEW+j
+	QRrlLfR+KUbcwiFirZ1kfC5Nbv/1thHt4MbUVS+g=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1759332564;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=Qgd6DMR/6hB7emEkGXmDRX9CVYLhyqDY3hq3xuNUiQ4=;
+	b=N3yeAL+BXTNlJgLN95yTYlLGqkFUBd6w4XZzMJweWnvVCnOsRxf/ih8OCDA/Aky/
+	SIa8hHLkvJ6FQ88fJdFYJSkeXBzAw25QGAlKKliUu2PstnPXj7am1oQKCrh0KyFkPhS
+	QFLfoUjF4gTIgFXp8zZtCC50aNtc3zCrH1RpqACo=
+Date: Wed, 1 Oct 2025 15:29:24 +0000
+From: Default Test Account <invoicing@squareupsandbox.com>
+Reply-To: 
+	Default Test Account <sandbox-merchant+kr4l6pvifgk0gkcqp3xzs5rinxe52ww8@squareup.com>
+To: gabriel@notesao.com
+Message-ID: <01010199a0647cb5-05458be0-dccb-4de3-a59a-b5f713cef000-000000@us-west-2.amazonses.com>
+Subject: [SANDBOX EMAIL]: You paid an invoice! (#000001)
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_6209_1543108609.1759332564127"
+X-EMS-Request-ID: 9439d311-bc34-41f7-b8ec-b6fa6fcd18a3
+X-ERS-Token: CBgQlZehv5imz4FdGOiRsPT+98KflgE=
+Feedback-ID: ::1.us-west-2.8ygwer6MWfbzQLXGEGpB7777pHAMqgdQf7/JBDYZI8o=:AmazonSES
+X-SES-Outgoing: 2025.10.01-54.240.27.29
+X-Spam-Status: No, score=1.8
+X-Spam-Score: 18
+X-Spam-Bar: +
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__=5BNO?= =?ISO-8859-1?Q?T_PRODUCTION_EMAIL=5D_This_sandbox_email_is_only_a_te?= =?ISO-8859-1?Q?st!=0A___Hello_Gabriel_Thomas=2C_You_have_paid_invoic?= =?ISO-8859-1?Q?e_#000001_from_Default_Test_Account=0A____for_$200=2E0?= =?ISO-8859-1?Q?0=2E_=0A_Content_analysis_details=3A___=281=2E8_point?= =?ISO-8859-1?Q?s=2C_5=2E0_required=29=0A__pts_rule_name_____________?= =?ISO-8859-1?Q?_description=0A_----_----------------------_---------?= =?ISO-8859-1?Q?-----------------------------------------=0A__0=2E0_R?= =?ISO-8859-1?Q?CVD=5FIN=5FVALIDITY=5FSAFE=5FBLOCKED_RBL=3A_ADMINISTR?= =?ISO-8859-1?Q?ATOR_NOTICE=3A_The_query_to=0A_______________________?= =?ISO-8859-1?Q?_______Validity_was_blocked=2E__See=0A_______________?= =?ISO-8859-1?Q?______________https=3A//knowledge=2Evalidity=2Ecom/hc?= =?ISO-8859-1?Q?/en-us/articles/20961730681243=0A____________________?= =?ISO-8859-1?Q?__________for_more_information=2E=0A_________________?= =?ISO-8859-1?Q?____________=5B54=2E240=2E27=2E29_listed_in_sa-accred?= =?ISO-8859-1?Q?it=2Ehabeas=2Ecom=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FR?= =?ISO-8859-1?Q?PBL=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The_quer?= =?ISO-8859-1?Q?y_to=0A______________________________Validity_was_blo?= =?ISO-8859-1?Q?cked=2E__See=0A_____________________________https=3A/?= =?ISO-8859-1?Q?/knowledge=2Evalidity=2Ecom/hc/en-us/articles/2096173?= =?ISO-8859-1?Q?0681243=0A______________________________for_more_info?= =?ISO-8859-1?Q?rmation=2E=0A_____________________________=5B54=2E240?= =?ISO-8859-1?Q?=2E27=2E29_listed_in_bl=2Escore=2Esenderscore=2Ecom=5D=0A?= =?ISO-8859-1?Q?__0=2E0_RCVD=5FIN=5FVALIDITY=5FCERTIFIED=5FBLOCKED_RB?= =?ISO-8859-1?Q?L=3A_ADMINISTRATOR_NOTICE=3A_The=0A__________________?= =?ISO-8859-1?Q?___________query_to_Validity_was_blocked=2E__See=0A__?= =?ISO-8859-1?Q?___________________________https=3A//knowledge=2Evali?= =?ISO-8859-1?Q?dity=2Ecom/hc/en-us/articles/20961730681243=0A_______?= =?ISO-8859-1?Q?_______________________for_more_information=2E=0A____?= =?ISO-8859-1?Q?_______________________=5B54=2E240=2E27=2E29_listed_i?= =?ISO-8859-1?Q?n_sa-trusted=2Ebondedsender=2Eorg=5D=0A__0=2E0_KAM=5FB?= =?ISO-8859-1?Q?ODY=5FMARKETINGBL=5FPCCC_Body_contains_URI_associated?= =?ISO-8859-1?Q?_with=0A_____________________________mass-marketing_=28h?= =?ISO-8859-1?Q?ttps=3A//raptor=2Epccc=2Ecom/RBL=29=0A_______________?= =?ISO-8859-1?Q?______________=5BURI=3A_awstrack=2Eme=5D=0A__0=2E0_UR?= =?ISO-8859-1?Q?IBL=5FBLOCKED__________ADMINISTRATOR_NOTICE=3A_The_qu?= =?ISO-8859-1?Q?ery_to_URIBL_was_blocked=2E=0A_______________________?= =?ISO-8859-1?Q?______See=0A_____________________________http=3A//wik?= =?ISO-8859-1?Q?i=2Eapache=2Eorg/spamassassin/DnsBlocklists#dnsbl-blo?= =?ISO-8859-1?Q?ck=0A______________________________for_more_informati?= =?ISO-8859-1?Q?on=2E=0A_____________________________=5BURI=3A_awstra?= =?ISO-8859-1?Q?ck=2Eme=5D=0A_____________________________=5BURI=3A_s?= =?ISO-8859-1?Q?quareupsandbox=2Ecom=5D=0A___________________________?= =?ISO-8859-1?Q?__=5BURI=3A_cloudfront=2Enet=5D=0A_-0=2E0_SPF=5FPASS_?= =?ISO-8859-1?Q?______________SPF=3A_sender_matches_SPF_record=0A_-0=2E1?= =?ISO-8859-1?Q?_DKIM=5FVALID=5FAU__________Message_has_a_valid_DKIM_?= =?ISO-8859-1?Q?or_DK_signature_from_author's=0A_____________________?= =?ISO-8859-1?Q?________domain=0A__0=2E1_DKIM=5FSIGNED____________Mes?= =?ISO-8859-1?Q?sage_has_a_DKIM_or_DK_signature=2C_not_necessarily_va?= =?ISO-8859-1?Q?lid=0A_-0=2E1_DKIM=5FVALID_____________Message_has_at?= =?ISO-8859-1?Q?_least_one_valid_DKIM_or_DK_signature=0A__1=2E0_KAM=5FM?= =?ISO-8859-1?Q?ARKETINGBL=5FPCCC___Message_contains_URI_associated_w?= =?ISO-8859-1?Q?ith=0A_____________________________mass-marketing_=28h?= =?ISO-8859-1?Q?ttps=3A//raptor=2Epccc=2Ecom/RBL=29=0A__0=2E1_MIME=5FH?= =?ISO-8859-1?Q?TML=5FMOSTLY_______BODY=3A_Multipart_message_mostly_t?= =?ISO-8859-1?Q?ext/html_MIME=0A__0=2E0_HTML=5FMESSAGE___________BODY?= =?ISO-8859-1?Q?=3A_HTML_included_in_message=0A__0=2E8_KAM=5FINFOUSME?= =?ISO-8859-1?Q?BIZ________Prevalent_use_of=0A_______________________?= =?ISO-8859-1?Q?______=2Einfo|=2Eus|=2Eme|=2Eme=2Euk|=2Ebiz|xyz|id|ro?= =?ISO-8859-1?Q?cks|life=0A_____________________________domains_in_sp?= =?ISO-8859-1?Q?am/malware?=
+X-Spam-Flag: NO
+
+------=_Part_6209_1543108609.1759332564127
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+[NOT PRODUCTION EMAIL] This sandbox email is only a test!
+
+Hello Gabriel Thomas,
+
+You have paid invoice #000001 from Default Test Account for $200.00.
+
+
+------=_Part_6209_1543108609.1759332564127
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+
+<!doctype html>
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Square</title><!--[if mso]>  <style type="text/css" data-premailer="ignore">
+    .codelink a { color: #343B42; text-decoration: none }
+    a { color: #343B42; text-decoration: none }
+    .button td { background-color: #343B42 }
+    .nomso { display: none; font-size: 0; line-height: 0 }
+    table { font-size: 1px; line-height:0; mso-margin-top-alt: 1px; }
+    table.MsoNormalTable { font-family: esqmarket, Helvetica, sans-serif }
+    .durv { line-height: 14px !important }
+  </style><![endif]--><!--[if !mso]><!-->
+  <style type="text/css" data-premailer="ignore">@font-face { font-family: "esqmarket"; src: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/sqmarket/sqmarket-regular.woff") format("woff"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "esqmarket-medium"; src: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/sqmarket/sqmarket-medium.woff") format("woff"); font-weight: 600; font-style: normal; }
+</style><!--<![endif]-->
+  <style type="text/css" data-premailer="ignore">a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+
+#hero a { color: #ffffff; }
+
+body { width: 100% !important; margin: 0 auto !important; padding: 0; }
+
+table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+
+@media only screen and (min-width: 281px) { #container { position: relative; top: 0; left: 0; right: 0; bottom: 0; } }
+div[style*="margin: 16px 0"] { margin:0 !important; }
+@media screen and (min-width: 281px) and (max-width: 599px) and (-webkit-min-device-pixel-ratio: 0) {#container .fullWidth a { display: block !important; }
+#container .column { width: inherit !important; }
+#container .column .embiggen { width: 420px !important; max-width: 420px !important; }
+#container .column .embiggen .list td:first-child { width: inherit !important; }
+#container .column .embiggen .list td:last-child { width: 500px !important; }
+#container .column .embiggen .button td { width: inherit !important; }
+#container .column .embiggen img { max-width: 100% !important; }
+}</style>
+ </head>
+ <body style="background-color: #F5F6F7;margin: 0" bgcolor="#F5F6F7">
+  <p style="background-color: Tomato; padding: 1em;"><span style="font-size: 12pt;"><b>[NOT PRODUCTION EMAIL] </b></span><span>This sandbox email is only a test!</span></p>
+  <style type="text/css">
+body {
+background: #F5F6F7; margin: 0;
+}
+</style><!--[if !mso]><!-->
+  <div id="preheader" style="display: none;font-size: 0;max-height: 0;overflow: hidden">
+   Gabriel Thomas paid invoice #000001 Monthly subscription from Default Test Account.
+  </div><!--<![endif]-->
+  <div id="container" style="-ms-text-size-adjust: none;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none">
+   <table class="contained" style="table-layout: fixed" width="100%" cellpadding="0" cellspacing="0">
+    <tbody>
+     <tr>
+      <td align="center">
+       <table bgcolor="#222222" cellpadding="0" cellspacing="0">
+        <tbody>
+         <tr>
+          <td width="500" align="center" bgcolor="#ffffff">
+           <table cellpadding="0" cellspacing="0">
+            <tbody>
+             <tr>
+              <td>
+               <table style="background-color: #ffffff" width="100%" class="single invert" bgcolor="#ffffff" cellpadding="0" cellspacing="0">
+                <tbody>
+                 <tr>
+                  <td align="center" style="padding: 0 0px">
+                   <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                     <tr>
+                      <td width="520" style="padding: 0px 0" class="singleCell">
+                       <table width="100%" class="center" style="text-align: center" cellpadding="0" cellspacing="0">
+                        <tbody>
+                         <tr>
+                          <td width="520" align="center" style="text-align: center"><!--[if mso]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" stroked="false" filled="false" style="mso-width-percent: 1000; position:absolute; top:65px; left:215px;">
+<v:textbox inset="0,0,0,0">
+<![endif]-->
+                           <div class="faux_absolute" style="max-height: 0;opacity: 0.999;position: relative">
+                            <div class="profile_image_position" style="display: inline-block;margin-left: 0em;margin-top: 65px">
+                             <!--[if mso]><span style="border: 3px solid #ffffff;"><![endif]--><img src="http://localhost/default-merchant-logo.png" width="64" height="64" alt="Image" style="-moz-border-radius: 11px;-webkit-border-radius: 11px;background-color: #293641;border: 3px solid #ffffff;border-radius: 11px;display: inline-block" class="profile_image"><!--[if mso]></span><![endif]-->
+                            </div>
+                           </div><!--[if mso]></v:textbox></v:rect><![endif]--></td>
+                         </tr>
+                         <tr>
+                          <td width="100%" height="100" style="background-color: #2D3C48;font-size: 0;line-height: 0" colspan="1" bgcolor="#2D3C48"></td>
+                         </tr>
+                         <tr>
+                          <td width="100%" height="41" style="background-color: #ffffff;font-size: 0;line-height: 0" colspan="1" bgcolor="#ffffff"></td>
+                         </tr>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: center" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 16px;font-weight: 600;line-height: 24px;text-align: center" class="h2 center " align="center">Default Test Account</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                        </tbody>
+                       </table></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+               <table style="background-color: #ffffff" width="100%" class="single " bgcolor="#ffffff" cellpadding="0" cellspacing="0">
+                <tbody>
+                 <tr>
+                  <td align="center" style="padding: 0 20px">
+                   <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                     <tr>
+                      <td width="400" style="padding: 8px 0 0px" class="singleCell">
+                       <table width="100%" class="left" style="text-align: left" cellpadding="0" cellspacing="0">
+                        <tbody>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #71767B;font-family: esqmarket, Helvetica, sans-serif;font-size: 16px;font-weight: normal;line-height: 24px;padding: 0px 0 8px;text-align: center" class="p center " align="center">Invoice Paid</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                        </tbody>
+                       </table></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+               <hr class="separator" style="background-color: #D5D7D9;border-width: 0px;height: 1px;width: 32px">
+               <table style="background-color: #ffffff" width="100%" class="single " bgcolor="#ffffff" cellpadding="0" cellspacing="0">
+                <tbody>
+                 <tr>
+                  <td align="center" style="padding: 0 20px">
+                   <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                     <tr>
+                      <td width="400" style="padding: 0px 0 8px" class="singleCell">
+                       <table width="100%" class="left" style="text-align: left" cellpadding="0" cellspacing="0">
+                        <tbody>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 44px;font-weight: 600;line-height: 48px;padding: 8px 0 0px;text-align: center" class="h1 center " align="center">$200.00</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #4ab300;font-family: esqmarket, Helvetica, sans-serif;font-size: 16px;font-weight: normal;line-height: 24px;padding: 8px 0 0px;text-align: center" class="p center " align="center">Charged to Visa 1111 on file on October 1, 2025 at 3:29 PM</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td style="padding: 24px 0 0"></td>
+                         </tr>
+                         <tr>
+                          <td class="separator" style="border-top-color: #D5D7D9;border-top-style: solid;border-top-width: 1px"></td>
+                         </tr>
+                         <tr>
+                          <td style="padding: 24px 0 0"></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 14px;font-weight: 600;line-height: 22px;text-align: left" class="h3 left " align="left">Monthly subscription</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: left" class="p left " align="left">Invoice #000001</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: left" class="p left " align="left">October 1, 2025</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 14px;font-weight: 600;line-height: 22px;padding: 24px 0 0px;text-align: left" class="h3 left " align="left">Customer</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: left" class="p left " align="left">Gabriel Thomas</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: left" class="p left " align="left">Free for Life Group</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: left" class="p left " align="left"><a href="mailto:gabriel@notesao.com" id="p-4" style="color: #2996cc;text-decoration: none">gabriel@notesao.com</a></td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: left" class="p left " align="left">(682) 201-6458</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: left" class="p left " align="left"></td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="left">
+                           <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 24px 0 0px;text-align: left" class="p left " align="left"><a href="https://px3004yw.r.us-west-2.awstrack.me/L0/https:%2F%2Fsquareupsandbox.com%2Finvoices%2Fattachments%2Fdownload%2Fpdf%2Finvoice%3Ftoken=eyJhbGciOiJIUzI1NiJ9.eyJpbnZvaWNlX3Rva2VuIjoiaW52OjAtQ2hEanJneVZlejZPSnhQRmYwVUotRlhFRUtVSSIsInNlZWQiOiIyMDI1LTEwLTAxIDE1OjI5OjIyICswMDAwIn0.HxMyvx666OLn553xUSjN-vqHdNtxQtlgvecYVL_tIEQ%26inline=true/1/01010199a0647cb5-05458be0-dccb-4de3-a59a-b5f713cef000-000000/jJ4XBY0v6EpT1VlsKka-CgvFUb4=447" id="p-6" style="color: #2996cc;text-decoration: none">Download Invoice PDF</a></td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td style="padding: 8px 0 0"></td>
+                         </tr>
+                         <tr>
+                          <td>
+                           <table class="tabDat soft_frame" style="border: 1px solid #D5D7D9;border-collapse: separate;border-radius: 4px;margin: 10px 0px;text-align: left;width: 100%" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr style="vertical-align: top">
+                              <td style="vertical-align: top" valign="top">
+                              <table class="tabDat soft_frame_content" style="margin: 0px 24px;text-align: left" cellpadding="0" cellspacing="0">
+                              <tbody>
+                              <tr style="vertical-align: top">
+                              <td align="left" style="vertical-align: top" valign="top">
+                              <table width="100%" style="text-align: left" cellpadding="0" cellspacing="0">
+                              <tbody>
+                              <tr style="vertical-align: top">
+                              <td width="" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 16px;font-weight: 600;line-height: 24px;padding: 24px 0 0px;text-align: left;vertical-align: top" class="h2 left " align="left" valign="top">Invoice summary</td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                              </tr>
+                              <tr style="vertical-align: top">
+                              <td style="vertical-align: top" valign="top">
+                              <table class="tabDat" style="text-align: left" cellpadding="0" cellspacing="0">
+                              <tbody>
+                              <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 14px;font-weight: 600;line-height: 22px;padding: 24px 0 0px;vertical-align: top" class="key text bold p" valign="top">
+                              <div style="padding-right: 20px">
+                              <b style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-weight: 600">NotesAO Subscription $200 / month</b>
+                              </div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 14px;font-weight: 600;line-height: 22px;padding: 24px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class="value text bold p" align="right" valign="top">$200.00</td>
+                              </tr>
+                              <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 24px 0 0px;vertical-align: top" class="key text p" valign="top">
+                              <div style="padding-right: 20px"></div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 24px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class="value text p" align="right" valign="top"></td>
+                              </tr>
+                              <tr style="vertical-align: top">
+                              <td class="separator" style="border-top-color: #D5D7D9;border-top-style: solid;border-top-width: 1px;vertical-align: top" valign="top"></td>
+                              <td class="separator" style="border-top-color: #D5D7D9;border-top-style: solid;border-top-width: 1px;vertical-align: top" valign="top"></td>
+                              </tr>
+                              <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 0px 0 24px;vertical-align: top" class="key text p" valign="top">
+                              <div style="padding-right: 20px"></div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 0px 0 24px;text-align: right;vertical-align: top;white-space: nowrap" class="value text p" align="right" valign="top"></td>
+                              </tr>
+                              <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 0px 0;vertical-align: top" class="key text p" valign="top">
+                              <div style="padding-right: 20px">
+                              Subtotal
+                              </div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 0px 0;text-align: right;vertical-align: top;white-space: nowrap" class="value text p" align="right" valign="top">$200.00</td>
+                              </tr>
+                              <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 8px 0 0px;vertical-align: top" class="key text p" valign="top">
+                              <div style="padding-right: 20px"></div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 8px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class="value text p" align="right" valign="top"></td>
+                              </tr>
+                              <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 16px;font-weight: 600;line-height: 24px;padding: 0px 0;vertical-align: top" class="key text h2" valign="top">
+                              <div style="padding-right: 20px">
+                              Total Paid
+                              </div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 16px;font-weight: 600;line-height: 24px;padding: 0px 0;text-align: right;vertical-align: top;white-space: nowrap" class="value text h2" align="right" valign="top">$200.00</td>
+                              </tr>
+                              <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 24px 0 0px;vertical-align: top" class="key text p" valign="top">
+                              <div style="padding-right: 20px"></div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 24px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class="value text p" align="right" valign="top"></td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td style="padding: 24px 0 0"></td>
+                         </tr>
+                         <tr>
+                          <td>
+                           <table class="tabDat" style="text-align: left" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 0px 0;vertical-align: top" class="key text p" valign="top">
+                              <div style="padding-right: 20px">
+                              Charged to Visa 1111
+                              </div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 0px 0;text-align: right;vertical-align: top;white-space: nowrap" class="value text p" align="right" valign="top">10/01/25, 3:29 PM</td>
+                             </tr>
+                             <tr style="vertical-align: top">
+                              <td width="450" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 24px 0 0px;vertical-align: top" class="key text p" valign="top">
+                              <div style="padding-right: 20px"></div></td>
+                              <td width="70" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 24px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class="value text p" align="right" valign="top"></td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                        </tbody>
+                       </table></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table>
+               <table style="background-color: #F5F6F7" width="100%" class="single " bgcolor="#F5F6F7" cellpadding="0" cellspacing="0">
+                <tbody>
+                 <tr>
+                  <td align="center" style="padding: 0 20px">
+                   <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                     <tr>
+                      <td width="400" style="padding: 32px 0" class="singleCell">
+                       <table width="100%" class="center" style="text-align: center" cellpadding="0" cellspacing="0">
+                        <tbody>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: center" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 14px;font-weight: 600;line-height: 22px;text-align: center" class="h3 center " align="center">Default Test Account</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: center" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: center" class="p center " align="center">1600 Pennsylvania Ave NW</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: center" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: center" class="p center " align="center">Washington, DC 20500 United States</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: center" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 8px 0 0px;text-align: center" class="p center " align="center">To change or cancel your payment method, please contact Default Test Account using the above information.</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td align="center">
+                           <table width="100%" style="text-align: center" cellpadding="0" cellspacing="0">
+                            <tbody>
+                             <tr>
+                              <td width="" style="color: #343B42;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 8px 0 0px;text-align: center" class="p center " align="center">Please contact Default Test Account about its privacy practices.</td>
+                             </tr>
+                            </tbody>
+                           </table></td>
+                         </tr>
+                         <tr>
+                          <td style="padding: 8px 0 0"></td>
+                         </tr>
+                         <tr>
+                          <td align="center"><img src="https://d1g145x70srn7h.cloudfront.net/images/email/jewel-grey-22.png" width="22" height="22" style="display: block"></td>
+                         </tr>
+                        </tbody>
+                       </table></td>
+                     </tr>
+                    </tbody>
+                   </table></td>
+                 </tr>
+                </tbody>
+               </table></td>
+             </tr>
+            </tbody>
+           </table></td>
+         </tr>
+        </tbody>
+       </table></td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ <img alt="" src="https://px3004yw.r.us-west-2.awstrack.me/I0/01010199a0647cb5-05458be0-dccb-4de3-a59a-b5f713cef000-000000/lsylExJqLqlbvS9bZ17nU-tNHlA=447" style="display: none; width: 1px; height: 1px;">
+</body>
+</html>
+------=_Part_6209_1543108609.1759332564127--

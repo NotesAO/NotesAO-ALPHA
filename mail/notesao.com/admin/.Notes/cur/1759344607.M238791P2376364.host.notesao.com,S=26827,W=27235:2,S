@@ -1,0 +1,408 @@
+Return-Path: <helen.bennett-lopez@thebestoptionsa.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id akGlDN933WisQiQAIW4ynA
+	(envelope-from <helen.bennett-lopez@thebestoptionsa.com>); Wed, 01 Oct 2025 13:50:07 -0500
+Return-path: <helen.bennett-lopez@thebestoptionsa.com>
+Envelope-to: admin@notesao.com,
+ vanmartin@notesao.com
+Delivery-date: Wed, 01 Oct 2025 13:50:07 -0500
+Received: from dispatch1-us1.ppe-hosted.com ([148.163.129.49]:44988)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <helen.bennett-lopez@thebestoptionsa.com>)
+	id 1v41tt-00000009yC6-39jf;
+	Wed, 01 Oct 2025 13:50:07 -0500
+X-Virus-Scanned: Proofpoint Essentials engine
+Received: from BL2PR02CU003.outbound.protection.outlook.com (mail-eastusazon11021130.outbound.protection.outlook.com [52.101.52.130])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTPS id 224ECA800FA;
+	Wed,  1 Oct 2025 18:50:01 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=isO3bcGmADwf4QvG35yss+wxNoynh6AI/4877yyXneqgK2iEV24TLYLWtjmqzRHi7jmkDYShKYYzPub60JIiOqqaGEE8fb/kyEF5oDlSU/HaZNi/10MfoS5SRrANkR+y3P8OV14pRu71EzyGuHKsub9oPXjSOSCVoA52OaqJ8heappLJnVlzwHPxq5UOezQkSSnNQPQL4qwkjR0I58YMBri6V8L10QtakzlyAWK5jqKGQsteeemF9w/U3KELDkvgX+4brSHKQqLAMiE471PmMQHGQdLbCg/wDHL0A7Ap/mUs/g2JUMQHDtbwGtm3uT3zQmii8G9Ve1F9hmWKxQ/bKQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=m64IaKpPcG0MJJ8FPRQtN2TU11LlEWX5Z+JrtQfRbBw=;
+ b=R4fn8OU/SbWRly2d/rmxh3AlL9KqMRHm+ua20OCyzghkO5maDBwDyTD7nNkL5GptBQ4pWvvNXVBfPj04yKxkzSv6LHi/FHpfaEjZlVTOq0s58QEESkwvCMxroykIMUndHGV/UqWsyqyYdYx/7g7SLNJYcz6E1DdvUHH5qZ+1qcToGxkkyT50YBUSE3QECHpdFJ19u5TUxO22typwRuOEkswd9b55JED4SZtZZJEFPxSWjmJvra1mtsYspd357NN5mq8fUAQZmIp4nkLoZbSAsSu6wQWrX/e8mvyNPq41AibnAELpBhzmy1Ug3gurRmuh4K/nvBRCSpHv4m2QhI1gRA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=thebestoptionsa.com; dmarc=pass action=none
+ header.from=thebestoptionsa.com; dkim=pass header.d=thebestoptionsa.com;
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=NETORG4988663.onmicrosoft.com; s=selector1-NETORG4988663-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=m64IaKpPcG0MJJ8FPRQtN2TU11LlEWX5Z+JrtQfRbBw=;
+ b=PWQr5OuRQalrDUEzIokdQPO2q84Bzj5pGpyYnAqQdDJ4hILmnEws6GT5YX/bYJ6UxXJvd3hwzXe0xcGeYM/iElxFoZgIH+gacKrajRLvOPY8dLAVdBZHdYm39iW2Xx5fzAyj1MxWmNrMuz5/IZJ2JC/TXBHK7MCp6RBMgbruOhk=
+Received: from CY4PR06MB3334.namprd06.prod.outlook.com (2603:10b6:910:54::32)
+ by PH7PR06MB8896.namprd06.prod.outlook.com (2603:10b6:510:12f::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9160.18; Wed, 1 Oct
+ 2025 18:49:58 +0000
+Received: from CY4PR06MB3334.namprd06.prod.outlook.com
+ ([fe80::a51c:4dd2:5e4a:5137]) by CY4PR06MB3334.namprd06.prod.outlook.com
+ ([fe80::a51c:4dd2:5e4a:5137%5]) with mapi id 15.20.9160.014; Wed, 1 Oct 2025
+ 18:49:58 +0000
+From: Helen Bennett-Lopez <helen.bennett-lopez@thebestoptionsa.com>
+To: "vanmartin@notesao.com" <vanmartin@notesao.com>, Mercy Cortez Esquivel
+	<mercy.esquivel@thebestoptionsa.com>
+CC: Gabriel Thomas <admin@notesao.com>
+Subject: Questions
+Thread-Topic: Questions
+Thread-Index: AQHcMwP8ruweX6u+0UGbeaX11vYoPw==
+Date: Wed, 1 Oct 2025 18:49:58 +0000
+Message-ID:
+ <CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6A@CY4PR06MB3334.namprd06.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=thebestoptionsa.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: CY4PR06MB3334:EE_|PH7PR06MB8896:EE_
+x-ms-office365-filtering-correlation-id: 10b8c4b3-a520-4ad6-47c7-08de011b522a
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|376014|1800799024|10070799003|366016|4053099003|13003099007|38070700021|8096899003;
+x-microsoft-antispam-message-info:
+ =?iso-8859-1?Q?0w4bLtVXNBDg73GMKRGO4ml3eerbACAKwb6M2zQsn848qzbHS1tBbTE7JB?=
+ =?iso-8859-1?Q?ygFT2Zf4rYO7f9qBiJ0EFq3IcybJRY4t5iC6gv+NBli3zXgKuU5V/hBUMv?=
+ =?iso-8859-1?Q?IlnEnimpYLK9A15OK6KgfOi42pQABX7ThJSfcWcQO5cphmmP2jr8Oja9YA?=
+ =?iso-8859-1?Q?fjDDZeGsE6hu7bS3AJP0VTKeMx87WdbJa/Z1CyuevzMUaEq40FSgBbqc2h?=
+ =?iso-8859-1?Q?+NY2744GPQ6LEi9z5XAwbDbvkuFcjUopQmJk8vEKhflizaYS+0AEundzZ7?=
+ =?iso-8859-1?Q?ibaEN1oYDM3PwDFLjXSr+MbJn/oFVcaI1v47uRxaDQFFSsKRFq0fM17mvr?=
+ =?iso-8859-1?Q?7tx4g25BuUf6q4oKuty6H/1G4L6VMuViVqYy4hHnagC9Hr2tXN00Mxm3oP?=
+ =?iso-8859-1?Q?ZyLUI9NRabvHO+SubbOiZdQHGUpb0kQ7AuEgkGyHJHIs1chSBv1GwDakfo?=
+ =?iso-8859-1?Q?FZjD1Q5V1o8HVq73cPJmSBHkyvbbk9WeZU9qS4/+TBiPe98LMbO+GpnYwh?=
+ =?iso-8859-1?Q?yafcu57XP4Gq7e5xqWt7A8G5FLY3b1Jj5N1iMbg5+8m7d3iWyR7xeYlffX?=
+ =?iso-8859-1?Q?002BpYuod126zOHVivqmxeK6UJ09B+XQvdG2aybfFqWEobf0hY5ramgeWs?=
+ =?iso-8859-1?Q?1BWxhae4AVdJUBFNKTqvkKVQR1jRTBqIMTS9rqQ+rlHfVRrIfmaaUrfhUm?=
+ =?iso-8859-1?Q?KApwokkS0yw7XIcfyK1hGbwC/vKtv9GfijaPeI0v1sfqY17Megt37ihsjb?=
+ =?iso-8859-1?Q?K73XkhKBhed3Z3hIzMdMFQa4WNd7PMnAwglZBb3v11Ufik2Kf2G89Mo6i6?=
+ =?iso-8859-1?Q?LaP5bq6OTcFvB9yd/7920vDqIaX/uNLVx29wmqCWNsP9Z3HDNN9WgrvAq6?=
+ =?iso-8859-1?Q?R48SudIUjD5tCFdXtPVqQFiVvBhpl8L6IBoLAJQZEPNVAzEUVa9MzYMs5l?=
+ =?iso-8859-1?Q?LWn99hXeXMbuTQJ3CEh0ue/2mZoAKpOGcLXJHE2R1zRRHFsxUOyRgH0p9q?=
+ =?iso-8859-1?Q?1RY18S5SizN/ntEzLKNPjtE5RQuI/8EfZGGV2VSw1Bc9ROl+8GcFVJ/SNw?=
+ =?iso-8859-1?Q?bzLSTRATCzKs8yR87MrLQMZIjeCYDsxlnHpo3Hpt7BCZ3tH/gcEaGpDh/Z?=
+ =?iso-8859-1?Q?QkhEsxOZzAWZ6vw2/SlcG9QRR3RWkbIoS4+GVSQsQSQ8mA0vrg0quObDy3?=
+ =?iso-8859-1?Q?/baj68Ig6OWHAYkF9QeivDwaa2fcWwgOxrnq16k9XGjglL2QscnFjZwwxP?=
+ =?iso-8859-1?Q?ndDgU/9rlAMswR4BW73SpIswRk72LS8iknHfh+Kxc6s6fZfVAOa6XjUaNa?=
+ =?iso-8859-1?Q?o/awsDxK4EQn5c7zkTGXaj/CX8LNGAbLvIRkTaTdrBzfTX6fXdp9zk0OkV?=
+ =?iso-8859-1?Q?Mqx4KZ1kEMHHoQelriv1zz9CS6+zE/yhHVvJYxnmr3W4/7W3ImEqTD7uvp?=
+ =?iso-8859-1?Q?pr6u0CfrrF8dsqjhlWJ92NECI/8URrx4iEIFRDiF3bfaLJxU6X/hZW/6dL?=
+ =?iso-8859-1?Q?CT/yFS71WE+G14NUfmS2S+cWZhf6MiR6lXj2RVPBrTcg=3D=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CY4PR06MB3334.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(1800799024)(10070799003)(366016)(4053099003)(13003099007)(38070700021)(8096899003);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?5+5DrCIphjyd09QtXyMGtKUjgLIMJ5FOM1yS0Fh3JdD8E7Xn44rib8zEyc?=
+ =?iso-8859-1?Q?hOd+52iQ2a1mefnzUvraedbV0EeCNYSsnbE9ZMmZhVzHfd+KwU2UZbZxx4?=
+ =?iso-8859-1?Q?MWggiOPLH8/jq5nbFVzozs9wsnj4YH/04BWItMPDEym/zQu09Q/SDIhWKk?=
+ =?iso-8859-1?Q?+ItgdOPG+fbrrXVhFj9B5gNW7/85SVsEAvdArSTHzYqnc0nh0BBpvaYDlI?=
+ =?iso-8859-1?Q?aWllpyXBzKoqBhvwssIAW7Kh4sqAJj6F/CFV3B6u6YPqmJmUeZqu4qSl/1?=
+ =?iso-8859-1?Q?rCwZ4LJ8V9Vcoip6XOJyYVJQj96BLUVcQHTEcEO/b3BMfwAZ/PjdHIrp+a?=
+ =?iso-8859-1?Q?6nbAo47OE/HB1lm0f0Yxb4L7yywcTzEV2aFf+So7rzJe+2JF8Yzm1bngzX?=
+ =?iso-8859-1?Q?ipew+gBBWTqdafqMU1sv2y/I5y25oD00v/m9xOMYxnEeNLYGjzxYcm1h/W?=
+ =?iso-8859-1?Q?gHwAH+uwI8rDil0bqVut4wwcBhoi6DSvADTwT1pPu6b4+ymPX8uuxtRrpf?=
+ =?iso-8859-1?Q?N95EN73D8a0YtQCswOrZXb1TfQYhr6iUzM2dpazqRNEWHih4Ue83zGiqxf?=
+ =?iso-8859-1?Q?MB6Dltj92vMlpJs7rY2+5cgYwqN4AZhvcL+VG0Xn6i/LmZAOV3K6ONI/Wa?=
+ =?iso-8859-1?Q?fOyhnF8fP6WAW9hNiXIjWIz4+NEibL/PxsXs+6jVqWuK+2Z6wRaDatjtf1?=
+ =?iso-8859-1?Q?IId2ZVUdeGC+7ioKkl2ubXg3dBj3WHF/bJyVXkk0567mMG5fs7LlxUvghj?=
+ =?iso-8859-1?Q?hYWj0GTXT9flSzV4+Xe6f93oAQeUNyTRbA6J+n0t2M7BmaeX9cquMxFjC1?=
+ =?iso-8859-1?Q?18VDWUGIEgpx0zz3gdPLm9ZBPb0LXq/WgsP7fQys+FnkeWncHfJsgHmYmQ?=
+ =?iso-8859-1?Q?eEqw3NhDHCv91tG0FvA6KkZak7l1P+Z/9gfPnUB0C4vwqUnyXm1Q4rvNxk?=
+ =?iso-8859-1?Q?0gkyokuy4QCpgZMiiXT0/D0Vr/80kzU6BTmyy5NJVutBwDq9s7zI+cB6Vm?=
+ =?iso-8859-1?Q?TRUWeYDLd8gF/1jPe9uGfQOpzYqI/5ddVMH2PUx9ro6jzE8tCoOKEcVY0I?=
+ =?iso-8859-1?Q?fXma4WyQn0l7hlYjq9YJzTdzSK9bRbiSZaYEUPXeAxmUU3/RO7hRlAtFtZ?=
+ =?iso-8859-1?Q?aTLqENmAdW6PTi9YkeYb2taTW8cKNswTAuVkwdiH6X5McizFGDbybWOTjY?=
+ =?iso-8859-1?Q?H/alRApYbeUJgwaTt6fS56M5WFsSZkIRkDMKBP58eY9ydmyDs7CLWmNa46?=
+ =?iso-8859-1?Q?nKVM1Drb6KPKHA8XlzJQ37IIAcEWjLXn5WMa1gJnMsCBnDHv4f6uSt6hlK?=
+ =?iso-8859-1?Q?OrfzJ56FnEiIdzODeCAlHJSU6Kk+gnirlE58DqZBRNalZ7yluHArNIttCk?=
+ =?iso-8859-1?Q?EtY89FmGUnJUjUDbBdCLEROmXMsdlqdXFc1CFaR/QjnmQs3yidJvIxgOkq?=
+ =?iso-8859-1?Q?ZzH4dUMNiAkg9cdkcZPeTMHJanDgRZ0MGLyfZxHO4ckKkM8dotvOQtxEph?=
+ =?iso-8859-1?Q?lT2nLAY36RzvHhI/r3K7za99Xuf/s1wwdaXG1c1Ssw/q0EPB/PCyJaRodT?=
+ =?iso-8859-1?Q?b3F5p4+X1xwhpdBs3/z2sRG4n7oUDsrgDmy8yjYHgZOhQWSF07IQYk6kTU?=
+ =?iso-8859-1?Q?tQnK+BGf9hKBrMr64QFUmdB72pZSUdUgnZxR2WMNkrMNea4o+eZ0bVoxRI?=
+ =?iso-8859-1?Q?+lT8SQo98hgysXZU9MSkQjj1vs0xyJ08nQFSrEiVobG9pWArFCZPBP6ukb?=
+ =?iso-8859-1?Q?Xqa/9WIpdMgdIOTC32j93A0C8=3D?=
+Content-Type: multipart/related;
+	boundary="_005_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: thebestoptionsa.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: CY4PR06MB3334.namprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 10b8c4b3-a520-4ad6-47c7-08de011b522a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 Oct 2025 18:49:58.6914
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 72c87848-b9bb-4d5c-a8ab-3d604c3c5371
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sAUGhVvxbsFVXvmbltu/wCi5OkwQG26OF8pyZgN9LxNE1PkG3brOylSxdkZm+OHIKr/QrhiyFQXl7SRFGOm2bAuwrTnj4mTYfd2ZZzLFV0yurG/lVrGNFeSDOT0Q9c5H
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH7PR06MB8896
+X-MDID: 1759344601-tEb7F0-FxMCU
+X-PPE-STACK: {"stack":"us4"}
+X-MDID-O:
+ us4;ut7;1759344601;tEb7F0-FxMCU;<helen.bennett-lopez@thebestoptionsa.com>;1caf05227e85404b3bb74117141ed951
+X-PPE-TRUSTED: V=1;DIR=OUT;
+X-Spam-Status: No, score=0.0
+X-Spam-Score: 0
+X-Spam-Bar: /
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__Hello?= =?ISO-8859-1?Q?=2C_Would_it_be_possible_to_schedule_a_meeting_to_det?= =?ISO-8859-1?Q?ermine=0A____our_current_status_and_what_our_next_ste?= =?ISO-8859-1?Q?ps_are=3F_Please_advise=2E_Respectfully=0A____submitt?= =?ISO-8859-1?Q?ed=2C_=0A_Content_analysis_details=3A___=280=2E0_poin?= =?ISO-8859-1?Q?ts=2C_5=2E0_required=29=0A__pts_rule_name____________?= =?ISO-8859-1?Q?__description=0A_----_----------------------_--------?= =?ISO-8859-1?Q?------------------------------------------=0A__0=2E0_?= =?ISO-8859-1?Q?RCVD=5FIN=5FVALIDITY=5FSAFE=5FBLOCKED_RBL=3A_ADMINIST?= =?ISO-8859-1?Q?RATOR_NOTICE=3A_The_query_to=0A______________________?= =?ISO-8859-1?Q?________Validity_was_blocked=2E__See=0A______________?= =?ISO-8859-1?Q?_______________https=3A//knowledge=2Evalidity=2Ecom/h?= =?ISO-8859-1?Q?c/en-us/articles/20961730681243=0A___________________?= =?ISO-8859-1?Q?___________for_more_information=2E=0A________________?= =?ISO-8859-1?Q?_____________=5B148=2E163=2E129=2E49_listed_in_sa-acc?= =?ISO-8859-1?Q?redit=2Ehabeas=2Ecom=5D=0A__0=2E0_RCVD=5FIN=5FVALIDIT?= =?ISO-8859-1?Q?Y=5FRPBL=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The?= =?ISO-8859-1?Q?_query_to=0A______________________________Validity_wa?= =?ISO-8859-1?Q?s_blocked=2E__See=0A_____________________________http?= =?ISO-8859-1?Q?s=3A//knowledge=2Evalidity=2Ecom/hc/en-us/articles/20?= =?ISO-8859-1?Q?961730681243=0A______________________________for_more?= =?ISO-8859-1?Q?_information=2E=0A____________________________=5B148=2E1?= =?ISO-8859-1?Q?63=2E129=2E49_listed_in_bl=2Escore=2Esenderscore=2Eco?= =?ISO-8859-1?Q?m=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FCERTIFIED=5FBLO?= =?ISO-8859-1?Q?CKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The=0A___________?= =?ISO-8859-1?Q?__________________query_to_Validity_was_blocked=2E__S?= =?ISO-8859-1?Q?ee=0A_____________________________https=3A//knowledge?= =?ISO-8859-1?Q?=2Evalidity=2Ecom/hc/en-us/articles/20961730681243=0A_?= =?ISO-8859-1?Q?_____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?_________________________=5B148=2E163=2E129=2E49_list?= =?ISO-8859-1?Q?ed_in_sa-trusted=2Ebondedsender=2Eorg=5D=0A__0=2E0_UR?= =?ISO-8859-1?Q?IBL=5FBLOCKED__________ADMINISTRATOR_NOTICE=3A_The_qu?= =?ISO-8859-1?Q?ery_to_URIBL_was_blocked=2E=0A_______________________?= =?ISO-8859-1?Q?______See=0A_____________________________http=3A//wik?= =?ISO-8859-1?Q?i=2Eapache=2Eorg/spamassassin/DnsBlocklists#dnsbl-blo?= =?ISO-8859-1?Q?ck=0A______________________________for_more_informati?= =?ISO-8859-1?Q?on=2E=0A_____________________________=5BURI=3A_thebes?= =?ISO-8859-1?Q?toptionsa=2Ecom=5D=0A_-0=2E0_SPF=5FPASS______________?= =?ISO-8859-1?Q?_SPF=3A_sender_matches_SPF_record=0A__0=2E0_ARC=5FVAL?= =?ISO-8859-1?Q?ID______________Message_has_a_valid_ARC_signature=0A_?= =?ISO-8859-1?Q?_0=2E1_DKIM=5FSIGNED____________Message_has_a_DKIM_or?= =?ISO-8859-1?Q?_DK_signature=2C_not_necessarily_valid=0A__0=2E0_ARC=5FS?= =?ISO-8859-1?Q?IGNED_____________Message_has_a_ARC_signature=0A_-0=2E1?= =?ISO-8859-1?Q?_DKIM=5FVALID_____________Message_has_at_least_one_va?= =?ISO-8859-1?Q?lid_DKIM_or_DK_signature=0A__0=2E0_HTML=5FMESSAGE____?= =?ISO-8859-1?Q?_______BODY=3A_HTML_included_in_message=0A__0=2E0_KAM?= =?ISO-8859-1?Q?=5FSHORT______________Use_of_a_URL_Shortener_for_very?= =?ISO-8859-1?Q?_short_URL?=
+X-Spam-Flag: NO
+
+--_005_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_
+Content-Type: multipart/alternative;
+	boundary="_000_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_"
+
+--_000_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hello,
+
+Would it be possible to schedule a meeting to determine our current status =
+and what our next steps are?  Please advise.
+
+Respectfully submitted,
+
+
+Helen Bennett-Lopez | MPA, LCDC/CHW
+
+The Best Option, LLC | Helen.Bennett-Lopez@thebestoptionsa.com<mailto:Helen=
+.Bennett-Lopez@thebestoptionsa.com>
+3700 Fredericksburg Rd
+Suite 137
+San Antonio, TX 78201
+Phone: 210-265-1133
+Fax: 210-259-8528
+www.thebestoptionsa.com<http://www.thebestoptionsa.com/>
+
+What should I know about The Best Option, LLC ...<http://youtu.be/ekYmCWKUU=
+H8>
+
+[cid:3f655ab3-18bb-48ec-993f-c1ad68770e8e]<https://www.facebook.com/The-Bes=
+t-Option-LLC-461969774008287/?ref=3Daymt_homepage_panel> [cid:d6991982-5c12=
+-49ff-bc04-d66fb600e407] <http://twitter.com/thebestoptionsa>
+
+The federal rules prohibit anyone from making any further disclosure of thi=
+s information without the specific written consent of the person to whom it=
+ pertains, or as otherwise permitted by 42 CFR Part 2. A general authorizat=
+ion of medical or other information is not sufficient for this purpose. The=
+ federal rules restrict any use of the information to criminally investigat=
+e or prosecute any alcohol or drug client.
+
+Confidential: Please note that the information contained in this email mess=
+age may be privileged and confidential [CFR 42, Part 2, and HIPAA, the Heal=
+th Insurance Portability and Accountability Act of 1996] and is intended on=
+ly for the use of the individual(s) named above and others who have been sp=
+ecifically authorized to receive it. If you are not the intended recipient,=
+ you are hereby notified that any dissemination, distribution or copying of=
+ this communication is strictly prohibited. If you have received this commu=
+nication in error, or if any problem occurs with this transmission, please =
+notify us immediately by telephone.
+
+
+--_000_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+Hello,</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+<br>
+</div>
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);" clas=
+s=3D"elementToProof">
+Would it be possible to schedule a meeting to determine our current status =
+and what our next steps are?&nbsp; Please advise.</div>
+<div class=3D"elementToProof" id=3D"Signature">
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 13.3333p=
+x; color: rgb(0, 0, 0);" class=3D"elementToProof">
+<br>
+Respectfully submitted,</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 13.3333p=
+x; color: rgb(0, 0, 0);" class=3D"elementToProof">
+<br>
+</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 13.3333p=
+x; color: rgb(0, 0, 0);" class=3D"elementToProof">
+<br>
+</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-size: 13.3333px;" class=3D"elementToProof">
+<span style=3D"font-family: Verdana, geneva, serif, EmojiFont; color: rgb(0=
+, 0, 0);">Helen Bennett-Lopez
+</span><span style=3D"font-family: Verdana, serif, EmojiFont; color: rgb(25=
+5, 102, 0);"><b>|</b></span><span style=3D"font-family: Verdana, geneva, se=
+rif, EmojiFont; color: rgb(0, 0, 0);">&nbsp;MPA, LCDC/CHW</span></div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 13.3333p=
+x; color: rgb(0, 0, 0);" class=3D"elementToProof">
+<br>
+</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-size: 10pt;" class=3D"elementToProof">
+<span style=3D"font-family: Verdana, geneva, serif, EmojiFont; color: rgb(0=
+, 0, 0);">The Best Option, LLC
+</span><span style=3D"font-family: Verdana, serif, EmojiFont; color: rgb(25=
+5, 102, 0);"><b>|
+</b></span><span style=3D"font-family: Verdana, geneva, serif, EmojiFont; c=
+olor: rgb(0, 0, 0);"><a style=3D"margin: 0px;" rel=3D"noopener noreferrer" =
+target=3D"_blank" href=3D"mailto:Helen.Bennett-Lopez@thebestoptionsa.com">H=
+elen.Bennett-Lopez@thebestoptionsa.com</a></span></div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+3700 Fredericksburg Rd</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+Suite 137</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+San Antonio, TX 78201</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+Phone: 210-265-1133</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+Fax: 210-259-8528</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+<a style=3D"margin: 0px;" rel=3D"noopener noreferrer" target=3D"_blank" hre=
+f=3D"http://www.thebestoptionsa.com/">www.thebestoptionsa.com</a></div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+<br>
+</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+<a style=3D"margin: 0px;" rel=3D"noopener noreferrer" target=3D"_blank" hre=
+f=3D"http://youtu.be/ekYmCWKUUH8">What should I know about The Best Option,=
+ LLC ...</a>&nbsp;&nbsp;</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+<br>
+</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+<a style=3D"margin: 0px;" rel=3D"noopener noreferrer" target=3D"_blank" hre=
+f=3D"https://www.facebook.com/The-Best-Option-LLC-461969774008287/?ref=3Day=
+mt_homepage_panel"><img style=3D"height: 16px; margin: 0px 5px 0px 0px;" he=
+ight=3D"16" data-outlook-trace=3D"F:1|T:1" src=3D"cid:3f655ab3-18bb-48ec-99=
+3f-c1ad68770e8e"></a>&nbsp;<a style=3D"margin: 0px;" rel=3D"noopener norefe=
+rrer" target=3D"_blank" href=3D"http://twitter.com/thebestoptionsa"><img st=
+yle=3D"height: 16px; margin: 0px 5px 0px 0px;" height=3D"16" data-outlook-t=
+race=3D"F:1|T:1" src=3D"cid:d6991982-5c12-49ff-bc04-d66fb600e407"></a>&nbsp=
+;</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+<br>
+</div>
+<div style=3D"text-align: left; background-color: rgb(255, 255, 255); margi=
+n: 0px; font-family: Verdana, geneva, serif, EmojiFont; font-size: 10pt; co=
+lor: rgb(0, 0, 0);" class=3D"elementToProof">
+The federal rules prohibit anyone from making any further disclosure of thi=
+s information without the specific written consent of the person to whom it=
+ pertains, or as otherwise permitted by 42 CFR Part 2. A general authorizat=
+ion of medical or other information
+ is not sufficient for this purpose. The federal rules restrict any use of =
+the information to criminally investigate or prosecute any alcohol or drug =
+client.<br>
+<br>
+Confidential: Please note that the information contained in this email mess=
+age may be privileged and confidential [CFR 42, Part 2, and HIPAA, the Heal=
+th Insurance Portability and Accountability Act of 1996] and is intended on=
+ly for the use of the individual(s)
+ named above and others who have been specifically authorized to receive it=
+. If you are not the intended recipient, you are hereby notified that any d=
+issemination, distribution or copying of this communication is strictly pro=
+hibited. If you have received this
+ communication in error, or if any problem occurs with this transmission, p=
+lease notify us immediately by telephone.</div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);" class=3D"elementToProof">
+<br>
+</div>
+</div>
+</body>
+</html>
+
+--_000_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_--
+
+--_005_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_
+Content-Type: image/png; name="Outlook-1hlxyumy.png"
+Content-Description: Outlook-1hlxyumy.png
+Content-Disposition: inline; filename="Outlook-1hlxyumy.png"; size=644;
+	creation-date="Wed, 01 Oct 2025 18:49:58 GMT";
+	modification-date="Wed, 01 Oct 2025 18:49:58 GMT"
+Content-ID: <3f655ab3-18bb-48ec-993f-c1ad68770e8e>
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACS0lEQVQ4T22TQUxTQRCG/1lEjDQK
+CNFqgglqgKcJ9V6KqVX0psaYlIZ4IKKWq+Hi2YtclaRNTDyQmnBQEy8qbcWIZ54HWjEavcjz0FgJ
+CgH0rZnZ7WsPTN572+7u/DvzzSz9/PVbj9+ZxtKnbwA0ALJf7GgEknmn9yiyU2nQ1Rv39drGNnp6
+TqCpuUUEzMtWE/TtjALg49/2Jr58Xsa+UAuoP5bWQ0Nn8L2yierqH3GRj+ZHQ5GCDx1I8my4az+6
+2nZhfv6tETibuAC3vGKc2VdrEJG8bMe7OzA1eRGd7a3yfzCVxUDvQRQLc1bg3DDc8g9xFGc+j+oR
+PHswgs72UMAkmsoi0ncIxfwrUP9gWsdFwDMn6lreRojTWMjdFOfoSEb28CGnnTAKc69NBPHEeSyW
+PCilZJFzIUXwNcOjukAyYyITgSMo5l82CJQ9AVZPA1h4cmvHUkaTGUScMN7kLYN4YhhuacWUj7mZ
+LPD8YUp+1OBVquuyeCk9g4hz2DKITUgKbskDlKGufV9GqQQI73LjAQNmwvORvjCK+YCBgcjhSxpS
+d4Imw6MRojDwmQFHIAK3dVz6wAucavR5I9t7yyKayogzG0MsMEQnNqGvj17D8teKSVz7XAILwjB8
+dO+KjGN3n8rYpAjHujvweGbWVGE0eRnVtb+orq7D18yBGbCI6etGAaU0DrS1IrSHkJt9YS4TnxgZ
+OIXm3XuhufbSLAzR1Jz7w5cONUXa2tqAu/hBNpBc58lpLH3k62yrYO9C0AQiVl/jbSftdf4P26YY
+D7eDysMAAAAASUVORK5CYII=
+
+--_005_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_
+Content-Type: image/png; name="Outlook-qd0dgerk.png"
+Content-Description: Outlook-qd0dgerk.png
+Content-Disposition: inline; filename="Outlook-qd0dgerk.png"; size=672;
+	creation-date="Wed, 01 Oct 2025 18:49:58 GMT";
+	modification-date="Wed, 01 Oct 2025 18:49:58 GMT"
+Content-ID: <d6991982-5c12-49ff-bc04-d66fb600e407>
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACZ0lEQVQ4T42SX0hTURzHv+f+m7Ml
+tpzWmhVWkmhpjLXGGE6HaCA99FohBINeeuixl+gt+vNY9BaIIr0G1fRhbmluhgxRopEpmJOyNl3Z
+XO7eu3vinjsNSWa/t3PO9/f5fc85XwIA1wfH6XByGdm8rC/3rAOVEnqaHHh21UfIjecTdGxNxvGT
+9RAlYc9mXaDIKhbnU/BWiyB1t4eo0++CIP5f89YEVVGRiE6BmG/100Cvr+zkWhMPt60S33+rmMzk
+QQhh+vDLcQPQcdELCoquw1WIpXPIq3QbaDPxeOyph0Xk8WjmC8IrG+A4jp1HQhMGoL3bA03TcKXB
+issNVsRWcnixlMX8egEPXA601uzbBl4bXUBG0dj6zUjcAPi63NCKGuRNGa8utcAi8UzQn/yGvqa6
+Hdd7Mmu4IBwQel0CeDtdoJRCKSi4YDXjfmdj2TcZ/ryGhzNfEY8mDAcev5M16C5EVcE9bwOc9upd
+IXOrG5hO5zDwKYPRSAkQCLiYOCerUGUVVk7D055m2PdX7ID8KqjoGJiEaDZBMkmYis0YDpyes7jZ
+ai9Biqg1Ceg9ZfvHwd3oR4ykfkKQRHA89xdwzt3C0hU8Y0ewzbGr9TvhJEJLWUjmCtasVyI+azho
+O98MqhShyAr00PiPWdF40AKAYi6TQ2RxFWlZg2CWwPH8dpCm3703ony06QR4jqBY1KApKjS1yHKh
+lx4aTuDBiQJ4fXIphbp2KbkAEhx6S0dSP2A7VMMEVKMApexb9WKxJQSEM+Krl96cXsmgu74abLdv
+YIwOf1jG+qZS9v+3DqsqRHSdPoLBvnbyBxtbASo4pTF6AAAAAElFTkSuQmCC
+
+--_005_CY4PR06MB3334C9D8CEF5D8C8A0D41852BAE6ACY4PR06MB3334namp_--

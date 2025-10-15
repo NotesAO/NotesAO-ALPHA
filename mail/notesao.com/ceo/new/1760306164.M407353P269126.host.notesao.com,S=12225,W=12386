@@ -1,0 +1,161 @@
+Return-Path: <sabrina.hicks1191@gmail.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id gVjtFvQj7GhGGwQAIW4ynA
+	(envelope-from <sabrina.hicks1191@gmail.com>); Sun, 12 Oct 2025 16:56:04 -0500
+Return-path: <sabrina.hicks1191@gmail.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 12 Oct 2025 16:56:04 -0500
+Received: from mail-ej1-f44.google.com ([209.85.218.44]:44139)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <sabrina.hicks1191@gmail.com>)
+	id 1v842s-0000000180b-1OMa
+	for admin@notesao.com;
+	Sun, 12 Oct 2025 16:56:04 -0500
+Received: by mail-ej1-f44.google.com with SMTP id a640c23a62f3a-b3c2db014easo675048266b.0
+        for <admin@notesao.com>; Sun, 12 Oct 2025 14:56:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1760306161; x=1760910961; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=UjDC11s+0ywwyOxaCCbouy/41RLatMB+LWCxQVqpuDA=;
+        b=L3nXCXXOc5EfK4IrOZJHfdQ7KuKsmgpH0hIzy6rS7oENf+geZe47bIuZCjLemRcz/W
+         TI9aNiNvrihuEtYSTipG8JFUhrdOsP8Qv+oiPSNqgSQ7Lrd8MgOz0WHzonysYJ5UuDaR
+         ISxS4xCacZkg3kH5Hr+/1l8c5+pY78sVpr8kWsksvysMIw+ADD72mJ4V9m0NRQR7cJEi
+         qxwoZQ3mYQf9Scb8Q8esUnGwaiM9h6rfzQMAqaAHUUpKe2jgmXxhDjxUlNDACo1gCdnE
+         9AcwbCdiE74jgHqjEJ+2WxZ3oCQiO1fLNeGbJf9bIymcXrBBsCV3WkQoxmOqHBJ8Uzco
+         VW0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760306161; x=1760910961;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=UjDC11s+0ywwyOxaCCbouy/41RLatMB+LWCxQVqpuDA=;
+        b=QDQqgHNRNbEzANNbnNerbkmcg0b47xofFIj2zBi9uXyG4nm9I5CPpmE3kQ0WgrxHzs
+         TFYY/gs6ztEBwbOY0IeEZPbgsIvhFkOUgDuTfWpx8iI9oXXnyPIXooZdvwClxaBVfPfg
+         idZkoaEbZx3HIZ+uExbkpJO81IcmRaOD0FEzkqqh5nIwLGeNlIizNQxGHvVUema05UW+
+         5sGDh7OPij2a98J4DldzPgLVoFQ01RiTXn36+ZebK+w/C/Mwu3CdmChpS56rrxuqmOi2
+         XzCgkhMa5zRA3Ij60iAEmh59zcAwuWaEouWQS4d9arfJ2ps1uEfyiQY0gjhJSYFdt/cm
+         u8KQ==
+X-Gm-Message-State: AOJu0Yzzmu/VQLYlfOs04uuvfVxoFgpM89Vx1hQzQb83m4dI/Y6BrpB8
+	yn42JoQy6VBf9izSeRm2dOTCrT/uqM0BZSyo8fIq6FoNG+kkBhGfZ+KCcB2TPtYYrUcYspOeOMV
+	TKF69lfe84lGrR2ndqeac0h2WEcxDBuNmbw==
+X-Gm-Gg: ASbGncv0rCD8XqCmfktDJDQ0V8lg/FP86cIuDUA4n2DbWykJlLkIZwdcY4LGoEqYd/N
+	o7aL+mMgI2PZNbzXLG1IW7CdlVKcM5GflJJJIrcL3gItXMV1q+zbYKomR3IuJRCKNToCrmomPWu
+	Tuo0WIaWGZA6MKHZL8sJ9/G2zJJqEJb+wlPgC6XFZQDXDGAhJe095YrG+2GxOfJWTtJAky9mLaI
+	CXqOn6Nj9jd9oYG3qPvmgeDMmjmk/Pe/prE/5bpHBnv2gzu1jdBP0OPV+pqIBC45pnTZQ==
+X-Google-Smtp-Source: AGHT+IHgqO5NSVQN3jEY2KYBnTJblnsI5MgmSNoZf3sQIAw8EMcR8dtGhqw5sJU5j4fmYOwpxzO4r5MoIvm8uML62VI=
+X-Received: by 2002:a17:907:948f:b0:b40:e7ee:b5ec with SMTP id
+ a640c23a62f3a-b50ac6c92d4mr1947336866b.59.1760306160834; Sun, 12 Oct 2025
+ 14:56:00 -0700 (PDT)
+MIME-Version: 1.0
+References: <E1v83y6-000000017Wp-1jHj@host.notesao.com>
+In-Reply-To: <E1v83y6-000000017Wp-1jHj@host.notesao.com>
+From: sabrina Hicks <sabrina.hicks1191@gmail.com>
+Date: Sun, 12 Oct 2025 16:55:50 -0500
+X-Gm-Features: AS18NWB4f0brsMMajKmzkf19GdQmFJ8evk6RJEx0tMOgNcCuf6ZVkgww8Cvzdkc
+Message-ID: <CAEHfuPR7EXdHd82Y=aq7fsRWBQXmR0yHmNZSkHY4NOAoQ8vrNg@mail.gmail.com>
+Subject: Re: Women's BIPP Group Reminder: Sunday at 2:00 PM
+To: admin@notesao.com
+Content-Type: multipart/alternative; boundary="000000000000699b460640fd37b6"
+X-Spam-Status: No, score=1.5
+X-Spam-Score: 15
+X-Spam-Bar: +
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__Hi_I_?= =?ISO-8859-1?Q?will_be_there_on_Wednesday_On_Sun=2C_Oct_12=2C_2025_a?= =?ISO-8859-1?Q?t_4=3A51=0A____PM_Free_for_Life_Group_=3C_wrote=3A_=3E_?= =?ISO-8859-1?Q?=5Bimage=3A_Free_for_Life_Group=5D_=3E_=3E_Hi_Sabrina?= =?ISO-8859-1?Q?=2C=0A____=3E_=3E_*Your_Women's_BIPP_group_is_Sunday_?= =?ISO-8859-1?Q?at_2=3A00_PM_=28Sunday=2C_October_19=29=2E*=0A___=3E_?= =?ISO-8859-1?Q?=3E_Your_Tarrant_County_Probation_mandated_BIPP_group?= =?ISO-8859-1?Q?_is_scheduled=2E_Tarrant=0A____=3E_Co_=5B=2E=2E=2E=5D_?= =?ISO-8859-1?Q?=0A_Content_analysis_details=3A___=281=2E5_points=2C_?= =?ISO-8859-1?Q?5=2E0_required=29=0A__pts_rule_name______________desc?= =?ISO-8859-1?Q?ription=0A_----_----------------------_--------------?= =?ISO-8859-1?Q?------------------------------------=0A__0=2E0_RCVD=5FI?= =?ISO-8859-1?Q?N=5FVALIDITY=5FSAFE=5FBLOCKED_RBL=3A_ADMINISTRATOR_NO?= =?ISO-8859-1?Q?TICE=3A_The_query_to=0A______________________________?= =?ISO-8859-1?Q?Validity_was_blocked=2E__See=0A______________________?= =?ISO-8859-1?Q?_______https=3A//knowledge=2Evalidity=2Ecom/hc/en-us/?= =?ISO-8859-1?Q?articles/20961730681243=0A___________________________?= =?ISO-8859-1?Q?___for_more_information=2E=0A________________________?= =?ISO-8859-1?Q?_____=5B209=2E85=2E218=2E44_listed_in_sa-accredit=2Eh?= =?ISO-8859-1?Q?abeas=2Ecom=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FCERTI?= =?ISO-8859-1?Q?FIED=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The=0A_?= =?ISO-8859-1?Q?____________________________query_to_Validity_was_blo?= =?ISO-8859-1?Q?cked=2E__See=0A_____________________________https=3A/?= =?ISO-8859-1?Q?/knowledge=2Evalidity=2Ecom/hc/en-us/articles/2096173?= =?ISO-8859-1?Q?0681243=0A______________________________for_more_info?= =?ISO-8859-1?Q?rmation=2E=0A__________________________=5B209=2E85=2E2?= =?ISO-8859-1?Q?18=2E44_listed_in_sa-trusted=2Ebondedsender=2Eorg=5D=0A?= =?ISO-8859-1?Q?__0=2E0_RCVD=5FIN=5FVALIDITY=5FRPBL=5FBLOCKED_RBL=3A_?= =?ISO-8859-1?Q?ADMINISTRATOR_NOTICE=3A_The_query_to=0A______________?= =?ISO-8859-1?Q?________________Validity_was_blocked=2E__See=0A______?= =?ISO-8859-1?Q?_______________________https=3A//knowledge=2Evalidity?= =?ISO-8859-1?Q?=2Ecom/hc/en-us/articles/20961730681243=0A___________?= =?ISO-8859-1?Q?___________________for_more_information=2E=0A________?= =?ISO-8859-1?Q?_____________________=5B209=2E85=2E218=2E44_listed_in?= =?ISO-8859-1?Q?_bl=2Escore=2Esenderscore=2Ecom=5D=0A__0=2E0_URIBL=5FB?= =?ISO-8859-1?Q?LOCKED__________ADMINISTRATOR_NOTICE=3A_The_query_to_?= =?ISO-8859-1?Q?URIBL_was_blocked=2E=0A_____________________________S?= =?ISO-8859-1?Q?ee=0A_____________________________http=3A//wiki=2Eapa?= =?ISO-8859-1?Q?che=2Eorg/spamassassin/DnsBlocklists#dnsbl-block=0A__?= =?ISO-8859-1?Q?____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?_____________________________=5BURI=3A_notesao=2Ecom=5D=0A?= =?ISO-8859-1?Q?_____________________________=5BURI=3A_freeforlifegro?= =?ISO-8859-1?Q?up=2Ecom=5D=0A_-0=2E0_SPF=5FPASS_______________SPF=3A_?= =?ISO-8859-1?Q?sender_matches_SPF_record=0A_-0=2E1_DKIM=5FVALID=5FAU?= =?ISO-8859-1?Q?__________Message_has_a_valid_DKIM_or_DK_signature_fr?= =?ISO-8859-1?Q?om_author's=0A_____________________________domain=0A_?= =?ISO-8859-1?Q?_0=2E1_DKIM=5FSIGNED____________Message_has_a_DKIM_or?= =?ISO-8859-1?Q?_DK_signature=2C_not_necessarily_valid=0A_-0=2E1_DKIM?= =?ISO-8859-1?Q?=5FVALID_____________Message_has_at_least_one_valid_D?= =?ISO-8859-1?Q?KIM_or_DK_signature=0A_-0=2E1_DKIM=5FVALID=5FEF______?= =?ISO-8859-1?Q?____Message_has_a_valid_DKIM_or_DK_signature_from=0A_?= =?ISO-8859-1?Q?____________________________envelope-from_domain=0A__?= =?ISO-8859-1?Q?0=2E2_FREEMAIL=5FENVFROM=5FEND=5FDIGIT_Envelope-from_?= =?ISO-8859-1?Q?freemail_username_ends_in=0A_________________________?= =?ISO-8859-1?Q?____digit=0A_____________________________=5Bsabrina=2Eh?= =?ISO-8859-1?Q?icks1191=28at=29gmail=2Ecom=5D=0A__0=2E0_FREEMAIL=5FF?= =?ISO-8859-1?Q?ROM__________Sender_email_is_commonly_abused_enduser_?= =?ISO-8859-1?Q?mail_provider=0A_____________________________=5Bsabri?= =?ISO-8859-1?Q?na=2Ehicks1191=28at=29gmail=2Ecom=5D=0A__0=2E7_HTML=5FI?= =?ISO-8859-1?Q?MAGE=5FONLY=5F20_____BODY=3A_HTML=3A_images_with_1600?= =?ISO-8859-1?Q?-2000_bytes_of_words=0A__0=2E0_HTML=5FMESSAGE________?= =?ISO-8859-1?Q?___BODY=3A_HTML_included_in_message=0A__0=2E8_GB=5FFR?= =?ISO-8859-1?Q?EEMAIL=5FNUM________Freemail_spammy_address?=
+X-Spam-Flag: NO
+
+--000000000000699b460640fd37b6
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi I will be there on Wednesday
+
+On Sun, Oct 12, 2025 at 4:51=E2=80=AFPM Free for Life Group <
+no-reply@ffl.notesao.com> wrote:
+
+> [image: Free for Life Group]
+>
+> Hi Sabrina,
+>
+> *Your Women's BIPP group is Sunday at 2:00 PM (Sunday, October 19).*
+>
+> Your Tarrant County Probation mandated BIPP group is scheduled. Tarrant
+> County Probation and Sarah Oakes expect your presence. Please arrive earl=
+y. *Lockout
+> is 2:10 PM*. Your presence is a mandatory stipulation. Incarceration
+> occurs for non-attendance. Enjoy life fearlessly by remaining in good
+> standing with CSCD & TDCJ. You've got this!
+>
+> Where: Virtual (Use your group link):
+> Sunday 2:00 PM Group Link
+> <https://freeforlifegroup.com/sunday-womens-probation-18-week/>
+>
+> Client Portal (for Make-Up Group Options):
+> FFL =E2=80=93 Client Portal <https://ffl.notesao.com/clientportal.php>
+>
+> Questions? Reply to this email with any attendance or payment concerns OR
+> call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+>
+> Blessings,
+> Free for Life Group
+> ------------------------------
+>
+> This reminder was sent by Free for Life Group. If you no longer wish to
+> receive emails at this address, unsubscribe here
+> <https://ffltest.notesao.com/unsubscribe.php?e=3Dsabrina.hicks1191%40gmai=
+l.com&t=3D53f9346952cd29f8a5b02d62ca82540a2239f004ab63951f79d7bc2a9beec9ba>
+> .
+>
+
+--000000000000699b460640fd37b6
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Hi I will be there on Wednesday</div><div><br><div class=
+=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Sun, Oct 12, 2025=
+ at 4:51=E2=80=AFPM Free for Life Group &lt;<a href=3D"mailto:no-reply@ffl.=
+notesao.com">no-reply@ffl.notesao.com</a>&gt; wrote:<br></div><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;=
+padding-left:1ex"><div style=3D"text-align:center;margin:0 0 12px 0"><img s=
+rc=3D"https://ffltest.notesao.com/ffllogo.png" alt=3D"Free for Life Group" =
+style=3D"max-width:100%;height:auto;display:inline-block"></div><p>Hi Sabri=
+na,</p>
+
+<p><strong>Your Women&#39;s BIPP group is Sunday at 2:00 PM (Sunday, Octobe=
+r 19).</strong></p>
+
+<p>
+  Your Tarrant County Probation mandated BIPP group is scheduled. Tarrant C=
+ounty Probation and Sarah Oakes expect your presence.
+  Please arrive early. <em>Lockout is 2:10 PM</em>. Your presence is a mand=
+atory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaini=
+ng in good standing with CSCD &amp; TDCJ.
+  You&#39;ve got this!
+</p>
+
+<p>Where: Virtual (Use your group link):<br><a href=3D"https://freeforlifeg=
+roup.com/sunday-womens-probation-18-week/" target=3D"_blank">Sunday 2:00 PM=
+ Group Link</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href=3D"https://ffl.notesao.com/clientportal.php" target=3D"_blank">FF=
+L =E2=80=93 Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR=
+ call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style=3D"border-top:1px solid #=
+ddd;margin:24px 0"><p style=3D"font:12px/1.4 Arial,Helvetica,sans-serif;col=
+or:#666">This reminder was sent by Free for Life Group. If you no longer wi=
+sh to receive emails at this address, <a href=3D"https://ffltest.notesao.co=
+m/unsubscribe.php?e=3Dsabrina.hicks1191%40gmail.com&amp;t=3D53f9346952cd29f=
+8a5b02d62ca82540a2239f004ab63951f79d7bc2a9beec9ba" target=3D"_blank">unsubs=
+cribe here</a>.</p>
+</blockquote></div></div>
+
+--000000000000699b460640fd37b6--

@@ -1,0 +1,343 @@
+Return-Path: <bounce-md_30010842.6876ac75.v1-bd33c7e6902b4109bb3d5b1ade6f6e00@click.mailchimp.com>
+Delivered-To: ceo@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id ItORDXusdmj0QS0AIW4ynA
+	(envelope-from <bounce-md_30010842.6876ac75.v1-bd33c7e6902b4109bb3d5b1ade6f6e00@click.mailchimp.com>)
+	for <ceo@notesao.com>; Tue, 15 Jul 2025 14:31:07 -0500
+Return-path: <bounce-md_30010842.6876ac75.v1-bd33c7e6902b4109bb3d5b1ade6f6e00@click.mailchimp.com>
+Envelope-to: ceo@notesao.com
+Delivery-date: Tue, 15 Jul 2025 14:31:07 -0500
+Received: from notifications1.mailchimp.com ([198.2.132.157]:19381)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <bounce-md_30010842.6876ac75.v1-bd33c7e6902b4109bb3d5b1ade6f6e00@click.mailchimp.com>)
+	id 1ublMk-0000000CRaC-3NjV
+	for ceo@notesao.com;
+	Tue, 15 Jul 2025 14:31:07 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1752607861; x=1752877861;
+	bh=bUB2jgo0qEVccVeH4Z8y83VRfZfSRil1s9ZnO2ax+ig=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=KcWegtA7I6gXBEOIeJeOtHaIk6LI3xszNIgFJ6vtEjtdY62Al87yvgnWjpI/sfHoL
+	 WcgJDqyWj6MlJ5y++7fWOXuYVS2+7DVrn9hyZE8vMTZPs3g9AlT7aox3onAbjllu9G
+	 0dI2vMGheHvMUUua/LPXvxyjsMIecEhEFwbYSyTD15gynziOi/wSmC6T+I9iP82lkh
+	 ddDCqsep1CV9eCReik4SmARNIYRXMJNGci9j2WDsaNIlW6AMgodZTBSD03YnwtK8yG
+	 JGwP+1mHMgvHhJByGtyV6jhizetHyZ+g0QqUGQRWvcYJLOtR2hse9m0F5BXKVe5dBs
+	 Q+/otesCng4Tw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimp.com; s=k2;
+	t=1752607861; x=1752868361; i=accountservices@mailchimp.com;
+	bh=bUB2jgo0qEVccVeH4Z8y83VRfZfSRil1s9ZnO2ax+ig=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=RK8M73A+m2I1OjtwtevT3xhn7neAmJLg5cXYH5pPDFFiYU8UGvX9GTc8U1cK93ypT
+	 cGAk6IF3yW9rh18e6nMEr5jaXlbKHfEuSt15FQQMM+46oxNmULyhmvyi+qZe4wnRAq
+	 tQCqgSVH8wJmLn+iDMZ/iAIc4d8PcTiU4LtI1JaGvWz+UjPKmk/UPpQnMTfMvBAGPD
+	 LLZs1ed7OrjvWselS12tFkPhrbNWGN+uSHjBRpSbiM0nMAhujEeA8wnXwLBlX0yTBM
+	 Clx0b2VIPddd1yp8+geJWOjEfYhWqwRry5C1xgfOqgieTxRrBT8UYaNvVT3mluuUVX
+	 wYNfZTVUjXkRw==
+Received: from pmta09.mandrill.prod.atl01.rsglab.com (localhost [127.0.0.1])
+	by notifications1.mailchimp.com (Mailchimp) with ESMTP id 4bhTnK21KzzMR34gr
+	for <ceo@notesao.com>; Tue, 15 Jul 2025 19:31:01 +0000 (GMT)
+From: "Mailchimp Account Services" <accountservices@mailchimp.com>
+Subject: =?utf-8?Q?Mailchimp=20verification=20code?=
+X-Accounttype: pr
+X-Auto-Response-Suppress: OOF, AutoReply
+Auto-Submitted: auto-generated
+To: ceo@notesao.com
+X-Native-Encoded: 1
+X-Report-Abuse: =?UTF-8?Q?Please=20forward=20a=20copy=20of=20this=20message,=20including=20all=20headers,=20to=20abuse@mandrill.com.=20You=20can=20also=20report=20abuse=20here:=20https://mandrillapp.com/contact/abuse=3Fid=3D30010842.bd33c7e6902b4109bb3d5b1ade6f6e00?=
+X-Mandrill-User: md_30010842
+Feedback-ID: 30010842:30010842.20250715:md
+Message-Id: <30010842.20250715193101.6876ac752973d4.66640291@notifications1.mailchimp.com>
+Date: Tue, 15 Jul 2025 19:31:01 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av--yowDh8lVADr1Sg2xwrqFw"
+X-Spam-Status: No, score=0.9
+X-Spam-Score: 9
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Just checking to be sure you're you. Please copy and paste
+    the following code into the Verification Code field. 658373 
+ Content analysis details:   (0.9 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.2.132.157 listed in sa-accredit.habeas.com]
+  0.0 KAM_FROM_MARKETINGBL_PCCC RBL: From address associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [listed in mailchimp.com.wild.pccc.com]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: mailchimp.com]
+                             [URI: mandrillapp.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.2.132.157 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [198.2.132.157 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: mailchimp.com]
+                             [URI: mandrillapp.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 T_REMOTE_IMAGE         Message contains an external image
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium trust sender
+X-Spam-Flag: NO
+
+--_av--yowDh8lVADr1Sg2xwrqFw
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Just checking to be sure you're you.
+
+Please copy and paste the following code into the Verification Code field.
+
+658373
+
+
+------------------------------
+https://click.mailchimp.com/track/click/30010842/www.mailchimp.com?p=eyJzIjoia3ZjZU9McEhaSFBKWk13VXM2TXFQQTZUQUhFIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXCIsXCJpZFwiOlwiYmQzM2M3ZTY5MDJiNDEwOWJiM2Q1YjFhZGU2ZjZlMDBcIixcInVybF9pZHNcIjpbXCI0MzQ5MDdkOTc2OGVmNTBiMmYzOWRlN2U5NTIyYTc3ZTZmNjY0N2Y5XCJdLFwibXNnX3RzXCI6MTc1MjYwNzg2MX0ifQ
+405 N. Angier Ave. NE, Atlanta, GA 30312 USA
+
+Contact Us: https://click.mailchimp.com/track/click/30010842/www.mailchimp.com?p=eyJzIjoib2lWQ3lpbXN2Z19jZVduYVkxRlJ6aUFid2VNIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL2NvbnRhY3RcXFwvXCIsXCJpZFwiOlwiYmQzM2M3ZTY5MDJiNDEwOWJiM2Q1YjFhZGU2ZjZlMDBcIixcInVybF9pZHNcIjpbXCI5ZDFlNDk5Y2Y5MjM3MDI3MDQ4YzRlYWM5YTcyZWFkNGRlY2Q1MDYyXCJdLFwibXNnX3RzXCI6MTc1MjYwNzg2MX0ifQ
+Terms of Use: https://click.mailchimp.com/track/click/30010842/mailchimp.com?p=eyJzIjoiamVQc3NIUWEyUEhPWUtvWjQ3SGpiTC1iTm1zIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvbGVnYWxcXFwvdGVybXNcXFwvXCIsXCJpZFwiOlwiYmQzM2M3ZTY5MDJiNDEwOWJiM2Q1YjFhZGU2ZjZlMDBcIixcInVybF9pZHNcIjpbXCI1YTMwMjU1ODBlZTU5ZTc0MmZjN2EyODc4YzU5MmUzNjg3YTdlYTAzXCJdLFwibXNnX3RzXCI6MTc1MjYwNzg2MX0ifQ
+Privacy Policy: https://click.mailchimp.com/track/click/30010842/www.intuit.com?p=eyJzIjoiR2REWnNIOG5WekNtSzEyS1c2bmc0elEzbi13IiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5pbnR1aXQuY29tXFxcL3ByaXZhY3lcXFwvc3RhdGVtZW50XFxcL1wiLFwiaWRcIjpcImJkMzNjN2U2OTAyYjQxMDliYjNkNWIxYWRlNmY2ZTAwXCIsXCJ1cmxfaWRzXCI6W1wiNTU5NzNjYTYzOWVkYzk3OTFiMzU0MGM5Nzc2MGE5NTZiZDFhYjM0YVwiXSxcIm1zZ190c1wiOjE3NTI2MDc4NjF9In0
+Log In to Mailchimp: https://click.mailchimp.com/track/click/30010842/login.mailchimp.com?p=eyJzIjoiUjRJUXNfamZJT0VYblFzbmNyMXFtc204N0pnIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2xvZ2luLm1haWxjaGltcC5jb21cIixcImlkXCI6XCJiZDMzYzdlNjkwMmI0MTA5YmIzZDViMWFkZTZmNmUwMFwiLFwidXJsX2lkc1wiOltcIjU0NDJlN2RkNzQzMTk3YjVjMjZlMTNmNmMwZDJlOTUzODlmOTA2ZmJcIl0sXCJtc2dfdHNcIjoxNzUyNjA3ODYxfSJ9
+--_av--yowDh8lVADr1Sg2xwrqFw
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+    <head>
+        <!-- trx_0044 -->
+        <meta charset=3D"UTF-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1" />
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <title>Mailchimp verification code</title>
+
+        <style type=3D"text/css">
+            /*////// RESET STYLES //////*/
+            p{margin:1em 0;}
+            a{word-wrap:break-word;}
+            table{border-collapse:collapse;}
+            h1, h2, h3, h4, h5, h6{display:block; margin:0; padding:0;}
+            img, a img{border:0; height:auto; outline:none; text-decoration=
+:none;}
+            body, #bodyTable, #bodyCell{height:100%; margin:0; padding:0; w=
+idth:100%;}
+
+            /*////// CLIENT-SPECIFIC STYLES //////*/
+            #outlook a{padding:0;} /* Force Outlook 2007 and up to provide =
+a "view in browser" message. */
+            img{-ms-interpolation-mode:bicubic;} /* Force IE to smoothly re=
+nder resized images. */
+            table{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove sp=
+acing between tables in Outlook Desktop. */
+            .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force =
+Outlook.com to display emails at full width. */
+            p, a, li, td, blockquote{mso-line-height-rule:exactly;} /* Forc=
+e Outlook Desktop to render line heights as they're originally set. */
+            a[href^=3D"tel"], a[href^=3D"sms"]{color:inherit; cursor:defaul=
+t; text-decoration:none;} /* Force mobile devices to inherit declared link =
+styles. */
+            p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%=
+; -webkit-text-size-adjust:100%;} /* Prevent Windows- and Webkit-based mobi=
+le platforms from changing declared text sizes. */
+            .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalC=
+lass p, .ExternalClass span, .ExternalClass font{line-height:100%;} /* Forc=
+e Outlook.com to display line heights normally. */
+            a[x-apple-data-detectors]{color:inherit !important; text-decora=
+tion:none !important; font-size:inherit !important; font-family:inherit !im=
+portant; font-weight:inherit !important; line-height:inherit !important;} /=
+* Force iOS devices to heed link styles set in CSS. */
+
+            /*////// EMAIL STYLES //////*/
+            #bodyCell{padding-top:20px !important; padding-right:10px !impo=
+rtant; padding-bottom:20px !important; padding-left:10px !important;}
+            .emailContainer{max-width:640px;}
+            .footerContent a{color:#007C89; font-weight:500; text-decoratio=
+n:none;}
+
+            @media screen and (min-width:768px){
+                .emailContainer{width:640px !important;}
+            }
+
+            @media only screen and (max-width:480px){
+                body{width:100% !important; min-width:100% !important;}
+                #bodyCell{padding-top:10px !important; padding-bottom:10px =
+!important;}
+                h1{font-size:26px !important; line-height:28px !important;}
+                .footerContent p{border-bottom:1px solid #DEDDDC; font-size=
+:13px !important; padding-bottom:20px !important;}
+                .utilityLink{border-bottom:1px solid #DEDDDC; display:block=
+; font-size:13px !important; padding-top:15px; padding-bottom:15px;}
+                .mobileHide{display:none; visibility:hidden;}
+            }
+        </style>
+    </head>
+    <body bgcolor=3D"#EFEEEA">
+        <center>
+            <table align=3D"center" bgcolor=3D"#EFEEEA" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTabl=
+e">
+                <tr>
+                    <td align=3D"center" style=3D"padding:10px;" valign=3D"=
+top" id=3D"bodyCell">
+                        <!--[if gte mso 9]>
+                        <table align=3D"center" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" style=3D"width:640px;" width=3D"640">
+                        <tr>
+                        <td align=3D"center" valign=3D"top">
+                        <![endif]-->
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"max-width:640px;" width=3D"100%" class=3D"em=
+ailContainer">
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+                                    <!-- BEGIN BODY // -->
+                                    <table align=3D"center" bgcolor=3D"#FFF=
+FFF" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-c=
+olor:#FFFFFF; border-radius:0;" width=3D"100%">
+                                        <tr>
+                                            <td align=3D"center" style=3D"p=
+adding-right:20px; padding-left:20px;" valign=3D"top">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" style=3D"padding-top:40px; padding-bottom:30px;">
+                                                            <a href=3D"http=
+s://click.mailchimp.com/track/click/30010842/www.mailchimp.com?p=3DeyJzIjoi=
+RHRlS2JGNnBOSVV0aFY4cWV0QW01bnJXQ3dZIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0Mix=
+cInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL1wiLF=
+wiaWRcIjpcImJkMzNjN2U2OTAyYjQxMDliYjNkNWIxYWRlNmY2ZTAwXCIsXCJ1cmxfaWRzXCI6W=
+1wiNDM0OTA3ZDk3NjhlZjUwYjJmMzlkZTdlOTUyMmE3N2U2ZjY2NDdmOVwiXSxcIm1zZ190c1wi=
+OjE3NTI2MDc4NjF9In0" target=3D"_blank" style=3D"text-decoration:none;"><img=
+ src=3D"https://cdn-images.mailchimp.com/template_images/Mailchimp+Logo+50-=
+50+Black.png" alt=3D"Mailchimp" width=3D"200" class=3D"logoImage" style=3D"=
+border:0; color:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Ve=
+rdana, sans-serif; font-size:24px; font-weight:bold; height:auto; letter-sp=
+acing:-2px; line-height:100%; text-align:center; outline:none; text-decorat=
+ion:none;" /></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style=3D"paddin=
+g-bottom:20px;" valign=3D"top">
+                                                            <h1 style=3D"co=
+lor:#241C15; font-family:Georgia, Times, 'Times New Roman', serif; font-siz=
+e:28px; font-style:normal; font-weight:400; line-height:36px; letter-spacin=
+g:normal; margin:0; padding:0; text-align:left;">Just checking to be sure y=
+ou're you.</h1>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style=3D"paddin=
+g-bottom:60px;" valign=3D"top">
+                                                            <p style=3D"col=
+or:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-s=
+erif; font-size:16px; font-weight:400; line-height:24px; padding-top:0; mar=
+gin-top:0; text-align:left;">Please copy and paste the following code into =
+the Verification Code field.</p>
+                                                            <p style=3D"col=
+or:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-s=
+erif; font-size:16px; font-weight:400; line-height:24px; padding-top:0; mar=
+gin-top:0; text-align:left;"><strong>658373</strong></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END BODY -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+                                    <!-- BEGIN FOOTER // -->
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%">
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+top" class=3D"footerContent" style=3D"color:#6A655F; font-family:'Helvetica=
+ Neue', Helvetica, Arial, Verdana, sans-serif; font-size:12px; font-weight:=
+400; line-height:24px; padding-top:40px; padding-bottom:40px; text-align:ce=
+nter;">
+                                                <p style=3D"color:#6A655F; =
+font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-s=
+ize:12px; font-weight:400; line-height:24px; padding-top:0; margin:0; text-=
+align:center;">&copy; 2001-2025 Mailchimp<sup>&reg;</sup> All Rights Reserv=
+ed<br />405 N. Angier Ave. NE, Atlanta, GA 30312 USA</p>
+                                                <a href=3D"https://click.ma=
+ilchimp.com/track/click/30010842/www.mailchimp.com?p=3DeyJzIjoib2lWQ3lpbXN2=
+Z19jZVduYVkxRlJ6aUFid2VNIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFw=
+idXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL2NvbnRhY3RcXFwvXC=
+IsXCJpZFwiOlwiYmQzM2M3ZTY5MDJiNDEwOWJiM2Q1YjFhZGU2ZjZlMDBcIixcInVybF9pZHNcI=
+jpbXCI5ZDFlNDk5Y2Y5MjM3MDI3MDQ4YzRlYWM5YTcyZWFkNGRlY2Q1MDYyXCJdLFwibXNnX3Rz=
+XCI6MTc1MjYwNzg2MX0ifQ" target=3D"_blank" style=3D"color:#007C89; font-weig=
+ht:500; text-decoration:none;" class=3D"utilityLink">Contact Us</a><span cl=
+ass=3D"mobileHide">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><a href=3D"https://=
+click.mailchimp.com/track/click/30010842/mailchimp.com?p=3DeyJzIjoiamVQc3NI=
+UWEyUEhPWUtvWjQ3SGpiTC1iTm1zIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjo=
+yLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvbGVnYWxcXFwvdGVybX=
+NcXFwvXCIsXCJpZFwiOlwiYmQzM2M3ZTY5MDJiNDEwOWJiM2Q1YjFhZGU2ZjZlMDBcIixcInVyb=
+F9pZHNcIjpbXCI1YTMwMjU1ODBlZTU5ZTc0MmZjN2EyODc4YzU5MmUzNjg3YTdlYTAzXCJdLFwi=
+bXNnX3RzXCI6MTc1MjYwNzg2MX0ifQ" target=3D"_blank" style=3D"color:#007C89; f=
+ont-weight:500; text-decoration:none;" class=3D"utilityLink">Terms of Use</=
+a><span class=3D"mobileHide">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><a href=
+=3D"https://click.mailchimp.com/track/click/30010842/www.intuit.com?p=3DeyJ=
+zIjoiR2REWnNIOG5WekNtSzEyS1c2bmc0elEzbi13IiwidiI6MiwicCI6IntcInVcIjozMDAxMD=
+g0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5pbnR1aXQuY29tXFxcL3Bya=
+XZhY3lcXFwvc3RhdGVtZW50XFxcL1wiLFwiaWRcIjpcImJkMzNjN2U2OTAyYjQxMDliYjNkNWIx=
+YWRlNmY2ZTAwXCIsXCJ1cmxfaWRzXCI6W1wiNTU5NzNjYTYzOWVkYzk3OTFiMzU0MGM5Nzc2MGE=
+5NTZiZDFhYjM0YVwiXSxcIm1zZ190c1wiOjE3NTI2MDc4NjF9In0" target=3D"_blank" sty=
+le=3D"color:#007C89; font-weight:500; text-decoration:none;" class=3D"utili=
+tyLink">Privacy Policy</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // END FOOTER -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!--[if gte mso 9]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://click.mailchimp.com/track/open.php?u=3D30010842&id=
+=3Dbd33c7e6902b4109bb3d5b1ade6f6e00" height=3D"1" width=3D"1" alt=3D""></bo=
+dy>
+</html>
+
+--_av--yowDh8lVADr1Sg2xwrqFw--
+

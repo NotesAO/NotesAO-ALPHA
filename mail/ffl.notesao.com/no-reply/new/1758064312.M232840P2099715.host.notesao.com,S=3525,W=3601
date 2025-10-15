@@ -1,0 +1,76 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id UM3UDbjuyWgDCiAAIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Tue, 16 Sep 2025 18:11:52 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Tue, 16 Sep 2025 18:11:52 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1uyeq0-00000008oKS-0oCZ
+	for no-reply@ffl.notesao.com;
+	Tue, 16 Sep 2025 18:11:52 -0500
+X-Failed-Recipients: monroe.draken@yahoo.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1uyeNo-00000008kjA-0SL5@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1758064312-eximdsn-1895977680
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1uyeq0-00000008oKS-0oCZ@host.notesao.com>
+Date: Tue, 16 Sep 2025 18:11:52 -0500
+
+--1758064312-eximdsn-1895977680
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  monroe.draken@yahoo.com
+    Domain ffl.notesao.com has exceeded the max defers and failures per hour (5/5 (100%)) allowed. Message discarded.
+
+--1758064312-eximdsn-1895977680
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;monroe.draken@yahoo.com
+Status: 5.0.0
+
+--1758064312-eximdsn-1895977680
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1uyeNo-00000008kjA-0SL5
+	for monroe.draken@yahoo.com;
+	Tue, 16 Sep 2025 17:42:44 -0500
+To: monroe.draken@yahoo.com
+Subject: Free for Life Group — Reminder
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.188.218
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=monroe.draken%40yahoo.com&t=1de92f554f2a8ae5d995f40de8e38f6b0956bba1f1914bf4427242542c84dabd>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1uyeNo-00000008kjA-0SL5@host.notesao.com>
+Date: Tue, 16 Sep 2025 17:42:44 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Draken,</p>
+<p>This is a reminder from Free for Life Group. If you have a session coming up, please arrive a few minutes early.</p>
+<p>Check your personal link and details in your portal:</p>
+<p><a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a></p>
+<p>— Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=monroe.draken%40yahoo.com&amp;t=1de92f554f2a8ae5d995f40de8e38f6b0956bba1f1914bf4427242542c84dabd">unsubscribe here</a>.</p>
+
+--1758064312-eximdsn-1895977680--

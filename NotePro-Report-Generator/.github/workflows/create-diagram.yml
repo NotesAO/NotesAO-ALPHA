@@ -1,0 +1,26 @@
+ ```yaml
+ name: Create Diagram
+
+ on: [push]
+
+ jobs:
+   create-diagram:
+     runs-on: ubuntu-latest
+
+     steps:
+     - name: Checkout repository
+       uses: actions/checkout@v2
+
+     - name: Generate diagram
+       uses: githubocto/repo-visualizer@v1
+       with:
+         output: diagram.svg
+
+     - name: Commit and push diagram
+       run: |
+         git config --global user.name 'github-actions'
+         git config --global user.email 'github-actions@github.com'
+         git add diagram.svg
+         git commit -m 'Add codebase diagram'
+         git push
+ ```

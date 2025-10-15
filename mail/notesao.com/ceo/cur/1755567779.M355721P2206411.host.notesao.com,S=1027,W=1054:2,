@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id VAnhE6PWo2jLqiEAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Mon, 18 Aug 2025 20:42:59 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 18 Aug 2025 20:42:59 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uoBNL-00000009Fyj-1DU1
+	for admin@notesao.com;
+	Mon, 18 Aug 2025 20:42:59 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Joe Gutierrez
+X-PHP-Script: ffl.notesao.com/intake.php for 47.44.194.104
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: joegutie27@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uoBNL-00000009Fyj-1DU1@host.notesao.com>
+Date: Mon, 18 Aug 2025 20:42:59 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

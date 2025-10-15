@@ -1,0 +1,28 @@
+Return-Path: <reporting@safatherhood.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id PtOsMwMKwmgkNysAIW4ynA
+	(envelope-from <reporting@safatherhood.notesao.com>); Wed, 10 Sep 2025 18:30:11 -0500
+Return-path: <reporting@safatherhood.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 10 Sep 2025 18:30:11 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@safatherhood.notesao.com>)
+	id 1uwUGR-0000000Bslw-2kLB;
+	Wed, 10 Sep 2025 18:30:11 -0500
+To: admin@notesao.com
+Subject: San Antonio Fatherhood Campaign has received a new Intake Packet for Fernanda Goode
+X-PHP-Script: safatherhood.notesao.com/intake.php for 69.226.246.35
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@safatherhood.notesao.com
+Reply-To: fernanda.goode@outlook.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uwUGR-0000000Bslw-2kLB@host.notesao.com>
+Date: Wed, 10 Sep 2025 18:30:11 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://safatherhood.notesao.com/intake-index.php

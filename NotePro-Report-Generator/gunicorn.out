@@ -1,0 +1,12 @@
+[2024-11-05 16:52:54 -0500] [829] [INFO] Starting gunicorn 23.0.0
+[2024-11-05 16:52:54 -0500] [829] [ERROR] Connection in use: ('127.0.0.1', 8001)
+[2024-11-05 16:52:54 -0500] [829] [ERROR] connection to ('127.0.0.1', 8001) failed: [Errno 98] Address already in use
+[2024-11-05 16:52:55 -0500] [829] [ERROR] Connection in use: ('127.0.0.1', 8001)
+[2024-11-05 16:52:55 -0500] [829] [ERROR] connection to ('127.0.0.1', 8001) failed: [Errno 98] Address already in use
+[2024-11-05 16:52:56 -0500] [829] [ERROR] Connection in use: ('127.0.0.1', 8001)
+[2024-11-05 16:52:56 -0500] [829] [ERROR] connection to ('127.0.0.1', 8001) failed: [Errno 98] Address already in use
+[2024-11-05 16:52:57 -0500] [829] [ERROR] Connection in use: ('127.0.0.1', 8001)
+[2024-11-05 16:52:57 -0500] [829] [ERROR] connection to ('127.0.0.1', 8001) failed: [Errno 98] Address already in use
+[2024-11-05 16:52:58 -0500] [829] [ERROR] Connection in use: ('127.0.0.1', 8001)
+[2024-11-05 16:52:58 -0500] [829] [ERROR] connection to ('127.0.0.1', 8001) failed: [Errno 98] Address already in use
+[2024-11-05 16:52:59 -0500] [829] [ERROR] Can't connect to ('127.0.0.1', 8001)

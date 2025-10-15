@@ -1,0 +1,119 @@
+Return-Path: <vanericmartin@gmail.com>
+Delivered-To: admin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id ccBRCgHX/2de2BkAIW4ynA
+	(envelope-from <vanericmartin@gmail.com>)
+	for <admin@notesao.com>; Wed, 16 Apr 2025 11:12:49 -0500
+Return-path: <vanericmartin@gmail.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 16 Apr 2025 11:12:49 -0500
+Received: from mail-ed1-f52.google.com ([209.85.208.52]:49460)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.1)
+	(envelope-from <vanericmartin@gmail.com>)
+	id 1u55NY-000000076YN-0xvs
+	for admin@notesao.com;
+	Wed, 16 Apr 2025 11:12:49 -0500
+Received: by mail-ed1-f52.google.com with SMTP id 4fb4d7f45d1cf-5e6c18e2c7dso12951898a12.3
+        for <admin@notesao.com>; Wed, 16 Apr 2025 09:12:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744819927; x=1745424727; darn=notesao.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=mxtx7vjKOWfdPd5l2oaNlMFDQVYrJ4dr1NK8ZLr52cs=;
+        b=V6ZK4fhpTJJXHFJcXFFr+rqqvrEC+0Psf6VX9rk2nj5Qhqtyy3YeSfqza7WvQKaUIy
+         cCzwuguWiE78DUottU6Ip/xNbPd5GCJhko6lfolhcQ6W+dm8xft6liWbjr899WvgBbG6
+         Jr38Bls0o3pNLf2Hl0aKuKHSKyipbtZkbZWH5/SSbf26jEGTnJbXQiC0CMmhc/RZIiUg
+         +pPnuBmjN94d9q4vDTNaBapg7k+HzbJSVCehudIj/5wtDh97fr+A7pZeewXgrgbmLLqZ
+         k8LNdUiJcZ/20eXzPPlatrI6WRV69JRDg6IVPShcMuShBCHQDC1QfyTiNtdXfG5pjxtm
+         KjBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744819927; x=1745424727;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=mxtx7vjKOWfdPd5l2oaNlMFDQVYrJ4dr1NK8ZLr52cs=;
+        b=UsVaaIe09nRTaZGrEHfpJAGtr4on8EdTVD7EH8WH/bX66TbCTiMfrDgorKObJdNc4o
+         Tpr+pdZ4Wbk72VGHELpOOgq1T5S7u6tLPfLTifXKJJbHTlB4Idif0YEcAsQv5nCmx4Xy
+         orLGOha9I9z155B0gjYKiGfsAcZJMgI7tRSTxcJBs7OJ61ztHh4GbdOBcKN+TzdcSGIX
+         19pwvoYqQP/En4jDs8eIAPMjQl43UaKGboHlDAzVaOj3BVCtOws0sJktSc6dh2nrVteE
+         DFfwQz1o9jEyr1b0s6INae2CCZ7cZVBEx+RoW6b3il2nvBSYjMLTNTl5BGFVJh4x1fSS
+         QZ2g==
+X-Gm-Message-State: AOJu0YzLZ6wlSH67WryTc9RQKPscGtoEsMMgfttrqbtmPyf2GqIqo28z
+	qpJDk8IoJ1MudVMh3ApEyrgKpUs1FWlfaetkYgpRUDnz1sIDgjQCCkVl6UBqInTJcsuJ8ALad+t
+	gend20HSYgJ483xdBiDa09LlDHbDI8Q==
+X-Gm-Gg: ASbGncskylD2a6m2TWr50qfjidqNsrU/jqV0LPauupS/ImBw8VXfbHRFclJErGh18Uj
+	RQ/mIW1lAp8U8shdzhZWJTfKbvuL64871gjHLoSIcoT2123tJweWV5QwIdwvCRmZCrlb5919xN0
+	bk0n70Q9wLBTn5qDFzkRt/HqA=
+X-Google-Smtp-Source: AGHT+IH/kKo3gjb39GnFgY4sVaKNL0aQp5cpSuDX//yBz3o1mMfiFA/FUiTu/rnIz6DxaVHJTkmaCzgGBGDzg5nQ5m8=
+X-Received: by 2002:a05:651c:2120:b0:30b:b9e4:13cd with SMTP id
+ 38308e7fff4ca-3107f694b6dmr10287521fa.2.1744818103470; Wed, 16 Apr 2025
+ 08:41:43 -0700 (PDT)
+MIME-Version: 1.0
+From: van eric martin <vanericmartin@gmail.com>
+Date: Wed, 16 Apr 2025 10:41:30 -0500
+X-Gm-Features: ATxdqUFn1uk8Y354djTi6J5gY6zByPOGOZsnCjGHUbuzmK84OKCRS-W-Gs8j8Sk
+Message-ID: <CALUz6t9vkHMsfp0ruYdg8uRgeqN47iayMENE84FT7HyrRqqUYg@mail.gmail.com>
+Subject: Testing Incoming
+To: admin@notesao.com
+Content-Type: multipart/alternative; boundary="00000000000041514b0632e71fdc"
+X-Spam-Status: No, score=0.2
+X-Spam-Score: 2
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  this is a test to see if incoming emails are being received.
+    this is a test to see if incoming emails are being received. 
+ Content analysis details:   (0.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [209.85.208.52 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.208.52 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.208.52 listed in bl.score.senderscore.com]
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [vanericmartin(at)gmail.com]
+  0.3 HTML_IMAGE_ONLY_04     BODY: HTML: images with 0-400 bytes of words
+  0.0 HTML_IMAGE_RATIO_02    BODY: HTML has a low ratio of text to image area
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 T_REMOTE_IMAGE         Message contains an external image
+X-Spam-Flag: NO
+
+--00000000000041514b0632e71fdc
+Content-Type: text/plain; charset="UTF-8"
+
+this is a test to see if incoming emails are being received.
+
+--00000000000041514b0632e71fdc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>this is a test to see if incoming emails are being re=
+ceived.</div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=
+=3D"gmail_signature"><div dir=3D"ltr"><img width=3D"420" height=3D"132" src=
+=3D"https://ci3.googleusercontent.com/mail-sig/AIorK4yxuv3PigvXvSeVS_ds53Ou=
+f7AohIJUBHGt1T47mdY_va317mZrdgbuBPZKX5Lkn4Txim5gRh94jTd0"><br></div></div><=
+/div></div>
+
+--00000000000041514b0632e71fdc--

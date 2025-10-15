@@ -1,0 +1,94 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id QE+iN2Oe3WgHRCUAIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Wed, 01 Oct 2025 16:34:27 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Wed, 01 Oct 2025 16:34:27 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1v44Sx-0000000AFLL-3Sbq
+	for no-reply@ffl.notesao.com;
+	Wed, 01 Oct 2025 16:34:27 -0500
+X-Failed-Recipients: coltonlott95@yahoo.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1v43tA-0000000ABLE-0ShD@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1759354467-eximdsn-1613632817
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1v44Sx-0000000AFLL-3Sbq@host.notesao.com>
+Date: Wed, 01 Oct 2025 16:34:27 -0500
+
+--1759354467-eximdsn-1613632817
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  coltonlott95@yahoo.com
+    Domain ffl.notesao.com has exceeded the max defers and failures per hour (5/5 (100%)) allowed. Message discarded.
+
+--1759354467-eximdsn-1613632817
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;coltonlott95@yahoo.com
+Status: 5.0.0
+
+--1759354467-eximdsn-1613632817
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1v43tA-0000000ABLE-0ShD
+	for coltonlott95@yahoo.com;
+	Wed, 01 Oct 2025 15:57:28 -0500
+To: coltonlott95@yahoo.com
+Subject: Men's BIPP Group Reminder: Wednesday at 8:00 PM
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.188.0
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=coltonlott95%40yahoo.com&t=4253a2ea945a0d592c9543ad1d0cef7478851dae406845aab379097210975a65>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1v43tA-0000000ABLE-0ShD@host.notesao.com>
+Date: Wed, 01 Oct 2025 15:57:28 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Colton,</p>
+
+<p><strong>Your Men's BIPP group is Wednesday at 8:00 PM (Wednesday, October 1).</strong></p>
+
+<p>
+  Your M; Miller Complex 3210 Miller Avenue, FW mandated BIPP group is scheduled. M; Miller Complex 3210 Miller Avenue, FW and Michelle Holloway expect your presence.
+  Please arrive early. <em>Lockout is 8:10 PM</em>. Your presence is a mandatory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaining in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p>
+
+<p>Where: Virtual (Use your group link):<br><a href="https://freeforlifegroup.com/wednesday-mens-probation-18-week-8pm/">Wednesday 8:00 PM Group Link</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payement concerns OR call during office hours (Mon–Fri, 8am–4pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=coltonlott95%40yahoo.com&amp;t=4253a2ea945a0d592c9543ad1d0cef7478851dae406845aab379097210975a65">unsubscribe here</a>.</p>
+
+--1759354467-eximdsn-1613632817--

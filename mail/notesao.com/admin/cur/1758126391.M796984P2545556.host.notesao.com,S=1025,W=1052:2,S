@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id mlwpLjfhymiU1yYAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 17 Sep 2025 11:26:31 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 17 Sep 2025 11:26:31 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uyuzH-0000000AgDG-34Hq
+	for admin@notesao.com;
+	Wed, 17 Sep 2025 11:26:31 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Jaylen Jones
+X-PHP-Script: ffl.notesao.com/intake.php for 75.141.128.93
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: jayyj9500@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uyuzH-0000000AgDG-34Hq@host.notesao.com>
+Date: Wed, 17 Sep 2025 11:26:31 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

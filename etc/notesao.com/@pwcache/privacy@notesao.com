@@ -1,0 +1,6 @@
+passwd:$6$V1LMRE9zEKMz.bC.$E0Ea3nPl72UMWgR6AEFKapqZwrrA7qOkn.Ln2cqIY9yjtWw98HHCBfb33CGG1AxZk0/FbH2eci2C54QHMVBl61
+quota:0
+homedir:/home/notesao/mail/notesao.com/privacy
+strength:100
+lastchanged:-1
+perms:rw

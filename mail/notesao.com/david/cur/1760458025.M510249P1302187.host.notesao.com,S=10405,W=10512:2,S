@@ -1,0 +1,107 @@
+Return-Path: <substanceapss@gmail.com>
+Delivered-To: david@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id Sc5cHil17mir3hMAIW4ynA
+	(envelope-from <substanceapss@gmail.com>)
+	for <david@notesao.com>; Tue, 14 Oct 2025 11:07:05 -0500
+Return-path: <substanceapss@gmail.com>
+Envelope-to: david@notesao.com
+Delivery-date: Tue, 14 Oct 2025 11:07:05 -0500
+Received: from mail-ed1-f47.google.com ([209.85.208.47]:59852)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <substanceapss@gmail.com>)
+	id 1v8hYH-00000005Ski-2rGX
+	for david@notesao.com;
+	Tue, 14 Oct 2025 11:07:05 -0500
+Received: by mail-ed1-f47.google.com with SMTP id 4fb4d7f45d1cf-62fca01f0d9so11370015a12.3
+        for <david@notesao.com>; Tue, 14 Oct 2025 09:07:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1760458023; x=1761062823; darn=notesao.com;
+        h=auto-submitted:precedence:content-disposition
+         :content-transfer-encoding:mime-version:subject:references
+         :in-reply-to:message-id:date:from:to:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=d8jcoFcFmjrZ21lvFD1NOusIJAkV2H11vB55kEKTx9k=;
+        b=nG10INoE5HM0JP5tiS2LkvC+GOLlmNy3CbPW06c2RqlUBaR+2mp87dyvV5zrGwAaB4
+         M3eigBZRlehF4DMBRNWPlic5ypJdZDVOZB/UnhlSKqlME0eOiyogX2juX2FbMgutCtF9
+         UGQ1umifwn9WRGFwHE0o1p3tx3j4p8lbBq6xeDaFH+FTNaiEfpug1QG8mccJ/WzUABad
+         2k5yuMGngeYlGfmmMRSZHX4o80whTAetC6I2QkfNk1vtuCODnVJ4owsDlJUXIU6wmKWc
+         JXBimBkc+UFCO1Mvv0/XvcSZg+TQxWw302taLGjAt8MlZr8sZJ9goZ1426EXulkjec+f
+         TmhQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760458023; x=1761062823;
+        h=auto-submitted:precedence:content-disposition
+         :content-transfer-encoding:mime-version:subject:references
+         :in-reply-to:message-id:date:from:to:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=d8jcoFcFmjrZ21lvFD1NOusIJAkV2H11vB55kEKTx9k=;
+        b=PbPjzBAlJxqYWUJIJUNnMn8P1EFHi2giUugBEJNXlo5i7xmTNEVE3+V7QuKkHo93Mn
+         2iizUd8zlJd72xNIUfCE1JZqasq1Wyu8KD0NSDpYc76LCSDQQ4Ep9PYCySNYs2aCfm1Z
+         LQfIKgE0Bce+jwxPDyDjvbE2emZvQo37xhGdb26UadDqvLU3oGIsE7PGBCUMgMK7UWBv
+         jYgfsCgSCBJYwzZL4yp614tYR3wqj6gdEfOams/EvOu7jrJdr2WdqaKnOCHB/4O5TA43
+         Arh25D7fD4UUG2QrCpNbHsP9CpGyMRQHE2RO/JE3jwM2TBf3PxPMTmd8a6pmgyMhSf0L
+         Af2g==
+X-Gm-Message-State: AOJu0YyH7ytAkQq2fxeB4S/oWPk8MASmhs/EeP42sN9cyHtLFflDD6cP
+	AARrY0cqltzVwtXWmu6iv/kZzMoEJO4VUO6gpqqHqlkg61cVn2zfWIzi19+NZ2X3qJAOTKsW89W
+	bxqSDtFOt/AvNk+Stb2MUJXS5jri+CXhTp7Unqbq6GkJcJJZMfr1TD/sbg1raR9qkunNRy4zJAU
+	scYS1TDoDk1A==
+X-Gm-Gg: ASbGnctq4xNvu6cqy7onA1haxMOArsoOfBLuMfBX/E5r3MKiJ+mOpHXbVcVpq+KtAff
+	3m+qxy1znZ5rgQZwvFlQMXWq9qDmgecgibYO/1mFKOz6MS4DkgJCrF373tnXooNOQlz5yzgm/zI
+	m2NxCyINFPywVx1QnkOOltDfzngTndL1/WCtAUctPqR6/8rBsQ/Cw++O2Pki4AIOYf6cG9yHvme
+	J6qQdiQ
+X-Google-Smtp-Source: AGHT+IEGUouS/n3p3MOLIhiqoEFz5M0f3Oxpain6nOhBnSchUZHEouKc/TFM1zqp7nCxhcTqPJXsjMbCptKzo2UZ+/kCm/u/HeMTlszMfMMY
+X-Received: by 2002:a05:6402:50ce:b0:62f:50ff:b675 with SMTP id 4fb4d7f45d1cf-639d5c74d05mr22483072a12.33.1760458023167;
+        Tue, 14 Oct 2025 09:07:03 -0700 (PDT)
+To: david@notesao.com
+From: SAPss <substanceapss@gmail.com>
+Date: Tue, 14 Oct 2025 09:07:03 -0700
+Message-ID: <CA+T9DPHqxqA810tCBB0iF2ydzQOFaeWg9hTc=Pfa5w1EaF1CNg@mail.gmail.com>
+In-Reply-To: <b91c54a74669e9adc2fd1109e0a4f49b@notesao.com>
+References: <b91c54a74669e9adc2fd1109e0a4f49b@notesao.com>
+Subject: Re: Notes AO
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: base64
+Content-Disposition: inline
+Precedence: bulk
+X-Autoreply: yes
+Auto-Submitted: auto-replied
+X-Spam-Status: No, score=1.2
+X-Spam-Score: 12
+X-Spam-Bar: +
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__254-3?= =?ISO-8859-1?Q?00-9282_websight=3Awww=2Esapss=2Eorg_=0A_Content_anal?= =?ISO-8859-1?Q?ysis_details=3A___=281=2E2_points=2C_5=2E0_required=29=0A?= =?ISO-8859-1?Q?__pts_rule_name______________description=0A_----_----?= =?ISO-8859-1?Q?------------------_----------------------------------?= =?ISO-8859-1?Q?----------------=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FSAF?= =?ISO-8859-1?Q?E=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The_query_?= =?ISO-8859-1?Q?to=0A______________________________Validity_was_block?= =?ISO-8859-1?Q?ed=2E__See=0A_____________________________https=3A//k?= =?ISO-8859-1?Q?nowledge=2Evalidity=2Ecom/hc/en-us/articles/209617306?= =?ISO-8859-1?Q?81243=0A______________________________for_more_inform?= =?ISO-8859-1?Q?ation=2E=0A_____________________________=5B209=2E85=2E2?= =?ISO-8859-1?Q?08=2E47_listed_in_sa-accredit=2Ehabeas=2Ecom=5D=0A__0?= =?ISO-8859-1?Q?=2E0_RCVD=5FIN=5FVALIDITY=5FCERTIFIED=5FBLOCKED_RBL=3A_?= =?ISO-8859-1?Q?ADMINISTRATOR_NOTICE=3A_The=0A_______________________?= =?ISO-8859-1?Q?______query_to_Validity_was_blocked=2E__See=0A_______?= =?ISO-8859-1?Q?______________________https=3A//knowledge=2Evalidity=2Ec?= =?ISO-8859-1?Q?om/hc/en-us/articles/20961730681243=0A_______________?= =?ISO-8859-1?Q?_______________for_more_information=2E=0A____________?= =?ISO-8859-1?Q?______________=5B209=2E85=2E208=2E47_listed_in_sa-tru?= =?ISO-8859-1?Q?sted=2Ebondedsender=2Eorg=5D=0A__0=2E0_RCVD=5FIN=5FVA?= =?ISO-8859-1?Q?LIDITY=5FRPBL=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_?= =?ISO-8859-1?Q?The_query_to=0A______________________________Validity?= =?ISO-8859-1?Q?_was_blocked=2E__See=0A_____________________________h?= =?ISO-8859-1?Q?ttps=3A//knowledge=2Evalidity=2Ecom/hc/en-us/articles?= =?ISO-8859-1?Q?/20961730681243=0A______________________________for_m?= =?ISO-8859-1?Q?ore_information=2E=0A_____________________________=5B2?= =?ISO-8859-1?Q?09=2E85=2E208=2E47_listed_in_bl=2Escore=2Esenderscore?= =?ISO-8859-1?Q?=2Ecom=5D=0A_-0=2E0_SPF=5FPASS_______________SPF=3A_s?= =?ISO-8859-1?Q?ender_matches_SPF_record=0A_-0=2E1_DKIM=5FVALID=5FEF_?= =?ISO-8859-1?Q?_________Message_has_a_valid_DKIM_or_DK_signature_fro?= =?ISO-8859-1?Q?m=0A_____________________________envelope-from_domain?= =?ISO-8859-1?Q?=0A_-0=2E1_DKIM=5FVALID=5FAU__________Message_has_a_v?= =?ISO-8859-1?Q?alid_DKIM_or_DK_signature_from_author's=0A___________?= =?ISO-8859-1?Q?__________________domain=0A_-0=2E1_DKIM=5FVALID______?= =?ISO-8859-1?Q?_______Message_has_at_least_one_valid_DKIM_or_DK_sign?= =?ISO-8859-1?Q?ature=0A__0=2E1_DKIM=5FSIGNED____________Message_has_?= =?ISO-8859-1?Q?a_DKIM_or_DK_signature=2C_not_necessarily_valid=0A__0?= =?ISO-8859-1?Q?=2E0_FREEMAIL=5FFROM__________Sender_email_is_commonl?= =?ISO-8859-1?Q?y_abused_enduser_mail_provider=0A____________________?= =?ISO-8859-1?Q?_________=5Bsubstanceapss=28at=29gmail=2Ecom=5D=0A__0?= =?ISO-8859-1?Q?=2E0_URIBL=5FBLOCKED__________ADMINISTRATOR_NOTICE=3A_?= =?ISO-8859-1?Q?The_query_to_URIBL_was_blocked=2E=0A_________________?= =?ISO-8859-1?Q?____________See=0A_____________________________http=3A/?= =?ISO-8859-1?Q?/wiki=2Eapache=2Eorg/spamassassin/DnsBlocklists#dnsbl?= =?ISO-8859-1?Q?-block=0A______________________________for_more_infor?= =?ISO-8859-1?Q?mation=2E=0A_____________________________=5BURI=3A_sa?= =?ISO-8859-1?Q?pss=2Eorg=5D=0A__0=2E1_MIME=5FHTML=5FONLY_________BOD?= =?ISO-8859-1?Q?Y=3A_Message_only_has_text/html_MIME_parts=0A__0=2E0_?= =?ISO-8859-1?Q?HTML=5FMESSAGE___________BODY=3A_HTML_included_in_mes?= =?ISO-8859-1?Q?sage=0A__0=2E7_HTML=5FIMAGE=5FONLY=5F20_____BODY=3A_H?= =?ISO-8859-1?Q?TML=3A_images_with_1600-2000_bytes_of_words=0A__0=2E6?= =?ISO-8859-1?Q?_HTML=5FMIME=5FNO=5FHTML=5FTAG__HTML-only_message=2C_?= =?ISO-8859-1?Q?but_there_is_no_HTML_tag?=
+X-Spam-Flag: NO
+
+PGRpdiBkaXI9Imx0ciI+PGJyPjxkaXY+MjU0LTMwMC05MjgyPC9kaXY+PGRpdj53ZWJzaWdodDo8
+YSBocmVmPSJodHRwOi8vd3d3LnNhcHNzLm9yZyIgdGFyZ2V0PSJfYmxhbmsiPnd3dy5zYXBzcy5v
+cmc8L2E+PC9kaXY+PC9kaXY+PGJyLz48YnIvPi0tIDxici8+PGRpdiBkaXI9Imx0ciI+PHNwYW4g
+c3R5bGU9ImZvbnQtZmFtaWx5OkFyaWFsLHNhbnMtc2VyaWY7YmFja2dyb3VuZC1jb2xvcjpyZ2Io
+MjQzLDI0MywyNDMpIj48Zm9udCBjb2xvcj0iI2ZmMDAwMCIgc2l6ZT0iMSI+PGltZyBkYXRhLWFp
+aT0iQ2lFeFpXOVJWVU56WTNaNGNqVlFhbkpVV2xkbmN6bHBNbDlmVm5ONWVWbGphMm8iIHdpZHRo
+PSI5NiIgaGVpZ2h0PSI1MiIgc3JjPSJodHRwczovL2NpMy5nb29nbGV1c2VyY29udGVudC5jb20v
+bWFpbC1zaWcvQUlvcks0enpNVTlvaXQyZVhSbU5MYjlyZzU4enBMRXlEWE1RTTdKN0pZd2drSlFT
+TUh5eXRVbVBod2VRUkdFVW9oSW8yaXBObnN1TTZEalk1V0pvIiBkYXRhLW9zPSJodHRwczovL2xo
+My5nb29nbGV1c2VyY29udGVudC5jb20vZC8xZW9RVUNzY3Z4cjVQanJUWldnczlpMl9fVnN5eVlj
+a2oiPjwvZm9udD48L3NwYW4+PGRpdj48Zm9udCBjb2xvcj0iIzAwMDAwMCIgc2l6ZT0iMSIgZmFj
+ZT0ibW9ub3NwYWNlIj5DSkFEIEFjY3JlZGl0YXRpb24gMDUwLTAwMTwvZm9udD48L2Rpdj48ZGl2
+Pjxmb250IGNvbG9yPSIjMDAwMDAwIiBzaXplPSIxIiBmYWNlPSJtb25vc3BhY2UiPjI1NC0zMDAt
+OTI4MjwvZm9udD48L2Rpdj48ZGl2Pjxmb250IGNvbG9yPSIjMDAwMDAwIiBzaXplPSIxIiBmYWNl
+PSJtb25vc3BhY2UiPndlYnNpdGU6PGEgaHJlZj0iaHR0cDovL3d3dy5zYXBzcy5vcmciIHRhcmdl
+dD0iX2JsYW5rIj53d3cuc2Fwc3Mub3JnPC9hPjwvZm9udD48L2Rpdj48ZGl2Pjxmb250IGNvbG9y
+PSIjZmYwMDAwIiBmYWNlPSJBcmlhbCwgc2Fucy1zZXJpZiIgc2l6ZT0iMSI+PGJyPjwvZm9udD48
+ZGl2PjxzcGFuIHN0eWxlPSJmb250LWZhbWlseTpBcmlhbCxzYW5zLXNlcmlmO2JhY2tncm91bmQt
+Y29sb3I6cmdiKDI0MywyNDMsMjQzKSI+PGZvbnQgY29sb3I9IiNmZjAwMDAiIHNpemU9IjEiPkNP
+TkZJREVOVElBTElUWSBOT1RJQ0U6IFRoZSBjb250ZW50cyBvZiB0aGlzIGVtYWlsIG1lc3NhZ2Ug
+YW5kIGFueSBhdHRhY2htZW50cyBhcmUgaW50ZW5kZWQgc29sZWx5IGZvciB0aGUgYWRkcmVzc2Vl
+KHMpIGFuZCBtYXkgY29udGFpbiBjb25maWRlbnRpYWwgYW5kL29yIHByaXZpbGVnZWQgaW5mb3Jt
+YXRpb24gYW5kIG1heSBiZSBsZWdhbGx5IHByb3RlY3RlZCBmcm9tIGRpc2Nsb3N1cmUuIElmIHlv
+dSBhcmUgbm90IHRoZSBpbnRlbmRlZCByZWNpcGllbnQgb2YgdGhpcyBtZXNzYWdlIG9yIHRoZWly
+IGFnZW50LCBvciBpZiB0aGlzIG1lc3NhZ2UgaGFzIGJlZW4gYWRkcmVzc2VkIHRvIHlvdSBpbiBl
+cnJvciwgcGxlYXNlIGltbWVkaWF0ZWx5IGFsZXJ0IHRoZSBzZW5kZXIgYnkgcmVwbHkgZW1haWwg
+YW5kIHRoZW4gZGVsZXRlIHRoaXMgbWVzc2FnZSBhbmQgYW55IGF0dGFjaG1lbnRzLiBJZiB5b3Ug
+YXJlIG5vdCB0aGUgaW50ZW5kZWQgcmVjaXBpZW50LCB5b3UgYXJlIGhlcmVieSBub3RpZmllZCB0
+aGF0IGFueSB1c2UsIGRpc3NlbWluYXRpb24sIGNvcHlpbmcsIG9yIHN0b3JhZ2Ugb2YgdGhpcyBt
+ZXNzYWdlIG9yIGl0cyBhdHRhY2htZW50cyBpcyBzdHJpY3RseSBwcm9oaWJpdGVkLsKgPC9mb250
+Pjwvc3Bhbj48YnI+PC9kaXY+PC9kaXY+PC9kaXY+PGJyLz4NCg==

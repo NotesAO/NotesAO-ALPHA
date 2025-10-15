@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id qqf0LITI72hFJB0AIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 15 Oct 2025 11:15:00 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 15 Oct 2025 11:15:00 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v949U-000000080pb-2hCC
+	for admin@notesao.com;
+	Wed, 15 Oct 2025 11:15:00 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Richard Singh
+X-PHP-Script: ffl.notesao.com/intake.php for 35.150.26.65
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: jacobi.dominicsingh@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v949U-000000080pb-2hCC@host.notesao.com>
+Date: Wed, 15 Oct 2025 11:15:00 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

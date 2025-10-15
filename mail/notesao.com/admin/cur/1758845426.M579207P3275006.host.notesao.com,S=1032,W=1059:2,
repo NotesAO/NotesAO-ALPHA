@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 2kx0IvLZ1Wj++DEAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Thu, 25 Sep 2025 19:10:26 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Thu, 25 Sep 2025 19:10:26 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v1w2c-0000000Djya-1xDu
+	for admin@notesao.com;
+	Thu, 25 Sep 2025 19:10:26 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Eldridge Smith
+X-PHP-Script: ffl.notesao.com/intake.php for 174.244.17.238
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: poppichulo927@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v1w2c-0000000Djya-1xDu@host.notesao.com>
+Date: Thu, 25 Sep 2025 19:10:26 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

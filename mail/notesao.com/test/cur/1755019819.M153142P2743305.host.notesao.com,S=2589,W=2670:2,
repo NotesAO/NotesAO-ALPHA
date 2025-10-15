@@ -1,0 +1,81 @@
+Return-Path: <>
+Delivered-To: test@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id cFWRCCt6m2gJ3CkAIW4ynA
+	(envelope-from <>)
+	for <test@notesao.com>; Tue, 12 Aug 2025 12:30:19 -0500
+Return-path: <>
+Envelope-to: test@notesao.com
+Delivery-date: Tue, 12 Aug 2025 12:30:19 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1ulspH-0000000BVel-0QHW
+	for test@notesao.com;
+	Tue, 12 Aug 2025 12:30:19 -0500
+X-Failed-Recipients: test-x4jbgmxno@srv1.mail-tester.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: test@notesao.com
+References: <eef1848ecba4f1969c876c575f4ef8e2@notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1755019819-eximdsn-1602909666
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1ulspH-0000000BVel-0QHW@host.notesao.com>
+Date: Tue, 12 Aug 2025 12:30:19 -0500
+
+--1755019819-eximdsn-1602909666
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  test-x4jbgmxno@srv1.mail-tester.com
+    host reception.mail-tester.com [94.23.206.89]
+    SMTP error from remote mail server after end of data:
+    550 5.7.1 Don't add us as CC or BCC, we need to be added as TO !
+
+--1755019819-eximdsn-1602909666
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;test-x4jbgmxno@srv1.mail-tester.com
+Status: 5.0.0
+Remote-MTA: dns; reception.mail-tester.com
+Diagnostic-Code: smtp; 550 5.7.1 Don't add us as CC or BCC, we need to be added as TO !
+
+--1755019819-eximdsn-1602909666
+Content-type: message/rfc822
+
+Return-path: <test@notesao.com>
+Received: from [::1] (port=33602 helo=host.notesao.com)
+	by host.notesao.com with esmtpa (Exim 4.98.2)
+	(envelope-from <test@notesao.com>)
+	id 1ulspG-0000000BVeM-3zJ0;
+	Tue, 12 Aug 2025 12:30:17 -0500
+MIME-Version: 1.0
+Date: Tue, 12 Aug 2025 12:30:17 -0500
+From: test@notesao.com
+To: joelshaji@liquidweb.com
+Cc: test-x4jbgmxno@srv1.mail-tester.com
+Subject: This is a test mail
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <eef1848ecba4f1969c876c575f4ef8e2@notesao.com>
+X-Sender: test@notesao.com
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+This is a test email.
+
+Please ignore.
+
+Thanks and Regards,
+LW support
+
+--1755019819-eximdsn-1602909666--

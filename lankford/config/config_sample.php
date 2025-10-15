@@ -1,0 +1,37 @@
+<?php
+define('db_host', 'localhost'); 
+define('db_user', 'root'); 
+define('db_pass', ''); 
+define('db_name', 'therapy_track'); 
+$no_of_records_per_page = 10; 
+$appname = 'Development'; 
+
+define('twilio_sid', 'ACaa510297045a5128383b0133575db5c6'); 
+define('twilio_token', 'db3545587c9ee46d23d76241e9189214'); 
+define('twilio_number', '+18176316949'); 
+$sendSMS = true;
+
+//define('db_charset','utf8');
+// If enabled, the user will be redirected to the homepage automatically upon registration.
+define('auto_login_after_register',false);
+/* Account Activation */
+// If enabled, the account will require email activation before the user can login.
+define('account_activation',false);
+// Change "Your Company Name" and "yourdomain.com" - do not remove the < and > characters.
+define('mail_from','Your Company Name <noreply@yourdomain.com>');
+// The link to the activation file.
+define('activation_link','https://yourdomain.com/phplogin/activate.php');
+
+$link = mysqli_connect(db_host, db_user, db_pass, db_name); 
+$query = "SHOW VARIABLES LIKE 'character_set_database'";
+if ($result = mysqli_query($link, $query)) {
+    while ($row = mysqli_fetch_row($result)) {
+        if (!$link->set_charset($row[1])) {
+            printf("Error loading character set $row[1]: %s\n", $link->error);
+            exit();
+        } else {
+            // printf("Current character set: %s", $link->character_set_name());
+        }
+    }
+}
+?>

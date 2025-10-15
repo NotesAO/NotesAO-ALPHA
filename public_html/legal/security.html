@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Security | NotesAO</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#211c56">
+
+  <!-- Fonts / Icons / Bootstrap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        referrerpolicy="no-referrer">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" crossorigin="anonymous">
+
+  <style>
+    /* ─────────── BASE / LAYOUT ─────────── */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Montserrat',sans-serif;color:#333;background:#f7f9fa;line-height:1.6;
+      display:flex;flex-direction:column;min-height:100vh;
+    }
+    a{text-decoration:none;color:#007BFF;} img{max-width:100%;height:auto;}
+
+    /* ========= SHARED HEADER ========= */
+    .site-header{
+      background:#fff;padding:.75rem 2rem;
+      display:flex;justify-content:space-between;align-items:center;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+      position:fixed;top:0;left:0;right:0;z-index:999;
+    }
+    .site-header .logo img{height:40px}
+    .nav-list{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+    .nav-list>li{position:relative;display:flex;align-items:center;}
+    .nav-list>li:last-child .dropdown-menu{left:auto;right:0;}
+    .nav-list a,.drop-toggle{
+      font-weight:500;color:#333;background:none;border:none;font-family:inherit;
+      cursor:pointer;padding:.25rem .1rem;transition:color .3s;
+    }
+    .nav-list a:hover,.drop-toggle:hover{color:#211c56}
+    .dropdown{position:relative}
+    .dropdown-menu{
+      position:absolute;top:100%;left:0;min-width:11rem;
+      background:#fff;border:1px solid #e5e5e5;border-radius:6px;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);padding:.5rem 0;display:none;
+    }
+    .dropdown.open>.dropdown-menu{display:flex;flex-direction:column}
+    .dropdown-menu a{padding:.35rem 1rem;white-space:nowrap}
+    .dropdown-menu a:hover{background:#f7f9fa}
+
+    /* ========= MAIN / CARD ========= */
+    main{
+      margin-top:80px;              /* clears header */
+      flex:1;
+      max-width:1100px;
+      margin-left:auto;margin-right:auto;
+      padding:4rem 1.75rem 3rem;
+      background:#fff;border-radius:12px;
+      box-shadow:0 4px 16px rgba(0,0,0,.05);
+    }
+    h1{font-size:2.25rem;margin-bottom:1.5rem;text-align:center;}
+    h2{font-size:1.35rem;margin:2rem 0 .75rem;color:#211c56;}
+    p,li{font-size:.95rem;margin-bottom:1rem;} ul{padding-left:1.25rem;}
+
+    /* ========= FOOTER ========= */
+    footer{background:#1c1c1c;color:#fff;text-align:center;padding:2rem;}
+    footer .footer-links{margin-bottom:1rem;}
+    footer .footer-links a{margin:0 1rem;color:#ccc;font-size:.9rem;transition:color .3s;}
+    footer .footer-links a:hover{color:#fff;} footer p{font-size:.9rem;color:#ccc;}
+  </style>
+</head>
+<body>
+
+<!-- ───────── HEADER ───────── -->
+<header class="site-header">
+  <a href="/" class="logo"><img src="/assets/images/NotesAO Logo.png" alt="NotesAO logo"></a>
+
+  <nav class="main-nav" role="navigation" aria-label="Primary">
+    <ul class="nav-list">
+      <!-- Home dropdown -->
+      <li class="dropdown">
+        <button class="drop-toggle" aria-expanded="false">Home</button>
+        <ul class="dropdown-menu">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#testimonials">Testimonials</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/login.php">Login</a></li>
+      <li><a href="/signup.php">Sign&nbsp;Up</a></li>
+
+      <!-- Legal dropdown -->
+      <li class="dropdown">
+        <button class="drop-toggle" aria-expanded="false">Legal</button>
+        <ul class="dropdown-menu">
+          <li><a href="/legal/privacy.html">Privacy&nbsp;Policy</a></li>
+          <li><a href="/legal/terms.html">Terms&nbsp;of&nbsp;Service</a></li>
+          <li><a href="/legal/accessibility.html">Accessibility</a></li>
+          <li><a href="/legal/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ───────── MAIN CONTENT ───────── -->
+<main>
+  <h1>Security at NotesAO</h1>
+  <p class="text-center mb-4">Your clients’ data is our highest priority. Below is an overview of the safeguards we maintain.</p>
+
+  <h2>1. Data Encryption</h2>
+  <ul>
+    <li><strong>In transit&nbsp;–</strong> All traffic is forced over TLS&nbsp;1.2 or higher (A-rating on SSL Labs).</li>
+    <li><strong>At rest&nbsp;–</strong> Database volumes and file objects are encrypted using AES-256.</li>
+  </ul>
+
+  <h2>2. Infrastructure &amp; Network</h2>
+  <ul>
+    <li>Hosted on <em>[your cloud provider]</em> with ISO&nbsp;27001-certified data centres in the US.</li>
+    <li>Firewalls, WAF, and automated DDoS mitigation protect every endpoint.</li>
+    <li>Administrative access secured by hardware-token MFA.</li>
+  </ul>
+
+  <h2>3. Back-ups &amp; Disaster Recovery</h2>
+  <ul>
+    <li>Databases are snap-shotted hourly, retained 30&nbsp;days, and stored cross-region.</li>
+    <li>Full disaster-recovery drills performed quarterly.</li>
+  </ul>
+
+  <h2>4. Application Security</h2>
+  <ul>
+    <li>Static code analysis on every pull-request; dependency scanning via <em>[tool]</em>.</li>
+    <li>OWASP Top-10 penetration tests annually by an independent security firm.</li>
+  </ul>
+
+  <h2>5. Responsible Disclosure</h2>
+  <p>
+    If you believe you have found a security vulnerability, please email
+    <a href="mailto:security@notesao.com">security@notesao.com</a>. We investigate all reports promptly.
+  </p>
+
+  <h2>6. Your Responsibilities</h2>
+  <ul>
+    <li>Use unique, strong passwords for your NotesAO account.</li>
+    <li>Keep browsers and operating systems up-to-date.</li>
+    <li>Immediately report any suspicious activity to our support team.</li>
+  </ul>
+</main>
+
+<!-- ───────── FOOTER ───────── -->
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/login.php">Login</a>
+    <a href="/signup.php">Sign Up</a>
+    <a href="/legal/privacy.html">Privacy Policy</a>
+    <a href="/legal/terms.html">Terms of Service</a>
+    <a href="/legal/accessibility.html">Accessibility</a>
+    <a href="/legal/security.html">Security</a>
+  </div>
+  <p>© 2025&nbsp;NotesAO. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+<script defer src="/assets/js/nav.js"></script>
+</body>
+</html>

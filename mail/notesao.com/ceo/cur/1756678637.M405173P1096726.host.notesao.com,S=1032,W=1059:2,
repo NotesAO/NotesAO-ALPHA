@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id k2vTFu3JtGgWvBAAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Sun, 31 Aug 2025 17:17:17 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 31 Aug 2025 17:17:17 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1usqMP-00000004bJ2-1QMi
+	for admin@notesao.com;
+	Sun, 31 Aug 2025 17:17:17 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Damon Tolbert
+X-PHP-Script: ffl.notesao.com/intake.php for 172.59.193.88
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: damonskyler1995@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1usqMP-00000004bJ2-1QMi@host.notesao.com>
+Date: Sun, 31 Aug 2025 17:17:17 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

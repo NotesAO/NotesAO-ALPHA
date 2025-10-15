@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy | NotesAO</title>
+
+  <!-- Favicons (reuse global set) -->
+  <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#211c56">
+
+  <!-- Fonts / Icons / Bootstrap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        referrerpolicy="no-referrer">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" crossorigin="anonymous">
+
+  <style>
+    /* ─────────── BASE / LAYOUT ─────────── */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Montserrat',sans-serif;color:#333;background:#f7f9fa;line-height:1.6;
+      display:flex;flex-direction:column;min-height:100vh;   /* footer-push */
+    }
+    a{text-decoration:none;color:#007BFF;} img{max-width:100%;height:auto;}
+
+    /* ========= SHARED HEADER ========= */
+    .site-header{
+      background:#fff;padding:.75rem 2rem;
+      display:flex;justify-content:space-between;align-items:center;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+      position:fixed;top:0;left:0;right:0;z-index:999;
+    }
+    .site-header .logo img{height:40px}
+    .nav-list{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+    .nav-list>li{position:relative;display:flex;align-items:center;}
+    .nav-list>li:last-child .dropdown-menu{left:auto;right:0;}
+    .nav-list a,.drop-toggle{
+      font-weight:500;color:#333;background:none;border:none;font-family:inherit;
+      cursor:pointer;padding:.25rem .1rem;transition:color .3s;
+    }
+    .nav-list a:hover,.drop-toggle:hover{color:#211c56}
+
+    /* Dropdown menus */
+    .dropdown{position:relative}
+    .dropdown-menu{
+      position:absolute;left:0;top:100%;min-width:11rem;
+      background:#fff;border:1px solid #e5e5e5;border-radius:6px;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+      display:none;flex-direction:column;padding:.5rem 0;z-index:1000;
+    }
+    .dropdown.open>.dropdown-menu{display:flex}
+    .dropdown-menu a{padding:.35rem 1rem;white-space:nowrap}
+    .dropdown-menu a:hover{background:#f7f9fa}
+    .drop-toggle:focus-visible{outline:2px solid #007BFF;outline-offset:2px}
+
+    /* ========= MAIN / TYPOGRAPHY ========= */
+    main{
+      margin-top:96px;        /* offset fixed header */
+      flex:1;                 /* pushes footer down */
+      max-width:1100px;
+
+      margin-left:auto;
+      margin-right:auto;;
+      padding:4rem 1.75rem 3rem;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 4px 16px rgba(0,0,0,.05);
+    }
+    h1{font-size:2.25rem;margin-bottom:1.5rem;text-align:center;}
+    h2{font-size:1.35rem;margin:2rem 0 .75rem;color:#211c56;}
+    h3{font-size:1.1rem;margin:1.25rem 0 .5rem;color:#211c56;}
+    p,li{font-size:.95rem;margin-bottom:1rem;} ul{padding-left:1.25rem;}
+
+    /* ========= FOOTER ========= */
+    footer{background:#1c1c1c;color:#fff;text-align:center;padding:2rem;}
+    footer .footer-links{margin-bottom:1rem;}
+    footer .footer-links a{margin:0 1rem;color:#ccc;font-size:.9rem;transition:color .3s;}
+    footer .footer-links a:hover{color:#fff;} footer p{font-size:.9rem;color:#ccc;}
+  </style>
+</head>
+<body>
+  <!-- ───────── HEADER (shared) ───────── -->
+  <header class="site-header">
+    <a href="/" class="logo"><img src="/assets/images/NotesAO Logo.png" alt="NotesAO logo"></a>
+
+    <nav class="main-nav" role="navigation" aria-label="Primary">
+      <ul class="nav-list">
+        <!-- Home dropdown -->
+        <li class="dropdown">
+          <button class="drop-toggle" aria-expanded="false">Home</button>
+          <ul class="dropdown-menu">
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/#testimonials">Testimonials</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/login.php">Login</a></li>
+        <li><a href="/signup.php">Sign&nbsp;Up</a></li>
+
+        <!-- Legal dropdown -->
+        <li class="dropdown">
+          <button class="drop-toggle" aria-expanded="false">Legal</button>
+          <ul class="dropdown-menu">
+            <li><a href="/legal/privacy.html">Privacy&nbsp;Policy</a></li>
+            <li><a href="/legal/terms.html">Terms&nbsp;of&nbsp;Service</a></li>
+            <li><a href="/legal/accessibility.html">Accessibility</a></li>
+            <li><a href="/legal/security.html">Security</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Main -->
+  <main>
+    <h1>Privacy Policy</h1>
+    <p><em>Effective date: 08 May 2025</em></p>
+
+    <h2>1. Introduction</h2>
+    <p>       
+      NotesAO (“we,” “us,” or “our”) values your privacy. This Privacy Policy
+      explains how we collect, use, disclose, and safeguard your information
+      when you visit <strong>notesao.com</strong> or any
+      sub-domain (collectively, the “Site”) and when you use our
+      cloud-based therapeutic documentation platform (the “Service”).
+  </p>
+
+    <h2>2. Information We Collect</h2>
+    <h3>2.1 Information you provide to us</h3>
+    <ul>
+      <li><strong>Account or contact details</strong> — name, email address, telephone number, clinic/organization.</li>
+      <li><strong>Client-generated content</strong> — messages or files you upload.</li>
+      <li><strong>Payment or billing details</strong> (only if you become a paying customer; processed via our PCI-DSS compliant provider).</li>
+    </ul>
+    <h3>2.2 Information collected automatically</h3>
+    <ul>
+      <li><strong>Session cookies &amp; tokens</strong> necessary to keep you signed in and secure.</li>
+      <li><strong>Device and usage data</strong> — browser type, referring URLs, pages viewed, and timestamps.</li>
+    </ul>
+
+    <h2>3. How We Use Your Information</h2>
+    <ul>
+      <li>To provide, operate, and maintain the Service.</li>
+      <li>To improve and personalize your experience.</li>
+      <li>To communicate with you about updates, security alerts, and marketing (with your consent where required).</li>
+      <li>To detect, prevent, and address technical issues or fraud.</li>
+      <li>To comply with legal obligations and enforce our Terms of Service.</li>
+    </ul>
+
+    <h2>4. Cookies & Similar Technologies</h2>
+    <p>
+      We use cookies and localStorage to:
+    </p>
+    <ul>
+      <li>Authenticate users and maintain sessions (“strictly necessary”).</li>
+      <li>Remember cookie-consent preferences.</li>
+      <li>Measure Site performance and usage if you allow analytics cookies.</li>
+    </ul>
+    <p>
+      You can manage non-essential cookies at any time via the “<strong>Manage cookies</strong>” button in the bottom-right corner of every page.
+    </p>
+
+    <h2>5. How We Share Information</h2>
+    <p>We do not sell or rent personal information. We share it only:</p>
+    <ul>
+      <li>With <strong>service providers</strong> who process data on our behalf (e.g., hosting, email delivery, payment processors) under strict confidentiality agreements.</li>
+      <li>With authorities if required to comply with laws, court orders, or to protect the rights and safety of NotesAO or others.</li>
+      <li>With your consent or at your direction.</li>
+    </ul>
+
+    <h2>6. Your Choices & Rights</h2>
+    <h3>6.1 Cookie preferences</h3>
+    <p>Use the banner or “Manage cookies” button to accept, reject, or customise cookies.</p>
+
+    <h3>6.2 Marketing communications</h3>
+    <p>You may opt out of marketing emails at any time by clicking the “unsubscribe” link inside the message.</p>
+
+    <h3>6.3 California Consumer Privacy Act (CCPA)</h3>
+    <p>
+      If you are a California resident, you may request to know, delete, or
+      opt out of certain data uses. Submit requests by email at
+      <a href="mailto:privacy@notesao.com">privacy@notesao.com</a> or at (817)-501-5102.
+      We will verify your identity before responding.
+    </p>
+
+    <h3>6.4 European Economic Area (EEA) visitors</h3>
+    <p>
+      While we are a U.S. service, if GDPR applies to you, you have the right
+      to access, rectify, or erase your personal data and to restrict or object
+      to certain processing. Contact us at the address below.
+    </p>
+
+    <h2>7. Children’s Privacy</h2>
+    <p>
+      The Site and Service are <strong>not directed to children under 13</strong>.
+      We do not knowingly collect personal information from children. If you
+      believe we have collected such data, please contact us so we can delete it.
+    </p>
+
+    <h2>8. Data Security & Retention</h2>
+    <p>
+      We use administrative, technical, and physical safeguards—including TLS
+      encryption in transit and AES-256 encryption at rest—to protect your
+      information. We retain data only as long as necessary to fulfil the
+      purposes outlined in this Policy, meet legal requirements, or resolve
+      disputes.
+    </p>
+
+    <h2>9. International Transfers</h2>
+    <p>
+      We are headquartered in the United States. If you access the Service from
+      outside the U.S., your information may be transferred to, stored, and
+      processed in the U.S. or other countries where our service providers are
+      located.
+    </p>
+
+    <h2 id="contact">Our Contact Information</h2>
+    <p>
+      NotesAO<br>
+      1100 E Lancaster Ave, Fort Worth TX 76102 USA<br>
+      privacy@notesao.com · +1&nbsp;(817)&nbsp;501-5102
+    </p>
+
+    <h2 id="cookies">Cookie &amp; Local-Storage Policy</h2>
+    <table>
+      <thead><tr><th>Cookie / Key</th><th>Purpose</th><th>Retention</th></tr></thead>
+      <tbody>
+        <tr><td>notesaoConsentV1 (localStorage)</td><td>Stores your cookie-banner choice</td><td>365 days</td></tr>
+        <tr><td>PHPSESSID (cookie)</td><td>Keeps you logged in</td><td>Session</td></tr>
+        <tr><td>rememberme (cookie)</td><td>Optional “remember me” login</td><td>30 days</td></tr>
+        <!-- add GA _ga etc. if you deploy analytics -->
+      </tbody>
+    </table>
+
+    <h2 id="email">E-mail Communications (CAN-SPAM)</h2>
+    <p>
+      Every marketing email from NotesAO includes our postal address and a one-click “unsubscribe” link.
+      Transactional emails (password resets, invoices) are sent irrespective of marketing preferences.
+    </p>
+
+
+    <h2>10. Changes to This Policy</h2>
+    <p>
+      We may update this Policy periodically. We will post the revised version
+      and update the “Effective date” above. Material changes will be announced
+      via the Site or by email.
+    </p>
+
+    <h2>11. Contact Us</h2>
+    <p>
+      For privacy questions or requests, contact:<br>
+      <strong>NotesAO Privacy Team</strong><br>
+      1100 East Lancaster Ave, Fort Worth, TX 76102<br>
+      <a href="mailto:privacy@notesao.com">privacy@notesao.com</a>
+    </p>
+</main>
+
+<!-- ───────── FOOTER (shared) ───────── -->
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/login.php">Login</a>
+    <a href="/signup.php">Sign Up</a>
+    <a href="/legal/privacy.html">Privacy Policy</a>
+    <a href="/legal/terms.html">Terms of Service</a>
+    <a href="/legal/accessibility.html">Accessibility</a>
+    <a href="/legal/security.html">Security</a>
+  </div>
+  <p>© 2025 NotesAO. All rights reserved.</p>
+</footer>
+
+<!-- ───────── SCRIPTS ───────── -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+<script defer src="/assets/js/nav.js"></script> <!-- dropdown behaviour -->
+</body>
+</html>

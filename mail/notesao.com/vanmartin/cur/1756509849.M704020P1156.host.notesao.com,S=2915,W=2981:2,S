@@ -1,0 +1,66 @@
+Return-Path: <no-reply@notesao.com>
+Delivered-To: vanmartin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id WIfsKZk2smiEBAAAIW4ynA
+	(envelope-from <no-reply@notesao.com>)
+	for <vanmartin@notesao.com>; Fri, 29 Aug 2025 18:24:09 -0500
+Return-path: <no-reply@notesao.com>
+Envelope-to: vanmartin@notesao.com
+Delivery-date: Fri, 29 Aug 2025 18:24:09 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@notesao.com>)
+	id 1us8S1-000000000IV-2mOv
+	for vanmartin@notesao.com;
+	Fri, 29 Aug 2025 18:24:09 -0500
+To: vanmartin@notesao.com
+Subject: Thank you for contacting NotesAO
+X-PHP-Script: notesao.com/signup.php for 172.59.0.110
+ X-PHP-Originating-Script: 1007:signup.php
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+From: NotesAO <no-reply@notesao.com>
+Reply-To: support@notesao.com
+Message-Id: <E1us8S1-000000000IV-2mOv@host.notesao.com>
+Date: Fri, 29 Aug 2025 18:24:09 -0500
+
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>NotesAO – Thank You</title></head>
+<body style="margin:0;padding:0;background:#f0f4f8;font-family:Montserrat,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" style="padding:40px 16px;">
+        <table width="600" cellpadding="0" cellspacing="0"
+               style="background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08);">
+          <tr>
+            <td align="center" style="padding:32px 32px 24px;">
+              <img src="https://notesao.com/assets/images/NotesAO%20Logo.png"
+                   alt="NotesAO Logo" style="height:48px;margin-bottom:20px">
+              <h1 style="margin:0;font-size:22px;color:#211c56;">Thank you for reaching out!</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 48px 32px;font-size:15px;line-height:1.6;color:#444;">
+              <p style="margin-top:0;">Hi <strong>Van Martin</strong>,</p>
+              <p>Thanks for your interest in <strong>NotesAO</strong>. A member of our sales
+              team will review the details you provided and get in touch shortly to answer
+              questions and schedule a live demo.</p>
+              <p>We look forward to showing you how NotesAO can streamline documentation,
+              automate reporting, and simplify your workflow.</p>
+              <p style="margin:28px 0 0;">Warm regards,<br>The NotesAO Team</p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="background:#211c56;color:#fff;padding:14px;
+                                      border-bottom-left-radius:8px;border-bottom-right-radius:8px;
+                                      font-size:13px;">
+              NotesAO — Streamlining Therapeutic Documentation
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

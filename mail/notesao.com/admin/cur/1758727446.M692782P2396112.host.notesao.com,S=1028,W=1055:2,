@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 5qT4JxYN1GjQjyQAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 24 Sep 2025 10:24:06 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 24 Sep 2025 10:24:06 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v1RLi-0000000A3Ks-2LLL
+	for admin@notesao.com;
+	Wed, 24 Sep 2025 10:24:06 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Marc Hyland
+X-PHP-Script: ffl.notesao.com/intake.php for 166.199.242.82
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: youngtone817@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v1RLi-0000000A3Ks-2LLL@host.notesao.com>
+Date: Wed, 24 Sep 2025 10:24:06 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

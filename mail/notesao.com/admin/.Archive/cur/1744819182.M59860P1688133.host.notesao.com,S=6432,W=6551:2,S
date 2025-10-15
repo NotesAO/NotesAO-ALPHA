@@ -1,0 +1,119 @@
+Return-Path: <agorzen@liquidweb.com>
+Delivered-To: admin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id L5yDA+7T/2dFwhkAIW4ynA
+	(envelope-from <agorzen@liquidweb.com>)
+	for <admin@notesao.com>; Wed, 16 Apr 2025 10:59:42 -0500
+Return-path: <agorzen@liquidweb.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 16 Apr 2025 10:59:42 -0500
+Received: from mail-qv1-f45.google.com ([209.85.219.45]:51634)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.1)
+	(envelope-from <agorzen@liquidweb.com>)
+	id 1u55Ar-00000007565-1bIo
+	for admin@notesao.com;
+	Wed, 16 Apr 2025 10:59:42 -0500
+Received: by mail-qv1-f45.google.com with SMTP id 6a1803df08f44-6e900a7ce55so99138846d6.3
+        for <admin@notesao.com>; Wed, 16 Apr 2025 08:59:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=liquidweb-com.20230601.gappssmtp.com; s=20230601; t=1744819140; x=1745423940; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=IGCH8DUsI6F6XUTGdx8IGUzXZkTTvVsi5a0OZRAtBU0=;
+        b=mF8xf9XMSCn1umVHWjOX3isEseqTZq3DVnN1XhqXxJ2zU4eyoSG4TWL5Jgp0gwy5qn
+         q3mQ/JlC7Mo79BPns76CyXe8rnqrgFU/yCIvAlvcbdlCCnx5s+rodaWsL0UfbMGYDUKf
+         qWxkhNjd0vO5ZmsBMfe4Z5kODOOgtoHPsNdyfTcdUtHuBbzntN3KrgA3/jqCDZDsEvkq
+         ERRO30SZ5TebEugvG53sAMBDxHnrlV3wqgHnvyOWrSbe+HjkMoTsdfgIJ4CDIDxlVsRV
+         2apg0FlwZLEJ+ifTLco6545i7Dwqb6x1Ob2SSq6FK34sO+peBn5LiDmhYhzdBSI30w+g
+         IkPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744819140; x=1745423940;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=IGCH8DUsI6F6XUTGdx8IGUzXZkTTvVsi5a0OZRAtBU0=;
+        b=MVK7zSWfG2IFVg3AjTW7IK4k+TmKJooQFWIFIULyL1K2EnzJvPz/1oG3kVYp/q56PN
+         P0pHj0wPu9lt3OL1Fmx+fVnIzO6BxgPlFuwd+DI9ssxzUYq348P/je6Eq75+0Sc6nBfT
+         apw+XnX6evA68fmosuCW32pPFjcVTDOjm+be0TYyhdWTyFOeShZ/LLv+oR9RMffsZf30
+         4a8iYPR8JrscdxB+7NVUqEZLVsAJ03zaARZXEeBiQdI+DtUgrblJkYQO87JiuyCh699H
+         Jw9pytQBiOfUXRRAqbXnQ1wDclr5hhRvD1Y7JCswz1W4wTEzkbGMObf8hVdkVijSVc4g
+         Y7dA==
+X-Gm-Message-State: AOJu0Yz/13v4GOG1A66Di1/J/okxz0ohlbbAPvaYm6rDGVdkrgW0OLJL
+	59z91cNUWipQSVajXnVVtbhXpr4Wz7G3JJDWxvU/wkN/WJdbLx1BdK822PBta3LiaAFF1PQnc0I
+	5O3z2QBaM5M2LxjfuboqAAqiJAwzRdkIIMpsQ900RyRg5K7LciCw=
+X-Gm-Gg: ASbGnct/wvD0XvE61Yr9HySUUVqImVHyI0m6k9ufRyz58kzPKoc+7P8hpzBtUIzpgJA
+	ElOZ1j2cTVRM2DeIsTaT9TXR2WmA0E47P2KaXaXN1DpSPMXEF/MtkjjcKB0p/5ti216XADxySJV
+	xiom6r9iF0bU3k52/tFiOLrETltiX6zVxvKSU=
+X-Google-Smtp-Source: AGHT+IFIkj9qHZY2azu5MXiKZQXENDm+RCwGWE+5b5GCv72W0XK0ajzHN5O5OaCPoDbUieiYgIAK21KFpR6EyGdftuY=
+X-Received: by 2002:a17:90a:e18e:b0:2ee:8e75:4aeb with SMTP id
+ 98e67ed59e1d1-30863f2f789mr4103975a91.17.1744818770187; Wed, 16 Apr 2025
+ 08:52:50 -0700 (PDT)
+MIME-Version: 1.0
+References: <88a1a46fae4047e45e5f3ab572372465@notesao.com>
+In-Reply-To: <88a1a46fae4047e45e5f3ab572372465@notesao.com>
+From: Alexander Gorzen <agorzen@liquidweb.com>
+Date: Wed, 16 Apr 2025 11:52:38 -0400
+X-Gm-Features: ATxdqUGjeyYE_uXUimx4tg7NBRT-LniG6k2TWE50lRwYOBlaUWzMbKKhlhtYrQ0
+Message-ID: <CAATMKAmgimzQQ73rXB_1akhVh7JSM_s8JE+_H_PCqkrHm-S3rQ@mail.gmail.com>
+Subject: Re: Just sending a test here
+To: admin@notesao.com
+Content-Type: multipart/alternative; boundary="000000000000fed37a0632e746a2"
+X-Spam-Status: No, score=0.0
+X-Spam-Score: 0
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  testing a reply now. On Wed, Apr 16, 2025 at 11:52 AM <admin@notesao.com>
+    wrote: > Just sending a test to see if this goes out. > 
+ Content analysis details:   (0.0 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [209.85.219.45 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.219.45 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.219.45 listed in bl.score.senderscore.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+X-Spam-Flag: NO
+
+--000000000000fed37a0632e746a2
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+testing a reply now.
+
+On Wed, Apr 16, 2025 at 11:52=E2=80=AFAM <admin@notesao.com> wrote:
+
+> Just sending a test to see if this goes out.
+>
+
+--000000000000fed37a0632e746a2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">testing a reply now.</div><br><div class=3D"gmail_quote gm=
+ail_quote_container"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, Apr 16, =
+2025 at 11:52=E2=80=AFAM &lt;<a href=3D"mailto:admin@notesao.com">admin@not=
+esao.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D=
+"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-le=
+ft:1ex">Just sending a test to see if this goes out.<br>
+</blockquote></div>
+
+--000000000000fed37a0632e746a2--

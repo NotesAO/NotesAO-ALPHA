@@ -1,0 +1,951 @@
+Return-Path: <bounce-md_30010842.6876abe4.v1-0c459a02871946a5b7da60ee1ee8e2b9@click.mailchimp.com>
+Delivered-To: ceo@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id M/BJAOirdmjHPS0AIW4ynA
+	(envelope-from <bounce-md_30010842.6876abe4.v1-0c459a02871946a5b7da60ee1ee8e2b9@click.mailchimp.com>)
+	for <ceo@notesao.com>; Tue, 15 Jul 2025 14:28:40 -0500
+Return-path: <bounce-md_30010842.6876abe4.v1-0c459a02871946a5b7da60ee1ee8e2b9@click.mailchimp.com>
+Envelope-to: ceo@notesao.com
+Delivery-date: Tue, 15 Jul 2025 14:28:40 -0500
+Received: from mail128-67.atl41.mandrillapp.com ([198.2.128.67]:30538)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <bounce-md_30010842.6876abe4.v1-0c459a02871946a5b7da60ee1ee8e2b9@click.mailchimp.com>)
+	id 1ublKQ-0000000CRJN-2S7f
+	for ceo@notesao.com;
+	Tue, 15 Jul 2025 14:28:39 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1752607716; x=1752877716;
+	bh=dJ1thMYxJkDgNbqACncwByNh2wn14tjG+LaJXeTB7TE=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=SfayN53Yn0KWXMW5fCc/vKXT4F6HDU+eZHfxIhcDnkNwsF33SGaFW+T637EHnpocC
+	 N/dgZ7QJHYGtISCQcngTc77uEvITRjtdGGAXZOTzLO5nCdIO0tGLdGKagLe5Si7LJk
+	 iHZgRbRYguhcK44oAR3hJoP/Jw3eLpPYfcrj4+Ud6qczRsAB/Iah+BPnF3Ab0JPJIr
+	 uiIVuvprtHfD77UNWe4qEbw9SdIk1GoL242K9PexhR/pJsjiE34Uqu9F8i6XKWU10E
+	 GZMdrnmGWb9r9qdjLH9uyWcRArycge/hvkZlExAlvDBZx+G49fs7u/cm+XQkHDw3P+
+	 m7bMWcmNnc8ug==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimp.com; s=k2;
+	t=1752607716; x=1752868216; i=no-reply@mailchimp.com;
+	bh=dJ1thMYxJkDgNbqACncwByNh2wn14tjG+LaJXeTB7TE=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=WvEDpjC/Q0TEb6Cnrz04xUZiy5XXuDQBRBuDyR/bf+T+Fyc3r5Yf7wRvE3u6v14Et
+	 vx2Kd/bA/vLj/TLxU8RcOFD0TdidFId9mlXDIS2PvvzzzP1O2SlSqvMgigl1v749jx
+	 XpGts7KAEyhlOQ8VgW8xxcmq4YEj8EhU8UTPU25aJ4vWV8bPPNjSruOhHq9GWTOZYI
+	 DmkSkcY6zxoujr/MfOoDmAyVA7gE+A5tY5tZ0iE5EgsmGZ8zAjZfFzgTudBHd/Jcxx
+	 iXCVoV5Kl4+2kflh/Q81JR2sBD1cKbQyfNhCXoclAvwW1rfpAR2yhjkx4KGbTBuLak
+	 +QwDWuQShoChQ==
+Received: from pmta08.mandrill.prod.atl01.rsglab.com (localhost [127.0.0.1])
+	by mail128-67.atl41.mandrillapp.com (Mailchimp) with ESMTP id 4bhTkX4rswzll6Dd
+	for <ceo@notesao.com>; Tue, 15 Jul 2025 19:28:36 +0000 (GMT)
+From: "No Reply - Mailchimp" <no-reply@mailchimp.com>
+Subject: =?utf-8?Q?Mailchimp=20Order?=
+X-Accounttype: pr
+X-Auto-Response-Suppress: OOF, AutoReply
+Auto-Submitted: auto-generated
+To: ceo@notesao.com
+X-Native-Encoded: 1
+X-Report-Abuse: =?UTF-8?Q?Please=20forward=20a=20copy=20of=20this=20message,=20including=20all=20headers,=20to=20abuse@mandrill.com.=20You=20can=20also=20report=20abuse=20here:=20https://mandrillapp.com/contact/abuse=3Fid=3D30010842.0c459a02871946a5b7da60ee1ee8e2b9?=
+X-Mandrill-User: md_30010842
+Feedback-ID: 30010842:30010842.20250715:md
+Message-Id: <30010842.20250715192836.6876abe49c5724.27823125@mail128-67.atl41.mandrillapp.com>
+Date: Tue, 15 Jul 2025 19:28:36 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-G7Mt353pBDzLR2vr0TBfUA"
+X-Spam-Status: No, score=0.9
+X-Spam-Score: 9
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Your order has been processed. Order MC18071213 Processed
+   on July 15, 2025 03:28 PM New York. 
+ Content analysis details:   (0.9 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.2.128.67 listed in sa-accredit.habeas.com]
+  0.0 KAM_FROM_MARKETINGBL_PCCC RBL: From address associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [listed in mailchimp.com.wild.pccc.com]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: mailchimp.com]
+                             [URI: mandrillapp.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.2.128.67 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                           [198.2.128.67 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: mailchimp.com]
+                             [URI: mandrillapp.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or identical to
+                             background
+  0.0 LOTS_OF_MONEY          Huge... sums of money
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium trust sender
+X-Spam-Flag: NO
+
+--_av-G7Mt353pBDzLR2vr0TBfUA
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Your order has been processed. 
+
+Order MC18071213
+Processed on July 15, 2025 03:28 PM New York.
+
+--------------------------------------------------
+
+
+Standard plan                               $20.00
+500 contacts
+
+    Limited Time Offer (100%) Discount - expires 07/30/2025-$20.00
+    Limited Time Offer Discount
+
+Intuit Assist for Mailchimp*                 $0.00
+AI-powered marketing
+
+Promotional price                            $1.00
+1 month
+
+Tax                                          $0.05
+State Sales/Use
+Tax Rate: 6.25%
+
+Tax                                          $0.01
+District Sales/Use
+Tax Rate: 0.5%
+Tax Rate: 0.5%
+
+Tax                                          $0.01
+City Sales/Use
+Tax Rate: 1%
+
+Total                                        $1.07
+Paid via Visa ending in 1128 which expires 09/2028
+on July 15, 2025
+
+Balance as of July 15, 2025                  $0.00
+
+
+
+
+
+
+--------------------------------------------------
+
+* Intuit Assist functionality (beta) is available to certain users with Pre=
+mium, Standard and Legacy plans in select countries in English only. Access=
+ to Intuit Assist is available at no additional cost at this time. Pricing,=
+ terms, conditions, special features and service options are subject to cha=
+nge without notice. Availability of features and functionality varies by pl=
+an type. Features may be broadly available soon but represents no obligatio=
+n and should not be relied on in making a purchasing decision. For details,=
+ please view Mailchimp=E2=80=99s various plans and pricing: https://click.m=
+ailchimp.com/track/click/30010842/mailchimp.com?p=3DeyJzIjoiU3lzbkNNLXVzR3d=
+reGloNHptTE1YdGRwUXdFIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidX=
+JsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvcHJpY2luZ1xcXC9tYXJrZXRpb=
+mdcIixcImlkXCI6XCIwYzQ1OWEwMjg3MTk0NmE1YjdkYTYwZWUxZWU4ZTJiOVwiLFwidXJsX2lk=
+c1wiOltcIjNkMDUzM2YzMzkwZWVkNjVmODE1ZDE2MzA4OTIxZGEwNTZkYTcyZWJcIl0sXCJtc2d=
+fdHNcIjoxNzUyNjA3NzE2fSJ9
+
+--------------------------------------------------
+
+
+Issued to:
+Van Martin
+ceo@notesao.com
+ 
+2938 Crockett St Apt 422N
+Ft Worth, TX  76107-2976 
+
+
+
+
+
+Issued by:
+Mailchimp
+c/o The Rocket Science Group, LLC
+405 N. Angier Ave. NE, Atlanta, GA 30312 USA
+www.mailchimp.com
+Tax ID: US EIN 58-2554149
+
+
+
+--------------------
+View In Your Account: https://click.mailchimp.com/track/click/30010842/us9.=
+admin.mailchimp.com?p=3DeyJzIjoiaDJNOUY2d3IwMEtYQ0M3b0Z4Z295UmxNWnNjIiwidiI=
+6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3=
+VzOS5hZG1pbi5tYWlsY2hpbXAuY29tXFxcL2FjY291bnRcXFwvYmlsbGluZy1yZWNlaXB0P2lkP=
+TE4MDcxMjEzXCIsXCJpZFwiOlwiMGM0NTlhMDI4NzE5NDZhNWI3ZGE2MGVlMWVlOGUyYjlcIixc=
+InVybF9pZHNcIjpbXCI2ZDhiZjNiNTY5NGU2NjdkNzFiMTk1NTI0NDM5MjMyNjRiNzA1MGYxXCJ=
+dLFwibXNnX3RzXCI6MTc1MjYwNzcxNn0ifQ
+--------------------
+
+
+------------------------------
+ Tax was applied to this purchase. 
+
+
+https://click.mailchimp.com/track/click/30010842/www.mailchimp.com?p=3DeyJz=
+IjoiWVBBVUhnbkRlQVAyVThRLVN5ZHBLTVpRempRIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg=
+0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXCIsXC=
+JpZFwiOlwiMGM0NTlhMDI4NzE5NDZhNWI3ZGE2MGVlMWVlOGUyYjlcIixcInVybF9pZHNcIjpbX=
+CI0MzQ5MDdkOTc2OGVmNTBiMmYzOWRlN2U5NTIyYTc3ZTZmNjY0N2Y5XCJdLFwibXNnX3RzXCI6=
+MTc1MjYwNzcxNn0ifQ
+405 N. Angier Ave. NE, Atlanta, GA 30312 USA
+
+Contact Us: https://click.mailchimp.com/track/click/30010842/www.mailchimp.=
+com?p=3DeyJzIjoiWGR2cTMwU2hnSFU1dHN1UUR1TDNjSk9yQ09FIiwidiI6MiwicCI6IntcInV=
+cIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbX=
+AuY29tXFxcL2NvbnRhY3RcXFwvXCIsXCJpZFwiOlwiMGM0NTlhMDI4NzE5NDZhNWI3ZGE2MGVlM=
+WVlOGUyYjlcIixcInVybF9pZHNcIjpbXCI5ZDFlNDk5Y2Y5MjM3MDI3MDQ4YzRlYWM5YTcyZWFk=
+NGRlY2Q1MDYyXCJdLFwibXNnX3RzXCI6MTc1MjYwNzcxNn0ifQ
+Terms of Use: https://click.mailchimp.com/track/click/30010842/mailchimp.co=
+m?p=3DeyJzIjoiNkswUzFqMlJsaVFwRmZVSlhtV1RZdXF3UlBZIiwidiI6MiwicCI6IntcInVcI=
+jozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21c=
+XFwvbGVnYWxcXFwvdGVybXNcXFwvXCIsXCJpZFwiOlwiMGM0NTlhMDI4NzE5NDZhNWI3ZGE2MGV=
+lMWVlOGUyYjlcIixcInVybF9pZHNcIjpbXCI1YTMwMjU1ODBlZTU5ZTc0MmZjN2EyODc4YzU5Mm=
+UzNjg3YTdlYTAzXCJdLFwibXNnX3RzXCI6MTc1MjYwNzcxNn0ifQ
+Privacy Policy: https://click.mailchimp.com/track/click/30010842/www.intuit=
+.com?p=3DeyJzIjoiNWxEMHlUQy1Ub0E0SnRsZGtiUjk3eEdNZXowIiwidiI6MiwicCI6IntcIn=
+VcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5pbnR1aXQuY=
+29tXFxcL3ByaXZhY3lcXFwvc3RhdGVtZW50XFxcL1wiLFwiaWRcIjpcIjBjNDU5YTAyODcxOTQ2=
+YTViN2RhNjBlZTFlZThlMmI5XCIsXCJ1cmxfaWRzXCI6W1wiNTU5NzNjYTYzOWVkYzk3OTFiMzU=
+0MGM5Nzc2MGE5NTZiZDFhYjM0YVwiXSxcIm1zZ190c1wiOjE3NTI2MDc3MTZ9In0
+Turn off Notification: https://click.mailchimp.com/track/click/30010842/adm=
+in.mailchimp.com?p=3DeyJzIjoiellfM3gtUnR1ZTJ5VXphMjRJV1QwSDlnaDJzIiwidiI6Mi=
+wicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2Fkb=
+WluLm1haWxjaGltcC5jb21cXFwvYWNjb3VudFxcXC9iaWxsaW5naW5mb1xcXC9cIixcImlkXCI6=
+XCIwYzQ1OWEwMjg3MTk0NmE1YjdkYTYwZWUxZWU4ZTJiOVwiLFwidXJsX2lkc1wiOltcIjhiMGQ=
+2YWMwNGI3ZThmZGE1NTM0MDA4YTExZGM1YzU2MGI1OWIwZDdcIl0sXCJtc2dfdHNcIjoxNzUyNj=
+A3NzE2fSJ9
+
+--_av-G7Mt353pBDzLR2vr0TBfUA
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+<head>
+    <!-- trx_0189 -->
+    <meta charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1" />
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <!-- 1 -->
+    <title>Mailchimp receipt</title>
+
+    <style type=3D"text/css">
+        /*////// RESET STYLES //////*/
+        p{margin:0;}
+        a{word-wrap:break-word;}
+        table{border-collapse:collapse;}
+        h1, h2, h3, h4, h5, h6{display:block; margin:0; padding:0;}
+        img, a img{border:0; height:auto; outline:none; text-decoration:non=
+e;}
+        body, #bodyTable, #bodyCell{height:100%; margin:0; padding:0; width=
+:100%;}
+
+        /*////// CLIENT-SPECIFIC STYLES //////*/
+        #outlook a{padding:0;} /* Force Outlook 2007 and up to provide a "v=
+iew in browser" message. */
+        #button a{text-decoration:none;} /* Necessary for Outlook on Window=
+s Phone */
+        img{-ms-interpolation-mode:bicubic;} /* Force IE to smoothly render=
+ resized images. */
+        table{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacin=
+g between tables in Outlook Desktop. */
+        .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Outl=
+ook.com to display emails at full width. */
+        p, a, li, td, blockquote{mso-line-height-rule:exactly;} /* Force Ou=
+tlook Desktop to render line heights as they're originally set. */
+        a[href^=3D"tel"], a[href^=3D"sms"]{color:inherit; cursor:default; t=
+ext-decoration:none;} /* Force mobile devices to inherit declared link styl=
+es. */
+        p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%; -w=
+ebkit-text-size-adjust:100%;} /* Prevent Windows- and Webkit-based mobile p=
+latforms from changing declared text sizes. */
+        .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass=
+ div, .ExternalClass span, .ExternalClass font{line-height:100%;} /* Force =
+Outlook.com to display line heights normally. */
+        a[x-apple-data-detectors]{color:inherit !important; text-decoration=
+:none !important; font-size:inherit !important; font-family:inherit !import=
+ant; font-weight:inherit !important; line-height:inherit !important;} /* Fo=
+rce iOS devices to heed link styles set in CSS. */
+
+        /*////// EMAIL STYLES //////*/
+        #bodyCell{padding-top:20px !important; padding-right:10px !importan=
+t; padding-bottom:20px !important; padding-left:10px !important;}
+        .emailContainer{max-width:640px;}
+        .bodyContent a, .columnContent a, .footerContent a{color:#007C89 !i=
+mportant; font-weight:500; text-decoration:none;}
+
+        @media only screen and (max-width:480px){
+            body{width:100% !important; min-width:100% !important;}
+            td#bodyCell{padding-top:10px !important;}
+
+            h1{font-size:26px !important; line-height:30px !important;}
+            h2{font-size:20px !important; line-height:30px !important;}
+
+            .column{max-width:100% !important; width:100% !important;}
+            .columnCell{display:block !important; max-width:100% !important=
+; width:100% !important; padding-right: 0 !important; padding-left:0 !impor=
+tant;}
+
+            .footerContent p{font-size:13px !important; padding-bottom:20px=
+;}
+            .utilityLink{border-bottom:1px solid #DEDDDC; display:block; fo=
+nt-size:13px !important; padding-top:15px; padding-bottom:15px;}
+            .mobileHide{display:none; visibility:hidden;}
+        }
+    </style>
+</head>
+<body bgcolor=3D"#FFFFFF">
+<center>
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" height=3D"100%" style=3D"background-color:#FFFFFF;" width=3D"100%" id=3D"=
+bodyTable">
+        <tr>
+            <td align=3D"center" style=3D"padding:10px;" valign=3D"top" id=
+=3D"bodyCell">
+                <span style=3D"color:#EFEEEA; display:none; font-size:0px; =
+height:0px; visibility:hidden; width:0px;">Your order was processed on  Jul=
+y 15, 2025  for  order MC18071213.</span>
+                <!--[if gte mso 9]>
+                <table align=3D"center" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" style=3D"width:640px;" width=3D"640">
+                    <tr>
+                        <td align=3D"center" valign=3D"top">
+                <![endif]-->
+                <table align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" style=3D"max-width:640px;" width=3D"100%" class=3D"emailConta=
+iner">
+                    <!-- BEGIN HEADER // -->
+                    <tr>
+                        <td align=3D"left" valign=3D"top" style=3D"padding-=
+top:20px; padding-bottom:20px;">
+                            <a href=3D"https://click.mailchimp.com/track/cl=
+ick/30010842/www.mailchimp.com?p=3DeyJzIjoiRlZWbTlnZHNueWRmZ1NaQjJEWXN6andM=
+LW9RIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczp=
+cXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL1wiLFwiaWRcIjpcIjBjNDU5YTAyODcxOTQ2YT=
+ViN2RhNjBlZTFlZThlMmI5XCIsXCJ1cmxfaWRzXCI6W1wiNDM0OTA3ZDk3NjhlZjUwYjJmMzlkZ=
+TdlOTUyMmE3N2U2ZjY2NDdmOVwiXSxcIm1zZ190c1wiOjE3NTI2MDc3MTZ9In0" target=3D"_=
+blank" style=3D"text-decoration:none;"><img src=3D"https://cdn-images.mailc=
+himp.com/template_images/Mailchimp+Logo+50-50+Black.png" alt=3D"Mailchimp" =
+width=3D"200" style=3D"border:0; color:#241C15; font-family:'Helvetica Neue=
+', Helvetica, Arial, Verdana, sans-serif; font-size:24px; font-weight:bold;=
+ height:auto; letter-spacing:-2px; line-height:100%; text-align:center; out=
+line:none; text-decoration:none;" /></a>
+                        </td>
+                    </tr>
+                    <!---->
+                    <tr>
+                        <td valign=3D"top" style=3D"border-bottom:2px solid=
+ #DEDDDC; padding-bottom: 20px;">
+                            <!---->
+                            <h1 style=3D"color:#241C15; font-family:Georgia=
+, Times, 'Times New Roman', serif; font-size:28px; font-style:normal; font-=
+weight:400; line-height:38px; letter-spacing:normal; text-align:left;">Your=
+ order has been processed.</h1>
+                            <!---->
+                            <h2 style=3D"color:#241C15; font-family:'Helvet=
+ica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:18px; font-weig=
+ht:600; line-height:24px; padding-top:30px; margin-top:0; text-align:left;"=
+>Order MC18071213</h2>
+                            <p style=3D"color:#241C15; font-family:'Helveti=
+ca Neue', Helvetica, Arial, Verdana, sans-serif; font-size:16px; font-weigh=
+t:400; line-height:24px; padding-top:10px; margin-top:0; text-align:left;">=
+Processed on  July 15, 2025 03:28 PM New York.</p>
+                        </td>
+                    </tr>
+                    <!-- // END HEADER -->
+
+                    <!-- BEGIN BODY // -->
+                    <tr>
+                        <td align=3D"center" valign=3D"top" style=3D"paddin=
+g-top: 20px;">
+                            <table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%">
+
+                                <!---->
+
+                                <!---->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D" ">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:left;">Standard plan</h3>
+                                    </td>
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right;">$20.00</h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 20px;  ">
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">500 contacts</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D"padding-lef=
+t:20px; ">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:left;">Limited Time Offer (100%) Disco=
+unt - expires 07/30/2025</h3>
+                                    </td>
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right;">-$20.00</h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 20px; padding-left:20px; ">
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">Limited Time Offer Discount<=
+/p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D" ">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:left;">Intuit Assist for Mailchimp*</h=
+3>
+                                    </td>
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right;">$0.00</h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 20px;  ">
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">AI-powered marketing</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D" ">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:left;">Promotional price</h3>
+                                    </td>
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right;">$1.00</h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 20px;  ">
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">1 month</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D" ">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:left;">Tax</h3>
+                                    </td>
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right;">$0.05</h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 20px;  ">
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">State Sales/Use</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">Tax Rate: 6.25%</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D" ">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:left;">Tax</h3>
+                                    </td>
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right;">$0.01</h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 20px;  ">
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">District Sales/Use</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">Tax Rate: 0.5%</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">Tax Rate: 0.5%</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D" ">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:left;">Tax</h3>
+                                    </td>
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right;">$0.01</h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 20px;  ">
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">City Sales/Use</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">Tax Rate: 1%</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D"padding-bot=
+tom: 20px;  border-top:2px solid #DEDDDC; padding-top: 20px;">
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;"><b>Paid</b> via <b>Visa</b> =
+ending in <b>1128</b> which expires <b>09/2028</b></p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                        <!-- BEGIN DESCRIPTION // -->
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">on July 15, 2025</p>
+                                        <!-- // END DESCRIPTION -->
+                                        <!---->
+                                    </td>
+                                    
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"padding-top: 20px;">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right; font-size:1.5em;">$1.07</h3>
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!-- BEGIN ITEM // -->
+                                
+                                <tr>
+                                    <td valign=3D"top" style=3D" border:2px=
+ solid #DEDDDC; border-right: none; margin-top: 40px; padding: 10px;">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:left;">Balance as of July 15, 2025</h3=
+>
+                                    </td>
+                                    <td valign=3D"top" width=3D"30%" style=
+=3D"border:2px solid #DEDDDC; border-left: none; padding: 10px;">
+                                        <h3 style=3D"color:#241C15; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:14p=
+x; font-style:normal; font-weight:600; line-height:24px; letter-spacing:nor=
+mal; padding:0; margin:0; text-align:right;">$0.00</h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 20px;  ">
+                                        <!---->
+                                    </td>
+                                    
+                                </tr>
+                                <!-- // END ITEM -->
+                                <!---->
+                                <!---->
+                                <!---->
+
+                                <!---->
+
+                                <!--  -->
+
+                                
+
+                                <!-- BEGIN GEN AI DISCLAIMER-->
+                                
+                                <tr>
+                                    <td valign=3D"top" colspan=3D"2" style=
+=3D"border-bottom:2px solid #DEDDDC; border-top:2px solid #DEDDDC; padding-=
+bottom: 20px; padding-top: 20px;">
+                                        <p style=3D"color:#241C15; font-fam=
+ily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:12px=
+; font-style:normal; font-weight:400; line-height:24px; letter-spacing:norm=
+al; margin:0; padding-top:0; text-align:left;">* Intuit Assist functionalit=
+y (beta) is available to certain users with Premium, Standard and Legacy pl=
+ans in select countries in English only. Access to Intuit Assist is availab=
+le at no additional cost at this time. Pricing, terms, conditions, special =
+features and service options are subject to change without notice. Availabi=
+lity of features and functionality varies by plan type. Features may be bro=
+adly available soon but represents no obligation and should not be relied o=
+n in making a purchasing decision. For details, please view Mailchimp=E2=80=
+=99s various <a href=3D"https://click.mailchimp.com/track/click/30010842/ma=
+ilchimp.com?p=3DeyJzIjoiclo0UnQ2eUlTRDBvWEZyRlV5d3RDSFBNQk1JIiwidiI6MiwicCI=
+6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaG=
+ltcC5jb21cXFwvcHJpY2luZ1xcXC9tYXJrZXRpbmdcXFwvXCIsXCJpZFwiOlwiMGM0NTlhMDI4N=
+zE5NDZhNWI3ZGE2MGVlMWVlOGUyYjlcIixcInVybF9pZHNcIjpbXCIzZDA1MzNmMzM5MGVlZDY1=
+ZjgxNWQxNjMwODkyMWRhMDU2ZGE3MmViXCJdLFwibXNnX3RzXCI6MTc1MjYwNzcxNn0ifQ" tar=
+get=3D"_blank" style=3D"color:#007C89; font-weight:500; text-decoration:non=
+e;">plans and pricing</a>.</p>
+                                </tr>
+                                
+                                <!-- END GEN AI DISCLAIMER-->
+
+                                <!-- BEGIN ADDRESS // -->
+                                <tr>
+                                    <td valign=3D"top" colspan=3D"2" style=
+=3D"padding-top: 20px; padding-bottom: 20px;">
+                                        <table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" width=3D"100%">
+                                            <tr>
+                                                <td valign=3D"top" class=3D=
+"columnCell" style=3D"padding-right:5px; padding-bottom:20px; width:50%;">
+                                                    <h3 style=3D"color:#241=
+C15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; f=
+ont-size:20px; font-style:italic; font-weight:400; line-height:24px; letter=
+-spacing:normal; text-align:left;">Issued to</h3>
+                                                    <p style=3D"color:#241C=
+15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; fo=
+nt-size:15px; font-style:normal; font-weight:400; line-height:22px; letter-=
+spacing:normal; padding-top:5px; margin:0; text-align:left;">
+                                                        Van Martin
+                                                        <br />
+                                                        ceo@notesao.com
+                                                        <br />
+                                                        <a href=3D"#" style=
+=3D"color:#241C15; text-decoration:none;"></a>
+                                                        
+                                                        <br />
+                                                        2938 Crockett St Ap=
+t 422N
+Ft Worth, TX  76107-2976
+                                                        <br />
+                                                        
+                                                        <br />
+                                                        
+                                                        
+                                                        
+                                                    </p>
+                                                </td>
+                                                <td valign=3D"top" class=3D=
+"columnCell" style=3D"padding-left:5px; width:50%;">
+                                                    <h3 style=3D"color:#241=
+C15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; f=
+ont-size:20px; font-style:italic; font-weight:400; line-height:24px; letter=
+-spacing:normal; text-align:left;">Issued by</h3>
+                                                    <p style=3D"color:#241C=
+15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; fo=
+nt-size:15px; font-style:normal; font-weight:400; line-height:22px; letter-=
+spacing:normal; padding-top:5px; margin:0; text-align:left;">
+                                                        Mailchimp<br />
+                                                        c/o The Rocket Scie=
+nce Group, LLC<br />
+                                                        405 N. Angier Ave. =
+NE, Atlanta, GA 30312 USA<br />
+                                                        <a href=3D"https://=
+click.mailchimp.com/track/click/30010842/mailchimp.com?p=3DeyJzIjoiNDZ3TW53=
+cGpyZzRHZmV5Z1NvaTk5SjE3LW5ZIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjo=
+yLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvXCIsXCJpZFwiOlwiMG=
+M0NTlhMDI4NzE5NDZhNWI3ZGE2MGVlMWVlOGUyYjlcIixcInVybF9pZHNcIjpbXCI5ZmEwMTg5O=
+TBkM2UxZmI1YjBhZjc1MGM4M2Q0NWRhYzhmNGY2ZjQ0XCJdLFwibXNnX3RzXCI6MTc1MjYwNzcx=
+Nn0ifQ" target=3D"_blank" style=3D"color:#007C89; font-weight:500; text-dec=
+oration:none;">www.mailchimp.com</a><br />
+                                                        Tax ID: US EIN 58-2=
+554149
+                                                        
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- // END ADDRESS -->
+
+                                <!-- BEGIN BUTTON // -->
+                                <tr>
+                                    <td colspan=3D"2" valign=3D"top" style=
+=3D"padding-bottom: 60px;">
+                                        <table align=3D"center" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+                                            <tr>
+                                                <td align=3D"center" bgcolo=
+r=3D"#007C89" id=3D"button"><a href=3D"https://click.mailchimp.com/track/cl=
+ick/30010842/us9.admin.mailchimp.com?p=3DeyJzIjoiaDJNOUY2d3IwMEtYQ0M3b0Z4Z2=
+95UmxNWnNjIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJod=
+HRwczpcXFwvXFxcL3VzOS5hZG1pbi5tYWlsY2hpbXAuY29tXFxcL2FjY291bnRcXFwvYmlsbGlu=
+Zy1yZWNlaXB0P2lkPTE4MDcxMjEzXCIsXCJpZFwiOlwiMGM0NTlhMDI4NzE5NDZhNWI3ZGE2MGV=
+lMWVlOGUyYjlcIixcInVybF9pZHNcIjpbXCI2ZDhiZjNiNTY5NGU2NjdkNzFiMTk1NTI0NDM5Mj=
+MyNjRiNzA1MGYxXCJdLFwibXNnX3RzXCI6MTc1MjYwNzcxNn0ifQ" target=3D"_blank" sty=
+le=3D"border-radius:0; border:1px solid #007C89; color:#FFFFFF; display:inl=
+ine-block; font-size:16px; font-family:'Helvetica Neue', Helvetica, Arial, =
+Verdana, sans-serif; font-weight:400; letter-spacing:.3px; padding:20px; te=
+xt-decoration:none;">View In Your Account</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <!-- // END BUTTON -->
+
+                                <!--  -->
+
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- // END BODY -->
+
+                    <!-- BEGIN FOOTER // -->
+                    <tr>
+                        <td align=3D"center" valign=3D"top" class=3D"footer=
+Content" style=3D"border-top:1px solid #DEDDDC; color:#6A655F; font-family:=
+'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:12px; fo=
+nt-weight:400; line-height:24px; padding:40px 0; text-align:center;">
+                            <!--  -->
+                            <p style=3D"color:#6A655F; font-family:'Helveti=
+ca Neue', Helvetica, Arial, Verdana, sans-serif; font-size:12px; font-weigh=
+t:400; line-height:24px; padding-top:0; padding-bottom:10px; margin:0; text=
+-align:center;">Tax was applied to this purchase.</p>
+                            <!--  -->
+
+                            <p style=3D"color:#6A655F; font-family:'Helveti=
+ca Neue', Helvetica, Arial, Verdana, sans-serif; font-size:12px; font-weigh=
+t:400; line-height:24px; padding-top:0; margin:0; text-align:center;">&copy=
+; 2001-2025 Mailchimp<sup>&reg;</sup> All Rights Reserved<br />405 N. Angie=
+r Ave. NE, Atlanta, GA 30312 USA</p>
+                            <a href=3D"https://click.mailchimp.com/track/cl=
+ick/30010842/www.mailchimp.com?p=3DeyJzIjoiWGR2cTMwU2hnSFU1dHN1UUR1TDNjSk9y=
+Q09FIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczp=
+cXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL2NvbnRhY3RcXFwvXCIsXCJpZFwiOlwiMGM0NT=
+lhMDI4NzE5NDZhNWI3ZGE2MGVlMWVlOGUyYjlcIixcInVybF9pZHNcIjpbXCI5ZDFlNDk5Y2Y5M=
+jM3MDI3MDQ4YzRlYWM5YTcyZWFkNGRlY2Q1MDYyXCJdLFwibXNnX3RzXCI6MTc1MjYwNzcxNn0i=
+fQ" target=3D"_blank" style=3D"color:#007C89; font-weight:500; text-decorat=
+ion:none;" class=3D"utilityLink">Contact Us</a><span class=3D"mobileHide">&=
+nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><a href=3D"https://click.mailchimp.com/=
+track/click/30010842/mailchimp.com?p=3DeyJzIjoiNkswUzFqMlJsaVFwRmZVSlhtV1RZ=
+dXF3UlBZIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHR=
+wczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvbGVnYWxcXFwvdGVybXNcXFwvXCIsXCJpZFwiOl=
+wiMGM0NTlhMDI4NzE5NDZhNWI3ZGE2MGVlMWVlOGUyYjlcIixcInVybF9pZHNcIjpbXCI1YTMwM=
+jU1ODBlZTU5ZTc0MmZjN2EyODc4YzU5MmUzNjg3YTdlYTAzXCJdLFwibXNnX3RzXCI6MTc1MjYw=
+NzcxNn0ifQ" target=3D"_blank" style=3D"color:#007C89; font-weight:500; text=
+-decoration:none;" class=3D"utilityLink">Terms of Use</a><span class=3D"mob=
+ileHide">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><a href=3D"https://click.mail=
+chimp.com/track/click/30010842/www.intuit.com?p=3DeyJzIjoiNWxEMHlUQy1Ub0E0S=
+nRsZGtiUjk3eEdNZXowIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJs=
+XCI6XCJodHRwczpcXFwvXFxcL3d3dy5pbnR1aXQuY29tXFxcL3ByaXZhY3lcXFwvc3RhdGVtZW5=
+0XFxcL1wiLFwiaWRcIjpcIjBjNDU5YTAyODcxOTQ2YTViN2RhNjBlZTFlZThlMmI5XCIsXCJ1cm=
+xfaWRzXCI6W1wiNTU5NzNjYTYzOWVkYzk3OTFiMzU0MGM5Nzc2MGE5NTZiZDFhYjM0YVwiXSxcI=
+m1zZ190c1wiOjE3NTI2MDc3MTZ9In0" target=3D"_blank" style=3D"color:#007C89; f=
+ont-weight:500; text-decoration:none;" class=3D"utilityLink">Privacy Policy=
+</a><br class=3D"mobileHide" />
+                            <a href=3D"https://click.mailchimp.com/track/cl=
+ick/30010842/admin.mailchimp.com?p=3DeyJzIjoiellfM3gtUnR1ZTJ5VXphMjRJV1QwSD=
+lnaDJzIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwc=
+zpcXFwvXFxcL2FkbWluLm1haWxjaGltcC5jb21cXFwvYWNjb3VudFxcXC9iaWxsaW5naW5mb1xc=
+XC9cIixcImlkXCI6XCIwYzQ1OWEwMjg3MTk0NmE1YjdkYTYwZWUxZWU4ZTJiOVwiLFwidXJsX2l=
+kc1wiOltcIjhiMGQ2YWMwNGI3ZThmZGE1NTM0MDA4YTExZGM1YzU2MGI1OWIwZDdcIl0sXCJtc2=
+dfdHNcIjoxNzUyNjA3NzE2fSJ9" target=3D"_blank" style=3D"color:#007C89; font-=
+weight:500; text-decoration:none;" class=3D"utilityLink">Turn off Notificat=
+ion</a>
+                        </td>
+                    </tr>
+                    <!-- // END FOOTER -->
+                </table>
+                <!--[if gte mso 9]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+    </table>
+</center>
+<img src=3D"https://click.mailchimp.com/track/open.php?u=3D30010842&id=3D0c=
+459a02871946a5b7da60ee1ee8e2b9" height=3D"1" width=3D"1" alt=3D""></body>
+</html>
+
+--_av-G7Mt353pBDzLR2vr0TBfUA--
+

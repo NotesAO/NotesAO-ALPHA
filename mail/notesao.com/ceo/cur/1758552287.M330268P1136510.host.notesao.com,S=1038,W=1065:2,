@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 4c1YEt9g0Wh+VxEAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Mon, 22 Sep 2025 09:44:47 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 22 Sep 2025 09:44:47 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v0hmZ-00000004lei-16tb
+	for admin@notesao.com;
+	Mon, 22 Sep 2025 09:44:47 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Elicia Luna-Johnson
+X-PHP-Script: ffl.notesao.com/intake.php for 104.28.97.28
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: elicia.johnson43@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v0hmZ-00000004lei-16tb@host.notesao.com>
+Date: Mon, 22 Sep 2025 09:44:47 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

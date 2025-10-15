@@ -1,0 +1,105 @@
+Return-Path: <>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id Brc+EDHuuWiAezQAIW4ynA
+	(envelope-from <>); Thu, 04 Sep 2025 14:53:21 -0500
+Return-path: <>
+Envelope-to: no-reply@notesao.com
+Delivery-date: Thu, 04 Sep 2025 14:53:21 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1uuG1J-0000000EQlW-0SA3
+	for no-reply@notesao.com;
+	Thu, 04 Sep 2025 14:53:21 -0500
+X-Failed-Recipients: redbirdeudcation.mark@gmail.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@notesao.com
+References: <NqJ5lXrRuk1x6S57Ho4Q2sDy454J3dluyd72oZqvw@lakeview.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1757015601-eximdsn-1174401060
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1uuG1J-0000000EQlW-0SA3@host.notesao.com>
+Date: Thu, 04 Sep 2025 14:53:21 -0500
+
+--1757015601-eximdsn-1174401060
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  redbirdeudcation.mark@gmail.com
+    host gmail-smtp-in.l.google.com [142.251.179.27]
+    SMTP error from remote mail server after RCPT TO:<redbirdeudcation.mark@gmail.com>:
+    550-5.1.1 The email account that you tried to reach does not exist. Please try
+    550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. For more information, go to
+    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser af79cd13be357-80aae5f7579si211123585a.1215 - gsmtp
+
+--1757015601-eximdsn-1174401060
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;redbirdeudcation.mark@gmail.com
+Status: 5.0.0
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. For more information, go to
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser af79cd13be357-80aae5f7579si211123585a.1215 - gsmtp
+
+--1757015601-eximdsn-1174401060
+Content-type: message/rfc822
+
+Return-path: <no-reply@notesao.com>
+Received: from [50.28.37.79] (port=47930 helo=lakeview.notesao.com)
+	by host.notesao.com with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <no-reply@notesao.com>)
+	id 1uuG1L-0000000EQl9-2xqj
+	for redbirdeudcation.mark@gmail.com;
+	Thu, 04 Sep 2025 14:53:20 -0500
+Date: Thu, 4 Sep 2025 14:53:20 -0500
+To: redbirdeudcation.mark@gmail.com
+From: NotesAO <no-reply@notesao.com>
+Subject: Activate your NotesAO account
+Message-ID: <NqJ5lXrRuk1x6S57Ho4Q2sDy454J3dluyd72oZqvw@lakeview.notesao.com>
+X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="b1=_NqJ5lXrRuk1x6S57Ho4Q2sDy454J3dluyd72oZqvw"
+Content-Transfer-Encoding: 8bit
+
+--b1=_NqJ5lXrRuk1x6S57Ho4Q2sDy454J3dluyd72oZqvw
+Content-Type: text/plain; charset=us-ascii
+
+
+                      Hello moneal,
+                      An administrator just created an account for you on NotesAO.
+                      Click the button below to activate your account and choose your password:
+                      
+                        Activate Account
+                      
+                      This link works only once.
+
+--b1=_NqJ5lXrRuk1x6S57Ho4Q2sDy454J3dluyd72oZqvw
+Content-Type: text/html; charset=us-ascii
+
+
+                      <p>Hello moneal,</p>
+                      <p>An administrator just created an account for you on <strong>NotesAO</strong>.</p>
+                      <p>Click the button below to activate your account and choose your password:</p>
+                      <p>
+                        <a href='https://notesao.com/activate.php?clinic=lakeview&code=6ab64e5020f52a2c901c1c4037fc872898fa838d76811ab181b4354a009ea352' style='padding:10px 18px;background:#211c56;color:#fff;
+                          text-decoration:none;border-radius:6px;'>Activate Account</a>
+                      </p>
+                      <p>This link works only once.</p>
+
+
+--b1=_NqJ5lXrRuk1x6S57Ho4Q2sDy454J3dluyd72oZqvw--
+
+
+--1757015601-eximdsn-1174401060--

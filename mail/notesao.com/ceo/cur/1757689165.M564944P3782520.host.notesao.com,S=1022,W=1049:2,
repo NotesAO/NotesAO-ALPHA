@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id gguaIU01xGh4tzkAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Fri, 12 Sep 2025 09:59:25 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Fri, 12 Sep 2025 09:59:25 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1ux5FF-0000000Fs0I-2BYF
+	for admin@notesao.com;
+	Fri, 12 Sep 2025 09:59:25 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for JL Hammond
+X-PHP-Script: ffl.notesao.com/intake.php for 12.75.129.78
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: jh9431492@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1ux5FF-0000000Fs0I-2BYF@host.notesao.com>
+Date: Fri, 12 Sep 2025 09:59:25 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

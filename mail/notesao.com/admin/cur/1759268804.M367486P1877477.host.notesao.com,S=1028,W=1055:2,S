@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id p7uKFMRP3GjlpRwAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Tue, 30 Sep 2025 16:46:44 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Tue, 30 Sep 2025 16:46:44 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v3iBI-00000007sPk-0rSR
+	for admin@notesao.com;
+	Tue, 30 Sep 2025 16:46:44 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Keandre Davis
+X-PHP-Script: ffl.notesao.com/intake.php for 76.184.0.73
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: charongregory@yahoo.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v3iBI-00000007sPk-0rSR@host.notesao.com>
+Date: Tue, 30 Sep 2025 16:46:44 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

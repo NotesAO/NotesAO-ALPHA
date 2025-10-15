@@ -1,0 +1,1 @@
+[29-Aug-2025 14:46:32 America/Chicago] CreateCard failed: HTTP 400 resp={"errors":[{"category":"INVALID_REQUEST_ERROR","code":"BAD_REQUEST","detail":"The field named \"customer_id\" is unrecognized.","field":"customer_id"}]}

@@ -1,0 +1,171 @@
+Return-Path: <iman.j.ashley@gmail.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id AC3hN+6X4miafwYAIW4ynA
+	(envelope-from <iman.j.ashley@gmail.com>); Sun, 05 Oct 2025 11:08:14 -0500
+Return-path: <iman.j.ashley@gmail.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 05 Oct 2025 11:08:14 -0500
+Received: from mail-yw1-f182.google.com ([209.85.128.182]:60483)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <iman.j.ashley@gmail.com>)
+	id 1v5RHQ-00000001nIM-43qy
+	for admin@notesao.com;
+	Sun, 05 Oct 2025 11:08:14 -0500
+Received: by mail-yw1-f182.google.com with SMTP id 00721157ae682-71d601859f5so44791157b3.0
+        for <admin@notesao.com>; Sun, 05 Oct 2025 09:08:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1759680492; x=1760285292; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=jE7VyDd0xirrqi1KXDfaL1tCt0Q8tLgaz5h7aj4Izzs=;
+        b=H5piSbKiKZ6PNGjP8QI7G6eKP8MukABZbvJGhgLcmDpjBJAPFBhRbKTXfeRccxnK+6
+         8jpuF74RghKRTHrLGKjPSypwE7raNFNFvLdIlZL7d0KC9v8+DwHDqpQWz2KT//MbeMgT
+         0sriC1277MuLKqEKdKrGyc7V+JfBS4eBTDnPUDcSkF23H6cpxcCIRucW1Ri4Hn+OIvE6
+         EOmFlnRn35LCEOEXZFRfXUnJUZfMdpyIQRS/7PxoMo1PH+PgG+kEAgVdRLHvMXlB6u2N
+         j0AdPqGSwiKNBduRl1qRiF2eM/A1/9j2OA1HGeGQyuLzsT4iJO/4uyqadBJIt0320r8W
+         ysxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759680492; x=1760285292;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=jE7VyDd0xirrqi1KXDfaL1tCt0Q8tLgaz5h7aj4Izzs=;
+        b=i2RXeMJmDn/9pu023cxaymQxbI0SR3CLN63siPAl1BPdArGfdb15oai2fKkhTzTWh0
+         tGaztOzWH6ixHlxh278OBDF89rFgBM1NSsFjWKjZwh6p5yqPGRrjqdX7jt1vgL5h9e/b
+         hH9NnPjmzurYuG8UZqpalkNr9p1IatIxxEEQQ3NfgOdrEQvU+3jSRpb9ph/QW0TnjbmJ
+         Sf/Nh+7n9zp//FP3oMJedqI/66uz+0paw9CcXqSWk1gaucwQJiIfHmF2LwNVUG/uAcDg
+         605eLhjXsc/SEcMlghdwbdxhMU8nC0BaDBwXhqczTtuCORFHhP7OvzwjnVMiHzAVHmdR
+         N6/A==
+X-Gm-Message-State: AOJu0Yw5KjH+Da+6jIo+NVq0jEIEZD0Ot/uEyVXHFscCBeeFVi9aQNVn
+	tI3nFXt742Wrl09NvPq1hui1tuo5dPeCtCbigZ0jwvSgit88A5apcM6CJOlBRiSQdgb2hbFM/55
+	OEhV1y353JNP5uMuGD+YjA9atlkY698PH5Q==
+X-Gm-Gg: ASbGncualc1sK2JCyVNX6yxNQ648akcLzNlaL7VXBIiwvY8MHr/8IG1eSesh3eJjKFm
+	AERJSjr8+LpEPCboGkIDdFWrq/9Y/6iUQNtvtPnzb7P/jj9JvIRKR/jNV9cO8xrf5R+XVxYemi4
+	jdS+7mCwYDjzS/r9/aYPgQbX97uuJK2yThl78WL10XCiwdEPDEw/rSb6O3wEY4brvzIxFIYC3T4
+	AkV10C/L/jUug9AjgeMyfDVAqhCaNJ3dqd6OUgnPK8/GKvb7ly1cyI0SzGBPMYbOr7rSYTH1g==
+X-Google-Smtp-Source: AGHT+IEcxnqzVq7ikEjwojAu9TwIvd//qsVFfliMgRm3wjG5MG+6RdalPLaYD0Y9lQdPolfKXH6GTB7UFjT/PTSv+lo=
+X-Received: by 2002:a53:c0d2:0:b0:63b:69b0:8e7 with SMTP id
+ 956f58d0204a3-63b9a0e0ce1mr6122308d50.32.1759680491931; Sun, 05 Oct 2025
+ 09:08:11 -0700 (PDT)
+MIME-Version: 1.0
+References: <E1v5RFz-00000001n81-3FPI@host.notesao.com>
+In-Reply-To: <E1v5RFz-00000001n81-3FPI@host.notesao.com>
+From: Iman Banks <iman.j.ashley@gmail.com>
+Date: Sun, 5 Oct 2025 11:08:01 -0500
+X-Gm-Features: AS18NWAFkwe5r_jPUJ5BZitW2RgyCnnKvKF1zvdWxm46UXiPl19ZihQb-6TChTQ
+Message-ID: <CAO9P3aKjLj1AJO-+5uJ7igHwW03bPFEAhsbSMceL+NLYoG+yhA@mail.gmail.com>
+Subject: Re: Thinking for a Change Group Reminder: Sunday at 2:30 PM or 5:00 PM
+To: admin@notesao.com
+Content-Type: multipart/alternative; boundary="000000000000a3cc9806406b8aff"
+X-Spam-Status: No, score=0.5
+X-Spam-Score: 5
+X-Spam-Bar: /
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__My_at?= =?ISO-8859-1?Q?tendance_has_been_paused=2E_On_Sun=2C_Oct_5=2C_2025_a?= =?ISO-8859-1?Q?t_11=3A06=0A____AM_Free_for_Life_Group_=3C_wrote=3A_=3E_?= =?ISO-8859-1?Q?=5Bimage=3A_Free_for_Life_Group=5D_=3E_=3E_Hi_Iman=2C=0A?= =?ISO-8859-1?Q?____=3E_=3E_*Your_Thinking_for_a_Change_group_is_Sund?= =?ISO-8859-1?Q?ay_at_2=3A30_PM_or_5=3A00_PM_=28=29=2E*=0A____=3E_=3E_?= =?ISO-8859-1?Q?Your_NE=3B_Field_Services_201_E=2E_Plaza=2C_Hurst_man?= =?ISO-8859-1?Q?dated_T4C_group_is_=3E_scheduled=0A____=5B=2E=2E=2E=5D_?= =?ISO-8859-1?Q?=0A_Content_analysis_details=3A___=280=2E5_points=2C_?= =?ISO-8859-1?Q?5=2E0_required=29=0A__pts_rule_name______________desc?= =?ISO-8859-1?Q?ription=0A_----_----------------------_--------------?= =?ISO-8859-1?Q?------------------------------------=0A__0=2E0_RCVD=5FI?= =?ISO-8859-1?Q?N=5FVALIDITY=5FSAFE=5FBLOCKED_RBL=3A_ADMINISTRATOR_NO?= =?ISO-8859-1?Q?TICE=3A_The_query_to=0A______________________________?= =?ISO-8859-1?Q?Validity_was_blocked=2E__See=0A______________________?= =?ISO-8859-1?Q?_______https=3A//knowledge=2Evalidity=2Ecom/hc/en-us/?= =?ISO-8859-1?Q?articles/20961730681243=0A___________________________?= =?ISO-8859-1?Q?___for_more_information=2E=0A________________________?= =?ISO-8859-1?Q?_____=5B209=2E85=2E128=2E182_listed_in_sa-accredit=2Eh?= =?ISO-8859-1?Q?abeas=2Ecom=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FCERTI?= =?ISO-8859-1?Q?FIED=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The=0A_?= =?ISO-8859-1?Q?____________________________query_to_Validity_was_blo?= =?ISO-8859-1?Q?cked=2E__See=0A_____________________________https=3A/?= =?ISO-8859-1?Q?/knowledge=2Evalidity=2Ecom/hc/en-us/articles/2096173?= =?ISO-8859-1?Q?0681243=0A______________________________for_more_info?= =?ISO-8859-1?Q?rmation=2E=0A_________________________=5B209=2E85=2E1?= =?ISO-8859-1?Q?28=2E182_listed_in_sa-trusted=2Ebondedsender=2Eorg=5D=0A?= =?ISO-8859-1?Q?__0=2E0_RCVD=5FIN=5FVALIDITY=5FRPBL=5FBLOCKED_RBL=3A_?= =?ISO-8859-1?Q?ADMINISTRATOR_NOTICE=3A_The_query_to=0A______________?= =?ISO-8859-1?Q?________________Validity_was_blocked=2E__See=0A______?= =?ISO-8859-1?Q?_______________________https=3A//knowledge=2Evalidity?= =?ISO-8859-1?Q?=2Ecom/hc/en-us/articles/20961730681243=0A___________?= =?ISO-8859-1?Q?___________________for_more_information=2E=0A________?= =?ISO-8859-1?Q?____________________=5B209=2E85=2E128=2E182_listed_in?= =?ISO-8859-1?Q?_bl=2Escore=2Esenderscore=2Ecom=5D=0A__0=2E0_URIBL=5FB?= =?ISO-8859-1?Q?LOCKED__________ADMINISTRATOR_NOTICE=3A_The_query_to_?= =?ISO-8859-1?Q?URIBL_was_blocked=2E=0A_____________________________S?= =?ISO-8859-1?Q?ee=0A_____________________________http=3A//wiki=2Eapa?= =?ISO-8859-1?Q?che=2Eorg/spamassassin/DnsBlocklists#dnsbl-block=0A__?= =?ISO-8859-1?Q?____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?_____________________________=5BURI=3A_notesao=2Ecom=5D=0A?= =?ISO-8859-1?Q?_-0=2E0_SPF=5FPASS_______________SPF=3A_sender_matche?= =?ISO-8859-1?Q?s_SPF_record=0A_-0=2E1_DKIM=5FVALID=5FEF__________Mes?= =?ISO-8859-1?Q?sage_has_a_valid_DKIM_or_DK_signature_from=0A________?= =?ISO-8859-1?Q?_____________________envelope-from_domain=0A_-0=2E1_D?= =?ISO-8859-1?Q?KIM=5FVALID=5FAU__________Message_has_a_valid_DKIM_or?= =?ISO-8859-1?Q?_DK_signature_from_author's=0A_______________________?= =?ISO-8859-1?Q?______domain=0A__0=2E1_DKIM=5FSIGNED____________Messa?= =?ISO-8859-1?Q?ge_has_a_DKIM_or_DK_signature=2C_not_necessarily_vali?= =?ISO-8859-1?Q?d=0A_-0=2E1_DKIM=5FVALID_____________Message_has_at_l?= =?ISO-8859-1?Q?east_one_valid_DKIM_or_DK_signature=0A__0=2E0_FREEMAI?= =?ISO-8859-1?Q?L=5FFROM__________Sender_email_is_commonly_abused_end?= =?ISO-8859-1?Q?user_mail_provider=0A_____________________________=5Bi?= =?ISO-8859-1?Q?man=2Ej=2Eashley=28at=29gmail=2Ecom=5D=0A__0=2E0_HTML?= =?ISO-8859-1?Q?=5FMESSAGE___________BODY=3A_HTML_included_in_message?= =?ISO-8859-1?Q?=0A__0=2E7_HTML=5FIMAGE=5FONLY=5F28_____BODY=3A_HTML=3A_?= =?ISO-8859-1?Q?images_with_2400-2800_bytes_of_words?=
+X-Spam-Flag: NO
+
+--000000000000a3cc9806406b8aff
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+My attendance has been paused.
+
+On Sun, Oct 5, 2025 at 11:06=E2=80=AFAM Free for Life Group <
+no-reply@ffl.notesao.com> wrote:
+
+> [image: Free for Life Group]
+>
+> Hi Iman,
+>
+> *Your Thinking for a Change group is Sunday at 2:30 PM or 5:00 PM ().*
+>
+> Your NE; Field Services 201 E. Plaza, Hurst mandated T4C group is
+> scheduled. NE; Field Services 201 E. Plaza, Hurst and Hanina Omar expect
+> your presence. Please arrive early. *Lockout is *. Your presence is a
+> mandatory stipulation. Incarceration occurs for non-attendance. Enjoy lif=
+e
+> fearlessly by remaining in good standing with CSCD & TDCJ. You've got thi=
+s!
+>
+> Where: In person =E2=80=94 Arlington Office: 6850 Manhattan Blvd., Fort W=
+orth, TX
+> 76120
+> <https://www.google.com/maps/search/6850+Manhattan+Blvd.,+Fort+Worth,+TX+=
+76120?entry=3Dgmail&source=3Dg>
+>
+> Client Portal (for Make-Up Group Options):
+> FFL =E2=80=93 Client Portal <https://ffl.notesao.com/clientportal.php>
+>
+> Questions? Reply to this email with any attendance or payment concerns OR
+> call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+>
+> Blessings,
+> Free for Life Group
+> ------------------------------
+>
+> This reminder was sent by Free for Life Group. If you no longer wish to
+> receive emails at this address, unsubscribe here
+> <https://ffltest.notesao.com/unsubscribe.php?e=3Diman.j.ashley%40gmail.co=
+m&t=3D49eeec8643118ab2b78f3eda736bd634eee2820a21e952b26b2a84c550e18285>
+> .
+>
+
+--000000000000a3cc9806406b8aff
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div><br></div><div dir=3D"auto">My attendance has been paused.=C2=A0</div>=
+<div dir=3D"auto"><br><div class=3D"gmail_quote gmail_quote_container" dir=
+=3D"auto"><div dir=3D"ltr" class=3D"gmail_attr">On Sun, Oct 5, 2025 at 11:0=
+6=E2=80=AFAM Free for Life Group &lt;<a href=3D"mailto:no-reply@ffl.notesao=
+.com">no-reply@ffl.notesao.com</a>&gt; wrote:<br></div><blockquote class=3D=
+"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;borde=
+r-left-style:solid;padding-left:1ex;border-left-color:rgb(204,204,204)"><di=
+v style=3D"text-align:center;margin:0px 0px 12px"><img src=3D"https://fflte=
+st.notesao.com/ffllogo.png" alt=3D"Free for Life Group" style=3D"max-width:=
+ 100%; height: auto; display: inline-block;"></div><p>Hi Iman,</p>
+
+<p><strong>Your Thinking for a Change group is Sunday at 2:30 PM or 5:00 PM=
+ ().</strong></p>
+
+<p>
+  Your NE; Field Services 201 E. Plaza, Hurst mandated T4C group is schedul=
+ed. NE; Field Services 201 E. Plaza, Hurst and Hanina Omar expect your pres=
+ence.
+  Please arrive early. <em>Lockout is </em>. Your presence is a mandatory s=
+tipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaini=
+ng in good standing with CSCD &amp; TDCJ.
+  You&#39;ve got this!
+</p>
+
+<p>Where: In person =E2=80=94 Arlington Office: <a href=3D"https://www.goog=
+le.com/maps/search/6850+Manhattan+Blvd.,+Fort+Worth,+TX+76120?entry=3Dgmail=
+&amp;source=3Dg">6850 Manhattan Blvd., Fort Worth, TX 76120</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href=3D"https://ffl.notesao.com/clientportal.php" target=3D"_blank">FF=
+L =E2=80=93 Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR=
+ call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style=3D"border-top-width:1px;b=
+order-top-style:solid;margin:24px 0px;border-top-color:rgb(221,221,221)"><p=
+ style=3D"font-style:normal;font-variant-caps:normal;font-weight:normal;fon=
+t-size:12px;line-height:1.4;font-family:Arial,Helvetica,sans-serif;font-siz=
+e-adjust:none;font-kerning:auto;font-variant-alternates:normal;font-variant=
+-ligatures:normal;font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-feature-settings:normal;color:rgb(102,102,102)">This reminder was se=
+nt by Free for Life Group. If you no longer wish to receive emails at this =
+address, <a href=3D"https://ffltest.notesao.com/unsubscribe.php?e=3Diman.j.=
+ashley%40gmail.com&amp;t=3D49eeec8643118ab2b78f3eda736bd634eee2820a21e952b2=
+6b2a84c550e18285" target=3D"_blank" style=3D"font-family:Arial,Helvetica,sa=
+ns-serif">unsubscribe here</a>.</p>
+</blockquote></div></div>
+
+--000000000000a3cc9806406b8aff--

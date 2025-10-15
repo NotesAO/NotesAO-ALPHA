@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id EuhSOEcGrWjC7hwAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Mon, 25 Aug 2025 19:56:39 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 25 Aug 2025 19:56:39 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uqhzL-00000007xGe-3mhO
+	for admin@notesao.com;
+	Mon, 25 Aug 2025 19:56:39 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Cesar Calderon
+X-PHP-Script: ffl.notesao.com/intake.php for 172.58.180.98
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: cesarcalderon235@icloud.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uqhzL-00000007xGe-3mhO@host.notesao.com>
+Date: Mon, 25 Aug 2025 19:56:39 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

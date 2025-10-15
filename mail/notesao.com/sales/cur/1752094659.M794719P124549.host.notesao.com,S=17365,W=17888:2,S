@@ -1,0 +1,523 @@
+Return-Path: <brandee.faughn@sagetx.org>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id JPcjL8PXbmiF5gEAIW4ynA
+	(envelope-from <brandee.faughn@sagetx.org>)
+	for <sales@notesao.com>; Wed, 09 Jul 2025 15:57:39 -0500
+Return-path: <brandee.faughn@sagetx.org>
+Envelope-to: sales@notesao.com
+Delivery-date: Wed, 09 Jul 2025 15:57:39 -0500
+Received: from semfq04.mfg.siteprotect.com ([64.26.60.185]:60175)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <brandee.faughn@sagetx.org>)
+	id 1uZbrG-00000000WNe-3gBd
+	for sales@notesao.com;
+	Wed, 09 Jul 2025 15:57:39 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=mfg.outbound; s=default; h=Content-Type:MIME-Version:Subject:References:
+	In-Reply-To:Message-ID:To:Reply-To:Sender:From:Date:cc:bcc:
+	content-transfer-encoding; bh=YA6tGw5QRVQbZxC6lH9glq8x3jyfWwickBBTnitFvHM=; 
+	b=i/c3nFrIIwNIwJfSD8hBDPNbnGBEOzDcIyw3I3IeWMxgAgOfnjvBR14VI1RCVggNRXR+IAloOkW
+	jGrQwGQhXoSOh6K+Nby43HAvqMFbY9oiGpNZdZRmfXrLlt6/IWlTJ/tN5Y6SjBSU3mGhAe75nBW/Q
+	AC13nXjLC2p7qedy8bQTdOo/JiJo5VNTnncg6e5kuyWtXpK6rexOMZkSnR5LBNmChkdveN4XXrnID
+	JpDhCi6sc2SJj4ozwvKifSeOU2/NXTPs1W5JnBav4KNRE2TiMNCUXVmIA1Rx9vshVrL4fT2kyIZ1s
+	k/ViBgKbFps3F8Aq/71b3lMh037bN+EXsa0g==;
+Received: from smtpauth02.mfg.siteprotect.com ([64.26.60.151])
+	by se04.mfg.siteprotect.com with esmtp (Exim 4.94.2)
+	(envelope-from <brandee.faughn@sagetx.org>)
+	id 1uZbpq-00Cbn0-Mj
+	for sales@notesao.com; Wed, 09 Jul 2025 16:57:36 -0400
+Received: from oxapp01.mfg.tampa.hostway (unknown [64.41.126.40])
+	(Authenticated sender: brandee.faughn@sagetx.org)
+	by smtpauth02.mfg.siteprotect.com (Postfix) with ESMTPSA id 4bcqzy6038zCSG1LM
+	for <sales@notesao.com>; Wed,  9 Jul 2025 16:57:34 -0400 (EDT)
+Date: Wed, 9 Jul 2025 14:57:34 -0600 (MDT)
+From: "brandee.faughn@sagetx.org" <brandee.faughn@sagetx.org>
+Sender: "brandee.faughn@sagetx.org" <brandee.faughn@sagetx.org>
+Reply-To: "brandee.faughn@sagetx.org" <brandee.faughn@sagetx.org>
+To: sales@notesao.com
+Message-ID: <Appointment.835597E05C9035AE70BD9F058DE280A3-DA5315CD059A7D0A.1752094654689@open-xchange.com>
+In-Reply-To: <Appointment.835597E05C9035AE70BD9F058DE280A3-DA5315CD059A7D0A@open-xchange.com>
+References: <Appointment.835597E05C9035AE70BD9F058DE280A3-DA5315CD059A7D0A@open-xchange.com>
+Subject: brandee.faughn@sagetx.org tentatively accepted the invitation: SAGE
+ NotesAO Meeting
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_1063383_1556887473.1752094654687"
+X-Priority: 3 (normal)
+X-Mailer: Open-Xchange Mailer v7.10.6-Rev57
+Auto-Submitted: auto-generated
+X-Originating-Client: open-xchange-appsuite
+Authentication-Results: mfg.siteprotect.com; auth=pass smtp.auth=brandee.faughn@sagetx.org
+X-Originating-IP: 64.26.60.151
+X-SpamExperts-Domain: mfg.outbound
+X-SpamExperts-Username: 64.26.60.150/31
+Authentication-Results: mfg.siteprotect.com; auth=pass smtp.auth=64.26.60.150/31@mfg.outbound
+X-SpamExperts-Outgoing-Class: ham
+X-SpamExperts-Outgoing-Evidence: Combined (0.16)
+X-Recommended-Action: accept
+X-Filter-ID: 9kzQTOBWQUFZTohSKvQbgI7ZDo5ubYELi59AwcWUnuXi6aFhH9px/3cu8rebgWa/3j95wyUug904
+ 0pfb1W9Y3yu2SmbhJN1U9FKs8X3+Nt3RsRctZhr9cmSELHY9zS0ojuahNNh3DphLQ2uTwxjWIzyw
+ 4aGkv23VE3M93sKsN4m6h5or2ko6D9K9NwcRQ9g4lDtR/qCXMVqSLVxeSwueS0r/pqDh7apldsyM
+ rNwI+mb6BpeseSBELv+0jcKNeZXKZLZTVsOk5Q6uYTW9VBPoA+r2oFmpbaQNOwKgY1svdehsNmbj
+ uX/3lj9tqizcFIo5CPAbTif+lMN0KnFDV3bj9Zk5mH/X3pSH/ENJb2CQDctYptuo6nUi3mq0kk1S
+ CcjSkTlM0XgkvBKSodCLfS9uSUvNep7ohNLeaRujC1xnM6FYL17Lfdkw6suvYcXNkjbmzdMb1l3u
+ 6COzmyhVyUMcl1XLezN6ogkT4hkQJFduMeIoYlICXlX2nJIPfZsSgB6/17NirEYyqwqMBGrw8ELi
+ qB//N2HiqHJMvinoGpui0GirKgJAcX4Sp+Sl6w1oYWr4GSCgvRtyQS57uPAmeVWxyU3w+nMbHRSg
+ 12OSAEHyDPXT2NnmvygaCCbe1hWXX2E0If4gAWlh7i/hbNmDyO0X2ojmQT2nbHiF5QbDilNiPyH0
+ uCc7bEac+I7mZk7c4JC9Yu8C5mJ57ZG9g9QfbBpIF2/pR274Utu29ShHYWlD0fsjXkZgtjl0Yb/6
+ 104h8vYCHyUwAcvmyI5lof+cH9qdLZmT1pv3ikbET05BBNeMCA2gZZAS9m5ZAKg1qGreZOdFio+4
+ oSAzJ8FbTba/lp0AiVHuAq4k7PqG9M5idz7joR6DpzxSn0CfDl9clHs0PWBF50R3KS/gHtB9FyIq
+ bbroexxwEiTVJqDh0qKoKsXx5lnFjag/2ncjYk/AGHsoBYTcrjeZyCjDaiuX4vP1npBEhbzUQoQC
+ IHouW3aYgfEHrHjvZ+cXa4SPMMsvIvQ05tn89cRF9Zhm78TRj7Zxb9JlVtaepAO/K630eHPSiGhL
+ G23K14atNZaliZXSUa1LiSw3FvECghuIWaHVOrjroIefsD5wjYe0j+uY3ECmEdq7kwsafIfe/krn
+ inf3tPdBqp5f
+X-Report-Abuse-To: spam@se02.mfg.siteprotect.com
+X-Complaints-To: abuse@se01.mfg.siteprotect.com
+X-Spam-Status: No, score=0.2
+X-Spam-Score: 2
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  brandee.faughn@sagetx.org has tentatively accepted the invitation:
+    ====[ SAGE NotesAO Meeting ]==== All times will be shown in the timezone
+   Mountain Standard Time 
+ Content analysis details:   (0.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [64.26.60.185 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                           [64.26.60.185 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [64.26.60.185 listed in bl.score.senderscore.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+  0.0 KAM_DMARC_STATUS       Test Rule for DKIM or SPF Failure with Strict
+                             Alignment
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+X-Spam-Flag: NO
+
+------=_Part_1063383_1556887473.1752094654687
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1063384_648094296.1752094654687"
+
+------=_Part_1063384_648094296.1752094654687
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+brandee.faughn@sagetx.org has tentatively accepted the invitation:
+
+
+
+====[       SAGE NotesAO Meeting       ]====
+
+All times will be shown in the timezone Mountain Standard Time
+
+When: Monday, July 14, 2025 1:00 PM - 2:00 PM
+Where: 4601 Boat Club Road, Fort Worth, Texas 76135
+
+
+====================================
+NotesAO meeting
+====================================
+
+
+== Participants ==
+
+brandee.faughn@sagetx.org (tentatively accepted)
+andrea.anderson@sagetx.org (waiting)
+corre.brown@sagetx.org (waiting)
+keyna.anderson@sagetx.org (waiting)
+mila.sherman@sagetx.org (waiting)
+Vanericmartin (waiting)
+
+== Resources ==
+
+
+== Details ==
+
+Show as: Reserved
+Created: Wednesday, July 9, 2025 2:57 PM - sales@notesao.com
+
+
+
+
+
+You have received this E-Mail because you are the organizer of this appointment.
+
+
+
+
+------=_Part_1063384_648094296.1752094654687
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!doctype html>
+<html>
+ <head> 
+  <title></title> 
+  <meta charset="UTF-8"> 
+  <style type="text/css">
+.content {
+white-space: normal;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+cursor: default;
+}
+/* shown_as */
+
+
+.shown_as.reserved { background-color: #08c; } /* blue */
+.shown_as.temporary { background-color: #fc0; } /* yellow */
+.shown_as.absent { background-color: #913F3F; } /* red */
+.shown_as.free { background-color: #8EB360; } /* green */
+
+.shown_as_label.reserved { color: #08c; } /* blue */
+.shown_as_label.temporary { color: #fc0; } /* yellow */
+.shown_as_label.absent { color: #913F3F; } /* red */
+.shown_as_label.free { color: #8EB360; } /* green */
+
+em {
+font-weight: bold;
+}
+
+/* Detail view */
+
+.timezone {
+margin-bottom: 2em;
+}
+
+.justification, .attachmentNote {
+margin-top: 2em;
+margin-bottom: 2em;
+}
+
+.calendar-detail .action {
+float: right;
+margin-right: 1em;
+}
+
+.calendar-detail .link {
+cursor: pointer;
+text-decoration: underline;
+color: #00a0cd;
+}
+
+.calendar-detail .calendar-buttons {
+height: 2em;
+text-align: right;
+line-height: 2em;
+border-bottom: 1px solid #f0f0f0;
+}
+
+.calendar-detail .date {
+font-size: 11pt;
+color: #ccc;
+}
+
+.calendar-detail .interval {
+color: #555;
+white-space: nowrap;
+float: right;
+}
+
+.calendar-detail .day {
+color: #888;
+}
+
+.calendar-detail .title {
+font-size: 18pt;
+line-height: 22pt;
+margin: 0.25em 0 0.25em 0;
+}
+
+.calendar-detail .location {
+font-size: 11pt;
+color: #888;
+margin-bottom: 1em;
+}
+
+.calendar-detail .label {
+font-size: 9pt;
+color: #888;
+clear: both;
+border-bottom: 1px solid #ccc;
+padding: 1em 0 0.25em 0em;
+margin-bottom: 0.5em;
+}
+
+.calendar-detail .note {
+max-width: 550px;
+margin: 2em 0 1em 0;
+-webkit-user-select: text;
+-moz-user-select: text;
+user-select: text;
+cursor: text;
+}
+
+.calendar-detail .participants {
+min-height: 2em;
+}
+
+.calendar-detail .participants table {
+text-align: left;
+vertical-align: left;
+}
+
+.calendar-detail .participant {
+line-height: 1.2 em;
+}
+
+.calendar-detail .detail-label {
+display: inline-block;
+width: 110px;
+white-space: nowrap;
+color: #666;
+}
+
+.calendar-detail .detail {
+white-space: nowrap;
+}
+
+.calendar-detail .detail.shown_as {
+display: inline-block;
+height: 1em;
+width: 1em;
+}
+
+.calendar-detail .participant .status { font-weight: bold; }
+.calendar-detail .participant .status.accepted { color: #8EB360; } /* green */
+.calendar-detail .participant .status.declined { color: #913F3F; } /* red */
+.calendar-detail .participant .status.tentative { color: #c80; } /* orange */
+
+.calendar-detail .participant .comment {
+color: #888;
+display: block;
+white-space: normal;
+padding-left: 1em;
+}
+
+.calendar-detail .group {
+margin: 0.75em 0 0.25em 0;
+color: #333;
+}
+
+.person, .person-link {
+color: #00A0CD;
+}
+
+.clear-title {
+font-family: OpenSans, Helvetica, Arial, sans-serif;
+font-weight: 200;
+font-size: 20pt;
+line-height: 1.15em;
+}
+
+.calendar-action {
+margin-bottom: 2em;
+font-family: OpenSans, Helvetica, Arial, sans-serif;
+font-weight: 200;
+font-size: 12pt;
+}
+
+.calendar-action .changes{
+margin-top: 2em;
+font-size: 11pt;
+}
+
+.calendar-action .changes .original {
+font-weight: bold;
+}
+
+.calendar-action .changes .recurrencePosition {
+font-weight: bold;
+}
+
+.calendar-action .changes .updated {
+color: green;
+font-weight: bold;
+}
+
+.calendar-action .comment {
+margin-top: 1em;
+font-size: 10pt;
+text-indent: 3em;
+}
+
+.calendar-action .status {  }
+.calendar-action  .status.accepted { color: #8EB360; } /* green */
+.calendar-action  .status.declined { color: #913F3F; } /* red */
+.calendar-action  .status.tentative { color: #c80; } /* orange */
+
+
+</style> 
+ </head>
+ <body> 
+  <div class="content"> 
+   <div class="timezone">
+     All times will be shown in the timezone <em>Mountain Standard Time</em> 
+   </div> 
+   <div class="calendar-action">
+    <span class="person">brandee.faughn@sagetx.org</span> has <span class="status tentative">tentatively accepted</span> the invitation:
+   </div> 
+   <div class="calendar-detail"> 
+    <div class="date"> 
+     <div class="interval">
+       1:00 PM - 2:00 PM 
+     </div> 
+     <div class="day">
+       Monday, July 14, 2025 
+     </div> 
+    </div> 
+    <div class="title clear-title">
+      SAGE NotesAO Meeting 
+    </div> 
+    <div class="location">
+      4601 Boat Club Road, Fort Worth, Texas 76135 
+    </div> 
+    <div class="calendar-buttons" style="display:none"></div> 
+    <div class="note">
+      NotesAO meeting 
+    </div> 
+    <div class="participants"> 
+    </div> 
+    <div class="participants"> 
+     <div class="label">
+       Participants 
+     </div> 
+     <div class="participant-list"> 
+      <div class="participant"> <span class="person">brandee.faughn@sagetx.org</span> <span class="status tentative"> ?</span> <span class="comment"></span> 
+      </div> 
+      <div class="participant"> <span class="person">andrea.anderson@sagetx.org</span> <span class="comment"></span> 
+      </div> 
+      <div class="participant"> <span class="person">corre.brown@sagetx.org</span> <span class="comment"></span> 
+      </div> 
+      <div class="participant"> <span class="person">keyna.anderson@sagetx.org</span> <span class="comment"></span> 
+      </div> 
+      <div class="participant"> <span class="person">mila.sherman@sagetx.org</span> <span class="comment"></span> 
+      </div> 
+      <div class="participant"> <span class="person">Vanericmartin</span> <span class="comment"></span> 
+      </div> 
+     </div> 
+     <div class="participants-clear"></div> 
+    </div> 
+    <div class="participants"> 
+     <div class="participants-clear"></div> 
+    </div> 
+    <div> 
+     <div class="label">
+       Details 
+     </div> <span class="detail-label">Show as:&nbsp;</span><span class="detail"><span class="shown_as_label reserved">Reserved</span></span>
+     <br> <span class="detail-label">Created:&nbsp;</span><span class="detail"><span>Wednesday, July 9, 2025 2:57 PM</span> <span>-</span> <span>sales@notesao.com</span></span> 
+    </div> 
+    <div class="attachmentNote"> 
+    </div> 
+    <div class="justification">
+      You have received this E-Mail because you are the organizer of this appointment. 
+    </div> 
+   </div> 
+  </div> 
+ </body>
+</html>
+------=_Part_1063384_648094296.1752094654687
+Content-Type: text/calendar; charset=UTF-8; method=REPLY
+Content-Transfer-Encoding: 7bit
+
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Open-Xchange//7.10.6-Rev57//EN
+METHOD:REPLY
+BEGIN:VTIMEZONE
+TZID:America/Chicago
+LAST-MODIFIED:20250410T142247Z
+TZURL:https://www.tzurl.org/zoneinfo-outlook/America/Chicago
+X-LIC-LOCATION:America/Chicago
+BEGIN:DAYLIGHT
+TZNAME:CDT
+TZOFFSETFROM:-0600
+TZOFFSETTO:-0500
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CST
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0600
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20250709T205734Z
+ATTENDEE;CN=brandee.faughn@sagetx.org;PARTSTAT=TENTATIVE;ROLE=REQ-PARTICIPA
+ NT;CUTYPE=INDIVIDUAL;EMAIL=brandee.faughn@sagetx.org:mailto:brandee.faughn
+ @sagetx.org
+CATEGORIES:Work
+CLASS:PUBLIC
+CREATED:20250709T205734Z
+DESCRIPTION:NotesAO meeting
+DTEND;TZID=America/Chicago:20250714T150000
+DTSTART;TZID=America/Chicago:20250714T140000
+LAST-MODIFIED:20250709T205734Z
+LOCATION:4601 Boat Club Road\, Fort Worth\, Texas 76135
+ORGANIZER;EMAIL=sales@notesao.com:mailto:sales@notesao.com
+SEQUENCE:0
+SUMMARY:SAGE NotesAO Meeting
+TRANSP:OPAQUE
+UID:835597E05C9035AE70BD9F058DE280A3-DA5315CD059A7D0A
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+PRIORITY:2
+END:VEVENT
+END:VCALENDAR
+
+------=_Part_1063384_648094296.1752094654687--
+
+------=_Part_1063383_1556887473.1752094654687
+Content-Type: application/ics; charset=UTF-8; method=REPLY;
+ name=response.ics
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=response.ics
+
+QkVHSU46VkNBTEVOREFSDQpWRVJTSU9OOjIuMA0KUFJPRElEOi0vL09wZW4tWGNoYW5nZS8vNy4x
+MC42LVJldjU3Ly9FTg0KTUVUSE9EOlJFUExZDQpCRUdJTjpWVElNRVpPTkUNClRaSUQ6QW1lcmlj
+YS9DaGljYWdvDQpMQVNULU1PRElGSUVEOjIwMjUwNDEwVDE0MjI0N1oNClRaVVJMOmh0dHBzOi8v
+d3d3LnR6dXJsLm9yZy96b25laW5mby1vdXRsb29rL0FtZXJpY2EvQ2hpY2Fnbw0KWC1MSUMtTE9D
+QVRJT046QW1lcmljYS9DaGljYWdvDQpCRUdJTjpEQVlMSUdIVA0KVFpOQU1FOkNEVA0KVFpPRkZT
+RVRGUk9NOi0wNjAwDQpUWk9GRlNFVFRPOi0wNTAwDQpEVFNUQVJUOjE5NzAwMzA4VDAyMDAwMA0K
+UlJVTEU6RlJFUT1ZRUFSTFk7QllNT05USD0zO0JZREFZPTJTVQ0KRU5EOkRBWUxJR0hUDQpCRUdJ
+TjpTVEFOREFSRA0KVFpOQU1FOkNTVA0KVFpPRkZTRVRGUk9NOi0wNTAwDQpUWk9GRlNFVFRPOi0w
+NjAwDQpEVFNUQVJUOjE5NzAxMTAxVDAyMDAwMA0KUlJVTEU6RlJFUT1ZRUFSTFk7QllNT05USD0x
+MTtCWURBWT0xU1UNCkVORDpTVEFOREFSRA0KRU5EOlZUSU1FWk9ORQ0KQkVHSU46VkVWRU5UDQpE
+VFNUQU1QOjIwMjUwNzA5VDIwNTczNFoNCkFUVEVOREVFO0NOPWJyYW5kZWUuZmF1Z2huQHNhZ2V0
+eC5vcmc7UEFSVFNUQVQ9VEVOVEFUSVZFO1JPTEU9UkVRLVBBUlRJQ0lQQQ0KIE5UO0NVVFlQRT1J
+TkRJVklEVUFMO0VNQUlMPWJyYW5kZWUuZmF1Z2huQHNhZ2V0eC5vcmc6bWFpbHRvOmJyYW5kZWUu
+ZmF1Z2huDQogQHNhZ2V0eC5vcmcNCkNBVEVHT1JJRVM6V29yaw0KQ0xBU1M6UFVCTElDDQpDUkVB
+VEVEOjIwMjUwNzA5VDIwNTczNFoNCkRFU0NSSVBUSU9OOk5vdGVzQU8gbWVldGluZw0KRFRFTkQ7
+VFpJRD1BbWVyaWNhL0NoaWNhZ286MjAyNTA3MTRUMTUwMDAwDQpEVFNUQVJUO1RaSUQ9QW1lcmlj
+YS9DaGljYWdvOjIwMjUwNzE0VDE0MDAwMA0KTEFTVC1NT0RJRklFRDoyMDI1MDcwOVQyMDU3MzRa
+DQpMT0NBVElPTjo0NjAxIEJvYXQgQ2x1YiBSb2FkXCwgRm9ydCBXb3J0aFwsIFRleGFzIDc2MTM1
+DQpPUkdBTklaRVI7RU1BSUw9c2FsZXNAbm90ZXNhby5jb206bWFpbHRvOnNhbGVzQG5vdGVzYW8u
+Y29tDQpTRVFVRU5DRTowDQpTVU1NQVJZOlNBR0UgTm90ZXNBTyBNZWV0aW5nDQpUUkFOU1A6T1BB
+UVVFDQpVSUQ6ODM1NTk3RTA1QzkwMzVBRTcwQkQ5RjA1OERFMjgwQTMtREE1MzE1Q0QwNTlBN0Qw
+QQ0KWC1NSUNST1NPRlQtQ0RPLUJVU1lTVEFUVVM6QlVTWQ0KUFJJT1JJVFk6Mg0KRU5EOlZFVkVO
+VA0KRU5EOlZDQUxFTkRBUg0K
+------=_Part_1063383_1556887473.1752094654687--

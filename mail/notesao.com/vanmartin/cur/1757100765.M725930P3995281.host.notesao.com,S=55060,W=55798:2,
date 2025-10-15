@@ -1,0 +1,738 @@
+Return-Path: <010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000@amazonses.messaging.squareup.com>
+Delivered-To: vanmartin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 0cWyKt06u2iR9jwAIW4ynA
+	(envelope-from <010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000@amazonses.messaging.squareup.com>)
+	for <vanmartin@notesao.com>; Fri, 05 Sep 2025 14:32:45 -0500
+Return-path: <010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000@amazonses.messaging.squareup.com>
+Envelope-to: vanmartin@notesao.com
+Delivery-date: Fri, 05 Sep 2025 14:32:45 -0500
+Received: from a119-17.smtp-out.us-west-2.amazonses.com ([54.240.119.17]:42835)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000@amazonses.messaging.squareup.com>)
+	id 1uucAv-0000000GlLp-29Hy
+	for vanmartin@notesao.com;
+	Fri, 05 Sep 2025 14:32:45 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=clz7t3pgfbh32jgz3sgosjlq64ni7aba; d=messaging.squareup.com;
+	t=1757100760;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=8wkuytumBGR9nyAzLfOJ3dQ3LpMWL94ZRlqf+1ViVZo=;
+	b=hQfZtvvYZ4IOBG9+TWXXKuw5r4JZy7uFlwaoeuvP59LbPRx7Igffl42dHGlOoi5K
+	P2uQQrMyVT05ua2xlcRwXgFj9T6yzcbfIjMdGW823nHwR3zzVxpmqao393NGkmq3fBq
+	PnMkgwaZLSu3lKK3pLXQd08b4Zjf3eqdjhx6GPZs=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1757100760;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=8wkuytumBGR9nyAzLfOJ3dQ3LpMWL94ZRlqf+1ViVZo=;
+	b=aZSlp4J28gFdcxC0roz0oW8ZxobL3R6mHzFn/Xhu9V3ZjG3b5bxHMhsHhPEy5uud
+	uPRGNwocJN/FGqglUCqT7V8ePOF+xp0ZipMOhbHF0s6DQ/ygqi26B9hlNPEDUcKoBJs
+	W32T9uKHkmWq1qbCZK5dNid3DDX8Tdp5OP/Og87k=
+Date: Fri, 5 Sep 2025 19:32:40 +0000
+From: Square <noreply@messaging.squareup.com>
+To: vanmartin@notesao.com
+Message-ID: <010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000@us-west-2.amazonses.com>
+Subject: Apply for your chance to get 10k
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-EMS-Request-ID: 7972d035-d8b4-4474-93bf-574654d0cbc8
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-ERS-Token: CCAQ3IilwIbXqb72ARi43fu9hqONsIsB
+List-Unsubscribe: <https://squareup.com/email/subscriptions/unsubscribe?scope=marketing&subcategory=programs_and_events&locale=&request_id=7972d035-d8b4-4474-93bf-574654d0cbc8&recipient=CCAQ3IilwIbXqb72ARi43fu9hqONsIsB&wastruncated=0>,
+ <mailto:CAEaagokNzk3MmQwMzUtZDhiNC00NDc0LTkzYmYtNTc0NjU0ZDBjYmM4EiAKCW1hcmtldGluZxITcHJvZ3JhbXNfYW5kX2V2ZW50cxogQ0NBUTNJaWx3SWJYcWI3MkFSaTQzZnU5aHFPTnNJc0IiIGz7BabQiox1m7IoU3ovpHoiNcpO8Wu9TafTZABk+AE7@reply2.squareup.com>
+Feedback-ID: ::1.us-west-2.+kCNGv0wlznHgVfb/dmZu6QdzMqHR+fLcxV3+TNug8w=:AmazonSES
+X-SES-Outgoing: 2025.09.05-54.240.119.17
+X-Spam-Status: No, score=1.8
+X-Spam-Score: 18
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Square The Cornerstone Grant could be yours ͏‌ ­͏‌
+    ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌
+    ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏‌ ­͏ [...]
+    
+ Content analysis details:   (1.8 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.119.17 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.119.17 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [54.240.119.17 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: squareupmessaging.com]
+                             [URI: awstrack.me]
+                             [URI: squarecdn.com]
+                             [URI: squareup.com]
+                             [URI: emlcdn.net]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: awstrack.me]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or identical to
+                             background
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.8 KAM_INFOUSMEBIZ        Prevalent use of
+                             .info|.us|.me|.me.uk|.biz|xyz|id|rocks|life
+                             domains in spam/malware
+  0.0 LOTS_OF_MONEY          Huge... sums of money
+X-Spam-Flag: NO
+
+<!DOCTYPE html> <html lang=3D"en-US" xmlns:v=3D"urn:schemas-microsoft-com:v=
+ml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head><meta name=3D=
+"viewport" content=3D"width=3Ddevice-width"> <meta http-equiv=3D"Content-Ty=
+pe" content=3D"text/html;charset=3Dutf-8"> <title>Square</title><!--[if mso=
+]><style type=3D"text/css" data-embed>.codelink a{color:#101010;text-decora=
+tion:none}a{color:#101010;text-decoration:none}.button td{background-color:=
+#666}.nomso{display:none;font-size:0;line-height:0}table{font-size:1px;line=
+-height:0;mso-margin-top-alt:1px}table.MsoNormalTable{font-family:Helvetica=
+,sans-serif}.durv{line-height:14px!important}</style><![endif]--><!--[if !m=
+so]><!--> <link rel=3D"stylesheet" type=3D"text/css" href=3D"https://square=
+-mailstrom-production-s.squarecdn.com/_shared/fonts/cash/cash-sans.css" dat=
+a-embed=3D""> <!--<![endif]--> <style type=3D"text/css">a[x-apple-data-dete=
+ctors]{color:inherit!important;text-decoration:none!important;font-size:inh=
+erit!important;font-family:inherit!important;font-weight:inherit!important;=
+line-height:inherit!important}b a{color:#121212}#hero a{color:#fff}#outlook=
+ a{padding:0}body{width:100%!important;margin:0 auto!important;padding:0}.E=
+xternalClass{width:100%;line-height:100%}.ExternalClass p,.ExternalClass sp=
+an,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100=
+%}table,td{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0}u=
++.body .gmail,[class~=3Dx_gmail]{display:block!important}u+.body .notGmail,=
+[class~=3Dx_notGmail]{display:none}@media only screen and (min-width:281px)=
+{#container{position:relative;top:0;left:0;right:0;bottom:0}}div[style*=3D"=
+margin: 16px 0"]{margin:0!important}@media screen and (max-width:480px){u+#=
+body{width:100vw!important;max-width:100%!important}}</style> <style type=
+=3D"text/css">@media screen and (min-width:281px) and (max-width:631px){#co=
+ntainer .display-30{font-size:64px!important;line-height:68px!important}#co=
+ntainer .display-20{font-size:45px!important;line-height:50px!important}#co=
+ntainer .display-10{font-size:38px!important;line-height:44px!important}#co=
+ntainer .large-heading-30{font-size:32px!important;line-height:38px!importa=
+nt}#container .large-heading-20{font-size:28px!important;line-height:34px!i=
+mportant}#container .large-heading-10{font-size:26px!important;line-height:=
+32px!important}#container .small-heading-30{font-size:22px!important;line-h=
+eight:26px!important}#container .small-heading-20{font-size:18px!important;=
+line-height:24px!important}#container .paragraph-40{font-size:18px!importan=
+t;line-height:28px!important}#container .paragraph-semibold-40{font-size:18=
+px!important;line-height:28px!important}#container .fullWidth a{display:blo=
+ck!important}#container .column{width:inherit!important}#container .column =
+.embiggen{width:600px!important;max-width:600px!important}#container .colum=
+n .embiggen .list td:first-child{width:inherit!important}#container .column=
+ .embiggen .list td:last-child{width:500px!important}#container .column .em=
+biggen .button td{width:inherit!important}#container .column .embiggen img{=
+max-width:100%!important}#container .column .embiggen .icon{max-width:inher=
+it!important}#container .bleed img{-webkit-border-radius:0!important;-moz-b=
+order-radius:0!important;border-radius:0!important}#container .desktop{disp=
+lay:none!important}#container .mobile{display:block!important;font-size:inh=
+erit!important;line-height:inherit!important}#container .inlineMobile{displ=
+ay:inline!important;font-size:inherit!important;line-height:inherit!importa=
+nt}#container .mobileBlock{display:block!important;padding-top:16px!importa=
+nt}#container .card .cardIconText{display:block!important}#container .card =
+.cardIconText td{width:600px!important}#container .cardInlineMobile .cardIc=
+onText{display:table-cell!important}#container .cardInlineMobile .cardIconT=
+ext td{width:600px!important}#container .oddListItem{padding-right:0!import=
+ant;width:100%!important}#container .flushDivider td{-webkit-border-radius:=
+0!important;-moz-border-radius:0!important;border-radius:0!important}#conta=
+iner .flush .stroke .cardIconLoose,#container .flush .stroke .cardIconTight=
+{padding:0 16px 0!important}#container .flush .cardIconLoose,#container .fl=
+ush .cardIconTight{padding:16px 16px 0!important}#container .flush .cardIco=
+nLoose .cardIconIcon,#container .flush .cardIconTight .cardIconIcon{padding=
+:0 16px 16px 0!important}#container .flush,#container .flush .card,#contain=
+er .flush .cardBleed,#container .flushCardSet,#container .flushCardSet .flu=
+sh{padding-left:0!important;padding-right:0!important;-webkit-border-radius=
+:0!important;-moz-border-radius:0!important;border-radius:0!important}#cont=
+ainer .flush .stroke{border:0!important}#container .flush .stroke th,#conta=
+iner .flush .stroke cardIconLoose,#container .flush .stroke cardIconTight{p=
+adding-top:0!important}#container .flush .stroke .cardText,#container .flus=
+h .stroke .cardIconText,#container .flush .stroke th{padding-bottom:0!impor=
+tant}#container .flush .cardStackDesktop .stroke .cardIconIcon{padding-bott=
+om:16px!important}#container .flush .cardInlineMobile .stroke .cardIconIcon=
+{padding-bottom:0!important}#container .flush .stroke .cardImagePadded{padd=
+ing-top:0!important}#container .cardSet{width:630px!important}#container .c=
+ardDisplay{display:block!important}#container .cardFill{height:auto!importa=
+nt}#container .bannerStack{display:block!important}#container .bannerStack =
+.textBlock{text-align:left!important}}</style> <style type=3D"text/css">[da=
+ta-ogsc] .gmail{display:block!important}[data-ogsc] .notGmail{display:none;=
+display:none!important}</style> <!--[if mso]><xml> <o:OfficeDocumentSetting=
+s> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml>=
+<![endif]--> </head> <body class=3D"body" background=3D"#ffffff" style=3D"b=
+ackground-color: #ffffff"><span style=3D"color:transparent;visibility:hidde=
+n;display:none;opacity:0;height:0;width:0;font-size:0;">The Cornerstone Gra=
+nt could be yours</span><img src=3D"https://links.squareupmessaging.com/s/e=
+o/4f5ttWC_tqpFpYPGe8JwF25h9Lgns2AzOk-Nuip45hOdt6Z5K1v0MHgat1_eahV8VcawwWdlI=
+SYPzRg17bbvhYsLLVFI4nVoG9CS_Emv6DP5aB4nxRNr1_ZURc0juFmiyK7q7gMUwzch8OSXz_jE=
+n2k6nJ6T3mg2kfIzrKVsyzHZrpew46ub-qFPr9hYu7fbzx32vqNvtuPx6g/v6H4Nqlpo3x0zZlc=
+bnzAhWXNOAnGiBT9/12" style=3D"border:0;width:1px;height:1px;border-width:0p=
+x!important;display:none!important;line-height:0!important;" width=3D"1" he=
+ight=3D"1"/><!--[if !mso]><!--> <div id=3D"preheader" style=3D"font-size: 0=
+; max-height: 0; overflow: hidden; display: none;"> &#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&z=
+wnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#8199;&shy;&#847;&zwnj;&nbsp;&#819=
+9;&shy; </div><!--<![endif]--> <div class=3D"light" id=3D"container" style=
+=3D"-webkit-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-fon=
+t-smoothing: antialiased;"> <div style=3D"display: none"> </div> <table id=
+=3D"taxi hero" align=3D"center" cellpadding=3D"0" cellspacing=3D"0"> <tbody=
+><tr> <td style=3D"background: #ffffff; padding: 0 0 0px;"> <table cellpadd=
+ing=3D"0" cellspacing=3D"0"> <tbody><tr> <td align=3D"center"> <table align=
+=3D"center" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"6=
+32"> <table align=3D"left" style=3D"text-align: left;" cellpadding=3D"0" ce=
+llspacing=3D"0"> <tbody><tr> <td style=3D"padding: 40px 16px"> <table cellp=
+adding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0"> <tabl=
+e cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"88" style=
+=3D"line-height: 1px"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L=
+0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FIeZ8e8B0X-pYHh7jNWETNbO=
+L0iIReVB0IsPjwnw31TZcuzCh1AwGuWlxIjyQBbPTtSHWNXPPIrgS3smgUiJI0FN9zO1Has2Uik=
+S7Bvd_9nbcbD-GtRF1EKTfjQGQ1pIks4cmXsEFH2BQqB5NeuZzMmPJG_bP_gLC87PX3FXQlqkfy=
+hQyJS8VGPdczPmP4p7L39kiSjCMq-RVKz5QLM7ioVyVI9p_JYikt1Fu-duVXUFW7sgJa344swPe=
+cNwXNkt6dWIWRzHoc4P43y6fS_VNA6Lds8qMQIkUx16pHlqHR1VpFF3W4_qFIENwujBx9uxEClF=
+aIH2kBfq7CNFl-s_9G2MD%2FhtenT7D1lCF8t5fxDkTWnX3AjfI4wcBQ%2F12/1/010101991b5=
+dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000/-oop6y9KsvnOk0lietXl3cGmK=
+kk=3D443" style=3D"text-decoration: none;"> <div class=3D"gmail" style=3D"d=
+isplay: none"><img src=3D"https://square-mailstrom-production-s.squarecdn.c=
+om/_shared/logo/sans-white.png" width=3D"88" height=3D"22" alt=3D"Square" s=
+tyle=3D"display: block; mix-blend-mode: difference;"></div> <div class=3D"n=
+otGmail"><img src=3D"https://square-mailstrom-production-s.squarecdn.com/_s=
+hared/logo/sans-black.png" width=3D"88" height=3D"22" alt=3D"Square" align=
+=3D"left" style=3D"display: block;"></div> </a></td> </tr> </tbody></table>=
+ </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> <tr>=
+ <td width=3D"632" align=3D"left"> <table cellpadding=3D"0" cellspacing=3D"=
+0"> <tbody> <tr> <td align=3D"left" style=3D"padding: 0 16px"> <table cellp=
+adding=3D"0" cellspacing=3D"0"> <tbody><tr> <td class=3D"textBlock eyebrow"=
+ style=3D"color: #101010; font-family: 'Cash Sans', Helvetica, Arial, Meiry=
+o, sans-serif; font-weight: 600; font-size: 14px; line-height: 24px; letter=
+-spacing: 1px; text-transform: uppercase; padding: 0 0 8px;;" align=3D"left=
+"> Cornerstone grant </td> </tr> <tr> <td class=3D"textBlock large-heading-=
+30" width=3D"600" style=3D"font-family: 'Cash Sans', Helvetica, Arial, Meir=
+yo, sans-serif; font-weight: 600;font-size: 36px; line-height: 42px" align=
+=3D"left"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%=
+2Flinks.squareupmessaging.com%2Fs%2Fc%2FMkFt70CdHcfKBSAuArWhv5UtsS1IVnqZjKv=
+fHw1FCHRzZMoEaIDjcCKZLRNvMDot44tHMCjeXi_-skbnQsYJnzHfCK5CNANabhtk_RGeITSRed=
+Ul62avH0YgpEZFrHAcAUbspQgmXyiAnR1818O4yolmu4x3N2SfOpGvi_hjsNWY8IYKTb6k0opvT=
+QrXQ0hREUNh2BdbNOf00zcu__Dhl6ogLJByrKVZkyTGTjgaxbCSqOZeruHnRYB6ghMNvlso71WC=
+_SqK2izJV5UiWTIXIdbm2zRyrKt24VY4ACAX5rS5G2QyC1ied_TSyWKcrPkr-dvhEQ1l-oo9_7O=
+9t01XBtE8wnn8BhpSCSmnYEV3F_lHSu_faSJ-4Jwiq_-RCBOR-wrQhxAzbcf-iojfY_OQvL4LcU=
+udXfFd5_CUToQq%2FSEEXAIzKNkNfmSRTNC_IZsYiwEuuVzRx%2F12/1/010101991b5dddf6-e=
+008da12-e9bd-4f97-87df-956f5e91f7e2-000000/mUrhb5c8ss3c-24gMXHg9E6EOdk=3D44=
+3" style=3D"color: #101010; text-decoration: none;"> Real support for local=
+ businesses: $10K and experts in your corner</a></td> </tr> </tbody></table=
+> </td> </tr> <tr> <td align=3D"left" style=3D"padding: 16px 16px 0"> <tabl=
+e cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td class=3D"textBlock p=
+aragraph-40" width=3D"600" style=3D"font-family: 'Cash Sans', Helvetica, Ar=
+ial, Meiryo, sans-serif; font-weight: 400; font-size: 20px; line-height: 30=
+px; color: #101010" align=3D"left"> Access to funding has never been equal =
+&#x2014; and for many business owners, the system wasn&#x2019;t built with =
+them in mind. </td> </tr> </tbody></table> </td> </tr> <tr> <td style=3D"pa=
+dding: 40px 16px 0" align=3D"center"> <table cellpadding=3D"0" cellspacing=
+=3D"0"> <tbody><tr> <td class=3D"button" width=3D"600" align=3D"left"> <tab=
+le class=3D"buttonTable" cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> =
+<td> <table class=3D"light" align=3D"left" cellpadding=3D"0" cellspacing=3D=
+"0"> <tbody><tr> <td style=3D"font-family: 'Cash Sans', Helvetica, Arial, M=
+eiryo, sans-serif; font-weight: 600; font-size: 16px; line-height: 24px; ba=
+ckground: #101010; width:100%; -webkit-border-radius: 32px; -moz-border-rad=
+ius: 32px; border-radius: 32px;" bgcolor=3D"#101010"> <a href=3D"https://kj=
+fjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2=
+Fs%2Fc%2Fdepw4n_Ci0QQ7GTScAr_h9uRRubvxro_PD7qvp6X4gXO1Wnua3jAY1sISOjNuxW-W1=
+H7V4uaqglqtc19QRqar-T7jytuYHP387K_O2w6HMY3iCsa9A6DY4NIB_yWNRkSjFxPxFCAC4KVZ=
+DgQJYVihA7vEyw1IK2R2VicjfPvMa8Usn1cDoFhQvQEbKJU4HFa1pxd2NSa3bPCwmaMxJtCxhYK=
+E5vgMM4Zz8ZUnFXc447a2U_5lSL4_4T4FdoG_XlGikK52m7Hmj3C0fQN2nVTIs5P8DUYsIfiMt-=
+jpatD-XYPJXwi90JPu383kIEtb_MFe1rKLk-pf4wzD7Ns5grmQYvD3TBYcmTfg0TlZTHRxlae_R=
+hk9lGo-PAXfX885lAB97mVsqoADn929X_87FK2x4gPbZw7X0sTEJc_rB4d%2FH2vyZQnceW0W1g=
+Z-5fbe6n95x_DYQsGW%2F12/1/010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91=
+f7e2-000000/siwuWPFipkRVj8gEfcuU9_1xzNc=3D443" style=3D"background: #101010=
+; border: 1px solid #101010; color: #ffffff; text-decoration: none; -webkit=
+-border-radius: 32px; -moz-border-radius: 32px; border-radius: 32px; paddin=
+g: 12px 20px; display: inline-block;"><!--[if gte mso 9]>=C2=A0<![endif]-->=
+ Apply now<!--[if gte mso 9]>=C2=A0<![endif]--></a> </td> </tr> </tbody></t=
+able> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr>=
+ </tbody></table> </td></tr> <tr> <td align=3D"center" style=3D"padding: 40=
+px 16px 0"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td wid=
+th=3D"600" align=3D"left"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbo=
+dy><tr> <td class=3D"fluidImage" width=3D"600" style=3D"line-height: 1px"><=
+a style=3D"text-decoration: none;" href=3D"https://kjfjb2yk.r.us-west-2.aws=
+track.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FdKqDPE9IWs48P=
+mmgIil-ClUXS5o7uz0HmTHy5jbrhFE2ch4XtcEYYTfC5azrQLxx7SVc72AQVuSAZM5uqCeWphkt=
+_5L-0klOi0wadtL9GKoL-gRXCz-BNYVweijk78HdZZYV_7VGWZ7q5mlFhkYeGFxoQJJ3sxqRtZ6=
+9hOSsgRS1NhjI-vDSVwfYN_fe9xUUR_QX_iCbsDJUM7MtmjK_hjkEE558AIFrGFjSlqlmN3vd0f=
+IkNBMY_NiyGV-zOFR3R5b4Nz94QGgWTeMrKEw55_PdvyxN8X7QKXv9nLVB4plUDAMd4l2_abrQt=
+dCYMbxdHqdIIIGjka5GFJAaMhsKNBMDPJxwDSzLSqJvhZTthIe7xBERgpQszCLL-fAVYnCpHBlw=
+R6oHtYXSJXkxN-hpw1Y8-JUf1I8DL43Xf_XU%2FhByD-rj1XuVnkd0JalkwS_PEfEvP2en9%2F1=
+2/1/010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000/1IkpPFZVHk=
+3mb_OtdbFjC1V_Txc=3D443"> <img width=3D"600" alt=3D"Image" style=3D"width: =
+100%; height: auto; -ms-interpolation-mode: bicubic; display: block; -webki=
+t-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px;" bord=
+er=3D"0" height=3D"auto" src=3D"https://images.emlcdn.net/cdn/143/2cab9891-=
+ea89-4de1-b72a-9d8f28b2c0d3/GTM00204BankingGrantInvestFestHeroUSEN.jpg"></a=
+></td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tb=
+ody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> <tab=
+le cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 100%; table-layout: =
+fixed;" width=3D"100%"> <tbody><tr> <td style=3D"padding: 40px 0 24px" alig=
+n=3D"center"> <!-- --> <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 0px;"> <table align=3D"center=
+" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=
+=3D"padding: 0 0 40px;"> <table align=3D"center" cellpadding=3D"0" cellspac=
+ing=3D"0"> <tbody><tr> <td style=3D"padding: 0 16px"> <table align=3D"left"=
+ cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"600" align=
+=3D"left"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td cla=
+ss=3D"textBlock paragraph-30" style=3D"font-family: 'Cash Sans', Helvetica,=
+ Arial, Meiryo, sans-serif; font-weight: 400; font-size: 16px; line-height:=
+ 24px; color: #101010; " align=3D"left" width=3D"600"> That&#x2019;s why we=
+&#x2019;re selecting 4 businesses to receive a grant that offers more than =
+just money: winners also get a year of financial advice and additional visi=
+bility. </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </t=
+r> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></tabl=
+e> <!-- --> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbo=
+dy><tr> <td style=3D"padding: 0 0 0px;"> <table align=3D"center" width=3D"1=
+00%" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding:=
+ 0 0 24px;"> <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"> <=
+tbody><tr> <td style=3D"padding: 0 16px"> <table align=3D"left" cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"600" align=3D"left"> <ta=
+ble cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"textBloc=
+k small-heading-30" style=3D"font-family: 'Cash Sans', Helvetica, Arial, Me=
+iryo, sans-serif; font-weight: 600; font-size: 24px; line-height: 28px; col=
+or: #101010; " align=3D"left" width=3D"600"> How it works </td> </tr> </tbo=
+dy></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td>=
+ </tr> </tbody></table> </td> </tr> </tbody></table> <table width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 =
+0px;"> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbody><t=
+r> <td style=3D"padding: 0 16px 40px;"> <table align=3D"center" cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"600"> <table cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"600"> <table cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr valign=3D"top"> <td class=3D"textBlock=
+ paragraph-30" valign=3D"top" style=3D"line-height: 1px; padding: 0 0 0 0; =
+white-space: nowrap;" width=3D"24"> <div class=3D"gmail" style=3D"display: =
+none"><img src=3D"https://square-mailstrom-production-s.squarecdn.com/marke=
+t/icon/check-smw.png" width=3D"24" height=3D"24" style=3D"display: block; m=
+ix-blend-mode: difference;"></div> <div class=3D"notGmail"><img src=3D"http=
+s://square-mailstrom-production-s.squarecdn.com/market/icon/check-smb.png" =
+width=3D"24" height=3D"24" style=3D"display: block;"></div> </td> <td valig=
+n=3D"top"> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbod=
+y><tr> <td style=3D"padding: 0 0 0 8px"> <table cellpadding=3D"0" cellspaci=
+ng=3D"0"> <tbody> <tr> <td class=3D"textBlock paragraph-30" width=3D"100%" =
+style=3D"font-family: 'Cash Sans', Helvetica, Arial, Meiryo, sans-serif; fo=
+nt-weight: 400; font-size: 16px; line-height: 24px; color: #101010"> Submit=
+ your application by September 30, 2025 </td> </tr> </tbody></table> </td> =
+</tr> </tbody></table> </td> </tr> <tr valign=3D"top"> <td class=3D"textBlo=
+ck paragraph-30" valign=3D"top" style=3D"line-height: 1px; padding: 16px 0 =
+0 0; white-space: nowrap;" width=3D"24"> <div class=3D"gmail" style=3D"disp=
+lay: none"><img src=3D"https://square-mailstrom-production-s.squarecdn.com/=
+market/icon/check-smw.png" width=3D"24" height=3D"24" style=3D"display: blo=
+ck; mix-blend-mode: difference;"></div> <div class=3D"notGmail"><img src=3D=
+"https://square-mailstrom-production-s.squarecdn.com/market/icon/check-smb.=
+png" width=3D"24" height=3D"24" style=3D"display: block;"></div> </td> <td =
+valign=3D"top" style=3D"padding: 16px 0 0"> <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 0 8px"> <=
+table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"textBl=
+ock paragraph-30" width=3D"100%" style=3D"font-family: 'Cash Sans', Helveti=
+ca, Arial, Meiryo, sans-serif; font-weight: 400; font-size: 16px; line-heig=
+ht: 24px; color: #101010"> We&#x2019;ll evaluate all applications with a pa=
+nel review </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> =
+</tr> <tr valign=3D"top"> <td class=3D"textBlock paragraph-30" valign=3D"to=
+p" style=3D"line-height: 1px; padding: 16px 0 0 0; white-space: nowrap;" wi=
+dth=3D"24"> <div class=3D"gmail" style=3D"display: none"><img src=3D"https:=
+//square-mailstrom-production-s.squarecdn.com/market/icon/check-smw.png" wi=
+dth=3D"24" height=3D"24" style=3D"display: block; mix-blend-mode: differenc=
+e;"></div> <div class=3D"notGmail"><img src=3D"https://square-mailstrom-pro=
+duction-s.squarecdn.com/market/icon/check-smb.png" width=3D"24" height=3D"2=
+4" style=3D"display: block;"></div> </td> <td valign=3D"top" style=3D"paddi=
+ng: 16px 0 0"> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <=
+tbody><tr> <td style=3D"padding: 0 0 0 8px"> <table cellpadding=3D"0" cells=
+pacing=3D"0"> <tbody> <tr> <td class=3D"textBlock paragraph-30" width=3D"10=
+0%" style=3D"font-family: 'Cash Sans', Helvetica, Arial, Meiryo, sans-serif=
+; font-weight: 400; font-size: 16px; line-height: 24px; color: #101010"> Gr=
+ant recipients will be announced in November via email </td> </tr> </tbody>=
+</table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </=
+tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></tab=
+le> </td> </tr> </tbody></table> <!-- --> <table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 0px;"> <tab=
+le align=3D"center" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tb=
+ody><tr> <td style=3D"padding: 0 0 24px;"> <table align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 16px"> <ta=
+ble align=3D"left" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td wid=
+th=3D"600" align=3D"left"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbo=
+dy> <tr> <td class=3D"textBlock small-heading-30" style=3D"font-family: 'Ca=
+sh Sans', Helvetica, Arial, Meiryo, sans-serif; font-weight: 600; font-size=
+: 24px; line-height: 28px; color: #101010; " align=3D"left" width=3D"600"> =
+What it includes </td> </tr> </tbody></table> </td> </tr> </tbody></table> =
+</td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbo=
+dy></table> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbo=
+dy><tr> <td style=3D"padding: 0 0 0px;"> <table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 16px 40px;"> =
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <t=
+d width=3D"600"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <t=
+d width=3D"600"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr val=
+ign=3D"top"> <td class=3D"textBlock paragraph-30" valign=3D"top" style=3D"l=
+ine-height: 1px; padding: 0 0 0 0; white-space: nowrap;" width=3D"24"> <div=
+ class=3D"gmail" style=3D"display: none"><img src=3D"https://square-mailstr=
+om-production-s.squarecdn.com/market/icon/check-smw.png" width=3D"24" heigh=
+t=3D"24" style=3D"display: block; mix-blend-mode: difference;"></div> <div =
+class=3D"notGmail"><img src=3D"https://square-mailstrom-production-s.square=
+cdn.com/market/icon/check-smb.png" width=3D"24" height=3D"24" style=3D"disp=
+lay: block;"></div> </td> <td valign=3D"top"> <table width=3D"100%" cellpad=
+ding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 0 8px">=
+ <table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"text=
+Block paragraph-30" width=3D"100%" style=3D"font-family: 'Cash Sans', Helve=
+tica, Arial, Meiryo, sans-serif; font-weight: 400; font-size: 16px; line-he=
+ight: 24px; color: #101010"> $10,000 towards your next goal in a Square Che=
+cking account </td> </tr> </tbody></table> </td> </tr> </tbody></table> </t=
+d> </tr> <tr valign=3D"top"> <td class=3D"textBlock paragraph-30" valign=3D=
+"top" style=3D"line-height: 1px; padding: 16px 0 0 0; white-space: nowrap;"=
+ width=3D"24"> <div class=3D"gmail" style=3D"display: none"><img src=3D"htt=
+ps://square-mailstrom-production-s.squarecdn.com/market/icon/check-smw.png"=
+ width=3D"24" height=3D"24" style=3D"display: block; mix-blend-mode: differ=
+ence;"></div> <div class=3D"notGmail"><img src=3D"https://square-mailstrom-=
+production-s.squarecdn.com/market/icon/check-smb.png" width=3D"24" height=
+=3D"24" style=3D"display: block;"></div> </td> <td valign=3D"top" style=3D"=
+padding: 16px 0 0"> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0"> <tbody><tr> <td style=3D"padding: 0 0 0 8px"> <table cellpadding=3D"0" =
+cellspacing=3D"0"> <tbody> <tr> <td class=3D"textBlock paragraph-30" width=
+=3D"100%" style=3D"font-family: 'Cash Sans', Helvetica, Arial, Meiryo, sans=
+-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #10101=
+0"> Financial mentorship from experts Keila Hill-Trawick (a top 200 Forbes =
+CPA), Aja Evans (a board-certified therapist and author), and Northwest Mou=
+ntain Minority Supplier Development Council=C2=B9 </td> </tr> </tbody></tab=
+le> </td> </tr> </tbody></table> </td> </tr> <tr valign=3D"top"> <td class=
+=3D"textBlock paragraph-30" valign=3D"top" style=3D"line-height: 1px; paddi=
+ng: 16px 0 0 0; white-space: nowrap;" width=3D"24"> <div class=3D"gmail" st=
+yle=3D"display: none"><img src=3D"https://square-mailstrom-production-s.squ=
+arecdn.com/market/icon/check-smw.png" width=3D"24" height=3D"24" style=3D"d=
+isplay: block; mix-blend-mode: difference;"></div> <div class=3D"notGmail">=
+<img src=3D"https://square-mailstrom-production-s.squarecdn.com/market/icon=
+/check-smb.png" width=3D"24" height=3D"24" style=3D"display: block;"></div>=
+ </td> <td valign=3D"top" style=3D"padding: 16px 0 0"> <table width=3D"100%=
+" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 =
+0 0 8px"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td clas=
+s=3D"textBlock paragraph-30" width=3D"100%" style=3D"font-family: 'Cash San=
+s', Helvetica, Arial, Meiryo, sans-serif; font-weight: 400; font-size: 16px=
+; line-height: 24px; color: #101010"> Features in Square newsletters sent t=
+o 1 million people, on social media, and <a style=3D"font-family: 'Cash San=
+s', Helvetica, Arial, Meiryo, sans-serif; font-weight: 600; text-decoration=
+: underline; color: inherit" href=3D"https://kjfjb2yk.r.us-west-2.awstrack.=
+me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FDbM9PP_UaLB31wmzLLw=
+wz908S68pnwhxC6lgpCCxQ-C9fQaALagH0v78e7XloCDqltTuQgTsJspqCOFs5Yk2Mk3wTSNlHd=
+0ujOO5qGH_QIQ20vebIpkYIk0KwqijdA9p_8ca6wWalK1EsGlWD9LIWg-2m9Ta1wWCPuR_0RefA=
+Q_m_ZEWAwyRw3_cr-0CcRhW_GpAHEeno8q9WqNf-UwfzCE8gBMKINf8FwBFr1M1ayhph904RK2I=
+ja6uIZb_i53aD6WeaD8vV40zvMFEkrnYsEPweVxHwLXBk5rsSZe4p5Tx2Lz9n3YHAhjPAqJ-XNc=
+8WUc-_45bi1zgZNeptvuSE4YtUoeWrbi0n-zy2QLaW7Iiypl8HFkZ_bLrSW1ptc_3h_1BghPkc7=
+WLNgH3tmTp9dk7%2FyNm64sBDyMc4p4IM3n6fDJ8jW9MObAxU%2F12/1/010101991b5dddf6-e=
+008da12-e9bd-4f97-87df-956f5e91f7e2-000000/QZnuvV-XpZfLt7Mdovg-trfoa30=3D44=
+3">The Bottom Line</a> </td> </tr> </tbody></table> </td> </tr> </tbody></t=
+able> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr>=
+ </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table>=
+ <!-- --> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbody=
+><tr> <td style=3D"padding: 0 0 0px;"> <table align=3D"center" width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0=
+ 0 24px;"> <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"> <tb=
+ody><tr> <td style=3D"padding: 0 16px"> <table align=3D"left" cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"600" align=3D"left"> <ta=
+ble cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"textBloc=
+k small-heading-30" style=3D"font-family: 'Cash Sans', Helvetica, Arial, Me=
+iryo, sans-serif; font-weight: 600; font-size: 24px; line-height: 28px; col=
+or: #101010; " align=3D"left" width=3D"600"> Requirements </td> </tr> </tbo=
+dy></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td>=
+ </tr> </tbody></table> </td> </tr> </tbody></table> <table width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 =
+0px;"> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbody><t=
+r> <td style=3D"padding: 0 16px 40px;"> <table align=3D"center" cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"600"> <table cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td width=3D"600"> <table cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr valign=3D"top"> <td class=3D"textBlock=
+ paragraph-30" valign=3D"top" style=3D"line-height: 1px; padding: 0 0 0 0; =
+white-space: nowrap;" width=3D"24"> <div class=3D"gmail" style=3D"display: =
+none"><img src=3D"https://square-mailstrom-production-s.squarecdn.com/marke=
+t/icon/check-smw.png" width=3D"24" height=3D"24" style=3D"display: block; m=
+ix-blend-mode: difference;"></div> <div class=3D"notGmail"><img src=3D"http=
+s://square-mailstrom-production-s.squarecdn.com/market/icon/check-smb.png" =
+width=3D"24" height=3D"24" style=3D"display: block;"></div> </td> <td valig=
+n=3D"top"> <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbod=
+y><tr> <td style=3D"padding: 0 0 0 8px"> <table cellpadding=3D"0" cellspaci=
+ng=3D"0"> <tbody> <tr> <td class=3D"textBlock paragraph-30" width=3D"100%" =
+style=3D"font-family: 'Cash Sans', Helvetica, Arial, Meiryo, sans-serif; fo=
+nt-weight: 400; font-size: 16px; line-height: 24px; color: #101010"> Curren=
+t Square seller, with at least 6 months of ongoing transactions&nbsp; </td>=
+ </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> <tr valign=
+=3D"top"> <td class=3D"textBlock paragraph-30" valign=3D"top" style=3D"line=
+-height: 1px; padding: 16px 0 0 0; white-space: nowrap;" width=3D"24"> <div=
+ class=3D"gmail" style=3D"display: none"><img src=3D"https://square-mailstr=
+om-production-s.squarecdn.com/market/icon/check-smw.png" width=3D"24" heigh=
+t=3D"24" style=3D"display: block; mix-blend-mode: difference;"></div> <div =
+class=3D"notGmail"><img src=3D"https://square-mailstrom-production-s.square=
+cdn.com/market/icon/check-smb.png" width=3D"24" height=3D"24" style=3D"disp=
+lay: block;"></div> </td> <td valign=3D"top" style=3D"padding: 16px 0 0"> <=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td s=
+tyle=3D"padding: 0 0 0 8px"> <table cellpadding=3D"0" cellspacing=3D"0"> <t=
+body> <tr> <td class=3D"textBlock paragraph-30" width=3D"100%" style=3D"fon=
+t-family: 'Cash Sans', Helvetica, Arial, Meiryo, sans-serif; font-weight: 4=
+00; font-size: 16px; line-height: 24px; color: #101010"> US based business =
+with fewer than 20 employees </td> </tr> </tbody></table> </td> </tr> </tbo=
+dy></table> </td> </tr> <tr valign=3D"top"> <td class=3D"textBlock paragrap=
+h-30" valign=3D"top" style=3D"line-height: 1px; padding: 16px 0 0 0; white-=
+space: nowrap;" width=3D"24"> <div class=3D"gmail" style=3D"display: none">=
+<img src=3D"https://square-mailstrom-production-s.squarecdn.com/market/icon=
+/check-smw.png" width=3D"24" height=3D"24" style=3D"display: block; mix-ble=
+nd-mode: difference;"></div> <div class=3D"notGmail"><img src=3D"https://sq=
+uare-mailstrom-production-s.squarecdn.com/market/icon/check-smb.png" width=
+=3D"24" height=3D"24" style=3D"display: block;"></div> </td> <td valign=3D"=
+top" style=3D"padding: 16px 0 0"> <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 0 8px"> <table cell=
+padding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"textBlock paragr=
+aph-30" width=3D"100%" style=3D"font-family: 'Cash Sans', Helvetica, Arial,=
+ Meiryo, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; =
+color: #101010"> Must qualify as a small business under SBA guidance and ha=
+ve a gross annual revenue under $2M </td> </tr> </tbody></table> </td> </tr=
+> </tbody></table> </td> </tr> <tr valign=3D"top"> <td class=3D"textBlock p=
+aragraph-30" valign=3D"top" style=3D"line-height: 1px; padding: 16px 0 0 0;=
+ white-space: nowrap;" width=3D"24"> <div class=3D"gmail" style=3D"display:=
+ none"><img src=3D"https://square-mailstrom-production-s.squarecdn.com/mark=
+et/icon/check-smw.png" width=3D"24" height=3D"24" style=3D"display: block; =
+mix-blend-mode: difference;"></div> <div class=3D"notGmail"><img src=3D"htt=
+ps://square-mailstrom-production-s.squarecdn.com/market/icon/check-smb.png"=
+ width=3D"24" height=3D"24" style=3D"display: block;"></div> </td> <td vali=
+gn=3D"top" style=3D"padding: 16px 0 0"> <table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 0 8px"> <ta=
+ble cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"textBloc=
+k paragraph-30" width=3D"100%" style=3D"font-family: 'Cash Sans', Helvetica=
+, Arial, Meiryo, sans-serif; font-weight: 400; font-size: 16px; line-height=
+: 24px; color: #101010"> Applicants must be legal US residents and their bu=
+siness must not currently be in bankruptcy or named as a defendant in an ac=
+tive lawsuit </td> </tr> </tbody></table> </td> </tr> </tbody></table> </td=
+> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbody><=
+/table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> <!-- --> =
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td =
+style=3D"padding: 0 0 0px;"> <table align=3D"center" width=3D"100%" cellpad=
+ding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding: 0 0 40px;">=
+ <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <=
+td style=3D"padding: 0 16px"> <table align=3D"left" cellpadding=3D"0" cells=
+pacing=3D"0"> <tbody><tr> <td width=3D"600" align=3D"left"> <table cellpadd=
+ing=3D"0" cellspacing=3D"0"> <tbody><tr> <td class=3D"textBlock paragraph-1=
+0" style=3D"font-family: 'Cash Sans', Helvetica, Arial, Meiryo, sans-serif;=
+ font-weight: 400; font-size: 12px; line-height: 18px; color: #101010; " al=
+ign=3D"left" width=3D"600"> =C2=B9Keila Hill-Trawick and Aja Evans do not w=
+ork for Block, Inc. Their views are their own and not endorsed by Block, In=
+c. or any of its subsidiaries. </td> </tr> </tbody></table> </td> </tr> </t=
+body></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> </t=
+d> </tr> </tbody></table> <table width=3D"100%" cellpadding=3D"0" cellspaci=
+ng=3D"0"> <tbody><tr> <td style=3D"padding-bottom: 0px;"> <table width=3D"1=
+00%" cellpadding=3D"0" cellspacing=3D"0"> <tbody><tr> <td style=3D"padding:=
+ 0px 0 40px;"> <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0">=
+ <tbody><tr> <td style=3D"padding: 0 16px"> <table cellpadding=3D"0" cellsp=
+acing=3D"0"> <tbody><tr> <td width=3D"600"> <table cellpadding=3D"0" cellsp=
+acing=3D"0" align=3D"left" style=3D"text-align: left"> <tbody><tr> <th styl=
+e=3D"display: inline-block; padding: 0 0 0;"> <table cellpadding=3D"0" cell=
+spacing=3D"0"> <tbody><tr> <td class=3D"textBlock paragraph-semibold-30" st=
+yle=3D"font-family: 'Cash Sans', Helvetica, Arial, Meiryo, sans-serif; font=
+-weight: 600; font-size: 16px; line-height: 24px; background: #101010; bord=
+er-radius: 32px;"> <a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/h=
+ttps:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FhcZ4v5tKFJT6iw6BNPgGC5M_W0=
+t_tIHivxnyADzRNI5I4a0FJXVZ7ghnHr02HvXEXwU036F_HJ3jYSns6YoLjVjOOcLTbTc3UeVpa=
+8hhaXDdkm9Ri7Ps1GoVDMN73o37ayc5xJBEPJVauSWQqAwL2vMUPqmzDYU0B99MPNM6ySZr0Uys=
+pITWxVL2477-9a21Pn45b__cUGrNv971k5UuvuAbuazZgEMteX_u0_L7oS2Zvj2sEeoUPQB0rJb=
+Kv3m94h_W35ggqAWeAeqxf7XrVSQRkQywitZ4RCSjCJkj8HVjP6jXpVt1QeL12d_Y2Hon4kE6Eu=
+JZO0h6Alsv_QJDnMs0FPhF_E-Gd4WBK0-gbKXpw_DK6IrAf9zTfp6SyNkSedhVcmPq86luzPdjr=
+dxMwd01VlwQlN_KNaChnUZH%2Fxw658YfKRzVlLI496Q2KpzY1ehKQTd7g%2F12/1/010101991=
+b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000/DACnqXu7tIyIMWwgK5x2h0U=
+On_c=3D443" style=3D"display: inline-block; text-decoration: none; -webkit-=
+border-radius: 32px; -moz-border-radius: 32px; border-radius: 32px; backgro=
+und: #101010; border: 1px solid #101010; color: #ffffff; padding: 12px 20px=
+;"><!--[if gte mso 9]>=C2=A0<![endif]--> Apply now<!--[if gte mso 9]>=C2=A0=
+<![endif]--></a> </td> </tr> </tbody></table> </th> </tr> </tbody></table> =
+</td> </tr> </tbody></table> </td> </tr> </tbody></table> </td> </tr> </tbo=
+dy></table> </td> </tr> </tbody></table> </td> </tr> </tbody></table> <tabl=
+e width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 100%; =
+table-layout: fixed;"> <tbody><tr> <td align=3D"center"> <table width=3D"10=
+0%" style=3D"width: 100%; table-layout: fixed; background-color: #ffffff;" =
+cellpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#ffffff"> <tbody> <tr> <td a=
+lign=3D"center" style=3D"padding: 0 16px"> <table cellpadding=3D"0" cellspa=
+cing=3D"0"> <tbody> <tr> <td width=3D"600"> <table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0"><!----> <tbody> <tr> <td style=3D"font-size: 1px=
+; line-height: 1px; border-top: 1px solid #b3b3b3;" height=3D"1"> &nbsp;</t=
+d> </tr><!----> <tr> <td style=3D"padding: 40px 0"> <table cellpadding=3D"0=
+" cellspacing=3D"0"> <tbody> <tr> <td style=3D"line-height: 1px;"><a id=3D"=
+logo" href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks=
+.squareupmessaging.com%2Fs%2Fc%2FVmi4-LUQFYPg5xNv0OARN7EkA_eZjtRr-D_huvAG1F=
+_w-Gd4ROEN7czl7H5-PVksV9ZpS9AikPZ6efPIhoezpoqSW0TYgJX9ITvzLT8BUAkBtGCZ4lMSs=
+d9fL-3Gu2fW-0gpjUDnO5d55HmXel2FCucEHTsbTsthUvKkuJMlSmL0GwC1Izr7xt_O38ZGlHYl=
+Yi04A-15tuWBJvQl89mSB7pB_A1bzbSJNN4ZFjxbsT4juuLCJhJ00slVGd6sA6ACand4oErxqtZ=
+KxtF-xMtO63kW3yzpESAhgTY1S9r_PQ27Y4FdF_OG--Ft6Gj9bIZlU9BsDQJiVPVz2MkjV166bI=
+MPMOeQRsu8KjwjbgM6YIM%2FVUCGWu3OAMUF03piKzKUF9KtHshY2kgk%2F12/1/010101991b5=
+dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000/kV7Z9p43tVyObVktQAV3vSn_b=
+Hk=3D443" style=3D"display: inline-block; text-decoration: none;"><span cla=
+ss=3D"gmail" style=3D"display: none"><img src=3D"https://square-mailstrom-p=
+roduction-s.squarecdn.com/_shared/logo/sans-white.png" width=3D"88" height=
+=3D"22" alt=3D"Square" style=3D"mix-blend-mode: difference; display: block;=
+"></span><span class=3D"notGmail"><!----><img src=3D"https://square-mailstr=
+om-production-s.squarecdn.com/_shared/logo/sans-black.png" width=3D"88" hei=
+ght=3D"22" alt=3D"Square" style=3D"display: block;"><!----></span></a></td>=
+ </tr> </tbody> </table> </td> </tr> </tbody> </table> <!----> <table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"so=
+cial"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td style=
+=3D"line-height: 1px;"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/=
+L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FUZUrZP3xBvE6PqyfdmW5o9=
+igJFGlTSkZZYS6fNNJ0zoPsrErFXuAPiK2ODxqts30xL8RWLs97h2FHNobvJZS1rw3mDwl63nLe=
+lvzXBABsgW6yk36nHr35dTLUvK1ge6SsYz28Y8z1eQ-Ri_31Vvg0HKz2ah0ZfBMxhuY5bjciUt3=
+bXTzm6hrq7mdK0Vp8xSWMVBKwK7XVTymGJlXMcyCl0k1S_ji_mMh1Bs6gaH1rUP1dFdpbWpdxEb=
+ux00M7ekV5b4LyfMsIY4VG8cJtJ7Evztrq8A7mfGbfPMxHJiKRT1JjePSv3Aq3qxgG5GqzA49ZT=
+dnn1e_oNXltIq-SsQjhNuFXAaXeW66jjMDr6vMQpJ9V4deag%2F2jHznaaFVf3fX4dl0wq9IA2p=
+jXyEZ09w%2F12/1/010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-00000=
+0/XSCHgu8lW0IydFFJw02bnXeTPAM=3D443" style=3D"text-decoration: none; color:=
+ #1a1a1a;"><span class=3D"gmail" style=3D"display: none"><img src=3D"https:=
+//square-mailstrom-production-s.squarecdn.com/market/icon/facebook-smw.png"=
+ width=3D"24" height=3D"24" alt=3D"Facebook" style=3D"mix-blend-mode: diffe=
+rence; display: block;"></span><span class=3D"notGmail"><!----><img src=3D"=
+https://square-mailstrom-production-s.squarecdn.com/market/icon/facebook-sm=
+b.png" width=3D"24" height=3D"24" alt=3D"Facebook" style=3D"display: block;=
+"><!----></span></a></td> <td style=3D"line-height: 1px; padding: 0 4px"><a=
+ href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squa=
+reupmessaging.com%2Fs%2Fc%2Flc7eNKOM9lSkKs2VpJznejr82vpL7iz3IrfSqvPom-2acMB=
+aCuh0NH1ZsRkosIyqepFGCEwg2HO3hZin9yyR46geCxJ-8cLEjqabpfOyly2anKB-kTsO0oQJak=
+Ijxk9iI0hHXBWtSpNm-ccbEqrFk4TzFiaAwVRyOK2ykel7B7qmjC1P7NJTj48iHWt-hrOC_0g53=
+O9qYBeU5lUVZxL3UfCFlEx0jlK4rwtLg0yIlBLr9NYtDF7qajgScbckmJ1zE-mQdHqZcFxarGee=
+tM5qKFA5Jx0un5kGMvnrHggTGZO-OJpZA3SWXsq_teau2UY-JtXhtUj0c6hL5xY2UBsaO-jMu84=
+2DdpQLrSGW0Vqa2LJy8PkUDTVlA%2F8OWc1DxyDRKFeFfJUAFxD-0w_-DAihLj%2F12/1/01010=
+1991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000/w2KqxuPFN8yryOQ0wLs=
+YBj3k7ts=3D443" style=3D"text-decoration: none; color: #1a1a1a;"><span clas=
+s=3D"gmail" style=3D"display: none"><img src=3D"https://square-mailstrom-pr=
+oduction-s.squarecdn.com/market/icon/instagram-smw.png" width=3D"24" height=
+=3D"24" alt=3D"Instagram" style=3D"mix-blend-mode: difference; display: blo=
+ck;"></span><span class=3D"notGmail"><!----><img src=3D"https://square-mail=
+strom-production-s.squarecdn.com/market/icon/instagram-smb.png" width=3D"24=
+" height=3D"24" alt=3D"Instagram" style=3D"display: block;"><!----></span><=
+/a></td> <td style=3D"line-height: 1px;"><a href=3D"https://kjfjb2yk.r.us-w=
+est-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FYEPZ=
+cx15w6miqDLTQyrHW4otNc_j0Zzkd72Bu7m-oLvjcuFiOxPCAOuzOcad-g43ejiXEGC5uFV_Fg1=
+w9I_YGY_qPgqts-jPHyEPmEwjBVT-p0aFUUU92pXQjG-e7Db91nOZhp3yt1yzX_Di4Bk1eErzy7=
+vkRCC_oEr4qxIYbfB-VwskIr0xnetLso8vkqSEg-gjdDcfGmOWPKRGO4YW1V28pDHtj5kk8PF9I=
+vpNn4NNv99ZBeZjeckyXPY7j5_BUEjd8Z8ZVzADfbF3RHA4MgoRTG0dsEcWObZSXlgjfY1jyYAe=
+KptrCN8h-l0JATGwoTtEcvFkABwLsNgBnRc%2FEvPbymMO8Ok2cTVP9NDl9HLY7bM04vkS%2F12=
+/1/010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000/rAGf0X23JMv=
+ObKWSXSY39sJkVYA=3D443" style=3D"text-decoration: none; color: #1a1a1a;"><s=
+pan class=3D"gmail" style=3D"display: none"><img src=3D"https://square-mail=
+strom-production-s.squarecdn.com/market/icon/x-social-smw.png" width=3D"24"=
+ height=3D"24" alt=3D"X" style=3D"mix-blend-mode: difference; display: bloc=
+k;"></span><span class=3D"notGmail"><!----><img src=3D"https://square-mails=
+trom-production-s.squarecdn.com/market/icon/x-social-smb.png" width=3D"24" =
+height=3D"24" alt=3D"X" style=3D"display: block;"><!----></span></a></td> <=
+/tr> </tbody> </table> </td> </tr> </tbody> </table><!----> <table cellpadd=
+ing=3D"0" cellspacing=3D"0"> <tbody> <tr> <td style=3D"padding: 16px 0 40px=
+"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=3D"te=
+xtBlock paragraph-20" style=3D"font-family: SquareSansText-Regular, Helveti=
+ca, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: nor=
+mal; font-size: 14px; line-height: 21px; color: #1a1a1a; padding: 0px 0 16p=
+x;"> <!----> Square<br><!----><a style=3D"text-decoration: none; letter-spa=
+cing: -0.01em; font-family: SquareSansText-Regular, Helvetica, Arial, 'Hira=
+gino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: normal; color: #1a1=
+a1a;"> 1955 Broadway, Suite 600 <!----><br>Oakland, CA 94612 <!----> <!----=
+></a> </td> </tr><!----> <!----> <!----> <!----> <!----> <tr> <td class=3D"=
+textBlock paragraph-20" style=3D"font-family: SquareSansText-Regular, Helve=
+tica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: n=
+ormal; font-size: 14px; line-height: 21px; color: #1a1a1a; padding: 0px 0 1=
+6px;"> <!----> <a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https=
+:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FzVyyGiOvMa_3cxrFFQWNTCUpXxxAhD=
+JaEKpdjBl6sOE-SR0d1pIoVNfSysBwfToAbBtWOfJWz8dnaxeLlEb3vXD5W0MenbbjvvgE6emB2=
+Ps1i0sBaEyWedqwaqaLrJzUymOoOShdqOUAJON63rkt7dc-CSBdvkVL2OwUsFiy_TP_to5_WdE8=
+2kxQKq80ZQiF2qpLkuKA3tyP3f6WkwnJ0NwRfDH-8B67NXddfV4LzLi6HtRGN8c4zIm7QtDHBLj=
+NusR43y3m2B7qVubfgjo6Mfa5XbfqZNetYDryFkc6RZewOB7Fb-3rjKCbbxxjloGGs7uX0RAaTc=
+2lhvrJeQ5ZDlo40v1DrsgGVK6zgBrzx-_akurXBv9O_s90L0adLpuCgJaIH52DdTkOIXJWDXkFU=
+ATLyEM-vokJGPwv2xg4%2FN0_pxUME1kleb8T8zfYRvHhcZvmVCPFs%2F12/1/010101991b5dd=
+df6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000/rWo5D_W9pPDB-Ex_G284G9KnjQs=
+=3D443" style=3D"text-decoration: none; font-family: SquareSansText-SemiBol=
+d, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-w=
+eight: bold; letter-spacing: -0.01em; color: #1a1a1a;">Square Privacy Polic=
+y</a> </td> </tr><!----> <!----> <!----> <tr> <td class=3D"textBlock paragr=
+aph-20" style=3D"font-family: SquareSansText-Regular, Helvetica, Arial, 'Hi=
+ragino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: normal; font-size=
+: 14px; line-height: 21px; color: #1a1a1a; padding: 0px 0 16px;"> <a href=
+=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupm=
+essaging.com%2Fs%2Feh%2FM0zSdGro9t4rnFRjYPIAg4MkUL-FVYxZ-Mr8UxLUOlJ-g2_ut54=
+sVyVK9dsqmDiQug-BmFqeYuNRMjprSM7spXAb26WcCMHv4PzkYP-AFit7N8szz4uRTc1O99nYrG=
+nrzB0_VlfY0PLg78M_4MQQoSnWPHnvIFvcJ3IhiTZ2xr8edtnQ8Vb4QsH-imdEyGRgoPIJypfa2=
+FdjxesvSOFj9b7zTcRNBAMFig6Yac5-iWAHY99sG53GDXvBgSBLa0vCEDtUfAYfoD-YabUNvhm3=
+2iWWyOOVXLcKE4HrvwCyd9zo-ecHPJf7kPi6HFiOiShBEDBmakCBfzj0lrqOyYA2Ot9c-ot2vSl=
+Y8odajOVDkowaChEikKH8SxM2DPd5jo6eW8mIspYFMgDQ8ta9ENCFaKkbh5wHaRuijFo0LgIN%2=
+FbRqU_7uHYDPD_Lx9QklkLjxEyDaYlyhA%2F12/1/010101991b5dddf6-e008da12-e9bd-4f9=
+7-87df-956f5e91f7e2-000000/0sfW9oR3QnO1kYwX2vJ9S9G8WDs=3D443" style=3D"text=
+-decoration: none; font-family: SquareSansText-SemiBold, Helvetica, Arial, =
+'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: bold; letter-s=
+pacing: -0.01em; color: #1a1a1a;">Unsubscribe or manage your preferences</a=
+> </td> </tr><!----> </tbody> </table> </td> </tr> </tbody> </table> </td> =
+</tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> </tbody><=
+/table> </div> <img alt=3D"" src=3D"https://kjfjb2yk.r.us-west-2.awstrack.m=
+e/I0/010101991b5dddf6-e008da12-e9bd-4f97-87df-956f5e91f7e2-000000/Bgj76SuXI=
+FVTpG7l0wExGt_PQO8=3D443" style=3D"display: none; width: 1px; height: 1px;"=
+>
+</body></html>

@@ -1,0 +1,138 @@
+Return-Path: <AllisonG@avda-tx.org>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id a1lmDZiXSGjtjQcAIW4ynA
+	(envelope-from <AllisonG@avda-tx.org>)
+	for <sales@notesao.com>; Tue, 10 Jun 2025 15:37:44 -0500
+Return-path: <AllisonG@avda-tx.org>
+Envelope-to: sales@notesao.com
+Delivery-date: Tue, 10 Jun 2025 15:37:44 -0500
+Received: from filter.quasardata.com ([204.61.223.9]:31001)
+	by host.notesao.com with esmtp (Exim 4.98.2)
+	(envelope-from <AllisonG@avda-tx.org>)
+	id 1uP5j4-000000024n3-1Jja
+	for sales@notesao.com;
+	Tue, 10 Jun 2025 15:37:44 -0500
+Authentication-Results: filter01.quasardata.com;
+        x-trusted-ip=pass
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=avda-tx.org;
+	s=default2; t=1749587416;
+	bh=r5Q5fy64lJxc/Q8NHffVvLIMB2x6yKBXzoaJJs9bD6M=;
+	h=From:To:Subject:Date:References:In-Reply-To;
+	b=OGH4ixgnOiDmdVAs8wDfEIWNyHpNOk+I37NUQBj9lkYSkjRh5Yu+xtNoqd4xteOQe
+	 FJQ1edl6QeVqfn+x5ylcSN5ozbq6TIh2CF1Ori3O9xS2qRxIQ9uiaLyIf1a5iSSxB1
+	 HgaK92K+mor/lvLp2/blWbH7SahdoyEAb9aINI8g=
+Received: from EXCH1601.avda.local (192.168.1.143) by EXCH1601.avda.local
+ (192.168.1.143) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2507.55; Tue, 10 Jun
+ 2025 15:37:08 -0500
+Received: from EXCH1601.avda.local ([fe80::4953:2497:24ad:9dea]) by
+ EXCH1601.avda.local ([fe80::4953:2497:24ad:9dea%5]) with mapi id
+ 15.01.2507.055; Tue, 10 Jun 2025 15:37:08 -0500
+From: Allison Guerra <AllisonG@avda-tx.org>
+To: "'sales@notesao.com'" <sales@notesao.com>
+Subject: RE: Notes AO
+Thread-Topic: Notes AO
+Thread-Index: AQHb1t2efmrUx3rIsU+j6g3J4Ko7kbP84QfA
+Date: Tue, 10 Jun 2025 20:37:08 +0000
+Message-ID: <f7e8df5042b54390b49e3cb2019a8f15@avda-tx.org>
+References: <a39195fbaf18555fb110cc01b5a26e9d@notesao.com>
+In-Reply-To: <a39195fbaf18555fb110cc01b5a26e9d@notesao.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [192.168.1.35]
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+X-Spam-Status: No, score=-0.2
+X-Spam-Score: -1
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Good afternoon, When would be a good time to set up a demo?
+    Thanks- 
+ Content analysis details:   (-0.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [204.61.223.9 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [204.61.223.9 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                           [204.61.223.9 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: avda-tx.org]
+                             [URI: avda.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+X-Spam-Flag: NO
+
+Good afternoon,=20
+
+When would be a good time to set up a demo?
+
+Thanks-
+
+
+Respectfully,
+
+Allison Guerra, M.Ed, LPC-Associate=20
+Director of BIPP | Group Facilitator=20
+1001 Texas Ave., Suite 600 =A0Houston, Texas=A0 77002
+main 713-224-9911 | direct 713-715-6942
+fax 713-715-6945
+www.avda.org
+
+
+A United Way partner
+=A0
+    =20
+
+
+
+
+
+
+-----Original Message-----
+From: sales@notesao.com <sales@notesao.com>=20
+Sent: Thursday, June 5, 2025 10:41 PM
+To: Maisha Colter <MaishaC@avda-tx.org>; Allison Guerra <AllisonG@avda-tx.o=
+rg>
+Subject: Notes AO
+
+Hello,
+I hope this email finds you well. My name is David House. I am with Notes A=
+O. Notes AO is a web application that can generate up to a thousand notes i=
+n less than 15 minutes that are TDCJ-CJAD compliant. It also has the capabi=
+lity to track attendance and Instant MAR and many more features.  I would l=
+ove to set up a demo with you and your administration and show you just how=
+ this program works. I believe you will be blown away, and it will relieve =
+the administrative burden that you may be facing now. Please give me a call=
+ to talk more about it. I am available anytime. Thank you so much
+
+David House
+214-502-4322
+Notes AO

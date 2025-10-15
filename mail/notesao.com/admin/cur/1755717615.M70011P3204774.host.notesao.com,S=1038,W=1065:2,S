@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id cbLaAu8fpmim5jAAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 20 Aug 2025 14:20:15 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 20 Aug 2025 14:20:15 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uooM3-0000000DRho-01Je
+	for admin@notesao.com;
+	Wed, 20 Aug 2025 14:20:15 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Devon Slaymaker
+X-PHP-Script: ffl.notesao.com/intake.php for 104.181.250.23
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: devon.l.slaymaker1@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uooM3-0000000DRho-01Je@host.notesao.com>
+Date: Wed, 20 Aug 2025 14:20:15 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

@@ -1,0 +1,27 @@
+Return-Path: <david@notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id GrqGNVBGxGjALDoAIW4ynA
+	(envelope-from <david@notesao.com>); Fri, 12 Sep 2025 11:12:00 -0500
+Return-path: <david@notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Fri, 12 Sep 2025 11:12:00 -0500
+Received: from [166.199.3.33] (port=6254 helo=smtpclient.apple)
+	by host.notesao.com with esmtpsa  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <david@notesao.com>)
+	id 1ux6NX-0000000FzoY-1faS
+	for admin@notesao.com;
+	Fri, 12 Sep 2025 11:12:00 -0500
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+From: "david@notesao.com" <david@notesao.com>
+Mime-Version: 1.0 (1.0)
+Date: Fri, 12 Sep 2025 11:11:49 -0500
+Subject: Testing iPhone Sending
+Message-Id: <3806C61F-D1D3-46CB-B2A2-0AFF49D95E4A@notesao.com>
+To: admin@notesao.com
+X-Mailer: iPhone Mail (22G100)
+
+Testing the sending function with a phone. 
+Sent from my iPhone

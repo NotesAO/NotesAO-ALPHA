@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id bXi2OJktvWjJrgkAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Sun, 07 Sep 2025 02:00:41 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 07 Sep 2025 02:00:41 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uv9OD-00000002f4t-3oJ0
+	for admin@notesao.com;
+	Sun, 07 Sep 2025 02:00:41 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Sincere Finch
+X-PHP-Script: ffl.notesao.com/intake.php for 108.81.192.15
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: clarencejaccson@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uv9OD-00000002f4t-3oJ0@host.notesao.com>
+Date: Sun, 07 Sep 2025 02:00:41 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

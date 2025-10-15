@@ -1,0 +1,810 @@
+.
+=4.2.5
+absence
+absence_reports
+absence_reports/bestoption
+absence_reports/ctc
+absence_reports/dwag
+absence_reports/ffltest
+absence_reports/ffltest/AbsenceReport_20250505.pdf
+absence_reports/ffltest/AbsenceReport_20250522.pdf
+absence_reports/ffltest/AbsenceReport_20250529.pdf
+absence_reports/safatherhood
+absence_reports/saferpath
+absence_reports/sage
+absence_reports/sandbox
+absence_reports/sandbox/AbsenceReport_20250321.pdf
+absence_reports/sandbox/AbsenceReport_20250513.pdf
+absence_reports/sandbox/AbsenceReport_20250528.pdf
+absence_reports/sandbox/AbsenceReport_20250529.pdf
+absence_reports/sandbox/AbsenceReport_20250530.pdf
+absence_reports/sandbox/AbsenceReport_20250605.pdf
+absence_reports/transform
+AC_Behavior_Contracts_Script.py
+AC_Completion_Documents_Script.py
+AC_Enrollment_Letters_Script.py
+AC_Entrance_Notifications_Script.py
+AC_Exit_Notices_Script.py
+AC_Progress_Reports_Script.py
+AC_Unexcused_Absences_Script.py
+AC_Victim_Letters_Script.py
+ADVANCE_PARENTING_Behavior_Contracts_Script.py
+ADVANCE_PARENTING_Completion_Documents_Script.py
+ADVANCE_PARENTING_Enrollment_Letters_Script.py
+ADVANCE_PARENTING_Entrance_Notifications_Script.py
+ADVANCE_PARENTING_Exit_Notices_Script.py
+ADVANCE_PARENTING_Progress_Reports_Script.py
+ADVANCE_PARENTING_Unexcused_Absences_Script.py
+ADVANCE_PARENTING_Victim_Letters_Script.py
+AEMP_Behavior_Contracts_Script.py
+AEMP_Completion_Documents_Script.py
+AEMP_Enrollment_Letters_Script.py
+AEMP_Entrance_Notifications_Script.py
+AEMP_Exit_Notices_Script.py
+AEMP_Progress_Reports_Script.py
+AEMP_Unexcused_Absences_Script.py
+AEMP_Victim_Letters_Script.py
+app.log
+BIPP_Behavior_Contracts_Script.py
+BIPP_Completion_Documents_Script.py
+BIPP_CUR_Progress_Reports_Script.py
+BIPP_Enrollment_Letters_Script.py
+BIPP_Entrance_Notifications_Script.py
+BIPP_Exit_Notices_Script.py
+BIPP_SOC_Progress_Reports_Script.py
+BIPP_Unexcused_Absences_Script.py
+BIPP_Victim_Letters_Script.py
+celery.out
+check_absences.py
+csv
+csv/bestoption
+csv/ctc
+csv/ctc/report5_dump_20250613.csv
+csv/dwag
+csv/dwag/report5_dump_20250910.csv
+csv/ffltest
+csv/ffltest/report5_dump_20250922.csv
+csv/lakeview
+csv/safatherhood
+csv/safatherhood/report5_dump_20250918.csv
+csv/safatherhood/updated_report5_dump_20250918.csv
+csv/saferpath
+csv/sage
+csv/sandbox
+csv/sandbox/report5_dump_20250911.csv
+csv/transform
+csv/transform/report5_dump_20250507.csv
+DocumentsCSV
+DOEP_Behavior_Contracts_Script.py
+DOEP_Completion_Documents_Script.py
+DOEP_Enrollment_Letters_Script.py
+DOEP_Entrance_Notifications_Script.py
+DOEP_Exit_Notices_Script.py
+DOEP_Progress_Reports_Script.py
+DOEP_Unexcused_Absences_Script.py
+DOEP_Victim_Letters_Script.py
+dump.rdb
+DWI_Behavior_Contracts_Script.py
+DWI_Completion_Documents_Script.py
+DWIE_Behavior_Contracts_Script.py
+DWIE_Completion_Documents_Script.py
+DWIE_Enrollment_Letters_Script.py
+DWIE_Entrance_Notifications_Script.py
+DWIE_Exit_Notices_Script.py
+DWI_Enrollment_Letters_Script.py
+DWI_Entrance_Notifications_Script.py
+DWIE_Progress_Reports_Script.py
+DWIE_Unexcused_Absences_Script.py
+DWIE_Victim_Letters_Script.py
+DWI_Exit_Notices_Script.py
+DWII_Behavior_Contracts_Script.py
+DWII_Completion_Documents_Script.py
+DWII_Enrollment_Letters_Script.py
+DWII_Entrance_Notifications_Script.py
+DWII_Exit_Notices_Script.py
+DWII_Progress_Reports_Script.py
+DWII_Unexcused_Absences_Script.py
+DWII_Victim_Letters_Script.py
+DWI_Progress_Reports_Script.py
+DWI_Unexcused_Absences_Script.py
+DWI_Victim_Letters_Script.py
+fetch_data_errors.log
+fetch_data.php
+GeneratedDocuments
+GeneratedDocuments/bestoption
+GeneratedDocuments/ctc
+GeneratedDocuments/dwag
+GeneratedDocuments/ffltest
+GeneratedDocuments/lakeview
+GeneratedDocuments/lankford
+GeneratedDocuments/safatherhood
+GeneratedDocuments/saferpath
+GeneratedDocuments/sage
+GeneratedDocuments/sandbox
+GeneratedDocuments/transform
+GeneratedReports
+
+gunicorn_config.py
+gunicorn.conf.py
+gunicorn.out
+.htaccess
+inventory.txt
+IOP_Behavior_Contracts_Script.py
+IOP_Completion_Documents_Script.py
+IOP_Enrollment_Letters_Script.py
+IOP_Entrance_Notifications_Script.py
+IOP_Exit_Notices_Script.py
+IOP_Progress_Reports_Script.py
+IOP_Unexcused_Absences_Script.py
+IOP_Victim_Letters_Script.py
+LibreOffice_24.8.2.1_Linux_x86-64_rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/install
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/readmes
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/readmes/README_en-US
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-base-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-calc-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-core-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-draw-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-en-US-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-extension-beanshell-script-provider-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-extension-javascript-script-provider-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-extension-mediawiki-publisher-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-extension-nlpsolver-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-extension-pdf-import-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-extension-report-builder-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-firebird-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-gnome-integration-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-graphicfilter-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-images-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-impress-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-kde-integration-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-librelogo-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-libreofficekit-data-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-math-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-ogltrans-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-onlineupdate-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-ooofonts-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-ooolinguistic-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-postgresql-sdbc-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-python-script-provider-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-pyuno-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-writer-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libobasis24.8-xsltfilter-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-base-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-calc-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-dict-en-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-dict-es-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-dict-fr-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-draw-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-en-US-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-freedesktop-menus-24.8.2-1.noarch.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-impress-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-math-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-ure-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2.1_Linux_x86-64_rpm/RPMS/libreoffice24.8-writer-24.8.2.1-1.x86_64.rpm
+LibreOffice_24.8.2_Linux_x86-64_rpm.tar.gz
+LibreOffice_24.8.2_Linux_x86-64_rpm.tar.gz.1
+LIFE_SKILLS_Behavior_Contracts_Script.py
+LIFE_SKILLS_Completion_Documents_Script.py
+LIFE_SKILLS_Enrollment_Letters_Script.py
+LIFE_SKILLS_Entrance_Notifications_Script.py
+LIFE_SKILLS_Exit_Notices_Script.py
+LIFE_SKILLS_Progress_Reports_Script.py
+LIFE_SKILLS_Unexcused_Absences_Script.py
+LIFE_SKILLS_Victim_Letters_Script.py
+logs
+manage_services_denton.sh
+manage_services.sh
+MARIJUANA_EDU_Behavior_Contracts_Script.py
+MARIJUANA_EDU_Completion_Documents_Script.py
+MARIJUANA_EDU_Enrollment_Letters_Script.py
+MARIJUANA_EDU_Entrance_Notifications_Script.py
+MARIJUANA_EDU_Exit_Notices_Script.py
+MARIJUANA_EDU_Progress_Reports_Script.py
+MARIJUANA_EDU_Unexcused_Absences_Script.py
+MARIJUANA_EDU_Victim_Letters_Script.py
+MARIJUANA_INT_Behavior_Contracts_Script.py
+MARIJUANA_INT_Completion_Documents_Script.py
+MARIJUANA_INT_Enrollment_Letters_Script.py
+MARIJUANA_INT_Entrance_Notifications_Script.py
+MARIJUANA_INT_Exit_Notices_Script.py
+MARIJUANA_INT_Progress_Reports_Script.py
+MARIJUANA_INT_Unexcused_Absences_Script.py
+MARIJUANA_INT_Victim_Letters_Script.py
+MRT_Behavior_Contracts_Script.py
+MRT_Completion_Documents_Script.py
+MRT_Enrollment_Letters_Script.py
+MRT_Entrance_Notifications_Script.py
+MRT_Exit_Notices_Script.py
+MRT_Progress_Reports_Script.py
+MRT_Unexcused_Absences_Script.py
+MRT_Victim_Letters_Script.py
+new_venv
+new_venv/bin
+new_venv/include
+new_venv/include/python3.11
+new_venv/lib
+new_venv/lib64
+new_venv/lib64/python3.11
+new_venv/pyvenv.cfg
+nohup.out
+OBSTRUCTION_Behavior_Contracts_Script.py
+OBSTRUCTION_Completion_Documents_Script.py
+OBSTRUCTION_Enrollment_Letters_Script.py
+OBSTRUCTION_Entrance_Notifications_Script.py
+OBSTRUCTION_Exit_Notices_Script.py
+OBSTRUCTION_Progress_Reports_Script.py
+OBSTRUCTION_Unexcused_Absences_Script.py
+OBSTRUCTION_Victim_Letters_Script.py
+PARENTING_Behavior_Contracts_Script.py
+PARENTING_Completion_Documents_Script.py
+PARENTING_Enrollment_Letters_Script.py
+PARENTING_Entrance_Notifications_Script.py
+PARENTING_Exit_Notices_Script.py
+PARENTING_Progress_Reports_Script.py
+PARENTING_Unexcused_Absences_Script.py
+PARENTING_Victim_Letters_Script.py
+__pycache__
+__pycache__/check_absences.cpython-311.pyc
+__pycache__/gunicorn.conf.cpython-311.pyc
+__pycache__/Reporting_GUI.cpython-311.pyc
+__pycache__/Reporting_GUI.cpython-36.pyc
+README.md
+redis.conf
+redis.out
+Reporting_GUI.py
+requirements.txt
+SAE_Behavior_Contracts_Script.py
+SAE_Completion_Documents_Script.py
+SAE_Enrollment_Letters_Script.py
+SAE_Entrance_Notifications_Script.py
+SAE_Exit_Notices_Script.py
+SAE_Progress_Reports_Script.py
+SAE_Unexcused_Absences_Script.py
+SAE_Victim_Letters_Script.py
+segoe-ui-linux
+SOP_Behavior_Contracts_Script.py
+SOP_Completion_Documents_Script.py
+SOP_Enrollment_Letters_Script.py
+SOP_Entrance_Notifications_Script.py
+SOP_Exit_Notices_Script.py
+SOP_Progress_Reports_Script.py
+SOP_Unexcused_Absences_Script.py
+SOP_Victim_Letters_Script.py
+static
+static/Background.png
+static/Free_for_Life_Logo.png
+static/GCheck.png
+static/jquery-3.7.1.min.js
+static/loading-spinner.gif
+static/NoteProLogo2.png
+static/NoteProLogoFinal.ico
+static/REx.png
+stop_and_restart_nginx.sh
+T4C_Behavior_Contracts_Script.py
+T4C_Completion_Documents_Script.py
+T4C_Enrollment_Letters_Script.py
+T4C_Entrance_Notifications_Script.py
+T4C_Exit_Notices_Script.py
+T4C_Progress_Reports_Script.py
+T4C_Unexcused_Absences_Script.py
+T4C_Victim_Letters_Script.py
+tasks
+tasks/progress.log
+tasks/status_task_6750cc934b0f24.41758572.txt
+templates
+templates/bestoption
+templates/ctc
+templates/ctc/BIPP Curriculum Blank Notes.xlsx
+templates/ctc/Blank Progress Notes.xlsx
+templates/ctc/Template.AC Completion Certificate.docx
+templates/ctc/Template.AC Progress Report.docx
+templates/ctc/Template.BIPP Completion Certificate.docx
+templates/ctc/Template.BIPP Progress Report.docx
+templates/ctc/Template.TIPS Completion Certificate.docx
+templates/ctc/Template.TIPS Progress Report.docx
+templates/default
+templates/default/AC
+templates/default/AC/Template.AC Behavior Contract.docx
+templates/default/AC/Template.AC Completion Certificate.docx
+templates/default/AC/Template.AC Completion Letter.docx
+templates/default/AC/Template.AC Completion Progress Report.docx
+templates/default/AC/Template.AC Completion Progress Report Virtual.docx
+templates/default/AC/Template.AC Entrance Notification.docx
+templates/default/AC/Template.AC Exit Notice.docx
+templates/default/AC/Template.AC Exit Progress Report.docx
+templates/default/AC/Template.AC Exit Progress Report Virtual.docx
+templates/default/AC/Template.AC Progress Report.docx
+templates/default/AC/Template.AC Progress Report Virtual.docx
+templates/default/AC/Template.AC Unexcused Absence.docx
+templates/default/AC/Template.AC Victim Completion.docx
+templates/default/AC/Template.AC Victim Entrance.docx
+templates/default/AC/Template.AC Victim Exit.docx
+templates/default/ADVANCE PARENTING
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Behavior Contract.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Completion Certificate.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Completion Letter.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Completion Progress Report.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Completion Progress Report Virtual.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Entrance Notification.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Exit Notice.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Exit Progress Report.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Exit Progress Report Virtual.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Progress Report.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Progress Report Virtual.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Unexcused Absence.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Victim Completion.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Victim Entrance.docx
+templates/default/ADVANCE PARENTING/Template.ADVANCE PARENTING Victim Exit.docx
+templates/default/AEMP
+templates/default/AEMP/Template.AEMP Behavior Contract.docx
+templates/default/AEMP/Template.AEMP Completion Certificate.docx
+templates/default/AEMP/Template.AEMP Completion Letter.docx
+templates/default/AEMP/Template.AEMP Completion Progress Report.docx
+templates/default/AEMP/Template.AEMP Completion Progress Report Virtual.docx
+templates/default/AEMP/Template.AEMP Entrance Notification.docx
+templates/default/AEMP/Template.AEMP Exit Notice.docx
+templates/default/AEMP/Template.AEMP Exit Progress Report.docx
+templates/default/AEMP/Template.AEMP Exit Progress Report Virtual.docx
+templates/default/AEMP/Template.AEMP Progress Report.docx
+templates/default/AEMP/Template.AEMP Progress Report Virtual.docx
+templates/default/AEMP/Template.AEMP Unexcused Absence.docx
+templates/default/AEMP/Template.AEMP Victim Completion.docx
+templates/default/AEMP/Template.AEMP Victim Entrance.docx
+templates/default/AEMP/Template.AEMP Victim Exit.docx
+templates/default/BIPP
+templates/default/BIPP/Template.BIPP Behavior Contract.docx
+templates/default/BIPP/Template.BIPP Completion Certificate.docx
+templates/default/BIPP/Template.BIPP Completion Letter.docx
+templates/default/BIPP/Template.BIPP Completion Progress Report.docx
+templates/default/BIPP/Template.BIPP Completion Progress Report Virtual.docx
+templates/default/BIPP/Template.BIPP Entrance Notification.docx
+templates/default/BIPP/Template.BIPP Exit Notice.docx
+templates/default/BIPP/Template.BIPP Exit Progress Report.docx
+templates/default/BIPP/Template.BIPP Exit Progress Report Virtual.docx
+templates/default/BIPP/Template.BIPP Progress Report.docx
+templates/default/BIPP/Template.BIPP Progress Report Virtual.docx
+templates/default/BIPP/Template.BIPP Unexcused Absence.docx
+templates/default/BIPP/Template.BIPP Victim Completion.docx
+templates/default/BIPP/Template.BIPP Victim Entrance.docx
+templates/default/BIPP/Template.BIPP Victim Exit.docx
+templates/default/DOEP
+templates/default/DOEP/Template.DOEP Behavior Contract.docx
+templates/default/DOEP/Template.DOEP Completion Certificate.docx
+templates/default/DOEP/Template.DOEP Completion Letter.docx
+templates/default/DOEP/Template.DOEP Completion Progress Report.docx
+templates/default/DOEP/Template.DOEP Completion Progress Report Virtual.docx
+templates/default/DOEP/Template.DOEP Entrance Notification.docx
+templates/default/DOEP/Template.DOEP Exit Notice.docx
+templates/default/DOEP/Template.DOEP Exit Progress Report.docx
+templates/default/DOEP/Template.DOEP Exit Progress Report Virtual.docx
+templates/default/DOEP/Template.DOEP Progress Report.docx
+templates/default/DOEP/Template.DOEP Progress Report Virtual.docx
+templates/default/DOEP/Template.DOEP Unexcused Absence.docx
+templates/default/DOEP/Template.DOEP Victim Completion.docx
+templates/default/DOEP/Template.DOEP Victim Entrance.docx
+templates/default/DOEP/Template.DOEP Victim Exit.docx
+templates/default/DWI
+templates/default/DWIE
+templates/default/DWIE/Template.DWIE Behavior Contract.docx
+templates/default/DWIE/Template.DWIE Completion Certificate.docx
+templates/default/DWIE/Template.DWIE Completion Letter.docx
+templates/default/DWIE/Template.DWIE Completion Progress Report.docx
+templates/default/DWIE/Template.DWIE Completion Progress Report Virtual.docx
+templates/default/DWIE/Template.DWIE Entrance Notification.docx
+templates/default/DWIE/Template.DWIE Exit Notice.docx
+templates/default/DWIE/Template.DWIE Exit Progress Report.docx
+templates/default/DWIE/Template.DWIE Exit Progress Report Virtual.docx
+templates/default/DWIE/Template.DWIE Progress Report.docx
+templates/default/DWIE/Template.DWIE Progress Report Virtual.docx
+templates/default/DWIE/Template.DWIE Unexcused Absence.docx
+templates/default/DWIE/Template.DWIE Victim Completion.docx
+templates/default/DWIE/Template.DWIE Victim Entrance.docx
+templates/default/DWIE/Template.DWIE Victim Exit.docx
+templates/default/DWII
+templates/default/DWII/Template.DWII Behavior Contract.docx
+templates/default/DWII/Template.DWII Completion Certificate.docx
+templates/default/DWII/Template.DWII Completion Letter.docx
+templates/default/DWII/Template.DWII Completion Progress Report.docx
+templates/default/DWII/Template.DWII Completion Progress Report Virtual.docx
+templates/default/DWII/Template.DWII Entrance Notification.docx
+templates/default/DWII/Template.DWII Exit Notice.docx
+templates/default/DWII/Template.DWII Exit Progress Report.docx
+templates/default/DWII/Template.DWII Exit Progress Report Virtual.docx
+templates/default/DWII/Template.DWII Progress Report.docx
+templates/default/DWII/Template.DWII Progress Report Virtual.docx
+templates/default/DWII/Template.DWII Unexcused Absence.docx
+templates/default/DWII/Template.DWII Victim Completion.docx
+templates/default/DWII/Template.DWII Victim Entrance.docx
+templates/default/DWII/Template.DWII Victim Exit.docx
+templates/default/DWI/Template.DWI Behavior Contract.docx
+templates/default/DWI/Template.DWI Completion Certificate.docx
+templates/default/DWI/Template.DWI Completion Letter.docx
+templates/default/DWI/Template.DWI Completion Progress Report.docx
+templates/default/DWI/Template.DWI Completion Progress Report Virtual.docx
+templates/default/DWI/Template.DWI Entrance Notification.docx
+templates/default/DWI/Template.DWI Exit Notice.docx
+templates/default/DWI/Template.DWI Exit Progress Report.docx
+templates/default/DWI/Template.DWI Exit Progress Report Virtual.docx
+templates/default/DWI/Template.DWI Progress Report.docx
+templates/default/DWI/Template.DWI Progress Report Virtual.docx
+templates/default/DWI/Template.DWI Unexcused Absence.docx
+templates/default/DWI/Template.DWI Victim Completion.docx
+templates/default/DWI/Template.DWI Victim Entrance.docx
+templates/default/DWI/Template.DWI Victim Exit.docx
+templates/default/IOP
+templates/default/IOP/Template.IOP Behavior Contract.docx
+templates/default/IOP/Template.IOP Completion Certificate.docx
+templates/default/IOP/Template.IOP Completion Letter.docx
+templates/default/IOP/Template.IOP Completion Progress Report.docx
+templates/default/IOP/Template.IOP Completion Progress Report Virtual.docx
+templates/default/IOP/Template.IOP Entrance Notification.docx
+templates/default/IOP/Template.IOP Exit Notice.docx
+templates/default/IOP/Template.IOP Exit Progress Report.docx
+templates/default/IOP/Template.IOP Exit Progress Report Virtual.docx
+templates/default/IOP/Template.IOP Progress Report.docx
+templates/default/IOP/Template.IOP Progress Report Virtual.docx
+templates/default/IOP/Template.IOP Unexcused Absence.docx
+templates/default/IOP/Template.IOP Victim Completion.docx
+templates/default/IOP/Template.IOP Victim Entrance.docx
+templates/default/IOP/Template.IOP Victim Exit.docx
+templates/default/LIFE SKILLS
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Behavior Contract.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Completion Certificate.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Completion Letter.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Completion Progress Report.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Completion Progress Report Virtual.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Entrance Notification.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Exit Notice.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Exit Progress Report.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Exit Progress Report Virtual.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Progress Report.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Progress Report Virtual.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Unexcused Absence.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Victim Completion.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Victim Entrance.docx
+templates/default/LIFE SKILLS/Template.LIFE SKILLS Victim Exit.docx
+templates/default/MARIJUANA EDU
+templates/default/MARIJUANA EDU/Template.MARIAUNA EDU Victim Completion.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Behavior Contract.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Completion Certificate.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Completion Letter.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Completion Progress Report.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Completion Progress Report Virtual.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Entrance Notification.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Exit Notice.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Exit Progress Report.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Exit Progress Report Virtual.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Progress Report.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Progress Report Virtual.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Unexcused Absence.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Victim Entrance.docx
+templates/default/MARIJUANA EDU/Template.MARIJUANA EDU Victim Exit.docx
+templates/default/MARIJUANA INT
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Behavior Contract.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Completion Certificate.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Completion Letter.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Completion Progress Report.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Completion Progress Report Virtual.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Entrance Notification.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Exit Notice.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Exit Progress Report.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Exit Progress Report Virtual.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Progress Report.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Progress Report Virtual.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Unexcused Absence.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Victim Completion.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Victim Entrance.docx
+templates/default/MARIJUANA INT/Template.MARIJUANA INT Victim Exit.docx
+templates/default/MRT
+templates/default/MRT/Template.MRT Behavior Contract.docx
+templates/default/MRT/Template.MRT Completion Certificate.docx
+templates/default/MRT/Template.MRT Completion Letter.docx
+templates/default/MRT/Template.MRT Completion Progress Report.docx
+templates/default/MRT/Template.MRT Completion Progress Report Virtual.docx
+templates/default/MRT/Template.MRT Entrance Notification.docx
+templates/default/MRT/Template.MRT Exit Notice.docx
+templates/default/MRT/Template.MRT Exit Progress Report.docx
+templates/default/MRT/Template.MRT Exit Progress Report Virtual.docx
+templates/default/MRT/Template.MRT Progress Report.docx
+templates/default/MRT/Template.MRT Progress Report Virtual.docx
+templates/default/MRT/Template.MRT Unexcused Absence.docx
+templates/default/MRT/Template.MRT Victim Completion.docx
+templates/default/MRT/Template.MRT Victim Entrance.docx
+templates/default/MRT/Template.MRT Victim Exit.docx
+templates/default/OBSTRUCTION
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Behavior Contract.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Completion Certificate.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Completion Letter.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Completion Progress Report.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Completion Progress Report Virtual.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Entrance Notification.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Exit Notice.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Exit Progress Report.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Exit Progress Report Virtual.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Progress Report.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Progress Report Virtual.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Unexcused Absence.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Victim Completion.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Victim Entrance.docx
+templates/default/OBSTRUCTION/Template.OBSTRUCTION Victim Exit.docx
+templates/default/PARENTING
+templates/default/PARENTING/Template.PARENTING Behavior Contract.docx
+templates/default/PARENTING/Template.PARENTING Completion Certificate.docx
+templates/default/PARENTING/Template.PARENTING Completion Letter.docx
+templates/default/PARENTING/Template.PARENTING Completion Progress Report.docx
+templates/default/PARENTING/Template.PARENTING Completion Progress Report Virtual.docx
+templates/default/PARENTING/Template.PARENTING Entrance Notification.docx
+templates/default/PARENTING/Template.PARENTING Exit Notice.docx
+templates/default/PARENTING/Template.PARENTING Exit Progress Report.docx
+templates/default/PARENTING/Template.PARENTING Exit Progress Report Virtual.docx
+templates/default/PARENTING/Template.PARENTING Progress Report.docx
+templates/default/PARENTING/Template.PARENTING Progress Report Virtual.docx
+templates/default/PARENTING/Template.PARENTING Unexcused Absence.docx
+templates/default/PARENTING/Template.PARENTING Victim Completion.docx
+templates/default/PARENTING/Template.PARENTING Victim Entrance.docx
+templates/default/PARENTING/Template.PARENTING Victim Exit.docx
+templates/default/SAE
+templates/default/SAE/Template.SAE Behavior Contract.docx
+templates/default/SAE/Template.SAE Completion Certificate.docx
+templates/default/SAE/Template.SAE Completion Letter.docx
+templates/default/SAE/Template.SAE Completion Progress Report.docx
+templates/default/SAE/Template.SAE Completion Progress Report Virtual.docx
+templates/default/SAE/Template.SAE Entrance Notification.docx
+templates/default/SAE/Template.SAE Exit Notice.docx
+templates/default/SAE/Template.SAE Exit Progress Report.docx
+templates/default/SAE/Template.SAE Exit Progress Report Virtual.docx
+templates/default/SAE/Template.SAE Progress Report.docx
+templates/default/SAE/Template.SAE Progress Report Virtual.docx
+templates/default/SAE/Template.SAE Unexcused Absence.docx
+templates/default/SAE/Template.SAE Victim Completion.docx
+templates/default/SAE/Template.SAE Victim Entrance.docx
+templates/default/SAE/Template.SAE Victim Exit.docx
+templates/default/SOP
+templates/default/SOP/Template.SOP Behavior Contract.docx
+templates/default/SOP/Template.SOP Completion Certificate.docx
+templates/default/SOP/Template.SOP Completion Letter.docx
+templates/default/SOP/Template.SOP Completion Progress Report.docx
+templates/default/SOP/Template.SOP Completion Progress Report Virtual.docx
+templates/default/SOP/Template.SOP Entrance Notification.docx
+templates/default/SOP/Template.SOP Exit Notice.docx
+templates/default/SOP/Template.SOP Exit Progress Report.docx
+templates/default/SOP/Template.SOP Exit Progress Report Virtual.docx
+templates/default/SOP/Template.SOP Progress Report.docx
+templates/default/SOP/Template.SOP Progress Report Virtual.docx
+templates/default/SOP/Template.SOP Unexcused Absence.docx
+templates/default/SOP/Template.SOP Victim Completion.docx
+templates/default/SOP/Template.SOP Victim Entrance.docx
+templates/default/SOP/Template.SOP Victim Exit.docx
+templates/dwag
+templates/dwag/BIPP Curriculum Blank Notes.xlsx
+templates/dwag/Blank Progress Notes.xlsx
+templates/dwag/Template.BIPP Behavior Contract.docx
+templates/dwag/Template.BIPP Completion Certificate.docx
+templates/dwag/Template.BIPP Completion Letter.docx
+templates/dwag/Template.BIPP Completion Progress Report Virtual.docx
+templates/dwag/Template.BIPP CUR Progress Report Virtual.docx
+templates/dwag/Template.BIPP Entrance Notification.docx
+templates/dwag/Template.BIPP Exit Notice.docx
+templates/dwag/Template.BIPP Exit Progress Report Virtual.docx
+templates/dwag/Template.BIPP SOC Progress Report Virtual.docx
+templates/dwag/Template.BIPP Unexcused Absence.docx
+templates/dwag/Template.BIPP Victim Completion.docx
+templates/dwag/Template.BIPP Victim Entrance.docx
+templates/dwag/Template.BIPP Victim Exit.docx
+templates/dwag/Template.MRT Completion Certificate.docx
+templates/dwag/Template.MRT Completion Letter.docx
+templates/dwag/Template.MRT Completion Progress Report Virtual.docx
+templates/dwag/Template.MRT Entrance Notification.docx
+templates/dwag/Template.MRT Exit Notice.docx
+templates/dwag/Template.MRT Exit Progress Report Virtual.docx
+templates/dwag/Template.MRT Progress Report Virtual.docx
+templates/dwag/Template.MRT Unexcused Absence.docx
+templates/ffltest
+templates/ffltest/BIPP Curriculum Blank Notes.xlsx
+templates/ffltest/BIPP.Template Victim Mailing Labels.docx
+templates/ffltest/Blank Progress Notes.xlsx
+templates/ffltest/greencheck.png
+templates/ffltest/greencheck.svg
+templates/ffltest/index.html
+templates/ffltest/purplecross.png
+templates/ffltest/purplecross.svg
+templates/ffltest/redcross.png
+templates/ffltest/redcross.svg
+templates/ffltest/Template.AC Completion Certificate.docx
+templates/ffltest/Template.AC Completion Letter.docx
+templates/ffltest/Template.AC Completion Progress Report.docx
+templates/ffltest/Template.AC Entrance Notification.docx
+templates/ffltest/Template.AC Exit Notice.docx
+templates/ffltest/Template.AC Exit Progress Report.docx
+templates/ffltest/Template.AC Progress Report.docx
+templates/ffltest/Template.AC Unexcused Absence.docx
+templates/ffltest/Template.BIPP Behavior Contract.docx
+templates/ffltest/Template.BIPP Completion Certificate.docx
+templates/ffltest/Template.BIPP Completion Letter.docx
+templates/ffltest/Template.BIPP Completion Progress Report.docx
+templates/ffltest/Template.BIPP Completion Progress Report Virtual.docx
+templates/ffltest/Template.BIPP CUR Progress Report.docx
+templates/ffltest/Template.BIPP CUR Progress Report Virtual.docx
+templates/ffltest/Template.BIPP Entrance Notification.docx
+templates/ffltest/Template.BIPP Exit Notice.docx
+templates/ffltest/Template.BIPP Exit Progress Report.docx
+templates/ffltest/Template.BIPP Exit Progress Report Virtual.docx
+templates/ffltest/Template.BIPP Progress Report.docx
+templates/ffltest/Template.BIPP Progress Report Virtual.docx
+templates/ffltest/Template.BIPP SOC Progress Report.docx
+templates/ffltest/Template.BIPP SOC Progress Report Virtual.docx
+templates/ffltest/Template.BIPP Unexcused Absence.docx
+templates/ffltest/Template.BIPP Victim Completion.docx
+templates/ffltest/Template.BIPP Victim Entrance.docx
+templates/ffltest/Template.BIPP Victim Exit.docx
+templates/ffltest/Template.T4C Completion Certificate.docx
+templates/ffltest/Template.T4C Completion Letter.docx
+templates/ffltest/Template.T4C Completion Progress Report.docx
+templates/ffltest/Template.T4C Entrance Notification.docx
+templates/ffltest/Template.T4C Exit Notice.docx
+templates/ffltest/Template.T4C Exit Progress Report.docx
+templates/ffltest/Template.T4C Progress Report.docx
+templates/ffltest/Template.T4C Unexcused Absence.docx
+templates/.htaccess
+templates/lakeview
+templates/lankford
+templates/safatherhood
+templates/safatherhood/Blank Progress Notes.xlsx
+templates/safatherhood/Template.BIPP Behavior Contract.docx
+templates/safatherhood/Template.BIPP Completion Certificate.docx
+templates/safatherhood/Template.BIPP Completion Letter.docx
+templates/safatherhood/Template.BIPP Completion Progress Report Virtual.docx
+templates/safatherhood/Template.BIPP CUR Progress Report Virtual.docx
+templates/safatherhood/Template.BIPP Entrance Notification.docx
+templates/safatherhood/Template.BIPP Exit Notice.docx
+templates/safatherhood/Template.BIPP Exit Progress Report Virtual.docx
+templates/safatherhood/Template.BIPP SOC Progress Report Virtual.docx
+templates/safatherhood/Template.BIPP Unexcused Absence.docx
+templates/safatherhood/Template.BIPP Victim Completion.docx
+templates/safatherhood/Template.BIPP Victim Entrance.docx
+templates/safatherhood/Template.BIPP Victim Exit.docx
+templates/saferpath
+templates/sage
+templates/sandbox
+templates/sandbox/BIPP Curriculum Blank Notes copy.xlsx
+templates/sandbox/BIPP Curriculum Blank Notes.xlsx
+templates/sandbox/BIPP.Template Victim Mailing Labels.docx
+templates/sandbox/Blank Progress Notes copy.xlsx
+templates/sandbox/Blank Progress Notes.xlsx
+templates/sandbox/greencheck copy.png
+templates/sandbox/greencheck copy.svg
+templates/sandbox/greencheck.png
+templates/sandbox/greencheck.svg
+templates/sandbox/index copy.html
+templates/sandbox/index.html
+templates/sandbox/purplecross copy.png
+templates/sandbox/purplecross copy.svg
+templates/sandbox/purplecross.png
+templates/sandbox/purplecross.svg
+templates/sandbox/redcross copy.png
+templates/sandbox/redcross copy.svg
+templates/sandbox/redcross.png
+templates/sandbox/redcross.svg
+templates/sandbox/Template.AC Completion Certificate copy.docx
+templates/sandbox/Template.AC Completion Certificate.docx
+templates/sandbox/Template.AC Completion Letter copy.docx
+templates/sandbox/Template.AC Completion Letter.docx
+templates/sandbox/Template.AC Completion Progress Report copy.docx
+templates/sandbox/Template.AC Completion Progress Report.docx
+templates/sandbox/Template.AC Entrance Notification copy.docx
+templates/sandbox/Template.AC Entrance Notification.docx
+templates/sandbox/Template.AC Exit Notice copy.docx
+templates/sandbox/Template.AC Exit Notice.docx
+templates/sandbox/Template.AC Exit Progress Report copy.docx
+templates/sandbox/Template.AC Exit Progress Report.docx
+templates/sandbox/Template.AC Progress Report copy.docx
+templates/sandbox/Template.AC Progress Report.docx
+templates/sandbox/Template.AC Unexcused Absence copy.docx
+templates/sandbox/Template.AC Unexcused Absence.docx
+templates/sandbox/Template.BIPP Behavior Contract.docx
+templates/sandbox/Template.BIPP Completion Certificate copy.docx
+templates/sandbox/Template.BIPP Completion Certificate.docx
+templates/sandbox/Template.BIPP Completion Letter copy.docx
+templates/sandbox/Template.BIPP Completion Letter.docx
+templates/sandbox/Template.BIPP Completion Progress Report copy.docx
+templates/sandbox/Template.BIPP Completion Progress Report.docx
+templates/sandbox/Template.BIPP Completion Progress Report Virtual copy.docx
+templates/sandbox/Template.BIPP Completion Progress Report Virtual.docx
+templates/sandbox/Template.BIPP CUR Progress Report copy.docx
+templates/sandbox/Template.BIPP CUR Progress Report.docx
+templates/sandbox/Template.BIPP CUR Progress Report Virtual copy.docx
+templates/sandbox/Template.BIPP CUR Progress Report Virtual.docx
+templates/sandbox/Template.BIPP Entrance Notification copy.docx
+templates/sandbox/Template.BIPP Entrance Notification.docx
+templates/sandbox/Template.BIPP Exit Notice copy.docx
+templates/sandbox/Template.BIPP Exit Notice.docx
+templates/sandbox/Template.BIPP Exit Progress Report copy.docx
+templates/sandbox/Template.BIPP Exit Progress Report.docx
+templates/sandbox/Template.BIPP Exit Progress Report Virtual copy.docx
+templates/sandbox/Template.BIPP Exit Progress Report Virtual.docx
+templates/sandbox/Template.BIPP Progress Report copy.docx
+templates/sandbox/Template.BIPP Progress Report.docx
+templates/sandbox/Template.BIPP Progress Report Virtual copy.docx
+templates/sandbox/Template.BIPP Progress Report Virtual.docx
+templates/sandbox/Template.BIPP SOC Progress Report copy.docx
+templates/sandbox/Template.BIPP SOC Progress Report.docx
+templates/sandbox/Template.BIPP SOC Progress Report Virtual copy.docx
+templates/sandbox/Template.BIPP SOC Progress Report Virtual.docx
+templates/sandbox/Template.BIPP Unexcused Absence copy.docx
+templates/sandbox/Template.BIPP Unexcused Absence.docx
+templates/sandbox/Template.BIPP Victim Completion.docx
+templates/sandbox/Template.BIPP Victim Entrance.docx
+templates/sandbox/Template.BIPP Victim Exit.docx
+templates/sandbox/Template.T4C Completion Certificate copy.docx
+templates/sandbox/Template.T4C Completion Certificate.docx
+templates/sandbox/Template.T4C Completion Letter copy.docx
+templates/sandbox/Template.T4C Completion Letter.docx
+templates/sandbox/Template.T4C Completion Progress Report copy.docx
+templates/sandbox/Template.T4C Completion Progress Report.docx
+templates/sandbox/Template.T4C Entrance Notification copy.docx
+templates/sandbox/Template.T4C Entrance Notification.docx
+templates/sandbox/Template.T4C Exit Notice copy.docx
+templates/sandbox/Template.T4C Exit Notice.docx
+templates/sandbox/Template.T4C Exit Progress Report copy.docx
+templates/sandbox/Template.T4C Exit Progress Report.docx
+templates/sandbox/Template.T4C Progress Report copy.docx
+templates/sandbox/Template.T4C Progress Report.docx
+templates/sandbox/Template.T4C Unexcused Absence copy.docx
+templates/sandbox/Template.T4C Unexcused Absence.docx
+templates/transform
+TIPS_Completion_Documents_Script.py
+TIPS_Entrance_Notifications_Script.py
+TIPS_Exit_Notices_Script.py
+TIPS_Progress_Reports_Script.py
+TIPS_Unexcused_Absences_Script.py
+Update_Clients.py
+uploads
+venv311
+venv311/bin
+venv311/etc
+venv311/etc/jupyter
+venv311/include
+venv311/include/python3.11
+venv311/lib
+venv311/lib64
+venv311/lib/python3.11
+venv311/pyvenv.cfg
+venv311/share
+venv311/share/applications
+venv311/share/applications/jupyterlab.desktop
+venv311/share/icons
+venv311/share/icons/hicolor
+venv311/share/icons/hicolor/scalable
+venv311/share/icons/hicolor/scalable/apps
+venv311/share/icons/hicolor/scalable/apps/jupyterlab.svg
+venv311/share/jupyter
+venv311/share/jupyter/kernels
+venv311/share/jupyter/kernels/python3
+venv311/share/jupyter/kernels/python3/kernel.json
+venv311/share/jupyter/kernels/python3/logo-32x32.png
+venv311/share/jupyter/kernels/python3/logo-64x64.png
+venv311/share/jupyter/kernels/python3/logo-svg.svg
+venv311/share/jupyter/lab
+venv311/share/jupyter/labextensions
+venv311/share/jupyter/lab/schemas
+venv311/share/jupyter/lab/schemas/@jupyterlab
+venv311/share/jupyter/lab/static
+venv311/share/jupyter/lab/themes
+venv311/share/jupyter/nbconvert
+venv311/share/jupyter/nbextensions
+venv311/share/man
+venv311/share/man/man1
+venv311/share/man/man1/ipython.1
+venv311/share/man/man1/isympy.1
+venv311/share/man/man1/ttx.1
+WEST_Behavior_Contracts_Script.py
+WEST_Completion_Documents_Script.py
+WEST_Enrollment_Letters_Script.py
+WEST_Entrance_Notifications_Script.py
+WEST_Exit_Notices_Script.py
+WEST_Progress_Reports_Script.py
+WEST_Unexcused_Absences_Script.py
+WEST_Victim_Letters_Script.py

@@ -1,0 +1,469 @@
+[07-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250307.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[08-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250308.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[09-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250309.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[10-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250310.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[11-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250311.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[12-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250312.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[13-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250313.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[14-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250314.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[15-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250315.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[16-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250316.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[17-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250317.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[18-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250318.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[19-Mar-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250319.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[09-Apr-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250409.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[10-Apr-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250410.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[11-Apr-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250411.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[12-Apr-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250412.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[13-Apr-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250413.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[14-Apr-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250414.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[15-Apr-2025 05:00:01 America/Chicago] PHP Warning:  fopen(/home/notesao/NotePro-Report-Generator/csv/ffltest/report5_dump_20250415.csv): Failed to open stream: No such file or directory in /home/notesao/ffltest/public_html/update_clients.php on line 24
+[16-Apr-2025 18:44:59 America/Chicago] Authenticate script accessed.
+[16-Apr-2025 18:44:59 America/Chicago] Login successful for user ID: 15
+[16-Apr-2025 19:28:22 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[16-Apr-2025 19:28:22 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[16-Apr-2025 19:28:22 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[16-Apr-2025 19:38:05 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 19:38:05 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 19:38:08 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 19:38:08 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[16-Apr-2025 19:41:15 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[16-Apr-2025 19:41:15 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 19:41:17 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[16-Apr-2025 19:41:17 America/Chicago] Program updated successfully: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:45:16 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:45:16 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 19:45:18 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:45:18 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[16-Apr-2025 19:48:02 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 19:48:02 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 19:48:04 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 19:48:04 America/Chicago] Program updated successfully: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:51:12 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:51:12 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 19:51:14 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:51:14 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[16-Apr-2025 19:55:11 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 19:55:11 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 19:55:14 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 19:55:14 America/Chicago] Program updated successfully: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:56:02 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:56:02 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 19:56:04 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[16-Apr-2025 19:56:04 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:03:46 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:03:46 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 20:03:49 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:03:49 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[16-Apr-2025 20:05:28 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[16-Apr-2025 20:05:28 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[16-Apr-2025 20:05:28 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[16-Apr-2025 20:22:52 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[16-Apr-2025 20:22:52 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 20:22:54 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[16-Apr-2025 20:22:54 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:24:41 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:24:41 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 20:24:44 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:24:44 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[16-Apr-2025 20:26:56 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[16-Apr-2025 20:26:56 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 20:26:58 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[16-Apr-2025 20:26:58 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:27:07 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:27:07 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 20:27:09 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[16-Apr-2025 20:27:09 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[16-Apr-2025 20:27:16 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[16-Apr-2025 20:27:16 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 20:27:18 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[16-Apr-2025 20:27:18 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[16-Apr-2025 20:28:21 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[16-Apr-2025 20:28:21 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 20:28:24 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[16-Apr-2025 20:28:24 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[16-Apr-2025 20:28:57 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[16-Apr-2025 20:28:57 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 20:28:59 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[16-Apr-2025 20:28:59 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[16-Apr-2025 21:31:35 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[16-Apr-2025 21:31:35 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[16-Apr-2025 21:31:35 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:33:18 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:37:02 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[16-Apr-2025 21:37:02 America/Chicago] No Program ID posted or invalid request.
+[16-Apr-2025 21:37:05 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[16-Apr-2025 21:37:05 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[16-Apr-2025 21:38:18 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[16-Apr-2025 21:38:18 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[16-Apr-2025 21:38:18 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[16-Apr-2025 21:38:42 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[16-Apr-2025 21:38:42 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[16-Apr-2025 21:38:42 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[16-Apr-2025 21:40:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:36:32 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[17-Apr-2025 08:51:12 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 08:51:12 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 08:51:15 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 08:51:15 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[17-Apr-2025 09:23:08 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 09:23:08 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 09:23:11 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 09:23:11 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[17-Apr-2025 10:21:09 America/Chicago] Authenticate script accessed.
+[17-Apr-2025 10:21:09 America/Chicago] Login successful for user ID: 15
+[17-Apr-2025 11:53:45 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[17-Apr-2025 11:53:45 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[17-Apr-2025 11:53:45 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[17-Apr-2025 11:57:01 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 11:57:01 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 11:58:54 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 11:58:54 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 12:00:44 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 12:00:44 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[17-Apr-2025 12:00:58 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[17-Apr-2025 12:00:58 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 12:01:00 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[17-Apr-2025 12:01:00 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[17-Apr-2025 12:01:13 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 12:01:13 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 12:04:48 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 12:04:48 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 13:11:48 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:11:48 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 13:11:54 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:11:54 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:12:13 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:12:13 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 13:12:14 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:12:14 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[17-Apr-2025 13:38:39 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[17-Apr-2025 13:38:39 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 13:38:40 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[17-Apr-2025 13:38:40 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:40:29 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:40:29 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 13:40:33 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:40:33 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[17-Apr-2025 13:40:54 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[17-Apr-2025 13:40:54 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 13:40:56 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[17-Apr-2025 13:40:56 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[17-Apr-2025 13:57:55 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 13:57:55 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:03:28 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[17-Apr-2025 14:03:28 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 14:03:29 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[17-Apr-2025 14:03:29 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:22:14 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:22:14 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 14:22:18 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:22:18 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[17-Apr-2025 14:23:06 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[17-Apr-2025 14:23:06 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 14:23:07 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[17-Apr-2025 14:23:07 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[17-Apr-2025 14:23:48 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[17-Apr-2025 14:23:48 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 14:25:06 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[17-Apr-2025 14:25:06 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:25:28 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:25:28 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 14:25:31 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:25:31 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[17-Apr-2025 14:25:37 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[17-Apr-2025 14:25:37 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 14:25:38 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[17-Apr-2025 14:25:38 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[17-Apr-2025 14:31:06 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[17-Apr-2025 14:31:06 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 14:31:13 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[17-Apr-2025 14:31:13 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:46:55 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:46:55 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 14:49:26 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'user_id' cannot be null in /home/notesao/ffltest/public_html/officedocuments.php:34
+Stack trace:
+#0 /home/notesao/ffltest/public_html/officedocuments.php(34): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/notesao/ffltest/public_html/officedocuments.php on line 34
+[17-Apr-2025 14:53:51 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'user_id' cannot be null in /home/notesao/ffltest/public_html/officedocuments.php:39
+Stack trace:
+#0 /home/notesao/ffltest/public_html/officedocuments.php(39): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/notesao/ffltest/public_html/officedocuments.php on line 39
+[17-Apr-2025 14:58:09 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 14:58:09 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[17-Apr-2025 15:16:04 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[17-Apr-2025 15:16:04 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[17-Apr-2025 15:16:04 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[17-Apr-2025 18:52:53 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 18:52:53 America/Chicago] No Program ID posted or invalid request.
+[17-Apr-2025 18:53:01 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[17-Apr-2025 18:53:01 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[17-Apr-2025 19:21:31 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[17-Apr-2025 19:21:31 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[17-Apr-2025 19:21:31 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[18-Apr-2025 08:21:26 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 08:21:26 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 08:21:28 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 08:21:28 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 08:44:32 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 08:44:32 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:20:48 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 09:20:48 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:20:53 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 09:20:53 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:25:48 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:25:48 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:25:52 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:25:52 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[18-Apr-2025 09:31:30 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[18-Apr-2025 09:31:30 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:31:31 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[18-Apr-2025 09:31:31 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:33:06 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[18-Apr-2025 09:33:06 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[18-Apr-2025 09:33:06 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[18-Apr-2025 09:34:03 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:34:03 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:40:22 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:40:22 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:52:26 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:52:26 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:52:33 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:52:33 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 09:54:59 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[18-Apr-2025 09:54:59 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:55:00 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[18-Apr-2025 09:55:00 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:58:28 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:58:28 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:58:50 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:58:50 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 09:58:52 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 09:58:52 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[18-Apr-2025 09:59:20 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[18-Apr-2025 09:59:20 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[18-Apr-2025 09:59:20 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[18-Apr-2025 09:59:54 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[18-Apr-2025 09:59:54 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:03:34 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[18-Apr-2025 10:03:34 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:04:15 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:04:15 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:04:16 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:04:16 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:05:18 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 10:05:18 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:05:19 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 10:05:19 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:05:58 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:05:58 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:06:38 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:06:38 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:08:13 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:08:13 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:08:51 America/Chicago] Exception: Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_ffltest`.`client`, CONSTRAINT `client_client_stage_fk` FOREIGN KEY (`client_stage_id`) REFERENCES `client_stage` (`id`))
+[18-Apr-2025 10:19:25 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 10:19:25 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:19:27 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 10:19:27 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:23:19 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:23:19 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:23:55 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:23:55 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:26:17 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:26:17 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:26:27 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 10:26:27 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:26:28 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 10:26:28 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:27:12 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:27:12 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 10:52:37 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 10:52:37 America/Chicago] Program updated successfully: ID=4, Name=Anger Control
+[18-Apr-2025 11:19:10 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[18-Apr-2025 11:19:10 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 11:19:11 America/Chicago] Current Program in Session: ID=4, Name=Anger Control
+[18-Apr-2025 11:19:11 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:19:56 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:19:56 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 11:19:57 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:19:57 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:22:54 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:22:54 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 11:22:55 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:22:55 America/Chicago] Program updated successfully: ID=3, Name=BIPP (female)
+[18-Apr-2025 11:24:09 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[18-Apr-2025 11:24:09 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 11:24:10 America/Chicago] Current Program in Session: ID=3, Name=BIPP (female)
+[18-Apr-2025 11:24:10 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:25:26 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[18-Apr-2025 11:25:26 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[18-Apr-2025 11:25:26 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[18-Apr-2025 11:27:22 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:27:22 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 11:35:37 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:35:37 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:41:29 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[18-Apr-2025 11:41:29 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[18-Apr-2025 11:41:29 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[18-Apr-2025 11:42:43 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:42:43 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 11:44:59 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:44:59 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:47:00 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 825
+[18-Apr-2025 11:47:00 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 826
+[18-Apr-2025 11:47:00 America/Chicago] PHP Warning:  Trying to access array offset on value of type null in /home/notesao/ffltest/public_html/client-update.php on line 827
+[18-Apr-2025 11:48:11 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:48:11 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 11:49:00 America/Chicago] Current Program in Session: ID=1, Name=Thinking for a Change
+[18-Apr-2025 11:49:00 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:49:11 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:49:11 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 11:50:06 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 11:50:06 America/Chicago] Program updated successfully: ID=2, Name=BIPP (male)
+[18-Apr-2025 12:07:41 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 12:07:41 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 12:16:57 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 12:16:57 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 12:20:56 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 12:20:56 America/Chicago] No Program ID posted or invalid request.
+[18-Apr-2025 12:22:07 America/Chicago] Current Program in Session: ID=2, Name=BIPP (male)
+[18-Apr-2025 12:22:07 America/Chicago] Program updated successfully: ID=1, Name=Thinking for a Change

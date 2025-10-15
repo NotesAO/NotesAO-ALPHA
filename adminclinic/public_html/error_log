@@ -1,0 +1,1126 @@
+[10-Jul-2025 09:48:03 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 09:49:23 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 09:52:59 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 09:54:13 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 10:07:54 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 10:09:52 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 10:10:50 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 10:30:00 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 10:39:45 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/home.php:336
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(336): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 336
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:13:35 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 99
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:22:51 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 131
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:27:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 129
+[10-Jul-2025 12:31:02 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/clinic-index.php:133
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-index.php(133): mysqli_query(Object(mysqli), 'SELECT c.id, c....')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 133
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:39:20 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 12:48:18 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/home.php on line 138
+[10-Jul-2025 13:03:48 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/clinic-index.php:133
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-index.php(133): mysqli_query(Object(mysqli), 'SELECT c.id, c....')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 133
+[10-Jul-2025 13:30:23 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home/notesao/adminclinic/public_html/home.php on line 188
+[10-Jul-2025 13:30:25 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home/notesao/adminclinic/public_html/home.php on line 188
+[10-Jul-2025 13:31:01 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home/notesao/adminclinic/public_html/home.php on line 188
+[10-Jul-2025 13:31:03 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home/notesao/adminclinic/public_html/home.php on line 188
+[10-Jul-2025 13:32:51 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:32
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(32): mysqli->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 32
+[10-Jul-2025 13:32:55 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:32
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(32): mysqli->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 32
+[10-Jul-2025 13:33:28 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:32
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(32): mysqli->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 32
+[10-Jul-2025 14:05:43 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:32
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(32): mysqli->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 32
+[10-Jul-2025 14:05:45 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:32
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(32): mysqli->prepare('\n        SELECT...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 32
+[10-Jul-2025 14:08:27 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:39
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(39): mysqli->query('\n        SELECT...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 39
+[10-Jul-2025 14:10:23 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:43
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(43): mysqli->query('SELECT clinic_n...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 43
+[10-Jul-2025 14:10:24 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:43
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(43): mysqli->query('SELECT clinic_n...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 43
+[10-Jul-2025 14:10:25 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.clinic_onboarding_progress' doesn't exist in /home/notesao/adminclinic/public_html/home.php:43
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(43): mysqli->query('SELECT clinic_n...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/home.php on line 43
+[10-Jul-2025 14:14:40 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/clinic-index.php:133
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-index.php(133): mysqli_query(Object(mysqli), 'SELECT c.id, c....')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 133
+[10-Jul-2025 14:32:21 America/Chicago] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #6 cannot be passed by reference in /home/notesao/adminclinic/public_html/clinic-create.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-create.php on line 59
+[10-Jul-2025 14:35:13 America/Chicago] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #3 cannot be passed by reference in /home/notesao/adminclinic/public_html/clinic-create.php:70
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-create.php on line 70
+[10-Jul-2025 14:36:49 America/Chicago] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #6 cannot be passed by reference in /home/notesao/adminclinic/public_html/clinic-create.php:60
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-create.php on line 60
+[10-Jul-2025 14:44:30 America/Chicago] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #6 cannot be passed by reference in /home/notesao/adminclinic/public_html/clinic-create.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-create.php on line 79
+[10-Jul-2025 14:44:39 America/Chicago] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #6 cannot be passed by reference in /home/notesao/adminclinic/public_html/clinic-create.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-create.php on line 79
+[10-Jul-2025 14:47:04 America/Chicago] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #6 cannot be passed by reference in /home/notesao/adminclinic/public_html/clinic-create.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-create.php on line 79
+[10-Jul-2025 14:47:21 America/Chicago] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #6 cannot be passed by reference in /home/notesao/adminclinic/public_html/clinic-create.php:87
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-create.php on line 87
+[10-Jul-2025 14:51:05 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'clinicnotepro_adminclinic.client' doesn't exist in /home/notesao/adminclinic/public_html/clinic-update.php:175
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-update.php(175): mysqli_prepare(Object(mysqli), 'SELECT * FROM c...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-update.php on line 175
+[10-Jul-2025 14:52:31 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 14:52:31 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:05:47 America/Chicago] PHP Fatal error:  Uncaught TypeError: run(): Argument #2 ($a) must be of type array, int given, called in /home/notesao/adminclinic/public_html/clinic-update.php on line 103 and defined in /home/notesao/adminclinic/public_html/clinic-update.php:25
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-update.php(103): run('\n   SELECT t.id...', 2)
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-update.php on line 25
+[10-Jul-2025 15:10:28 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:10:28 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:13:41 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:13:41 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:14:05 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:14:05 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:15:18 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:15:18 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:15:50 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:15:50 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:20:39 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:20:39 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:23:27 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:23:27 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:26:32 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:26:32 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:26:36 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:26:36 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:36:47 America/Chicago] PHP Warning:  require_once(/home/notesao/adminclinic/public_html/config.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/sql_functions.php on line 6
+[10-Jul-2025 15:36:47 America/Chicago] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notesao/adminclinic/public_html/config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/sql_functions.php:6
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(10): require_once()
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/sql_functions.php on line 6
+[10-Jul-2025 15:37:27 America/Chicago] PHP Warning:  require_once(/home/notesao/adminclinic/public_html/config.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/sql_functions.php on line 6
+[10-Jul-2025 15:37:27 America/Chicago] PHP Fatal error:  Uncaught Error: Failed opening required '/home/notesao/adminclinic/public_html/config.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/sql_functions.php:6
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/home.php(10): require_once()
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/sql_functions.php on line 6
+[10-Jul-2025 15:48:28 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[10-Jul-2025 15:48:28 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[11-Jul-2025 11:01:25 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[11-Jul-2025 11:01:25 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 10:07:56 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 10:07:56 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 10:09:27 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 10:09:27 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 10:27:50 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 10:27:50 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 10:40:25 America/Chicago] PHP Warning:  include_once(client_review_panel.php): Failed to open stream: No such file or directory in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 10:40:25 America/Chicago] PHP Warning:  include_once(): Failed opening 'client_review_panel.php' for inclusion (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/notesao/adminclinic/public_html/clinic-review.php on line 43
+[30-Jul-2025 11:21:39 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/notesao/adminclinic/public_html/clinic-review.php:5) in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 21
+[30-Jul-2025 11:21:44 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/notesao/adminclinic/public_html/clinic-review.php:5) in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 21
+[30-Jul-2025 11:22:18 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/notesao/adminclinic/public_html/clinic-review.php:5) in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 21
+[30-Jul-2025 11:36:30 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/notesao/adminclinic/public_html/clinic-review.php:5) in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 21
+[30-Jul-2025 11:38:58 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/notesao/adminclinic/public_html/clinic-review.php:5) in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 21
+[30-Jul-2025 11:46:06 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/notesao/adminclinic/public_html/clinic-review.php:5) in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 21
+[30-Jul-2025 12:24:31 America/Chicago] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function {closure}(), 1 passed in /home/notesao/adminclinic/public_html/clinic-update.php on line 216 and exactly 2 expected in /home/notesao/adminclinic/public_html/clinic-update.php:103
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-update.php(216): {closure}('')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-update.php on line 103
+[30-Jul-2025 12:28:39 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'clinicnotepro_adminclinic.clinic_program' doesn't exist in /home/notesao/adminclinic/public_html/sql_functions.php:32
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/sql_functions.php(32): PDOStatement->execute(Array)
+#1 /home/notesao/adminclinic/public_html/clinic-update.php(90): run('SELECT * FROM c...', Array)
+#2 {main}
+  thrown in /home/notesao/adminclinic/public_html/sql_functions.php on line 32
+[30-Jul-2025 13:46:28 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'task_category' in 'SELECT' in /home/notesao/adminclinic/public_html/clinic-index.php:20
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-index.php(20): mysqli->query('SELECT task_cat...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 20
+[30-Jul-2025 13:47:18 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'task_category' in 'SELECT' in /home/notesao/adminclinic/public_html/clinic-index.php:20
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-index.php(20): mysqli->query('SELECT task_cat...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 20
+[30-Jul-2025 13:50:38 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'task_category' in 'SELECT' in /home/notesao/adminclinic/public_html/clinic-index.php:20
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-index.php(20): mysqli->query('SELECT task_cat...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 20
+[30-Jul-2025 14:48:41 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'task_category' in 'SELECT' in /home/notesao/adminclinic/public_html/clinic-index.php:20
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-index.php(20): mysqli->query('SELECT task_cat...')
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 20
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 26
+[30-Jul-2025 14:50:32 America/Chicago] PHP Warning:  Undefined array key "task_category" in /home/notesao/adminclinic/public_html/clinic-index.php on line 28
+[30-Jul-2025 14:50:32 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function sales_pct_complete() in /home/notesao/adminclinic/public_html/clinic-index.php:112
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 112
+[30-Jul-2025 14:53:00 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function sales_pct_complete() in /home/notesao/adminclinic/public_html/clinic-index.php:112
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-index.php on line 112
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:27 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:24:55 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:33:29 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function nw() in /home/notesao/adminclinic/public_html/clinic_review_panel.php:58
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-review.php(43): include_once()
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 58
+[30-Jul-2025 15:34:50 America/Chicago] PHP Fatal error:  Cannot redeclare yn() (previously declared in /home/notesao/adminclinic/public_html/clinic_review_panel.php:10) in /home/notesao/adminclinic/public_html/helpers.php on line 85
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:35:00 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:37 America/Chicago] PHP Fatal error:  Cannot redeclare yn() (previously declared in /home/notesao/adminclinic/public_html/clinic_review_panel.php:11) in /home/notesao/adminclinic/public_html/helpers.php on line 85
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:42 America/Chicago] PHP Warning:  Array to string conversion in /home/notesao/adminclinic/public_html/helpers.php on line 76
+[30-Jul-2025 15:36:58 America/Chicago] PHP Fatal error:  Cannot redeclare yn() (previously declared in /home/notesao/adminclinic/public_html/clinic_review_panel.php:11) in /home/notesao/adminclinic/public_html/helpers.php on line 85
+[30-Jul-2025 15:38:43 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[30-Jul-2025 15:38:43 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[30-Jul-2025 15:38:43 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[30-Jul-2025 15:38:43 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[30-Jul-2025 15:50:48 America/Chicago] PHP Deprecated:  addslashes(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/clinic-update.php on line 404
+[05-Aug-2025 10:27:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:27:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:27:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:27:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:37:48 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:37:48 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:37:48 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:37:48 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:38:43 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_adminclinic`.`clinic_weekly_schedule`, CONSTRAINT `fk_cws_clinic_prog` FOREIGN KEY (`clinic_id`, `prog_code`) REFERENCES `program` (`clinic_id`, `prog_code`) ON DELETE CASCADE) in /home/notesao/adminclinic/public_html/clinic-update.php:99
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-update.php(99): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-update.php on line 99
+[05-Aug-2025 10:49:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:49:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:49:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:49:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:49:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:49:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:49:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 10:49:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:06:10 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:06:10 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:06:10 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:06:10 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:06:36 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => 
+        )
+
+)
+
+[05-Aug-2025 11:06:36 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:06:36 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:06:36 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:06:36 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:57:41 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => 
+            [start] => 
+            [end] => 
+            [prog] => 
+            [link] => 
+        )
+
+)
+
+[05-Aug-2025 11:57:41 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:57:41 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:57:41 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:57:41 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:58:02 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => 
+            [start] => 
+            [end] => 
+            [prog] => 
+            [link] => 
+        )
+
+)
+
+[05-Aug-2025 11:58:02 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:58:02 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:58:02 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:58:02 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:58:24 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => 
+        )
+
+)
+
+[05-Aug-2025 11:58:24 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:58:24 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:58:24 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 11:58:24 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:01:35 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Tue
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => 
+        )
+
+)
+
+[05-Aug-2025 12:01:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:01:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:01:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:01:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:17:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:17:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:17:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:17:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:17:34 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[05-Aug-2025 12:17:34 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:17:34 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:17:34 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:17:34 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:04 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:04 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:04 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:04 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:46 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[05-Aug-2025 12:18:46 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:46 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:46 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:46 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:59 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:59 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:59 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:18:59 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:40 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[05-Aug-2025 12:35:40 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:40 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:40 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:40 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:50 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[05-Aug-2025 12:35:50 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:50 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:50 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:50 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:52 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:52 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:52 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:35:52 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:39:17 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[05-Aug-2025 12:39:17 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:39:17 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:39:17 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 12:39:17 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:00:23 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:00:23 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:00:23 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:00:23 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:42:53 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[05-Aug-2025 13:42:53 America/Chicago] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/sql_functions.php on line 215
+[05-Aug-2025 13:42:53 America/Chicago] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/sql_functions.php on line 215
+[05-Aug-2025 13:42:53 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:42:53 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:42:53 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:42:53 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 13:42:59 America/Chicago] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/sql_functions.php on line 215
+[05-Aug-2025 13:42:59 America/Chicago] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/sql_functions.php on line 215
+[05-Aug-2025 13:43:00 America/Chicago] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/sql_functions.php on line 215
+[05-Aug-2025 13:43:00 America/Chicago] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/sql_functions.php on line 215
+[05-Aug-2025 13:45:18 America/Chicago] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/sql_functions.php on line 217
+[05-Aug-2025 13:45:18 America/Chicago] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in /home/notesao/adminclinic/public_html/sql_functions.php on line 217
+[05-Aug-2025 14:10:14 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function mime_content_type() in /home/notesao/adminclinic/public_html/upload_logo.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/upload_logo.php on line 20
+[05-Aug-2025 14:10:47 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function mime_content_type() in /home/notesao/adminclinic/public_html/upload_logo.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/upload_logo.php on line 20
+[05-Aug-2025 14:14:46 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function mime_content_type() in /home/notesao/adminclinic/public_html/upload_logo.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/upload_logo.php on line 34
+[05-Aug-2025 14:15:44 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function mime_content_type() in /home/notesao/adminclinic/public_html/upload_logo.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/adminclinic/public_html/upload_logo.php on line 34
+[05-Aug-2025 14:26:39 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[05-Aug-2025 14:26:39 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 14:26:39 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 14:26:39 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 14:26:39 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 15:25:24 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 15:25:24 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 15:25:24 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[05-Aug-2025 15:25:24 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 09:18:03 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 09:18:03 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 09:18:03 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 09:18:03 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 09:25:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 09:25:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 09:25:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 09:25:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 10:48:39 America/Chicago] PHP Warning:  Undefined variable $onTasks in /home/notesao/adminclinic/public_html/clinic-update.php on line 725
+[13-Aug-2025 10:48:39 America/Chicago] PHP Warning:  foreach() argument must be of type array|object, null given in /home/notesao/adminclinic/public_html/clinic-update.php on line 725
+[13-Aug-2025 11:20:15 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`clinicnotepro_adminclinic`.`clinic_onboarding_task`, CONSTRAINT `fk_cot_program` FOREIGN KEY (`program_id`) REFERENCES `program` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /home/notesao/adminclinic/public_html/clinic-update.php:263
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-update.php(263): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-update.php on line 263
+[13-Aug-2025 11:28:43 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[13-Aug-2025 11:28:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 11:28:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 11:28:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 11:28:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 11:33:29 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[13-Aug-2025 11:33:29 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 11:33:29 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 11:33:29 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 11:33:29 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:01:13 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[13-Aug-2025 12:01:13 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:01:13 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:01:13 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:01:13 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:01:27 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:01:27 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:01:27 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:01:27 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:02:45 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:02:45 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:02:45 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:02:45 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:03:19 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:03:19 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:03:19 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:03:19 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:05:55 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[13-Aug-2025 12:05:55 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:05:55 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:05:55 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 12:05:55 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:13:02 America/Chicago] PHP Parse error:  syntax error, unexpected token "\" in /home/notesao/adminclinic/public_html/clinic-update.php on line 219
+[13-Aug-2025 14:29:12 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[13-Aug-2025 14:29:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:29:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:29:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:29:12 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:42:05 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:42:05 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:42:05 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:42:05 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:46:30 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[13-Aug-2025 14:46:30 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:46:30 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:46:30 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 14:46:30 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 15:05:38 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[13-Aug-2025 15:05:39 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 15:05:39 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 15:05:39 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 15:05:39 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 15:38:35 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => Mon
+            [start] => 19:30
+            [end] => 21:30
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+    [1] => Array
+        (
+            [day] => Mon
+            [start] => 20:00
+            [end] => 22:00
+            [prog] => bipp_m
+            [link] => zoom.us/
+        )
+
+)
+
+[13-Aug-2025 15:38:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 15:38:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 15:38:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[13-Aug-2025 15:38:35 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[18-Aug-2025 09:59:23 America/Chicago] SCHEDULE POST = Array
+(
+    [0] => Array
+        (
+            [day] => 
+            [start] => 
+            [end] => 
+            [prog] => 
+            [link] => 
+        )
+
+)
+
+[18-Aug-2025 09:59:23 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[18-Aug-2025 09:59:23 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[18-Aug-2025 09:59:23 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[18-Aug-2025 10:00:49 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3-other' for key 'uq_clinic_prog' in /home/notesao/adminclinic/public_html/clinic-update.php:128
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-update.php(128): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-update.php on line 128
+[18-Aug-2025 10:03:14 America/Chicago] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3-other' for key 'uq_clinic_prog' in /home/notesao/adminclinic/public_html/clinic-update.php:128
+Stack trace:
+#0 /home/notesao/adminclinic/public_html/clinic-update.php(128): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/notesao/adminclinic/public_html/clinic-update.php on line 128
+[15-Sep-2025 09:30:15 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[15-Sep-2025 09:30:15 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[15-Sep-2025 09:30:15 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[15-Sep-2025 09:30:15 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 149
+[15-Sep-2025 09:40:37 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 156
+[15-Sep-2025 09:40:37 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 156
+[15-Sep-2025 09:40:37 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 156
+[15-Sep-2025 09:40:37 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 156
+[15-Sep-2025 09:42:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 156
+[15-Sep-2025 09:42:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 156
+[15-Sep-2025 09:42:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 156
+[15-Sep-2025 09:42:44 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 156
+[15-Sep-2025 09:46:52 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 166
+[15-Sep-2025 09:46:52 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 166
+[15-Sep-2025 09:46:52 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 166
+[15-Sep-2025 09:46:52 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 166
+[15-Sep-2025 09:47:14 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 165
+[15-Sep-2025 09:47:14 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 165
+[15-Sep-2025 09:47:14 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 165
+[15-Sep-2025 09:47:14 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 165
+[15-Sep-2025 09:47:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 158
+[15-Sep-2025 09:47:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 158
+[15-Sep-2025 09:47:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 158
+[15-Sep-2025 09:47:57 America/Chicago] PHP Warning:  Undefined array key "weekly_times" in /home/notesao/adminclinic/public_html/clinic_review_panel.php on line 158

@@ -1,0 +1,104 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id ZSV5O4o5zmiS4jwAIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Sat, 20 Sep 2025 00:20:10 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Sat, 20 Sep 2025 00:20:11 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1uzq14-0000000Gk1A-400r
+	for no-reply@ffl.notesao.com;
+	Sat, 20 Sep 2025 00:20:10 -0500
+X-Failed-Recipients: daniel.castill0698@gmail.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1uzq14-0000000Gk08-2wZH@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1758345610-eximdsn-955593601
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1uzq14-0000000Gk1A-400r@host.notesao.com>
+Date: Sat, 20 Sep 2025 00:20:10 -0500
+
+--1758345610-eximdsn-955593601
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  daniel.castill0698@gmail.com
+    host gmail-smtp-in.l.google.com [142.250.31.27]
+    SMTP error from remote mail server after RCPT TO:<daniel.castill0698@gmail.com>:
+    550-5.1.1 The email account that you tried to reach does not exist. Please try
+    550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. For more information, go to
+    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser af79cd13be357-83a2a6bb76bsi187017485a.415 - gsmtp
+
+--1758345610-eximdsn-955593601
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;daniel.castill0698@gmail.com
+Status: 5.0.0
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. For more information, go to
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser af79cd13be357-83a2a6bb76bsi187017485a.415 - gsmtp
+
+--1758345610-eximdsn-955593601
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1uzq14-0000000Gk08-2wZH
+	for daniel.castill0698@gmail.com;
+	Sat, 20 Sep 2025 00:20:10 -0500
+To: daniel.castill0698@gmail.com
+Subject: Men's BIPP Group Reminder: Saturday at 9:00 AM
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.189.231
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=daniel.castill0698%40gmail.com&t=95577f7342d31670d04b3ce1dc47a72841567f41f31ee94d334b1679ac14e64b>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1uzq14-0000000Gk08-2wZH@host.notesao.com>
+Date: Sat, 20 Sep 2025 00:20:10 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Daniel,</p>
+
+<p><strong>Your Men's BIPP group is Saturday at 9:00 AM (Saturday, September 20).</strong></p>
+
+<p>
+  Your M; Miller Complex 3210 Miller Avenue, FW mandated BIPP group is scheduled. M; Miller Complex 3210 Miller Avenue, FW and Tatyana Griffin expect your presence.
+  Please arrive early. <em>Lockout is 9:10 AM</em>. Your presence is a mandatory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaining in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p>
+
+<p>Where: Virtual (Use your group link):<br><a href="https://freeforlifegroup.com/saturday-mens-probation-18-week/">Saturday 9:00 AM Group Link</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payement concerns OR call during office hours (Mon–Fri, 8am–4pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=daniel.castill0698%40gmail.com&amp;t=95577f7342d31670d04b3ce1dc47a72841567f41f31ee94d334b1679ac14e64b">unsubscribe here</a>.</p>
+
+--1758345610-eximdsn-955593601--

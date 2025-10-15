@@ -1,0 +1,79 @@
+Return-Path: <>
+Delivered-To: david@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id g7jqLoB77mgPBRQAIW4ynA
+	(envelope-from <>)
+	for <david@notesao.com>; Tue, 14 Oct 2025 11:34:08 -0500
+Return-path: <>
+Envelope-to: david@notesao.com
+Delivery-date: Tue, 14 Oct 2025 11:34:08 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1v8hyS-00000005VJR-2pln
+	for david@notesao.com;
+	Tue, 14 Oct 2025 11:34:08 -0500
+X-Failed-Recipients: affordablecounselingservices@gmail.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: david@notesao.com
+References: <dfce39891a9a1aeeca9fbec67bafa5a9@notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1760459648-eximdsn-866123964
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1v8hyS-00000005VJR-2pln@host.notesao.com>
+Date: Tue, 14 Oct 2025 11:34:08 -0500
+
+--1760459648-eximdsn-866123964
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  affordablecounselingservices@gmail.com
+    host gmail-smtp-in.l.google.com [142.250.31.27]
+    SMTP error from remote mail server after RCPT TO:<affordablecounselingservices@gmail.com>:
+    550-5.1.1 The email account that you tried to reach does not exist. Please try
+    550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. For more information, go to
+    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser 6a1803df08f44-87c0120081asi1290756d6.167 - gsmtp
+
+--1760459648-eximdsn-866123964
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;affordablecounselingservices@gmail.com
+Status: 5.0.0
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. For more information, go to
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser 6a1803df08f44-87c0120081asi1290756d6.167 - gsmtp
+
+--1760459648-eximdsn-866123964
+Content-type: text/rfc822-headers
+
+Return-path: <david@notesao.com>
+Received: from [::1] (port=37342 helo=host.notesao.com)
+	by host.notesao.com with esmtpa (Exim 4.98.2)
+	(envelope-from <david@notesao.com>)
+	id 1v8hxs-00000005VDH-0KEy;
+	Tue, 14 Oct 2025 11:33:30 -0500
+MIME-Version: 1.0
+Date: Tue, 14 Oct 2025 11:33:25 -0500
+From: David House <david@notesao.com>
+To: Vanericmartin <vanericmartin@gmail.com>
+Subject: NotesAO
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <dfce39891a9a1aeeca9fbec67bafa5a9@notesao.com>
+X-Sender: david@notesao.com
+Organization: NotesAO
+Content-Type: multipart/mixed;
+ boundary="=_edd1a363e93b227c21f2c02d4d1dfa20"
+X-Exim-DSN-Information: Due to administrative limits only headers are returned
+
+
+--1760459648-eximdsn-866123964--

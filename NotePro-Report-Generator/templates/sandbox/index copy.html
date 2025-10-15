@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Generator</title>
+    <link href="{{ url_for('static', filename='NotesAOLogoFinal.ico') }}" rel="icon" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: rgb(247, 247, 247);
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        h1 {
+            display: none;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: #276328;
+            text-shadow: 2px 2px 5px rgba(21, 22, 21, 0.3);
+            margin-top: 0;
+            padding-top: 0;
+            margin-bottom: 5px;
+            padding: 20px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .form-group label {
+            margin-right: 10px;
+            width: 25%;
+            text-align: left;
+        }
+        .form-group input,
+        .form-group select {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .form-group img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .form-group .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+        .form-group .buttons button {
+            width: 100%;
+            background-color: #3d9340;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group .buttons button:hover {
+            background-color: #165687;
+        }
+        .full-width-button {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: rgb(38, 136, 178);
+            color: white;
+        }
+        .full-width-button:hover {
+            background-color: rgb(28, 106, 138); /* Slightly darker shade on hover */
+            cursor: pointer;
+        }
+        #loading-spinner {
+            position: absolute;
+            z-index: 9999;
+            display: none; /* Initially hidden */
+        }
+        .btn-primary {
+            background-color: #1e587a;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background-color: #223f75;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+        .company-logo {
+            width: 25%;
+            height: auto;
+        }
+        .clear-directories-button {
+            font-size: 14px;
+            margin-left: 1%;
+        }
+        .checkbox-group-label {
+            font-weight: regular;
+            margin-bottom: 5px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .checkbox-group {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header Section with Background Image -->
+    <h1 style="background-image: url('/static/Background.png'); text-align: center;">
+        <img alt="NotesAO Logo" class="company-logo" src="{{ url_for('static', filename='NotesAOLogo2.png') }}" style="width: 100px; height: auto; display: block; margin: 0 auto;" />
+        <br />
+        Report Generator
+    </h1>
+
+    <!-- Fetch Data Button -->
+    <div class="form-group">
+        <button class="full-width-button" id="fetchDataButton" title="Fetch Data" type="button" onclick="fetchData()">Fetch Data</button>
+        <div id="fetch-data-message"></div>
+    </div>
+
+    <hr style="border: 1px solid #ccc; margin: 20px 0;" />
+
+    <!-- Update Clients Form (CSV field removed) -->
+    <form action="/update_clients" id="update-clients-form" method="post">
+        <div class="form-group">
+            <label for="update_client_start_date">Start Date:</label>
+            <input id="update_client_start_date" name="start_date" placeholder="Start Date" required="" type="date" />
+        </div>
+
+        <div class="form-group">
+            <label for="update_client_end_date">End Date:</label>
+            <input id="update_client_end_date" name="end_date" placeholder="End Date" required="" type="date" />
+        </div>
+
+        <div class="form-group buttons">
+            <button class="full-width-button" title="Update Clients" type="submit">Update Clients</button>
+        </div>
+        <div id="update-clients-message"></div>
+    </form>
+
+    <hr style="border: 1px solid #ccc; margin: 20px 0;" />
+
+    <!-- Check Absences Form (CSV field removed) -->
+    <form action="/Check_Absences" id="check-absences-form" method="post">
+        <div class="form-group buttons">
+            <button class="full-width-button" title="Check Absences" type="submit">Check Absences</button>
+        </div>
+        <div id="check-absences-message"></div>
+    </form>
+
+    <hr style="border: 1px solid #ccc; margin: 20px 0;" />
+
+    <!-- Generate Reports Form (CSV field removed) -->
+    <form action="/generate_reports" id="generate-reports-form" method="post">
+        <div class="form-group">
+            <label for="generate_reports_start_date">Start Date:</label>
+            <input id="generate_reports_start_date" name="start_date" placeholder="Start Date" required="" type="date" />
+        </div>
+
+        <div class="form-group">
+            <label for="generate_reports_end_date">End Date:</label>
+            <input id="generate_reports_end_date" name="end_date" placeholder="End Date" required="" type="date" />
+        </div>
+
+        <div class="form-group">
+            <label for="program">Select Program:</label>
+            <select id="program" name="program" required="">
+                <option disabled="disabled" selected="selected" value="- Select -">- Select -</option>
+                <option value="BIPP">BIPP</option>
+                <option value="Anger Control">Anger Control</option>
+                <option value="Thinking for a Change">Thinking for a Change</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="checkbox-group-label">Select Reports:</div>
+            <div class="checkbox-group" id="reports_group">
+                <label for="entrance_checkbox">
+                    <input id="entrance_checkbox" name="reports" type="checkbox" value="Entrance Notifications" />
+                    <span>Entrance Notifications</span>
+                </label>
+                <label for="progress_checkbox">
+                    <input id="progress_checkbox" name="reports" type="checkbox" value="Progress Reports" />
+                    <span>Progress Reports</span>
+                </label>
+                <label for="unexcused_absence_checkbox">
+                    <input id="unexcused_absence_checkbox" name="reports" type="checkbox" value="Unexcused Absences" />
+                    <span>Unexcused Absences</span>
+                </label>
+                <label for="completion_checkbox">
+                    <input id="completion_checkbox" name="reports" type="checkbox" value="Completion Documents" />
+                    <span>Completion Documents</span>
+                </label>
+                <label for="exit_checkbox">
+                    <input id="exit_checkbox" name="reports" type="checkbox" value="Exit Notices" />
+                    <span>Exit Notices</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="full-width-button" id="generateButton" title="Generate Reports" type="submit">Generate Reports</button>
+        </div>
+        <div id="generate-reports-message"></div>
+    </form>
+
+    <script>
+         // Fetch Data function
+        function fetchData() {
+            document.getElementById('fetch-data-message').innerText = 'Fetching data...';
+            $.ajax({
+                url: '/reportgenapp/fetch_data',
+                type: 'GET',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        document.getElementById('fetch-data-message').innerText = 'Data fetched successfully!';
+                    } else {
+                        document.getElementById('fetch-data-message').innerText = 'Failed to fetch data.';
+                    }
+                },
+                error: function(xhr, status, error) {
+                    document.getElementById('fetch-data-message').innerText = 'Error occurred: ' + xhr.responseText;
+                }
+            });
+        }
+
+        // Function to handle form submissions with AJAX
+        function handleFormSubmit(formId, actionUrl, messageContainerId, successMessage) {
+            $(formId).submit(function(e) {
+                e.preventDefault();
+                $(formId + ' button[type="submit"]').prop('disabled', true);
+                $(messageContainerId).html('Processing...').removeClass('error success');
+                
+                let formData = new FormData(this);
+                
+                $.ajax({
+                    url: actionUrl,
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            $(messageContainerId).html(successMessage).addClass('success');
+                        } else {
+                            $(messageContainerId).html('Error: ' + response.message).addClass('error');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        $(messageContainerId).html('An error occurred: ' + xhr.responseText).addClass('error');
+                    },
+                    complete: function() {
+                        $(formId + ' button[type="submit"]').prop('disabled', false);
+                    }
+                });
+            });
+        }
+
+        // Handle Update Clients and Check Absences forms
+        handleFormSubmit('#update-clients-form', '/update_clients', '#update-clients-message', 'Client data updated successfully!');
+        handleFormSubmit('#check-absences-form', '/Check_Absences', '#check-absences-message', 'Absences checked successfully!');
+    </script>
+
+</div>
+</body>
+</html>

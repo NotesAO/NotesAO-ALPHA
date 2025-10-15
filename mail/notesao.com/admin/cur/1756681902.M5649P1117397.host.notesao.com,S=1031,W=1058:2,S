@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id Sx9FAK7WtGjVDBEAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Sun, 31 Aug 2025 18:11:42 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 31 Aug 2025 18:11:42 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1usrD3-00000004ggR-4291
+	for admin@notesao.com;
+	Sun, 31 Aug 2025 18:11:41 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for jason allen
+X-PHP-Script: ffl.notesao.com/intake.php for 107.209.105.147
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: findithere007@icloud.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1usrD3-00000004ggR-4291@host.notesao.com>
+Date: Sun, 31 Aug 2025 18:11:41 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

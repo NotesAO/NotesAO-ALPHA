@@ -1,0 +1,76 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id wPd7A+PnyWjJyh8AIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Tue, 16 Sep 2025 17:42:43 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Tue, 16 Sep 2025 17:42:43 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1uyeNn-00000008keT-04NH
+	for no-reply@ffl.notesao.com;
+	Tue, 16 Sep 2025 17:42:43 -0500
+X-Failed-Recipients: gmartinez36043@gmail.comn
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1uyeNm-00000008keG-449R@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1758062563-eximdsn-1901699361
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1uyeNn-00000008keT-04NH@host.notesao.com>
+Date: Tue, 16 Sep 2025 17:42:43 -0500
+
+--1758062563-eximdsn-1901699361
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  gmartinez36043@gmail.comn
+    The mail server could not deliver mail to gmartinez36043@gmail.comn.  The account or domain may not exist, they may be blacklisted, or missing the proper dns entries.
+
+--1758062563-eximdsn-1901699361
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;gmartinez36043@gmail.comn
+Status: 5.0.0
+
+--1758062563-eximdsn-1901699361
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1uyeNm-00000008keG-449R
+	for gmartinez36043@gmail.comn;
+	Tue, 16 Sep 2025 17:42:42 -0500
+To: gmartinez36043@gmail.comn
+Subject: Free for Life Group — Reminder
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.188.218
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=gmartinez36043%40gmail.comn&t=6b1c1230ca5e2fc4bd6410717fdedf526a10b678aecf6a4126e0643e5bc9776c>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1uyeNm-00000008keG-449R@host.notesao.com>
+Date: Tue, 16 Sep 2025 17:42:42 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Gabriel,</p>
+<p>This is a reminder from Free for Life Group. If you have a session coming up, please arrive a few minutes early.</p>
+<p>Check your personal link and details in your portal:</p>
+<p><a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a></p>
+<p>— Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=gmartinez36043%40gmail.comn&amp;t=6b1c1230ca5e2fc4bd6410717fdedf526a10b678aecf6a4126e0643e5bc9776c">unsubscribe here</a>.</p>
+
+--1758062563-eximdsn-1901699361--

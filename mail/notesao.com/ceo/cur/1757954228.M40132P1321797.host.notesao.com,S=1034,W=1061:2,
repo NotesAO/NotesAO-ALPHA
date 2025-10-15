@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id NWsNAbRAyGhFKxQAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Mon, 15 Sep 2025 11:37:08 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 15 Sep 2025 11:37:08 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uyCCR-00000005XrD-45b0
+	for admin@notesao.com;
+	Mon, 15 Sep 2025 11:37:07 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Christina Bailey
+X-PHP-Script: ffl.notesao.com/intake.php for 174.226.125.217
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: kat.bailey18@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uyCCR-00000005XrD-45b0@host.notesao.com>
+Date: Mon, 15 Sep 2025 11:37:07 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

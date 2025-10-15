@@ -1,0 +1,11 @@
+[addressbook]
+type VADDRESSBOOK
+displayname cPanel CardDAV Address Book
+description Default Address Book automatically created for your account.
+protected 1
+[calendar]
+type VCALENDAR
+description Default Calendar automatically created for your account.
+displayname cPanel CalDAV Calendar
+calendar-color #ff6c2c
+protected 1

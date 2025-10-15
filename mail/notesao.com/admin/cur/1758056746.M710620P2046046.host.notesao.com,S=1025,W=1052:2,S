@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id R1kFKSrRyWheOB8AIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Tue, 16 Sep 2025 16:05:46 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Tue, 16 Sep 2025 16:05:46 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uycry-00000008aGe-2htj
+	for admin@notesao.com;
+	Tue, 16 Sep 2025 16:05:46 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Xavier Sneed
+X-PHP-Script: ffl.notesao.com/intake.php for 166.199.242.62
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: xsneed42@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uycry-00000008aGe-2htj@host.notesao.com>
+Date: Tue, 16 Sep 2025 16:05:46 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php
