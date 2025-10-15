@@ -1,0 +1,94 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id gDZjCNDU7mgMXBYAIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Tue, 14 Oct 2025 17:55:12 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Tue, 14 Oct 2025 17:55:12 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1v8nvE-000000069Cg-07Zw
+	for no-reply@ffl.notesao.com;
+	Tue, 14 Oct 2025 17:55:12 -0500
+X-Failed-Recipients: orozcojoe92@gmail.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1v8n2O-000000063TE-3WTi@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1760482512-eximdsn-335946006
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1v8nvE-000000069Cg-07Zw@host.notesao.com>
+Date: Tue, 14 Oct 2025 17:55:12 -0500
+
+--1760482512-eximdsn-335946006
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  orozcojoe92@gmail.com
+    Domain ffl.notesao.com has exceeded the max defers and failures per hour (5/5 (100%)) allowed. Message discarded.
+
+--1760482512-eximdsn-335946006
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;orozcojoe92@gmail.com
+Status: 5.0.0
+
+--1760482512-eximdsn-335946006
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1v8n2O-000000063TE-3WTi
+	for orozcojoe92@gmail.com;
+	Tue, 14 Oct 2025 16:58:32 -0500
+To: orozcojoe92@gmail.com
+Subject: Men's BIPP Group Reminder: Tuesday at 7:00 PM
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.22.206
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=orozcojoe92%40gmail.com&t=2df0a16185a2477084f332620b08f1b3d3b012aaebe63ddbc262239fdc1df111>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1v8n2O-000000063TE-3WTi@host.notesao.com>
+Date: Tue, 14 Oct 2025 16:58:32 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Jose,</p>
+
+<p><strong>Your Men's BIPP group is Tuesday at 7:00 PM (Tuesday, October 14).</strong></p>
+
+<p>
+  Your I - McCart - 3628 McCart Ave, FW - Parole mandated BIPP group is scheduled. I - McCart - 3628 McCart Ave, FW - Parole and Melody Rivas expect your presence.
+  Please arrive early. <em>Lockout is 7:10 PM</em>. Your presence is a mandatory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaining in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p>
+
+<p>Where: 1100 East Lancaster Ave Fort Worth TX 76102</p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR call during office hours (Mon–Fri, 8am–4pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=orozcojoe92%40gmail.com&amp;t=2df0a16185a2477084f332620b08f1b3d3b012aaebe63ddbc262239fdc1df111">unsubscribe here</a>.</p>
+
+--1760482512-eximdsn-335946006--

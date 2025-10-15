@@ -1,0 +1,27 @@
+Return-Path: <reporting@safatherhood.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id K0AiDB2HlWhvSwAAIW4ynA
+	(envelope-from <reporting@safatherhood.notesao.com>); Fri, 08 Aug 2025 00:11:57 -0500
+Return-path: <reporting@safatherhood.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Fri, 08 Aug 2025 00:11:57 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@safatherhood.notesao.com>)
+	id 1ukFOX-0000000051N-0ftE
+	for admin@notesao.com;
+	Fri, 08 Aug 2025 00:11:57 -0500
+To: admin@notesao.com
+Subject: San Antonio Fatherhood Campaign has received a new Intake Packet for Gabriel Thomas
+X-PHP-Script: safatherhood.notesao.com/intake.php for 70.116.211.150
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@safatherhood.notesao.com
+Reply-To: gabecthomas@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1ukFOX-0000000051N-0ftE@host.notesao.com>
+Date: Fri, 08 Aug 2025 00:11:57 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://safatherhood.notesao.com/intake-index.php

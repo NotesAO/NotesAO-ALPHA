@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id gzkTMT7Y72jTiR0AIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 15 Oct 2025 12:22:06 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 15 Oct 2025 12:22:06 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v95CQ-000000087au-2yvi
+	for admin@notesao.com;
+	Wed, 15 Oct 2025 12:22:06 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Anton Stallworth
+X-PHP-Script: ffl.notesao.com/intake.php for 209.205.148.148
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: Stallworthanton0@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v95CQ-000000087au-2yvi@host.notesao.com>
+Date: Wed, 15 Oct 2025 12:22:06 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

@@ -1,0 +1,269 @@
+Return-Path: <droklankford@gmail.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 3bX2KeFnbmifCD8AIW4ynA
+	(envelope-from <droklankford@gmail.com>); Wed, 09 Jul 2025 08:00:17 -0500
+Return-path: <droklankford@gmail.com>
+Envelope-to: sales@notesao.com,
+ admin@notesao.com
+Delivery-date: Wed, 09 Jul 2025 08:00:17 -0500
+Received: from mail-yb1-f174.google.com ([209.85.219.174]:54546)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <droklankford@gmail.com>)
+	id 1uZUPI-0000000HKeH-0YJj;
+	Wed, 09 Jul 2025 08:00:17 -0500
+Received: by mail-yb1-f174.google.com with SMTP id 3f1490d57ef6-e7b4ba530feso4659081276.1;
+        Wed, 09 Jul 2025 06:00:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1752066014; x=1752670814; darn=notesao.com;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=yNp9gKX7SpxyJVXeND/Pvm9W7hM8MHXgUFWw5cAL0Ik=;
+        b=PFziO8QWcrHIvhpaoi+DSEdcNZz3APPACBYGd+uXUWcwM+skPcEpfBbuprepV9KeiZ
+         kbzvaJxzmtbwh7UinHc0GT3PF1PRTX44ENMuGZwF9Y26MISgzpyNW05MpEwGuwPwv4AY
+         6BrGXhf+GprywJf94yMxW7iQrKh4CX3hXj6wg7uW6DozLG1/x1t6A09pamuDsb+bLx1M
+         wLenzE+qQkb3GoDbAkZP63d+URGiw+eYsmuHsB4sSmGK9m+artPMMqVFzyjZ1CL/fNaD
+         oMoRoXIGLay7sgvMxJ+zw896vA0pOR/i+jYMMPmDLmP8czebxbDFKVCocEkV9lHXQ67E
+         3ydw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1752066014; x=1752670814;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=yNp9gKX7SpxyJVXeND/Pvm9W7hM8MHXgUFWw5cAL0Ik=;
+        b=Pkv5KgS96XISIpNBwaJKI5fN2A0N2TTUoSqusgSJ18RoXPA7p7gVY4hBVONJKsN2Um
+         MJmL5xVKpSJzJzXVlTuX3Ui4uMvQC2tNLz4Z/HEjzQ/9yd+EDrLBN8bL1IY2V8eRAr7Y
+         DRXIoKwocSVgdztpBlZZRjaArtccGYsVaGFTqJ3gM3zol+neooxQEC1R9ngco8EPOFeS
+         0wStDI2c7LJ7+5RKMM8chzHixC099zeo2WqoGYj/YUanrYOwlDCTHuxSsiCNTn/14Irf
+         oZaiedpzSlT166NebBL6JqE0PUy+JKwjg0xGClZo2SQgsKhW/vc4c1T6FdLIbpM5GaKX
+         nS+g==
+X-Gm-Message-State: AOJu0YwJZzjpAvEPOOesxWpmCdeDd2EHCrPIIb5S3Ad60hYceYnXNlaV
+	+Xr5FZzFaPizduQKdR4cXniDxwbpnp2gA2wvL/DdC4ijWcpigPGYt7e4zVsN5N9wAYo70jJ5hiZ
+	/SV8YAWd+xxKJn7+k4PPzZVWYHbGAcp7ZeQ==
+X-Gm-Gg: ASbGncvj29PYPPCEoJhFtn6oh0JGQM6lFwIHqlGxxfdu8Z+Fb4nWtv/QmKcJaP+U3Vi
+	C7ZQEn0zaZ6ZOXWEY6lsXGR4GEr2h+wXj7yJQJ+sZAVjCLKrGWM6Iz2nVnM7J129TrNNS31xNKx
+	Mi94KT/L3hEwS2vfqN8VeXqRic5yvFEpHZjQ7CuWQf6a2uq+VKD8PkHa+Zh+YVR4tBlFmPR6d8F
+	lPDLA==
+X-Google-Smtp-Source: AGHT+IGYSE91JBJ/c/8Gvv/8UBD9EHykMI7b0iE+rD47jET6ssxN1w4ZV0bhsI1/yi11zqdNS3tdSnpvfm4D0cWVga0=
+X-Received: by 2002:a05:690c:6605:b0:708:c37e:6269 with SMTP id
+ 00721157ae682-717b19f5aa1mr34916127b3.37.1752066013644; Wed, 09 Jul 2025
+ 06:00:13 -0700 (PDT)
+MIME-Version: 1.0
+References: <4462ec958d77db85e273f376c090049b@notesao.com>
+In-Reply-To: <4462ec958d77db85e273f376c090049b@notesao.com>
+From: Lankford Avenue <droklankford@gmail.com>
+Date: Wed, 9 Jul 2025 08:00:00 -0500
+X-Gm-Features: Ac12FXy93CXRfQeobqx1RSZa-NHIDk-eARqhIEp_ZtgCG8y3gQ_AXPwakzor6vM
+Message-ID: <CAN-yzYh4gPVFezo8Ucnxt_pSugnnwwTus81HTzuGa7diEy2Gpg@mail.gmail.com>
+Subject: Re: Notes AO
+To: sales@notesao.com
+Cc: Admin <admin@notesao.com>
+Content-Type: multipart/alternative; boundary="0000000000005dcbb706397ea8a9"
+X-Spam-Status: No, score=0.8
+X-Spam-Score: 8
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Received, thank you. On Wed, Jul 2, 2025 at 1:49 PM wrote:
+    > Dr. Lankford > We are so excited to start the onboarding process. Attached
+    to this > email is Gabriel. He will be imputing everything into NotesAO.
+   You will > be receiving emails from both of us. He [...] 
+ Content analysis details:   (0.8 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.219.174 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [209.85.219.174 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [209.85.219.174 listed in bl.score.senderscore.com]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: lankfordavenue.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [droklankford(at)gmail.com]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  1.0 FREEMAIL_REPLY         From and body contain different freemails
+X-Spam-Flag: NO
+
+--0000000000005dcbb706397ea8a9
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Received, thank you.
+
+On Wed, Jul 2, 2025 at 1:49=E2=80=AFPM <sales@notesao.com> wrote:
+
+> Dr. Lankford
+> We are so excited to start the onboarding process. Attached to this
+> email is Gabriel. He will be imputing everything into NotesAO. You will
+> be receiving emails from both of us. He uses the admin@notesao.com.
+> During this process if you have any questions please do not hesitate to
+> ask. The onboarding process will go as fast as you get information to
+> us.
+>
+> Next Steps:
+> 1. Please send over emails of all users. Please label the emails admin
+> or facilitators.
+> 2. Onboarding payment $500 will be sent to you.
+> 3. Onboarding paperwork will be sent once payment has been made and
+> emails have been sent to us. There will be clear instructions on what to
+> do. (any questions during this process please do not hesitate to ask)
+> 4. Any logos you like for us to use please send over.
+> 5. Any PDFs you like to use (ie. homework for client portal) please send
+> to us.
+>
+> Again, we are so excited to get you up and running using NotesAO. We
+> look forward to working with all of you and making this as seamless as
+> possible.
+>
+> David House
+> Sales Representative
+> 214.502.4322
+>
+
+
+--=20
+Lankford Avenue
+214-563-1995
+3010 Morgan Drive
+Dallas, TX 75241
+*Like & Follow Us:*
+*Website:* lankfordavenue.org
+*Facebook:* Lankford Avenue
+*Instagram:* lankford_avenue
+*Email: *droklankford@gmail.com
+
+
+"Building Healthy Lives"
+
+
+
+*The information contained in this message may contain privileged and
+confidential informationand is intended only for the individual named. **If
+you are not the named addressee you should *
+*not disseminate, distribute or copy this email. Please notify the sender
+immediately by email if you have received this email by mistake and delete
+this email from your system.*
+
+--0000000000005dcbb706397ea8a9
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Received, thank you.=C2=A0<br></div><br><div class=3D"gmai=
+l_quote gmail_quote_container"><div dir=3D"ltr" class=3D"gmail_attr">On Wed=
+, Jul 2, 2025 at 1:49=E2=80=AFPM &lt;<a href=3D"mailto:sales@notesao.com">s=
+ales@notesao.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" =
+style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-style:s=
+olid;border-left-color:rgb(204,204,204);padding-left:1ex">Dr. Lankford<br>
+We are so excited to start the onboarding process. Attached to this <br>
+email is Gabriel. He will be imputing everything into NotesAO. You will <br=
+>
+be receiving emails from both of us. He uses the <a href=3D"mailto:admin@no=
+tesao.com" target=3D"_blank">admin@notesao.com</a>. <br>
+During this process if you have any questions please do not hesitate to <br=
+>
+ask. The onboarding process will go as fast as you get information to <br>
+us.<br>
+<br>
+Next Steps:<br>
+1. Please send over emails of all users. Please label the emails admin <br>
+or facilitators.<br>
+2. Onboarding payment $500 will be sent to you.<br>
+3. Onboarding paperwork will be sent once payment has been made and <br>
+emails have been sent to us. There will be clear instructions on what to <b=
+r>
+do. (any questions during this process please do not hesitate to ask)<br>
+4. Any logos you like for us to use please send over.<br>
+5. Any PDFs you like to use (ie. homework for client portal) please send <b=
+r>
+to us.<br>
+<br>
+Again, we are so excited to get you up and running using NotesAO. We <br>
+look forward to working with all of you and making this as seamless as <br>
+possible.<br>
+<br>
+David House<br>
+Sales Representative<br>
+214.502.4322<br>
+</blockquote></div><div><br clear=3D"all"></div><div><br></div><span class=
+=3D"gmail_signature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_s=
+ignature"><div dir=3D"ltr"><div><div style=3D"color:rgb(34,34,34)"><font fa=
+ce=3D"georgia, serif"><span style=3D"background-color:transparent;color:rgb=
+(0,0,0);white-space:pre-wrap">Lankford Avenue</span><br></font></div><div><=
+font color=3D"#000000" face=3D"georgia, serif"><span style=3D"white-space:p=
+re-wrap">214-563-1995</span></font></div><div style=3D"color:rgb(34,34,34)"=
+><span style=3D"background-color:transparent;color:rgb(0,0,0);white-space:p=
+re-wrap"><font face=3D"georgia, serif">3010 Morgan Drive</font></span></div=
+><div style=3D"color:rgb(34,34,34)"><span style=3D"background-color:transpa=
+rent;color:rgb(0,0,0);white-space:pre-wrap"><font face=3D"georgia, serif">D=
+allas, TX 75241</font></span></div><div style=3D"color:rgb(34,34,34)"><b st=
+yle=3D"font-family:georgia,serif;color:rgb(29,34,40)">Like &amp; Follow Us:=
+</b><br></div><div style=3D"color:rgb(34,34,34)"><font face=3D"georgia, ser=
+if" style=3D"color:rgb(32,33,36)"><font style=3D"color:rgb(29,34,40)"><b>We=
+bsite:</b>=C2=A0</font><a href=3D"http://lankfordavenue.org/" style=3D"colo=
+r:rgb(17,85,204);white-space:pre-wrap" target=3D"_blank">lankfordavenue.org=
+</a><font style=3D"color:rgb(29,34,40)"><br><b>Facebook:</b>=C2=A0Lankford =
+Avenue<br><b>Instagram:</b>=C2=A0lankford_avenue</font></font></div></div><=
+div><b style=3D"color:rgb(29,34,40);font-family:georgia,serif">Email: </b><=
+span style=3D"color:rgb(29,34,40);font-family:georgia,serif"><a href=3D"mai=
+lto:droklankford@gmail.com" target=3D"_blank">droklankford@gmail.com</a></s=
+pan><font face=3D"georgia, serif" style=3D"color:rgb(32,33,36)"><font style=
+=3D"color:rgb(29,34,40);font-size:13px"><br></font></font></div><div style=
+=3D"color:rgb(34,34,34)"><br></div><div><font face=3D"georgia, serif"><span=
+ style=3D"font-size:11pt;color:rgb(0,0,0);background-color:transparent;vert=
+ical-align:baseline;white-space:pre-wrap"><span style=3D"border:medium;disp=
+lay:inline-block;overflow:hidden;width:231px;height:93px"><img src=3D"https=
+://lh3.googleusercontent.com/lcyOVjBOtsBFzr3vUqqkainj8rIWL9cvggVxUmY3RHLhN8=
+-QTHsjMfwOOSsJkveXogdpMeh7LQW6_yW7FTC7jViZpRjVUV-tnIdUBKr6QNQycR4vPWqMGuLm1=
+ZEL94iWzOpe9teC62Ew9a-UQdaBTzs" width=3D"231" height=3D"93" style=3D"margin=
+-left: 0px; margin-top: 0px;"></span></span><span style=3D"background-color=
+:transparent;font-size:11pt;color:rgb(0,0,0);white-space:pre-wrap"><br></sp=
+an></font></div><div><font color=3D"#000000" face=3D"georgia, serif"><span =
+style=3D"white-space:pre-wrap">       &quot;Building Healthy Lives&quot;</s=
+pan></font></div><div><font color=3D"#000000" face=3D"georgia, serif"><span=
+ style=3D"font-size:14.6667px;white-space:pre-wrap"><br></span></font></div=
+><div><font color=3D"#000000" face=3D"georgia, serif"><span style=3D"font-s=
+ize:14.6667px;white-space:pre-wrap"><br></span></font></div><div><table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"124" style=3D"color:=
+rgb(29,34,40);font-size:13px;font-family:Helvetica,Arial,sans-serif;border-=
+collapse:collapse;width:93pt"><tbody><tr height=3D"20" style=3D"min-height:=
+15pt"><td height=3D"20" width=3D"124" style=3D"word-break:normal;font-famil=
+y:Calibri,sans-serif;min-height:15pt;width:93pt;padding-top:1px;padding-rig=
+ht:1px;padding-left:1px;color:black;vertical-align:bottom;border:medium;whi=
+te-space:nowrap"><b><i>The information contained in this message may contai=
+n privileged and confidential information<br>and is intended only for the i=
+ndividual named.=C2=A0</i></b><b style=3D"white-space:pre-wrap"><i>If you a=
+re not the named addressee you should </i></b></td></tr><tr height=3D"20" s=
+tyle=3D"min-height:15pt"><td height=3D"20" style=3D"word-break:normal;font-=
+family:Calibri,sans-serif;min-height:15pt;padding-top:1px;padding-right:1px=
+;padding-left:1px;color:black;vertical-align:bottom;border:medium;white-spa=
+ce:nowrap"><span style=3D"white-space:pre-wrap"><b><i>not disseminate, dist=
+ribute or copy this email.  Please notify the sender immediately by email  =
+ if you have received this email by mistake and delete this email from your=
+ system.</i></b></span></td></tr></tbody></table></div><div><div style=3D"c=
+olor:rgb(29,34,40);font-size:13px"><br></div></div></div></div>
+
+--0000000000005dcbb706397ea8a9--

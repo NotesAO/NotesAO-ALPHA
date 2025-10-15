@@ -1,0 +1,126 @@
+Return-Path: <mariadangeles1613@gmail.com>
+Delivered-To: david@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id cfp9AR1z0Wjn0REAIW4ynA
+	(envelope-from <mariadangeles1613@gmail.com>)
+	for <david@notesao.com>; Mon, 22 Sep 2025 11:02:37 -0500
+Return-path: <mariadangeles1613@gmail.com>
+Envelope-to: david@notesao.com
+Delivery-date: Mon, 22 Sep 2025 11:02:37 -0500
+Received: from mail-ed1-f53.google.com ([209.85.208.53]:60853)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <mariadangeles1613@gmail.com>)
+	id 1v0izs-00000004tnB-3a0i
+	for david@notesao.com;
+	Mon, 22 Sep 2025 11:02:36 -0500
+Received: by mail-ed1-f53.google.com with SMTP id 4fb4d7f45d1cf-62fc686dc41so2827312a12.1
+        for <david@notesao.com>; Mon, 22 Sep 2025 09:02:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1758556954; x=1759161754; darn=notesao.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=2I6MhvMP4RIvVwdh5HxRGTe38e1Jaot6u9eqRdc4T4w=;
+        b=HYj3/ZLYv9PwlbTZ0deHypKvxUszP4lH0X7I8zCv/1k/C1iG/6oeX3uqnlRrpZcX7q
+         019hxRxgBpKJ6Yw12QeyCSIj+rNFNap/1MZG+tLT4lZDMxhcgtGqUY2Ev+KlxOe7QKzY
+         5W2kO+3R0SVBpY7Adv+lxE/t48IpKfJg5vO6xuLH2vphQNPc2vobksZIQjB6ClKw6TIu
+         pw0SnwdV3ttPolcr3qAbZ3n8g3mCAiZXid4OzyQaAcvVL1DzLuCC3LguJINFSzfzzNU4
+         VReZq/ybjl7/Dxep1kh5ltQoQZuCQD10c8ERxoz/acx7JcjzBdN3j4/Zjdrv6ZJH/Muw
+         jELQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758556954; x=1759161754;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=2I6MhvMP4RIvVwdh5HxRGTe38e1Jaot6u9eqRdc4T4w=;
+        b=W1tKkOw46qFWqxBB3wAR1zJ4RxUjtkRtySqg6M9EfKtLkBWvePVwm4uNSm9ApKmOrr
+         hiQBsoOaKpRrqcemf1hFrih2UPABEAIlTsoGcpGXoYQt4lbg28UZzn4n0LtcLFAZxVAQ
+         sbXcCx8AP5rvpDS2WUX02YfzMvVABOZ99zKSLkhpuqTDOShH9PWefCAt2Z5lRz6P863b
+         yI5N7BpfL0Ej7rzXW5qefgxOzaOVT2+sXvYvyCA4PbBgNx7hTEczhicd5R1ub+h5hf/s
+         d0RP59bSUGGngeQJDo1T0jEdhBY9Q/AESKCVMROS5pU14O65IowDRSv8eqLkSZJmKPc1
+         SY/g==
+X-Gm-Message-State: AOJu0YxfWbOoNBCVjefdAypYmQPuEE4ERUJs32q0c4yfe+1uecdcWWkN
+	oKRjvJrDKDaY6qfKE1sWUmAGimnoYnxLuwRxhj7hmcO2s4/LUNRbHt5x/PeuDED1C5aApz6Ln71
+	YZfmmKMt42PSdZvdVoO5UZIfeevEAu/yYpg==
+X-Gm-Gg: ASbGnctE+R/PnHb8mxtv2zdZ60r1yAhKwevjjwHbbnfaoyCGxd3GemnB6ulzoAyEwbi
+	X4lYYjhALQ85IVERlrbAccU0K0vyDVBs66xixU/61ckYXQ4cnqDEf5RqLL+szNwsjzwQ5lk5Brd
+	Cr7vWjXmeUV1hYAV70VqeGFi8JLW1BgFHRosBCj3CC+4xIqY2M+fLGhk394uvLlshV+J5WuQk6m
+	vWyqMzw+zuTByTzcRe2CXZHaPu+oyInrYcysA==
+X-Google-Smtp-Source: AGHT+IFI6cQkcDr6b3rH8+gyK7r4jWAcfzs8tGPgIFCufKNP1I2IIRef8mBREveTIOcd0kCYLbm6Dv5q+epfvz8sEzI=
+X-Received: by 2002:a05:6402:4397:b0:627:8d60:ca57 with SMTP id
+ 4fb4d7f45d1cf-62fc0abf7fcmr11439373a12.33.1758556954374; Mon, 22 Sep 2025
+ 09:02:34 -0700 (PDT)
+MIME-Version: 1.0
+From: Maria Perez <mariadangeles1613@gmail.com>
+Date: Mon, 22 Sep 2025 11:02:22 -0500
+X-Gm-Features: AS18NWBAjfCmCOSguYr6wrABNQOqqjoSaFPAq3taGYR3qCDNl0Q_xVTPQT9bjYw
+Message-ID: <CAFMkt-Yz__A_qBNGzVA-GWZXVgSXBch23f8jDx0c4qZ=eMHdDQ@mail.gmail.com>
+Subject: Onboarding for Apple Recovery Services
+To: David House <david@notesao.com>
+Content-Type: multipart/alternative; boundary="000000000000953703063f65f2c8"
+X-Spam-Status: No, score=0.8
+X-Spam-Score: 8
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Mr. House, I paid last week and no one has contacted me. Please
+    call me at your earliest convenience. Greatly appreciated, Maria Perez (832)
+    284-1414 
+ Content analysis details:   (0.8 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.208.53 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.208.53 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [209.85.208.53 listed in sa-trusted.bondedsender.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+                             digit
+                             [mariadangeles1613(at)gmail.com]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [mariadangeles1613(at)gmail.com]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.8 GB_FREEMAIL_NUM        Freemail spammy address
+X-Spam-Flag: NO
+
+--000000000000953703063f65f2c8
+Content-Type: text/plain; charset="UTF-8"
+
+Mr. House, I paid last week and no one has contacted me.  Please call me at
+your earliest convenience.
+
+Greatly appreciated,
+
+Maria Perez
+(832) 284-1414
+
+--000000000000953703063f65f2c8
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Mr. House, I paid last week and no one has contacted me.=
+=C2=A0 Please call me at your earliest convenience.<div><br></div><div>Grea=
+tly appreciated,</div><div><br></div><div>Maria Perez</div><div>(832) 284-1=
+414</div></div>
+
+--000000000000953703063f65f2c8--

@@ -1,0 +1,457 @@
+Return-Path: <0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000@amazonses.messaging.squareup.com>
+Delivered-To: vanmartin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id febVHqqgvGh1GQYAIW4ynA
+	(envelope-from <0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000@amazonses.messaging.squareup.com>)
+	for <vanmartin@notesao.com>; Sat, 06 Sep 2025 15:59:22 -0500
+Return-path: <0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000@amazonses.messaging.squareup.com>
+Envelope-to: vanmartin@notesao.com
+Delivery-date: Sat, 06 Sep 2025 15:59:22 -0500
+Received: from a119-15.smtp-out.us-west-2.amazonses.com ([54.240.119.15]:33069)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000@amazonses.messaging.squareup.com>)
+	id 1uv00I-00000001fyl-0vkC
+	for vanmartin@notesao.com;
+	Sat, 06 Sep 2025 15:59:22 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=clz7t3pgfbh32jgz3sgosjlq64ni7aba; d=messaging.squareup.com;
+	t=1757192357;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=ceXLoh/8F4Wj/cndrYgydPCLU9ZsXTl+kRH4ORGxOFw=;
+	b=JWAkTPIclEbXEgl+eG8j7qZ3s9ZCi2A7rxNGi2XM/lUMN5vEDue5jl7+gnVOewHe
+	MW+sOjUpEmO5QAGSQ/knHLXpbIQVLsu3CI+TGp/SHn0IGbklBnZxCqzqqMa9ssVFEMh
+	k9j/cEnbjqnz0ywNQ/OO3AmnoSTvCpzq3GfFXheM=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1757192357;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=ceXLoh/8F4Wj/cndrYgydPCLU9ZsXTl+kRH4ORGxOFw=;
+	b=Ik211NfT3TqyJkrca6EvF66ddl8t2OssJVmglDfPW4T7dw0LuHuntL/Etz2yH6Kw
+	hn36958jvD4GIbpUQAcJLGUTpKuXpd9J359aNjlpscM63QrxBCfSGLeSLxuOlhmMt1k
+	mjk2gzrNaCs7cXYzukD/p9ekr7Uhq0Re/XakTPYA=
+Date: Sat, 6 Sep 2025 20:59:16 +0000
+From: Square <noreply@messaging.squareup.com>
+To: vanmartin@notesao.com
+Message-ID: <0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000@us-west-2.amazonses.com>
+Subject: =?UTF-8?Q?Photo_tools_to_help_you_sell_more_=F0=9F=93=B8?=
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-EMS-Request-ID: 25bc7e79-8c92-4427-8f34-5c20ee4f3d14
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-ERS-Token: CCAQ3IilwIbXqb72ARi43fu9hqONsIsB
+List-Unsubscribe: <https://squareup.com/email/subscriptions/unsubscribe?scope=marketing&subcategory=square_pro_tips&locale=&request_id=25bc7e79-8c92-4427-8f34-5c20ee4f3d14&recipient=CCAQ3IilwIbXqb72ARi43fu9hqONsIsB&wastruncated=0>,
+ <mailto:CAEaZgokMjViYzdlNzktOGM5Mi00NDI3LThmMzQtNWMyMGVlNGYzZDE0EhwKCW1hcmtldGluZxIPc3F1YXJlX3Byb190aXBzGiBDQ0FRM0lpbHdJYlhxYjcyQVJpNDNmdTlocU9Oc0lzQiIgFb6o8OJSa/VmBDMZ3lnpZMynckBhPNPrZJt/8NFqMeI=@reply2.squareup.com>
+Feedback-ID: ::1.us-west-2.+kCNGv0wlznHgVfb/dmZu6QdzMqHR+fLcxV3+TNug8w=:AmazonSES
+X-SES-Outgoing: 2025.09.06-54.240.119.15
+X-Spam-Status: No, score=1.8
+X-Spam-Score: 18
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Square Use photos to enhance your online site and drive sales
+    Square Online Drive more sales with professional photos Try it now Online
+    merchants found that items with product images account for 94% of thei [...]
+    
+ Content analysis details:   (1.8 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.119.15 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.119.15 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [54.240.119.15 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: emlcdn.net]
+                             [URI: squarecdn.com]
+                             [URI: squareupmessaging.com]
+                             [URI: squareup.com]
+                             [URI: awstrack.me]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: awstrack.me]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or identical to
+                             background
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.8 KAM_INFOUSMEBIZ        Prevalent use of
+                             .info|.us|.me|.me.uk|.biz|xyz|id|rocks|life
+                             domains in spam/malware
+X-Spam-Flag: NO
+
+<!DOCTYPE html> <html xmlns=3D"http://www.w3.org/1999/xhtml" lang=3D"en-US"=
+ xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft=
+-com:office:office" xml:lang=3D"en-US"> <head> <meta name=3D"viewport" cont=
+ent=3D"width=3Ddevice-width"/> <meta http-equiv=3D"Content-Type" content=3D=
+"text/html;charset=3Dutf-8"/> <title>Square</title> <!--[if mso]><style typ=
+e=3D"text/css" data-premailer=3D"ignore">.codelink a{color:;text-decoration=
+:none}a{color:;text-decoration:none}.button td{background-color:}.nomso{dis=
+play:none;font-size:0;line-height:0}table{font-size:1px;line-height:0;mso-m=
+argin-top-alt:1px}table.MsoNormalTable{font-family:Helvetica,sans-serif}.du=
+rv{line-height:14px!important}</style><![endif]--><!--[if !mso]><!--><link =
+rel=3D"stylesheet" type=3D"text/css" href=3D"https://square-mailstrom-produ=
+ction-s.squarecdn.com/_shared/fonts/square-sans/square-sans.css" data-prema=
+iler=3D"ignore"/> <!--<![endif]--><style type=3D"text/css" data-premailer=
+=3D"ignore">.blueButton td td:hover,.blueButton a:hover{background-color:#0=
+5c!important}.blueButton a:hover{border:1px solid #05c!important}.dark .blu=
+eButton td td:hover,.dark .blueButton a:hover{background-color:#005fe5!impo=
+rtant}.dark .blueButton a:hover{border:1px solid #005fe5!important}a[x-appl=
+e-data-detectors]{color:inherit!important;text-decoration:none!important;fo=
+nt-size:inherit!important;font-family:inherit!important;font-weight:inherit=
+!important;line-height:inherit!important}b a{color:#121212}#hero a{color:#f=
+ff}#outlook a{padding:0}body{width:100%!important;margin:0 auto!important;p=
+adding:0}.ExternalClass{width:100%;line-height:100%}.ExternalClass p,.Exter=
+nalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line=
+-height:100%}table,td{border-collapse:collapse;mso-table-lspace:0;mso-table=
+-rspace:0}@media only screen and (min-width:281px){#container{position:rela=
+tive;top:0;left:0;right:0;bottom:0}}div[style*=3D"margin: 16px 0"]{margin:0=
+!important}@media screen and (max-width:480px){u ~ div{min-width:100vw}}</s=
+tyle> <style type=3D"text/css" data-premailer=3D"ignore">@media screen and =
+(min-width:281px) and (max-width:631px){#container .super-eyebrow{font-size=
+:38px!important;line-height:44px!important}#container .large-heading-30{fon=
+t-size:32px!important;line-height:38px!important}#container .large-heading-=
+20{font-size:28px!important;line-height:34px!important}#container .large-he=
+ading-10{font-size:26px!important;line-height:32px!important}#container .sm=
+all-heading-30{font-size:22px!important;line-height:26px!important}#contain=
+er .small-heading-20{font-size:18px!important;line-height:24px!important}#c=
+ontainer .paragraph-40{font-size:18px!important;line-height:28px!important}=
+#container .paragraph-semibold-40{font-size:18px!important;line-height:28px=
+!important}#container .fullWidth a{display:block!important}#container .colu=
+mn{width:inherit!important}#container .column .embiggen{width:600px!importa=
+nt;max-width:600px!important}#container .column .embiggen .list td:first-ch=
+ild{width:inherit!important}#container .column .embiggen .list td:last-chil=
+d{width:500px!important}#container .column .embiggen .button td{width:inher=
+it!important}#container .column .embiggen img{max-width:100%!important}#con=
+tainer .column .embiggen .icon{max-width:inherit!important}#container .blee=
+d img{-webkit-border-radius:0!important;-moz-border-radius:0!important;bord=
+er-radius:0!important}#container .desktop{display:none!important}#container=
+ .mobile{display:block!important;font-size:inherit!important;line-height:in=
+herit!important}#container .mobileBlock{display:block!important;padding-top=
+:16px!important}}</style> <!--[if mso]><xml><o:OfficeDocumentSettings><o:Pi=
+xelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-=
+-> </head> <body background=3D"#ffffff" style=3D"background-color: #ffffff"=
+ bgcolor=3D"#ffffff"><span style=3D"color:transparent;visibility:hidden;dis=
+play:none;opacity:0;height:0;width:0;font-size:0;">Use photos to enhance yo=
+ur online site and drive sales</span><img src=3D"https://links.squareupmess=
+aging.com/s/eo/smrHaPcQoiHftLJiyK-d66TiKX0TAVlwOemQIMzBdO5BZ25weWKwG23byB48=
+t1dGBxC8MnB_UNR_PSN1sbfHskobSQ1EaQyFp35FItLp31xYgPgTZsSu9jWSOe9TjgeYZ_AjIjT=
+M-gd2NGGdmWL3IGh94s1KsejpguTP92ZCFAmaM7uRAnsbkMu-k6Vk6KKLc1OrLACsYx__Xg/Gfv=
+qrwh4Q5eg6Npfjt5Dr4dSoc1sMdn0/12" style=3D"border:0;width:1px;height:1px;bo=
+rder-width:0px!important;display:none!important;line-height:0!important;" w=
+idth=3D"1" height=3D"1"/><div id=3D"container" class=3D"light" style=3D"-we=
+bkit-text-size-adjust: none;-ms-text-size-adjust: none;-webkit-font-smoothi=
+ng: antialiased;background-color: #ffffff"> <table id=3D"taxi hero" width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"center" styl=
+e=3D"padding: 0 0 24px; "><table cellpadding=3D"0" cellspacing=3D"0"> <tr><=
+td><table cellpadding=3D"0" cellspacing=3D"0"> <tr><td><table align=3D"cent=
+er" style=3D"background-color: #ffffff" class=3D"light" bgcolor=3D"#ffffff"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td><table align=3D"center" cellpa=
+dding=3D"0" cellspacing=3D"0"><tr><td width=3D"632"><table align=3D"left" s=
+tyle=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=
+=3D"padding: 24px 16px 0px"><table cellpadding=3D"0" cellspacing=3D"0"><tr>=
+<td width=3D"106"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td style=
+=3D"line-height: 1px;padding-right: 18px"><a id=3D"logo" style=3D"display: =
+inline-block;text-decoration: none;padding: 16px 0" href=3D"https://kjfjb2y=
+k.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2F=
+c%2FP4J2lZI8Q0KbE4SkmGjqSGZ-EYVi3of187Md-10v7iEbPFmEufATQvY6IUBoKHu5BbuvmJb=
+0IJIcMGson3XY0dXh-OwtwcjmTP24hWkSFS0R3DzCp1pc_oP4ZFpMU97M86GKlAyXPS-LuBiEqJ=
+o7zZgHSY-hRU2kqmdDYtGica2Bd6cphIxuTycjGTtPr1D90hNlvdIJY1Be_RIGVPQY53N1Vkqee=
+xB_rfbnbxduxXGPx_0PegTPg7K_8paND4hE7_WYeg%2Fezw4wRkglloYwdIKUg-ZSz9Ktg_JmBP=
+e%2F12/1/0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/_TqQN=
+ANl-nITU3TIembn__erfpM=3D443"><!--[if !mso]><!--><img src=3D"https://square=
+-mailstrom-production-s.squarecdn.com/_shared/logo/sans-white.png" width=3D=
+"88" height=3D"22" alt=3D"Square" style=3D"mix-blend-mode: difference;displ=
+ay: block"/><!--<![endif]--><!--[if gte mso 9]><img src=3D"https://square-m=
+ailstrom-production-s.squarecdn.com/_shared/logo/sans-black.png" width=3D"8=
+8" height=3D"22" alt=3D"Square"/><![endif]--></a></td></tr></table></td></t=
+r></table></td></tr></table></td></tr></table></td></tr></table></td></tr> =
+</table></td></tr> <tr><td width=3D"632" align=3D"left"><table cellpadding=
+=3D"0" cellspacing=3D"0"><tbody> <tr><td align=3D"left" style=3D"padding: 2=
+4px 16px 0"><table cellpadding=3D"0" cellspacing=3D"0"> <tr><td style=3D"fo=
+nt-family: SquareSansDisplay-Medium, Helvetica, Arial, 'Hiragino Kaku Gothi=
+c Pro', Meiryo, sans-serif; font-style: normal; font-weight: bold; font-siz=
+e: 20px; line-height: 24px; padding: 0 0 16px;"><a href=3D"https://kjfjb2yk=
+.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc=
+%2FfqivRusI6YJc091_uYH9ixBiD-LxO_Tdc09E2rWRQDlx8XedV7hjwfaPqN0O4Y4g5docgiK-=
+xa1XnzhWBVVPM_eaCUct7L-LLrYE23SR3twvcJH9LJBmsaQw1gLn8HDtQahJt2DthyfCmhSQ0Sp=
+AWq3LvhCTPo3wpZm8Y5IDYXXsYj6Vx1ve4mV8qCtREyVzGwB5QkyqF5TFo4bqiPw6RQhaNw6Ff-=
+5EpUiY7G_D4IOd6pqjBX7JY_PDEDZRwA2B2GEAygn_6R31Yw-vNyKD2p4rge403Ak%2FD4zeZRG=
+UHdqlpxGMZ7sK5xd3Syt-u1b9%2F12/1/0101019920d38465-590d958e-0075-4742-a86b-4=
+7c0db078e75-000000/wz_zMWzJrP6GajbL55QCqeMzSPo=3D443" style=3D"color:#12121=
+2; text-decoration: none;">Square Online</a></td></tr> <tr><td width=3D"600=
+" style=3D"color: #121212;font-family: SquareSansDisplay-Medium, Helvetica,=
+ Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: bold;fo=
+nt-size: 36px;line-height: 42px;padding: 0 0 16px" class=3D"textBlock large=
+-heading-30"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%=
+2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FNKM86Y_46Xwa9dkabd8ZrWlb5wcpONA3=
+wV7UWTypzhl10gQp0MY4GypMQLy4BpvVrwkInK9SQQoXshjmFSYqCw8VemTZ6tvHko6OUlsjv4k=
+68_pms2NmQPNjilbHh6U7Z2v_1Cfp3e-kDTAfEfGqUoEc3tPcEnJT2TvIlvl-H46w4AiF9tzrNH=
+1-LHDmSiHbRAmU9jR9BoMy5d-n7LujNpxunrRdx6gXGUqRQ4IpG-Hn2T6K4p-R9WGkLC-Fz8Ise=
+yxR9ZUOlKplBxRYoPOoshAu-Bnbq_c%2FMQ5OInkqCEg3wqnG7HZukPNr-wx0hAje%2F12/1/01=
+01019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/kIb65lcc7iFo8FtD=
+fzUSPw8Zva8=3D443" style=3D"color:#121212; text-decoration: none;">Drive mo=
+re sales with professional photos</a></td></tr> </table></td></tr> <tr><td =
+style=3D"padding: 24px 16px 16px" align=3D"center" class=3D"button"><table =
+width=3D"100%" class=3D"buttonTable" cellpadding=3D"0" cellspacing=3D"0"> <=
+tr><td><table align=3D"left" cellpadding=3D"0" cellspacing=3D"0"><tr><td st=
+yle=3D"background-color: #006aff;width: 100%;text-align: center;font-family=
+: SquareSansText-SemiBold, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Me=
+iryo, sans-serif;font-weight: bold;-webkit-border-radius: 6px;-moz-border-r=
+adius: 6px;border-radius: 6px;font-size: 16px;line-height: 24px" align=3D"c=
+enter" bgcolor=3D"#006aff"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack=
+.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FUagCR3KE864XMu8gio=
+Q5S0fhig0lPIpLxZYMt125OnNhVgzBTnOvlUULVVMFo7Te02pLDH5ng_A-3f5jp7PWksKaRZvz3=
+_2JFyTaGXzGFh2F1ldar4uMAs1maKnlqvR9_jV_AEpQTYXZcvwu5ZCLVfgZg0tg6DUwl2NWVMHY=
+j4fmUXbh-Wch8Y95q3EaxwJMoCa79mPRjBFBL_nGoNcrC61gD3Ue8kyizfSRbJUP2d3nj6s6NMo=
+_xSlLzK1Rtbq3-1_rYX05axSosgk7FrXB5vPgktMI940%2FDr3kwR_R3ON8Sbvw4Oyc8696D9zZ=
+fmFN%2F12/1/0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/e6=
+kNkOHtv_P7KMOkUolT7OPh2hw=3D443" style=3D"background-color: #006aff;padding=
+: 12px 16px;border: 1px solid #006aff;color: #ffffff;text-decoration: none;=
+-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;displ=
+ay: inline-block" id=3D"button-hero"><!--[if gte mso 9]>&nbsp;<![endif]-->T=
+ry it now<!--[if gte mso 9]>&nbsp;<![endif]--></a></td></tr></table></td></=
+tr> </table></td></tr> <tr><td align=3D"center" style=3D"padding: 24px 16px=
+ 0"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"600" align=
+=3D"left"><table cellpadding=3D"0" cellspacing=3D"0"> <tr><td width=3D"600"=
+ style=3D"" class=3D"fluidImage"><a href=3D"https://kjfjb2yk.r.us-west-2.aw=
+strack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FMgpbLShI_Rqk=
+hR4v6FrzusflgfStKjeiElEo57a8-URXpzG2TOpoxKYmckrcmefVzyCWThnc_xyZlOCUK2xSSDX=
+fsytEvhgyhdwifRmIslfjwi97Od_iL-UbMc5DVX_cKjK_CzEftKJF1PjCIAgGmR10lZ9HHZlCnv=
+3djR6io_nb4zVNTjfk13v0tkmB4LRdDFY0xiJFn4-r_c29f6K5x23OScehK7M2Vu-fsS_1SSuuH=
+zk-9m4VwkhDJtwQF9v8PViVOnRw2-Kc9AZX2s3nBZm04sPwryQ%2FiDJFBPTKYvO7fdq9b7sn6D=
+yMMBGQeGrM%2F12/1/0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000=
+000/6YMVSrtdEUg3IL4H-5b31RR0WAQ=3D443" style=3D"text-decoration: none"><img=
+ src=3D"https://images.emlcdn.net/cdn/143/fe1fb4e4-214c-4754-b63f-174409a50=
+632/obphototipsusen.png" width=3D"600" alt=3D"Image" style=3D"width: 100%;h=
+eight: auto;-ms-interpolation-mode: bicubic;display: block" border=3D"0"/><=
+/a></td></tr> </table></td></tr></table></td></tr> </tbody></table></td></t=
+r> </table></td></tr></table><table width=3D"100%" style=3D"table-layout: f=
+ixed" cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"center"><table c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"632" style=3D"padding: =
+0px 0 40px"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"pad=
+ding: 24px 16px 16px"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td wi=
+dth=3D"600"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"600=
+" class=3D"textBlock small-heading-30" style=3D"font-family: SquareSansDisp=
+lay-Medium, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-seri=
+f;font-weight: bold;font-size: 24px;line-height: 28px;color: #1a1a1a"><span=
+ style=3D"font-family: SquareSansText-SemiBold, Helvetica, Arial, &quot;Hir=
+agino Kaku Gothic Pro&quot;, Meiryo, sans-serif; font-weight: bold; color: =
+#1a1a1a;">Online merchants found that items with product images account for=
+ 94% of their sales.</span></td></tr></table></td></tr></table></td></tr></=
+table><table cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"padding: =
+0px 16px 8px"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"6=
+00"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"600" style=
+=3D"font-family: SquareSansText-Regular, Helvetica, Arial, 'Hiragino Kaku G=
+othic Pro', Meiryo, sans-serif;font-weight: normal;font-size: 16px;line-hei=
+ght: 24px;color: #1a1a1a;padding: 16px 0 0" class=3D"textBlock paragraph-30=
+">Here are a few photo tools to help you:</td></tr></table></td></tr></tabl=
+e></td></tr></table><table cellpadding=3D"0" cellspacing=3D"0"><tr><td styl=
+e=3D"padding: 0px 16px 8px;"><table cellpadding=3D"0" cellspacing=3D"0"><tr=
+><td width=3D"600"><table cellpadding=3D"0" cellspacing=3D"0"><tr><td width=
+=3D"600"> <table cellpadding=3D"0" cellspacing=3D"0"> <tr valign=3D"top"> <=
+td valign=3D"top" style=3D"padding: 25px 16px 0 0px;"><img src=3D"https://s=
+quare-mailstrom-production-s.squarecdn.com/_shared/smd/white/checkmark.png"=
+ alt=3D"1" width=3D"14" height=3D"10" style=3D"mix-blend-mode: difference;d=
+isplay: block"/></td> <td valign=3D"top" style=3D"padding: 16px 0 0; font-s=
+ize: 16px;line-height: 28px;font-family: SquareSansText-Regular, Helvetica,=
+ Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: normal;=
+" class=3D"textBlock paragraph-30"><span style=3D"font-family: SquareSansTe=
+xt-SemiBold, Helvetica, Arial, &quot;Hiragino Kaku Gothic Pro&quot;, Meiryo=
+, sans-serif; font-weight: bold;">Square Photo Studio App </span>- Use the =
+free Square Photo Studio app to take amazing, high-quality photos with your=
+ iPhone. The app gives you photography tips, easy-to-use stylization tools,=
+ and automatically removes backgrounds.<br/><a style=3D"text-decoration: no=
+ne; color: rgb(0, 90, 217); font-family: SquareSansText-SemiBold, Helvetica=
+, Arial, &quot;Hiragino Kaku Gothic Pro&quot;, Meiryo, sans-serif; font-wei=
+ght: bold;" href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2=
+Flinks.squareupmessaging.com%2Fs%2Fc%2FS5LJQc5AkElTf9A1o7MuhOyvMUiPzD7A1-5h=
+wz4Cb4v3Cv5QenA6lGrz9HfvQqVPnhFdzvCEjBM4jbN20A_l1_munxVPjP9eOO0KNZNUkLo7Pzu=
+3hY5cDRQ5lDyCeli-1pKlaZ34cNjRvm4kEbXS_20p3HB-eFZxrgai_MSgMwcaigeI4gpXptbA3h=
+XsR4iQP5Po82Y9VXpB2nYDM8Smss0Y4ME2mvrDHkGeRx0BWfhwBE3tvX0HuGBKC4tJpbu3Lmloy=
+FTkh8OYhOGUinbb7fPFkPJ9RaY%2FrLmA-KjOoH-qkKYCPBMRQnm9gqzF5cX7%2F12/1/010101=
+9920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/cC9id8wrq4eC-uCIUMxs=
+x4tI8XA=3D443">Learn More &gt;</a></td> </tr> </tr> <tr valign=3D"top"> <td=
+ valign=3D"top" style=3D"padding: 25px 16px 0 0px;"><img src=3D"https://squ=
+are-mailstrom-production-s.squarecdn.com/_shared/smd/white/checkmark.png" a=
+lt=3D"3" width=3D"14" height=3D"10" style=3D"mix-blend-mode: difference;dis=
+play: block"/></td> <td valign=3D"top" style=3D"padding: 16px 0 0; font-siz=
+e: 16px;line-height: 28px;font-family: SquareSansText-Regular, Helvetica, A=
+rial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;font-weight: normal;" =
+class=3D"textBlock paragraph-30"><span style=3D"font-family: SquareSansText=
+-SemiBold, Helvetica, Arial, &quot;Hiragino Kaku Gothic Pro&quot;, Meiryo, =
+sans-serif; font-weight: bold;">Free stock photography from Unsplash </span=
+>- Our partnership with Unsplash lets you access thousands of free, profess=
+ional stock photos right from the Square Online.</td> </tr> </table> </td><=
+/tr></table></td></tr></table></td></tr></table><table width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0"><tr><td style=3D"padding: 16px 16px 8px;"><t=
+able width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"><tr><td><table cell=
+padding=3D"0" cellspacing=3D"0"><tr><td width=3D"600" class=3D"button"><tab=
+le class=3D"buttonTable" cellpadding=3D"0" cellspacing=3D"0"> <tr><td><tabl=
+e align=3D"left" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"backg=
+round-color: #006aff;width: 100%;text-align: center;font-family: SquareSans=
+Text-SemiBold, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-s=
+erif;font-weight: bold;-webkit-border-radius: 6px;-moz-border-radius: 6px;b=
+order-radius: 6px;font-size: 16px;line-height: 24px" align=3D"center" bgcol=
+or=3D"#006aff"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https=
+:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FOJCUmtvDahVZzn28uPUkb3WWQHpT8S=
+Tl9-iL_RFogN7iK9xqRgWcEw_59erXgVAGoXPNnYK0d7-7_eiGEU5yDDoaYggkdbjZlE3XKxq7O=
+brSXhxOn7lm9WUVKbCmwSl_kHkcGoIfDGpgFHJG_vcRPS1mEg2hQkLDt0sDBJdf0erHg3Zjz-iO=
+SjP_WQBcIlRV-tVJfMzoUMI1B7QZS7vCt5AN2M-fbRDVsk_d7THialrDtO2vGL885zefpBsdDK5=
+rISlatL08xNDOtzKn2u31sf3XIe3dImc%2FcdJ4tsIJm4iB0oOGV_F4cHhOsiBPNKNp%2F12/1/=
+0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/3m8FeuvBac4I-X=
+lL6BMBOPQh8d4=3D443" style=3D"background-color: #006aff;padding: 12px 16px;=
+border: 1px solid #006aff;color: #ffffff;text-decoration: none;-webkit-bord=
+er-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;display: inline-b=
+lock" id=3D"button-hero"><!--[if gte mso 9]>&nbsp;<![endif]-->Try it now<!-=
+-[if gte mso 9]>&nbsp;<![endif]--></a></td></tr></table></td></tr> </table>=
+</td></tr></table></td></tr></table></td></tr></table></td></tr></table></t=
+d></tr></table> <table width=3D"100%" style=3D"table-layout: fixed" cellpad=
+ding=3D"0" cellspacing=3D"0"><tr><td style=3D"" align=3D"center" bgcolor=3D=
+"#ffffff"><table cellpadding=3D"0" cellspacing=3D"0"> <tr><td> <table width=
+=3D"100%" style=3D"width: 100%; table-layout: fixed; background-color: #fff=
+fff;" cellpadding=3D"0" cellspacing=3D"0" bgcolor=3D"#ffffff"> <tbody> <tr>=
+ <td align=3D"center" style=3D"padding: 0 16px"> <table cellpadding=3D"0" c=
+ellspacing=3D"0"> <tbody> <tr> <td width=3D"600"> <table width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0"><!----> <tbody> <tr> <td style=3D"font-siz=
+e: 1px; line-height: 1px; border-top: 1px solid #b3b3b3;" height=3D"1"> &nb=
+sp;</td> </tr><!----> <tr> <td style=3D"padding: 40px 0"> <table cellpaddin=
+g=3D"0" cellspacing=3D"0"> <tbody> <tr> <td style=3D"line-height: 1px;"><a =
+id=3D"logo" href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2=
+Flinks.squareupmessaging.com%2Fs%2Fc%2FKEt7rv_dD78kA69oC5knxO9UtRtfknjSou1B=
+EeLfYL09kieWIvhZIHhvrqjP3FpmRJJKSqGin2dyLoJlY_q6Rry1jUjNu0qh-YWGDGg75wpvdK8=
+QvOur-mzLVyS4CmGsbTfiv1ptUlk3w7ZGI7icsmASMvUQaeAf5n1sB001HNtsnke6zjXuAeeaqH=
+_jNdL3AqXjmfUD_CkGhKlXCiYYYbZOOLR2FH_ChZV2hK2roTESsIRp6oiTm5r8vU-Tozpp6VkE1=
+qGYegWxjUr9tBl0cC4c0OrN_5x93l_mO_bIFr7lCpBj-cVv10mEHUjDgDFgbp9Mv4quagT9WeAi=
+kY7A-CUOaLkDpJI0modNA3EYcbI%2FbQ9Ocjtep98CRkfVm4olzLEqomIh9gfi%2F12/1/01010=
+19920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/32VQvGlaINoSQUPONb-=
+5ZY6mjwE=3D443" style=3D"display: inline-block; text-decoration: none;"><sp=
+an class=3D"gmail" style=3D"display: none"><img src=3D"https://square-mails=
+trom-production-s.squarecdn.com/_shared/logo/sans-white.png" width=3D"88" h=
+eight=3D"22" alt=3D"Square" style=3D"mix-blend-mode: difference; display: b=
+lock;"></span><span class=3D"notGmail"><!----><img src=3D"https://square-ma=
+ilstrom-production-s.squarecdn.com/_shared/logo/sans-black.png" width=3D"88=
+" height=3D"22" alt=3D"Square" style=3D"display: block;"><!----></span></a>=
+</td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <!----> <table =
+width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td class=
+=3D"social"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td s=
+tyle=3D"line-height: 1px;"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack=
+.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FDBkG7U4BLJwKGeb_Sw=
+UTTLvAUYSpMq_XejLkUX_0dYE7xIqoDmdtLgs-W6U6BX18c0fQjqHDHrPjBm6FxDfKyG4yDywgf=
+yJwlFx3NtULielpGQio1wO_2XnD7ORPCo__c_6msjitN0y8VqnweSfef4OCMsQa1UZW03sdD6bY=
+BUlIf8Hw0tAOHYlBf-d34YIgb5WEpsa28sHVwhbfVdvW_O083lIfLa3ks-T-FVbwtgfGmhQAQSK=
+4dbW6ZRy-HOp4_ZIwfrjPzBGO6GRDqnVw8uo2l_83b_iEKsQnxv9erH1H6gAbGLCZfvANUCuYe-=
+3MOFJkSrX2HGd0FuRQF6uJiQsK8bI-FHHvC5ksAE7kozBHa85G7g%2FhTqUTUUEL7d_PBEti7tA=
+Ij2A82mKsqDU%2F12/1/0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-0=
+00000/ADforJzSRnPU2KRRQAR8MGtwKds=3D443" style=3D"text-decoration: none; co=
+lor: #1a1a1a;"><span class=3D"gmail" style=3D"display: none"><img src=3D"ht=
+tps://square-mailstrom-production-s.squarecdn.com/market/icon/facebook-smw.=
+png" width=3D"24" height=3D"24" alt=3D"Facebook" style=3D"mix-blend-mode: d=
+ifference; display: block;"></span><span class=3D"notGmail"><!----><img src=
+=3D"https://square-mailstrom-production-s.squarecdn.com/market/icon/faceboo=
+k-smb.png" width=3D"24" height=3D"24" alt=3D"Facebook" style=3D"display: bl=
+ock;"><!----></span></a></td> <td style=3D"line-height: 1px; padding: 0 4px=
+"><a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.=
+squareupmessaging.com%2Fs%2Fc%2Fx95x_dWSj-dRR1owcSGokYQ5WuZkjuaNFNFpofC1ezR=
+vjiCxH6NSCNi6EfN4VjRkjudQi_fWkSt2oxr30JUQE1iTCFZ0k-HuQvfvesKxYHoycoX0wwT7gw=
+Pn0nHBaEn6UsE5stNUqUv749T2TBPY8KUTQOFuYL0_dm9xLcsdn0Nc41HId9RPtcxKZiNIx-Otr=
+PNYlgTjgcl5emabXJy3_tFXIHM5Kd4xzowRm6bRhEgoikQG7UZC-sB6ih6Tun8cb9VHp-IkPPX0=
+F6ujifpkT7xk6C-dcG-cawMlF3aiwEHcnA3z3rerwSoZLc6dFpS8nktQfHV0_mtH7Tt8PaPQgjO=
+PaDcGGY8tlYg1xwQ8ApD1s0_hhTUd8g%2FOv6pVyEueOfRi9UJsWvvgHYEZqh4i7aD%2F12/1/0=
+101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/3biJ7GWDXKc_xwT=
+zPA_OXa44xaY=3D443" style=3D"text-decoration: none; color: #1a1a1a;"><span =
+class=3D"gmail" style=3D"display: none"><img src=3D"https://square-mailstro=
+m-production-s.squarecdn.com/market/icon/instagram-smw.png" width=3D"24" he=
+ight=3D"24" alt=3D"Instagram" style=3D"mix-blend-mode: difference; display:=
+ block;"></span><span class=3D"notGmail"><!----><img src=3D"https://square-=
+mailstrom-production-s.squarecdn.com/market/icon/instagram-smb.png" width=
+=3D"24" height=3D"24" alt=3D"Instagram" style=3D"display: block;"><!----></=
+span></a></td> <td style=3D"line-height: 1px;"><a href=3D"https://kjfjb2yk.=
+r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%=
+2FjJ5FOYN5LMZO05lM9mIM5hGGDZSoQOgEaNZwoncNDWyP_LKy2_NCXlmPrOkBDpqLj90JDvfcn=
+A77s-qBTSlkr4ruHVBILTQUj46dfJjUtm-Pd_yEHLEMu695TrKJOB2y_dpMcVf4z7R4zdbllzwf=
+9i86E-IyS-OxW7DkkaANa4fJRpMHgCGChnvpWYrqOOjk8WtFZw9xYpFL9O4R_mbIKVTgPfFR43M=
+WIphfYPWFiwKpScKfxfji5NSYJnYEdyiWzXftjbQefjHFkCwspLOZP6LUdhUdZc_ma1473q2Wuo=
+F-bVlRdhy-90wgqrrR09RqtL97UXHEHAecCQBuI9E%2FFBb3uyidDkyaxmUBjs8Xd1H40-bWBg1=
+c%2F12/1/0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/Po3c9=
+oSRaxWyc7IKTezL5eB0Xm0=3D443" style=3D"text-decoration: none; color: #1a1a1=
+a;"><span class=3D"gmail" style=3D"display: none"><img src=3D"https://squar=
+e-mailstrom-production-s.squarecdn.com/market/icon/x-social-smw.png" width=
+=3D"24" height=3D"24" alt=3D"X" style=3D"mix-blend-mode: difference; displa=
+y: block;"></span><span class=3D"notGmail"><!----><img src=3D"https://squar=
+e-mailstrom-production-s.squarecdn.com/market/icon/x-social-smb.png" width=
+=3D"24" height=3D"24" alt=3D"X" style=3D"display: block;"><!----></span></a=
+></td> </tr> </tbody> </table> </td> </tr> </tbody> </table><!----> <table =
+cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td style=3D"padding: 16p=
+x 0 40px"> <table cellpadding=3D"0" cellspacing=3D"0"> <tbody> <tr> <td cla=
+ss=3D"textBlock paragraph-20" style=3D"font-family: SquareSansText-Regular,=
+ Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-wei=
+ght: normal; font-size: 14px; line-height: 21px; color: #1a1a1a; padding: 0=
+px 0 16px;"> <!----> Square<br><!----><a style=3D"text-decoration: none; le=
+tter-spacing: -0.01em; font-family: SquareSansText-Regular, Helvetica, Aria=
+l, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: normal; col=
+or: #1a1a1a;"> 1955 Broadway, Suite 600 <!----><br>Oakland, CA 94612 <!----=
+> <!----></a> </td> </tr><!----> <!----> <!----> <!----> <!----> <tr> <td c=
+lass=3D"textBlock paragraph-20" style=3D"font-family: SquareSansText-Regula=
+r, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-w=
+eight: normal; font-size: 14px; line-height: 21px; color: #1a1a1a; padding:=
+ 0px 0 16px;"> <!----> <a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/=
+L0/https:%2F%2Flinks.squareupmessaging.com%2Fs%2Fc%2FU6YiJIOQjyacaB81IvEHc6=
+KLOMnlnBD3p1vsNDy5aUhyVlym0uCmfxyW2CJEpUhkKhW3Za_DrOfG3gIqxYam3E_PHoVhRzz70=
+ttQclkvKxZFhGAZIGEgwWuv_SmG4slcE4mTbafeYGVMD9IbICRWgDRW6DFqBZpHVMl5-ZPm90kJ=
+DA9Gmu7KonBkGzaI2baBOFHuXg8gKYIVN90ESStb4st1byKLD44Vl_7EsZbJGkdr5gnr87YmwTd=
+s4iwYKm9SqsxCRRwy7siSO17k2hT_uWR31cpWDFps4aIiFC31T_heGuGK42zC6_pl0UWdXg1Av4=
+2ptmK3vWeOIMeom8H9OCaeGK9oN2UX2bpnEdUiGMCnQcrulARmsjz10xmk1l_m6kFaIpum6oZEJ=
+uh-1fUL1wB6H4GGXTSd5TkNTPOG%2FOcbV1XaPY0r8Pcq87vR3-Stcud7LyrPS%2F12/1/01010=
+19920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/GZGrEgJBjc743Ma34GS=
+DI8HvXLM=3D443" style=3D"text-decoration: none; font-family: SquareSansText=
+-SemiBold, Helvetica, Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif=
+; font-weight: bold; letter-spacing: -0.01em; color: #1a1a1a;">Square Priva=
+cy Policy</a> </td> </tr><!----> <!----> <!----> <tr> <td class=3D"textBloc=
+k paragraph-20" style=3D"font-family: SquareSansText-Regular, Helvetica, Ar=
+ial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: normal; f=
+ont-size: 14px; line-height: 21px; color: #1a1a1a; padding: 0px 0 16px;"> <=
+a href=3D"https://kjfjb2yk.r.us-west-2.awstrack.me/L0/https:%2F%2Flinks.squ=
+areupmessaging.com%2Fs%2Feh%2FTNHqaQTcUEIXOePvXOhxyLFq5rwOf1y3JgMdGz6OLFs3U=
+yn_3FM2HHyjsODOl5U7rCyV_4h29zZNmGRkCLASqALomFa4T3qPtOAgNjZRvp2gVtPBU7GtjY8S=
+psfNCrZpntHYUZ0IaTsp4H38n4tJANvxKCpCbM7aj25vsjC_LEA-E3_llO-Fe0mu72uwKTRymZL=
+ymOnpRaJ_kqw8Clp-R7-oRobF0IVT4rLrguEbkhYdjhkJ5RjpvyaQnh48s3jzBF_X2kus6OTT9y=
+pyyF66g09H0raM735zPda8OCDNvyrMGqaTe30GYoGp5lYC_zc6VmJj6TxCeoD4cYqYHwdrxt33l=
+BIeead0uIsBJ5S4q4RAEmWxWfWIJ1S-U7ZOtinYl0O5WWG4Co9CTmhmJfA0Qm8VD3Vs-X-KAzvV=
+d9Ce%2FHJTViTPu1jl1kj75p7NVzWA2ZrjwcQCx%2F12/1/0101019920d38465-590d958e-00=
+75-4742-a86b-47c0db078e75-000000/hLtsT3oJ6dgLI98SEupl-Q1efq4=3D443" style=
+=3D"text-decoration: none; font-family: SquareSansText-SemiBold, Helvetica,=
+ Arial, 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; font-weight: bold; =
+letter-spacing: -0.01em; color: #1a1a1a;">Unsubscribe or manage your prefer=
+ences</a> </td> </tr><!----> </tbody> </table> </td> </tr> </tbody> </table=
+> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td></tr> <t=
+r><td style=3D"font-size: 0;line-height: 0">&nbsp;</td></tr> </table></td><=
+/tr></table> </div><img alt=3D"" src=3D"https://kjfjb2yk.r.us-west-2.awstra=
+ck.me/I0/0101019920d38465-590d958e-0075-4742-a86b-47c0db078e75-000000/ZwIxI=
+4eVH-LG_6pOrPj99GGVX40=3D443" style=3D"display: none; width: 1px; height: 1=
+px;">
+</body> </html>

@@ -1,0 +1,28 @@
+Return-Path: <reporting@safatherhood.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id LyqOJY5I32h/yTAAIW4ynA
+	(envelope-from <reporting@safatherhood.notesao.com>); Thu, 02 Oct 2025 22:52:46 -0500
+Return-path: <reporting@safatherhood.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Thu, 02 Oct 2025 22:52:46 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@safatherhood.notesao.com>)
+	id 1v4Wqc-0000000DPlR-1hl6;
+	Thu, 02 Oct 2025 22:52:46 -0500
+To: admin@notesao.com
+Subject: San Antonio Fatherhood Campaign has received a new Intake Packet for Adrian Wiatrek
+X-PHP-Script: safatherhood.notesao.com/intake.php for 107.195.105.113
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@safatherhood.notesao.com
+Reply-To: wiatrekaj@gmail.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v4Wqc-0000000DPlR-1hl6@host.notesao.com>
+Date: Thu, 02 Oct 2025 22:52:46 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://safatherhood.notesao.com/intake-index.php

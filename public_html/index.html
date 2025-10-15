@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="description" content="NotesAO: Streamline your therapeutic documentation. Automate reports, manage clients, and track attendance.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NotesAO | Therapeutic Documentation</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#211c56">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/favicons/apple-touch-icon-ipad-pro.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="NotesAO">
+
+  <!-- Fonts / Icons / Bootstrap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" referrerpolicy="no-referrer">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <style>
+    /* ─────────── BASE + PAGE STYLES ─────────── */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Montserrat',sans-serif;color:#333;background:#f7f9fa;line-height:1.6;}
+    a{text-decoration:none;color:inherit;} img{max-width:100%;height:auto;}
+    h1,h2,h3{font-weight:700;} h1{font-size:2.5rem;} p{font-size:1rem;}
+
+    /* ========= SHARED HEADER ========= */
+    .site-header{
+      background:#fff;padding:.75rem 2rem;
+      display:flex;justify-content:space-between;align-items:center;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+      position:fixed;top:0;left:0;right:0;z-index:999;
+    }
+    .site-header .logo img{height:40px}
+    .nav-list{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+    .nav-list>li{position:relative;display:flex;align-items:center;}
+    .nav-list>li:last-child .dropdown-menu{
+      left:auto;
+      right:0;
+    }
+    .nav-list a,
+    .drop-toggle{
+      font-weight:500;color:#333;background:none;border:none;
+      text-decoration:none;font-family:inherit;cursor:pointer;
+      padding:.25rem .1rem;transition:color .3s;
+    }
+    .nav-list a:hover,
+    .drop-toggle:hover{color:#211c56}
+
+    /* Dropdown */
+    .dropdown{position:relative}
+    .dropdown-menu{
+      position:absolute;left:0;top:100%;min-width:11rem;
+      background:#fff;border:1px solid #e5e5e5;border-radius:6px;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+      display:none;flex-direction:column;padding:.5rem 0;z-index:1000;
+    }
+    .dropdown.open>.dropdown-menu{display:flex;}
+    .dropdown-menu a{padding:.35rem 1rem;white-space:nowrap}
+    .dropdown-menu a:hover{background:#f7f9fa}
+    .dropdown.open>.dropdown-menu{display:flex}
+    /* Keyboard focus */
+    .drop-toggle:focus-visible{outline:2px solid #007BFF;outline-offset:2px}
+
+    /* Offset for fixed header */
+    main{margin-top:80px;}
+
+    /* ─── Hero ─── */
+    .hero{display:flex;align-items:center;justify-content:space-between;padding:4rem 2rem;background:#eef3f8;}
+    .hero-text{max-width:550px;}
+    .hero-text h1{margin-bottom:1rem;font-size:2.5rem;}
+    .hero-text p{margin-bottom:1.5rem;color:#555;}
+    .hero-cta .btn{display:inline-block;background:#211c56;color:#fff;padding:.75rem 1.5rem;border-radius:4px;font-weight:500;transition:background .3s,box-shadow .3s;}
+    .hero-cta .btn:hover{background:rgb(56,48,143);box-shadow:0 5px 15px rgba(0,91,187,.3);}
+    .hero-image{flex:1;display:flex;justify-content:center;align-items:center;}
+    .hero-image img{width:90%;max-width:500px;}
+
+    /* ─── Trust logos ─── */
+    .trust-logos{background:#fff;padding:1rem 2rem;display:flex;justify-content:center;align-items:center;gap:2rem;border-top:1px solid #e2e2e2;border-bottom:1px solid #e2e2e2;}
+    .trust-logos img{height:40px;opacity:.8;transition:opacity .3s;}
+    .trust-logos img:hover{opacity:1;}
+
+    /* ─── Features ─── */
+    .features{padding:4rem 2rem;background:#fff;text-align:center;}
+    .features h2{font-size:2rem;margin-bottom:1.5rem;}
+    .features p.section-subtitle{color:#666;margin:0 auto 2rem;max-width:600px;}
+    .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;max-width:1200px;margin:0 auto;}
+    .feature-card{background:#f7f9fa;padding:2rem;border-radius:8px;box-shadow:0 5px 10px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s;}
+    .feature-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgb(56,48,143);}
+    .feature-icon{font-size:2.5rem;color:#211c56;margin-bottom:1rem;}
+    .feature-card h3{margin-bottom:1rem;font-size:1.2rem;}
+    .feature-card p{color:#555;font-size:.95rem;}
+
+    /* ─── Testimonials ─── */
+    .testimonials{padding:4rem 2rem;background:#eef3f8;text-align:center;}
+    .testimonials h2{font-size:2rem;margin-bottom:1.5rem;}
+    .testimonials p.section-subtitle{color:#666;margin:0 auto 2rem;max-width:600px;}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1000px;margin:0 auto;}
+    .testimonial-card{background:#fff;padding:2rem;border-radius:8px;box-shadow:0 5px 10px rgba(0,0,0,.05);text-align:left;transition:transform .3s,box-shadow .3s;}
+    .testimonial-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgb(56,48,143);}
+    .testimonial-card .quote{font-style:italic;margin-bottom:1rem;color:#555;}
+    .testimonial-author{display:flex;align-items:center;gap:.75rem;}
+    .author-img{width:40px;height:40px;border-radius:50%;object-fit:cover;}
+    .author-details{font-size:.9rem;color:#333;}
+    .author-details span{display:block;color:#777;font-size:.8rem;}
+
+    /* ─── CTA section ─── */
+    .cta-section{padding:4rem 2rem;background:#211c56;color:#fff;text-align:center;}
+    .cta-section h2{font-size:2rem;margin-bottom:1rem;}
+    .cta-section p{font-size:1rem;margin:0 auto 2rem;max-width:600px;}
+    .cta-section .btn{display:inline-block;background:#fff;color:#887fe8;padding:.75rem 1.5rem;border-radius:4px;font-weight:600;transition:color .3s,background .3s,box-shadow .3s;}
+    .cta-section .btn:hover{background:#eaeaea;box-shadow:0 5px 15px rgb(56,48,143);}
+
+    /* ─── Footer ─── */
+    footer{background:#1c1c1c;color:#fff;padding:2rem;text-align:center;margin-top:2rem;}
+    footer .footer-links{margin-bottom:1rem;}
+    footer .footer-links a{margin:0 1rem;color:#ccc;font-size:.9rem;transition:color .3s;}
+    footer .footer-links a:hover{color:#fff;}
+    footer p{font-size:.9rem;color:#ccc;}
+
+    /* ─── Responsive ─── */
+    @media(max-width:768px){
+      .hero{flex-direction:column;text-align:center;}
+      .hero-image{margin-top:2rem;}
+      .hero-text h1{font-size:2rem;}
+    }
+
+    /* ─── Cookie-consent bar ─── */
+    #cookie-bar{
+      position:fixed;left:0;right:0;bottom:0;z-index:1000;
+      background:#0c0a24;color:#fff;box-shadow:0 -4px 12px rgba(0,0,0,.15);
+      transform:translateY(100%);transition:transform .4s ease;
+      padding:1rem 1.5rem;display:flex;flex-wrap:wrap;gap:1rem;font-size:.95rem;line-height:1.5;
+    }
+    #cookie-bar.show{transform:translateY(0);}
+    #cookie-bar button{border:none;border-radius:4px;padding:.5rem 1.25rem;font-weight:600;cursor:pointer;}
+    #btn-accept{background:#00d08b;color:#000;}
+    #btn-reject{background:#f8f9fa;color:#211c56;}
+    #btn-settings{background:#ffc107;color:#211c56;}
+    a.cookie-policy{color:#fff;text-decoration:underline;}
+    #cookie-fab{
+      position:fixed;bottom:1rem;right:1rem;z-index:1000;display:none;
+      width:44px;height:44px;border-radius:50%;background:#0c0a24;color:#fff;font-size:20px;
+      align-items:center;justify-content:center;cursor:pointer;
+      box-shadow:0 2px 6px rgba(0,0,0,.2);
+    }
+    #cookie-fab.show{display:flex;}
+  </style>
+</head>
+<body>
+
+<!-- ───────── HEADER ───────── -->
+<header class="site-header">
+  <a href="/" class="logo"><img src="/assets/images/NotesAO Logo.png" alt="NotesAO logo"></a>
+
+  <nav class="main-nav" role="navigation" aria-label="Primary">
+    <ul class="nav-list">
+      <!-- Home dropdown -->
+      <li class="dropdown">
+        <button class="drop-toggle" aria-expanded="false">Home</button>
+        <ul class="dropdown-menu">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#testimonials">Testimonials</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/login.php">Login</a></li>
+      <li><a href="https://enroll.notesao.com/start.php">Sign&nbsp;Up</a></li>
+
+      <!-- Legal dropdown -->
+      <li class="dropdown">
+        <button class="drop-toggle" aria-expanded="false">Legal</button>
+        <ul class="dropdown-menu">
+          <li><a href="/legal/privacy.html">Privacy&nbsp;Policy</a></li>
+          <li><a href="/legal/terms.html">Terms&nbsp;of&nbsp;Service</a></li>
+          <li><a href="/legal/accessibility.html">Accessibility</a></li>
+          <li><a href="/legal/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ───────── MAIN CONTENT ───────── -->
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Streamline Your Therapeutic Documentation</h1>
+      <p>Automate reports, manage clients, and track attendance for parole, probation, and CPS programs — all in one platform. Save time, stay organized, and focus on what truly matters: helping your clients.</p>
+      <div class="hero-cta d-flex gap-3">
+        <a href="/login.php" class="btn">Login</a>
+        <a href="/signup.php" class="btn">Schedule a Consultation</a>
+      </div>
+    </div>
+    <div class="hero-image"><img src="assets/images/hero-illustration.png" alt="Therapeutic Documentation Illustration"></div>
+  </section>
+
+  <!-- Trust Logos -->
+  <section class="trust-logos">
+    <img src="assets/images/logo-placeholder1.png" alt="Partner 1">
+    <img src="assets/images/logo-placeholder2.png" alt="Partner 2">
+    <img src="assets/images/logo-placeholder3.png" alt="Partner 3">
+    <img src="assets/images/logo-placeholder4.png" alt="Partner 4">
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Ready to Simplify Your Practice?</h2>
+    <p>Sign up today and experience how NotesAO can streamline your documentation process and help you focus on client outcomes.</p>
+    <a href="https://enroll.notesao.com/start.php" class="btn">Get Started Now</a>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <h2>All-In-One Platform</h2>
+    <p class="section-subtitle">From intake to completion, NotesAO's flexible system covers every aspect of your practice.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
+        <h3>Automated Documentation</h3>
+        <p>Generate entrance notifications, progress reports, and completion documents automatically. Save time and reduce paperwork errors.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-user-friends"></i></div>
+        <h3>Client Management</h3>
+        <p>Track active and exited clients across different programs with ease, all from one centralized dashboard.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+        <h3>Attendance Tracking</h3>
+        <p>Monitor attendance, sessions, and generate absence notifications in just a few clicks.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+        <h3>Program Flexibility</h3>
+        <p>Seamlessly switch between programs like BIPP, Anger Management, or Thinking for a Change without losing your workflow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <h2>What Professionals Are Saying</h2>
+    <p class="section-subtitle">Join thousands of counselors, therapists, and program facilitators who rely on NotesAO every day.</p>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="quote">“NotesAO has saved me countless hours each week. The automated reports are a game-changer for my practice.”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/testimonial-author1.png" alt="Jane Smith" class="author-img">
+          <div class="author-details"><strong>Jane Smith</strong><span>Licensed Therapist</span></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="quote">“The flexibility to manage multiple programs under one roof has completely transformed the way I run my counseling sessions.”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/testimonial-author2.png" alt="John Doe" class="author-img">
+          <div class="author-details"><strong>John Doe</strong><span>Program Facilitator</span></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="quote">“It’s incredibly intuitive. Even my staff, who aren't tech-savvy, found it easy to use and adopt quickly.”</p>
+        <div class="testimonial-author">
+          <img src="assets/images/testimonial-author3.png" alt="Emily Johnson" class="author-img">
+          <div class="author-details"><strong>Emily Johnson</strong><span>Social Worker</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ───────── FOOTER ───────── -->
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/login.php">Login</a>
+    <a href="https://enroll.notesao.com/start.php">Sign Up</a>
+    <a href="/legal/privacy.html">Privacy Policy</a>
+    <a href="/legal/terms.html">Terms of Service</a>
+    <a href="/legal/accessibility.html">Accessibility</a>
+    <a href="/legal/security.html">Security</a>
+  </div>
+  <p>© 2025&nbsp;NotesAO. All rights reserved.</p>
+</footer>
+
+<!-- ───────── COOKIE-CONSENT MARKUP ───────── -->
+<div id="cookie-bar" role="dialog" aria-label="Cookie consent">
+  <span>We use cookies to keep you signed in and to improve your experience. Choose an option:</span>
+  <div class="ms-auto d-flex gap-2 flex-wrap">
+    <button id="btn-reject">Reject non-essential</button>
+    <button id="btn-settings">Customize</button>
+    <button id="btn-accept">Accept all</button>
+  </div>
+  <a href="/legal/privacy.html" class="cookie-policy ms-3">Privacy policy</a>
+</div>
+
+<!-- Manage-cookies floating button -->
+<div id="cookie-fab" title="Cookie settings"><i class="fas fa-cookie-bite"></i></div>
+
+<!-- Settings Modal -->
+<div class="modal fade" id="cookieModal" tabindex="-1" aria-labelledby="cookieModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title" id="cookieModalLabel">Customize cookies</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="small">Strictly-necessary cookies are always on (they keep you logged-in and secure).</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="ck-analytics">
+          <label class="form-check-label fw-semibold" for="ck-analytics">Analytics cookies</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="ck-marketing">
+          <label class="form-check-label fw-semibold" for="ck-marketing">Marketing / remarketing cookies</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-brand" id="btn-save-pref">Save preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ───────── SCRIPTS ───────── -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<!-- Cookie-consent script -->
+<script>
+(()=>{                       /* IIFE to avoid globals */
+  const key  = 'notesaoConsentV1';
+  const bar  = document.getElementById('cookie-bar');
+  const fab  = document.getElementById('cookie-fab');
+  const modal= new bootstrap.Modal(document.getElementById('cookieModal'));
+
+  const save = data=>localStorage.setItem(key,JSON.stringify(data));
+  const load = ()=>JSON.parse(localStorage.getItem(key)||'{}');
+
+  const pref = load();
+  if(!pref.choice){bar.classList.add('show');}
+  else{fab.classList.add('show');applyConsent(pref);}
+
+  /* Accept all */
+  document.getElementById('btn-accept').onclick=()=>{
+    const p={choice:'all',analytics:true,marketing:true};
+    save(p);bar.classList.remove('show');fab.classList.add('show');applyConsent(p);
+  };
+  /* Reject non-essential */
+  document.getElementById('btn-reject').onclick=()=>{
+    const p={choice:'necessary',analytics:false,marketing:false};
+    save(p);bar.classList.remove('show');fab.classList.add('show');applyConsent(p);
+  };
+  /* Open settings */
+  document.getElementById('btn-settings').onclick=()=>{
+    document.getElementById('ck-analytics').checked=!!pref.analytics;
+    document.getElementById('ck-marketing').checked=!!pref.marketing;
+    modal.show();
+  };
+  /* Save custom */
+  document.getElementById('btn-save-pref').onclick=()=>{
+    const p={
+      choice:'custom',
+      analytics:document.getElementById('ck-analytics').checked,
+      marketing:document.getElementById('ck-marketing').checked
+    };
+    save(p);modal.hide();bar.classList.remove('show');fab.classList.add('show');applyConsent(p);
+  };
+  /* Floating button */
+  fab.onclick=()=>modal.show();
+
+  /* Hook for third-party loaders */
+  function applyConsent(p){
+    /* Example:
+       if(p.analytics && !window.__gaLoaded){ loadGoogleAnalytics(); }
+       if(!p.analytics && window.gtag){ window['ga-disable-UA-XXXXX']=true; }
+       if(p.marketing){ loadFacebookPixel(); }
+    */
+  }
+})();
+</script>
+
+<!-- Dropdown behaviour for the new header -->
+<script defer src="/assets/js/nav.js"></script>
+</body>
+</html>

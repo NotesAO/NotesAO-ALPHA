@@ -1,0 +1,54 @@
+.
+├── config/
+│   ├── db/
+│   │   ├── find_users_attends_days.sql*
+│   │   ├── handy.sql*
+│   │   ├── set_attends.sql*
+│   │   ├── table_structure.docx*
+│   │   ├── therapy_track.sql*
+│   │   └── unexcused_absence_count.sql*
+│   ├── config.php*
+│   ├── config.php.bak*
+│   ├── config_sample.php*
+│   ├── .gitignore*
+│   └── users.txt*
+└── public_html/
+    ├── admin/
+    │   ├── account.php*
+    │   ├── accounts.php*
+    │   ├── activity-reporting-common.php*
+    │   ├── activity-reporting-dumpcsv.php*
+    │   ├── activity-reporting.php*
+    │   ├── admin.css*
+    │   ├── admin.js*
+    │   ├── admin_navbar.php*
+    │   ├── admin.scss*
+    │   ├── client_file_update.php*
+    │   ├── emailtemplate.php*
+    │   ├── error_log
+    │   ├── index.php*
+    │   ├── main.php*
+    │   ├── roles.php*
+    │   ├── settings.php*
+    │   └── user_accounts.php*
+    ├── .well-known/
+    │   └── pki-validation/
+    ├── authenticate.php*
+    ├── auth.php*
+    ├── clinic-create.php
+    ├── clinic-index.php
+    ├── clinic-read.php
+    ├── clinic_review_panel.php
+    ├── clinic-review.php
+    ├── clinic-update.php
+    ├── error_log
+    ├── helpers.php*
+    ├── home.php*
+    ├── index.php*
+    ├── logout.php*
+    ├── navbar.php*
+    ├── notesao.png
+    ├── profile.php*
+    └── sql_functions.php*
+
+6 directories, 45 files

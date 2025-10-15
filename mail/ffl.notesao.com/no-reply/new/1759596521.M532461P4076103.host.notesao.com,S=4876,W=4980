@@ -1,0 +1,104 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id uFmwH+lP4WhHMj4AIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Sat, 04 Oct 2025 11:48:41 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Sat, 04 Oct 2025 11:48:41 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1v55R3-0000000H6S6-1lt0
+	for no-reply@ffl.notesao.com;
+	Sat, 04 Oct 2025 11:48:41 -0500
+X-Failed-Recipients: alexzandrsmith0614@gmail.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1v55R3-0000000H6RW-0Qh0@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1759596521-eximdsn-1636017505
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1v55R3-0000000H6S6-1lt0@host.notesao.com>
+Date: Sat, 04 Oct 2025 11:48:41 -0500
+
+--1759596521-eximdsn-1636017505
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  alexzandrsmith0614@gmail.com
+    host gmail-smtp-in.l.google.com [142.251.111.27]
+    SMTP error from remote mail server after RCPT TO:<alexzandrsmith0614@gmail.com>:
+    550-5.1.1 The email account that you tried to reach does not exist. Please try
+    550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. For more information, go to
+    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser 6a1803df08f44-878bea076ffsi34623066d6.803 - gsmtp
+
+--1759596521-eximdsn-1636017505
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;alexzandrsmith0614@gmail.com
+Status: 5.0.0
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. For more information, go to
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser 6a1803df08f44-878bea076ffsi34623066d6.803 - gsmtp
+
+--1759596521-eximdsn-1636017505
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1v55R3-0000000H6RW-0Qh0
+	for alexzandrsmith0614@gmail.com;
+	Sat, 04 Oct 2025 11:48:41 -0500
+To: alexzandrsmith0614@gmail.com
+Subject: Men's BIPP Group Reminder: Saturday at 9:00 AM
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.188.156
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=alexzandrsmith0614%40gmail.com&t=a44e9a2193c5f16f4c01f26784e024903d2a45c6d6cd6b97019a95f7f5f7ae03>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1v55R3-0000000H6RW-0Qh0@host.notesao.com>
+Date: Sat, 04 Oct 2025 11:48:41 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Alexzander,</p>
+
+<p><strong>Your Men's BIPP group is Saturday at 9:00 AM (Saturday, October 11).</strong></p>
+
+<p>
+  Your C-2; Transfer-In 200 W. Belknap, FW mandated BIPP group is scheduled. C-2; Transfer-In 200 W. Belknap, FW and Jahala Hooper expect your presence.
+  Please arrive early. <em>Lockout is 9:10 AM</em>. Your presence is a mandatory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaining in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p>
+
+<p>Where: 1100 East Lancaster Ave Fort Worth TX 76102</p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR call during office hours (Mon–Fri, 8am–4pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=alexzandrsmith0614%40gmail.com&amp;t=a44e9a2193c5f16f4c01f26784e024903d2a45c6d6cd6b97019a95f7f5f7ae03">unsubscribe here</a>.</p>
+
+--1759596521-eximdsn-1636017505--

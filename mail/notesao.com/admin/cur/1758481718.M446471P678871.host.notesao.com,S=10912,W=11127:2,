@@ -1,0 +1,215 @@
+Return-Path: <jamayab19@gmail.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id Fg9CGTZN0GjXWwoAIW4ynA
+	(envelope-from <jamayab19@gmail.com>); Sun, 21 Sep 2025 14:08:38 -0500
+Return-path: <jamayab19@gmail.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 21 Sep 2025 14:08:38 -0500
+Received: from mail-yx1-f43.google.com ([74.125.224.43]:56425)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <jamayab19@gmail.com>)
+	id 1v0PQK-00000002qbM-1Y6U
+	for admin@notesao.com;
+	Sun, 21 Sep 2025 14:08:38 -0500
+Received: by mail-yx1-f43.google.com with SMTP id 956f58d0204a3-635380a4a67so329354d50.0
+        for <admin@notesao.com>; Sun, 21 Sep 2025 12:08:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1758481715; x=1759086515; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=BElTdZbopnyngs33QymlFy4o/qxKRGoxoyYNsuOOXiY=;
+        b=jzdMG+04bSEZLvR9Ln3hzpDFF2qLOz6ueaZUnPTac9Zci6rFvYveSqKHh+d8AEoFvR
+         +jW/EnwtdRu2bMtrlBsiQdzEKI6QwHT82hccMMwLZ5K3eGWGbqEmfj6noAIc9DtLVdWA
+         ZDNmpbnEEYVAxtkkXMC4ss8jM9hu/1qKI9COF5+L+KMLGeDhzM4LmnRjKjUtNavB7CDV
+         AAmjXVOe+EKJy9jbePpCLJ2Zcwtf/IzBeVvHx6gvocmO5cQHcB29yBOLVCyfebCsD88P
+         438i+WFTk+kykUm14skNUclG55A17AwX10RYxqiUy4kqe7W84rj1YIIHgetqHqty+ayT
+         mY8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758481715; x=1759086515;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=BElTdZbopnyngs33QymlFy4o/qxKRGoxoyYNsuOOXiY=;
+        b=akLeDXOEW8r3rYdGMb7wJXvHwaz4w0pYPaMkmV7aFUuPKidmDZtaAv2AX+qEps2TEJ
+         dxcHcTKaJ3Hwh4ox+dBZWa2Ti1JO4RTi1UlUUsE7v7Zm58+U3R6xqKh0ovj7Ew+uY5qi
+         dgD/JIhExIfQPAJWoVTb4RzHex7FAfM4xEsLRCEJbO+Em2lKL09q0y+d57qASgV1BrNB
+         XZgC/qAYSuQnokIIi4x63EvmIKU878CEyIR0HdsctdNmx/aTyVNvSAQS+NmYe6YpRFY1
+         YvWw0S4VauKkDVDSDw3zyxe/ZApU4xXT8vz6Vv9VXsGycThB6+5sHosKXTEAL330Ti0I
+         SMvA==
+X-Gm-Message-State: AOJu0YwxUExe4UBg9yJBHTo7hbnpBZoFvBzj/1cXqQK7dzH+1fjyuC+I
+	J8qCBxGkbNQL2OEuflJsbkG5y4Ul3xY0mnsxUKHdOqx01bOKsL8Ew1/K7ufhByLmKgQrtEUbPY2
+	xqoQgm2VHbD4UPjwaWx9FcGGoIpgH3UljNQ==
+X-Gm-Gg: ASbGncu74jsj5yR1gwOEoQ2/7sOGUPoxcX8sTB+NvLbHE/oYDSPJ44kx4pZvQRcWS2F
+	zhbmS6ZcQf3oUB8Yd2lcKYViVUCVplpuk+ovpsdtaOeLRp4hBTTpY3pmhZSC+BVqSfk6T27idCa
+	sC8VU4xducKPHDjS2YNLPgHFUHLgzY+ysbWnR4zO+/Fl5iB/Y5XDO2ETWM1cr9DWmPFxXCCovQu
+	dW5iO/cHbRATtj/TwgncAZ4nBY0MRJBSDo2Gg==
+X-Google-Smtp-Source: AGHT+IH04n3/CUCY/574mvucHyMKrHe8ddUIQp4Oula13YR+gFcp8Akt+yGQyU++Y8IGDcx0vMzH3oVA8435YhDfyEg=
+X-Received: by 2002:a05:690e:1598:10b0:633:abda:fce3 with SMTP id
+ 956f58d0204a3-6347f5ea5ffmr7331523d50.36.1758481715431; Sun, 21 Sep 2025
+ 12:08:35 -0700 (PDT)
+MIME-Version: 1.0
+References: <E1v0ORJ-00000002kKy-3Ljz@host.notesao.com>
+In-Reply-To: <E1v0ORJ-00000002kKy-3Ljz@host.notesao.com>
+From: Maya Cute <jamayab19@gmail.com>
+Date: Sun, 21 Sep 2025 14:08:24 -0500
+X-Gm-Features: AS18NWCXVg1op07NTOPivAKg-I_uAVMfxyUYFIk7TFQyolPsIZzwRcMaHkAdQRA
+Message-ID: <CAB2607DwEEj24GjOiihEO_-1uDjV2AZPkCxT6hbubWHE88APdg@mail.gmail.com>
+Subject: Re: Women's BIPP Group Reminder: Sunday at 2:00 PM
+To: admin@notesao.com
+Content-Type: multipart/alternative; boundary="000000000000fe1405063f546d8e"
+X-Spam-Status: No, score=0.8
+X-Spam-Score: 8
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  I’m waiting to get in On Sun, Sep 21, 2025 at 1:05 PM Free
+    for Life Group < wrote: > [image: Free for Life Group] > > Hi Jamaya, > >
+    *Your Women's BIPP group is Sunday at 2:00 PM (Sunday, September 21).* >
+   > Your Tarrant County Probation mandated BIPP group is scheduled. Tarrant
+   > C [...] 
+ Content analysis details:   (0.8 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [74.125.224.43 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [74.125.224.43 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [74.125.224.43 listed in sa-accredit.habeas.com]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: notesao.com]
+                             [URI: freeforlifegroup.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+                             digit
+                             [jamayab19(at)gmail.com]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [jamayab19(at)gmail.com]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.7 HTML_IMAGE_ONLY_28     BODY: HTML: images with 2400-2800 bytes of words
+X-Spam-Flag: NO
+
+--000000000000fe1405063f546d8e
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+I=E2=80=99m waiting to get in
+
+On Sun, Sep 21, 2025 at 1:05=E2=80=AFPM Free for Life Group <
+no-reply@ffl.notesao.com> wrote:
+
+> [image: Free for Life Group]
+>
+> Hi Jamaya,
+>
+> *Your Women's BIPP group is Sunday at 2:00 PM (Sunday, September 21).*
+>
+> Your Tarrant County Probation mandated BIPP group is scheduled. Tarrant
+> County Probation and Sarah Oakes expect your presence. Please arrive earl=
+y. *Lockout
+> is 2:10 PM*. Your presence is a mandatory stipulation. Incarceration
+> occurs for non-attendance. Enjoy life fearlessly by remaining in good
+> standing with CSCD & TDCJ. You've got this!
+>
+> Where: Virtual (Use your group link):
+> Sunday 2:00 PM Group Link
+> <https://freeforlifegroup.com/sunday-womens-probation-18-week/>
+>
+> Client Portal (for Make-Up Group Options):
+> FFL =E2=80=93 Client Portal <https://ffl.notesao.com/clientportal.php>
+>
+> Questions? Reply to this email with any attendance or payement concerns O=
+R
+> call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+>
+> Blessings,
+> Free for Life Group
+> ------------------------------
+>
+> This reminder was sent by Free for Life Group. If you no longer wish to
+> receive emails at this address, unsubscribe here
+> <https://ffltest.notesao.com/unsubscribe.php?e=3Djamayab19%40gmail.com&t=
+=3De30a466bf617d86a65a1407fbf2b870aa562d38e05a4dc801b3792edd7a09836>
+> .
+>
+
+--000000000000fe1405063f546d8e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">I=E2=80=99m waiting to get in=C2=A0</div><div><br><div cl=
+ass=3D"gmail_quote gmail_quote_container"><div dir=3D"ltr" class=3D"gmail_a=
+ttr">On Sun, Sep 21, 2025 at 1:05=E2=80=AFPM Free for Life Group &lt;<a hre=
+f=3D"mailto:no-reply@ffl.notesao.com">no-reply@ffl.notesao.com</a>&gt; wrot=
+e:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0=
+.8ex;border-left-width:1px;border-left-style:solid;padding-left:1ex;border-=
+left-color:rgb(204,204,204)"><div style=3D"text-align:center;margin:0px 0px=
+ 12px"><img src=3D"https://ffltest.notesao.com/ffllogo.png" alt=3D"Free for=
+ Life Group" style=3D"max-width: 100%; height: auto; display: inline-block;=
+"></div><p>Hi Jamaya,</p>
+
+<p><strong>Your Women&#39;s BIPP group is Sunday at 2:00 PM (Sunday, Septem=
+ber 21).</strong></p>
+
+<p>
+  Your Tarrant County Probation mandated BIPP group is scheduled. Tarrant C=
+ounty Probation and Sarah Oakes expect your presence.
+  Please arrive early. <em>Lockout is 2:10 PM</em>. Your presence is a mand=
+atory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaini=
+ng in good standing with CSCD &amp; TDCJ.
+  You&#39;ve got this!
+</p>
+
+<p>Where: Virtual (Use your group link):<br><a href=3D"https://freeforlifeg=
+roup.com/sunday-womens-probation-18-week/" target=3D"_blank">Sunday 2:00 PM=
+ Group Link</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href=3D"https://ffl.notesao.com/clientportal.php" target=3D"_blank">FF=
+L =E2=80=93 Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payement concerns O=
+R call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style=3D"border-top-width:1px;b=
+order-top-style:solid;margin:24px 0px;border-top-color:rgb(221,221,221)"><p=
+ style=3D"font-style:normal;font-variant-caps:normal;font-weight:normal;fon=
+t-size:12px;line-height:1.4;font-family:Arial,Helvetica,sans-serif;font-siz=
+e-adjust:none;font-kerning:auto;font-variant-alternates:normal;font-variant=
+-ligatures:normal;font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-feature-settings:normal;color:rgb(102,102,102)">This reminder was se=
+nt by Free for Life Group. If you no longer wish to receive emails at this =
+address, <a href=3D"https://ffltest.notesao.com/unsubscribe.php?e=3Djamayab=
+19%40gmail.com&amp;t=3De30a466bf617d86a65a1407fbf2b870aa562d38e05a4dc801b37=
+92edd7a09836" target=3D"_blank" style=3D"font-family:Arial,Helvetica,sans-s=
+erif">unsubscribe here</a>.</p>
+</blockquote></div></div>
+
+--000000000000fe1405063f546d8e--

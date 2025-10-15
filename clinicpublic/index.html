@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotePro</title>
+    <link rel="icon" href="NoteProLogoFinal.ico" type="image/x-icon">
+    <style type="text/css">
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom right, #f0f4f8, #d9e4ea);
+            text-align: center;
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img alt="NotePro Logo" src="logo.png" />
+    <div>
+        <!-- Login button that redirects to /login -->
+        <button onclick="window.location.href='/login.php';">Login</button>
+    </div>
+</div>
+
+</body>
+</html>

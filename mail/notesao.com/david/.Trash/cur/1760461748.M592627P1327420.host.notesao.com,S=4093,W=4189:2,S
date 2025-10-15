@@ -1,0 +1,96 @@
+Return-Path: <>
+Delivered-To: david@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id CBtGI7SD7mg8QRQAIW4ynA
+	(envelope-from <>)
+	for <david@notesao.com>; Tue, 14 Oct 2025 12:09:08 -0500
+Return-path: <>
+Envelope-to: david@notesao.com
+Delivery-date: Tue, 14 Oct 2025 12:09:08 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1v8iWK-00000005ZW6-21qd
+	for david@notesao.com;
+	Tue, 14 Oct 2025 12:09:08 -0500
+X-Failed-Recipients: bjadams2961@gmail.com,
+  angie@behavioralsolutionsoftexas.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: david@notesao.com
+References: <9cb07aea3b7733bca62fbb3029d1297c@notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1760461748-eximdsn-1323271036
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1v8iWK-00000005ZW6-21qd@host.notesao.com>
+Date: Tue, 14 Oct 2025 12:09:08 -0500
+
+--1760461748-eximdsn-1323271036
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  bjadams2961@gmail.com
+    host gmail-smtp-in.l.google.com [142.250.31.26]
+    SMTP error from remote mail server after RCPT TO:<bjadams2961@gmail.com>:
+    550-5.1.1 The email account that you tried to reach does not exist. Please try
+    550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. For more information, go to
+    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser 6a1803df08f44-87c012bc269si1479896d6.1565 - gsmtp
+  angie@behavioralsolutionsoftexas.com
+    host aspmx.l.google.com [142.251.16.26]
+    SMTP error from remote mail server after RCPT TO:<angie@behavioralsolutionsoftexas.com>:
+    550-5.1.1 The email account that you tried to reach does not exist. Please try
+    550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. For more information, go to
+    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser d75a77b69052e-4e881d38f70si1653661cf.980 - gsmtp
+
+--1760461748-eximdsn-1323271036
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;angie@behavioralsolutionsoftexas.com
+Status: 5.0.0
+Remote-MTA: dns; aspmx.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. For more information, go to
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser d75a77b69052e-4e881d38f70si1653661cf.980 - gsmtp
+
+Action: failed
+Final-Recipient: rfc822;bjadams2961@gmail.com
+Status: 5.0.0
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. For more information, go to
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser 6a1803df08f44-87c012bc269si1479896d6.1565 - gsmtp
+
+--1760461748-eximdsn-1323271036
+Content-type: text/rfc822-headers
+
+Return-path: <david@notesao.com>
+Received: from [::1] (port=50010 helo=host.notesao.com)
+	by host.notesao.com with esmtpa (Exim 4.98.2)
+	(envelope-from <david@notesao.com>)
+	id 1v8iU8-00000005ZI4-3mvs;
+	Tue, 14 Oct 2025 12:06:51 -0500
+MIME-Version: 1.0
+Date: Tue, 14 Oct 2025 12:06:49 -0500
+From: David House <david@notesao.com>
+To: Vanericmartin <vanericmartin@gmail.com>
+Subject: Notes AO
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <9cb07aea3b7733bca62fbb3029d1297c@notesao.com>
+X-Sender: david@notesao.com
+Organization: NotesAO
+Content-Type: multipart/mixed;
+ boundary="=_7109a8ed08fed2a20b091fd98251bbc1"
+X-Exim-DSN-Information: Due to administrative limits only headers are returned
+
+
+--1760461748-eximdsn-1323271036--

@@ -1,0 +1,209 @@
+Return-Path: <corey.archuleta5@gmail.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id pmvBEe3l0WitKxYAIW4ynA
+	(envelope-from <corey.archuleta5@gmail.com>); Mon, 22 Sep 2025 19:12:29 -0500
+Return-path: <corey.archuleta5@gmail.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 22 Sep 2025 19:12:29 -0500
+Received: from mail-pg1-f170.google.com ([209.85.215.170]:44485)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <corey.archuleta5@gmail.com>)
+	id 1v0qdv-000000065yY-3mRo
+	for admin@notesao.com;
+	Mon, 22 Sep 2025 19:12:29 -0500
+Received: by mail-pg1-f170.google.com with SMTP id 41be03b00d2f7-b555ed30c1cso416942a12.1
+        for <admin@notesao.com>; Mon, 22 Sep 2025 17:12:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1758586346; x=1759191146; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=gwCuCoqJav4tNJs5pz9b4aJ/yJrmRknKdjUCm9C0K2A=;
+        b=knnwYYBXEybkWtMfNByG7Rj5NxGaLAlfskX20Uq6z7q7OxGtFgqY4TQKDWAiI1J5cs
+         bewLfscXGKyD74kmigjRq4eR1nm+Tid19KvwFVSrq2F9Wi0EyPG5pE8SdzYAxyue/IhR
+         rjVOf+19gF5dlo150fwMYLOtxd0yeEqkmH0nN64E0Z3zI2NC+HnRJ9qvQYOAuezj65ul
+         FF2TzMzIVLutEf6d8ndA4zGxJoU3V/ETnaNuio/RWUzTqa7JvbGaj2u1oKY/wgA0Z4J2
+         BBUfmTs2Xk6DMgv9oxh6thfNetj5JI6HMzrj1klmKa1SDoLZwO4wDETsrR5oE/s5Dy5T
+         ZM0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758586346; x=1759191146;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=gwCuCoqJav4tNJs5pz9b4aJ/yJrmRknKdjUCm9C0K2A=;
+        b=e0Y5l5B4LqM6hIyj5JMoCjg3hOajtV1BQHcl0aWUQXUnD6PwUNNhvcDjfmKzjZnqhs
+         DrjBOCy/bS1YsuP6Q1NsnukWZeL4eZ5yzbqQsS5iY+1MC+t6A7tzJjdt92fuxd6cDhoI
+         Uvm6uk3tRyJh9I3ttXxATs0yAA6aYwZtoOpkYYO/yelsze8yWjWYgaddYFGsmaojZRJZ
+         C/Pv3UB/X0Riz/gIZWI8eebZ7m6bOIhvZJgK0P1ipLIZzSbHpDth7TF3qtw0JrsDxnHe
+         yWsTItvabBBX1TNnHbX1uC7OQOXhl8f0pnRYLe2d1IUhwcD7+j8U6kAshbxT3mDpeajG
+         HA9g==
+X-Gm-Message-State: AOJu0YzgdlzXPH40nh+qd2MziTZWjR43/fUdv8+SN6+FV/G/k8he+KAS
+	RRbHRd1YacpJRuWKISmPfWE/lsBS3uUklXdteL+iYrcqT2ng37KR+Xo5Elh6u2nY55jSCMipBKM
+	cG5P/wmbUxegNmZTxK2LltEWzjAjgreScmw==
+X-Gm-Gg: ASbGncuAc4pR+R4lNeUDq6CbcVMb96/XxCbzGlUozC03CaUkdw7eaH9mXj9muPwWsmn
+	fUZyHzT/c1kG73ZjGs+tsgoYFdafYDXr18+zahrWTbFHmXnZcgPNNQRyQSQCNDwKOz6y81KZQXC
+	LPwhxM0YUMtt6OYXwsEW+j6m3slTpWC8THLyJWwJngmb+KVMnpiv7WnZ8muFBsR83s4AJwJ63wp
+	f/sNnO5xmi/D7RdDu/qBo9mDA==
+X-Google-Smtp-Source: AGHT+IE2U0AN7W15TBxgeUOYN47e7BRwzY+MBNMRV6EKfnAGOxhuzODINaetuiSFk/Z2rtDV7RdvCnH7iZ06/vJT+L8=
+X-Received: by 2002:a17:902:e945:b0:246:80b1:8c87 with SMTP id
+ d9443c01a7336-27cc61b8d7bmr7912875ad.43.1758586345821; Mon, 22 Sep 2025
+ 17:12:25 -0700 (PDT)
+MIME-Version: 1.0
+References: <E1v0OQw-00000002k7Q-3WKJ@host.notesao.com>
+In-Reply-To: <E1v0OQw-00000002k7Q-3WKJ@host.notesao.com>
+From: Corey Archuleta <corey.archuleta5@gmail.com>
+Date: Mon, 22 Sep 2025 19:12:15 -0500
+X-Gm-Features: AS18NWBAM3uExyniJmJ6Nm_4w6w0D5Z-ORSOoUt1knBN2rKZIE4kBb52JMraWBM
+Message-ID: <CAEgum2dOdyqwTMZwdBdKnGVx3ft5yYf5r=gK=oTkbH7ZpO1Ybw@mail.gmail.com>
+Subject: Re: Men's BIPP Group Reminder: Sunday at 2:30 PM
+To: admin@notesao.com
+Content-Type: multipart/alternative; boundary="000000000000731932063f6ccaf2"
+X-Spam-Status: No, score=1.3
+X-Spam-Score: 13
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  May I get the link for Monday nights group please? On Sun,
+    Sep 21, 2025, 1:05 PM Free for Life Group wrote: > [image: Free for Life
+   Group] > > Hi Corey, > > *Your Men's BIPP group is Sunday at 2:30 PM (Sunday,
+    September 21).* > > Your BIPP group is scheduled. Rachel Cortez expects your
+    presence. Please > ar [...] 
+ Content analysis details:   (1.3 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.215.170 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [209.85.215.170 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [209.85.215.170 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: notesao.com]
+                             [URI: freeforlifegroup.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+                             digit
+                             [corey.archuleta5(at)gmail.com]
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [corey.archuleta5(at)gmail.com]
+  1.3 HTML_IMAGE_ONLY_24     BODY: HTML: images with 2000-2400 bytes of words
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+X-Spam-Flag: NO
+
+--000000000000731932063f6ccaf2
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+May I get the link for Monday nights group please?
+
+On Sun, Sep 21, 2025, 1:05=E2=80=AFPM Free for Life Group <no-reply@ffl.not=
+esao.com>
+wrote:
+
+> [image: Free for Life Group]
+>
+> Hi Corey,
+>
+> *Your Men's BIPP group is Sunday at 2:30 PM (Sunday, September 21).*
+>
+> Your BIPP group is scheduled. Rachel Cortez expects your presence. Please
+> arrive early. *Lockout is 2:40 PM*. Your presence is a mandatory
+> stipulation. Incarceration occurs for non-attendance. Enjoy life fearless=
+ly
+> by remaining in good standing with CSCD & TDCJ. You've got this!
+>
+> Where: Virtual (Use your group link):
+> Sunday 2:30 PM Group Link
+> <https://freeforlifegroup.com/sunday-mens-virtual-bipp-230pm-group-probat=
+ion/>
+>
+> Client Portal (for Make-Up Group Options):
+> FFL =E2=80=93 Client Portal <https://ffl.notesao.com/clientportal.php>
+>
+> Questions? Reply to this email with any attendance or payement concerns O=
+R
+> call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+>
+> Blessings,
+> Free for Life Group
+> ------------------------------
+>
+> This reminder was sent by Free for Life Group. If you no longer wish to
+> receive emails at this address, unsubscribe here
+> <https://ffltest.notesao.com/unsubscribe.php?e=3Dcorey.archuleta5%40gmail=
+.com&t=3Dd2ab12d6479d399d09f0c543f751580c50ff5ee638e80c4060a9310ad678e6f5>
+> .
+>
+
+--000000000000731932063f6ccaf2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">May I get the link for Monday nights group please?</div><=
+br><div class=3D"gmail_quote gmail_quote_container"><div dir=3D"ltr" class=
+=3D"gmail_attr">On Sun, Sep 21, 2025, 1:05=E2=80=AFPM Free for Life Group &=
+lt;<a href=3D"mailto:no-reply@ffl.notesao.com">no-reply@ffl.notesao.com</a>=
+&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 =
+0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div style=3D"text-alig=
+n:center;margin:0 0 12px 0"><img src=3D"https://ffltest.notesao.com/ffllogo=
+.png" alt=3D"Free for Life Group" style=3D"max-width:100%;height:auto;displ=
+ay:inline-block"></div><p>Hi Corey,</p>
+
+<p><strong>Your Men&#39;s BIPP group is Sunday at 2:30 PM (Sunday, Septembe=
+r 21).</strong></p>
+
+<p>
+  Your BIPP group is scheduled. Rachel Cortez expects your presence.
+  Please arrive early. <em>Lockout is 2:40 PM</em>. Your presence is a mand=
+atory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaini=
+ng in good standing with CSCD &amp; TDCJ.
+  You&#39;ve got this!
+</p>
+
+<p>Where: Virtual (Use your group link):<br><a href=3D"https://freeforlifeg=
+roup.com/sunday-mens-virtual-bipp-230pm-group-probation/" target=3D"_blank"=
+ rel=3D"noreferrer">Sunday 2:30 PM Group Link</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href=3D"https://ffl.notesao.com/clientportal.php" target=3D"_blank" re=
+l=3D"noreferrer">FFL =E2=80=93 Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payement concerns O=
+R call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style=3D"border-top:1px solid #=
+ddd;margin:24px 0"><p style=3D"font:12px/1.4 Arial,Helvetica,sans-serif;col=
+or:#666">This reminder was sent by Free for Life Group. If you no longer wi=
+sh to receive emails at this address, <a href=3D"https://ffltest.notesao.co=
+m/unsubscribe.php?e=3Dcorey.archuleta5%40gmail.com&amp;t=3Dd2ab12d6479d399d=
+09f0c543f751580c50ff5ee638e80c4060a9310ad678e6f5" target=3D"_blank" rel=3D"=
+noreferrer">unsubscribe here</a>.</p>
+</blockquote></div>
+
+--000000000000731932063f6ccaf2--

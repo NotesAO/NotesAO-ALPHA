@@ -1,0 +1,28 @@
+Return-Path: <reporting@safatherhood.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id t22wOYsLv2itgBYAIW4ynA
+	(envelope-from <reporting@safatherhood.notesao.com>); Mon, 08 Sep 2025 11:59:55 -0500
+Return-path: <reporting@safatherhood.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 08 Sep 2025 11:59:55 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@safatherhood.notesao.com>)
+	id 1uvfDf-00000006BLA-2R5E;
+	Mon, 08 Sep 2025 11:59:55 -0500
+To: admin@notesao.com
+Subject: San Antonio Fatherhood Campaign has received a new Intake Packet for Joseph Campos
+X-PHP-Script: safatherhood.notesao.com/intake.php for 107.200.163.168
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@safatherhood.notesao.com
+Reply-To: josephcampos714@gmail.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uvfDf-00000006BLA-2R5E@host.notesao.com>
+Date: Mon, 08 Sep 2025 11:59:55 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://safatherhood.notesao.com/intake-index.php

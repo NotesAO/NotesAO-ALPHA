@@ -1,0 +1,215 @@
+Return-Path: <vanericmartin@gmail.com>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id wVKcBzClQWirlBgAIW4ynA
+	(envelope-from <vanericmartin@gmail.com>)
+	for <sales@notesao.com>; Thu, 05 Jun 2025 09:09:52 -0500
+Return-path: <vanericmartin@gmail.com>
+Envelope-to: sales@notesao.com
+Delivery-date: Thu, 05 Jun 2025 09:09:52 -0500
+Received: from mail-lj1-f182.google.com ([209.85.208.182]:53619)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <vanericmartin@gmail.com>)
+	id 1uNBHz-00000006l4Q-1yvg
+	for sales@notesao.com;
+	Thu, 05 Jun 2025 09:09:52 -0500
+Received: by mail-lj1-f182.google.com with SMTP id 38308e7fff4ca-32a7a12955eso4824421fa.3
+        for <sales@notesao.com>; Thu, 05 Jun 2025 07:09:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1749132589; x=1749737389; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=/HsApEbY/Eyok0rLfE5lgZTR7+9lCX9sjmiQ+GRnlCw=;
+        b=PU7L4KKGpO9HENyeO+Vnk4j64iLGtcnbmldq5Yzq5bA1OJvBdMmSqfO50GF2MKndCl
+         MiKd+tFJPIuQXwlnqo15/ZWrB1JOW6NheyPV2gyNuKzTHsJfm82Xr/N9NQunlRn8IzsX
+         SmXUeJYoWX4PSQMKQj3WN0N8mxCW6eQtj9QMyPNd7GBH10i8KzlSZ7t64GUj3xQbeET/
+         P7oREpp1qFBPW+Sqew60VanQzQUybpJFUJrGsWLqjxoXTF0jYOtiXCozELh6yg/0YaKd
+         zFOhuWVcNnBxJu1YJH7s7mUiIOKOhxFcx0YqBgua0wy7d62Z29b31hI+GjycjH+ZMuMg
+         DQ+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749132589; x=1749737389;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=/HsApEbY/Eyok0rLfE5lgZTR7+9lCX9sjmiQ+GRnlCw=;
+        b=iT/nBTfgKQY+Gr+vwhNQOzqqF54i17RzVoifFENa9TXcXoDjS7tBmMudtDJRFK7iZU
+         zi/oYToRdyiQeiAjZpBXn+tKspTOj7IU7fIxuAZ317RymWjWdKzIvqZ4ysMO/5sYVWhX
+         HAyy/EEDq49Kvt+m2UkFFbx5pR7NBjXyGSDNiXLHlA5Q+HJVHfTPPjj5lg2VsreAlGzk
+         vO47ss1lRv+vi0bnQaBoAUQYJU5Ppez+wZ9qw/xLMALh6j8lHk50i2OalB6Z2bD+1SVk
+         RGYfp+bRkL16xTSjM4Cxm0aRkp1e2pKzVbhqB4Xnuew1Y1RS/IzxUyDyzZ4d1YFDLXPn
+         XSmg==
+X-Gm-Message-State: AOJu0YwTndDrvC3hTpYHEB/AwjoEVjDsloS992ignALHzuEzLRU6BJLl
+	P6l6XXCxGqFmVf6rRL8zvAsWL4pZC9TThipxjWdNVRj6HHYafei4US5sPY4TwM0FuZeWoaY13fM
+	Ghb52Lfkx7hQl2Dt1Rk4z+B+1f2UvhCYvgA==
+X-Gm-Gg: ASbGnctBEFiQzm1LM0Lz6lsh1NgWiI1gFxSzkyve9pOXbECAD44/IEe7AHWqC9fhbkO
+	At14Fg0/ejE9lVgXgX1serTq/GVykEk9HRXMQbTNOxRCBjhUW0N0IhBgxpS2Z/gcwntz2FhKEcz
+	L1jXecFTz6F6NOEx0E8rpL0IkoJrZE3icD4A==
+X-Google-Smtp-Source: AGHT+IGNpqWTwGYkqd2mk8cKI4FZDQJ+w7YPZSoPyneDj8zXYl7ZfHyBVuxTLJU0hEheX6PkNeeZt+85qubQRTPK49U=
+X-Received: by 2002:a2e:be25:0:b0:32a:749a:14d4 with SMTP id
+ 38308e7fff4ca-32ac7212503mr23013351fa.12.1749132588789; Thu, 05 Jun 2025
+ 07:09:48 -0700 (PDT)
+MIME-Version: 1.0
+References: <6218cb5430769e2ff6152b57b623e31c@notesao.com> <fbc0612d93d862fb19d2bfa119ccd4ea@notesao.com>
+In-Reply-To: <fbc0612d93d862fb19d2bfa119ccd4ea@notesao.com>
+From: van eric martin <vanericmartin@gmail.com>
+Date: Thu, 5 Jun 2025 09:09:37 -0500
+X-Gm-Features: AX0GCFt9H86G5D5ZGViZM6X2X-SgnB-3sAa_J10e29I-c1wQoWfXXfWsMCioEsM
+Message-ID: <CALUz6t91RDqnXidi3JyGxmasejtS52DC1FSyxEqr0ga667n5ZQ@mail.gmail.com>
+Subject: Re: NotesAO
+To: sales@notesao.com
+Content-Type: multipart/alternative; boundary="0000000000009eb62e0636d3aa6b"
+X-Spam-Status: No, score=1.1
+X-Spam-Score: 11
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Onboarding fee sent. Once received will get started on subscription
+    monthly. On Wed, Jun 4, 2025 at 9:18 PM wrote: > > > -------- Original Message
+    -------- > Subject: NotesAO > Date: 2025-06-04 11:41 am > From: sales@notesao.com
+    > To: Helen Bennett-Lopez , > admin@notesao.com > > Helen, > We are so excited
+    to sta [...] 
+ Content analysis details:   (1.1 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [209.85.208.182 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.208.182 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [209.85.208.182 listed in sa-trusted.bondedsender.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [vanericmartin(at)gmail.com]
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  1.3 HTML_IMAGE_ONLY_24     BODY: HTML: images with 2000-2400 bytes of words
+  0.0 T_REMOTE_IMAGE         Message contains an external image
+X-Spam-Flag: NO
+
+--0000000000009eb62e0636d3aa6b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Onboarding fee sent.
+Once received will get started on subscription monthly.
+
+
+
+On Wed, Jun 4, 2025 at 9:18=E2=80=AFPM <sales@notesao.com> wrote:
+
+>
+>
+> -------- Original Message --------
+> Subject: NotesAO
+> Date: 2025-06-04 11:41 am
+>  From: sales@notesao.com
+> To: Helen Bennett-Lopez <helen.bennett-lopez@thebestoptionsa.com>,
+> admin@notesao.com
+>
+> Helen,
+> We are so excited to start the onboarding process. Attached to this
+> email is Gabriel. He will be imputing everything into NotesAO. You will
+> be receiving emails from both of us. He uses the admin@notesao.com.
+> During this process if you have any questions please do not hesitate to
+> ask. The onboarding process will go as fast as you get information to
+> us.
+>
+> Next Steps:
+> 1. Onboarding payment $500 will be sent to you.
+> 2. Please send over emails of all users. Please label the emails admin
+> or facilitators.
+> 3. Onboarding paperwork will be sent once payment has been made and
+> emails have been sent to us. There will be clear instructions on what to
+> do. (any questions during this process please do not hesitate to ask)
+> 4. Any logos you like for us to use please send over.
+> 5. Any PDFs you like to use (ie. homework for client portal) please send
+> to us.
+>
+> Again, we are so excited to get The Best Option up and running using
+> NotesAO. We look forward to working with all of you and making this as
+> seamless as possible.
+>
+> David House
+> Sales Representative
+> 214.502.4322
+>
+
+--0000000000009eb62e0636d3aa6b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Onboarding fee sent.=C2=A0</div><div>Once received wi=
+ll get started on subscription monthly.=C2=A0</div><div><div dir=3D"ltr" cl=
+ass=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"=
+><img width=3D"420" height=3D"132" src=3D"https://ci3.googleusercontent.com=
+/mail-sig/AIorK4yxuv3PigvXvSeVS_ds53Ouf7AohIJUBHGt1T47mdY_va317mZrdgbuBPZKX=
+5Lkn4Txim5gRh94jTd0"><br></div></div></div><br></div><br><div class=3D"gmai=
+l_quote gmail_quote_container"><div dir=3D"ltr" class=3D"gmail_attr">On Wed=
+, Jun 4, 2025 at 9:18=E2=80=AFPM &lt;<a href=3D"mailto:sales@notesao.com">s=
+ales@notesao.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" =
+style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);pa=
+dding-left:1ex"><br>
+<br>
+-------- Original Message --------<br>
+Subject: NotesAO<br>
+Date: 2025-06-04 11:41 am<br>
+=C2=A0From: <a href=3D"mailto:sales@notesao.com" target=3D"_blank">sales@no=
+tesao.com</a><br>
+To: Helen Bennett-Lopez &lt;<a href=3D"mailto:helen.bennett-lopez@thebestop=
+tionsa.com" target=3D"_blank">helen.bennett-lopez@thebestoptionsa.com</a>&g=
+t;, <br>
+<a href=3D"mailto:admin@notesao.com" target=3D"_blank">admin@notesao.com</a=
+><br>
+<br>
+Helen,<br>
+We are so excited to start the onboarding process. Attached to this <br>
+email is Gabriel. He will be imputing everything into NotesAO. You will <br=
+>
+be receiving emails from both of us. He uses the <a href=3D"mailto:admin@no=
+tesao.com" target=3D"_blank">admin@notesao.com</a>. <br>
+During this process if you have any questions please do not hesitate to <br=
+>
+ask. The onboarding process will go as fast as you get information to <br>
+us.<br>
+<br>
+Next Steps:<br>
+1. Onboarding payment $500 will be sent to you.<br>
+2. Please send over emails of all users. Please label the emails admin <br>
+or facilitators.<br>
+3. Onboarding paperwork will be sent once payment has been made and <br>
+emails have been sent to us. There will be clear instructions on what to <b=
+r>
+do. (any questions during this process please do not hesitate to ask)<br>
+4. Any logos you like for us to use please send over.<br>
+5. Any PDFs you like to use (ie. homework for client portal) please send <b=
+r>
+to us.<br>
+<br>
+Again, we are so excited to get The Best Option up and running using <br>
+NotesAO. We look forward to working with all of you and making this as <br>
+seamless as possible.<br>
+<br>
+David House<br>
+Sales Representative<br>
+214.502.4322<br>
+</blockquote></div>
+
+--0000000000009eb62e0636d3aa6b--

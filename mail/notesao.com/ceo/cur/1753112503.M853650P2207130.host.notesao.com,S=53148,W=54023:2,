@@ -1,0 +1,875 @@
+Return-Path: <bounce-md_30010842.687e5fb3.v1-747f2878a33e4c88a807549d459e6627@click.mailchimp.com>
+Delivered-To: ceo@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id yS2oMrdffmiarSEAIW4ynA
+	(envelope-from <bounce-md_30010842.687e5fb3.v1-747f2878a33e4c88a807549d459e6627@click.mailchimp.com>)
+	for <ceo@notesao.com>; Mon, 21 Jul 2025 10:41:43 -0500
+Return-path: <bounce-md_30010842.687e5fb3.v1-747f2878a33e4c88a807549d459e6627@click.mailchimp.com>
+Envelope-to: ceo@notesao.com
+Delivery-date: Mon, 21 Jul 2025 10:41:43 -0500
+Received: from notifications4.mailchimp.com ([198.2.187.147]:20094)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <bounce-md_30010842.687e5fb3.v1-747f2878a33e4c88a807549d459e6627@click.mailchimp.com>)
+	id 1udse5-00000009G9l-1i4o
+	for ceo@notesao.com;
+	Mon, 21 Jul 2025 10:41:43 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1753112500; x=1753382500;
+	bh=sPE/GxHtPhbSYVrxpKCKXB+cVQffYDlpXIfyo36ZG3k=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=HrQzs0WjwTneOHr8t21td8idGcGFppwpod59iElVrHOjtR7rNZ5tLiMG8eRYdM6s+
+	 u9etCxcMrtCb+p7Ga7OPRphsY3meHF0nPx7VM2DyucHNzXk4DC/wNldcHFEJ3d8BgY
+	 HrCtZM7rBevaovmx5ZVW6WUkMuQxFtcTq3oLT7j1URj2Q+iJy/3Y53aLMSIqbu0EJL
+	 mhCExm1JaQDk9enQIgekuuYfeXZTH9EL5BVY9hdBS+zr7RBChmGIWs61Rg1aUgDSb/
+	 oKc1IyQxri38TbhhDimjvawkYmtKx0AGLHB3m9m32JUu5PocrieGuMxPdI+YyGTipZ
+	 UKlc5iju/Ym/A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimp.com; s=k2;
+	t=1753112500; x=1753373000; i=account-insights@mailchimp.com;
+	bh=sPE/GxHtPhbSYVrxpKCKXB+cVQffYDlpXIfyo36ZG3k=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=Aqmgb735uTBbWCvMHProUyf92ymMnT0O+le/MRC5WNUyKybsBEHac5o1+f4Ow7Q6q
+	 qeCOxWF+FYtM16QiwhPnRF9yzCRoFrdEg0xkh1Vd6064gHz/2SCrrx94gY0Hjj/Mv6
+	 GkDbuuwGD7skQKrv2jqGRhajZn9EK3A8PczZecGUYcwf892+CsMXMe8UEbRv7/3EO9
+	 LPZKpHBUot0sYQfgMroc3W1GRBDCz1RnHjKpoqNgDNbU9Q5naI2VTVKzYG4QyU7XSv
+	 6dyNJrXIuxjcioBzINtY2e1X/J2T+6dSPRB2bzKpLsnAJUYCPt1KJCgG0f0pzNh4wy
+	 6Gf3czP1BwE1g==
+Received: from pmta09.mandrill.prod.suw01.rsglab.com (localhost [127.0.0.1])
+	by notifications4.mailchimp.com (Mailchimp) with ESMTP id 4bm4Pw0ZZmz3LHW
+	for <ceo@notesao.com>; Mon, 21 Jul 2025 15:41:40 +0000 (GMT)
+From: "Mailchimp Account Insights" <account-insights@mailchimp.com>
+Subject: =?utf-8?Q?Weekly=20insights=20from=20Mailchimp?=
+X-Accounttype: pr
+X-Auto-Response-Suppress: OOF, AutoReply
+Auto-Submitted: auto-generated
+To: ceo@notesao.com
+X-Native-Encoded: 1
+X-Report-Abuse: =?UTF-8?Q?Please=20forward=20a=20copy=20of=20this=20message,=20including=20all=20headers,=20to=20abuse@mandrill.com.=20You=20can=20also=20report=20abuse=20here:=20https://mandrillapp.com/contact/abuse=3Fid=3D30010842.747f2878a33e4c88a807549d459e6627?=
+X-Mandrill-User: md_30010842
+Feedback-ID: 30010842:30010842.20250721:md
+Message-Id: <30010842.20250721154139.687e5fb3d9f6e6.53208195@notifications4.mailchimp.com>
+Date: Mon, 21 Jul 2025 15:41:39 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-3fY5QQGqNHjIcu3g9m3Eyg"
+X-Spam-Status: No, score=0.9
+X-Spam-Score: 9
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Weekly Summary July 14 - July 20, 2025 Check out NotesAO's
+    weekly performance summary and see how you compared to the previous week.
+    Email engagement Jul. 14 - Jul. 20 No new activity to show. 
+ Content analysis details:   (0.9 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.2.187.147 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.2.187.147 listed in bl.score.senderscore.com]
+  0.0 KAM_FROM_MARKETINGBL_PCCC RBL: From address associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [listed in mailchimp.com.wild.pccc.com]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: mailchimp.com]
+                             [URI: mandrillapp.com]
+                             [URI: eepurl.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [198.2.187.147 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: mailchimp.com]
+                             [URI: mandrillapp.com]
+                             [URI: eepurl.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium trust sender
+X-Spam-Flag: NO
+
+--_av-3fY5QQGqNHjIcu3g9m3Eyg
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Weekly Summary
+July 14 - July 20, 2025
+
+Check out NotesAO's weekly performance summary and see how you compared to the previous week.
+
+Email engagement
+Jul. 14 - Jul. 20
+No new activity to show.
+
+--------------------
+View Email Dashboard: https://click.mailchimp.com/track/click/30010842/us9.admin.mailchimp.com?p=eyJzIjoiYV9aaGVDS3BPZi1KTDZqdm9zWXpVVHpvdXVnIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3VzOS5hZG1pbi5tYWlsY2hpbXAuY29tXFxcL2FuYWx5dGljc1xcXC9lbWFpbC1kYXNoYm9hcmRcXFwvXCIsXCJpZFwiOlwiNzQ3ZjI4NzhhMzNlNGM4OGE4MDc1NDlkNDU5ZTY2MjdcIixcInVybF9pZHNcIjpbXCIxOWQzNzU0NGIwNjQ1Yzk2MjBiZDBlYmFjY2I5NzcyNGIzOWUwZjBhXCJdLFwibXNnX3RzXCI6MTc1MzExMjQ5OX0ifQ
+--------------------
+
+
+
+
+
+
+
+Audience
+Jul. 14-Jul. 20
+
++1
+Audience Change
+
+0
+Unsubscribes and Bounces
+
+1
+Total Audience
+
+--------------------
+View Audience Analytics: https://click.mailchimp.com/track/click/30010842/admin.mailchimp.com?p=eyJzIjoiMldqeW9FVkd1Y014M1Zrb1d6Qk9DQmk0djhzIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2FkbWluLm1haWxjaGltcC5jb21cXFwvYW5hbHl0aWNzXFxcL2F1ZGllbmNlLWFuYWx5dGljc1wiLFwiaWRcIjpcIjc0N2YyODc4YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiNmE3ZWM4MzBjYzRkZTUyNmFkOGFkMmMzNGQyMWRmMGUxNjVkNzIyNlwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0
+--------------------
+
+--------
+Tip: Share your sign up form on your social media platforms to turn followers into subscribers: https://click.mailchimp.com/track/click/30010842/eepurl.com?p=eyJzIjoia1FOQ3Y0ckFPbUFpLWYwY0hqMDI3MFhZeVpjIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2VlcHVybC5jb21cXFwvZHlnZHM2XCIsXCJpZFwiOlwiNzQ3ZjI4NzhhMzNlNGM4OGE4MDc1NDlkNDU5ZTY2MjdcIixcInVybF9pZHNcIjpbXCI1YTZmMmUxMjVkMTQxNmIwOTg2N2EwYmI5NzZiNDNjMjI5MjE0NzNlXCJdLFwibXNnX3RzXCI6MTc1MzExMjQ5OX0ifQ
+--------
+
+
+------------------------------
+Boost Your Stats
+Visit our Guides & Tutorials to learn how to grow your audience (https://eepurl.com/dygdXf) and maximize subscriber engagement (https://eepurl.com/dygehP). Then check out your Dashboard to get a more complete view of your account health.
+
+Visit Dashboard: https://click.mailchimp.com/track/click/30010842/us9.admin.mailchimp.com?p=eyJzIjoiMXI3WmxrYmw4RHl4VVg1RUhQcGxDblA3bEIwIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3VzOS5hZG1pbi5tYWlsY2hpbXAuY29tXFxcL2FuYWx5dGljc1xcXC9tYXJrZXRpbmctZGFzaGJvYXJkXFxcL1wiLFwiaWRcIjpcIjc0N2YyODc4YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiZDU4NmU1M2QzZmEzN2IxOWJhZmUyOGI2MjMyMzIwMzM4YzZhNTMwNVwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0
+------------------------------
+
+
+------------------------------
+https://click.mailchimp.com/track/click/30010842/www.mailchimp.com?p=eyJzIjoiTzBVRXZoeWt5MmJOUmNMNTctSlFlalBkdU5jIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXCIsXCJpZFwiOlwiNzQ3ZjI4NzhhMzNlNGM4OGE4MDc1NDlkNDU5ZTY2MjdcIixcInVybF9pZHNcIjpbXCI0MzQ5MDdkOTc2OGVmNTBiMmYzOWRlN2U5NTIyYTc3ZTZmNjY0N2Y5XCJdLFwibXNnX3RzXCI6MTc1MzExMjQ5OX0ifQ
+405 N. Angier Ave. NE, Atlanta, GA 30312 USA
+
+
+Contact Us: https://click.mailchimp.com/track/click/30010842/admin.mailchimp.com?p=eyJzIjoiOWFLeENTZ1hSTmhteExGc3JjWnExaEN2Xy1ZIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2FkbWluLm1haWxjaGltcC5jb21cXFwvc3VwcG9ydFxcXC9cIixcImlkXCI6XCI3NDdmMjg3OGEzM2U0Yzg4YTgwNzU0OWQ0NTllNjYyN1wiLFwidXJsX2lkc1wiOltcImExZjE0MTZmMTQ1ZjI2YzRkMzQ4ZjIyM2IxNzFkOWFlYjY2NjkzZDhcIl0sXCJtc2dfdHNcIjoxNzUzMTEyNDk5fSJ9
+Terms of Use: https://click.mailchimp.com/track/click/30010842/mailchimp.com?p=eyJzIjoid0VsZjdOT2NNZS1lMHFVSUtSZXhLMVhRdktjIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvbGVnYWxcXFwvdGVybXNcXFwvXCIsXCJpZFwiOlwiNzQ3ZjI4NzhhMzNlNGM4OGE4MDc1NDlkNDU5ZTY2MjdcIixcInVybF9pZHNcIjpbXCI1YTMwMjU1ODBlZTU5ZTc0MmZjN2EyODc4YzU5MmUzNjg3YTdlYTAzXCJdLFwibXNnX3RzXCI6MTc1MzExMjQ5OX0ifQ
+Privacy Policy: https://click.mailchimp.com/track/click/30010842/www.intuit.com?p=eyJzIjoiVzlZdG5XenZvbHhDUTgxOVJkN25QNUxpZE5FIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5pbnR1aXQuY29tXFxcL3ByaXZhY3lcXFwvc3RhdGVtZW50XFxcL1wiLFwiaWRcIjpcIjc0N2YyODc4YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiNTU5NzNjYTYzOWVkYzk3OTFiMzU0MGM5Nzc2MGE5NTZiZDFhYjM0YVwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0
+Turn off Notification: https://click.mailchimp.com/track/click/30010842/admin.mailchimp.com?p=eyJzIjoidkExSUZfazhTaTNkYXN6TDQ3U2s0eHBiejBvIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2FkbWluLm1haWxjaGltcC5jb21cXFwvYWNjb3VudFxcXC9kZXRhaWxzXFxcL1wiLFwiaWRcIjpcIjc0N2YyODc4YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiNzRiMjBmM2Y5Y2MzOTg1MzUzZGI4ZmFlZjViNGQ2YmJiZGQ5NWQ5OVwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0
+--_av-3fY5QQGqNHjIcu3g9m3Eyg
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+    <head>
+        <!-- trx_0004 -->
+        <meta charset=3D"UTF-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1" />
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <title>Weekly insights from Mailchimp</title>
+
+        <style type=3D"text/css">
+            /*////// RESET STYLES //////*/
+            a{word-wrap:break-word;}
+            table{border-collapse:collapse;}
+            h1, h2, h3, h4, h5, h6{display:block; margin:0; padding:0;}
+            img, a img{border:0; height:auto; outline:none; text-decoration=
+:none;}
+            body, #bodyTable, #bodyCell{height:100%; margin:0; padding:0; w=
+idth:100%;}
+
+            /*////// CLIENT-SPECIFIC STYLES //////*/
+            #outlook a{padding:0;} /* Force Outlook 2007 and up to provide =
+a "view in browser" message. */
+            img{-ms-interpolation-mode:bicubic;} /* Force IE to smoothly re=
+nder resized images. */
+            table{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove sp=
+acing between tables in Outlook Desktop. */
+            .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force =
+Outlook.com to display emails at full width. */
+            p, a, li, td, blockquote{mso-line-height-rule:exactly;} /* Forc=
+e Outlook Desktop to render line heights as they're originally set. */
+            a[href^=3D"tel"], a[href^=3D"sms"]{color:inherit; cursor:defaul=
+t; text-decoration:none;} /* Force mobile devices to inherit declared link =
+styles. */
+            p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%=
+; -webkit-text-size-adjust:100%;} /* Prevent Windows- and Webkit-based mobi=
+le platforms from changing declared text sizes. */
+            .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalC=
+lass p, .ExternalClass span, .ExternalClass font{line-height:100%;} /* Forc=
+e Outlook.com to display line heights normally. */
+            a[x-apple-data-detectors]{color:inherit !important; text-decora=
+tion:none !important; font-size:inherit !important; font-family:inherit !im=
+portant; font-weight:inherit !important; line-height:inherit !important;} /=
+* Force iOS devices to heed link styles set in CSS. */
+
+            /*////// EMAIL STYLES //////*/
+            #bodyCell{padding-right:10px !important; padding-bottom:20px !i=
+mportant; padding-left:10px !important;}
+            .emailContainer{max-width:600px;}
+            .footerContent a{color:#007C89; font-weight:500; text-decoratio=
+n:none;}
+            .button a{text-decoration:none;} /* Necessary for Outlook on Wi=
+ndows Phone */
+
+            @media screen and (min-width:768px){
+                .emailContainer{width:600px !important;}
+            }
+
+            @media only screen and (max-width:480px){
+                body{width:100% !important; min-width:100% !important;}
+                .contentContainer{padding-right: 10px !important; padding-l=
+eft: 10px !important;}
+                h1{font-size:26px !important; line-height:28px !important;}
+                .mcImage{height:auto !important; max-width:200px; width:100=
+% !important;}
+                .footerContent p{border-bottom:1px solid #DEDDDC; font-size=
+:13px !important; padding-bottom:20px !important;}
+                .utilityLink{border-bottom:1px solid #DEDDDC; display:block=
+; font-size:13px !important; padding-top:15px; padding-bottom:15px;}
+                .mobileHide{display:none; visibility:hidden;}
+            }
+        </style>
+    </head>
+    <body bgcolor=3D"#EFEEEA">
+        <center>
+            <span style=3D"color:#EFEEEA; display:none; font-size:0px; heig=
+ht:0px; visibility:hidden; width:0px;">We ran the numbers. Here are last we=
+ek's stats...</span>
+            <table align=3D"center" bgcolor=3D"#EFEEEA" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTabl=
+e">
+                <tr>
+                    <td align=3D"center" style=3D"padding-right:10px; paddi=
+ng-top:10px; padding-left:10px;" valign=3D"top" id=3D"bodyCell">
+                        <!--[if gte mso 9]>
+                        <table align=3D"center" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" style=3D"width:600px;" width=3D"600">
+                        <tr>
+                        <td align=3D"center" valign=3D"top">
+                        <![endif]-->
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"max-width:600px;" width=3D"100%" class=3D"em=
+ailContainer">
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+                                    <!-- BODY // -->
+                                    <table align=3D"center" bgcolor=3D"#FFF=
+FFF" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-c=
+olor:#FFFFFF; border-radius:0;" width=3D"100%">
+                                        <tr>
+                                            <td align=3D"center" class=3D"c=
+ontentContainer" style=3D"padding-right:40px; padding-bottom:30px; padding-=
+left:40px;" valign=3D"top">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                                    <tr>
+                                                        <td align=3D"center=
+" valign=3D"top" style=3D"padding-top:20px; padding-bottom:10px;">
+                                                            <a href=3D"http=
+s://click.mailchimp.com/track/click/30010842/www.mailchimp.com?p=3DeyJzIjoi=
+aW1JRExMcHdaNWZldGl2ZjlnTG16d19FVFB3IiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0Mix=
+cInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcLz91dG=
+1fc291cmNlPW1haWxjaGltcC1hcHAmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1hY2Nvd=
+W50LXN1bW1hcnkmdXRtX2NhbXBhaWduPWFjY291bnRfbG9nb1wiLFwiaWRcIjpcIjc0N2YyODc4=
+YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiNDM0OTA3ZDk3NjhlZjU=
+wYjJmMzlkZTdlOTUyMmE3N2U2ZjY2NDdmOVwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0" t=
+arget=3D"_blank" style=3D"text-decoration:none;"><img alt=3D"Mailchimp" src=
+=3D"https://cdn-images.mailchimp.com/template_images/Mailchimp+Logo+50-50+B=
+lack.png" width=3D"200" style=3D"border:0; color:#FFFFFF; font-family:'Helv=
+etica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:12px; font-we=
+ight:400; height:auto; letter-spacing:-1px; padding:0; margin:0; outline:no=
+ne; text-align:center; text-decoration:none;" /></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style=3D"paddin=
+g-bottom:3px;" valign=3D"top">
+                                                            <h1 style=3D"co=
+lor:#241C15; font-family:Georgia, Times, 'Times New Roman', serif; font-siz=
+e:40px; font-style:normal; font-weight:400; line-height:48px; letter-spacin=
+g:normal; margin:0; padding:0; text-align:center;">Weekly Summary</h1>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style=3D"paddin=
+g-bottom:20px;" valign=3D"top">
+                                                            <p style=3D"col=
+or:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-s=
+erif; font-size:16px; font-weight:400; line-height:24px; padding:0; margin:=
+0; text-align:center;">July 14 - July 20, 2025</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style=3D"paddin=
+g-bottom:30px;" valign=3D"top">
+                                                            <!--[if gte mso=
+ 9]>
+                                                            <table align=3D=
+"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"width:36=
+8px;" width=3D"368">
+                                                            <tr>
+                                                            <td align=3D"ce=
+nter" valign=3D"top">
+                                                            <![endif]-->
+                                                            <table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-widt=
+h:368px;" width=3D"100%">
+                                                                <tr>
+                                                                    <td val=
+ign=3D"top">
+                                                                        <p =
+style=3D"color:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Ver=
+dana, sans-serif; font-size:16px; font-weight:400; line-height:24px; paddin=
+g:0; margin:0; text-align:center;">Check out <strong>NotesAO</strong>'s wee=
+kly performance summary and see how you compared to the previous week.</p>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--[if gte mso=
+ 9]>
+                                                            </td>
+                                                            </tr>
+                                                            </table>
+                                                            <![endif]-->
+                                                        </td>
+                                                    </tr>
+                                                    <!-- EMAIL ENGAGEMENT S=
+ECTION // -->
+                                                    <tr>
+                                                        <td valign=3D"top" =
+style=3D"padding-bottom:10px;">
+                                                            <h2 style=3D"co=
+lor:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-=
+serif; font-size:24px; font-style:normal; font-weight:400; line-height:29px=
+; letter-spacing:normal; margin:0; padding:0; text-align:center;">Email eng=
+agement</h2>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign=3D"top" =
+style=3D"padding-bottom:20px;">
+                                                            <p style=3D"col=
+or:#95908d; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-s=
+erif; font-size:16px; font-weight:400; line-height:19px; padding:0; margin:=
+0; text-align:center;">Jul. 14 - Jul. 20</p>
+                                                        </td>
+                                                    </tr>
+                                                    <!--  -->
+                                                    <!-- EMAIL ENGAGEMENT E=
+MPTY STATE // -->
+                                                    <tr>
+                                                        <td valign=3D"top" =
+style=3D"padding-bottom:30px;">
+                                                            <p style=3D"col=
+or:#6A655F; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-s=
+erif; font-size:16px; font-weight:400; line-height:22px; padding:0; margin:=
+0; text-align:center;">No new activity to show.</p>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- // EMAIL ENGAGEMEN=
+T EMPTY STATE -->
+                                                    <!--  -->
+
+                                                    <tr>
+                                                        <td align=3D"center=
+" valign=3D"top" style=3D"padding-bottom: 30px;">
+                                                            <table align=3D=
+"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"center">
+                                                                        <di=
+v><!--[if mso]>
+                                                                        <v:=
+roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-=
+microsoft-com:office:word" href=3D"https://us9.admin.mailchimp.com/analytic=
+s/email-dashboard/?utm_source=3Dmailchimp-app&utm_medium=3Demail&utm_conten=
+t=3Daccount-summary&utm_campaign=3Dviewemdash_standard" style=3D"height:40p=
+x;v-text-anchor:middle;width:235px;" arcsize=3D"50%" strokecolor=3D"#007C89=
+" fill=3D"t">
+                                                                        <v:=
+fill type=3D"tile" color=3D"#007C89" />
+                                                                        <w:=
+anchorlock/>
+                                                                        <ce=
+nter style=3D"color:#ffffff;font-family:'Helvetica Neue', Helvetica, Arial,=
+ Verdana, sans-serif;font-size:16px;font-weight:400;">View Email Dashboard<=
+/center>
+                                                                        </v=
+:roundrect><![endif]-->
+                                                                           =
+ <a href=3D"https://click.mailchimp.com/track/click/30010842/us9.admin.mail=
+chimp.com?p=3DeyJzIjoiVWtOVFNWSjl3Q0dXa21ObmpSWlZuNWJLTGtJIiwidiI6MiwicCI6I=
+ntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3VzOS5hZG1p=
+bi5tYWlsY2hpbXAuY29tXFxcL2FuYWx5dGljc1xcXC9tYXJrZXRpbmctZGFzaGJvYXJkXFxcLz9=
+1dG1fc291cmNlPW1haWxjaGltcC1hcHAmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1hY2=
+NvdW50LXN1bW1hcnkmdXRtX2NhbXBhaWduPXZpZXdlbWRhc2hfc3RhbmRhcmRcIixcImlkXCI6X=
+CI3NDdmMjg3OGEzM2U0Yzg4YTgwNzU0OWQ0NTllNjYyN1wiLFwidXJsX2lkc1wiOltcImQ1ODZl=
+NTNkM2ZhMzdiMTliYWZlMjhiNjIzMjMyMDMzOGM2YTUzMDVcIl0sXCJtc2dfdHNcIjoxNzUzMTE=
+yNDk5fSJ9" style=3D"background-color:#007C89;border:1px solid #007C89;borde=
+r-radius:38px;color:#ffffff;display:inline-block;font-family:'Helvetica Neu=
+e', Helvetica, Arial, Verdana, sans-serif;font-size:16px;font-weight:400;li=
+ne-height:20px;padding:9px 18px;text-align:center;text-decoration:none;widt=
+h:197px;-webkit-text-size-adjust:none;mso-hide:all;">View Reporting Dashboa=
+rd</a>
+                                                                        </d=
+iv>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>       =
+                                               
+                                                        </td>
+                                                    </tr>
+                                                    <!--  -->
+                                                    <!-- // EMAIL ENGAGEMEN=
+T SECTION -->
+                                                    
+                                                    <!--  -->
+                                                    
+                                                    <!-- AUDIENCE SECTION /=
+/ -->
+                                                    <tr>
+                                                        <td valign=3D"top" =
+style=3D"padding-bottom:10px;">
+                                                            <h2 style=3D"co=
+lor:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-=
+serif; font-size:24px; font-style:normal; font-weight:400; line-height:29px=
+; letter-spacing:normal; margin:0; padding:0; text-align:center;">Audience<=
+/h2>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign=3D"top" =
+style=3D"padding-bottom:20px;">
+                                                            <p style=3D"col=
+or:#95908d; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-s=
+erif; font-size:16px; font-weight:400; line-height:19px; padding:0; margin:=
+0; text-align:center;">Jul. 14 - Jul. 20</p>
+                                                        </td>
+                                                    </tr>
+                                                    <!--  -->
+                                                    <!-- AUDIENCE STATS // =
+-->
+                                                    <tr>
+                                                        <td align=3D"center=
+" valign=3D"top" style=3D"font-size:0;">
+                                                            <!--  -->
+                                                            <!--[if mso]>
+                                                            <table align=3D=
+"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                            <tr>
+                                                            <td align=3D"le=
+ft" valign=3D"top" width=3D"220">
+                                                            <![endif]-->
+                                                            <div style=3D"d=
+isplay:inline-block; max-width:220px; vertical-align:top; width:100%;">
+                                                                <table alig=
+n=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+style=3D"max-width:220px;">
+                                                                    <tr>
+                                                                        <td=
+ align=3D"center" valign=3D"top" style=3D"padding-bottom:30px;">
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%">
+                                                                           =
+     <tr>
+                                                                           =
+         <td valign=3D"top" style=3D"padding-bottom:8px;">
+                                                                           =
+             <p style=3D"color:#007C89; font-family:Georgia, Times, 'Times =
+New Roman', serif; font-size:24px; font-weight:400; line-height:27px; paddi=
+ng:0; margin:0; text-align:center;">+1</p>
+                                                                           =
+         </td>
+                                                                           =
+     </tr>
+                                                                           =
+     <tr>
+                                                                           =
+         <td valign=3D"top">
+                                                                           =
+             <p style=3D"color:#6A655F; font-family:'Helvetica Neue', Helve=
+tica, Arial, Verdana, sans-serif; font-size:16px; font-weight:400; line-hei=
+ght:22px; padding:0; margin:0; text-align:center;">Audience change</p>
+                                                                           =
+         </td>
+                                                                           =
+     </tr>
+                                                                           =
+ </table>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--[if mso]>
+                                                            </td>
+                                                            <td align=3D"le=
+ft" valign=3D"top" width=3D"220">
+                                                            <![endif]-->
+                                                            <div style=3D"d=
+isplay:inline-block; max-width:220px; vertical-align:top; width:100%;">
+                                                                <table alig=
+n=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+style=3D"max-width:220px;">
+                                                                    <tr>
+                                                                        <td=
+ align=3D"center" valign=3D"top" style=3D"padding-bottom:30px;">
+                                                                           =
+ <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%">
+                                                                           =
+     <tr>
+                                                                           =
+         <td valign=3D"top" style=3D"padding-bottom:8px;">
+                                                                           =
+             <p style=3D"color:#007C89; font-family:Georgia, Times, 'Times =
+New Roman', serif; font-size:24px; font-weight:400; line-height:27px; paddi=
+ng:0; margin:0; text-align:center;">1</p>
+                                                                           =
+         </td>
+                                                                           =
+     </tr>
+                                                                           =
+     <tr>
+                                                                           =
+         <td valign=3D"top">
+                                                                           =
+             <p style=3D"color:#6A655F; font-family:'Helvetica Neue', Helve=
+tica, Arial, Verdana, sans-serif; font-size:16px; font-weight:400; line-hei=
+ght:22px; padding:0; margin:0; text-align:center;">Total audience</p>
+                                                                           =
+         </td>
+                                                                           =
+     </tr>
+                                                                           =
+ </table>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--[if mso]>
+                                                            </td>
+                                                            </tr>
+                                                            </table>
+                                                            <![endif]-->
+                                                            <!--  -->
+                                                        </td>
+                                                    </tr>
+                                                    <!--  -->
+                                                    <tr>
+                                                        <td align=3D"center=
+" valign=3D"top" style=3D"padding-bottom:30px;">
+                                                            <table align=3D=
+"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"center">
+                                                                        <di=
+v><!--[if mso]>
+                                                                        <v:=
+roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-=
+microsoft-com:office:word" href=3D"https://admin.mailchimp.com/analytics/au=
+dience-analytics/?utm_source=3Dmailchimp-app&utm_medium=3Demail&utm_content=
+=3Daccount-summary&utm_campaign=3Dviewauddash_standard" style=3D"height:40p=
+x;v-text-anchor:middle;width:248px;" arcsize=3D"50%" strokecolor=3D"#007C89=
+" fill=3D"t">
+                                                                        <v:=
+fill type=3D"tile" color=3D"#007C89" />
+                                                                        <w:=
+anchorlock/>
+                                                                        <ce=
+nter style=3D"color:#ffffff;font-family:'Helvetica Neue', Helvetica, Arial,=
+ Verdana, sans-serif;font-size:16px;font-weight:400;">View Audience Analyti=
+cs</center>
+                                                                        </v=
+:roundrect><![endif]-->
+                                                                           =
+ <a href=3D"https://click.mailchimp.com/track/click/30010842/admin.mailchim=
+p.com?p=3DeyJzIjoiU0tnVnlYRmc0LW11Skk0dGh6WlZ5WUVtUW1vIiwidiI6MiwicCI6IntcI=
+nVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL2FkbWluLm1haWxj=
+aGltcC5jb21cXFwvYW5hbHl0aWNzXFxcL2F1ZGllbmNlLWFuYWx5dGljc1xcXC8_dXRtX3NvdXJ=
+jZT1tYWlsY2hpbXAtYXBwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NvbnRlbnQ9YWNjb3VudC1zdW=
+1tYXJ5JnV0bV9jYW1wYWlnbj12aWV3YXVkZGFzaF9zdGFuZGFyZFwiLFwiaWRcIjpcIjc0N2YyO=
+Dc4YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiNmE3ZWM4MzBjYzRk=
+ZTUyNmFkOGFkMmMzNGQyMWRmMGUxNjVkNzIyNlwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0=
+" style=3D"background-color:#007C89;border:1px solid #007C89;border-radius:=
+38px;color:#ffffff;display:inline-block;font-family:'Helvetica Neue', Helve=
+tica, Arial, Verdana, sans-serif;font-size:16px;font-weight:400;line-height=
+:20px;padding:9px 18px;text-align:center;text-decoration:none;width:210px;-=
+webkit-text-size-adjust:none;mso-hide:all;">View Audience Analytics</a>
+                                                                        </d=
+iv>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>       =
+                                                         
+                                                        </td>
+                                                    </tr>
+                                                    <!--  -->
+                                                    <!-- // AUDIENCE STATS =
+-->
+                                                    <!-- AUDIENCE TIP // --=
+>
+                                                    <tr>
+                                                        <td valign=3D"top" =
+style=3D"padding-bottom:30px;">
+                                                            <table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" st=
+yle=3D"border:1px solid #DEDDDC; border-collapse:separate; border-radius:0;=
+">
+                                                                <tr>
+                                                                    <td val=
+ign=3D"top" style=3D"padding:20px;">
+                                                                        <ta=
+ble align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">
+                                                                           =
+ <tr>
+                                                                           =
+     <td valign=3D"center" width=3D"40">
+                                                                           =
+         <img src=3D"https://cdn-images.mailchimp.com/template_images/icons=
+/tip_lightbulb.png" alt=3D"lightbulb" height=3D"20" width=3D"20" style=3D"b=
+order:0; display:block; outline:0; vertical-align:top;" />
+                                                                           =
+     </td>
+                                                                           =
+     <td valign=3D"top">
+                                                                           =
+         <p style=3D"color:#241C15; font-family:'Helvetica Neue', Helvetica=
+, Arial, Verdana, sans-serif; font-size:14px; font-weight:400; line-height:=
+24px; padding:0; margin:0; text-align:left;"><strong>Tip:</strong> <a href=
+=3D"https://click.mailchimp.com/track/click/30010842/mailchimp.com?p=3DeyJz=
+IjoiYTFQWXc3U2w2Q1UzTmFtQXV2X3VYU1FycVZVIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg=
+0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvaGVscF=
+xcXC9zaGFyZS15b3VyLXNpZ251cC1mb3JtXFxcLz91dG1fc291cmNlPW1haWxjaGltcC1hcHAmd=
+XRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1hY2NvdW50LXN1bW1hcnkmdXRtX2NhbXBhaWdu=
+PWFjY291bnRfdGlwc1wiLFwiaWRcIjpcIjc0N2YyODc4YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI=
+3XCIsXCJ1cmxfaWRzXCI6W1wiMWM2OTNiOWFkMTIyNzNhZjI5NjNkYWE1NGU3Y2M4N2IwYjM0Mz=
+liY1wiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0" style=3D"color:#007C89; font-wei=
+ght:500; text-decoration:none;">Share your signup form</a> on your social m=
+edia platforms to turn followers into subscribers!</p>
+                                                                           =
+     </td>
+                                                                           =
+ </tr>
+                                                                        </t=
+able>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- // AUDIENCE TIP --=
+>
+                                                    <!--  -->
+                                                    <!-- // AUDIENCE SECTIO=
+N -->
+
+                                                    <!-- BOOST YOUR STATS /=
+/ -->
+                                                    <tr>
+                                                        <td valign=3D"top" =
+style=3D"padding-top:20px;">
+                                                            <table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                                                <tr>
+                                                                    <td val=
+ign=3D"top" style=3D"padding-right:20px; padding-bottom:10px; padding-left:=
+20px;">
+                                                                        <h2=
+ style=3D"color:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Ve=
+rdana, sans-serif; font-size:22px; font-style:normal; font-weight:400; line=
+-height:24px; letter-spacing:normal; margin:0; padding:0; text-align:center=
+;">Boost Your Stats</h2>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td val=
+ign=3D"top" style=3D"padding-right:20px; padding-bottom:20px; padding-left:=
+20px;">
+                                                                        <p =
+style=3D"color:#241C15; font-family:'Helvetica Neue', Helvetica, Arial, Ver=
+dana, sans-serif; font-size:14px; font-weight:400; line-height:24px; paddin=
+g-bottom:10px; margin:0; text-align:left;">Visit our Guides &amp; Tutorials=
+ to learn how to  <a href=3D"https://click.mailchimp.com/track/click/300108=
+42/mailchimp.com?p=3DeyJzIjoiRzh3NngtQU5feHp1WG9rSzgwbTRlbWwzSXdnIiwidiI6Mi=
+wicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21ha=
+WxjaGltcC5jb21cXFwvaGVscFxcXC9hYm91dC1zaWdudXAtZm9ybS1vcHRpb25zXFxcLz91dG1f=
+c291cmNlPW1haWxjaGltcC1hcHAmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1hY2NvdW5=
+0LXN1bW1hcnkmdXRtX2NhbXBhaWduPWFjY291bnRfYm9vc3RcIixcImlkXCI6XCI3NDdmMjg3OG=
+EzM2U0Yzg4YTgwNzU0OWQ0NTllNjYyN1wiLFwidXJsX2lkc1wiOltcImI3ZjlmMDgwM2MwNzJiZ=
+mQ5MTVlYzQzOTllMGNlZDI5OGM0YzFjNTdcIl0sXCJtc2dfdHNcIjoxNzUzMTEyNDk5fSJ9" st=
+yle=3D"color:#007C89; font-weight:500; text-decoration:none;">grow your aud=
+ience</a>  and <a href=3D"https://click.mailchimp.com/track/click/30010842/=
+mailchimp.com?p=3DeyJzIjoiZzZPY2NWbjU4cXprOFAta0xSemFySXBxSE5BIiwidiI6Miwic=
+CI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxj=
+aGltcC5jb21cXFwvaGVscFxcXC9hYm91dC1zdWJzY3JpYmVyLWVuZ2FnZW1lbnRcXFwvP3V0bV9=
+zb3VyY2U9bWFpbGNoaW1wLWFwcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jb250ZW50PWFjY291bn=
+Qtc3VtbWFyeSZ1dG1fY2FtcGFpZ249YWNjb3VudF9ib29zdFwiLFwiaWRcIjpcIjc0N2YyODc4Y=
+TMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiY2ZkMWQ3MDYxMGQwOTBi=
+ZjkzMmI0YjE2YTBmZWE4MzQ0NDAwZTI0NlwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0" st=
+yle=3D"color:#007C89; font-weight:500; text-decoration:none;">maximize subs=
+criber engagement</a>. Then check out your home page to get a more complete=
+ view of your account health.</p>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"center" valign=3D"top" style=3D"padding-right:20px; padding-bottom:20=
+px; padding-left:20px;">
+                                                                        <ta=
+ble align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                                                           =
+ <tr>
+                                                                           =
+     <td align=3D"center">
+                                                                           =
+         <div><!--[if mso]>
+                                                                           =
+         <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"=
+urn:schemas-microsoft-com:office:word" href=3D"https://us9.admin.mailchimp.=
+com/analytics/email-dashboard/?utm_source=3Dmailchimp-app&utm_medium=3Demai=
+l&utm_content=3Daccount-summary&utm_campaign=3Dviewemdash_standard" style=
+=3D"height:40px;v-text-anchor:middle;width:218px;" arcsize=3D"50%" strokeco=
+lor=3D"#007C89" fill=3D"t">
+                                                                           =
+         <v:fill type=3D"tile" color=3D"#007C89" />
+                                                                           =
+         <w:anchorlock/>
+                                                                           =
+         <center style=3D"color:#ffffff;font-family:'Helvetica Neue', Helve=
+tica, Arial, Verdana, sans-serif;font-size:16px;font-weight:400;">Log in to=
+ Mailchimp</center>
+                                                                           =
+         </v:roundrect><![endif]-->
+                                                                           =
+         <a href=3D"https://click.mailchimp.com/track/click/30010842/us9.ad=
+min.mailchimp.com?p=3DeyJzIjoiTG1QMlBxYWt2bi1MRzh5QWxXZUZpaENZX0xFIiwidiI6M=
+iwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3Vz=
+OS5hZG1pbi5tYWlsY2hpbXAuY29tXFxcL2FuYWx5dGljc1xcXC9lbWFpbC1kYXNoYm9hcmRcXFw=
+vP3V0bV9zb3VyY2U9bWFpbGNoaW1wLWFwcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jb250ZW50PW=
+FjY291bnQtc3VtbWFyeSZ1dG1fY2FtcGFpZ249dmlld2VtZGFzaF9zdGFuZGFyZFwiLFwiaWRcI=
+jpcIjc0N2YyODc4YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiMTlk=
+Mzc1NDRiMDY0NWM5NjIwYmQwZWJhY2NiOTc3MjRiMzllMGYwYVwiXSxcIm1zZ190c1wiOjE3NTM=
+xMTI0OTl9In0" style=3D"background-color:#007C89;border:1px solid #007C89;bo=
+rder-radius:38px;color:#ffffff;display:inline-block;font-family:'Helvetica =
+Neue', Helvetica, Arial, Verdana, sans-serif;font-size:16px;font-weight:400=
+;line-height:20px;padding:9px 18px;text-align:center;text-decoration:none;w=
+idth:180px;-webkit-text-size-adjust:none;mso-hide:all;">Log in to Mailchimp=
+</a>
+                                                                           =
+         </div>
+                                                                           =
+     </td>
+                                                                           =
+ </tr>
+                                                                        </t=
+able>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- // BOOST YOUR STAT=
+S -->
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // BODY -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+                                    <!-- FOOTER // -->
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%">
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+top" class=3D"footerContent" style=3D"color:#6A655F; font-family:'Helvetica=
+ Neue', Helvetica, Arial, Verdana, sans-serif; font-size:12px; font-weight:=
+400; line-height:24px; padding-top:40px; padding-bottom:40px; text-align:ce=
+nter;">
+                                                <p style=3D"color:#6A655F; =
+font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-s=
+ize:12px; font-weight:400; line-height:24px; padding-top:0; margin:0; text-=
+align:center;">&copy; 2001-2025 Mailchimp<sup>&reg;</sup> All Rights Reserv=
+ed<br />405 N. Angier Ave. NE, Atlanta, GA 30312 USA</p>
+                                                <a href=3D"https://click.ma=
+ilchimp.com/track/click/30010842/www.mailchimp.com?p=3DeyJzIjoic0hDMnRobkhf=
+ck9GbmVHWXZ1ZlhXZ1VaSDQwIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFw=
+idXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL2NvbnRhY3RcXFwvXC=
+IsXCJpZFwiOlwiNzQ3ZjI4NzhhMzNlNGM4OGE4MDc1NDlkNDU5ZTY2MjdcIixcInVybF9pZHNcI=
+jpbXCI5ZDFlNDk5Y2Y5MjM3MDI3MDQ4YzRlYWM5YTcyZWFkNGRlY2Q1MDYyXCJdLFwibXNnX3Rz=
+XCI6MTc1MzExMjQ5OX0ifQ" target=3D"_blank" style=3D"color:#007C89; font-weig=
+ht:500; text-decoration:none;" class=3D"utilityLink">Contact Us</a><span cl=
+ass=3D"mobileHide">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><a href=3D"https://=
+click.mailchimp.com/track/click/30010842/mailchimp.com?p=3DeyJzIjoid0VsZjdO=
+T2NNZS1lMHFVSUtSZXhLMVhRdktjIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjo=
+yLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvbGVnYWxcXFwvdGVybX=
+NcXFwvXCIsXCJpZFwiOlwiNzQ3ZjI4NzhhMzNlNGM4OGE4MDc1NDlkNDU5ZTY2MjdcIixcInVyb=
+F9pZHNcIjpbXCI1YTMwMjU1ODBlZTU5ZTc0MmZjN2EyODc4YzU5MmUzNjg3YTdlYTAzXCJdLFwi=
+bXNnX3RzXCI6MTc1MzExMjQ5OX0ifQ" target=3D"_blank" style=3D"color:#007C89; f=
+ont-weight:500; text-decoration:none;" class=3D"utilityLink">Terms of Use</=
+a><span class=3D"mobileHide">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><a href=
+=3D"https://click.mailchimp.com/track/click/30010842/www.intuit.com?p=3DeyJ=
+zIjoiVzlZdG5XenZvbHhDUTgxOVJkN25QNUxpZE5FIiwidiI6MiwicCI6IntcInVcIjozMDAxMD=
+g0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5pbnR1aXQuY29tXFxcL3Bya=
+XZhY3lcXFwvc3RhdGVtZW50XFxcL1wiLFwiaWRcIjpcIjc0N2YyODc4YTMzZTRjODhhODA3NTQ5=
+ZDQ1OWU2NjI3XCIsXCJ1cmxfaWRzXCI6W1wiNTU5NzNjYTYzOWVkYzk3OTFiMzU0MGM5Nzc2MGE=
+5NTZiZDFhYjM0YVwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0" target=3D"_blank" sty=
+le=3D"color:#007C89; font-weight:500; text-decoration:none;" class=3D"utili=
+tyLink">Privacy Policy</a><br class=3D"mobileHide" />
+                                                <a href=3D"https://click.ma=
+ilchimp.com/track/click/30010842/admin.mailchimp.com?p=3DeyJzIjoidkExSUZfaz=
+hTaTNkYXN6TDQ3U2s0eHBiejBvIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyL=
+FwidXJsXCI6XCJodHRwczpcXFwvXFxcL2FkbWluLm1haWxjaGltcC5jb21cXFwvYWNjb3VudFxc=
+XC9kZXRhaWxzXFxcL1wiLFwiaWRcIjpcIjc0N2YyODc4YTMzZTRjODhhODA3NTQ5ZDQ1OWU2NjI=
+3XCIsXCJ1cmxfaWRzXCI6W1wiNzRiMjBmM2Y5Y2MzOTg1MzUzZGI4ZmFlZjViNGQ2YmJiZGQ5NW=
+Q5OVwiXSxcIm1zZ190c1wiOjE3NTMxMTI0OTl9In0" target=3D"_blank" style=3D"color=
+:#007C89; font-weight:500; text-decoration:none;" class=3D"utilityLink">Tur=
+n off Notification</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!-- // FOOTER -->
+                                </td>
+                            </tr>
+                        </table>
+                        <!--[if gte mso 9]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://click.mailchimp.com/track/open.php?u=3D30010842&id=
+=3D747f2878a33e4c88a807549d459e6627" height=3D"1" width=3D"1" alt=3D""></bo=
+dy>
+</html>
+
+--_av-3fY5QQGqNHjIcu3g9m3Eyg--
+

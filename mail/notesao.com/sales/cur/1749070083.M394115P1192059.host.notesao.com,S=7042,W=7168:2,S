@@ -1,0 +1,126 @@
+Return-Path: <vanericmartin@gmail.com>
+Delivered-To: Sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id qkRxFwOxQGh7MBIAIW4ynA
+	(envelope-from <vanericmartin@gmail.com>)
+	for <Sales@notesao.com>; Wed, 04 Jun 2025 15:48:03 -0500
+Return-path: <vanericmartin@gmail.com>
+Envelope-to: Sales@notesao.com
+Delivery-date: Wed, 04 Jun 2025 15:48:03 -0500
+Received: from mail-lf1-f53.google.com ([209.85.167.53]:59853)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <vanericmartin@gmail.com>)
+	id 1uMv1l-00000005065-42oh
+	for Sales@notesao.com;
+	Wed, 04 Jun 2025 15:48:03 -0500
+Received: by mail-lf1-f53.google.com with SMTP id 2adb3069b0e04-553331c3dc7so229135e87.3
+        for <Sales@notesao.com>; Wed, 04 Jun 2025 13:48:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1749070080; x=1749674880; darn=notesao.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=c8qI93bN2oiIzOufoqAp1NshqDPk7u+im5HecQLhx38=;
+        b=KoU39n+koMUp7YJzS2sHBWxNXg25ONLIlPhUdTSDRdKu6XJ7zWurWI8d/GQVQcAbnI
+         8CZZ0npUCkm76TXanZJYebcYJ+g6uYp6L7tkqtOLLZVxi6WuuzX9xc0vEw9Q0fSk3Y4V
+         Uxf6vIZuWNVRaKnDJAnvTlb7EJJQExyQeaSnCAbiu3WKkMrJp+e5HAv2rpoUBMoGtguB
+         rubEiY03sL5KsQtpKd14fFZVbwW4Wn8CoL3rAHqs4UOUaOUMbHLt6sjJezre9j4YY1ht
+         AkinsCpIOYPPDdQEs1oiVQqJSbmimDYlIXol5kry2hfEdgNgzfEN0NFz1rE4c8zAsYyE
+         Ozfg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1749070080; x=1749674880;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=c8qI93bN2oiIzOufoqAp1NshqDPk7u+im5HecQLhx38=;
+        b=ixXY7u514ixim+CMy1J9zOtY926rQrf+uLOhMcRpUuqx4dyDICrXhwVMd6cmV3rT3N
+         f6y3RRDbxgf9doAK4mdqSeoxzl8xH+nWOy0jwRviqKjtGmQw2E0CGbou678awO5sv+52
+         OUOd89Rk89i/bTWeW6sicL3/CYpV2R9qwKY0wOuypEbHbmyueNYRiuMZ04kYEM/wQJZI
+         0Y/Qe5PLamKWc968eYFANIB497h2W0/w3HTctNqvUSqp1Ra+nzOQzUpgLzGzPuoZdS81
+         B+wm6+DDKHJFEVJqH+A4tPpSJTGF5plmMml6DRQ1tVOYuhW2BBoHLKV8Gi6fmIslmCUJ
+         vGug==
+X-Gm-Message-State: AOJu0YyH16VB3gAr1to1D2HAWo5W6kKyJpNV4nmBWlYjW0LGCY5fBtEi
+	NLSVJz+OkEnGJzg+qi+4w+WOzjq5fS+NN8IUP5b2C1z+MqCQSCgaMDop003YWZdP8clODMlHunD
+	gsMfGQ7/IUYFW155ChJbLZKgYSJhPAyo+gBIl
+X-Gm-Gg: ASbGncvs13EuTMIBxoAMisGGuoL/pBs1eqpmAR3b7deeP3dT/yXJSZkxPrKuyaHWLHh
+	/fRiXfTdzT2ypK6o4TtgLPMKoaNmSdHI0KK6xlqYxkfgzr8CPsQ/Bem0epgiZ2Sbdm4Rdes/zK5
+	zqW2sjO1l6SW3WMv91wmF1jTpfkek+z2F/HVHnQT4EivSZ
+X-Google-Smtp-Source: AGHT+IF6hyCTalhsM8SNpPY2D0zGs5+vc4d5AEVqI7ewmYKxpbSLUk2iTAHvbDtagix6dBPLSfdITHSXbvs7IKiF4XU=
+X-Received: by 2002:ac2:4c51:0:b0:553:2812:cf01 with SMTP id
+ 2adb3069b0e04-55356df2d95mr1351536e87.54.1749070080015; Wed, 04 Jun 2025
+ 13:48:00 -0700 (PDT)
+MIME-Version: 1.0
+From: van eric martin <vanericmartin@gmail.com>
+Date: Wed, 4 Jun 2025 15:47:49 -0500
+X-Gm-Features: AX0GCFtfUU4CGWvdagD_qv2omY4SGCWuwB7Wr1txEiLfzu_RCukT8iAGtbshTec
+Message-ID: <CALUz6t-fgh8sgCg1d5xcoL4jC3YAbvk0+qPC92G=ESCoiuJA5g@mail.gmail.com>
+Subject: Calendly
+To: Sales@notesao.com
+Content-Type: multipart/alternative; boundary="000000000000ce83b90636c51cf0"
+X-Spam-Status: No, score=0.8
+X-Spam-Score: 8
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  https://calendly.com/vanericmartin/notesao-consultation https://calendly.com/vanericmartin/notesao-consultation
+    
+ Content analysis details:   (0.8 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.167.53 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.167.53 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [209.85.167.53 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: calendly.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [vanericmartin(at)gmail.com]
+  1.0 HTML_IMAGE_ONLY_08     BODY: HTML: images with 400-800 bytes of words
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 HTML_IMAGE_RATIO_02    BODY: HTML has a low ratio of text to image area
+  0.0 TVD_SPACE_RATIO        No description available.
+  0.0 T_REMOTE_IMAGE         Message contains an external image
+X-Spam-Flag: NO
+
+--000000000000ce83b90636c51cf0
+Content-Type: text/plain; charset="UTF-8"
+
+https://calendly.com/vanericmartin/notesao-consultation
+
+--000000000000ce83b90636c51cf0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><a href=3D"https://calendly.com/vanericmartin/notesao=
+-consultation">https://calendly.com/vanericmartin/notesao-consultation</a><=
+/div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gmai=
+l_signature"><div dir=3D"ltr"><img width=3D"420" height=3D"132" src=3D"http=
+s://ci3.googleusercontent.com/mail-sig/AIorK4yxuv3PigvXvSeVS_ds53Ouf7AohIJU=
+BHGt1T47mdY_va317mZrdgbuBPZKX5Lkn4Txim5gRh94jTd0"><br></div></div></div></d=
+iv>
+
+--000000000000ce83b90636c51cf0--

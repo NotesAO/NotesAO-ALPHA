@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessibility Statement | NotesAO</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#211c56">
+
+  <!-- Fonts / Icons / Bootstrap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        referrerpolicy="no-referrer">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" crossorigin="anonymous">
+
+  <style>
+    /* ────────── BASE / LAYOUT ────────── */
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Montserrat',sans-serif;color:#333;background:#f7f9fa;line-height:1.6;
+      display:flex;flex-direction:column;min-height:100vh;
+    }
+    a{text-decoration:none;color:#007BFF;} img{max-width:100%;height:auto;}
+
+    /* ========= SHARED HEADER ========= */
+    .site-header{
+      background:#fff;padding:.75rem 2rem;
+      display:flex;justify-content:space-between;align-items:center;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+      position:fixed;top:0;left:0;right:0;z-index:999;
+    }
+    .site-header .logo img{height:40px}
+    .nav-list{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+    .nav-list>li{position:relative;display:flex;align-items:center;}
+    .nav-list>li:last-child .dropdown-menu{left:auto;right:0;}
+    .nav-list a,.drop-toggle{
+      font-weight:500;color:#333;background:none;border:none;font-family:inherit;
+      cursor:pointer;padding:.25rem .1rem;transition:color .3s;
+    }
+    .nav-list a:hover,.drop-toggle:hover{color:#211c56}
+
+    /* Dropdowns */
+    .dropdown{position:relative}
+    .dropdown-menu{
+      position:absolute;left:0;top:100%;min-width:11rem;
+      background:#fff;border:1px solid #e5e5e5;border-radius:6px;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+      display:none;flex-direction:column;padding:.5rem 0;z-index:1000;
+    }
+    .dropdown.open>.dropdown-menu{display:flex}
+    .dropdown-menu a{padding:.35rem 1rem;white-space:nowrap}
+    .dropdown-menu a:hover{background:#f7f9fa}
+
+    /* ========= MAIN / CARD ========= */
+    main{
+      margin-top:80px;              /* clear fixed header */
+      flex:1;
+      max-width:1100px;
+      margin-left:auto;margin-right:auto;
+      padding:4rem 1.75rem 3rem;
+      background:#fff;border-radius:12px;
+      box-shadow:0 4px 16px rgba(0,0,0,.05);
+    }
+    h1{font-size:2.25rem;margin-bottom:1.5rem;text-align:center;}
+    h2{font-size:1.35rem;margin:2rem 0 .75rem;color:#211c56;}
+    p,li{font-size:.95rem;margin-bottom:1rem;} ul{padding-left:1.25rem;}
+
+    /* ========= FOOTER ========= */
+    footer{background:#1c1c1c;color:#fff;text-align:center;padding:2rem;}
+    footer .footer-links{margin-bottom:1rem;}
+    footer .footer-links a{margin:0 1rem;color:#ccc;font-size:.9rem;transition:color .3s;}
+    footer .footer-links a:hover{color:#fff;} footer p{font-size:.9rem;color:#ccc;}
+  </style>
+</head>
+<body>
+
+<!-- ───── HEADER ───── -->
+<header class="site-header">
+  <a href="/" class="logo"><img src="/assets/images/NotesAO Logo.png" alt="NotesAO logo"></a>
+
+  <nav aria-label="Primary">
+    <ul class="nav-list">
+      <!-- Home -->
+      <li class="dropdown">
+        <button class="drop-toggle" aria-expanded="false">Home</button>
+        <ul class="dropdown-menu">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#testimonials">Testimonials</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/login.php">Login</a></li>
+      <li><a href="/signup.php">Sign&nbsp;Up</a></li>
+
+      <!-- Legal -->
+      <li class="dropdown">
+        <button class="drop-toggle" aria-expanded="false">Legal</button>
+        <ul class="dropdown-menu">
+          <li><a href="/legal/privacy.html">Privacy&nbsp;Policy</a></li>
+          <li><a href="/legal/terms.html">Terms&nbsp;of&nbsp;Service</a></li>
+          <li><a href="/legal/accessibility.html">Accessibility</a></li>
+          <li><a href="/legal/security.html">Security</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ───── MAIN ───── -->
+<main>
+  <h1>Accessibility Statement</h1>
+
+  <p>
+    NotesAO is committed to making our website and platform accessible to everyone, including
+    people with disabilities. We strive to meet or exceed the
+    <a href="https://www.w3.org/TR/WCAG21/">Web&nbsp;Content&nbsp;Accessibility&nbsp;Guidelines&nbsp;(WCAG&nbsp;2.1) Level&nbsp;AA</a>.
+  </p>
+
+  <h2>Measures We Take</h2>
+  <ul>
+    <li>Keyboard-navigable menus, forms, and interactive elements.</li>
+    <li>Text alternatives (alt attributes) for all meaningful images and icons.</li>
+    <li>Color-contrast ratios of at least 4.5:1 for text and essential graphics.</li>
+    <li>Consistent heading hierarchy and ARIA landmarks for screen readers.</li>
+    <li>Regular automated (axe, Lighthouse) and manual audits by trained staff.</li>
+  </ul>
+
+  <h2>Known Limitations</h2>
+  <p>
+    Some historical PDF exports may not contain full tagging for screen readers. Upon request we
+    will supply an accessible version within <strong>five business days</strong>.
+  </p>
+
+  <h2>Feedback &amp; Assistance</h2>
+  <p>
+    If you encounter accessibility barriers while using NotesAO, please let us know so we can
+    improve:<br>
+    Email: <a href="mailto:privacy@notesao.com">privacy@notesao.com</a><br>
+    Phone: +1&nbsp;(817)&nbsp;501-5102&nbsp;(Mon–Fri&nbsp;8&nbsp;a.m.–4&nbsp;p.m.&nbsp;CT)
+  </p>
+  <p>We typically respond within two business days.</p>
+
+  <h2>Formal Complaints</h2>
+  <p>
+    If you have contacted us and are dissatisfied with our response, you may file a complaint with
+    the U.S. Department of Justice Civil Rights Division at
+    <a href="https://civilrights.justice.gov/">civilrights.justice.gov</a>.
+  </p>
+
+  <p><em>Last reviewed: 8&nbsp;May&nbsp;2025.</em></p>
+</main>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/login.php">Login</a>
+    <a href="/signup.php">Sign Up</a>
+    <a href="/legal/privacy.html">Privacy Policy</a>
+    <a href="/legal/terms.html">Terms of Service</a>
+    <a href="/legal/accessibility.html">Accessibility</a>
+    <a href="/legal/security.html">Security</a>
+  </div>
+  <p>© 2025&nbsp;NotesAO. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+<script defer src="/assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+Return-Path: <freddie6jordan@gmail.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id ykGqLGFu2Wg5LQkAIW4ynA
+	(envelope-from <freddie6jordan@gmail.com>); Sun, 28 Sep 2025 12:20:33 -0500
+Return-path: <freddie6jordan@gmail.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 28 Sep 2025 12:20:33 -0500
+Received: from mail-ua1-f42.google.com ([209.85.222.42]:60849)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <freddie6jordan@gmail.com>)
+	id 1v2v4Z-00000002WRo-0jm0
+	for admin@notesao.com;
+	Sun, 28 Sep 2025 12:20:33 -0500
+Received: by mail-ua1-f42.google.com with SMTP id a1e0cc1a2514c-8fb58f2b820so2250248241.1
+        for <admin@notesao.com>; Sun, 28 Sep 2025 10:20:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1759080030; x=1759684830; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=dqtrnOvrsR0+TSKdaXormsZBCvD9fyQacRauPDuJjcw=;
+        b=FK4r9qlilU/xEnpxxCZKmbY3NiE5IjT4INxSiHQggwTFTvIIeaN/kmlYp36c9XiorX
+         /5rzmzFOH6gSboIrKk8S5J/hmnhNXzM2ndAWJhrxJPCjTdubNziqK+KiCFU2RSds4tvH
+         NsqsO8IFBVWexJcXM3HOt8Id0fMLXjJR4pxoGq/kvlN0frslWtjEGTbNLB7IYEFrF5Wb
+         bA++gNmnEhj0W+R2286Oce7oKto1s+KcqfUE9k5BtTuGy3zxAQ/cZH23qRxg4QQLrL52
+         G1peM140CSbRgXuqepWnfxIg7MPSrMCyuCMPv/DmwWjLUdmM31X1vsoYBAJ//9DFacjh
+         Wz5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1759080030; x=1759684830;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=dqtrnOvrsR0+TSKdaXormsZBCvD9fyQacRauPDuJjcw=;
+        b=wxbw08CMKyOCj3f9FtpuWFyMeuXSOxFpqUz8nU8crRxVVMydyZs+9XpKWss3h14Gf2
+         AN5pHZJR+o3XWyVK4ggqWaZtFiwN+KcG2e72QB3KVXPbpGRhsBm4drRuN0spRE8t8fvj
+         IM60MBb7xZC/TOsCCd3VIwhdLUY1z8R5r5ITuIb/0Q4AkaCONnqxEk73KRaLDqx7nbZt
+         iQthStBM+nbpWMox2oirGLa+AUy/eLwBGqv8RoHLsFUAoGEPSjz7D5mUChWltO74WjZF
+         YDeqRYMvZlVCnBTo43/cWXiY9i9igE08sm2SumB1PkXtemKHYITVPQpBNWhNw7Ktkwpp
+         D86g==
+X-Gm-Message-State: AOJu0YxSSIfPcn7cp3onGffTiM3UJd/xHpqRQznRZcdw832MBJfbK2bG
+	KTn4RDq86jeIZ3w4Rt3OoMVdYqsvUaKIX+gm3LsKtpVGIaSBjQXdG3CsuZECjFYO10xdbjAZdyV
+	O7nbtIlcvEtT9hAa1GfUcI5JD60IwDcb4IA==
+X-Gm-Gg: ASbGncuF9jiE6xbt3p/IYOTSJ4JbVoobmnTZYEC1wlKaa3oFX9FD2RqHIjrl+TYZfZ7
+	M1PEJrNjVMe/Ug5UvBg7IbsICOalIgis42ky0QiAdN601aTTRqDVy/nOOVR+F/bHas8xKT4i8sk
+	v/PiRSrjjsTyLzM3eooIp1Z8fA0FK3Wx4Cmlv9ZUAajjk8W8BGvsMZLUXxdIhd+1eSd0YMY+AAN
+	7tYAUeeBITNGff+LyzFSxmF8PQqbTwKS3NUYZdUs6AUrE3EJLaj
+X-Google-Smtp-Source: AGHT+IG7loDAlDxtm8y6eltdTpm48xaPMdNtFr/gXghFeUFITItducGfBWwVQQpQbbxutiTujQIFic4ztBmadrgW284=
+X-Received: by 2002:a05:6102:ccc:b0:5bc:27bd:6b82 with SMTP id
+ ada2fe7eead31-5bc27bd6e96mr2050321137.15.1759080030334; Sun, 28 Sep 2025
+ 10:20:30 -0700 (PDT)
+MIME-Version: 1.0
+References: <E1v2v2q-00000002WC0-0vMM@host.notesao.com>
+In-Reply-To: <E1v2v2q-00000002WC0-0vMM@host.notesao.com>
+From: Frank Lucas <freddie6jordan@gmail.com>
+Date: Sun, 28 Sep 2025 12:20:19 -0500
+X-Gm-Features: AS18NWCNXUiiGTPvdnUburD4qHrtr6BDehApILPPrmYI1N9X7A525NhyGxKIpzE
+Message-ID: <CA+HovaF-FiH=5bJie0-a=7iarPcwOt2ZyQE6DjLwDmJB=UgJzw@mail.gmail.com>
+Subject: Re: Men's BIPP Group Reminder: Sunday at 2:00 PM
+To: admin@notesao.com
+Content-Type: multipart/alternative; boundary="00000000000056f327063fdfbc1a"
+X-Spam-Status: No, score=0.5
+X-Spam-Score: 5
+X-Spam-Bar: /
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__The_l?= =?ISO-8859-1?Q?ink_is_not_letting_me_pay_today_my_last_class_how_sho?= =?ISO-8859-1?Q?uld=0A____I_go_about_this_I_call_the_number_and_text_?= =?ISO-8859-1?Q?no_response_at_all_On_Sun=2C_Sep=0A____28=2C_2025_at_?= =?ISO-8859-1?Q?12=3A18_PM_Free_for_Life_Group_=3C_wrote=3A_=3E_=5Bim?= =?ISO-8859-1?Q?age=3A_Free_for_Life=0A____Group=5D_=3E_=3E_Hi_Freder?= =?ISO-8859-1?Q?ick=2C_=3E_=3E_*Your_Men's_BIPP_group_is_Sunday_at_2=3A0?= =?ISO-8859-1?Q?0_PM=0A___=28Sunday=2C_September_28=29=2E*_=3E_=3E_Yo?= =?ISO-8859-1?Q?ur_II_-_Carey-_4836_Carey_St=2C_FW_-_Parole_mandated=0A_?= =?ISO-8859-1?Q?___BIPP_group_is_=3E_sched_=5B=2E=2E=2E=5D_=0A_Conten?= =?ISO-8859-1?Q?t_analysis_details=3A___=280=2E5_points=2C_5=2E0_requ?= =?ISO-8859-1?Q?ired=29=0A__pts_rule_name______________description=0A_?= =?ISO-8859-1?Q?----_----------------------_-------------------------?= =?ISO-8859-1?Q?-------------------------=0A__0=2E0_RCVD=5FIN=5FVALID?= =?ISO-8859-1?Q?ITY=5FSAFE=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_T?= =?ISO-8859-1?Q?he_query_to=0A______________________________Validity_?= =?ISO-8859-1?Q?was_blocked=2E__See=0A_____________________________ht?= =?ISO-8859-1?Q?tps=3A//knowledge=2Evalidity=2Ecom/hc/en-us/articles/?= =?ISO-8859-1?Q?20961730681243=0A______________________________for_mo?= =?ISO-8859-1?Q?re_information=2E=0A_____________________________=5B2?= =?ISO-8859-1?Q?09=2E85=2E222=2E42_listed_in_sa-accredit=2Ehabeas=2Ec?= =?ISO-8859-1?Q?om=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FCERTIFIED=5FBL?= =?ISO-8859-1?Q?OCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The=0A__________?= =?ISO-8859-1?Q?___________________query_to_Validity_was_blocked=2E__?= =?ISO-8859-1?Q?See=0A_____________________________https=3A//knowledg?= =?ISO-8859-1?Q?e=2Evalidity=2Ecom/hc/en-us/articles/20961730681243=0A_?= =?ISO-8859-1?Q?_____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?__________________________=5B209=2E85=2E222=2E42_list?= =?ISO-8859-1?Q?ed_in_sa-trusted=2Ebondedsender=2Eorg=5D=0A__0=2E0_RC?= =?ISO-8859-1?Q?VD=5FIN=5FVALIDITY=5FRPBL=5FBLOCKED_RBL=3A_ADMINISTRA?= =?ISO-8859-1?Q?TOR_NOTICE=3A_The_query_to=0A________________________?= =?ISO-8859-1?Q?______Validity_was_blocked=2E__See=0A________________?= =?ISO-8859-1?Q?_____________https=3A//knowledge=2Evalidity=2Ecom/hc/?= =?ISO-8859-1?Q?en-us/articles/20961730681243=0A_____________________?= =?ISO-8859-1?Q?_________for_more_information=2E=0A__________________?= =?ISO-8859-1?Q?___________=5B209=2E85=2E222=2E42_listed_in_bl=2Escor?= =?ISO-8859-1?Q?e=2Esenderscore=2Ecom=5D=0A__0=2E0_URIBL=5FBLOCKED___?= =?ISO-8859-1?Q?_______ADMINISTRATOR_NOTICE=3A_The_query_to_URIBL_was?= =?ISO-8859-1?Q?_blocked=2E=0A_____________________________See=0A____?= =?ISO-8859-1?Q?_________________________http=3A//wiki=2Eapache=2Eorg?= =?ISO-8859-1?Q?/spamassassin/DnsBlocklists#dnsbl-block=0A___________?= =?ISO-8859-1?Q?___________________for_more_information=2E=0A________?= =?ISO-8859-1?Q?_____________________=5BURI=3A_notesao=2Ecom=5D=0A___?= =?ISO-8859-1?Q?__________________________=5BURI=3A_freeforlifegroup=2Ec?= =?ISO-8859-1?Q?om=5D=0A_-0=2E0_SPF=5FPASS_______________SPF=3A_sende?= =?ISO-8859-1?Q?r_matches_SPF_record=0A_-0=2E1_DKIM=5FVALID=5FEF_____?= =?ISO-8859-1?Q?_____Message_has_a_valid_DKIM_or_DK_signature_from=0A_?= =?ISO-8859-1?Q?____________________________envelope-from_domain=0A_-?= =?ISO-8859-1?Q?0=2E1_DKIM=5FVALID_____________Message_has_at_least_o?= =?ISO-8859-1?Q?ne_valid_DKIM_or_DK_signature=0A__0=2E1_DKIM=5FSIGNED?= =?ISO-8859-1?Q?____________Message_has_a_DKIM_or_DK_signature=2C_not?= =?ISO-8859-1?Q?_necessarily_valid=0A_-0=2E1_DKIM=5FVALID=5FAU_______?= =?ISO-8859-1?Q?___Message_has_a_valid_DKIM_or_DK_signature_from_auth?= =?ISO-8859-1?Q?or's=0A_____________________________domain=0A__0=2E0_?= =?ISO-8859-1?Q?FREEMAIL=5FFROM__________Sender_email_is_commonly_abu?= =?ISO-8859-1?Q?sed_enduser_mail_provider=0A_________________________?= =?ISO-8859-1?Q?____=5Bfreddie6jordan=28at=29gmail=2Ecom=5D=0A__0=2E7?= =?ISO-8859-1?Q?_HTML=5FIMAGE=5FONLY=5F28_____BODY=3A_HTML=3A_images_?= =?ISO-8859-1?Q?with_2400-2800_bytes_of_words=0A__0=2E0_HTML=5FMESSAG?= =?ISO-8859-1?Q?E___________BODY=3A_HTML_included_in_message?=
+X-Spam-Flag: NO
+
+--00000000000056f327063fdfbc1a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+The link is not letting me pay today my last class how should I go about
+this I call the number and text no response at all
+
+On Sun, Sep 28, 2025 at 12:18=E2=80=AFPM Free for Life Group <
+no-reply@ffl.notesao.com> wrote:
+
+> [image: Free for Life Group]
+>
+> Hi Frederick,
+>
+> *Your Men's BIPP group is Sunday at 2:00 PM (Sunday, September 28).*
+>
+> Your II - Carey- 4836 Carey St, FW - Parole mandated BIPP group is
+> scheduled. II - Carey- 4836 Carey St, FW - Parole and Aisha Mayes expect
+> your presence. Please arrive early. *Lockout is 2:10 PM*. Your presence
+> is a mandatory stipulation. Incarceration occurs for non-attendance. Enjo=
+y
+> life fearlessly by remaining in good standing with CSCD & TDCJ. You've go=
+t
+> this!
+>
+> Where: Virtual (Use your group link):
+> Sunday 2:00 PM Group Link
+> <https://freeforlifegroup.com/sunday-mens-virtual-bipp-group-parole-cps-2=
+p/>
+>
+> Client Portal (for Make-Up Group Options):
+> FFL =E2=80=93 Client Portal <https://ffl.notesao.com/clientportal.php>
+>
+> Questions? Reply to this email with any attendance or payement concerns O=
+R
+> call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+>
+> Blessings,
+> Free for Life Group
+> ------------------------------
+>
+> This reminder was sent by Free for Life Group. If you no longer wish to
+> receive emails at this address, unsubscribe here
+> <https://ffltest.notesao.com/unsubscribe.php?e=3Dfreddie6jordan%40gmail.c=
+om&t=3Dd289c83c0db66c15569e0eda9848a16139dba558a2c396e464cef40868e3e7c0>
+> .
+>
+
+--00000000000056f327063fdfbc1a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">The link is not letting me pay today my last class how sh=
+ould I go about this I call the number and text no response at all=C2=A0</d=
+iv><div><br><div class=3D"gmail_quote gmail_quote_container"><div dir=3D"lt=
+r" class=3D"gmail_attr">On Sun, Sep 28, 2025 at 12:18=E2=80=AFPM Free for L=
+ife Group &lt;<a href=3D"mailto:no-reply@ffl.notesao.com">no-reply@ffl.note=
+sao.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"=
+margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-style:solid;padd=
+ing-left:1ex;border-left-color:rgb(204,204,204)"><div style=3D"text-align:c=
+enter;margin:0px 0px 12px"><img src=3D"https://ffltest.notesao.com/ffllogo.=
+png" alt=3D"Free for Life Group" style=3D"max-width: 100%; height: auto; di=
+splay: inline-block;"></div><p>Hi Frederick,</p>
+
+<p><strong>Your Men&#39;s BIPP group is Sunday at 2:00 PM (Sunday, Septembe=
+r 28).</strong></p>
+
+<p>
+  Your II - Carey- 4836 Carey St, FW - Parole mandated BIPP group is schedu=
+led. II - Carey- 4836 Carey St, FW - Parole and Aisha Mayes expect your pre=
+sence.
+  Please arrive early. <em>Lockout is 2:10 PM</em>. Your presence is a mand=
+atory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaini=
+ng in good standing with CSCD &amp; TDCJ.
+  You&#39;ve got this!
+</p>
+
+<p>Where: Virtual (Use your group link):<br><a href=3D"https://freeforlifeg=
+roup.com/sunday-mens-virtual-bipp-group-parole-cps-2p/" target=3D"_blank">S=
+unday 2:00 PM Group Link</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href=3D"https://ffl.notesao.com/clientportal.php" target=3D"_blank">FF=
+L =E2=80=93 Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payement concerns O=
+R call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style=3D"border-top-width:1px;b=
+order-top-style:solid;margin:24px 0px;border-top-color:rgb(221,221,221)"><p=
+ style=3D"font-style:normal;font-variant-caps:normal;font-weight:normal;fon=
+t-size:12px;line-height:1.4;font-family:Arial,Helvetica,sans-serif;font-siz=
+e-adjust:none;font-kerning:auto;font-variant-alternates:normal;font-variant=
+-ligatures:normal;font-variant-numeric:normal;font-variant-east-asian:norma=
+l;font-feature-settings:normal;color:rgb(102,102,102)">This reminder was se=
+nt by Free for Life Group. If you no longer wish to receive emails at this =
+address, <a href=3D"https://ffltest.notesao.com/unsubscribe.php?e=3Dfreddie=
+6jordan%40gmail.com&amp;t=3Dd289c83c0db66c15569e0eda9848a16139dba558a2c396e=
+464cef40868e3e7c0" target=3D"_blank" style=3D"font-family:Arial,Helvetica,s=
+ans-serif">unsubscribe here</a>.</p>
+</blockquote></div></div>
+
+--00000000000056f327063fdfbc1a--

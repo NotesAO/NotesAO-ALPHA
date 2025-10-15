@@ -1,0 +1,376 @@
+Return-Path: <bounce-md_30010842.6876a58b.v1-ddd2036e5ce141919dca573982c4896b@click.mailchimp.com>
+Delivered-To: ceo@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id l3gfCo+ldmjNFC0AIW4ynA
+	(envelope-from <bounce-md_30010842.6876a58b.v1-ddd2036e5ce141919dca573982c4896b@click.mailchimp.com>)
+	for <ceo@notesao.com>; Tue, 15 Jul 2025 14:01:35 -0500
+Return-path: <bounce-md_30010842.6876a58b.v1-ddd2036e5ce141919dca573982c4896b@click.mailchimp.com>
+Envelope-to: ceo@notesao.com
+Delivery-date: Tue, 15 Jul 2025 14:01:35 -0500
+Received: from notifications3.mailchimp.com ([198.2.132.159]:39436)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <bounce-md_30010842.6876a58b.v1-ddd2036e5ce141919dca573982c4896b@click.mailchimp.com>)
+	id 1ubkuD-0000000COZv-3aUe
+	for ceo@notesao.com;
+	Tue, 15 Jul 2025 14:01:35 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mandrillapp.com;
+	s=mte1; t=1752606091; x=1752876091;
+	bh=jWMWB55OsWOejvsACllycqAw7yEooiymC+OfFM1UtNg=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=QFPUj6elwdoITkp6gT3iwMgq8/0x9E0fq6130irLn0Dh98KqNQ7b5m+gz8H6I3VTT
+	 gLbWnoco6YBjQ124SLZM9kWbDMoYfkn87wEo0MaZstmYmoxumdZwsC1o99i9bwE4BJ
+	 wlR3wxth//FBWj4iSthuck5Q4v6Q4uHCwsuFxxKwQll5BO6CF6fFuULowxtFizh227
+	 8KVJbZnyF7mfpKOqjXYYZFKdj318KoJG4e1HuPDBLKcAQ2YwOasz/zEbFhbYhxfvlN
+	 w+vvseWc8FRLAweo/OpMyFCcxr3AuFNRe6M3IHzMN/wHDLo2QAsv6i5R1dkSeWbnXQ
+	 KUCbP9NeBvXyw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mailchimp.com; s=k2;
+	t=1752606091; x=1752866591; i=clientservices@mailchimp.com;
+	bh=jWMWB55OsWOejvsACllycqAw7yEooiymC+OfFM1UtNg=;
+	h=From:Subject:To:Feedback-ID:Message-Id:Date:MIME-Version:
+	 Content-Type:CC:Date:Subject:From;
+	b=VIKNhP0t0vYDTxMNWANwwMPINpJM7WyN7wL8H0wRxpVYrn0BKuR4BFqSwSUMV4QEK
+	 WfP8tgMqbPavPJH2RnYncbQy8gzu4cFBuPF5OkrV4TNKWMzsF9Nq83wKIA5Cz5MQ78
+	 xced+rScPG1yl44nU9NEHD4K1b+VQNCXzFsaCMNmn/LpurIVme4w2YpOtymqPjCJFO
+	 qRJvlEb6jJiRBfke8zBH5y1yrAS6UPklQ2MhrlT1FsGx/2YAE42Ol4ZKgbjIbhKymb
+	 hjb63t4Ksg5Hdeyp1e2pKeJgC+8rpSqmCcyP2d23PgTk+0PHmabThuSSwDS+MlgTHO
+	 fr1tP7bq5ODbQ==
+Received: from pmta09.mandrill.prod.atl01.rsglab.com (localhost [127.0.0.1])
+	by notifications3.mailchimp.com (Mailchimp) with ESMTP id 4bhT7H6hTyzP0KFF0
+	for <ceo@notesao.com>; Tue, 15 Jul 2025 19:01:31 +0000 (GMT)
+From: "Mailchimp Client Services" <clientservices@mailchimp.com>
+Subject: =?utf-8?Q?Activate=20your=20Mailchimp=20account?=
+X-Auto-Response-Suppress: OOF, AutoReply
+Auto-Submitted: auto-generated
+To: ceo@notesao.com
+X-Native-Encoded: 1
+X-Report-Abuse: =?UTF-8?Q?Please=20forward=20a=20copy=20of=20this=20message,=20including=20all=20headers,=20to=20abuse@mandrill.com.=20You=20can=20also=20report=20abuse=20here:=20https://mandrillapp.com/contact/abuse=3Fid=3D30010842.ddd2036e5ce141919dca573982c4896b?=
+X-Mandrill-User: md_30010842
+Feedback-ID: 30010842:30010842.20250715:md
+Message-Id: <30010842.20250715190131.6876a58bc9f506.81596063@notifications3.mailchimp.com>
+Date: Tue, 15 Jul 2025 19:01:31 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_av-ZFLid0m_JBXbRKve7kVppA"
+X-Spam-Status: No, score=0.9
+X-Spam-Score: 9
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  We're glad you're here, ceo@notesao.com. Activate Account:
+    https://us9.admin.mailchimp.com/signup/confirm?id=e3a569174c42f46a770c0d925&eid=a2c9322b2e5337b162a7&kme=Clicked%20Activate%20Account%20Email&kmi=ceo%40notesao.co
+    [...] 
+ Content analysis details:   (0.9 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.2.132.159 listed in sa-accredit.habeas.com]
+  0.0 KAM_FROM_MARKETINGBL_PCCC RBL: From address associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [listed in mailchimp.com.wild.pccc.com]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: mailchimp.com]
+                             [URI: mandrillapp.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.2.132.159 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [198.2.132.159 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: mailchimp.com]
+                             [URI: mandrillapp.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or identical to
+                             background
+  0.0 T_REMOTE_IMAGE         Message contains an external image
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium trust sender
+X-Spam-Flag: NO
+
+--_av-ZFLid0m_JBXbRKve7kVppA
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+We're glad you're here, ceo@notesao.com.
+
+
+-------------------
+Activate Account: https://us9.admin.mailchimp.com/signup/confirm?id=e3a569174c42f46a770c0d925&eid=a2c9322b2e5337b162a7&kme=Clicked%20Activate%20Account%20Email&kmi=ceo%40notesao.com&purchase_intent=%7B%22intended_package%22%3A%22standard_monthly_plan_v0%22%2C%22intended_audience%22%3A%22500%22%2C%22intended_plan%22%3A40018%2C%22commerce_plan%22%3Anull%2C%22add_ons%22%3Anull%2C%22discount_id%22%3A%226840647838f11%22%2C%22experiments%22%3Anull%2C%22gps_responses%22%3Anull%7D&entrypoint=default
+-------------------
+(Just confirming you're you.)
+
+
+
+-----------------------------------------------
+https://click.mailchimp.com/track/click/30010842/www.mailchimp.com?p=eyJzIjoiUzB3Q1NxUGU4VHJfalV4VzkyOWVPYkQ4RGZnIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL1wiLFwiaWRcIjpcImRkZDIwMzZlNWNlMTQxOTE5ZGNhNTczOTgyYzQ4OTZiXCIsXCJ1cmxfaWRzXCI6W1wiNDM0OTA3ZDk3NjhlZjUwYjJmMzlkZTdlOTUyMmE3N2U2ZjY2NDdmOVwiXSxcIm1zZ190c1wiOjE3NTI2MDYwOTF9In0
+405 N. Angier Ave. NE, Atlanta, GA 30312 USA
+--_av-ZFLid0m_JBXbRKve7kVppA
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html>
+    <head>
+        <!-- trx_0075 -->
+        <meta charset=3D"UTF-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1" />
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <title>Activate your Mailchimp account</title>
+
+        <style type=3D"text/css">
+            /*////// RESET STYLES //////*/
+            p{margin:10px 0; padding:0;}
+            table{border-collapse:collapse;}
+            h1, h2, h3, h4, h5, h6{display:block; margin:0; padding:0;}
+            img, a img{border:0; height:auto; outline:none; text-decoration=
+:none;}
+            body, #bodyTable, #bodyCell{height:100%; margin:0; padding:0; w=
+idth:100%;}
+
+            /*////// CLIENT-SPECIFIC STYLES //////*/
+            #outlook a{padding:0;} /* Force Outlook 2007 and up to provide =
+a "view in browser" message. */
+            img{-ms-interpolation-mode:bicubic;} /* Force IE to smoothly re=
+nder resized images. */
+            table{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove sp=
+acing between tables in Outlook Desktop. */
+            .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force =
+Outlook.com to display emails at full width. */
+            p, a, li, td, blockquote{mso-line-height-rule:exactly;} /* Forc=
+e Outlook Desktop to render line heights as they're originally set. */
+            a[href^=3D"tel"], a[href^=3D"sms"]{color:inherit; cursor:defaul=
+t; text-decoration:none;} /* Force mobile devices to inherit declared link =
+styles. */
+            p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%=
+; -webkit-text-size-adjust:100%;} /* Prevent Windows- and Webkit-based plat=
+forms from changing declared text sizes. */
+            .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalC=
+lass div, .ExternalClass span, .ExternalClass font{line-height:100%;} /* Fo=
+rce Outlook.com to display line heights normally. */
+            a[x-apple-data-detectors]{color:inherit !important; text-decora=
+tion:none !important; font-size:inherit !important; font-family:inherit !im=
+portant; font-weight:inherit !important; line-height:inherit !important;} /=
+* Force iOS devices to heed link styles set in CSS. */
+
+            /*////// EMAIL STYLES //////*/
+            #footerContent a{color:#007C89 !important;}
+            #button a{text-decoration:none;} /* Necessary for Outlook on Wi=
+ndows Phone */
+
+            /*////// MOBILE STYLES //////*/
+            @media only screen and (max-width:480px){
+                body{width:100% !important; min-width:100% !important;}
+                h1{font-size:24px !important;}
+                .footerContent{padding-bottom:0 !important;}
+                .footerContent p{border-bottom:1px solid #EFEEEA; font-size=
+:13px !important; padding-right: 20px!important; padding-bottom:40px !impor=
+tant; padding-left: 20px!important;}
+                .utilityLink{border-bottom:1px solid #EFEEEA; display:block=
+; font-size:13px !important; padding-top:15px; padding-bottom:15px;}
+                .mobileHide{display:none; visibility:hidden;}
+            }
+        </style>
+    </head>
+    <body bgcolor=3D"#EFEEEA">
+        <center>
+            <table align=3D"center" bgcolor=3D"#EFEEEA" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTabl=
+e">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" sty=
+le=3D"padding-bottom:60px;">
+                        <span style=3D"color:#FFE01B; display:none; font-si=
+ze:0px; height:0px; visibility:hidden; width:0px;">You're almost ready to g=
+et started!</span>
+                        <table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%">
+                            <!-- BEGIN HEADER // -->
+                            <tr>
+                                <td align=3D"center" valign=3D"top" bgcolor=
+=3D"#FFE01B" style=3D"background-color:#FFE01B;">
+                                    <!--[if gte mso 9]>
+                                    <table align=3D"center" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" width=3D"640">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wid=
+th=3D"640">
+                                    <![endif]-->
+                                    <table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"max-width:640px;" width=3D"100%"=
+ class=3D"emailContainer">
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+top" style=3D"padding:40px;">
+                                                <a href=3D"https://click.ma=
+ilchimp.com/track/click/30010842/www.mailchimp.com?p=3DeyJzIjoiUzB3Q1NxUGU4=
+VHJfalV4VzkyOWVPYkQ4RGZnIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFw=
+idXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL1wiLFwiaWRcIjpcIm=
+RkZDIwMzZlNWNlMTQxOTE5ZGNhNTczOTgyYzQ4OTZiXCIsXCJ1cmxfaWRzXCI6W1wiNDM0OTA3Z=
+Dk3NjhlZjUwYjJmMzlkZTdlOTUyMmE3N2U2ZjY2NDdmOVwiXSxcIm1zZ190c1wiOjE3NTI2MDYw=
+OTF9In0" target=3D"_blank" style=3D"text-decoration:none;"><img alt=3D"Mail=
+chimp" src=3D"https://cdn-images.mailchimp.com/template_images/Mailchimp+Lo=
+go+50-50+Black.png" width=3D"200" style=3D"border:0; color:#FFFFFF; font-fa=
+mily:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size:12p=
+x; font-weight:400; height:auto; letter-spacing:-1px; padding:0; margin:0; =
+outline:none; text-align:center; text-decoration:none;" /></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style=3D"background-color:#=
+FFFFFF; padding-top:40px;">&nbsp;</td>
+                                        </tr>
+                                    </table>
+                                    <!--[if gte mso 9]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <!-- // END HEADER -->
+                            <!-- BEGIN BODY AND FOOTER // -->
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+                                    <!--[if gte mso 9]>
+                                    <table align=3D"center" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" width=3D"640">
+                                    <tr>
+                                    <td align=3D"center" valign=3D"top" wid=
+th=3D"640">
+                                    <![endif]-->
+                                    <table align=3D"center" bgcolor=3D"#FFF=
+FFF" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-c=
+olor:#FFFFFF; max-width:640px;" width=3D"100%" class=3D"emailContainer">
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+top" bgcolor=3D"#FFFFFF" style=3D"padding-right:40px; padding-bottom:40px; =
+padding-left:40px; ">
+                                                <h1 style=3D"color:#241C15;=
+ font-family:Georgia, Times, 'Times New Roman', serif; font-size:30px; font=
+-style:normal; font-weight:400; line-height:42px; letter-spacing:normal; ma=
+rgin:0; padding:0; text-align:center;">We're glad you're here,<br /><a href=
+=3D"#" style=3D"color:#241C15; text-decoration:none;">ceo@notesao.com</a>.<=
+/h1>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+middle" style=3D"padding-right:40px; padding-bottom:60px; padding-left:40px=
+;">
+                                                <table border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0">
+                                                    <tr>
+                                                        <td align=3D"center=
+" bgcolor=3D"#007C89" id=3D"button"><a href=3D"https://us9.admin.mailchimp.=
+com/signup/confirm?id=3De3a569174c42f46a770c0d925&eid=3Da2c9322b2e5337b162a=
+7&kme=3DClicked%20Activate%20Account%20Email&kmi=3Dceo%40notesao.com&purcha=
+se_intent=3D%7B%22intended_package%22%3A%22standard_monthly_plan_v0%22%2C%2=
+2intended_audience%22%3A%22500%22%2C%22intended_plan%22%3A40018%2C%22commer=
+ce_plan%22%3Anull%2C%22add_ons%22%3Anull%2C%22discount_id%22%3A%22684064783=
+8f11%22%2C%22experiments%22%3Anull%2C%22gps_responses%22%3Anull%7D&entrypoi=
+nt=3Ddefault" target=3D"_blank" style=3D"border-radius:0; border:1px solid =
+#007C89; color:#FFFFFF; display:inline-block; font-size:16px; font-family:'=
+Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-weight:400; le=
+tter-spacing:.3px; padding:20px; text-decoration:none;">Activate Account</a=
+>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+top" style=3D"padding-right:40px; padding-bottom:40px; padding-left:40px; "=
+>
+                                                <p style=3D"color:#6A655F; =
+font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-s=
+ize:16px; font-style:normal; font-weight:400; line-height:42px; letter-spac=
+ing:normal; margin:0; padding:0; text-align:center;">(Just confirming you'r=
+e you.)</p>
+                                            </td>
+                                        </tr>
+                                        
+                                        
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+top" class=3D"footerContent" style=3D"border-top:2px solid #EFEEEA; color:#=
+6A655F; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif=
+; font-size:12px; font-weight:400; line-height:24px; padding-top:40px; padd=
+ing-bottom:40px; text-align:center;">
+                                                <p style=3D"color:#6A655F; =
+font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-s=
+ize:12px; font-weight:400; line-height:24px; padding-top:0; margin:0; text-=
+align:center;">&copy; 2001-2025 Mailchimp<sup>&reg;</sup> All Rights Reserv=
+ed<br />405 N. Angier Ave. NE, Atlanta, GA 30312 USA</p>
+                                                <a href=3D"https://click.ma=
+ilchimp.com/track/click/30010842/www.mailchimp.com?p=3DeyJzIjoiTU05czRzUnRO=
+Ulh3clBmbTRHbEJldF81MWxBIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjoyLFw=
+idXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5tYWlsY2hpbXAuY29tXFxcL2NvbnRhY3RcXFwvXC=
+IsXCJpZFwiOlwiZGRkMjAzNmU1Y2UxNDE5MTlkY2E1NzM5ODJjNDg5NmJcIixcInVybF9pZHNcI=
+jpbXCI5ZDFlNDk5Y2Y5MjM3MDI3MDQ4YzRlYWM5YTcyZWFkNGRlY2Q1MDYyXCJdLFwibXNnX3Rz=
+XCI6MTc1MjYwNjA5MX0ifQ" target=3D"_blank" style=3D"color:#007C89; font-weig=
+ht:500; text-decoration:none;" class=3D"utilityLink">Contact Us</a><span cl=
+ass=3D"mobileHide">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><a href=3D"https://=
+click.mailchimp.com/track/click/30010842/mailchimp.com?p=3DeyJzIjoiVnVQMG5F=
+aTFMYjBfdUFnZmI4cGdzWTZvdF9VIiwidiI6MiwicCI6IntcInVcIjozMDAxMDg0MixcInZcIjo=
+yLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL21haWxjaGltcC5jb21cXFwvbGVnYWxcXFwvdGVybX=
+NcXFwvXCIsXCJpZFwiOlwiZGRkMjAzNmU1Y2UxNDE5MTlkY2E1NzM5ODJjNDg5NmJcIixcInVyb=
+F9pZHNcIjpbXCI1YTMwMjU1ODBlZTU5ZTc0MmZjN2EyODc4YzU5MmUzNjg3YTdlYTAzXCJdLFwi=
+bXNnX3RzXCI6MTc1MjYwNjA5MX0ifQ" target=3D"_blank" style=3D"color:#007C89; f=
+ont-weight:500; text-decoration:none;" class=3D"utilityLink">Terms of Use</=
+a><span class=3D"mobileHide">&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span><a href=
+=3D"https://click.mailchimp.com/track/click/30010842/www.intuit.com?p=3DeyJ=
+zIjoiNHE2Rk1TTm1CcThEYVdDeHNqR1NndlJuQlo0IiwidiI6MiwicCI6IntcInVcIjozMDAxMD=
+g0MixcInZcIjoyLFwidXJsXCI6XCJodHRwczpcXFwvXFxcL3d3dy5pbnR1aXQuY29tXFxcL3Bya=
+XZhY3lcXFwvc3RhdGVtZW50XFxcL1wiLFwiaWRcIjpcImRkZDIwMzZlNWNlMTQxOTE5ZGNhNTcz=
+OTgyYzQ4OTZiXCIsXCJ1cmxfaWRzXCI6W1wiNTU5NzNjYTYzOWVkYzk3OTFiMzU0MGM5Nzc2MGE=
+5NTZiZDFhYjM0YVwiXSxcIm1zZ190c1wiOjE3NTI2MDYwOTF9In0" target=3D"_blank" sty=
+le=3D"color:#007C89; font-weight:500; text-decoration:none;" class=3D"utili=
+tyLink">Privacy Policy</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--[if gte mso 9]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]-->
+                                </td>
+                            </tr>
+                            <!-- // END BODY AND FOOTER -->
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://click.mailchimp.com/track/open.php?u=3D30010842&id=
+=3Dddd2036e5ce141919dca573982c4896b" height=3D"1" width=3D"1" alt=3D""></bo=
+dy>
+</html>
+
+--_av-ZFLid0m_JBXbRKve7kVppA--
+

@@ -1,0 +1,51 @@
+Return-Path: <noreply@github.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id jSgeDmYL8Gh73B4AIW4ynA
+	(envelope-from <noreply@github.com>); Wed, 15 Oct 2025 16:00:22 -0500
+Return-path: <noreply@github.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 15 Oct 2025 16:00:22 -0500
+Received: from out-26.smtp.github.com ([192.30.252.209]:44627)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <noreply@github.com>)
+	id 1v98be-00000008U94-2791
+	for admin@notesao.com;
+	Wed, 15 Oct 2025 16:00:22 -0500
+Received: from github.com (hubbernetes-node-7b1724c.ash1-iad.github.net [10.56.206.59])
+	by smtp.github.com (Postfix) with ESMTPA id 561D360113A
+	for <admin@notesao.com>; Wed, 15 Oct 2025 14:00:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2023; t=1760562020;
+	bh=n6Kt41Pdl0oMOps66jDy0jjihdvmBpFo4DbRuO5ESl0=;
+	h=Date:From:To:Subject:From;
+	b=M1/sVN4rH2t02nhYV27Yhjd81gmRzwbytEz/kkQeNHs/qni2R/11yhS7hySq/0N7T
+	 r7mNVhnfJqzd2kAZ58/DZXyJknzKrYFIx9ZpqIwBEzK+GAvU5U3VSBQEWmsjD60Pih
+	 KX5mPIZuBm/Aih/tmC7fq/JHjazH5/J0jeIT/EfM=
+Date: Wed, 15 Oct 2025 14:00:20 -0700
+From: GitHub <noreply@github.com>
+To: NotesAO <admin@notesao.com>
+Message-ID: <68f00b645338d_d510d85774@sharedworker-cc75f6b68-v9v7v.mail>
+Subject: [GitHub] A new SSH authentication public key was added to your
+ account
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Auto-Response-Suppress: All
+X-Spam-Status: No, score=-0.2
+X-Spam-Score: -1
+X-Spam-Bar: /
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__The_f?= =?ISO-8859-1?Q?ollowing_SSH_key_was_added_to_your_account=3A_Liquidw?= =?ISO-8859-1?Q?eb-NotesAO=0A____SHA256=3APiREQmaH8MF6fNk7nZ+49537+Gk?= =?ISO-8859-1?Q?ncg//ICSUqAs9sPQ_If_you_believe_this_key=0A____was_ad?= =?ISO-8859-1?Q?ded_in_error=2C_you_can_remove_the_key_and_disable_ac?= =?ISO-8859-1?Q?cess_at_the_following=0A____location=3A_=0A_Content_a?= =?ISO-8859-1?Q?nalysis_details=3A___=28-0=2E2_points=2C_5=2E0_requir?= =?ISO-8859-1?Q?ed=29=0A__pts_rule_name______________description=0A_-?= =?ISO-8859-1?Q?---_----------------------_--------------------------?= =?ISO-8859-1?Q?------------------------=0A__0=2E0_RCVD=5FIN=5FVALIDI?= =?ISO-8859-1?Q?TY=5FRPBL=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_Th?= =?ISO-8859-1?Q?e_query_to=0A______________________________Validity_w?= =?ISO-8859-1?Q?as_blocked=2E__See=0A_____________________________htt?= =?ISO-8859-1?Q?ps=3A//knowledge=2Evalidity=2Ecom/hc/en-us/articles/2?= =?ISO-8859-1?Q?0961730681243=0A______________________________for_mor?= =?ISO-8859-1?Q?e_information=2E=0A____________________________=5B192?= =?ISO-8859-1?Q?=2E30=2E252=2E209_listed_in_bl=2Escore=2Esenderscore=2Ec?= =?ISO-8859-1?Q?om=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FSAFE=5FBLOCKED?= =?ISO-8859-1?Q?_RBL=3A_ADMINISTRATOR_NOTICE=3A_The_query_to=0A______?= =?ISO-8859-1?Q?________________________Validity_was_blocked=2E__See=0A_?= =?ISO-8859-1?Q?____________________________https=3A//knowledge=2Eval?= =?ISO-8859-1?Q?idity=2Ecom/hc/en-us/articles/20961730681243=0A______?= =?ISO-8859-1?Q?________________________for_more_information=2E=0A___?= =?ISO-8859-1?Q?__________________________=5B192=2E30=2E252=2E209_lis?= =?ISO-8859-1?Q?ted_in_sa-accredit=2Ehabeas=2Ecom=5D=0A__0=2E0_RCVD=5FI?= =?ISO-8859-1?Q?N=5FVALIDITY=5FCERTIFIED=5FBLOCKED_RBL=3A_ADMINISTRAT?= =?ISO-8859-1?Q?OR_NOTICE=3A_The=0A_____________________________query?= =?ISO-8859-1?Q?_to_Validity_was_blocked=2E__See=0A__________________?= =?ISO-8859-1?Q?___________https=3A//knowledge=2Evalidity=2Ecom/hc/en?= =?ISO-8859-1?Q?-us/articles/20961730681243=0A_______________________?= =?ISO-8859-1?Q?_______for_more_information=2E=0A____________________?= =?ISO-8859-1?Q?_____=5B192=2E30=2E252=2E209_listed_in_sa-trusted=2Eb?= =?ISO-8859-1?Q?ondedsender=2Eorg=5D=0A_-0=2E0_SPF=5FPASS____________?= =?ISO-8859-1?Q?___SPF=3A_sender_matches_SPF_record=0A_-0=2E1_DKIM=5FV?= =?ISO-8859-1?Q?ALID=5FEF__________Message_has_a_valid_DKIM_or_DK_sig?= =?ISO-8859-1?Q?nature_from=0A_____________________________envelope-f?= =?ISO-8859-1?Q?rom_domain=0A_-0=2E1_DKIM=5FVALID=5FAU__________Messa?= =?ISO-8859-1?Q?ge_has_a_valid_DKIM_or_DK_signature_from_author's=0A_?= =?ISO-8859-1?Q?____________________________domain=0A__0=2E1_DKIM=5FS?= =?ISO-8859-1?Q?IGNED____________Message_has_a_DKIM_or_DK_signature=2C_?= =?ISO-8859-1?Q?not_necessarily_valid=0A_-0=2E1_DKIM=5FVALID_________?= =?ISO-8859-1?Q?____Message_has_at_least_one_valid_DKIM_or_DK_signatu?= =?ISO-8859-1?Q?re=0A_-0=2E0_DKIMWL=5FWL=5FHIGH_________DKIMwl=2Eorg_?= =?ISO-8859-1?Q?-_High_trust_sender?=
+X-Spam-Flag: NO
+
+The following SSH key was added to your account:
+
+Liquidweb-NotesAO
+SHA256:PiREQmaH8MF6fNk7nZ+49537+Gkncg//ICSUqAs9sPQ
+
+If you believe this key was added in error, you can remove the key and disable
+access at the following location:
+
+https://github.com/settings/keys

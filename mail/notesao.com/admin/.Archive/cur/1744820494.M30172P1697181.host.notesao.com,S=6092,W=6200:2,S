@@ -1,0 +1,108 @@
+Return-Path: <gabecthomas@gmail.com>
+Delivered-To: admin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id Et2/AQ7Z/2ed5RkAIW4ynA
+	(envelope-from <gabecthomas@gmail.com>)
+	for <admin@notesao.com>; Wed, 16 Apr 2025 11:21:34 -0500
+Return-path: <gabecthomas@gmail.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 16 Apr 2025 11:21:34 -0500
+Received: from mail-ot1-f45.google.com ([209.85.210.45]:44399)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.1)
+	(envelope-from <gabecthomas@gmail.com>)
+	id 1u55W1-000000077Rk-0ogJ
+	for admin@notesao.com;
+	Wed, 16 Apr 2025 11:21:34 -0500
+Received: by mail-ot1-f45.google.com with SMTP id 46e09a7af769-72ec4634414so497879a34.1
+        for <admin@notesao.com>; Wed, 16 Apr 2025 09:21:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1744820452; x=1745425252; darn=notesao.com;
+        h=to:message-id:subject:date:mime-version:from
+         :content-transfer-encoding:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=oQVrm4JM1X0wDCMXvmOHv4D9tQl39pOLC72bTquZ9bE=;
+        b=QNlce4j/1TJ7L03BD+l5dzBQSQzdSjKtsYkJvtOTCIsnyBqiVry9Xoa1GxnGUzSEYF
+         lOCWIYbTjh465jnrUizFawEWnERlOHe93JJZfriw5HxKEGVVOXQZbimknuBDGlOs7/po
+         OH8x8PqIBG8bTCsa9mG/ypSq5HEKNu0pnuy7AWzFrXlojjqp1uey7MlDF0Fxk+g11pav
+         tFa7hSqLaicAfdhqJdhzIOoi0HcQcub3P+YVM8T5YWolxCY3NUgmxpqdz/Ffnuj3SE9M
+         bVRzlmVIN8vS6aji/te3uRkmYFHchDPtNj6q/TIAIbUuttYTFebmcGZJ37JLNxH3J/jN
+         SA5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744820452; x=1745425252;
+        h=to:message-id:subject:date:mime-version:from
+         :content-transfer-encoding:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=oQVrm4JM1X0wDCMXvmOHv4D9tQl39pOLC72bTquZ9bE=;
+        b=lW1JhQnl78mLMCKUJUzhymSbrseylDcS5ieYwWioh4D/G+2TGAVk3qWGhVFqiJydVx
+         pKvffSrEh9w07s2/DVUMwlLKE3tFUJkQJ10cwH476UGx5WmP80GlZ7+ykwTO1sBKUNn/
+         3RuOt5OLZdFnzlSITbLjK9OnHZMS5/QHGE0LnkZX6uNk2sQwE6q9kpijF+rEhs2GICQd
+         vFHKuknm9qLyokgMJ7dE1A35jTO1LyepeKpDsj0RqLmEUltGY5bB4D6bJV4sqO2iT/EH
+         /PLWylQkWX0lcOE7SYGXkQDhxFkRccj4rhXrtuNqfNiVjENVACSH7+CKOU+U/VaYELJU
+         g9ag==
+X-Gm-Message-State: AOJu0YxBD0YCKEV6rUllCPvQnuIbmt3b3bxSMlec7QEJ8Bj8ip1Gqv7w
+	N1/uIVk+C4xLXK0dteQDZyu5k6GvKlVsO9WC3DhGB+3w8yabHNTdt3BU2Erm
+X-Gm-Gg: ASbGncsG4EAj0cqi0JdGejGfRwgkrAepKpza+hH8nksTHsGPliPT0HM4l0p71kXnOQw
+	EfuYblw1TFixpoIXCGM7XYQGd+ln9XgytOO8nTLm/BHTK5vRY0JO57CIE5d5f4vofXhhgaMT+XM
+	G4zC3ru9fTLFLDRDy4EKQlTQGvcFGc3/typz/9VVIAH4mCpQlfK4YYMxONoZa+OBQY16LODziOC
+	GvF60wLd0OMKIkJ/JJj5P92EnYUa7own3mvi22V8E6yMAKAll5totmCNaqMgf6p/OPzkkLIZqDd
+	GcCKGTNjIBmihGYaZ4dZtdm5XXZPIrMBp44hwuV+kZ/E2AA3z37nCWrBDVaQT44muwPSYIvYi+k
+	BfovWuPDdP21IleXbKC0dBuBxBuQG5f8WIUntesdl
+X-Google-Smtp-Source: AGHT+IFCJj4K102DhprRjZBVm5NAai9ONGXiBE3H1+5dJzkTIZcuqpB90fn1EU6Qg0u0F07whS8QWg==
+X-Received: by 2002:a05:6871:b2c:b0:2bc:6675:2043 with SMTP id 586e51a60fabf-2d4d2b11973mr1478868fac.14.1744817237135;
+        Wed, 16 Apr 2025 08:27:17 -0700 (PDT)
+Received: from smtpclient.apple (syn-070-116-211-150.biz.spectrum.com. [70.116.211.150])
+        by smtp.gmail.com with ESMTPSA id 46e09a7af769-72e73d6eb1fsm2818697a34.16.2025.04.16.08.27.16
+        for <admin@notesao.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 16 Apr 2025 08:27:16 -0700 (PDT)
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+From: Gabriel Thomas <gabecthomas@gmail.com>
+Mime-Version: 1.0 (1.0)
+Date: Wed, 16 Apr 2025 10:27:05 -0500
+Subject: Testing Incoming
+Message-Id: <C7DF2F47-92A4-4AA2-BB38-5032E8B25C4C@gmail.com>
+To: admin@notesao.com
+X-Mailer: iPhone Mail (22F5042g)
+X-Spam-Status: No, score=-0.2
+X-Spam-Score: -1
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Sent from my iPhone 
+ Content analysis details:   (-0.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [209.85.210.45 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.210.45 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.210.45 listed in bl.score.senderscore.com]
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [gabecthomas(at)gmail.com]
+X-Spam-Flag: NO
+
+
+Sent from my iPhone

@@ -1,0 +1,33 @@
+Return-Path: <notesao@host.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id +EJrLOAHdGgqMRsAIW4ynA
+	(envelope-from <notesao@host.notesao.com>); Sun, 13 Jul 2025 14:24:16 -0500
+Return-path: <notesao@host.notesao.com>
+Envelope-to: sales@notesao.com
+Delivery-date: Sun, 13 Jul 2025 14:24:16 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <notesao@host.notesao.com>)
+	id 1ub2J6-00000007TaS-2wrD
+	for sales@notesao.com;
+	Sun, 13 Jul 2025 14:24:16 -0500
+To: sales@notesao.com
+Subject: New NotesAO Interest Lead
+X-PHP-Script: notesao.com/new-signup.php for 70.116.211.150
+ X-PHP-Originating-Script: 1007:new-signup.php
+From: no-reply@notesao.com
+Reply-To: gabecthomas@gmail.com
+Content-Type: text/plain; charset=utf-8
+Message-Id: <E1ub2J6-00000007TaS-2wrD@host.notesao.com>
+Date: Sun, 13 Jul 2025 14:24:16 -0500
+
+Name:       Gabriel Thomas
+Clinic:     FFL - Security Patch
+# Clients:  750
+Software:   NotesAO
+E-Mail:     gabecthomas@gmail.com
+Phone:      6822016458
+
+Message:
+testing reCAPTHA addition
+

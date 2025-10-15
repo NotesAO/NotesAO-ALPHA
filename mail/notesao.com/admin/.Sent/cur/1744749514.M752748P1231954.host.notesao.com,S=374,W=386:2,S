@@ -1,0 +1,13 @@
+MIME-Version: 1.0
+Date: Tue, 15 Apr 2025 15:38:34 -0500
+From: admin@notesao.com
+To: vanericmartin@gmail.com
+Subject: Test
+User-Agent: Roundcube Webmail/1.6.9
+Message-ID: <bfaec747f7961f276b980006d9e19919@notesao.com>
+X-Sender: admin@notesao.com
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+Content-Transfer-Encoding: 7bit
+
+Just testing SPF/DKIM deliverability.

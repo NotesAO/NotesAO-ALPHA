@@ -1,0 +1,73 @@
+Return-Path: <>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id /XebJuVeQmg+sh0AIW4ynA
+	(envelope-from <>)
+	for <sales@notesao.com>; Thu, 05 Jun 2025 22:22:13 -0500
+Return-path: <>
+Envelope-to: sales@notesao.com
+Delivery-date: Thu, 05 Jun 2025 22:22:13 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1uNNen-00000008AHo-2XNa
+	for sales@notesao.com;
+	Thu, 05 Jun 2025 22:22:13 -0500
+X-Failed-Recipients: djacob@starcouncil.org
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: sales@notesao.com
+References: <f702b403e068c670c8bbc64eea2daf80@notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1749180133-eximdsn-1583220272
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1uNNen-00000008AHo-2XNa@host.notesao.com>
+Date: Thu, 05 Jun 2025 22:22:13 -0500
+
+--1749180133-eximdsn-1583220272
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  djacob@starcouncil.org
+    host starcouncil-org.mail.protection.outlook.com [52.101.11.17]
+    SMTP error from remote mail server after RCPT TO:<djacob@starcouncil.org>:
+    550 5.4.1 Recipient address rejected: Access denied. For more information see https://aka.ms/EXOSmtpErrors [SN1PEPF000397B0.namprd05.prod.outlook.com 2025-06-06T03:22:12.348Z 08DDA2F5CD6D446D]
+
+--1749180133-eximdsn-1583220272
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;djacob@starcouncil.org
+Status: 5.0.0
+Remote-MTA: dns; starcouncil-org.mail.protection.outlook.com
+Diagnostic-Code: smtp; 550 5.4.1 Recipient address rejected: Access denied. For more information see https://aka.ms/EXOSmtpErrors [SN1PEPF000397B0.namprd05.prod.outlook.com 2025-06-06T03:22:12.348Z 08DDA2F5CD6D446D]
+
+--1749180133-eximdsn-1583220272
+Content-type: text/rfc822-headers
+
+Return-path: <sales@notesao.com>
+Received: from [::1] (port=46172 helo=host.notesao.com)
+	by host.notesao.com with esmtpa (Exim 4.98.2)
+	(envelope-from <sales@notesao.com>)
+	id 1uNNem-00000008AHV-0VmB;
+	Thu, 05 Jun 2025 22:22:11 -0500
+MIME-Version: 1.0
+Date: Thu, 05 Jun 2025 22:22:10 -0500
+From: sales@notesao.com
+To: tgibson@starcouncil.org, teverett@starcouncil.org,
+ djacob@starcouncil.org, smartinez@starcouncil.org
+Subject: Notes AO
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <f702b403e068c670c8bbc64eea2daf80@notesao.com>
+X-Sender: sales@notesao.com
+Content-Type: multipart/mixed;
+ boundary="=_5598b39d861abb696cc47325692942b7"
+X-Exim-DSN-Information: Due to administrative limits only headers are returned
+
+
+--1749180133-eximdsn-1583220272--

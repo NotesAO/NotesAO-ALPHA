@@ -1,0 +1,216 @@
+Return-Path: <lorilovern@yahoo.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id CRndI+wwy2irASkAIW4ynA
+	(envelope-from <lorilovern@yahoo.com>); Wed, 17 Sep 2025 17:06:36 -0500
+Return-path: <lorilovern@yahoo.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 17 Sep 2025 17:06:36 -0500
+Received: from sonic305-22.consmr.mail.ne1.yahoo.com ([66.163.185.148]:42292)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <lorilovern@yahoo.com>)
+	id 1uz0IM-0000000BH73-1Agn
+	for admin@notesao.com;
+	Wed, 17 Sep 2025 17:06:36 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1758146793; bh=sQevJQy43kIHJVqIiUYv7wUzktA746hLuzK7wi0CUiE=; h=From:Subject:Date:References:To:In-Reply-To:From:Subject:Reply-To; b=RzKtfvhpImJeRmpNK1N4CI9+2bqEEshd4ut98Dul13iBimZNS+pReb+TyIZrcUGdBUdBUgCDgcEzBLvU+xHte90DY4fzlsBXhXrBXX08nCIVOZBoOknyfH2RFhKR6yGktT4Tq3lB98mJ0nooaB92P1zV27PRi/Pe2s3Q/ip5jlhQ5xT1M5KrnCHVv9Pw1+TTXy8LXplytmCoccCmcA4B0nHPT2GPTC1wRZLygsGZNR6VlMtFTxi68+wybm95XhRxliDn/MOBy4u2hOjcuYLEZxqkzAFRJfJ8F4JGwCX9vxf1kYrpqy4GZOoGxKevoHmzIf5a3DNYWF8Af1CW6LcJdQ==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1758146793; bh=GzDfllx6j2rhxxxNruediYQ98AL26fMM/438AcPKK0l=; h=X-Sonic-MF:From:Subject:Date:To:From:Subject; b=GCZ0+hLNnyp1zw3eOo7C8/audF5L0rHok9OVdYdF+GqBIXhIaNrncP8v5dFE2EspxvmwZI8135lWueVUYH1xYuN5v2ENZn/auXAhsQqWKaC/1tE4sR5+IjhiJpH5ptFc3WloVBtt2+oJWWBneCwCgwoAZnmu3EHCY69EIA1gBW3ejwDk8vGSnHadoW/OixK36rsKUg99c3V5nPnkQfe3AuugTDjFp2Itfi8VB994lolr6DUn/HIYg6qiENkzNOyXyPEORJQ6YYZQ7sCe8yzxVow0dUTDwjgt2m+/b084wKeSliW2YkJfDyohbaTuc8AIR5UFYqRM69YBSTXGJB1PDg==
+X-YMail-OSG: 4c7KWvcVM1nr8JNC_8PxPZviRMnq7WCfxlczJ6E6DsEAovi5MlQYMWoS9lMGgeu
+ aAE.Ld1r_mwTs6oTG001WdWiNcsvU8eh99qLRzaTisERG5wAGuKDZH_CExzo6nNmC_0vjKWzKFV2
+ tv8TrUkReTNsiblXrnZHVNwEwjngWZ.mC4lHl9WQfMFLdFdVPGFzEO47MaQqBvJyPx_73eTUoXT7
+ E9XJE00g5Yn6TKVvsbCziT3G52W9RSHvY51ihFUpJkjcr1YoTAm5DwZ5du.TdjEbI8uE4ahT_gYU
+ toPqvN9JkWJ6EPTWMSpm8VW542SAeNDoEEqvHa5hyMRAKte9BbSwQaBa.0KhYOfBTdhwdgnpZmk2
+ wrfarFgeGr8UtBDGOPRZBR0oCWnE5DSzwvtoAJVysKieCNXVec.T9nAAKu34rtuRGyfAXF0xZ45I
+ Zh4r5Hj2LmXxe11W5gGp6YEMxebHkTUw70e_tlhW4_b.w.onMq99xFVMEJvi2Z17Da1l0tI3pWh9
+ 6rcwSQF9ydd15gukL3rFSrl6PG4gxBW3mxNTdsGh2yRx5U_IjhyauKUaDrIgJWxNSXAM0TE9MVIQ
+ 8P0eDO.nsErxremjHxQCd16_ZveMs7QdIs4cWpPXrKCvDVdJEqUG03Dq11xiZGEk8CkwuTkMLKgd
+ 6guJ.JplBa4kzP1Gv8HJZ9L1CStp4wf1VireKQG7r9De7rV9XYmUdrupGc9XL.s6MS1w15jaR8bA
+ 78GrajDmAGDgXBh8QEeX5DtZkmpZ76paVrTENGrw6OewWwaRsU5P2Rhk96rfLI2m5GGQwZAjopvz
+ 9cZWNXZTbXAfnhpdq9jToh9wafOLz4ePIkqwcrUGGU1g2tKe8Ir0ZXFXho_.R6I3ZNc6APYvX62t
+ Ek5VxxpxKM_clhDFD4sn6fI.wIfT6iMHjcoAR64byAEJq5cXgiybnxZBBCFr..gJcUZY_ECzPrBC
+ _PPjs0Qp13cyOXmtF5KNWLZkT8bB8wv9kMeyZr77XaIT1EU9eVyj0GIlKNKlzL4aNz7XNEaCMvDJ
+ FMHpbZLCuEsLsfQDm7Op3LUq8z.YIwSLrJ34Lt4W1eDaIub3vHPE7nED8jfhFrQ3jcR1z3VIkgDQ
+ xEcpQN2fWm0CKlPk1R7fduEu8H8LsLyZbKGfY9556EVWrm63XTNwt6.yuKWPTmDoTAk8.fFfzQcS
+ DQGPDJW_eOsNRiNkLiRiT47RdrEdCPoitY6.RrsMKezpAYWAn4rbmtyRkWMiFgcCkbuP5qjnhTBU
+ uHifMxbA9wW5Ax0nEoZFMpoDd7WjkBK.RHCLpi9XUjJ9GZ4MJlXzjb5auYwytxHSpvLKxkJJALFy
+ 09NEnO.2OZoQBdFTm4Hoo5gS5OZO6G7EQ4gXaTPWgzPIesylizfyL01bptL6CfoSXbXdTbuW9MVL
+ l9PNGIkk3K14J8dSMUP_lU3tTlWYVtMxvcDg7EH.iPvZm8fdv9IK.J4oFoQQBh7sskWXZR15H.cf
+ 8GCrhgZcBAlc6Fsov9V5Xdrdb2usQUx5Ivw4XRr.PKLzlrAowr9Onas6cbtlKWbkE5xU61vQPOxH
+ pSbj.H_pSOEPaDQSaU8vIRmYlz4g.NjF4E7uE61i7mceZfqMusrIz6RDOQYNwbU9P4QwxYYyGKnw
+ kyrwxmzMaDnEeDplRsIqUYC5JC2DQ75QDG1fs4ubQEqj0mx3M8LkkexSPrnnZcaFcYMmZ48bcteR
+ X5pIoEEI8JSwbRrJ599eo1UU7nMpeP8riHXWfGI4tnO_7k.16dJGvPk224DK4ewLa1sqFH4NYzZ_
+ 9.whiKM_xo0x7KDhHiNT8t.MFVP.wAtoBnLQgLQUAKGUTIllf7wJOGZT7nGNRM7bxXplJVo5wkuL
+ zsKaYSo.HhYpyOMTw_Z2httwIk93tdo9bItvh5wcl4WKl5CzvTuFbIsSqDCpETnlnSarB0CxySbW
+ z1BOIUc3d_c3w4.QoHvbUEAsa.lSCcVBSn_rKn9Ab4WKA2CV60dMJzf5DuV9iE5HYZOiqoOdlbaA
+ 8Ct3aaefUmxQYrHM2XzghkI0TvMc4bor10aojnjHk_vOhvJ.InUP.Cpqjzj64Ilwwkd0SraJA9GT
+ x5qGo2KyTBvix7IkqUouvlNL6gSfkRU6jaIwnL57o3xG_PivjJ7LivXCk3d7DkvIhTqZTYf4s270
+ jxPwBvFWhfeeDyowxbOUPx1j.904zG2mEYNi5JQDeRw_X6NmMNrqkKcNasEPdsmiLhBwed5936Mt
+ oZBdxdP6R5oML.gdl7OfQVz_ryxiZ61foV2YyLfAwwERQ8BbWejTJzWvdVjJqvlv3TxOH3eG4SYD
+ hNw--
+X-Sonic-MF: <lorilovern@yahoo.com>
+X-Sonic-ID: b8070903-85da-4fca-81fe-b9ef39025658
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic305.consmr.mail.ne1.yahoo.com with HTTP; Wed, 17 Sep 2025 22:06:33 +0000
+Received: by hermes--production-ne1-6b9c565dcd-npnnn (Yahoo Inc. Hermes SMTP Server) with ESMTPA ID 88aac7798240f12591da39c122884efa;
+          Wed, 17 Sep 2025 22:06:31 +0000 (UTC)
+From: Lori Love <lorilovern@yahoo.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_948DCDAA-1402-4CB5-8A84-EBDE8693B084"
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.700.81\))
+Date: Wed, 17 Sep 2025 17:06:21 -0500
+References: <E1uyzjP-0000000BDLm-1mtX@host.notesao.com>
+To: admin@notesao.com
+In-Reply-To: <E1uyzjP-0000000BDLm-1mtX@host.notesao.com>
+Message-Id: <1504A6D2-F535-4512-BF06-02C4173B4826@yahoo.com>
+X-Mailer: Apple Mail (2.3826.700.81)
+Content-Length: 4314
+X-Spam-Status: Yes, score=5.2
+X-Spam-Score: 52
+X-Spam-Bar: +++++
+X-Spam-Report: Spam detection software, running on the system "host.notesao.com",
+ has identified this incoming email as possible spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Hello, I wanted to respond for Lawson Love. This is his wife
+    Lori Love and he is very sick and in the hospital so will not be able to
+   attend tonight’s class. He has been admitted to Methodist Southl [...] 
+ Content analysis details:   (5.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [66.163.185.148 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [66.163.185.148 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [66.163.185.148 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: notesao.com]
+                             [URI: freeforlifegroup.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [lorilovern(at)yahoo.com]
+  1.3 HTML_IMAGE_ONLY_24     BODY: HTML: images with 2000-2400 bytes of words
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  1.7 RAZOR2_CHECK           Listed in Razor2 (http://razor.sf.net/)
+  2.4 RAZOR2_CF_RANGE_51_100 Razor2 gives confidence level above 50%
+                             [cf: 100]
+X-Spam-Flag: YES
+Subject:  ***SPAM***  Re: Men's BIPP Group Reminder: Wednesday at 7:30 PM
+
+
+--Apple-Mail=_948DCDAA-1402-4CB5-8A84-EBDE8693B084
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Hello,
+I wanted to respond for Lawson Love.  This is his wife Lori Love and he =
+is very sick and in the hospital so will not be able to attend =
+tonight=E2=80=99s class.  He has been admitted to Methodist Southlake =
+Hospital an is in the ICU.  Please let me know if you need verification =
+for his absence?
+Thank you,
+Lori Love
+214-770-5673
+
+> On Sep 17, 2025, at 4:30=E2=80=AFPM, Free for Life Group =
+<no-reply@ffl.notesao.com> wrote:
+>=20
+>=20
+> Hi Lawson,
+>=20
+> Your Men's BIPP group is Wednesday at 7:30 PM (Wednesday, September =
+17).
+>=20
+> Your BIPP group is scheduled. Deann Graham expects your presence. =
+Please arrive early. Lockout is 7:40 PM. Your presence is a mandatory =
+stipulation. Incarceration occurs for non-attendance. Enjoy life =
+fearlessly by remaining in good standing with CSCD & TDCJ. You've got =
+this!
+>=20
+> Where: Virtual (Use your group link):
+> Wednesday 7:30 PM Group Link =
+<https://freeforlifegroup.com/wednesday-mens-parole-cps-18-week/>
+> Client Portal (for Make-Up Group Options):
+> FFL =E2=80=93 Client Portal <https://ffl.notesao.com/clientportal.php>
+> Questions? Reply to this email with any attendance or payement =
+concerns OR call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+>=20
+> Blessings,
+> Free for Life Group
+>=20
+> This reminder was sent by Free for Life Group. If you no longer wish =
+to receive emails at this address, unsubscribe here =
+<https://ffltest.notesao.com/unsubscribe.php?e=3Dlorilovern%40yahoo.com&t=3D=
+e9ea4278affc707c22e9a6d062360b36fb0aba424b27937469c3dee418c7631a>.
+>=20
+
+
+--Apple-Mail=_948DCDAA-1402-4CB5-8A84-EBDE8693B084
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"overflow-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;">Hello,<div>I =
+wanted to respond for Lawson Love. &nbsp;This is his wife Lori Love and =
+he is very sick and in the hospital so will not be able to attend =
+tonight=E2=80=99s class. &nbsp;He has been admitted to Methodist =
+Southlake Hospital an is in the ICU. &nbsp;Please let me know if you =
+need verification for his absence?</div><div>Thank you,</div><div>Lori =
+Love</div><div>214-770-5673<br =
+id=3D"lineBreakAtBeginningOfMessage"><div><br><blockquote =
+type=3D"cite"><div>On Sep 17, 2025, at 4:30=E2=80=AFPM, Free for Life =
+Group &lt;no-reply@ffl.notesao.com&gt; wrote:</div><br =
+class=3D"Apple-interchange-newline"><div><div =
+style=3D"text-align:center;margin:0 0 12px 0"><img =
+src=3D"https://ffltest.notesao.com/ffllogo.png" alt=3D"Free for Life =
+Group" =
+style=3D"max-width:100%;height:auto;display:inline-block;"></div><p>Hi =
+Lawson,</p><p><strong>Your Men's BIPP group is Wednesday at 7:30 PM =
+(Wednesday, September 17).</strong></p><p>
+  Your BIPP group is scheduled. Deann Graham expects your presence.
+  Please arrive early. <em>Lockout is 7:40 PM</em>. Your presence is a =
+mandatory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by =
+remaining in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p><p>Where: Virtual (Use your group link):<br><a =
+href=3D"https://freeforlifegroup.com/wednesday-mens-parole-cps-18-week/">W=
+ednesday 7:30 PM Group Link</a></p><p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href=3D"https://ffl.notesao.com/clientportal.php">FFL =E2=80=93 =
+Client Portal</a>
+</p><p>
+  Questions? Reply to this email with any attendance or payement =
+concerns OR call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+</p><p>Blessings,<br>Free for Life Group</p><hr style=3D"border-top:1px =
+solid #ddd;margin:24px 0;"><p style=3D"font:12px/1.4 =
+Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free =
+for Life Group. If you no longer wish to receive emails at this address, =
+<a =
+href=3D"https://ffltest.notesao.com/unsubscribe.php?e=3Dlorilovern%40yahoo=
+.com&amp;t=3De9ea4278affc707c22e9a6d062360b36fb0aba424b27937469c3dee418c76=
+31a">unsubscribe here</a>.</p>
+</div></blockquote></div><br></div></body></html>=
+
+--Apple-Mail=_948DCDAA-1402-4CB5-8A84-EBDE8693B084--

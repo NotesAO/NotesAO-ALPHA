@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id cPzUOFyzxGjL9jwAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Fri, 12 Sep 2025 18:57:16 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Fri, 12 Sep 2025 18:57:16 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uxDdk-0000000GlMr-3ouG
+	for admin@notesao.com;
+	Fri, 12 Sep 2025 18:57:16 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Marcos Serrano
+X-PHP-Script: ffl.notesao.com/intake.php for 107.203.134.131
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: genesisnjulian@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uxDdk-0000000GlMr-3ouG@host.notesao.com>
+Date: Fri, 12 Sep 2025 18:57:16 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

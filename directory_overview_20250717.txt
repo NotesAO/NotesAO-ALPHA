@@ -1,0 +1,1155 @@
+NotesAO directory overview – generated Thu Jul 17 16:51:03 CDT 2025
+
+──────────────────────────────────────────────────────────────
+1. /home/notesao/ffltest/
+   • Clinic‑specific web root for the FFLTEST clinic.
+   • Contains PHP scripts, assets, and cron jobs that are
+     unique to that clinic (e.g., client‑create.php, custom
+     branding, favicon logic, nightly DB‑backup scripts).
+   • Mirrors the public_html layout but is sandboxed to the
+     clinic’s own database (clinicnotepro_ffltest).
+
+/home/notesao/ffltest/
+├── config
+│   ├── config.php
+│   ├── config.php.bak
+│   ├── config_sample.php
+│   ├── db
+│   └── users.txt
+├── documents
+│   ├── BIPP_Accreditation_Guidelines.pdf
+│   ├── import_sample.xlsx
+│   └── Onboarding.docx
+├── import
+│   ├── conversion_addicare.sql
+│   ├── conversion.sql
+│   ├── project
+│   └── temp.sql
+├── messaging
+│   ├── recepient.csv
+│   ├── sample1.txt
+│   └── sample_van.txt
+├── public_html
+│   ├── absence_20241008_020001.html
+│   ├── absence-create.php
+│   ├── absence-delete.php
+│   ├── absence_logic_daily.php
+│   ├── absence_logic.php
+│   ├── absence_logic_weekly.php
+│   ├── absence-read.php
+│   ├── absence-update.php
+│   ├── admin
+│   ├── attendance_record-create.php
+│   ├── attendance_record-delete.php
+│   ├── attendance_record-index.php
+│   ├── attendance_record-read.php
+│   ├── attendance_record-update.php
+│   ├── authenticate.php
+│   ├── auth.php
+│   ├── build_report2_table_gen.php
+│   ├── build_report2_table.php
+│   ├── build_report3_table.php
+│   ├── build_report3_table.php.orig
+│   ├── build_report4_table.php
+│   ├── build_report_table.php
+│   ├── case_manager-create.php
+│   ├── case_manager-delete.php
+│   ├── case_manager-index.php
+│   ├── case_manager-read.php
+│   ├── case_manager-update.php
+│   ├── check_absences.php
+│   ├── check_in_step1.php
+│   ├── check_in_step2.php
+│   ├── check_in_step3.php
+│   ├── check_in_step4.php
+│   ├── check_in_step5.php
+│   ├── client-attendance.php
+│   ├── client-contract-upload.php
+│   ├── client-create.php
+│   ├── client-delete.php
+│   ├── client-event-add.php
+│   ├── client-event-delete.php
+│   ├── client-event.php
+│   ├── client-event-update.php
+│   ├── client-image-upload.php
+│   ├── client-index.php
+│   ├── client-ledger.php
+│   ├── clientportal.php
+│   ├── client-read.php
+│   ├── client_review_panel.php
+│   ├── client-review.php
+│   ├── client-update.php
+│   ├── client-victim-create.php
+│   ├── client-victim-delete.php
+│   ├── client-victim-index.php
+│   ├── client-victim.php
+│   ├── client-victim-update.php
+│   ├── completion_logic.php
+│   ├── composer.json
+│   ├── composer.lock
+│   ├── curriculum-create.php
+│   ├── curriculum-delete.php
+│   ├── curriculum-index.php
+│   ├── curriculum-read.php
+│   ├── curriculum-update.php
+│   ├── documents
+│   ├── download2.php
+│   ├── download.php
+│   ├── dump_report5_csv_gen.php
+│   ├── dump_report5_csv.php
+│   ├── dump_report_csv.php
+│   ├── error_log
+│   ├── error.php
+│   ├── ethnicity-create.php
+│   ├── ethnicity-delete.php
+│   ├── ethnicity-index.php
+│   ├── ethnicity-read.php
+│   ├── ethnicity-update.php
+│   ├── facilitator-create.php
+│   ├── facilitator-delete.php
+│   ├── facilitator-index.php
+│   ├── facilitator-read.php
+│   ├── facilitator-update.php
+│   ├── favicon.ico -> /home/clinicnotepro/public_html/favicon.ico
+│   ├── favicons
+│   ├── fetch_data_auto.php
+│   ├── fetch_data.php
+│   ├── ffllogo.png
+│   ├── GeneratedDocuments
+│   ├── generate_reports.php
+│   ├── getImageKey.php
+│   ├── getImage.php
+│   ├── get_task_status.php
+│   ├── helpers.php
+│   ├── home_auth.php
+│   ├── home.php
+│   ├── image-create.php
+│   ├── image-delete.php
+│   ├── image-index.php
+│   ├── image-read.php
+│   ├── image-update.php
+│   ├── img
+│   ├── index.php
+│   ├── intake.php
+│   ├── ledger-create.php
+│   ├── ledger-delete.php
+│   ├── ledger-read.php
+│   ├── ledger-update.php
+│   ├── location-create.php
+│   ├── location-delete.php
+│   ├── location-index.php
+│   ├── location-read.php
+│   ├── location-update.php
+│   ├── logout.php
+│   ├── logs
+│   ├── mar2.php -> mar.php
+│   ├── mar.php
+│   ├── message_csv_buildform.php
+│   ├── message_csv.php
+│   ├── message_results.php
+│   ├── navbar.php
+│   ├── NoteProLogoFinal.ico
+│   ├── officedocuments.php
+│   ├── phpinfo.php
+│   ├── php.ini
+│   ├── profile.php
+│   ├── program-select.php
+│   ├── referral_type-create.php
+│   ├── referral_type-delete.php
+│   ├── referral_type-index.php
+│   ├── referral_type-read.php
+│   ├── referral_type-update.php
+│   ├── reportgen_errors.log
+│   ├── reportgen.php
+│   ├── reporting.php
+│   ├── send_sms.php
+│   ├── sql_functions.php
+│   ├── style.css
+│   ├── style.scss
+│   ├── test.php
+│   ├── therapy_group-create.php
+│   ├── therapy_group-delete.php
+│   ├── therapy_group-index.php
+│   ├── therapy_group-read.php
+│   ├── therapy_group-update.php
+│   ├── therapy_session-attendance.php
+│   ├── therapy_session-create.php
+│   ├── therapy_session-delete.php
+│   ├── therapy_session-index.php
+│   ├── therapy_session-read.php
+│   ├── therapy_session-update.php
+│   ├── truant_client.php
+│   └── update_clients.php
+├── report
+│   ├── mar
+│   └── merge
+├── scripts
+│   ├── auto_complete.sh
+│   ├── create_absence.sh
+│   ├── fetch_data.sh
+│   ├── logs
+│   └── update_clients.sh
+└── therapytrack
+
+19 directories, 161 files
+
+
+──────────────────────────────────────────────────────────────
+2. /home/notesao/NotePro-Report-Generator/
+   • Centralised Flask / PHP hybrid that builds MAR, progress
+     reports, BIPP letters, CSV dumps, etc.
+   • Key sub‑folders:
+       templates/   – Jinja & PHP templates per clinic
+       csv/         – Auto‑generated CSVs, {Clinic}_report*.csv
+       scripts/     – Python helpers (Celery tasks, LibreOffice
+                      conversions, behaviour‑contract scripts)
+       static/      – Shared JS (Chart.js helpers), CSS, logos
+   • Gunicorn + Celery run from here (port 8002 by default).
+
+/home/notesao/NotePro-Report-Generator/
+├── =4.2.5
+├── absence
+├── absence_reports
+│   ├── ctc
+│   ├── dwag
+│   ├── ffltest
+│   ├── safatherhood
+│   ├── sandbox
+│   └── transform
+├── AC_Completion_Documents_Script.py
+├── AC_Entrance_Notifications_Script.py
+├── AC_Exit_Notices_Script.py
+├── AC_Progress_Reports_Script.py
+├── AC_Unexcused_Absences_Script.py
+├── app.log
+├── BIPP_Behavior_Contracts_Script.py
+├── BIPP_Completion_Documents_Script.py
+├── BIPP_CUR_Progress_Reports_Script.py
+├── BIPP_Entrance_Notifications_Script.py
+├── BIPP_Exit_Notices_Script.py
+├── BIPP_SOC_Progress_Reports_Script.py
+├── BIPP_Unexcused_Absences_Script.py
+├── BIPP_Victim_Letters_Script.py
+├── celery.out
+├── check_absences.py
+├── csv
+│   ├── ctc
+│   ├── dwag
+│   ├── ffltest
+│   ├── safatherhood
+│   ├── sandbox
+│   └── transform
+├── DocumentsCSV
+├── dump.rdb
+├── fetch_data_errors.log
+├── fetch_data.php
+├── GeneratedDocuments
+│   ├── ctc
+│   ├── dwag
+│   ├── ffltest
+│   ├── safatherhood
+│   ├── sandbox
+│   └── transform
+├── GeneratedReports
+├── gunicorn_config.py
+├── gunicorn.conf.py
+├── gunicorn.out
+├── LibreOffice_24.8.2.1_Linux_x86-64_rpm
+│   ├── install
+│   ├── readmes
+│   └── RPMS
+├── LibreOffice_24.8.2_Linux_x86-64_rpm.tar.gz
+├── LibreOffice_24.8.2_Linux_x86-64_rpm.tar.gz.1
+├── logs
+│   ├── AC_Completion_Documents_20250107.log
+│   ├── AC_Completion_Documents_20250108.log
+│   ├── AC_Completion_Documents_20250110.log
+│   ├── AC_Completion_Documents_20250122.log
+│   ├── AC_Completion_Documents_20250123.log
+│   ├── AC_Completion_Documents_20250128.log
+│   ├── AC_Completion_Documents_20250130.log
+│   ├── AC_Completion_Documents_20250211.log
+│   ├── AC_Completion_Documents_20250212.log
+│   ├── AC_Completion_Documents_20250216.log
+│   ├── AC_Completion_Documents_20250217.log
+│   ├── AC_Completion_Documents_20250224.log
+│   ├── AC_Completion_Documents_20250303.log
+│   ├── AC_Completion_Documents_20250310.log
+│   ├── AC_Completion_Documents_20250317.log
+│   ├── AC_Completion_Documents_20250421.log
+│   ├── AC_Completion_Documents_20250428.log
+│   ├── AC_Completion_Documents_20250505.log
+│   ├── AC_Completion_Documents_20250506.log
+│   ├── AC_Completion_Documents_20250507.log
+│   ├── AC_Completion_Documents_20250508.log
+│   ├── AC_Completion_Documents_20250512.log
+│   ├── AC_Completion_Documents_20250515.log
+│   ├── AC_Completion_Documents_20250519.log
+│   ├── AC_Completion_Documents_20250526.log
+│   ├── AC_Completion_Documents_20250528.log
+│   ├── AC_Completion_Documents_20250529.log
+│   ├── AC_Completion_Documents_20250602.log
+│   ├── AC_Completion_Documents_20250609.log
+│   ├── AC_Completion_Documents_20250610.log
+│   ├── AC_Completion_Documents_20250616.log
+│   ├── AC_Completion_Documents_20250623.log
+│   ├── AC_Completion_Documents_20250630.log
+│   ├── AC_Completion_Documents_20250707.log
+│   ├── AC_Completion_Documents_20250714.log
+│   ├── AC_Completion_Documents_20250716.log
+│   ├── AC_Entrance_Notifications_20250107.log
+│   ├── AC_Entrance_Notifications_20250108.log
+│   ├── AC_Entrance_Notifications_20250110.log
+│   ├── AC_Entrance_Notifications_20250122.log
+│   ├── AC_Entrance_Notifications_20250123.log
+│   ├── AC_Entrance_Notifications_20250128.log
+│   ├── AC_Entrance_Notifications_20250130.log
+│   ├── AC_Entrance_Notifications_20250211.log
+│   ├── AC_Entrance_Notifications_20250217.log
+│   ├── AC_Entrance_Notifications_20250224.log
+│   ├── AC_Entrance_Notifications_20250303.log
+│   ├── AC_Entrance_Notifications_20250310.log
+│   ├── AC_Entrance_Notifications_20250317.log
+│   ├── AC_Entrance_Notifications_20250421.log
+│   ├── AC_Entrance_Notifications_20250428.log
+│   ├── AC_Entrance_Notifications_20250505.log
+│   ├── AC_Entrance_Notifications_20250506.log
+│   ├── AC_Entrance_Notifications_20250508.log
+│   ├── AC_Entrance_Notifications_20250512.log
+│   ├── AC_Entrance_Notifications_20250515.log
+│   ├── AC_Entrance_Notifications_20250519.log
+│   ├── AC_Entrance_Notifications_20250526.log
+│   ├── AC_Entrance_Notifications_20250528.log
+│   ├── AC_Entrance_Notifications_20250602.log
+│   ├── AC_Entrance_Notifications_20250605.log
+│   ├── AC_Entrance_Notifications_20250609.log
+│   ├── AC_Entrance_Notifications_20250610.log
+│   ├── AC_Entrance_Notifications_20250616.log
+│   ├── AC_Entrance_Notifications_20250623.log
+│   ├── AC_Entrance_Notifications_20250630.log
+│   ├── AC_Entrance_Notifications_20250703.log
+│   ├── AC_Entrance_Notifications_20250707.log
+│   ├── AC_Entrance_Notifications_20250714.log
+│   ├── AC_Exit_Notices_20250107.log
+│   ├── AC_Exit_Notices_20250108.log
+│   ├── AC_Exit_Notices_20250110.log
+│   ├── AC_Exit_Notices_20250122.log
+│   ├── AC_Exit_Notices_20250123.log
+│   ├── AC_Exit_Notices_20250128.log
+│   ├── AC_Exit_Notices_20250130.log
+│   ├── AC_Exit_Notices_20250211.log
+│   ├── AC_Exit_Notices_20250217.log
+│   ├── AC_Exit_Notices_20250224.log
+│   ├── AC_Exit_Notices_20250303.log
+│   ├── AC_Exit_Notices_20250310.log
+│   ├── AC_Exit_Notices_20250317.log
+│   ├── AC_Exit_Notices_20250421.log
+│   ├── AC_Exit_Notices_20250428.log
+│   ├── AC_Exit_Notices_20250505.log
+│   ├── AC_Exit_Notices_20250508.log
+│   ├── AC_Exit_Notices_20250512.log
+│   ├── AC_Exit_Notices_20250519.log
+│   ├── AC_Exit_Notices_20250526.log
+│   ├── AC_Exit_Notices_20250528.log
+│   ├── AC_Exit_Notices_20250602.log
+│   ├── AC_Exit_Notices_20250609.log
+│   ├── AC_Exit_Notices_20250616.log
+│   ├── AC_Exit_Notices_20250623.log
+│   ├── AC_Exit_Notices_20250630.log
+│   ├── AC_Exit_Notices_20250707.log
+│   ├── AC_Exit_Notices_20250714.log
+│   ├── AC_Progress_Reports_20250107.log
+│   ├── AC_Progress_Reports_20250108.log
+│   ├── AC_Progress_Reports_20250110.log
+│   ├── AC_Progress_Reports_20250122.log
+│   ├── AC_Progress_Reports_20250123.log
+│   ├── AC_Progress_Reports_20250128.log
+│   ├── AC_Progress_Reports_20250130.log
+│   ├── AC_Progress_Reports_20250211.log
+│   ├── AC_Progress_Reports_20250217.log
+│   ├── AC_Progress_Reports_20250219.log
+│   ├── AC_Progress_Reports_20250221.log
+│   ├── AC_Progress_Reports_20250303.log
+│   ├── AC_Progress_Reports_20250304.log
+│   ├── AC_Progress_Reports_20250310.log
+│   ├── AC_Progress_Reports_20250313.log
+│   ├── AC_Progress_Reports_20250314.log
+│   ├── AC_Progress_Reports_20250317.log
+│   ├── AC_Progress_Reports_20250421.log
+│   ├── AC_Progress_Reports_20250424.log
+│   ├── AC_Progress_Reports_20250428.log
+│   ├── AC_Progress_Reports_20250505.log
+│   ├── AC_Progress_Reports_20250512.log
+│   ├── AC_Progress_Reports_20250519.log
+│   ├── AC_Progress_Reports_20250526.log
+│   ├── AC_Progress_Reports_20250528.log
+│   ├── AC_Progress_Reports_20250603.log
+│   ├── AC_Progress_Reports_20250604.log
+│   ├── AC_Progress_Reports_20250609.log
+│   ├── AC_Progress_Reports_20250616.log
+│   ├── AC_Progress_Reports_20250618.log
+│   ├── AC_Progress_Reports_20250623.log
+│   ├── AC_Progress_Reports_20250630.log
+│   ├── AC_Progress_Reports_20250703.log
+│   ├── AC_Progress_Reports_20250707.log
+│   ├── AC_Progress_Reports_20250716.log
+│   ├── AC_Progress_Reports_20250717.log
+│   ├── AC_Unexcused_Absences_20250107.log
+│   ├── AC_Unexcused_Absences_20250108.log
+│   ├── AC_Unexcused_Absences_20250110.log
+│   ├── AC_Unexcused_Absences_20250122.log
+│   ├── AC_Unexcused_Absences_20250123.log
+│   ├── AC_Unexcused_Absences_20250128.log
+│   ├── AC_Unexcused_Absences_20250130.log
+│   ├── AC_Unexcused_Absences_20250211.log
+│   ├── AC_Unexcused_Absences_20250217.log
+│   ├── AC_Unexcused_Absences_20250224.log
+│   ├── AC_Unexcused_Absences_20250303.log
+│   ├── AC_Unexcused_Absences_20250310.log
+│   ├── AC_Unexcused_Absences_20250317.log
+│   ├── AC_Unexcused_Absences_20250421.log
+│   ├── AC_Unexcused_Absences_20250428.log
+│   ├── AC_Unexcused_Absences_20250505.log
+│   ├── AC_Unexcused_Absences_20250512.log
+│   ├── AC_Unexcused_Absences_20250515.log
+│   ├── AC_Unexcused_Absences_20250519.log
+│   ├── AC_Unexcused_Absences_20250526.log
+│   ├── AC_Unexcused_Absences_20250528.log
+│   ├── AC_Unexcused_Absences_20250602.log
+│   ├── AC_Unexcused_Absences_20250609.log
+│   ├── AC_Unexcused_Absences_20250616.log
+│   ├── AC_Unexcused_Absences_20250623.log
+│   ├── AC_Unexcused_Absences_20250630.log
+│   ├── AC_Unexcused_Absences_20250707.log
+│   ├── AC_Unexcused_Absences_20250714.log
+│   ├── BIPP_Behavior_Contract_20250416.log
+│   ├── BIPP_Behavior_Contract_20250417.log
+│   ├── BIPP_Behavior_Contract_20250429.log
+│   ├── BIPP_Behavior_Contract_20250528.log
+│   ├── BIPP_Behavior_Contract_20250529.log
+│   ├── BIPP_Behavior_Contract_20250605.log
+│   ├── BIPP_Behavior_Contract_20250714.log
+│   ├── BIPP_Completion_Documents.log
+│   ├── BIPP_CUR_Progress_Reports_20250205.log
+│   ├── BIPP_CUR_Progress_Reports_20250206.log
+│   ├── BIPP_CUR_Progress_Reports_20250211.log
+│   ├── BIPP_CUR_Progress_Reports_20250212.log
+│   ├── BIPP_CUR_Progress_Reports_20250224.log
+│   ├── BIPP_CUR_Progress_Reports_20250225.log
+│   ├── BIPP_CUR_Progress_Reports_20250304.log
+│   ├── BIPP_CUR_Progress_Reports_20250306.log
+│   ├── BIPP_CUR_Progress_Reports_20250309.log
+│   ├── BIPP_CUR_Progress_Reports_20250312.log
+│   ├── BIPP_CUR_Progress_Reports_20250313.log
+│   ├── BIPP_CUR_Progress_Reports_20250318.log
+│   ├── BIPP_CUR_Progress_Reports_20250416.log
+│   ├── BIPP_CUR_Progress_Reports_20250422.log
+│   ├── BIPP_CUR_Progress_Reports_20250424.log
+│   ├── BIPP_CUR_Progress_Reports_20250428.log
+│   ├── BIPP_CUR_Progress_Reports_20250429.log
+│   ├── BIPP_CUR_Progress_Reports_20250430.log
+│   ├── BIPP_CUR_Progress_Reports_20250501.log
+│   ├── BIPP_CUR_Progress_Reports_20250505.log
+│   ├── BIPP_CUR_Progress_Reports_20250506.log
+│   ├── BIPP_CUR_Progress_Reports_20250507.log
+│   ├── BIPP_CUR_Progress_Reports_20250509.log
+│   ├── BIPP_CUR_Progress_Reports_20250512.log
+│   ├── BIPP_CUR_Progress_Reports_20250513.log
+│   ├── BIPP_CUR_Progress_Reports_20250514.log
+│   ├── BIPP_CUR_Progress_Reports_20250518.log
+│   ├── BIPP_CUR_Progress_Reports_20250519.log
+│   ├── BIPP_CUR_Progress_Reports_20250521.log
+│   ├── BIPP_CUR_Progress_Reports_20250528.log
+│   ├── BIPP_CUR_Progress_Reports_20250603.log
+│   ├── BIPP_CUR_Progress_Reports_20250604.log
+│   ├── BIPP_CUR_Progress_Reports_20250605.log
+│   ├── BIPP_CUR_Progress_Reports_20250609.log
+│   ├── BIPP_CUR_Progress_Reports_20250610.log
+│   ├── BIPP_CUR_Progress_Reports_20250613.log
+│   ├── BIPP_CUR_Progress_Reports_20250617.log
+│   ├── BIPP_CUR_Progress_Reports_20250618.log
+│   ├── BIPP_CUR_Progress_Reports_20250619.log
+│   ├── BIPP_CUR_Progress_Reports_20250627.log
+│   ├── BIPP_CUR_Progress_Reports_20250630.log
+│   ├── BIPP_CUR_Progress_Reports_20250707.log
+│   ├── BIPP_CUR_Progress_Reports_20250708.log
+│   ├── BIPP_CUR_Progress_Reports_20250711.log
+│   ├── BIPP_CUR_Progress_Reports_20250714.log
+│   ├── BIPP_CUR_Progress_Reports_20250717.log
+│   ├── BIPP_Entrance_Notifications.log
+│   ├── BIPP_Exit_Notices_20241205.log
+│   ├── BIPP_Exit_Notices_20241212.log
+│   ├── BIPP_Exit_Notices_20241213.log
+│   ├── BIPP_Exit_Notices_20241216.log
+│   ├── BIPP_Exit_Notices_20241218.log
+│   ├── BIPP_Exit_Notices_20241227.log
+│   ├── BIPP_Exit_Notices_20241230.log
+│   ├── BIPP_Exit_Notices_20250103.log
+│   ├── BIPP_Exit_Notices_20250107.log
+│   ├── BIPP_Exit_Notices_20250109.log
+│   ├── BIPP_Exit_Notices_20250110.log
+│   ├── BIPP_Exit_Notices_20250116.log
+│   ├── BIPP_Exit_Notices_20250122.log
+│   ├── BIPP_Exit_Notices_20250123.log
+│   ├── BIPP_Exit_Notices_20250128.log
+│   ├── BIPP_Exit_Notices_20250129.log
+│   ├── BIPP_Exit_Notices_20250130.log
+│   ├── BIPP_Exit_Notices_20250131.log
+│   ├── BIPP_Exit_Notices_20250211.log
+│   ├── BIPP_Exit_Notices_20250212.log
+│   ├── BIPP_Exit_Notices_20250214.log
+│   ├── BIPP_Exit_Notices_20250217.log
+│   ├── BIPP_Exit_Notices_20250224.log
+│   ├── BIPP_Exit_Notices_20250303.log
+│   ├── BIPP_Exit_Notices_20250305.log
+│   ├── BIPP_Exit_Notices_20250310.log
+│   ├── BIPP_Exit_Notices_20250314.log
+│   ├── BIPP_Exit_Notices_20250317.log
+│   ├── BIPP_Exit_Notices_20250416.log
+│   ├── BIPP_Exit_Notices_20250421.log
+│   ├── BIPP_Exit_Notices_20250423.log
+│   ├── BIPP_Exit_Notices_20250424.log
+│   ├── BIPP_Exit_Notices_20250428.log
+│   ├── BIPP_Exit_Notices_20250429.log
+│   ├── BIPP_Exit_Notices_20250505.log
+│   ├── BIPP_Exit_Notices_20250508.log
+│   ├── BIPP_Exit_Notices_20250512.log
+│   ├── BIPP_Exit_Notices_20250513.log
+│   ├── BIPP_Exit_Notices_20250514.log
+│   ├── BIPP_Exit_Notices_20250518.log
+│   ├── BIPP_Exit_Notices_20250519.log
+│   ├── BIPP_Exit_Notices_20250520.log
+│   ├── BIPP_Exit_Notices_20250521.log
+│   ├── BIPP_Exit_Notices_20250522.log
+│   ├── BIPP_Exit_Notices_20250526.log
+│   ├── BIPP_Exit_Notices_20250528.log
+│   ├── BIPP_Exit_Notices_20250602.log
+│   ├── BIPP_Exit_Notices_20250603.log
+│   ├── BIPP_Exit_Notices_20250604.log
+│   ├── BIPP_Exit_Notices_20250605.log
+│   ├── BIPP_Exit_Notices_20250609.log
+│   ├── BIPP_Exit_Notices_20250610.log
+│   ├── BIPP_Exit_Notices_20250611.log
+│   ├── BIPP_Exit_Notices_20250612.log
+│   ├── BIPP_Exit_Notices_20250616.log
+│   ├── BIPP_Exit_Notices_20250617.log
+│   ├── BIPP_Exit_Notices_20250618.log
+│   ├── BIPP_Exit_Notices_20250623.log
+│   ├── BIPP_Exit_Notices_20250630.log
+│   ├── BIPP_Exit_Notices_20250707.log
+│   ├── BIPP_Exit_Notices_20250708.log
+│   ├── BIPP_Exit_Notices_20250714.log
+│   ├── BIPP_Progress_Reports_20241205.log
+│   ├── BIPP_Progress_Reports_20241206.log
+│   ├── BIPP_Progress_Reports_20241213.log
+│   ├── BIPP_Progress_Reports_20241216.log
+│   ├── BIPP_Progress_Reports_20241218.log
+│   ├── BIPP_Progress_Reports_20241227.log
+│   ├── BIPP_Progress_Reports_20241230.log
+│   ├── BIPP_Progress_Reports_20250103.log
+│   ├── BIPP_Progress_Reports_20250107.log
+│   ├── BIPP_Progress_Reports_20250109.log
+│   ├── BIPP_Progress_Reports_20250110.log
+│   ├── BIPP_Progress_Reports_20250116.log
+│   ├── BIPP_Progress_Reports_20250122.log
+│   ├── BIPP_Progress_Reports_20250123.log
+│   ├── BIPP_Progress_Reports_20250128.log
+│   ├── BIPP_Progress_Reports_20250129.log
+│   ├── BIPP_Progress_Reports_20250130.log
+│   ├── BIPP_Progress_Reports_20250131.log
+│   ├── BIPP_Progress_Reports_20250204.log
+│   ├── BIPP_Progress_Reports_20250205.log
+│   ├── BIPP_Progress_Reports_20250206.log
+│   ├── BIPP_Progress_Reports_20250211.log
+│   ├── BIPP_Progress_Reports_20250212.log
+│   ├── BIPP_Progress_Reports_20250213.log
+│   ├── BIPP_Progress_Reports_20250214.log
+│   ├── BIPP_Progress_Reports_20250219.log
+│   ├── BIPP_Progress_Reports_20250220.log
+│   ├── BIPP_Progress_Reports_20250227.log
+│   ├── BIPP_Progress_Reports_20250301.log
+│   ├── BIPP_Progress_Reports_20250304.log
+│   ├── BIPP_Progress_Reports_20250306.log
+│   ├── BIPP_Progress_Reports_20250310.log
+│   ├── BIPP_Progress_Reports_20250311.log
+│   ├── BIPP_Progress_Reports_20250312.log
+│   ├── BIPP_Progress_Reports_20250313.log
+│   ├── BIPP_Progress_Reports_20250314.log
+│   ├── BIPP_Progress_Reports_20250317.log
+│   ├── BIPP_Progress_Reports_20250318.log
+│   ├── BIPP_Progress_Reports_20250319.log
+│   ├── BIPP_Progress_Reports_20250416.log
+│   ├── BIPP_Progress_Reports_20250422.log
+│   ├── BIPP_Progress_Reports_20250423.log
+│   ├── BIPP_Progress_Reports_20250424.log
+│   ├── BIPP_Progress_Reports_20250425.log
+│   ├── BIPP_Progress_Reports_20250429.log
+│   ├── BIPP_Progress_Reports_20250430.log
+│   ├── BIPP_Progress_Reports_20250501.log
+│   ├── BIPP_Progress_Reports_20250502.log
+│   ├── BIPP_Progress_Reports_20250505.log
+│   ├── BIPP_Progress_Reports_20250506.log
+│   ├── BIPP_Progress_Reports_20250507.log
+│   ├── BIPP_Progress_Reports_20250509.log
+│   ├── BIPP_Progress_Reports_20250512.log
+│   ├── BIPP_Progress_Reports_20250513.log
+│   ├── BIPP_Progress_Reports_20250514.log
+│   ├── BIPP_Progress_Reports_20250515.log
+│   ├── BIPP_Progress_Reports_20250516.log
+│   ├── BIPP_Progress_Reports_20250518.log
+│   ├── BIPP_Progress_Reports_20250520.log
+│   ├── BIPP_Progress_Reports_20250521.log
+│   ├── BIPP_Progress_Reports_20250522.log
+│   ├── BIPP_Progress_Reports_20250526.log
+│   ├── BIPP_Progress_Reports_20250527.log
+│   ├── BIPP_Progress_Reports_20250528.log
+│   ├── BIPP_Progress_Reports_20250529.log
+│   ├── BIPP_Progress_Reports_20250602.log
+│   ├── BIPP_Progress_Reports_20250603.log
+│   ├── BIPP_Progress_Reports_20250604.log
+│   ├── BIPP_Progress_Reports_20250605.log
+│   ├── BIPP_Progress_Reports_20250606.log
+│   ├── BIPP_Progress_Reports_20250609.log
+│   ├── BIPP_Progress_Reports_20250610.log
+│   ├── BIPP_Progress_Reports_20250613.log
+│   ├── BIPP_Progress_Reports_20250616.log
+│   ├── BIPP_Progress_Reports_20250618.log
+│   ├── BIPP_Progress_Reports_20250619.log
+│   ├── BIPP_Progress_Reports_20250624.log
+│   ├── BIPP_Progress_Reports_20250625.log
+│   ├── BIPP_Progress_Reports_20250627.log
+│   ├── BIPP_Progress_Reports_20250630.log
+│   ├── BIPP_Progress_Reports_20250707.log
+│   ├── BIPP_Progress_Reports_20250708.log
+│   ├── BIPP_Progress_Reports_20250711.log
+│   ├── BIPP_Progress_Reports_20250714.log
+│   ├── BIPP_Progress_Reports_20250716.log
+│   ├── BIPP_Progress_Reports_20250717.log
+│   ├── BIPP_Unexcused_Absences_20241205.log
+│   ├── BIPP_Unexcused_Absences_20241206.log
+│   ├── BIPP_Unexcused_Absences_20241212.log
+│   ├── BIPP_Unexcused_Absences_20241213.log
+│   ├── BIPP_Unexcused_Absences_20241216.log
+│   ├── BIPP_Unexcused_Absences_20241218.log
+│   ├── BIPP_Unexcused_Absences_20241227.log
+│   ├── BIPP_Unexcused_Absences_20241230.log
+│   ├── BIPP_Unexcused_Absences_20250103.log
+│   ├── BIPP_Unexcused_Absences_20250107.log
+│   ├── BIPP_Unexcused_Absences_20250109.log
+│   ├── BIPP_Unexcused_Absences_20250110.log
+│   ├── BIPP_Unexcused_Absences_20250116.log
+│   ├── BIPP_Unexcused_Absences_20250122.log
+│   ├── BIPP_Unexcused_Absences_20250123.log
+│   ├── BIPP_Unexcused_Absences_20250128.log
+│   ├── BIPP_Unexcused_Absences_20250129.log
+│   ├── BIPP_Unexcused_Absences_20250130.log
+│   ├── BIPP_Unexcused_Absences_20250131.log
+│   ├── BIPP_Unexcused_Absences_20250204.log
+│   ├── BIPP_Unexcused_Absences_20250205.log
+│   ├── BIPP_Unexcused_Absences_20250211.log
+│   ├── BIPP_Unexcused_Absences_20250212.log
+│   ├── BIPP_Unexcused_Absences_20250213.log
+│   ├── BIPP_Unexcused_Absences_20250214.log
+│   ├── BIPP_Unexcused_Absences_20250217.log
+│   ├── BIPP_Unexcused_Absences_20250218.log
+│   ├── BIPP_Unexcused_Absences_20250219.log
+│   ├── BIPP_Unexcused_Absences_20250220.log
+│   ├── BIPP_Unexcused_Absences_20250224.log
+│   ├── BIPP_Unexcused_Absences_20250225.log
+│   ├── BIPP_Unexcused_Absences_20250226.log
+│   ├── BIPP_Unexcused_Absences_20250227.log
+│   ├── BIPP_Unexcused_Absences_20250228.log
+│   ├── BIPP_Unexcused_Absences_20250303.log
+│   ├── BIPP_Unexcused_Absences_20250304.log
+│   ├── BIPP_Unexcused_Absences_20250305.log
+│   ├── BIPP_Unexcused_Absences_20250306.log
+│   ├── BIPP_Unexcused_Absences_20250310.log
+│   ├── BIPP_Unexcused_Absences_20250311.log
+│   ├── BIPP_Unexcused_Absences_20250312.log
+│   ├── BIPP_Unexcused_Absences_20250313.log
+│   ├── BIPP_Unexcused_Absences_20250317.log
+│   ├── BIPP_Unexcused_Absences_20250318.log
+│   ├── BIPP_Unexcused_Absences_20250319.log
+│   ├── BIPP_Unexcused_Absences_20250416.log
+│   ├── BIPP_Unexcused_Absences_20250417.log
+│   ├── BIPP_Unexcused_Absences_20250421.log
+│   ├── BIPP_Unexcused_Absences_20250422.log
+│   ├── BIPP_Unexcused_Absences_20250423.log
+│   ├── BIPP_Unexcused_Absences_20250424.log
+│   ├── BIPP_Unexcused_Absences_20250428.log
+│   ├── BIPP_Unexcused_Absences_20250429.log
+│   ├── BIPP_Unexcused_Absences_20250430.log
+│   ├── BIPP_Unexcused_Absences_20250501.log
+│   ├── BIPP_Unexcused_Absences_20250505.log
+│   ├── BIPP_Unexcused_Absences_20250506.log
+│   ├── BIPP_Unexcused_Absences_20250507.log
+│   ├── BIPP_Unexcused_Absences_20250508.log
+│   ├── BIPP_Unexcused_Absences_20250512.log
+│   ├── BIPP_Unexcused_Absences_20250513.log
+│   ├── BIPP_Unexcused_Absences_20250514.log
+│   ├── BIPP_Unexcused_Absences_20250515.log
+│   ├── BIPP_Unexcused_Absences_20250518.log
+│   ├── BIPP_Unexcused_Absences_20250519.log
+│   ├── BIPP_Unexcused_Absences_20250520.log
+│   ├── BIPP_Unexcused_Absences_20250521.log
+│   ├── BIPP_Unexcused_Absences_20250526.log
+│   ├── BIPP_Unexcused_Absences_20250527.log
+│   ├── BIPP_Unexcused_Absences_20250528.log
+│   ├── BIPP_Unexcused_Absences_20250529.log
+│   ├── BIPP_Unexcused_Absences_20250602.log
+│   ├── BIPP_Unexcused_Absences_20250603.log
+│   ├── BIPP_Unexcused_Absences_20250604.log
+│   ├── BIPP_Unexcused_Absences_20250605.log
+│   ├── BIPP_Unexcused_Absences_20250609.log
+│   ├── BIPP_Unexcused_Absences_20250610.log
+│   ├── BIPP_Unexcused_Absences_20250611.log
+│   ├── BIPP_Unexcused_Absences_20250612.log
+│   ├── BIPP_Unexcused_Absences_20250613.log
+│   ├── BIPP_Unexcused_Absences_20250616.log
+│   ├── BIPP_Unexcused_Absences_20250617.log
+│   ├── BIPP_Unexcused_Absences_20250618.log
+│   ├── BIPP_Unexcused_Absences_20250619.log
+│   ├── BIPP_Unexcused_Absences_20250623.log
+│   ├── BIPP_Unexcused_Absences_20250624.log
+│   ├── BIPP_Unexcused_Absences_20250625.log
+│   ├── BIPP_Unexcused_Absences_20250626.log
+│   ├── BIPP_Unexcused_Absences_20250630.log
+│   ├── BIPP_Unexcused_Absences_20250701.log
+│   ├── BIPP_Unexcused_Absences_20250702.log
+│   ├── BIPP_Unexcused_Absences_20250707.log
+│   ├── BIPP_Unexcused_Absences_20250708.log
+│   ├── BIPP_Unexcused_Absences_20250709.log
+│   ├── BIPP_Unexcused_Absences_20250710.log
+│   ├── BIPP_Unexcused_Absences_20250714.log
+│   ├── BIPP_Unexcused_Absences_20250716.log
+│   ├── BIPP_Unexcused_Absences_20250717.log
+│   ├── BIPP_Victim_Letters_20250521.log
+│   ├── BIPP_Victim_Letters_20250523.log
+│   ├── BIPP_Victim_Letters_20250528.log
+│   ├── BIPP_Victim_Letters_20250605.log
+│   ├── BIPP_Victim_Letters_20250714.log
+│   ├── gunicorn-access.log
+│   ├── gunicorn-error.log
+│   ├── sedckeqKw
+│   ├── sedlWMJsy
+│   ├── T4C_Completion_20250108.log
+│   ├── T4C_Completion_20250110.log
+│   ├── T4C_Completion_20250122.log
+│   ├── T4C_Completion_20250211.log
+│   ├── T4C_Completion_20250217.log
+│   ├── T4C_Completion_20250218.log
+│   ├── T4C_Completion_20250219.log
+│   ├── T4C_Completion_20250220.log
+│   ├── T4C_Completion_20250221.log
+│   ├── T4C_Completion_20250224.log
+│   ├── T4C_Completion_20250225.log
+│   ├── T4C_Completion_20250227.log
+│   ├── T4C_Completion_20250228.log
+│   ├── T4C_Completion_20250301.log
+│   ├── T4C_Completion_20250303.log
+│   ├── T4C_Completion_20250304.log
+│   ├── T4C_Completion_20250306.log
+│   ├── T4C_Completion_20250310.log
+│   ├── T4C_Completion_20250311.log
+│   ├── T4C_Completion_20250313.log
+│   ├── T4C_Completion_20250314.log
+│   ├── T4C_Completion_20250317.log
+│   ├── T4C_Completion_20250318.log
+│   ├── T4C_Completion_20250417.log
+│   ├── T4C_Completion_20250418.log
+│   ├── T4C_Completion_20250421.log
+│   ├── T4C_Completion_20250422.log
+│   ├── T4C_Completion_20250423.log
+│   ├── T4C_Completion_20250424.log
+│   ├── T4C_Completion_20250425.log
+│   ├── T4C_Completion_20250428.log
+│   ├── T4C_Completion_20250429.log
+│   ├── T4C_Completion_20250501.log
+│   ├── T4C_Completion_20250502.log
+│   ├── T4C_Completion_20250505.log
+│   ├── T4C_Completion_20250506.log
+│   ├── T4C_Completion_20250508.log
+│   ├── T4C_Completion_20250509.log
+│   ├── T4C_Completion_20250512.log
+│   ├── T4C_Completion_20250513.log
+│   ├── T4C_Completion_20250515.log
+│   ├── T4C_Completion_20250516.log
+│   ├── T4C_Completion_20250519.log
+│   ├── T4C_Completion_20250520.log
+│   ├── T4C_Completion_20250522.log
+│   ├── T4C_Completion_20250523.log
+│   ├── T4C_Completion_20250526.log
+│   ├── T4C_Completion_20250527.log
+│   ├── T4C_Completion_20250528.log
+│   ├── T4C_Completion_20250529.log
+│   ├── T4C_Completion_20250530.log
+│   ├── T4C_Completion_20250602.log
+│   ├── T4C_Completion_20250603.log
+│   ├── T4C_Completion_20250605.log
+│   ├── T4C_Completion_20250606.log
+│   ├── T4C_Completion_20250609.log
+│   ├── T4C_Completion_20250610.log
+│   ├── T4C_Completion_20250612.log
+│   ├── T4C_Completion_20250613.log
+│   ├── T4C_Completion_20250616.log
+│   ├── T4C_Completion_20250617.log
+│   ├── T4C_Completion_20250619.log
+│   ├── T4C_Completion_20250620.log
+│   ├── T4C_Completion_20250623.log
+│   ├── T4C_Completion_20250624.log
+│   ├── T4C_Completion_20250626.log
+│   ├── T4C_Completion_20250627.log
+│   ├── T4C_Completion_20250630.log
+│   ├── T4C_Completion_20250701.log
+│   ├── T4C_Completion_20250707.log
+│   ├── T4C_Completion_20250708.log
+│   ├── T4C_Completion_20250710.log
+│   ├── T4C_Completion_20250711.log
+│   ├── T4C_Completion_20250714.log
+│   ├── T4C_Completion_20250715.log
+│   ├── T4C_Completion_20250716.log
+│   ├── T4C_Completion_20250717.log
+│   ├── T4C_Entrance_Notifications_20250108.log
+│   ├── T4C_Entrance_Notifications_20250110.log
+│   ├── T4C_Entrance_Notifications_20250122.log
+│   ├── T4C_Entrance_Notifications_20250211.log
+│   ├── T4C_Entrance_Notifications_20250214.log
+│   ├── T4C_Entrance_Notifications_20250217.log
+│   ├── T4C_Entrance_Notifications_20250218.log
+│   ├── T4C_Entrance_Notifications_20250220.log
+│   ├── T4C_Entrance_Notifications_20250221.log
+│   ├── T4C_Entrance_Notifications_20250224.log
+│   ├── T4C_Entrance_Notifications_20250225.log
+│   ├── T4C_Entrance_Notifications_20250227.log
+│   ├── T4C_Entrance_Notifications_20250228.log
+│   ├── T4C_Entrance_Notifications_20250303.log
+│   ├── T4C_Entrance_Notifications_20250304.log
+│   ├── T4C_Entrance_Notifications_20250306.log
+│   ├── T4C_Entrance_Notifications_20250310.log
+│   ├── T4C_Entrance_Notifications_20250311.log
+│   ├── T4C_Entrance_Notifications_20250313.log
+│   ├── T4C_Entrance_Notifications_20250314.log
+│   ├── T4C_Entrance_Notifications_20250317.log
+│   ├── T4C_Entrance_Notifications_20250318.log
+│   ├── T4C_Entrance_Notifications_20250319.log
+│   ├── T4C_Entrance_Notifications_20250328.log
+│   ├── T4C_Entrance_Notifications_20250417.log
+│   ├── T4C_Entrance_Notifications_20250418.log
+│   ├── T4C_Entrance_Notifications_20250421.log
+│   ├── T4C_Entrance_Notifications_20250422.log
+│   ├── T4C_Entrance_Notifications_20250424.log
+│   ├── T4C_Entrance_Notifications_20250425.log
+│   ├── T4C_Entrance_Notifications_20250428.log
+│   ├── T4C_Entrance_Notifications_20250429.log
+│   ├── T4C_Entrance_Notifications_20250501.log
+│   ├── T4C_Entrance_Notifications_20250502.log
+│   ├── T4C_Entrance_Notifications_20250505.log
+│   ├── T4C_Entrance_Notifications_20250506.log
+│   ├── T4C_Entrance_Notifications_20250508.log
+│   ├── T4C_Entrance_Notifications_20250509.log
+│   ├── T4C_Entrance_Notifications_20250512.log
+│   ├── T4C_Entrance_Notifications_20250513.log
+│   ├── T4C_Entrance_Notifications_20250515.log
+│   ├── T4C_Entrance_Notifications_20250516.log
+│   ├── T4C_Entrance_Notifications_20250519.log
+│   ├── T4C_Entrance_Notifications_20250520.log
+│   ├── T4C_Entrance_Notifications_20250522.log
+│   ├── T4C_Entrance_Notifications_20250523.log
+│   ├── T4C_Entrance_Notifications_20250526.log
+│   ├── T4C_Entrance_Notifications_20250527.log
+│   ├── T4C_Entrance_Notifications_20250528.log
+│   ├── T4C_Entrance_Notifications_20250529.log
+│   ├── T4C_Entrance_Notifications_20250602.log
+│   ├── T4C_Entrance_Notifications_20250603.log
+│   ├── T4C_Entrance_Notifications_20250605.log
+│   ├── T4C_Entrance_Notifications_20250606.log
+│   ├── T4C_Entrance_Notifications_20250609.log
+│   ├── T4C_Entrance_Notifications_20250610.log
+│   ├── T4C_Entrance_Notifications_20250612.log
+│   ├── T4C_Entrance_Notifications_20250613.log
+│   ├── T4C_Entrance_Notifications_20250616.log
+│   ├── T4C_Entrance_Notifications_20250617.log
+│   ├── T4C_Entrance_Notifications_20250619.log
+│   ├── T4C_Entrance_Notifications_20250620.log
+│   ├── T4C_Entrance_Notifications_20250623.log
+│   ├── T4C_Entrance_Notifications_20250624.log
+│   ├── T4C_Entrance_Notifications_20250626.log
+│   ├── T4C_Entrance_Notifications_20250627.log
+│   ├── T4C_Entrance_Notifications_20250630.log
+│   ├── T4C_Entrance_Notifications_20250701.log
+│   ├── T4C_Entrance_Notifications_20250707.log
+│   ├── T4C_Entrance_Notifications_20250708.log
+│   ├── T4C_Entrance_Notifications_20250710.log
+│   ├── T4C_Entrance_Notifications_20250711.log
+│   ├── T4C_Entrance_Notifications_20250714.log
+│   ├── T4C_Entrance_Notifications_20250716.log
+│   ├── T4C_Entrance_Notifications_20250717.log
+│   ├── T4C_Exit_Notices_20250110.log
+│   ├── T4C_Exit_Notices_20250122.log
+│   ├── T4C_Exit_Notices_20250211.log
+│   ├── T4C_Exit_Notices_20250217.log
+│   ├── T4C_Exit_Notices_20250221.log
+│   ├── T4C_Exit_Notices_20250224.log
+│   ├── T4C_Exit_Notices_20250303.log
+│   ├── T4C_Exit_Notices_20250310.log
+│   ├── T4C_Exit_Notices_20250317.log
+│   ├── T4C_Exit_Notices_20250421.log
+│   ├── T4C_Exit_Notices_20250428.log
+│   ├── T4C_Exit_Notices_20250505.log
+│   ├── T4C_Exit_Notices_20250508.log
+│   ├── T4C_Exit_Notices_20250512.log
+│   ├── T4C_Exit_Notices_20250519.log
+│   ├── T4C_Exit_Notices_20250520.log
+│   ├── T4C_Exit_Notices_20250522.log
+│   ├── T4C_Exit_Notices_20250526.log
+│   ├── T4C_Exit_Notices_20250528.log
+│   ├── T4C_Exit_Notices_20250530.log
+│   ├── T4C_Exit_Notices_20250602.log
+│   ├── T4C_Exit_Notices_20250603.log
+│   ├── T4C_Exit_Notices_20250609.log
+│   ├── T4C_Exit_Notices_20250616.log
+│   ├── T4C_Exit_Notices_20250623.log
+│   ├── T4C_Exit_Notices_20250630.log
+│   ├── T4C_Exit_Notices_20250707.log
+│   ├── T4C_Exit_Notices_20250714.log
+│   ├── T4C_Progress_Reports_20250110.log
+│   ├── T4C_Progress_Reports_20250116.log
+│   ├── T4C_Progress_Reports_20250122.log
+│   ├── T4C_Progress_Reports_20250207.log
+│   ├── T4C_Progress_Reports_20250211.log
+│   ├── T4C_Progress_Reports_20250217.log
+│   ├── T4C_Progress_Reports_20250219.log
+│   ├── T4C_Progress_Reports_20250225.log
+│   ├── T4C_Progress_Reports_20250303.log
+│   ├── T4C_Progress_Reports_20250304.log
+│   ├── T4C_Progress_Reports_20250306.log
+│   ├── T4C_Progress_Reports_20250311.log
+│   ├── T4C_Progress_Reports_20250317.log
+│   ├── T4C_Progress_Reports_20250318.log
+│   ├── T4C_Progress_Reports_20250319.log
+│   ├── T4C_Progress_Reports_20250424.log
+│   ├── T4C_Progress_Reports_20250428.log
+│   ├── T4C_Progress_Reports_20250502.log
+│   ├── T4C_Progress_Reports_20250505.log
+│   ├── T4C_Progress_Reports_20250509.log
+│   ├── T4C_Progress_Reports_20250512.log
+│   ├── T4C_Progress_Reports_20250513.log
+│   ├── T4C_Progress_Reports_20250523.log
+│   ├── T4C_Progress_Reports_20250526.log
+│   ├── T4C_Progress_Reports_20250528.log
+│   ├── T4C_Progress_Reports_20250530.log
+│   ├── T4C_Progress_Reports_20250606.log
+│   ├── T4C_Progress_Reports_20250609.log
+│   ├── T4C_Progress_Reports_20250618.log
+│   ├── T4C_Progress_Reports_20250623.log
+│   ├── T4C_Progress_Reports_20250630.log
+│   ├── T4C_Progress_Reports_20250707.log
+│   ├── T4C_Progress_Reports_20250708.log
+│   ├── T4C_Progress_Reports_20250711.log
+│   ├── T4C_Progress_Reports_20250713.log
+│   ├── T4C_Progress_Reports_20250716.log
+│   ├── T4C_Unexcused_Absences_20250110.log
+│   ├── T4C_Unexcused_Absences_20250122.log
+│   ├── T4C_Unexcused_Absences_20250211.log
+│   ├── T4C_Unexcused_Absences_20250212.log
+│   ├── T4C_Unexcused_Absences_20250214.log
+│   ├── T4C_Unexcused_Absences_20250217.log
+│   ├── T4C_Unexcused_Absences_20250218.log
+│   ├── T4C_Unexcused_Absences_20250220.log
+│   ├── T4C_Unexcused_Absences_20250221.log
+│   ├── T4C_Unexcused_Absences_20250224.log
+│   ├── T4C_Unexcused_Absences_20250225.log
+│   ├── T4C_Unexcused_Absences_20250227.log
+│   ├── T4C_Unexcused_Absences_20250228.log
+│   ├── T4C_Unexcused_Absences_20250303.log
+│   ├── T4C_Unexcused_Absences_20250304.log
+│   ├── T4C_Unexcused_Absences_20250306.log
+│   ├── T4C_Unexcused_Absences_20250310.log
+│   ├── T4C_Unexcused_Absences_20250311.log
+│   ├── T4C_Unexcused_Absences_20250313.log
+│   ├── T4C_Unexcused_Absences_20250314.log
+│   ├── T4C_Unexcused_Absences_20250317.log
+│   ├── T4C_Unexcused_Absences_20250318.log
+│   ├── T4C_Unexcused_Absences_20250417.log
+│   ├── T4C_Unexcused_Absences_20250418.log
+│   ├── T4C_Unexcused_Absences_20250421.log
+│   ├── T4C_Unexcused_Absences_20250422.log
+│   ├── T4C_Unexcused_Absences_20250424.log
+│   ├── T4C_Unexcused_Absences_20250425.log
+│   ├── T4C_Unexcused_Absences_20250428.log
+│   ├── T4C_Unexcused_Absences_20250429.log
+│   ├── T4C_Unexcused_Absences_20250501.log
+│   ├── T4C_Unexcused_Absences_20250502.log
+│   ├── T4C_Unexcused_Absences_20250505.log
+│   ├── T4C_Unexcused_Absences_20250506.log
+│   ├── T4C_Unexcused_Absences_20250508.log
+│   ├── T4C_Unexcused_Absences_20250509.log
+│   ├── T4C_Unexcused_Absences_20250512.log
+│   ├── T4C_Unexcused_Absences_20250513.log
+│   ├── T4C_Unexcused_Absences_20250515.log
+│   ├── T4C_Unexcused_Absences_20250516.log
+│   ├── T4C_Unexcused_Absences_20250519.log
+│   ├── T4C_Unexcused_Absences_20250520.log
+│   ├── T4C_Unexcused_Absences_20250522.log
+│   ├── T4C_Unexcused_Absences_20250523.log
+│   ├── T4C_Unexcused_Absences_20250526.log
+│   ├── T4C_Unexcused_Absences_20250527.log
+│   ├── T4C_Unexcused_Absences_20250528.log
+│   ├── T4C_Unexcused_Absences_20250529.log
+│   ├── T4C_Unexcused_Absences_20250602.log
+│   ├── T4C_Unexcused_Absences_20250603.log
+│   ├── T4C_Unexcused_Absences_20250605.log
+│   ├── T4C_Unexcused_Absences_20250606.log
+│   ├── T4C_Unexcused_Absences_20250609.log
+│   ├── T4C_Unexcused_Absences_20250610.log
+│   ├── T4C_Unexcused_Absences_20250612.log
+│   ├── T4C_Unexcused_Absences_20250613.log
+│   ├── T4C_Unexcused_Absences_20250616.log
+│   ├── T4C_Unexcused_Absences_20250617.log
+│   ├── T4C_Unexcused_Absences_20250619.log
+│   ├── T4C_Unexcused_Absences_20250620.log
+│   ├── T4C_Unexcused_Absences_20250623.log
+│   ├── T4C_Unexcused_Absences_20250624.log
+│   ├── T4C_Unexcused_Absences_20250626.log
+│   ├── T4C_Unexcused_Absences_20250627.log
+│   ├── T4C_Unexcused_Absences_20250630.log
+│   ├── T4C_Unexcused_Absences_20250701.log
+│   ├── T4C_Unexcused_Absences_20250707.log
+│   ├── T4C_Unexcused_Absences_20250708.log
+│   ├── T4C_Unexcused_Absences_20250710.log
+│   ├── T4C_Unexcused_Absences_20250711.log
+│   ├── T4C_Unexcused_Absences_20250713.log
+│   ├── T4C_Unexcused_Absences_20250714.log
+│   ├── T4C_Unexcused_Absences_20250716.log
+│   └── T4C_Unexcused_Absences_20250717.log
+├── manage_services_denton.sh
+├── manage_services.sh
+├── MRT_Completion_Documents_Script.py
+├── MRT_Entrance_Notifications_Script.py
+├── MRT_Exit_Notices_Script.py
+├── MRT_Progress_Reports_Script.py
+├── MRT_Unexcused_Absences_Script.py
+├── new_venv
+│   ├── bin
+│   ├── include
+│   ├── lib
+│   ├── lib64
+│   └── pyvenv.cfg
+├── nohup.out
+├── __pycache__
+│   ├── check_absences.cpython-311.pyc
+│   ├── gunicorn.conf.cpython-311.pyc
+│   ├── Reporting_GUI.cpython-311.pyc
+│   └── Reporting_GUI.cpython-36.pyc
+├── README.md
+├── redis.conf
+├── redis.out
+├── Reporting_GUI.py
+├── requirements.txt
+├── segoe-ui-linux
+├── static
+│   ├── Background.png
+│   ├── Free_for_Life_Logo.png
+│   ├── GCheck.png
+│   ├── jquery-3.7.1.min.js
+│   ├── loading-spinner.gif
+│   ├── NoteProLogo2.png
+│   ├── NoteProLogoFinal.ico
+│   └── REx.png
+├── stop_and_restart_nginx.sh
+├── T4C_Completion_Documents_Script.py
+├── T4C_Entrance_Notifications_Script.py
+├── T4C_Exit_Notices_Script.py
+├── T4C_Progress_Reports_Script.py
+├── T4C_Unexcused_Absences_Script.py
+├── tasks
+│   ├── progress.log
+│   └── status_task_6750cc934b0f24.41758572.txt
+├── templates
+│   ├── bestoption
+│   ├── ctc
+│   ├── dwag
+│   ├── ffltest
+│   ├── safatherhood
+│   ├── sandbox
+│   └── transform
+├── TIPS_Completion_Documents_Script.py
+├── TIPS_Entrance_Notifications_Script.py
+├── TIPS_Exit_Notices_Script.py
+├── TIPS_Progress_Reports_Script.py
+├── TIPS_Unexcused_Absences_Script.py
+├── Update_Clients.py
+├── uploads
+└── venv311
+    ├── bin
+    ├── etc
+    ├── include
+    ├── lib
+    ├── lib64 -> lib
+    ├── pyvenv.cfg
+    └── share
+
+53 directories, 828 files
+
+
+──────────────────────────────────────────────────────────────
+3. /home/notesao/public_html/
+   • Primary Apache/Nginx document root.
+   • Holds the main NotesAO (notesao.com) front‑end, plus
+     shared resources every sub‑domain can symlink to.
+   • Typical contents:
+       index.php         – marketing / landing page
+       auth/             – global authentication helpers
+       client.php        – now migrated to per‑clinic sub‑domains
+       assets/           – global CSS/JS/fonts
+       .well-known/      – ACME challenges for SSL
+       cron/             – shell & PHP maintenance scripts
+
+/home/notesao/public_html/
+├── activate.php
+├── apple-touch-icon.png
+├── assets
+│   ├── css
+│   ├── fonts
+│   ├── images
+│   └── js
+├── auth.php
+├── clientinfo.php
+├── config.php
+├── favicon-16x16.png
+├── favicon-192x192.png
+├── favicon-32x32.png
+├── favicon-512x512.png
+├── favicon-96x96.png
+├── favicons
+│   ├── apple-touch-icon.png
+│   ├── favicon-96x96.png
+│   ├── favicon.ico
+│   ├── favicon.svg
+│   ├── site.webmanifest
+│   ├── web-app-manifest-192x192.png
+│   └── web-app-manifest-512x512.png
+├── favicon.svg
+├── forgot_password.php
+├── index.html
+├── legal
+│   ├── accessibility.html
+│   ├── privacy.html
+│   ├── security.html
+│   └── terms.html
+├── login.php
+├── logo.png
+├── NotesAO.ico
+├── NotesAO Logo.png
+├── originalfavicon.ico
+├── partials
+│   └── header.php
+├── reset_password.php
+├── signup.log
+├── signup.php
+├── site.webmanifest
+├── web-app-manifest-192x192.png
+└── web-app-manifest-512x512.png
+
+8 directories, 36 files
+

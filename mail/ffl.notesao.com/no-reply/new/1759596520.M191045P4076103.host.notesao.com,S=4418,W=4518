@@ -1,0 +1,100 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id WPBWC+hP4WhHMj4AIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Sat, 04 Oct 2025 11:48:40 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Sat, 04 Oct 2025 11:48:40 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1v55R2-0000000H6PR-0KHV
+	for no-reply@ffl.notesao.com;
+	Sat, 04 Oct 2025 11:48:40 -0500
+X-Failed-Recipients: no@email.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1v55R1-0000000H6NW-0fzU@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1759596520-eximdsn-1049746455
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1v55R2-0000000H6PR-0KHV@host.notesao.com>
+Date: Sat, 04 Oct 2025 11:48:40 -0500
+
+--1759596520-eximdsn-1049746455
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  no@email.com
+    host mx00.mail.com [74.208.5.20]
+    SMTP error from remote mail server after RCPT TO:<no@email.com>:
+    550-Requested action not taken: mailbox unavailable
+    550 For explanation visit https://postmaster.mail.com/en/case?c=r1601&i=ip&v=50.28.37.79&r=1MFcJM-1v4Zb401DK-00H6VI
+
+--1759596520-eximdsn-1049746455
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;no@email.com
+Status: 5.0.0
+Remote-MTA: dns; mx00.mail.com
+Diagnostic-Code: smtp; 550-Requested action not taken: mailbox unavailable
+ 550 For explanation visit https://postmaster.mail.com/en/case?c=r1601&i=ip&v=50.28.37.79&r=1MFcJM-1v4Zb401DK-00H6VI
+
+--1759596520-eximdsn-1049746455
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1v55R1-0000000H6NW-0fzU
+	for no@email.com;
+	Sat, 04 Oct 2025 11:48:39 -0500
+To: no@email.com
+Subject: Men's BIPP Group Reminder: Saturday at 9:00 AM
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.188.156
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=no%40email.com&t=0ec611a5de2065a22e79d8b5f4e786157528a5555fc910d87a1309d8e8fecb91>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1v55R1-0000000H6NW-0fzU@host.notesao.com>
+Date: Sat, 04 Oct 2025 11:48:39 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Jesse,</p>
+
+<p><strong>Your Men's BIPP group is Saturday at 9:00 AM (Saturday, October 11).</strong></p>
+
+<p>
+  Your II - Carey- 4836 Carey St, FW - Parole mandated BIPP group is scheduled. II - Carey- 4836 Carey St, FW - Parole and Andre Tovez expect your presence.
+  Please arrive early. <em>Lockout is 9:10 AM</em>. Your presence is a mandatory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaining in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p>
+
+<p>Where: 1100 East Lancaster Ave Fort Worth TX 76102</p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR call during office hours (Mon–Fri, 8am–4pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=no%40email.com&amp;t=0ec611a5de2065a22e79d8b5f4e786157528a5555fc910d87a1309d8e8fecb91">unsubscribe here</a>.</p>
+
+--1759596520-eximdsn-1049746455--

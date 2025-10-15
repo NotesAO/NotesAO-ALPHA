@@ -1,0 +1,98 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 2BvqNaAv6mhgBzgAIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Sat, 11 Oct 2025 05:21:20 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Sat, 11 Oct 2025 05:21:20 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1v7Wj2-0000000FPJ0-3L2A
+	for no-reply@ffl.notesao.com;
+	Sat, 11 Oct 2025 05:21:20 -0500
+X-Failed-Recipients: sessionjuan@yahoo.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1v7Wj2-0000000FPI1-0CxG@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1760178080-eximdsn-496922373
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1v7Wj2-0000000FPJ0-3L2A@host.notesao.com>
+Date: Sat, 11 Oct 2025 05:21:20 -0500
+
+--1760178080-eximdsn-496922373
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  sessionjuan@yahoo.com
+    host mta7.am0.yahoodns.net [98.136.96.74]
+    SMTP error from remote mail server after end of data:
+    552 1 Requested mail action aborted, mailbox not found
+
+--1760178080-eximdsn-496922373
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;sessionjuan@yahoo.com
+Status: 5.0.0
+Remote-MTA: dns; mta7.am0.yahoodns.net
+Diagnostic-Code: smtp; 552 1 Requested mail action aborted, mailbox not found
+
+--1760178080-eximdsn-496922373
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1v7Wj2-0000000FPI1-0CxG
+	for sessionjuan@yahoo.com;
+	Sat, 11 Oct 2025 05:21:20 -0500
+To: sessionjuan@yahoo.com
+Subject: Men's BIPP Group Reminder: Saturday at 9:00 AM
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.21.191
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=sessionjuan%40yahoo.com&t=ef204e4fffd423739822acccb06c39e38068327850ddb502d85ed40931d6e2f1>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1v7Wj2-0000000FPI1-0CxG@host.notesao.com>
+Date: Sat, 11 Oct 2025 05:21:20 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Juan,</p>
+
+<p><strong>Your Men's BIPP group is Saturday at 9:00 AM (Saturday, October 11).</strong></p>
+
+<p>
+  Your M; Miller Complex 3210 Miller Avenue, FW mandated BIPP group is scheduled. M; Miller Complex 3210 Miller Avenue, FW and Suzanne Lebet expect your presence.
+  Please arrive early. <em>Lockout is 9:10 AM</em>. Your presence is a mandatory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaining in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p>
+
+<p>Where: 1100 East Lancaster Ave Fort Worth TX 76102</p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR call during office hours (Mon–Fri, 8am–4pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=sessionjuan%40yahoo.com&amp;t=ef204e4fffd423739822acccb06c39e38068327850ddb502d85ed40931d6e2f1">unsubscribe here</a>.</p>
+
+--1760178080-eximdsn-496922373--

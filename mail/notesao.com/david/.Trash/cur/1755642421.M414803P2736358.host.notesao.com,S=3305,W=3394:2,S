@@ -1,0 +1,89 @@
+Return-Path: <>
+Delivered-To: david@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id w78pGDX6pGjmwCkAIW4ynA
+	(envelope-from <>)
+	for <david@notesao.com>; Tue, 19 Aug 2025 17:27:01 -0500
+Return-path: <>
+Envelope-to: david@notesao.com
+Delivery-date: Tue, 19 Aug 2025 17:27:01 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1uoUnF-0000000BTqi-1WPB
+	for david@notesao.com;
+	Tue, 19 Aug 2025 17:27:01 -0500
+X-Failed-Recipients: dinalbostic@gmail.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: david@notesao.com
+References: <20bd9109f7cde1296b89fe1aafea4d25@notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1755642421-eximdsn-1165849946
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1uoUnF-0000000BTqi-1WPB@host.notesao.com>
+Date: Tue, 19 Aug 2025 17:27:01 -0500
+
+--1755642421-eximdsn-1165849946
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  dinalbostic@gmail.com
+    host gmail-smtp-in.l.google.com [142.251.16.27]
+    SMTP error from remote mail server after RCPT TO:<dinalbostic@gmail.com>:
+    550-5.1.1 The email account that you tried to reach does not exist. Please try
+    550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. For more information, go to
+    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser af79cd13be357-7e87e18263bsi438538985a.322 - gsmtp
+
+--1755642421-eximdsn-1165849946
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;dinalbostic@gmail.com
+Status: 5.0.0
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. For more information, go to
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser af79cd13be357-7e87e18263bsi438538985a.322 - gsmtp
+
+--1755642421-eximdsn-1165849946
+Content-type: message/rfc822
+
+Return-path: <david@notesao.com>
+Received: from [::1] (port=59774 helo=host.notesao.com)
+	by host.notesao.com with esmtpa (Exim 4.98.2)
+	(envelope-from <david@notesao.com>)
+	id 1uoUnG-0000000BTq4-0svj
+	for dinalbostic@gmail.com;
+	Tue, 19 Aug 2025 17:27:01 -0500
+MIME-Version: 1.0
+Date: Tue, 19 Aug 2025 17:27:01 -0500
+From: David House <david@notesao.com>
+To: dinalbostic@gmail.com
+Subject: NotesAO
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <20bd9109f7cde1296b89fe1aafea4d25@notesao.com>
+X-Sender: david@notesao.com
+Organization: NotesAO
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+Content-Transfer-Encoding: 7bit
+
+Good evening,
+It was a pleasure speaking with you today. I have sent you a calendar 
+invite for the NotesAO demo. I look forward to speaking with you on 
+Friday @ 3:30pm. I will send the zoom meeting id and passcode early 
+afternoon on Friday. Thank you
+
+-- 
+David House
+214.502.4322
+
+--1755642421-eximdsn-1165849946--

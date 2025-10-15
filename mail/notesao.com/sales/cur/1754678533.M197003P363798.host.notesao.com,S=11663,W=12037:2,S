@@ -1,0 +1,374 @@
+Return-Path: <admin@notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id RkmsCgVFlmgWjQUAIW4ynA
+	(envelope-from <admin@notesao.com>); Fri, 08 Aug 2025 13:42:13 -0500
+Return-path: <admin@notesao.com>
+Envelope-to: sales@notesao.com,
+ ceo@notesao.com
+Delivery-date: Fri, 08 Aug 2025 13:42:13 -0500
+Received: from [::1] (port=56264 helo=host.notesao.com)
+	by host.notesao.com with esmtpa (Exim 4.98.2)
+	(envelope-from <admin@notesao.com>)
+	id 1ukS2f-00000001WdZ-1sdW;
+	Fri, 08 Aug 2025 13:42:13 -0500
+MIME-Version: 1.0
+Date: Fri, 08 Aug 2025 13:42:13 -0500
+From: admin@notesao.com
+To: Sales <sales@notesao.com>, Ceo <ceo@notesao.com>
+Subject: =?UTF-8?Q?Fwd=3A_NotesAO_Onboarding_=E2=80=93_Next_Steps_for_Lan?=
+ =?UTF-8?Q?kford_Avenue_LLC?=
+In-Reply-To: <04dae630a648cf2ac5fc5cfc8718894b@notesao.com>
+References: <04dae630a648cf2ac5fc5cfc8718894b@notesao.com>
+User-Agent: Roundcube Webmail/1.6.11
+Message-ID: <86edba355d5bcda8e9429cf9f396817d@notesao.com>
+X-Sender: admin@notesao.com
+Content-Type: multipart/mixed;
+ boundary="=_1dc6cbb37d518ae4ddb345d555aa1fb3"
+
+--=_1dc6cbb37d518ae4ddb345d555aa1fb3
+Content-Type: multipart/alternative;
+ boundary="=_d36ad193efb7a7f908ed605f209b5fc2"
+
+--=_d36ad193efb7a7f908ed605f209b5fc2
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+
+-------- Original Message --------
+
+  		SUBJECT:
+  		NotesAO Onboarding - Next Steps for Lankford Avenue LLC
+
+  		DATE:
+  		2025-08-08 13:35
+
+  		FROM:
+  		admin@notesao.com
+
+  		TO:
+  		lankfordavenue@yahoo.com
+
+Dear Dr. Lankford and Team,
+
+I hope you are doing well. I wanted to provide you with an update on the 
+onboarding process for Lankford Avenue LLC in the NotesAO system, as 
+well as outline the next steps needed to complete setup.
+
+Progress to Date
+We have completed all possible setup work with the information currently 
+available, including:
+
+	*
+
+Adding all programs listed in your onboarding form to your account.
+	*
+
+Implementing the Duluth Model curriculum for BIPP (male).
+	*
+
+Creating user accounts for all administrators and facilitators you 
+provided.
+
+Next Steps - Items Needed from Your Team
+To complete your onboarding and ensure the system is ready for live use, 
+we will need the following:
+
+	*
+
+Curriculum Material for All Programs
+
+	*
+
+Please provide the full curriculum outlines, lesson plans, or 
+participant materials for each program you offer (including non-BIPP 
+programs such as Marijuana Education, Anger Management, Thinking for a 
+Change, etc.).
+
+	*
+
+Template Report Documents
+
+	*
+
+Any templates you use for reports (e.g., court reports, progress 
+reports, completion certificates, victim letters including Entrance, 
+Completion, and Exit) so we can configure them within the system. 	* 
+Preferably in .docx or .pdf format.
+
+	*
+
+Client Demographic and Attendance Data
+
+	*
+
+Begin filling in the provided example CSV file with:
+
+	*
+
+Client demographic details for all current and past clients in any 
+program.
+	*
+
+Attendance records for each client. 	* NOTE: when filling out "IMPORT 
+CSV wPayments" be sure to enter each attendance date under each P1 
+through P35 field followed by the payment receive for that group per 
+client on P1_payment through P35_payment.
+
+	*
+
+Victim Information
+
+	*
+
+Any victim contact details and notification processes you currently use.
+
+	*
+
+Intake Processes
+
+	*
+
+A completed example of your intake packet so we can replicate your 
+intake forms and workflows in NotesAO.
+
+	*
+
+Payment Amounts and Balances
+
+	*
+
+Current program fees, payment schedules, and any outstanding balances 
+for existing clients.
+
+	*
+
+Officer / Case Manager Information
+
+	*
+
+Names and contact details for all associated officers, probation/parole 
+staff, CPS workers, attorneys, or other referring parties. 	* At 
+minimum: name, location, & email address or fax number
+
+	*
+
+Group Schedules & Links
+
+	*
+
+Days/times for each program's groups throughout the week.
+	*
+
+Virtual meeting links for each group session.
+
+Once these items are received, we can complete the build-out of your 
+account and move into final testing and training.
+
+If you have any questions about the requested items or need assistance 
+compiling them, please let me know. We're excited to get Lankford Avenue 
+fully operational on NotesAO and ensure your team can begin using all 
+available tools as quickly as possible.
+
+Best regards,
+
+Gabriel
+NotesAO | Senior Developer
+--=_d36ad193efb7a7f908ed605f209b5fc2
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 10pt; font-family: Verdana,Gen=
+eva,sans-serif'>
+<p><br /></p>
+<p>-------- Original Message --------</p>
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<th align=3D"right" valign=3D"baseline" nowrap=3D"nowrap">Subject:</th>
+<td>NotesAO Onboarding &ndash; Next Steps for Lankford Avenue LLC</td>
+</tr>
+<tr>
+<th align=3D"right" valign=3D"baseline" nowrap=3D"nowrap">Date:</th>
+<td>2025-08-08 13:35</td>
+</tr>
+<tr>
+<th align=3D"right" valign=3D"baseline" nowrap=3D"nowrap">From:</th>
+<td>admin@notesao.com</td>
+</tr>
+<tr>
+<th align=3D"right" valign=3D"baseline" nowrap=3D"nowrap">To:</th>
+<td>lankfordavenue@yahoo.com</td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<div id=3D"forwardbody1" style=3D"font-size: 10pt; font-family: Verdana,Gen=
+eva,sans-serif;">
+<p>Dear Dr. Lankford and Team,</p>
+<p>I hope you are doing well. I wanted to provide you with an update on the=
+ onboarding process for Lankford Avenue LLC in the NotesAO system, as well =
+as outline the next steps needed to complete setup.</p>
+<p><strong>Progress to Date</strong><br />We have completed all possible se=
+tup work with the information currently available, including:</p>
+<ul>
+<li>
+<p>Adding all programs listed in your onboarding form to your account.</p>
+</li>
+<li>
+<p>Implementing the Duluth Model curriculum for BIPP (male).</p>
+</li>
+<li>
+<p>Creating user accounts for all administrators and facilitators you provi=
+ded.</p>
+</li>
+</ul>
+<p><strong>Next Steps &ndash; Items Needed from Your Team</strong><br />To =
+complete your onboarding and ensure the system is ready for live use, we wi=
+ll need the following:</p>
+<ol>
+<li>
+<p><strong>Curriculum Material for All Programs</strong></p>
+<ul>
+<li>
+<p>Please provide the full curriculum outlines, lesson plans, or participan=
+t materials for each program you offer (including non-BIPP programs such as=
+ Marijuana Education, Anger Management, Thinking for a Change, etc.).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Template Report Documents</strong></p>
+<ul>
+<li>
+<p>Any templates you use for reports (e.g., court reports, progress reports=
+, completion certificates, victim letters including Entrance, Completion, a=
+nd Exit) so we can configure them within the system.</p>
+</li>
+<li>Preferably in .docx or .pdf format.</li>
+</ul>
+</li>
+<li>
+<p><strong>Client Demographic and Attendance Data</strong></p>
+<ul>
+<li>
+<p>Begin filling in the provided example CSV file with:</p>
+<ul>
+<li>
+<p>Client demographic details for all current and past clients in any progr=
+am.</p>
+</li>
+<li>
+<p>Attendance records for each client.</p>
+</li>
+<li>NOTE: when filling out "IMPORT CSV wPayments" be sure to enter each att=
+endance date under each P1 through P35 field followed by the payment receiv=
+e for that group per client on P1_payment through P35_payment.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Victim Information</strong></p>
+<ul>
+<li>
+<p>Any victim contact details and notification processes you currently use.=
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Intake Processes</strong></p>
+<ul>
+<li>
+<p>A completed example of your intake packet so we can replicate your intak=
+e forms and workflows in NotesAO.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Payment Amounts and Balances</strong></p>
+<ul>
+<li>
+<p>Current program fees, payment schedules, and any outstanding balances fo=
+r existing clients.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Officer / Case Manager Information</strong></p>
+<ul>
+<li>
+<p>Names and contact details for all associated officers, probation/parole =
+staff, CPS workers, attorneys, or other referring parties.</p>
+</li>
+<li>At minimum: name, location, &amp; email address or fax number</li>
+</ul>
+</li>
+<li>
+<p><strong>Group Schedules &amp; Links</strong></p>
+<ul>
+<li>
+<p>Days/times for each program&rsquo;s groups throughout the week.</p>
+</li>
+<li>
+<p>Virtual meeting links for each group session.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Once these items are received, we can complete the build-out of your acc=
+ount and move into final testing and training.</p>
+<p>If you have any questions about the requested items or need assistance c=
+ompiling them, please let me know. We&rsquo;re excited to get Lankford Aven=
+ue fully operational on NotesAO and ensure your team can begin using all av=
+ailable tools as quickly as possible.</p>
+<p>Best regards,</p>
+<p>Gabriel<br />NotesAO | Senior Developer</p>
+</div>
+
+</body></html>
+
+--=_d36ad193efb7a7f908ed605f209b5fc2--
+
+--=_1dc6cbb37d518ae4ddb345d555aa1fb3
+Content-Transfer-Encoding: base64
+Content-Type: text/csv; charset=us-ascii;
+ name="IMPORT CSV wPayments.csv"
+Content-Disposition: attachment;
+ filename="IMPORT CSV wPayments.csv";
+ size=1715
+
+Y2xpZW50X2lkLHByb2dyYW1fbmFtZSxmaXJzdF9uYW1lLGxhc3RfbmFtZSxkb2IsZ2VuZGVyLHBo
+b25lX251bWJlcixldGhuaWNpdHlfbmFtZSxyZXF1aXJlZF9zZXNzaW9ucyxpZF9udW1iZXIscmVm
+ZXJyYWxfdHlwZSxvZmZpY2VyX2ZpcnN0X25hbWUsb2ZmaWNlcl9sYXN0X25hbWUsb2ZmaWNlcl9l
+bWFpbCxvZmZpY2VyX3Bob25lLG9mZmljZXJfZmF4LG9mZmljZXJfbG9jYXRpb24sZ3JvdXBfbmFt
+ZSxmZWVfcGVyX2dyb3VwLHRvdGFsX293ZWQsYW1vdW50X3BhaWRfdG9fZGF0ZSxvcmllbnRhdGlv
+bl9kYXRlLGV4aXRfZGF0ZSxleGl0X3JlYXNvbixQMSxQMV9wYXltZW50LFAyLFAyX3BheW1lbnQs
+UDMsUDNfcGF5bWVudCxQNCxQNF9wYXltZW50LFA1LFA1X3BheW1lbnQsUDYsUDZfcGF5bWVudCxQ
+NyxQN19wYXltZW50LFA4LFA4X3BheW1lbnQsUDksUDlfcGF5bWVudCxQMTAsUDEwX3BheW1lbnQs
+UDExLFAxMV9wYXltZW50LFAxMixQMTJfcGF5bWVudCxQMTMsUDEzX3BheW1lbnQsUDE0LFAxNF9w
+YXltZW50LFAxNSxQMTVfcGF5bWVudCxQMTYsUDE2X3BheW1lbnQsUDE3LFAxN19wYXltZW50LFAx
+OCxQMThfcGF5bWVudCxQMTksUDE5X3BheW1lbnQsUDIwLFAyMF9wYXltZW50LFAyMSxQMjFfcGF5
+bWVudCxQMjIsUDIyX3BheW1lbnQsUDIzLFAyM19wYXltZW50LFAyNCxQMjRfcGF5bWVudCxQMjUs
+UDI1X3BheW1lbnQsUDI2LFAyNl9wYXltZW50LFAyNyxQMjdfcGF5bWVudCxQMjgsUDI4X3BheW1l
+bnQsUDI5LFAyOV9wYXltZW50LFAzMCxQMzBfcGF5bWVudCxQMzEsUDMxX3BheW1lbnQsUDMyLFAz
+Ml9wYXltZW50LFAzMyxQMzNfcGF5bWVudCxQMzQsUDM0X3BheW1lbnQsUDM1LFAzNV9wYXltZW50
+DQoxLEJJUFAgKG1hbGUpLEpvaG4sRG9lLDEvMS8yMDAwLG1hbGUsODE3LTExMS0xMTExLEhpc3Bh
+bmljLDI3LCxQcm9iYXRpb24sVGF0eWFuYSxHcmlmZmluLCwsLE1pbGxlciBTdHJlZXQsV2VkbmVz
+ZGF5IE1lbidzIFZpcnR1YWwgQklQUCA4UE0sMjAsLCwzLzEvMjAyNSwsTm90IEV4aXRlZCwzLzgv
+MjAyNSwyMCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCws
+LCwsLCwsLCwsLCwsLCwsLCwsDQoyLEJJUFAgKGZlbWFsZSksSmFuZSxEb2UsMS8yLzE5OTksZmVt
+YWxlLCwsMTgsLFBhcm9sZSwsLCwsLENhcmV5IFN0cmVldCwsLCwsMS8xLzIwMjUsMy8yLzIwMjUs
+Q29tcGxldGlvbiBvZiBQcm9ncmFtLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCws
+LCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLA0KMyxNUlQsSmltbXksRGF3biwxLzMv
+MTk5OCwsLCwzMCwsQ291cnQsLCwsLCwsLCwsLDIvMS8yMDI1LDMvMi8yMDI1LFZpb2xhdGlvbiBv
+ZiBSZXF1aXJlbWVudHMsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCws
+LCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsDQo0LEFuZ2VyIENvbnRyb2wsSmFuZXQsRGF3biwx
+LzQvMTk5NywsLCwxOCwsQXR0b3JuZXksLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCws
+LCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLA0KNSxBbnRp
+IFRoZWZ0LEpvaG4sRG9lLDIvMTcvMTk5NCwsLCwsLENQUywsLCwsLCwsLCwsLCwsLCwsLCwsLCws
+LCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCws
+LCwsDQo=
+--=_1dc6cbb37d518ae4ddb345d555aa1fb3--

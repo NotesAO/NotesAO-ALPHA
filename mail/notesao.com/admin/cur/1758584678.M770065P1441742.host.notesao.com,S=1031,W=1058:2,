@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 9F6RLGbf0WjO/xUAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Mon, 22 Sep 2025 18:44:38 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 22 Sep 2025 18:44:38 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v0qD0-0000000633o-2xOR
+	for admin@notesao.com;
+	Mon, 22 Sep 2025 18:44:38 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Reynaldo Dominguez
+X-PHP-Script: ffl.notesao.com/intake.php for 145.224.2.113
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: drey38970@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v0qD0-0000000633o-2xOR@host.notesao.com>
+Date: Mon, 22 Sep 2025 18:44:38 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

@@ -1,0 +1,28 @@
+Return-Path: <reporting@safatherhood.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id eFJgAj6DxWg6RQIAIW4ynA
+	(envelope-from <reporting@safatherhood.notesao.com>); Sat, 13 Sep 2025 09:44:14 -0500
+Return-path: <reporting@safatherhood.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sat, 13 Sep 2025 09:44:14 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@safatherhood.notesao.com>)
+	id 1uxRU5-00000000con-4ARs;
+	Sat, 13 Sep 2025 09:44:14 -0500
+To: admin@notesao.com
+Subject: San Antonio Fatherhood Campaign has received a new Intake Packet for Xavier Morrow
+X-PHP-Script: safatherhood.notesao.com/intake.php for 172.56.92.131
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@safatherhood.notesao.com
+Reply-To: kishincypher@icloud.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uxRU5-00000000con-4ARs@host.notesao.com>
+Date: Sat, 13 Sep 2025 09:44:13 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://safatherhood.notesao.com/intake-index.php

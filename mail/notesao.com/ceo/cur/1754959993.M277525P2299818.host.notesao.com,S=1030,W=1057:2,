@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id nr41D3mQmmiqFyMAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Mon, 11 Aug 2025 19:53:13 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 11 Aug 2025 19:53:13 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uldGL-00000009eHk-0tIY
+	for admin@notesao.com;
+	Mon, 11 Aug 2025 19:53:13 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Luis Rivero Torres
+X-PHP-Script: ffl.notesao.com/intake.php for 174.244.48.198
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: 7wxyz00@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uldGL-00000009eHk-0tIY@host.notesao.com>
+Date: Mon, 11 Aug 2025 19:53:13 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

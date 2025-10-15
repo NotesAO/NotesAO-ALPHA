@@ -1,0 +1,2408 @@
+Return-Path: <01010198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000@amazonses.messaging.squareup.com>
+Delivered-To: vanmartin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id mhrsLCkqsmjFsz8AIW4ynA
+	(envelope-from <01010198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000@amazonses.messaging.squareup.com>)
+	for <vanmartin@notesao.com>; Fri, 29 Aug 2025 17:31:05 -0500
+Return-path: <01010198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000@amazonses.messaging.squareup.com>
+Envelope-to: vanmartin@notesao.com
+Delivery-date: Fri, 29 Aug 2025 17:31:05 -0500
+Received: from a27-85.smtp-out.us-west-2.amazonses.com ([54.240.27.85]:56975)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <01010198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000@amazonses.messaging.squareup.com>)
+	id 1us7cb-0000000HW2s-2b4a
+	for vanmartin@notesao.com;
+	Fri, 29 Aug 2025 17:31:05 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zkmtl6gy2hsfdpedstduzebbkq3duxs4; d=messaging.squareup.com;
+	t=1756506660;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=4XkUMJzZE1c07awk1Y0EjR2NIGYPnwpVWn55xwRS47g=;
+	b=Y+9FWaqhOZoJyqDDSMaqie2R+kHgcy9eh5Aw2P3anWfch/1ruzx1PxkTwV9PONpp
+	fwQ7n7R+LzMFeYaBt6HtSv0kyaAF4WXlTwi8iQq7hfIpi0Vz7uTA2KBxYZFiMi6NJzu
+	5gn5DuINdm+JrKrWLkxq28tg59+JFIhzjDH8gJwk=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1756506660;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=4XkUMJzZE1c07awk1Y0EjR2NIGYPnwpVWn55xwRS47g=;
+	b=JIpZfQbSF2/zWK6tH3ny735mQ9jzPC/Vnq5MP9mNtiAghrhiTskk9hd/milrrpk3
+	Zica4dFq6YiS7lbF+d5A74bLfPfsMI/4Hed2aOXyIEdiJbvCzioezC4uIPT/N2gxqpV
+	8E3JTLldqCZF7nhE4EKK98He3kFlV4TMXeI94yxM=
+Date: Fri, 29 Aug 2025 22:31:00 +0000
+From: Square Reports <noreply@messaging.squareup.com>
+To: vanmartin@notesao.com
+Message-ID: <01010198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000@us-west-2.amazonses.com>
+Subject: =?UTF-8?Q?NotesAO=E2=80=94Your_Daily_Sales_Summ?=
+ =?UTF-8?Q?ary_Report_for_August_29,_2025?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1331034_652012639.1756506660167"
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-ERS-Token: CCAQ3IilwIbXqb72ARi43fu9hqONsIsB
+List-Unsubscribe: <https://squareup.com/email/subscriptions/unsubscribe?scope=summary&subcategory=daily_sales_summary_emails&locale=en-US&request_id=94e5b365-3243-4ea3-955d-560c4e97f3f2&recipient=CCAQ3IilwIbXqb72ARi43fu9hqONsIsB&wastruncated=0>,
+ <mailto:CAEabwokOTRlNWIzNjUtMzI0My00ZWEzLTk1NWQtNTYwYzRlOTdmM2YyEiUKB3N1bW1hcnkSGmRhaWx5X3NhbGVzX3N1bW1hcnlfZW1haWxzGiBDQ0FRM0lpbHdJYlhxYjcyQVJpNDNmdTlocU9Oc0lzQiIgowDuXF+n0i8WmmmHnt+nE688rPnDrrQ0yW1wBjD5NMc=@reply2.squareup.com>
+X-Metadata-send-date: 20250829
+X-Metadata-merchant-token: L5WHTV2CKA4AB
+X-Metadata-email-type: revamped-daily-sales-summary
+X-EMS-Request-ID: 94e5b365-3243-4ea3-955d-560c4e97f3f2
+Feedback-ID: ::1.us-west-2.Ys0TtaV3ThrL9KaebebAtwQ8vYTqz4B6QHfonsV/uOw=:AmazonSES
+X-SES-Outgoing: 2025.08.29-54.240.27.85
+X-Spam-Status: No, score=2.2
+X-Spam-Score: 22
+X-Spam-Bar: ++
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  NotesAO, your sales from Friday Get real-time, customized
+   sales reports anytime in your Square Dashboard, or from the free Square Dashboard
+    app for iPhone. Visit your Dashboard ›: https://app.squareup.com/dashboard
+    
+ Content analysis details:   (2.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.27.85 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.27.85 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                           [54.240.27.85 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: cloudfront.net]
+                             [URI: squareup.com]
+                             [URI: squarecdn.com]
+                             [URI: awstrack.me]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: awstrack.me]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.5 KAM_NUMSUBJECT         Subject ends in numbers excluding current years
+  0.8 KAM_INFOUSMEBIZ        Prevalent use of
+                             .info|.us|.me|.me.uk|.biz|xyz|id|rocks|life
+                             domains in spam/malware
+X-Spam-Flag: NO
+
+------=_Part_1331034_652012639.1756506660167
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+NotesAO, your sales from Friday
+
+Get real-time, customized sales reports anytime in your Square Dashboard, o=
+r from the free Square Dashboard app for iPhone.
+
+Visit your Dashboard =E2=80=BA:
+https://app.squareup.com/dashboard
+
+---
+
+
+# NotesAO=E2=80=94Your Daily Sales Summary Report for August 29, 2025
+
+Net Sales:               $25.00
+Fees:                    ($1.10)
+Free processing applied: $0.00
+    Customers Served:          1
+
+
+---
+
+
+    # Your Top Selling Item
+
+    Add your products, services or menu items to your item library to see w=
+hich items sell the best.
+
+    <span class=3D"translation_missing" title=3D"translation missing: en-US=
+.period_review.day_in_review.create_items">Create Items</span>:
+    https://app.squareup.com/dashboard/items
+
+    ---
+
+
+    # Your Customers
+
+    Customers Served:     1
+    New Customers:        1
+    Returning Customers:  0
+
+
+    <span class=3D"translation_missing" title=3D"translation missing: en-US=
+.period_review.day_in_review.new_customers_percent, percentage: 100">New Cu=
+stomers Percent</span>
+    <span class=3D"translation_missing" title=3D"translation missing: en-US=
+.period_review.day_in_review.returning_customers_percent, percentage: 0">Re=
+turning Customers Percent</span>
+
+        <span class=3D"translation_missing" title=3D"translation missing: e=
+n-US.period_review.day_in_review.connect">Connect</span>:
+        https://app.squareup.com/dashboard/customers/marketing
+
+    ---
+
+
+ =20
+
+
+-----
+
+
+=C2=A9 2025 Block, Inc.
+1955 Broadway, Suite 600
+Oakland, CA 94612
+
+
+Square Privacy Policy:
+https://app.squareup.com/legal/general/privacy
+
+Change your email preferences:
+https://app.squareup.com/dashboard/business/email-notifications
+
+
+------=_Part_1331034_652012639.1756506660167
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">
+  <meta http-equiv=3D"Content-Type" content=3D"text/html;charset=3Dutf-8">
+  <title>Period Review</title>
+  <!--[if mso]>
+  <style type=3D"text/css">
+    .nomso {
+      display: none;
+      font-size: 0;
+      line-height: 0
+    }
+
+    table {
+      font-size: 1px;
+      line-height: 0;
+      mso-margin-top-alt: 1px;
+    }
+
+    table.MsoNormalTable {
+      font-family: sqmarket, Helvetica Neue, sans-serif
+    }
+  </style>
+  <![endif]-->
+  <!--[if !mso]><!-->
+  <link rel=3D"stylesheet" type=3D"text/css" href=3D"https://d1g145x70srn7h=
+.cloudfront.net/images/email/misc/sq-market.css">
+  <style type=3D"text/css">
+    a, a[href^=3D"tel"], a[href^=3D"mailto"], a[href*=3D"//maps.apple.com"]=
+ {
+      color: #5f6a7c;
+      text-decoration: none;
+    }
+
+    .invert a, .invert a[href^=3D"tel"], .invert a[href^=3D"mailto"], .inve=
+rt a[href*=3D"//maps.apple.com"] {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    body .blue a {
+      color: #2996cc !important;
+    }
+
+    body .green a {
+      color: #23b524 !important;
+    }
+
+    b a {
+      color: #2d394f;
+    }
+
+    #hero a {
+      color: #ffffff;
+    }
+
+    #outlook a {
+      padding: 0;
+    }
+
+    body {
+      text-rendering: optimizeLegibility;
+      width: 100% !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ExternalClass {
+      width: 100%;
+      line-height: 100%;
+    }
+
+    .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalCl=
+ass td, .ExternalClass div {
+      line-height: 100%;
+    }
+
+    table, td {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    @media screen and (min-width: 281px) {
+      div[id=3D"container"] {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    @media screen and (min-width: 281px) and (max-width: 569px) and (-webki=
+t-min-device-pixel-ratio: 0) {
+      div[id=3D"container"] .fullWidth a {
+        display: block !important;
+      }
+
+      div[id=3D"container"] .column {
+        width: inherit !important;
+      }
+
+      div[id=3D"container"] .column .embiggen {
+        width: 600px !important;
+        max-width: 600px !important;
+      }
+
+      div[id=3D"container"] .column .embiggen .button td {
+        width: inherit !important;
+      }
+
+      div[id=3D"container"] .column .embiggen img {
+        max-width: 100% !important;
+      }
+
+      div[id=3D"container"] .h1, div[id=3D"container"] .dark {
+        text-align: center !important
+      }
+
+      div[id=3D"container"] .dump {
+        display: none !important
+      }
+
+      div[id=3D"container"] .greyBox {
+        padding-left: 10px !important;
+        padding-right: 10px !important
+      }
+
+      div[id=3D"container"] .share a {
+        width: 100% !important;
+      }
+    }
+
+    .circle-icon {
+      padding: 0 6px;
+      width: 36px;
+      height: 36px;
+    }
+
+    .scale-icon {
+      margin-top: 12px;
+    }
+  </style>
+  <!--<![endif]-->
+</head>
+<body bgcolor=3D"#FFFFFF">
+<!--[if !mso]><!-->
+<div id=3D"preheader" style=3D"font-size: 0;max-height: 0;overflow: hidden;=
+display: none">
+    Gross Sales: $25.00, Service Charges: $0.00, Returns: $0.00, Discounts =
+&amp; Comps: $0.00, Net Sales: $25.00, Tax: $2.06, Tips: $0.00, Average Tip=
+ Rate: 0.00%, Fees: ($1.10), Effective Fee Rate: 4.07%, Total Collected: $2=
+7.06
+
+</div>
+<!--<![endif]-->
+<div id=3D"container" style=3D"-webkit-text-size-adjust: none;-ms-text-size=
+-adjust: none;-webkit-font-smoothing: antialiased;background: #ffffff">
+
+ =20
+<table style=3D"table-layout: fixed;background: #ffffff" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+  <tr>
+    <td align=3D"center" style=3D"padding: 0 0 45px">
+      <table style=3D"table-layout: fixed;background: #ffffff" width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0">
+        <tr>
+          <td align=3D"center" style=3D"background: #fafafa;border-bottom: =
+1px solid #e0e0e0;">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+              <tr style=3D"font-size: 0">
+                <!-- Intro Partial -->
+<td style=3D"text-align: center;padding: 48px 0 48px;background:#fafafa" al=
+ign=3D"center">
+  <table cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td width=3D"520" style=3D"padding: 0 40px">
+        <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=
+=3D"0">
+          <tr>
+            <td class=3D"jewel" style=3D"padding: 0 0 40px" align=3D"center=
+">
+              <a href=3D"https://rfrtpc7s.r.us-west-2.awstrack.me/L0/https:=
+%2F%2Fapp.squareup.com/1/01010198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3=
+078-000000/tVlyTXJqa4ZHQt0pLJY7OdDqqKY=3D442" id=3D"jewel-hero" style=3D"te=
+xt-decoration: none">
+                <img src=3D"https://d1g145x70srn7h.cloudfront.net/images/em=
+ail/jewel-dark-22.png" width=3D"32" height=3D"32" border=3D"0" style=3D"dis=
+play: inline">
+              </a>
+            </td>
+          </tr>
+          <!-- NotesAO, your sales from Friday Title Partial -->
+<tr style=3D"font-size: 0">
+  <td align=3D"center" style=3D"color: #32373C;font-family: sqmarket, 'Helv=
+etica Neue', sans-serif;font-size: 24px;line-height: 30px;padding: 0 0 24px=
+" class=3D"h1">
+    NotesAO, your sales from Friday<sup>+</sup>
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #64696E;font-size: 14px;line-height: 21px;font-family=
+: sqmarket-regular, 'Helvetica Neue', sans-serif;padding: 0px 0 24px" align=
+=3D"center">
+    Get real-time, customized sales reports anytime in your Square Dashboar=
+d, or from the free Square Dashboard app for iPhone.
+  </td>
+</tr>
+
+          <tr>
+            <td align=3D"center" class=3D"button">
+              <table width=3D"inherit" style=3D"width: inherit;text-align: =
+center" cellpadding=3D"0" cellspacing=3D"0">
+                <tr>
+                  <td align=3D"center">
+                    <table width=3D"inherit" style=3D"width: inherit;text-a=
+lign: center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+  <td style=3D"text-align: center;font-family: sqmarket, 'Helvetica Neue', =
+sans-serif;font-size: 13px;line-height: 20px;text-transform: uppercase;lett=
+er-spacing: 1px" align=3D"center">
+    <a href=3D"https://rfrtpc7s.r.us-west-2.awstrack.me/L0/https:%2F%2Fapp.=
+squareup.com%2Fdashboard/1/01010198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcf=
+f3078-000000/jh6EfAEprDYm1NTm4qJKL-qMhvg=3D442" style=3D"color: #2996CC;tex=
+t-decoration: none" id=3D"button-visit-your-dashboard-1">
+      <!--[if mso]>&nbsp;<![endif]--> Visit your Dashboard =E2=80=BA <!--[i=
+f mso]>&nbsp;<![endif]-->
+    </a>
+  </td>
+</tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table cellpadding=3D"0" cellspacing=3D"0">
+        <tr>
+          <td align=3D"center">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+              <tr>
+                <td class=3D"dark" style=3D"color: #32373C;font-family: sqm=
+arket, 'Helvetica Neue', sans-serif;font-size: 18px;line-height: 23px;paddi=
+ng: 48px 0 2px" align=3D"center">
+                  <span style=3D"white-space: nowrap">Friday Aug 29, 7:00 A=
+M</span> - <span style=3D"white-space: nowrap">Friday Aug 29, 5:00 PM CDT</=
+span>
+                </td>
+              </tr>
+            </table>
+            <!-- Sales Summary Partial -->
+<table cellpadding=3D"0" cellspacing=3D"0">
+    <tr style=3D"font-size: 0">
+      <!-- Padding top -->
+      <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=
+=3D"center">
+        <table class=3D"green" cellpadding=3D"0" cellspacing=3D"0">
+          <tr valign=3D"top">
+              <!-- Gross Sales Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Gross Sales
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    $25.00
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+              <!-- Service Charges Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Service Charges
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    $0.00
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr style=3D"font-size: 0">
+      <!-- Padding top -->
+      <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=
+=3D"center">
+        <table class=3D"green" cellpadding=3D"0" cellspacing=3D"0">
+          <tr valign=3D"top">
+              <!-- Returns Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Returns
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    $0.00
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+              <!-- Discounts &amp; Comps Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Discounts &amp; Comps
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    $0.00
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr style=3D"font-size: 0">
+      <!-- Padding top -->
+      <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=
+=3D"center">
+        <table class=3D"green" cellpadding=3D"0" cellspacing=3D"0">
+          <tr valign=3D"top">
+              <!-- Net Sales Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Net Sales
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    $25.00
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+              <!-- Tax Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Tax
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    $2.06
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr style=3D"font-size: 0">
+      <!-- Padding top -->
+      <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=
+=3D"center">
+        <table class=3D"green" cellpadding=3D"0" cellspacing=3D"0">
+          <tr valign=3D"top">
+              <!-- Tips Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Tips
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    $0.00
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+              <!-- Average Tip Rate Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Average Tip Rate
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    0.00%
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr style=3D"font-size: 0">
+      <!-- Padding top -->
+      <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=
+=3D"center">
+        <table class=3D"green" cellpadding=3D"0" cellspacing=3D"0">
+          <tr valign=3D"top">
+              <!-- Fees Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Fees<sup>1</sup>
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    ($1.10)
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+              <!-- Effective Fee Rate Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Effective Fee Rate<sup>2</sup>
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    4.07%
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr style=3D"font-size: 0">
+      <!-- Padding top -->
+      <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=
+=3D"center">
+        <table class=3D"green" cellpadding=3D"0" cellspacing=3D"0">
+          <tr valign=3D"top">
+              <!-- Total Collected Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"260" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Total Collected
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    $27.06
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr style=3D"font-size: 0">
+      <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=
+=3D"center">
+        <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=
+=3D"0">
+          <tr valign=3D"top">
+            <!-- Cell Footers Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"520">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+            <tr>
+              <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;li=
+ne-height: 20px;vertical-align:top;font-family: sqmarket, 'Helvetica Neue',=
+ sans-serif;padding: 0px 0 8px">
+                <sup>+</sup>&nbsp;
+              </td>
+              <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;li=
+ne-height: 20px;font-family: sqmarket, 'Helvetica Neue', sans-serif;padding=
+: 0px 0 8px">
+                <span>Does not include transfers; partial, uncompleted, or =
+unsettled payments or refunds; or sales taken with no internet connection</=
+span>
+              </td>
+            </tr>
+              <tr>
+                <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;=
+line-height: 20px;vertical-align:top;font-family: sqmarket, 'Helvetica Neue=
+', sans-serif;padding: 0px 0 8px">
+                  <sup>1</sup>&nbsp;
+                </td>
+                <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;=
+line-height: 20px;font-family: sqmarket, 'Helvetica Neue', sans-serif;paddi=
+ng: 0px 0 8px">
+                  <span>Includes Square processing fees and any third-party=
+ fees (e.g. courier fees)</span>
+                </td>
+              </tr>
+              <tr>
+                <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;=
+line-height: 20px;vertical-align:top;font-family: sqmarket, 'Helvetica Neue=
+', sans-serif;padding: 0px 0 8px">
+                  <sup>2</sup>&nbsp;
+                </td>
+                <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;=
+line-height: 20px;font-family: sqmarket, 'Helvetica Neue', sans-serif;paddi=
+ng: 0px 0 8px">
+                  <span>3.5% + $0.15 (1 Payment)</span>
+                </td>
+              </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+          </tr>
+        </table>
+      </td>
+    </tr>
+  <tr style=3D"font-size: 0">
+    <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=3D=
+"center">
+      <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"=
+0">
+        <tr valign=3D"top">
+          <!-- New Hourly Sales Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"520">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Hourly Sales
+  </td>
+</tr>
+
+          <tr>
+            <td align=3D"center" style=3D"padding: 0 0; background: #FFF" w=
+idth=3D"520">
+              <!-- Since histogram buckets are meant to be used generally a=
+nd not for money, we need to create money here. -->
+              <table width=3D"100%" style=3D"text-align: center" cellpaddin=
+g=3D"0" cellspacing=3D"0">
+                <!-- top half of graph -->
+                <tr valign=3D"bottom" background=3Dhttps://neptr-production=
+-c.squarecdn.com/reports/assets/prod/three_bar_graph-fb01b8d0b3ab4d0cc15cb5=
+927d6e86dcf7edf03d84868642f53c3ff65516b791.png>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"20">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"4">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #2996CC" height=3D"100=
+.0" width=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 2px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                  <td valign=3D"top" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right; width: 100%;" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"font-size: 13px;text-align: right;line=
+-height: 21px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;c=
+olor: #DDD; vertical-align: top" height=3D"50">$25.00</td>
+                      </tr>
+                    </table>
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right; width: 100%;" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"font-size: 13px;text-align: right;line=
+-height: 21px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;c=
+olor: #DDD; vertical-align: top" height=3D"50">$12.50</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- labels at bottom of graph-->
+                <tr>
+                      <td style=3D"font-size: 12px;text-align: center;line-=
+height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;co=
+lor: #64696E" colspan=3D"3" align=3D"left">12AM</td>
+                      <td style=3D"font-size: 12px;text-align: center;line-=
+height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;co=
+lor: #64696E" colspan=3D"3" align=3D"left">3</td>
+                      <td style=3D"font-size: 12px;text-align: center;line-=
+height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;co=
+lor: #64696E" colspan=3D"3" align=3D"left">6</td>
+                      <td style=3D"font-size: 12px;text-align: center;line-=
+height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;co=
+lor: #64696E" colspan=3D"3" align=3D"left">9</td>
+                      <td style=3D"font-size: 12px;text-align: center;line-=
+height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;co=
+lor: #64696E" colspan=3D"3" align=3D"left">12PM</td>
+                      <td style=3D"font-size: 12px;text-align: center;line-=
+height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;co=
+lor: #64696E" colspan=3D"3" align=3D"left">3</td>
+                      <td style=3D"font-size: 12px;text-align: center;line-=
+height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;co=
+lor: #64696E" colspan=3D"3" align=3D"left">6</td>
+                      <td style=3D"font-size: 12px;text-align: center;line-=
+height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;co=
+lor: #64696E" colspan=3D"3" align=3D"left">9</td>
+                  <td height=3D"0" width=3D"0" colspan=3D"3">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr style=3D"font-size: 0">
+    <td width=3D"520" style=3D"text-align: center;padding: 0 16px" align=3D=
+"center">
+      <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"=
+0">
+        <tr valign=3D"top">
+          <!-- Today vs Last Week Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"520">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Aug 29 vs. Last 7 days
+  </td>
+</tr>
+
+          <tr>
+            <td align=3D"center" style=3D"padding: 0 0 32px 0; background: =
+#FFF;" width=3D"520">
+              <table width=3D"100%" style=3D"text-align: center" cellpaddin=
+g=3D"0" cellspacing=3D"0">
+                <!-- bottom half of graph -->
+                <tr valign=3D"bottom" background=3Dhttps://neptr-production=
+-c.squarecdn.com/reports/assets/prod/three_bar_graph-fb01b8d0b3ab4d0cc15cb5=
+927d6e86dcf7edf03d84868642f53c3ff65516b791.png>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td height=3D"0" width=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: right" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td height=3D"0" width=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td height=3D"0" width=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: right" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td height=3D"0" width=3D"20">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD" height=3D"0.0" w=
+idth=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #2996CC" height=3D"100=
+.0" width=3D"30">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"30">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"20">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"top" align=3D"center" style=3D"">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right; width: 100%;" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"font-size: 13px;text-align: right;line=
+-height: 21px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;c=
+olor: #DDD; vertical-align: top" colspan=3D"2" height=3D"50">$25.00</td>
+                      </tr>
+                    </table>
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right; width: 100%;" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"font-size: 13px;text-align: right;line=
+-height: 21px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;c=
+olor: #DDD; vertical-align: top" colspan=3D"2" height=3D"50">$12.50</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- labels at bottom of graph-->
+                <tr valign=3D"bottom">
+                  <td valign=3D"bottom" align=3D"center" colspan=3D"4"></td=
+>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">F</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">S</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">S</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">M</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">T</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">W</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">T</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center" style=3D"paddi=
+ng: 0 8px">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #2996CC">F</td>
+                          </tr>
+                        </table>
+                      </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"30">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"20">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"background: #DDD" height=3D"0" width=
+=3D"0">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- TODAY vs LAST WEEK vs AVERAGE DAY -->
+          <tr>
+            <td align=3D"center" style=3D"padding: 0 0; background: #FFF" w=
+idth=3D"520">
+              <table width=3D"100%" style=3D"text-align: center" cellpaddin=
+g=3D"0" cellspacing=3D"0">
+                <!-- normalized_amounts will contain three numbers [x, y, 1=
+.0], where 1.0 represents the bar with the highest value. -->
+                <!-- values x and y will always be <=3D 1.0.-->
+                <!-- graph segment -->
+                <tr valign=3D"bottom" background=3Dhttps://neptr-production=
+-c.squarecdn.com/reports/assets/prod/bottom_bar_graph-a47232fa2f1df76f85a0e=
+0774a78b46a2527ebdcfe460cf77a0e16fb9b524283.png>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"60">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <!-- TODAY -->
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"font-size: 12px;text-align: center;lin=
+e-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;=
+ color: #2996CC">$25.00</td>
+                      </tr>
+                      <tr>
+                        <td style=3D"background: #2996CC" height=3D"100.0" =
+width=3D"120">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"background: #DDD" height=3D"0" width=
+=3D"20">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <!-- LAST WEEK -->
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"font-size: 12px;text-align: center;lin=
+e-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;=
+ color: #64696E">$0.00</td>
+                      </tr>
+                      <tr>
+                        <td style=3D"background: #DDD" height=3D"0.0" width=
+=3D"120">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"background: #DDD" height=3D"0" width=
+=3D"20">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <!-- AVERAGE -->
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"font-size: 12px;text-align: center;lin=
+e-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-serif;=
+ color: #64696E">$25.00</td>
+                      </tr>
+                      <tr>
+                        <td style=3D"background: #DDD" height=3D"100.0" wid=
+th=3D"120">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td style=3D"background: #DDD" height=3D"0" width=
+=3D"20">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ right" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"60">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- labels at bottom of graph-->
+                <tr valign=3D"bottom">
+                  <td valign=3D"bottom" align=3D"center" colspan=3D"1"></td=
+>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">Aug 29</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: right" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">Last Friday</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: right" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: center" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"font-size: 12px;text-align: center=
+;line-height: 18px;font-family: sqmarket-regular, 'Helvetica Neue', sans-se=
+rif; color: #64696E">8-Day Average</td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign=3D"bottom" align=3D"center">
+                        <table style=3D"font-size: 0;line-height: 0;text-al=
+ign: right" cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"background: #DDD">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </td>
+                  <td valign=3D"bottom" align=3D"center">
+                    <table style=3D"font-size: 0;line-height: 0;text-align:=
+ center" cellpadding=3D"0" cellspacing=3D"0">
+                      <tr>
+                        <td height=3D"0" width=3D"60">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table style=3D"table-layout: fixed;background: #ffffff" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+  <tr>
+    <td align=3D"center" style=3D"border-top-width: 1px;background: #fafafa=
+;border-top-color: #e0e0e0;border-top-style: solid;padding: 48px 0">
+      <table cellpadding=3D"0" cellspacing=3D"0">
+        <tr style=3D"font-size: 0">
+          <!-- Create Items Partial -->
+<td style=3D"text-align: center;padding: 0px 0 0px" align=3D"center">
+  <table cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td style=3D"padding: 0 10px">
+        <table cellpadding=3D"0" cellspacing=3D"0">
+          <tr>
+            <td width=3D"400" style=3D"-webkit-border-radius: 4px;-moz-bord=
+er-radius: 4px;border-radius: 4px;padding: 1px">
+              <table width=3D"100%" style=3D"-webkit-border-radius: 4px;-mo=
+z-border-radius: 4px;border-radius: 4px;text-align: center" cellpadding=3D"=
+0" cellspacing=3D"0">
+                <tr>
+                  <td align=3D"center" class=3D"greyBox">
+                    <table style=3D"text-align: center" cellpadding=3D"0" c=
+ellspacing=3D"0">
+                      <tr>
+                        <td align=3D"center">
+                          <table style=3D"text-align: center" cellpadding=
+=3D"0" cellspacing=3D"0">
+                            <tr>
+                              <td align=3D"center" class=3D"icon">
+                                <table width=3D"inherit" style=3D"text-alig=
+n: center" cellpadding=3D"0" cellspacing=3D"0">
+                                  <tr>
+                                    <td align=3D"center">
+                                      <img src=3D"https://d1g145x70srn7h.cl=
+oudfront.net/images/email/review/items.gif" width=3D"68" height=3D"68" styl=
+e=3D"display: block">
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+  <td class=3D"dark" style=3D"color: #32373C;font-family: sqmarket, 'Helvet=
+ica Neue', sans-serif;font-size: 14px;line-height: 21px;padding: 24px 0 8px=
+" align=3D"center">
+    Your Top Selling Item
+  </td>
+</tr>
+
+                      <tr>
+                        <td align=3D"center">
+                          <table style=3D"text-align: center" cellpadding=
+=3D"0" cellspacing=3D"0">
+                            <tr>
+  <td style=3D"color: #64696E;font-size: 14px;line-height: 21px;font-family=
+: sqmarket-regular, 'Helvetica Neue', sans-serif;padding: 0px 0 24px" align=
+=3D"center">
+    Add your products, services or menu items to your item library to see w=
+hich items sell the best.
+  </td>
+</tr>
+
+                            <tr>
+  <td style=3D"text-align: center;font-family: sqmarket, 'Helvetica Neue', =
+sans-serif;font-size: 13px;line-height: 20px;text-transform: uppercase;lett=
+er-spacing: 1px" align=3D"center">
+    <a href=3D"https://rfrtpc7s.r.us-west-2.awstrack.me/L0/https:%2F%2Fapp.=
+squareup.com%2Fdashboard%2Fitems/1/01010198f7f49d50-e22cfdab-d0ad-446a-99e0=
+-e281fcff3078-000000/eVJ7E1xjWT7jt3lIz8V1eDaTbVw=3D442" style=3D"color: #29=
+96CC;text-decoration: none" id=3D"create-items-1">
+      <!--[if mso]>&nbsp;<![endif]--> Add Items&nbsp;=E2=80=BA <!--[if mso]=
+>&nbsp;<![endif]-->
+    </a>
+  </td>
+</tr>
+
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table style=3D"table-layout: fixed;background: #ffffff" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+  <tr>
+    <td align=3D"center" style=3D"border-top-width: 1px;border-top-color: #=
+e0e0e0;border-top-style: solid;padding: 48px 0">
+      <table cellpadding=3D"0" cellspacing=3D"0">
+        <tr>
+          <td width=3D"520" style=3D"text-align: center;padding: 0 16px" al=
+ign=3D"center">
+            <table cellpadding=3D"0" cellspacing=3D"0">
+              <!-- Your Customers Title Partial -->
+<tr style=3D"font-size: 0">
+  <td align=3D"center" style=3D"color: #32373C;font-family: sqmarket, 'Helv=
+etica Neue', sans-serif;font-size: 24px;line-height: 30px;padding: 0 0 24px=
+" class=3D"h1">
+    Your Customers
+  </td>
+</tr>
+
+              <tr style=3D"font-size: 0">
+                <td style=3D"text-align: center" align=3D"center">
+                  <table style=3D"text-align: center" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                    <tr valign=3D"top">
+                      <!-- Customers Served Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"169" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Customers Served
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    1
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+                      <!-- New Customers Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"169" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    New Customers
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    1
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+                      <!-- Returning Customers Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 24px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"182" class=3D"embiggen">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    Returning Customers
+  </td>
+</tr>
+
+          <tr>
+  <td style=3D"color: #32373C;font-family: sqmarket, 'Helvetica Neue', sans=
+-serif;font-size: 26px;line-height: 30px" class=3D"h1">
+    0
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr style=3D"font-size: 0">
+                <td style=3D"text-align: center" align=3D"center">
+                  <table style=3D"text-align: center" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                    <tr valign=3D"top">
+                      <!-- New vs Returning Graph Partial -->
+<td style=3D"display: inline-block;vertical-align: top;padding: 48px 0 0" v=
+align=3D"top" colspan=3D"1">
+  <table class=3D"column" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" width=3D"520">
+        <table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" =
+cellspacing=3D"0">
+          <tr>
+            <td align=3D"center">
+              <table style=3D"text-align: left" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+                <tr>
+                  <td width=3D"280">
+                    <table width=3D"100%" style=3D"text-align: left" cellpa=
+dding=3D"0" cellspacing=3D"0">
+                      <tr valign=3D"bottom">
+                        <td valign=3D"bottom" align=3D"center" style=3D"pad=
+ding: 0 4px">
+                          <table style=3D"font-size: 0;line-height: 0;text-=
+align: left" cellpadding=3D"0" cellspacing=3D"0">
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td style=3D"background: #ffffff" height=3D=
+"10" width=3D"10"></td></tr>
+                          </table>
+                        </td>
+                        <td valign=3D"bottom" align=3D"center" style=3D"pad=
+ding: 0 4px">
+                          <table style=3D"font-size: 0;line-height: 0;text-=
+align: left" cellpadding=3D"0" cellspacing=3D"0">
+                            <tr>
+                              <td style=3D"text-align: center;color: #2996C=
+C;font-size: 12px;line-height: 22px;font-family: sqmarket, 'Helvetica Neue'=
+, sans-serif;font-weight: bold;padding: 0 0 8px" class=3D"h3" align=3D"cent=
+er">
+                                100%
+                              </td>
+                            </tr>
+                            <tr><td style=3D"background: #2996CC" height=3D=
+"100" width=3D"100">&nbsp;</td></tr>
+                          </table>
+                        </td>
+                        <td valign=3D"bottom" align=3D"center" style=3D"pad=
+ding: 0 4px">
+                          <table style=3D"font-size: 0;line-height: 0;text-=
+align: left" cellpadding=3D"0" cellspacing=3D"0">
+                            <tr>
+                              <td style=3D"text-align: center;color: #5f6a7=
+c;font-size: 12px;line-height: 22px;font-family: sqmarket, 'Helvetica Neue'=
+, sans-serif;font-weight: bold;padding: 0 0 8px" class=3D"h3" align=3D"cent=
+er">
+                                0%
+                              </td>
+                            </tr>
+                            <tr><td style=3D"background: #DDD" height=3D"0"=
+ width=3D"100">&nbsp;</td></tr>
+                          </table>
+                        </td>
+                        <td valign=3D"bottom" align=3D"center" style=3D"pad=
+ding: 0 4px">
+                          <table style=3D"font-size: 0;line-height: 0;text-=
+align: left" cellpadding=3D"0" cellspacing=3D"0">
+                            <tr><td>&nbsp;</td></tr>
+                            <tr><td style=3D"background: #ffffff" height=3D=
+"10" width=3D"10"></td></tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr><td style=3D"font-size: 0;line-height: 0;backgrou=
+nd: #e0e0e0" height=3D"1" colspan=3D"4">&nbsp;</td></tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align=3D"center" style=3D"padding: 16px 0 48px">
+              <table style=3D"text-align: left" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+                <tr>
+                  <td>
+                    <table style=3D"text-align: left" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                      <tr><td width=3D"12" height=3D"12" style=3D"font-size=
+: 0;line-height: 0;background: #2996CC"></td></tr>
+                    </table>
+                  </td>
+                  <td style=3D"color: #5f6a7c;font-size: 12px;line-height: =
+22px;font-family: sqmarket, 'Helvetica Neue', sans-serif;padding: 0 30px 0 =
+8px">
+                    New
+                  </td>
+                  <td>
+                    <table style=3D"text-align: left" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                      <tr><td width=3D"12" height=3D"12" style=3D"font-size=
+: 0;line-height: 0;background: #DDD"></td></tr>
+                    </table>
+                  </td>
+                  <td style=3D"color: #5f6a7c;font-size: 12px;line-height: =
+22px;font-family: sqmarket, 'Helvetica Neue', sans-serif;padding: 0 8px">
+                    Returning
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+              <tr>
+  <td style=3D"text-align: center;font-family: sqmarket, 'Helvetica Neue', =
+sans-serif;font-size: 13px;line-height: 20px;text-transform: uppercase;lett=
+er-spacing: 1px" align=3D"center">
+    <a href=3D"https://rfrtpc7s.r.us-west-2.awstrack.me/L0/https:%2F%2Fapp.=
+squareup.com%2Fdashboard%2Fcustomers%2Fmarketing/1/01010198f7f49d50-e22cfda=
+b-d0ad-446a-99e0-e281fcff3078-000000/-ShkChdFt3lEiB-0--DvgB8P318=3D442" sty=
+le=3D"color: #2996CC;text-decoration: none" id=3D"connect-with-your-custome=
+rs">
+      <!--[if mso]>&nbsp;<![endif]--> Connect with your&nbsp;customers&nbsp=
+;=E2=80=BA <!--[if mso]>&nbsp;<![endif]-->
+    </a>
+  </td>
+</tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+ =20
+
+<table id=3D'referral_table' style=3D"table-layout: fixed;background: #ffff=
+ff" width=3D"100%" class=3D"single default" cellpadding=3D"0" cellspacing=
+=3D"0">
+  <tr>
+    <td align=3D"center" style=3D"border-top-width: 1px;border-top-color: #=
+e0e0e0;border-top-style: solid;padding: 48px 0">
+      <table cellpadding=3D"0" cellspacing=3D"0">
+        <tr>
+          <td width=3D"520" style=3D"text-align: center;padding: 0 16px" cl=
+ass=3D"singleCell">
+            <table width=3D"100%" class=3D"center" style=3D"text-align: cen=
+ter" cellpadding=3D"0" cellspacing=3D"0">
+              <tr>
+                <!-- Share Square to Earn Rewards. Title Partial -->
+<tr style=3D"font-size: 0">
+  <td align=3D"center" style=3D"color: #32373C;font-family: sqmarket, 'Helv=
+etica Neue', sans-serif;font-size: 24px;line-height: 30px;padding: 0 0 24px=
+" class=3D"h1">
+    Share Square to Earn Rewards.
+  </td>
+</tr>
+
+              </tr>
+              <tr>
+                <td style=3D"font-size: 14px;line-height: 22px;font-family:=
+ sqmarket-regular, Helvetica, sans-serif;font-weight: normal;color: #5f6a7d=
+;padding: 0px 0 16px" class=3D"p">
+                  1. Send your referral link to a friend who might benefit =
+from using Square.
+                </td>
+              </tr>
+              <tr>
+                <td style=3D"font-size: 14px;line-height: 22px;font-family:=
+ sqmarket-regular, Helvetica, sans-serif;font-weight: normal;color: #5f6a7d=
+;padding: 0px 0 16px" class=3D"p">
+                    2. Once they start processing payments after signing up=
+ with your link, you=E2=80=99ll both receive free processing on up to $1,00=
+0 in sales. As an existing seller, you can instead opt to get $20 off a Squ=
+are Reader for contactless and chip payments.
+                </td>
+              </tr>
+              <tr>
+                <td style=3D"font-size: 14px;line-height: 22px;font-family:=
+ sqmarket-regular, Helvetica, sans-serif;font-weight: normal;color: #5f6a7d=
+;padding: 0px 0 42px" class=3D"p">
+                  3. Keep sharing the love to earn more rewards - for you a=
+nd your friends.
+                </td>
+              </tr>
+              <tr>
+                <td align=3D"center">
+                  <table width=3D"100%" style=3D"text-align: center" cellpa=
+dding=3D"0" cellspacing=3D"0">
+                    <tr>
+                      <td>
+                        <table width=3D"100%" style=3D"text-align: center" =
+cellpadding=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td style=3D"display: inline-block;background: =
+#fafafa;padding: 16px 0 18px;border: 1px solid #bec3c8;border-radius: 4px;w=
+idth: 100%;font-size: 14px;line-height: 22px;font-family: sqmarket, Helveti=
+ca, sans-serif;font-weight: normal;color: #5f6a7d" class=3D"p">
+                              <a href=3D"https://rfrtpc7s.r.us-west-2.awstr=
+ack.me/L0/https:%2F%2Fsquareup.com%2Fi%2FNOTESAO000/1/01010198f7f49d50-e22c=
+fdab-d0ad-446a-99e0-e281fcff3078-000000/47gvrfqKEwc-xkYd2Xzs--suz1s=3D442" =
+style=3D"cursor: text;color: #2996cc;text-decoration: none;font-family: sqm=
+arket, Helvetica, sans-serif;" width=3D"100%">squareup.com/i/NOTESAO000</a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style=3D"color: #c2c7cc;font-size: 14px;line-height: 22=
+px;font-family: sqmarket, Helvetica, sans-serif;font-weight: normal;padding=
+: 24px 0" class=3D"p">
+                  Or share via social media / email
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table style=3D"text-align: center" cellpadding=3D"0" cel=
+lspacing=3D"0">
+                    <tr>
+                      <td>
+                        <table style=3D"text-align: center" cellpadding=3D"=
+0" cellspacing=3D"0">
+                          <tr>
+                            <td align=3D"center">
+                              <table style=3D"text-align: center" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                <tr>
+                                  <td width=3D"168" align=3D"center" style=
+=3D"-webkit-border-radius: 4px;background: #fafafa;-moz-border-radius: 4px;=
+border-radius: 4px;font-size: 16px;line-height: 26px;text-align: center;fon=
+t-family: sqmarket, Helvetica, sans-serif;">
+                                    <a href=3D"https://twitter.com/intent/t=
+weet?text=3DProcess%20%241%2C000%20without%20fees%20when%20you%20activate%2=
+0a%20%40Square%20account%20with%20my%20link%20squareup.com%2Fi%2FNOTESAO000=
+%3Flang_code%3Den-US}" style=3D"display: block;background: #fafafa;padding:=
+ 7px 20px;border: 1px solid #bec3c8;text-decoration: none;-webkit-border-ra=
+dius: 4px;-moz-border-radius: 4px;border-radius: 4px;color: #ffffff">
+                                      <img style=3D"display: inline-block; =
+height: 12px;" src=3D"https://neptr-production-c.squarecdn.com/reports/asse=
+ts/prod/twitter-7d7ee738159ff09b3fb21303ccb17c380aad634b013d9f97fa369ec42fa=
+e5b3b.png" />
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td style=3D"padding: 0 8px">
+                        <table style=3D"text-align: center" cellpadding=3D"=
+0" cellspacing=3D"0">
+                          <tr>
+                            <td align=3D"center">
+                              <table style=3D"text-align: center" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                <tr>
+                                  <td width=3D"168" align=3D"center" style=
+=3D"-webkit-border-radius: 4px;background: #fafafa;-moz-border-radius: 4px;=
+border-radius: 4px;font-size: 16px;line-height: 26px;text-align: center;fon=
+t-family: sqmarket, Helvetica, sans-serif;">
+                                    <a href=3D"https://rfrtpc7s.r.us-west-2=
+.awstrack.me/L0/https:%2F%2Ffacebook.com%2Fsharer%2Fsharer.php%3Fu=3Dhttps%=
+253A%252F%252Fsquareup.com%252Fi%252FNOTESAO000%253Flang_code%253Den-US/1/0=
+1010198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000/txk3mxVfBLR-Pet=
+RhoZRzP8XZEg=3D442" style=3D"display: block;background: #fafafa;padding: 7p=
+x 20px;border: 1px solid #bec3c8;text-decoration: none;-webkit-border-radiu=
+s: 4px;-moz-border-radius: 4px;border-radius: 4px;color: #ffffff">
+                                      <img style=3D"display: inline-block; =
+height: 12px;" src=3D"https://neptr-production-c.squarecdn.com/reports/asse=
+ts/prod/facebook-f00b43ff3117d28bb24d972726693efe2b3978087902581fe100918f95=
+03b359.png" />
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td>
+                        <table style=3D"text-align: center" cellpadding=3D"=
+0" cellspacing=3D"0">
+                          <tr>
+                            <td align=3D"center">
+                              <table style=3D"text-align: center" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+                                <tr>
+                                  <td width=3D"168" align=3D"center" style=
+=3D"-webkit-border-radius: 4px;background: #fafafa;-moz-border-radius: 4px;=
+border-radius: 4px;font-size: 16px;line-height: 26px;text-align: center;fon=
+t-family: sqmarket, Helvetica, sans-serif;">
+                                    <a href=3D"mailto:?subject=3DJoin%20Squ=
+are%20and%20get%20%241%2C000%20in%20free%20processing%21&amp;body=3DI%20lov=
+e%20using%20Square%20to%20run%20my%20business%21%20Process%20%241%2C000%20w=
+ithout%20fees%20when%20you%20activate%20with%20my%20invite%20link%3A%20http=
+s%3A%2F%2Fsquareup.com%2Fi%2FNOTESAO000" style=3D"display: block;background=
+: #fafafa;padding: 7px 20px;border: 1px solid #bec3c8;text-decoration: none=
+;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;colo=
+r: #ffffff">
+                                      <img style=3D"display: inline-block; =
+height: 12px;" src=3D"https://neptr-production-c.squarecdn.com/reports/asse=
+ts/prod/email-b630db44d43a928e1a58f5956d7a0a85eb523f20f719e97de2ee4644d916d=
+a64.png" />
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td style=3D"text-transform: uppercase;letter-spacing: 1px;=
+font-size: 13px;line-height: 22px;padding: 42px 0 16px;font-family: sqmarke=
+t, Helvetica, sans-serif;" class=3D"boldLink">
+                  <a href=3D"https://rfrtpc7s.r.us-west-2.awstrack.me/L0/ht=
+tps:%2F%2Fapp.squareup.com%2Fdashboard%2Faccount%2Freferrals/1/01010198f7f4=
+9d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000/Gx8mQKx42vwIJVPj-AdN60NgCF=
+Y=3D442" style=3D"color: #2996cc;text-decoration: none">
+                    Learn more about Square=E2=80=99s referral program&nbsp=
+;=E2=80=BA
+                  </a></td>
+              </tr>
+              <tr>
+                <td style=3D"font-size: 12px;line-height: 18px;text-align: =
+center;font-family: sqmarket-regular, Helvetica, sans-serif;padding: 13px 0=
+ 11px;font-weight: normal;color: #5f6a7d" class=3D"p" align=3D"left">
+                  Waived processing fees are reimbursed to your account on =
+each transfer. Once you process $1,000 of card payments or 180 calendar day=
+s has passed (whichever occurs first), you=E2=80=99ll be automatically char=
+ged your standard per-transaction fee going forward.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+  <table width=3D"100%" style=3D"table-layout: fixed;background: #ffffff" c=
+ellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td align=3D"center" style=3D"border-top-width: 1px;border-top-color:=
+ #e0e0e0;border-top-style: solid;padding: 48px 40px">
+        <table cellpadding=3D"0" cellspacing=3D"0">
+          <tr>
+            <td align=3D"center" width=3D"420">
+              <a id=3D"footer_jewel" href=3D"https://rfrtpc7s.r.us-west-2.a=
+wstrack.me/L0/https:%2F%2Fapp.squareup.com/2/01010198f7f49d50-e22cfdab-d0ad=
+-446a-99e0-e281fcff3078-000000/3AS0nVhE6JgoHAOdF7Glsu9ohrY=3D442" style=3D"=
+text-decoration: none">
+                <img src=3D"https://d1g145x70srn7h.cloudfront.net/images/em=
+ail/jewel-grey-22.png" width=3D"32" height=3D"32" border=3D"0" style=3D"dis=
+play: inline">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align=3D"center" width=3D"420" style=3D"padding:24px 0 0">
+              <table cellpadding=3D"0" cellspacing=3D"0" style=3D"text-alig=
+n:center">
+  <tr>
+  <td class=3D"dark" style=3D"color: #64696E;font-size: 13px;text-transform=
+: uppercase;letter-spacing: 1px;line-height: 20px;font-family: sqmarket, 'H=
+elvetica Neue', sans-serif;padding: 0px 0 8px">
+    =C2=A9 2025 Block, Inc.
+  </td>
+</tr>
+
+  <tr>
+    <td style=3D"font-size: 11px;line-height: 15px;letter-spacing: 1px;text=
+-transform: uppercase;font-family: sqmarket, 'Helvetica Neue', sans-serif;c=
+olor: #5f6a7c;text-align: center;" align=3D"center">
+      Square
+    </td>
+  </tr>
+  <tr>
+    <td style=3D"font-size: 11px;line-height: 15px;letter-spacing: 1px;text=
+-transform: uppercase;font-family: sqmarket, 'Helvetica Neue', sans-serif;c=
+olor: #5f6a7c;text-align: center;" align=3D"center">
+      1955 Broadway, Suite 600
+    </td>
+  </tr>
+  <tr>
+    <td style=3D"font-size: 11px;line-height: 15px;letter-spacing: 1px;text=
+-transform: uppercase;font-family: sqmarket, 'Helvetica Neue', sans-serif;c=
+olor: #5f6a7c;text-align: center; padding-bottom: 16px;" align=3D"center">
+      Oakland, CA 94612
+    </td>
+  </tr>
+</table>
+
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"text-align: center;font-family: sqmarket-light, 'H=
+elvetica Neue', sans-serif;font-size: 14px;line-height: 21px" align=3D"cent=
+er">
+              <a href=3D"https://rfrtpc7s.r.us-west-2.awstrack.me/L0/https:=
+%2F%2Fapp.squareup.com%2Flegal%2Fgeneral%2Fprivacy/1/01010198f7f49d50-e22cf=
+dab-d0ad-446a-99e0-e281fcff3078-000000/O2QRKnMklw6Ynp6Mf8ubHqCp8yQ=3D442" s=
+tyle=3D"color: #2996CC;text-decoration: none" id=3D"square_privacy_policy">
+                <!--[if mso]>&nbsp;<![endif]--> Square Privacy Policy <!--[=
+if mso]>&nbsp;<![endif]-->
+              </a>
+            </td>
+          </tr>
+          <tr>
+              <td style=3D"text-align: center;font-family: sqmarket-light, =
+'Helvetica Neue', sans-serif;font-size: 14px;line-height: 21px" align=3D"ce=
+nter">
+                <a href=3D"https://rfrtpc7s.r.us-west-2.awstrack.me/L0/http=
+s:%2F%2Fapp.squareup.com%2Fdashboard%2Fbusiness%2Femail-notifications/1/010=
+10198f7f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000/2wgxTEftqsZvpqsQa=
+fZ5Puygr8M=3D442" style=3D"color: #2996CC;text-decoration: none" id=3D"chan=
+ge_your_email_preferences">
+                  <!--[if mso]>&nbsp;<![endif]--> Change your email prefere=
+nces <!--[if mso]>&nbsp;<![endif]-->
+                </a>
+              </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</div>
+<img alt=3D"" src=3D"https://rfrtpc7s.r.us-west-2.awstrack.me/I0/01010198f7=
+f49d50-e22cfdab-d0ad-446a-99e0-e281fcff3078-000000/lTsA6RBoN5wBPyvooKQSdD1g=
+gNk=3D442" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+------=_Part_1331034_652012639.1756506660167--

@@ -1,0 +1,523 @@
+Return-Path: <bounces+46091638-35a9-ceo=notesao.com@gsnemail.intuit.com>
+Delivered-To: ceo@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id jio+Ii4ozGhrVy8AIW4ynA
+	(envelope-from <bounces+46091638-35a9-ceo=notesao.com@gsnemail.intuit.com>)
+	for <ceo@notesao.com>; Thu, 18 Sep 2025 10:41:34 -0500
+Return-path: <bounces+46091638-35a9-ceo=notesao.com@gsnemail.intuit.com>
+Envelope-to: ceo@notesao.com
+Delivery-date: Thu, 18 Sep 2025 10:41:34 -0500
+Received: from o1.sgemail.gainsightapp.com ([198.37.159.181]:13806)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <bounces+46091638-35a9-ceo=notesao.com@gsnemail.intuit.com>)
+	id 1uzGlH-0000000D15q-42vq
+	for ceo@notesao.com;
+	Thu, 18 Sep 2025 10:41:34 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=intuit.com;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:from:subject:to;
+	s=GSN; bh=l0TDNARKdbbrN+m3JNX58hxmN7ACslKa/A6+dVlegpE=;
+	b=ECbgiGTX/K3sCt4TDkosOYnipsMSK2zHx2NQ6FY1Fub3Wnu3zqawCmYg2+NCanmBtWHn
+	kYGQq1mEsnOV0N3Grpoetk2Qxyd79jNYUIofvPInbX44xuCUb33EGx2rHdCcJ7auN/lWa+
+	udtcdE5oLN8Fwq0uxFxKQNZwlWrz3Fy1RnYcSgRNuRcWainGPCETtXI3U4cvSG9/CyLSWD
+	5u2FsdNHw7NboOZTLaOM41AhvMpjKkMr9jhutqzJZTiOq5oAW6WF/rC7ygPEUVeUQMJh6r
+	uIN7cItG/qp8MSKayzTUmsID2d4a/amzt8hEZJGvV5/MZdJdHJJ5OOiVKe5S5iNg==
+Received: by recvd-57475cd989-zrmdw with SMTP id recvd-57475cd989-zrmdw-1-68CC2824-B
+	2025-09-18 15:41:24.060407259 +0000 UTC m=+9154591.579702474
+Received: from NDYwOTE2Mzg (unknown)
+	by geopod-ismtpd-5 (SG) with HTTP
+	id WnbltshWT7uxZQmkHJE-mQ
+	Thu, 18 Sep 2025 15:41:24.013 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=d228b6a89b705181ed9be491b74790096f27f8c52146f8d4c9d6b4b9ce8e
+Date: Thu, 18 Sep 2025 15:41:30 +0000 (UTC)
+From: Mailchimp Onboarding Team <mc-customersuccess@intuit.com>
+Mime-Version: 1.0
+Message-ID: <f3dc1ca7-db60-4118-8edb-301f8975f7f7@gsemail.gainsightapp.com>
+Subject: Take your Mailchimp strategy further
+Reply-To: success@mailchimp.com
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fgateway=2Eus2=2Egainsightcloud=2Ecom=2Fv1=2Fcommunications=2Fsubs?=
+ =?us-ascii?Q?cription=2Flist-header-unsubscribe=3Ft=3DYmE1?=
+ =?us-ascii?Q?ZGZhYzktMDhkMS00ODZmLWJlOGQtY2RhYTQ3MGZ?=
+ =?us-ascii?Q?kNTc5&d=3DeyJQYWdlSWQiOiIxSTAwNjFCQzQ5SkN?=
+ =?us-ascii?Q?YQjNORUlCVjBCRFBEWkFMVU04SEw5Q1UiLCJnc2?=
+ =?us-ascii?Q?lkIjoiMUkwMDc1SUZEQk8zMzk5RUxRR1hLU09VV?=
+ =?us-ascii?Q?U9XVVZMN0tBNTNJIiwiU291cmNlIjoiR2FpbnNp?=
+ =?us-ascii?Q?Z2h0In0=3D&lnId=3Den=5Fus=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-GS-Message-ID: 
+ <f3dc1ca7-db60-4118-8edb-301f8975f7f7@gsemail.gainsightapp.com>
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Enrn2m2gUUaEgNgNiETHsD3T4DxArFPhwtj3khEWDzwxKewFxMijyGHvbl?=
+ =?us-ascii?Q?Nqk9sLnnz5P=2FzJZSDSjZi1v9qnUqZYz1u+lIAhd?=
+ =?us-ascii?Q?=2FtsUlCjUHeP2DZ5SP9QOUrrjPygrTdc0QtuPFoP?=
+ =?us-ascii?Q?F5H=2FY9B3P4OO9zZQg3udnCFhfQtxK3hPd38jL5J?=
+ =?us-ascii?Q?A8C9bZv1sXHV5V7iRBRo9LeiN8s5v2GOayLKvqx?=
+ =?us-ascii?Q?LSXKjC0wO552yBy5TOIWNsbB4YCqGShn9EIYyV4?=
+ =?us-ascii?Q?AyYq9HT=2F1=2F=2FL7P0EMGe2vQ73Iw=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCYgllJ3Rpb84OMq?=
+ =?us-ascii?Q?lsoAU0aJz3LZfRq8G3pXXlJIRGW39NmBKesYOMw?=
+ =?us-ascii?Q?fZ3XtjvpFkScHCOkP6RYCFzYVNo54d9ngu1RLAj?=
+ =?us-ascii?Q?AOrjRpjNUVwuPTqL2XHKrjh+Z=2FtL0dt=2Fhe+ymQA?=
+ =?us-ascii?Q?F+xq3tbwA3N+RD9qmvVxpLi2WFUWEVh2K9tKIGS?=
+ =?us-ascii?Q?qpwfrFHnuFJypIcWopf7=2Fb6k2Qqd942eeB1wCqZ?=
+ =?us-ascii?Q?ZDqzl4sqE2gsA7qhLQw2nkvnY1hOPfYgyPJO2Fm?=
+ =?us-ascii?Q?HPDjYnJdPvrtr7qRCXpKK5Jp5=2Fky9OPJ10HYwpA?=
+ =?us-ascii?Q?hdv2NsKb1xfg=3D=3D?=
+To: Van Martin <ceo@notesao.com>
+X-Entity-ID: u001.jfyluCiC6PGBNUmeEOavRA==
+X-Spam-Status: No, score=1.4
+X-Spam-Score: 14
+X-Spam-Bar: +
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Hi Van, We wanted to personally invite you to MSS, our free
+    virtual event (Sept. 22–26), where we will show Mailchimp users how to
+   level up current campaigns with data-backed strategies and real ex [...] 
+ Content analysis details:   (1.4 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 PCCC_HDR_MARKETINGBL   RBL: Address in email headers associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [listed in mailchimp.com.wild.pccc.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [198.37.159.181 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [198.37.159.181 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [198.37.159.181 listed in sa-accredit.habeas.com]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: intuit.com]
+                             [URI: gainsightcloud.com]
+                             [URI: mailchimpmarketingsuccess.com]
+                             [URI: churnzero.net]
+  0.0 KAM_BODY_MARKETINGBL_PCCC Body contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+                             [URI: gainsightcloud.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  1.0 KAM_MARKETINGBL_PCCC   Message contains URI associated with
+                             mass-marketing (https://raptor.pccc.com/RBL)
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or identical to
+                             background
+  0.5 KAM_REALLYHUGEIMGSRC   RAW: Spam with image tags with ridiculously huge
+                              http urls
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium trust sender
+X-Spam-Flag: NO
+
+--d228b6a89b705181ed9be491b74790096f27f8c52146f8d4c9d6b4b9ce8e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+ Hi Van, We wanted to personally
+invite you to MSS, our free virtual event (Sept. 22=E2=80=9326), where we w=
+ill show
+Mailchimp users how to level up current campaigns with data-backed strategi=
+es
+and real examples. You=E2=80=99ll get access to: =E2=80=A2 Strategic planni=
+ng with your existing
+Mailchimp data =E2=80=A2 Proven campaign formulas from other users =E2=80=
+=A2 Key trends shaping
+performance this holiday season Plus it=E2=80=99s only for one hour a day a=
+nd you can
+choose which sessions you=E2=80=99d like to join. Here=E2=80=99s the link t=
+o save your spot:=20
+Registration Link
+[https://www.mailchimpmarketingsuccess.com/2025/?utm_source=3Dgen_onboardin=
+g&UID=3D123456]=20
+ Looking forward to having you! Best,Mailchimp Onboarding and Customer Succ=
+ess
+Team [https://us2img.churnzero.net/1846/files/20230428/bb743c6d43404784a981=
+168c23d18edd_Mailchimp%20Logo%2050-50%20Black.png]=20
+ Click here  to unsubscribe from this list or manage your preferences=20
+here .
+--d228b6a89b705181ed9be491b74790096f27f8c52146f8d4c9d6b4b9ce8e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml"=
+ class=3D"gs-rte gs-rte-eb-html" style=3D"color: rgb(0, 0, 0); background-c=
+olor: rgb(255, 255, 255); font-family: arial, sans-serif; margin: 0px; bord=
+er: 0px; outline: 0px; font-size: 10px; -webkit-tap-highlight-color: rgba(0=
+, 0, 0, 0); text-size-adjust: 100%; line-height: 1.42857; padding: 0px;"><h=
+ead class=3D"gs-rte gs-rte-eb-head">  <meta charset=3D"utf-8"> <!-- utf-8 w=
+orks for most cases -->  <meta name=3D"preheader" content=3D" Hi Van, We wa=
+nted to personally
+invite you to MSS, our free virtual event (Sept. 22=E2=80=9326), where we w=
+ill show
+Mailchimp users how to level up current campaigns"><meta name=3D"viewport" =
+content=3D"width=3Ddevice-width"> <!-- Forcing initial-scale shouldn't be n=
+ecessary -->  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <=
+!-- Use the latest (edge) version of IE rendering engine -->  <meta name=3D=
+"x-apple-disable-message-reformatting"> <!-- Disable auto-scale in iOS 10 M=
+ail entirely -->  <meta name=3D"format-detection" content=3D"telephone=3Dno=
+,address=3Dno,email=3Dno,date=3Dno,url=3Dno">  <!-- Tell iOS not to automat=
+ically link certain text strings. -->  <title></title> <!-- The title tag s=
+hows in email notifications, like Android 4.4. -->  <!-- Web Font / @font-f=
+ace : BEGIN -->  <!-- NOTE: If web fonts are not required, lines 10 - 27 ca=
+n be safely removed. -->  <!-- Desktop Outlook chokes on web font reference=
+s and defaults to Times New Roman, so we force a safe fallback font. -->  <=
+!--[if mso]>  <style>    * {      font-family: arial, sans-serif !important=
+;    }  </style>  <![endif]-->  <!-- All other clients get the webfont refe=
+rence; some will render the font and others will silently fail to the fallb=
+acks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-supp=
+ort-in-email/ -->  <!--[if !mso]><!-->  <!-- insert web font reference, eg:=
+ <link href=3D'https://fonts.googleapis.com/css?family=3DRoboto:400,700' re=
+l=3D'stylesheet' type=3D'text/css'> -->  <!--<![endif]-->  <!--[if mso]><![=
+endif]-->  <!-- for all outlook desktop client -->  <!--[if mso 12]><![endi=
+f]-->  <!-- for all outlook 2007 desktop client -->  <!--[if mso 14]><![end=
+if]-->  <!-- for all outlook 2010 desktop client -->  <!--[if mso 15]><![en=
+dif]-->  <!-- for all outlook 2013 desktop client -->  <!--[if mso 16]><![e=
+ndif]-->  <!-- for all outlook 2016 desktop client -->  <!-- Web Font / @fo=
+nt-face : END -->  <!-- CSS Reset : BEGIN -->  <!-- What it does: Makes bac=
+kground images in 72ppi Outlook render at correct size. -->  <!--[if gte ms=
+o 9]>  <xml>    <o:OfficeDocumentSettings>      <o:AllowPNG/>      <o:Pixel=
+sPerInch>96</o:PixelsPerInch>    </o:OfficeDocumentSettings>  </xml>  <![en=
+dif]-->  <!-- CSS Reset : END -->  <style type=3D"text/css" rel=3D"styleshe=
+et" role=3D"inline">
+a:hover,
+a:focus {
+  color: rgb(17, 85, 204);
+  text-decoration: underline;
+}
+a:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+  outline-offset: -2px;
+}
+</style>    <style type=3D"text/css" rel=3D"stylesheet" role=3D"export">
+#outlook a { padding: 0px; }
+p.MsoNormal { margin: 0px; }
+.ReadMsgBody, .ExternalClass { width: 100%; }
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,=
+ .ExternalClass td, .ExternalClass div { line-height: 100%; }
+span.yshortcuts { color: rgb(0, 0, 0); border: none; }
+span.yshortcuts:hover, span.yshortcuts:active, span.yshortcuts:focus { colo=
+r: rgb(0, 0, 0); border: none; }
+a[x-apple-data-detectors=3D"true"] { color: inherit !important; text-decora=
+tion: inherit !important; border-bottom: none !important; font-size: inheri=
+t !important; font-family: inherit !important; font-weight: inherit !import=
+ant; line-height: inherit !important; }
+.webkit { width: 100%; table-layout: fixed; text-size-adjust: 100%; }
+div[style*=3D"margin: 16px 0"] { margin: 0px !important; }
+a[x-apple-data-detectors], .unstyle-auto-detected-links a, .aBn { border-bo=
+ttom: 0px !important; cursor: default !important; color: inherit !important=
+; text-decoration: none !important; font-size: inherit !important; font-fam=
+ily: inherit !important; font-weight: inherit !important; line-height: inhe=
+rit !important; }
+.a6S { display: none !important; opacity: 0.01 !important; }
+.im { color: inherit !important; }
+img.g-img + div { display: none !important; }
+* { -webkit-font-smoothing: antialiased; }
+body { -webkit-font-smoothing: antialiased; text-size-adjust: 100%; }
+@media only screen and (min-device-width: 320px) and (max-device-width: 374=
+px) {
+  u ~ table .emailbuilder_container { min-width: 320px !important; }
+  .gs-inline-survey-nps td { min-width: 90px !important; }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 413=
+px) {
+  u ~ table .emailbuilder_container { min-width: 375px !important; }
+  .gs-inline-survey-nps td { min-width: 90px !important; }
+}
+@media only screen and (min-device-width: 414px) {
+  u ~ table .emailbuilder_container { min-width: 414px !important; }
+  .gs-inline-survey-nps td { min-width: 90px !important; }
+}</style><style gs-style-type=3D"responsive" data-type=3D"responsive" type=
+=3D"text/css" role=3D"export" rel=3D"stylesheet">@media screen and (max-wid=
+th: 480px) {
+  #email-container-main {
+    width: 100% !important;
+  }
+
+  #email-container-table {
+    width: 100% !important;
+  }
+
+  .report-img {
+    width: 100% !important;
+  }
+
+  table.gs-responsive tbody td.gs-responsive {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .rte-img-container.gs-responsive {
+    width: 100% !important;
+  }
+
+  img.gs-responsive {
+    width: 100% !important;
+  }
+
+  [rte-inline-survey-placeholder] {
+    width: 100% !important;
+  }
+
+  .rte-divider-container {
+    width: 100% !important;
+  }
+  .rte-divider-container > * {
+    width: 100% !important;
+  }
+}
+/* These styles will only apply to Apple Mail and WebKit-based browsers */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  img {
+    margin-left: 0;
+  }
+}</style><style gs-style-type=3D"force" data-type=3D"force" type=3D"text/cs=
+s" role=3D"export" rel=3D"stylesheet">table[gs-eb-block] {
+  table-layout: fixed;
+}
+
+table[gs-eb-block] [eb-block-container] {
+  overflow: hidden;
+  word-wrap: break-word;
+}</style></head><body width=3D"100%" style=3D"color: rgb(0, 0, 0); border: =
+0px; outline: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font-family: arial, sans-serif; text-size-adjust: 100%; m=
+argin: 0; mso-line-height-rule: exactly; background-color: #ffffff; line-he=
+ight: 1.42857; padding: 0px; font-size: 13px;" class=3D"fluid-layout gs-rte=
+ gs-rte-eb-body gs-edit-mode" id=3D"ic0b"><div style=3D"display: none; font=
+-size: 0px; color: #ffffff; line-height: 0px; max-height: 0px; overflow: hi=
+dden; mso-hide:all;"> Hi Van, We wanted to personally
+invite you to MSS, our free virtual event (Sept. 22=E2=80=9326), where we w=
+ill show
+Mailchimp users how to level up current campaigns</div><table width=3D"0%" =
+cellpadding=3D"0" cellspacing=3D"0" align=3D"center"><tbody><tr><td style=
+=3D"height:0;line-height:0;font-size:0;padding-bottom:0px;"><a aria-hidden=
+=3D"true" tabindex=3D"-1" clicktracking=3D"off" href=3D"https://gateway.us2=
+.gainsightcloud.com/v1/communications/subscription/tracking?t=3DYmE1ZGZhYzk=
+tMDhkMS00ODZmLWJlOGQtY2RhYTQ3MGZkNTc5&d=3DeyJnc2lkIjoiMUkwMDc1SUZEQk8zMzk5R=
+UxRR1hLU09VVU9XVVZMN0tBNTNJIn0=3D&ty=3DSW1hZ2UtQW5jaG9y"> <img clicktrackin=
+g=3D"off" disable-tracking=3D"true" src=3D"https://gateway.us2.gainsightclo=
+ud.com/v1/communications/subscription/trackingImg?t=3DYmE1ZGZhYzktMDhkMS00O=
+DZmLWJlOGQtY2RhYTQ3MGZkNTc5&d=3DeyJnc2lkIjoiMUkwMDc1SUZEQk8zMzk5RUxRR1hLU09=
+VVU9XVVZMN0tBNTNJIn0=3D&ty=3DSW1hZ2U=3D" alt=3D"" style=3D"border-bottom-wi=
+dth:0in;border-left-width:0in;border-right-width:0in;
+border-top-width:0in;height:1px;margin-bottom:0in;margin-left:0in;margin-ri=
+ght:
+0in;margin-top:0in;padding-bottom:0in;padding-left:0in;padding-right:0in;
+padding-top:0in;width:1px" border=3D"0" width=3D"1" height=3D"1">  </a> </t=
+d></tr></tbody></table><table id=3D"body-container-table" role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bgcolo=
+r=3D"#ffffff" style=3D"text-size-adjust: 100%; background-color: #ffffff;">
+              <tbody style=3D"text-size-adjust: 100%;">
+                <tr style=3D"text-size-adjust: 100%;">
+                  <td id=3D"body-container-td" style=3D"text-size-adjust: 1=
+00%; padding: 0px; vertical-align: top; padding-left: 0px; padding-right: 0=
+px; padding-top: 0px; padding-bottom: 0px;" valign=3D"top">  <!--	      Set=
+ the email width. Defined in two places:	      1. max-width for all clients=
+ except Desktop Windows Outlook, allowing the email to squish on narrow but=
+ never go wider than 630px.	      2. MSO tags for Desktop Windows Outlook e=
+nforce a 630px width.	  -->  <table align=3D"center" id=3D"email-container-=
+table" role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" width=3D"100%" bgcolor=3D"#ffffff" style=3D"text-size-adjust: 100%; back=
+ground-color: #ffffff;">
+              <tbody style=3D"text-size-adjust: 100%;">
+                <tr style=3D"text-size-adjust: 100%;">
+                  <td id=3D"email-container-td" valign=3D"top" style=3D"tex=
+t-size-adjust: 100%; padding: 0px; vertical-align: top; padding-left: 0px; =
+padding-right: 0px; padding-top: 0px; padding-bottom: 0px; font-family: Ari=
+al, sans-serif; color: rgb(0, 0, 0);">    <!-- Email Body : BEGIN -->    <d=
+iv id=3D"email-body-main" gs-editable=3D"true" style=3D"line-height: 1.4285=
+7; font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; tex=
+t-size-adjust: 100%;">        <div id=3D"icns3" style=3D"line-height: 1.428=
+57; margin: 0px; text-size-adjust: 100%; padding-top: 0px; padding-right: 0=
+px; padding-bottom: 0px; padding-left: 0px; width: 100%; vertical-align: to=
+p; font-family: arial, sans-serif; font-size: 13px; min-height: 28px; box-s=
+izing: border-box; color: rgb(0, 0, 0);"><div id=3D"i6w2l" dir=3D"ltr" styl=
+e=3D"font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; t=
+ext-size-adjust: 100%; line-height: 1.38;"><div id=3D"ilb7d2" dir=3D"ltr" s=
+tyle=3D"line-height: 1.42857; font-size: 13px; padding-top: 0px; padding-bo=
+ttom: 0px; margin: 0px; text-size-adjust: 100%;"><div id=3D"idla9" data-tex=
+t-merge=3D"" style=3D"line-height: 1.42857; font-size: 13px; padding-top: 0=
+px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%;"><div id=3D"i=
+g92zy" dir=3D"ltr" style=3D"line-height: 1.42857; font-size: 13px; padding-=
+top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%;"><div d=
+ata-text-merge=3D"" style=3D"line-height: 1.42857; font-size: 13px; padding=
+-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%;"><span=
+ id=3D"ivdjwb" style=3D"text-size-adjust: 100%;">Hi&nbsp;<span id=3D"i2a7nc=
+" data-token=3D"" style=3D"text-size-adjust: 100%;">Van</span></span><span =
+id=3D"idsi5e" style=3D"text-size-adjust: 100%;">,</span></div></div><div cu=
+stom-br=3D"" style=3D"line-height: 1.42857; padding-top: 0px; padding-botto=
+m: 0px; margin: 0px; text-size-adjust: 100%; font-size: inherit;">&nbsp;</d=
+iv><div id=3D"ibvmcr" dir=3D"ltr" style=3D"line-height: 1.42857; font-size:=
+ 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust=
+: 100%;"><div id=3D"ieyrqu" style=3D"line-height: 1.42857; font-size: 13px;=
+ padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%=
+;">We wanted to personally invite you to MSS, our free virtual event (Sept.=
+ 22=E2=80=9326), where we will show Mailchimp users how to level up&nbsp;<s=
+pan id=3D"ilcav" style=3D"text-size-adjust: 100%;">current campaigns with d=
+ata-backed strategies and real examples.</span><div id=3D"ik3zd" style=3D"l=
+ine-height: 1.42857; font-size: 13px; padding-top: 0px; padding-bottom: 0px=
+; margin: 0px; text-size-adjust: 100%;"><div custom-br=3D"" style=3D"line-h=
+eight: 1.42857; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-si=
+ze-adjust: 100%; font-size: inherit;">&nbsp;</div></div><span id=3D"ijstr9"=
+ style=3D"text-size-adjust: 100%;">You=E2=80=99ll get access to:</span></di=
+v></div><div id=3D"iesexg" dir=3D"ltr" style=3D"line-height: 1.42857; font-=
+size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-a=
+djust: 100%;"><span id=3D"i33rut" style=3D"text-size-adjust: 100%;">&nbsp;&=
+nbsp;&nbsp;=E2=80=A2 &nbsp; Strategic planning with your existing Mailchimp=
+ data</span></div><div id=3D"ix9tlt" dir=3D"ltr" style=3D"line-height: 1.42=
+857; font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; t=
+ext-size-adjust: 100%;"><span id=3D"iwej0i" style=3D"text-size-adjust: 100%=
+;">&nbsp;&nbsp;&nbsp;=E2=80=A2 &nbsp; Proven campaign formulas from other u=
+sers</span></div><div id=3D"i0l6b2" dir=3D"ltr" style=3D"line-height: 1.428=
+57; font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; te=
+xt-size-adjust: 100%;"><span id=3D"iihnih" style=3D"text-size-adjust: 100%;=
+">&nbsp;&nbsp;&nbsp;=E2=80=A2 &nbsp; Key trends shaping performance this ho=
+liday season</span></div><div custom-br=3D"" style=3D"line-height: 1.42857;=
+ padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%=
+; font-size: inherit;">&nbsp;</div><div id=3D"ivitsm" dir=3D"ltr" style=3D"=
+line-height: 1.42857; font-size: 13px; padding-top: 0px; padding-bottom: 0p=
+x; margin: 0px; text-size-adjust: 100%;"><div data-text-merge=3D"" style=3D=
+"line-height: 1.42857; font-size: 13px; padding-top: 0px; padding-bottom: 0=
+px; margin: 0px; text-size-adjust: 100%;"><span id=3D"i43wcg" style=3D"text=
+-size-adjust: 100%;">Plus it=E2=80=99s only for one hour a day and you can =
+choose which sessions you=E2=80=99d like to join. Here=E2=80=99s the link t=
+o save your spot: </span><a contenteditable=3D"false" id=3D"i758lh" href=3D=
+"http://gsnlink.intuit.com/ls/click?upn=3Du001.P7f6kRBo7kPyx9r33Gz57Yf3bi8u=
+W2o-2BZ9Ko4RGpFVHRLOPFgV5ge4gqtZEP-2FoDWTHGBzrMC7-2F9xf27appXuHRurW0L1SnSf5=
+v8qwXzWpqwVYE-2B2TTf-2Bc2gJBQVRgB3xH7v3_JSBWwqaEwKRJGz7VRm3MOUr-2B04kaQPAhD=
+kAaS-2BwJ2Rv8dzmRSZbaNXhJzaGo-2Fhtdp-2BAKk3tMUoLL89cmZtMZRnl8-2FSoe-2BU3zYF=
+nH6WEIj8Ijl7k7dqVGMWMxiABlfLwxDFEq5jKscdUt1lo3D5Xc2Pp5xBoDH3dUb2y7jklQgppu7=
+GGLHajpx2LkMLTdLztjwvFMtJs2rU0JlelprgbyGqj0LRNY34w10Q0vF2Gi2TwUQ1m20oonhMau=
+22Kp65KF-2FMcBKGyYgC1n7VZSZoi0eVWCUJhXU72t-2FVgVFTGqt1JBJG3eNn3jVz3DvPs2t9n=
+nvgLUmQ1v6FdDqYHHSeDQKeeaOsGkBenbvqlo00jRlKs-2F-2Bfb0M3UHnkO38GFOY-2FwiWDip=
+aLSacigWvxr32AYrIyf9OixDYTMSGfURgTJ9suUf2SIfHiz46g3j4MIDiIRCmI6M8-2FQlX-2F-=
+2FhW-2B-2BPKXGtLxv2ay81wLFy3NCw0mWJXBiMHl4Z-2B-2F4v8M63Eyqx2mZO" target=3D"=
+_blank" data-rte-link-token=3D"" data-rte-link-uuid=3D"gs-KkniQZhi5l4ShuAqW=
+9UGcnCkK1WZABvFa" aria-label=3D"" class=3D"" style=3D"cursor: pointer; colo=
+r: rgb(17, 85, 204); text-decoration: underline; text-size-adjust: 100%;"><=
+b style=3D"text-size-adjust: 100%;">Registration Link</b></a></div></div><d=
+iv custom-br=3D"" style=3D"line-height: 1.42857; padding-top: 0px; padding-=
+bottom: 0px; margin: 0px; text-size-adjust: 100%; font-size: inherit;">&nbs=
+p;</div><div id=3D"i4q7fn" dir=3D"ltr" style=3D"line-height: 1.42857; font-=
+size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-a=
+djust: 100%;"><span id=3D"i7il5h" style=3D"text-size-adjust: 100%;">Looking=
+ forward to having you!</span></div><div custom-br=3D"" style=3D"line-heigh=
+t: 1.42857; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size-a=
+djust: 100%; font-size: inherit;">&nbsp;</div><div id=3D"i2sunv" dir=3D"ltr=
+" style=3D"line-height: 1.42857; font-size: 13px; padding-top: 0px; padding=
+-bottom: 0px; margin: 0px; text-size-adjust: 100%;"><span id=3D"i8n7fk" sty=
+le=3D"text-size-adjust: 100%;">Best,</span></div>Mailchimp Onboarding and C=
+ustomer Success Team</div></div><div id=3D"i121lu" dir=3D"ltr" style=3D"fon=
+t-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size=
+-adjust: 100%; line-height: 1.2;"><i id=3D"ia2ksj" style=3D"text-size-adjus=
+t: 100%; background-color: transparent;"><div custom-br=3D"" style=3D"line-=
+height: 1.42857; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-s=
+ize-adjust: 100%; font-size: inherit;">&nbsp;</div></i></div></div><div id=
+=3D"iu90pb" dir=3D"ltr" style=3D"font-size: 13px; padding-top: 0px; padding=
+-bottom: 0px; margin: 0px; text-size-adjust: 100%; line-height: 1.38;"><div=
+ id=3D"ito4l6" style=3D"line-height: 1.42857; font-size: 13px; padding-top:=
+ 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%; background-=
+color: transparent;"><div data-text-merge=3D"" style=3D"line-height: 1.4285=
+7; font-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; tex=
+t-size-adjust: 100%;"><div id=3D"il6wsn" style=3D"line-height: 1.42857; fon=
+t-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size=
+-adjust: 100%;"></div><div id=3D"i1nup1" style=3D"line-height: 1.42857; fon=
+t-size: 13px; padding-top: 0px; padding-bottom: 0px; margin: 0px; text-size=
+-adjust: 100%; color: rgb(25, 34, 44);"></div></div><div id=3D"iekki6" styl=
+e=3D"line-height: 1.42857; font-size: 13px; padding-top: 0px; padding-botto=
+m: 0px; margin: 0px; text-size-adjust: 100%;"><img id=3D"i6u2m3" src=3D"htt=
+ps://us2img.churnzero.net/1846/files/20230428/bb743c6d43404784a981168c23d18=
+edd_Mailchimp%20Logo%2050-50%20Black.png" width=3D"149.031" alt=3D"" data-c=
+id=3D"gs-PBxAx1KpCAmnfRwkC7Z5_lRnVl-u59T7T" style=3D"display: inline-block;=
+ border: 0px none; outline: none; text-decoration: none; vertical-align: te=
+xt-bottom; color: rgb(40, 55, 184); font-size: 14px; text-size-adjust: 100%=
+; line-height: 14px;"></div></div></div><div id=3D"iygdg" data-text-merge=
+=3D"" style=3D"line-height: 1.42857; font-size: 13px; padding-top: 0px; pad=
+ding-bottom: 0px; margin: 0px; text-size-adjust: 100%;"><div id=3D"i4tbv" d=
+ata-text-merge=3D"" style=3D"line-height: 1.42857; font-size: 13px; padding=
+-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%;"><div =
+data-text-merge=3D"" style=3D"line-height: 1.42857; font-size: 13px; paddin=
+g-top: 0px; padding-bottom: 0px; margin: 0px; text-size-adjust: 100%;"><div=
+ custom-br=3D"" style=3D"line-height: 1.42857; padding-top: 0px; padding-bo=
+ttom: 0px; margin: 0px; text-size-adjust: 100%; font-size: inherit;">&nbsp;=
+</div><div custom-br=3D"" style=3D"line-height: 1.42857; padding-top: 0px; =
+padding-bottom: 0px; margin: 0px; text-size-adjust: 100%; font-size: inheri=
+t;">&nbsp;</div></div></div></div></div>    </div>    <!-- Email Body : END=
+ -->  </td>
+                </tr>
+              </tbody>
+            </table></td>
+                </tr>
+              </tbody>
+            </table><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"center"><tbody><tr><td style=3D"padding-bottom:10px;"><center s=
+tyle=3D"color:#999;"><small>Click <a href=3D"http://gsnlink.intuit.com/ls/c=
+lick?upn=3Du001.P7f6kRBo7kPyx9r33Gz57S7CpmjLdBTmohXj8ZUPVDeUOccnXStNimBxybB=
+hsIiTlIFB4G5ObWzOhdOFA5pEVMxAaZbY9DIvmFx4Egh0YVQGBbutdqvX2-2BYwsR2iMtyrTc5A=
+oc7wDsGWQcW3Q5KERnOcQ-2FaUbmxbxfecbut8ww1jM3Jslt9ZUVXFpyETlH09s6RjYcZQ36Gn8=
+lTm6-2FzJBQjIIUyzU5o9OhFG0btFTRsZbj-2B2leHVcgV15yC-2FMo5Y6QuIXJulPWnn5-2BDR=
+U3SziNqP2hDBFuXnStKYDp6Lfn-2F3j-2BVs24Vc8iBOqVJvBMQPdFWuASRQq3BUGTno1RJo2ZJ=
+6HZVPjNhJj8P8ZzPFbPJrxQT2iqJ271aoR-2F3JF-2B4QdkK0qFZha2dDUOdZN3Wm3D8D32fVnU=
+T0xx-2FxXAT3yug-3Dx5AT_JSBWwqaEwKRJGz7VRm3MOUr-2B04kaQPAhDkAaS-2BwJ2Rv8dzmR=
+SZbaNXhJzaGo-2Fhtdp-2BAKk3tMUoLL89cmZtMZRnl8-2FSoe-2BU3zYFnH6WEIj8Ijl7k7dqV=
+GMWMxiABlfLwxDFEq5jKscdUt1lo3D5Xc2Pp5xBoDH3dUb2y7jklQgppu7GGLHajpx2LkMLTdLz=
+tjwvFMtJs2rU0JlelprgbyGqj0LRNY34w10Q0vF2Gi2TwUQ1m20oonhMau22Kp65KF-2FMcBKGy=
+YgC1n7VZSZoi0eVWCUJhXU72t-2FVgVFTGqt1JBJG3eNn3jVz3DvPs2t9nnvgLUmQ1v6FdDqYHH=
+SeDQKeeaOsGkBenbvqlo00jRlKsKf9GeZFB-2Fg4QfugFdAgljjk18Gux3l66bJ6row6A-2B3TJ=
+JNkBhh-2FCmK-2BigN-2FuU5EIP2ypJ4JbIu7gKGHh8yIZ4x28cD3qPQRXFIPSo7jKkRhCUb5uI=
+FHSHeCSA2xSJMIcmLaPFqcxHg0ud1D8MACtS" aria-label=3D"Click here to unsubscri=
+be from this list">here</a> to unsubscribe from this list or manage your pr=
+eferences <a href=3D"http://gsnlink.intuit.com/ls/click?upn=3Du001.P7f6kRBo=
+7kPyx9r33Gz57S7CpmjLdBTmohXj8ZUPVDeUOccnXStNimBxybBhsIiTlIFB4G5ObWzOhdOFA5p=
+EVJKWqY9wYPiPJo7N3r5Es3GQnn0mL6zxS8GDAoQRJEGKJ53hVtrb8Hm80npXgXtnNyavDrWyQ3=
+erpW0jnTI6-2Frqct4zhKxrks-2FC9jWVPymaTogA4mxRhRqamuaGy8p5zvu43r2aNEttKOms4U=
+0DlwxzXY8Nj6z313YcskJXDCsxY4PJh7U3G3uFMsrRoQv9akAdONv-2BdsBBlQFIEFiPvYRBOwd=
+y7csbtEzg57Br3-2F2RVm-2B1Kwlyry7JcQ5LuR-2F17OXe1S6KyXBOZrmxu4B-2BiHfmvhXraB=
+cWN0ceEORWkSztf9PhqEyFWdJVzO1DJdQUHWwzEXC5SvgytTz2cdrWHIf4-3DA_Al_JSBWwqaEw=
+KRJGz7VRm3MOUr-2B04kaQPAhDkAaS-2BwJ2Rv8dzmRSZbaNXhJzaGo-2Fhtdp-2BAKk3tMUoLL=
+89cmZtMZRnl8-2FSoe-2BU3zYFnH6WEIj8Ijl7k7dqVGMWMxiABlfLwxDFEq5jKscdUt1lo3D5X=
+c2Pp5xBoDH3dUb2y7jklQgppu7GGLHajpx2LkMLTdLztjwvFMtJs2rU0JlelprgbyGqj0LRNY34=
+w10Q0vF2Gi2TwUQ1m20oonhMau22Kp65KF-2FMcBKGyYgC1n7VZSZoi0eVWCUJhXU72t-2FVgVF=
+TGqt1JBJG3eNn3jVz3DvPs2t9nnvgLUmQ1v6FdDqYHHSeDQKeeaOsGkBenbvqlo00jRlKuH1Abp=
+BVmL-2Fh1CwkZTxmLwcFMsYTv-2BnVD6XVsUWb3nX48rv26Y47GT3BLoVrtyE9t6HDqMJixb-2B=
+zv9tc-2FLuvIHeRzAuzmT0qhDqRHBYzdLhfpeSob0mvMeG6uRg0QXqEv6qznfWBJSzPgCSD8RDz=
+3H" aria-label=3D"Click here to manage your preferences">here</a>.</small><=
+/center></td></tr></tbody></table><img src=3D"http://gsnlink.intuit.com/wf/=
+open?upn=3Du001.J-2B4fs91ukOyWCw2mlgAqN03nMN7XjkFQ-2F6Ru8vvLCDl66JZHGF2jVKN=
+-2F2W5c1tOdpVLJrwIlHR8tRpTgsDgaH-2BPZ6c7lUssfLA5wiXCiIy-2BFsHPDLkNMhTzVOB3y=
+8phykMO2gNa-2FeUqJCM5IoNxupNNApQ8tHeE3xOFQZZGn46b7ahFhGpqmzvxAUhz6TIIlV4mX2=
+qFZxK-2Bp0EVWRB6iBx3XRU8pTe84WwUZ766g6FHC69v5F-2FJXBP0gxRezWAbvsD-2B3pPq0fy=
+GWslJiGsdcIABWcA49-2Fh6wV3hkBHyqzAANvfd3No69Ryw7AOVk1xXy3-2FcshUWb612MxejOB=
+B5NQ7HShj8Vuq9g2cjc9wEwD4It-2Bpg7BvSYMEawzPbP7yazoB8mkUFVgL0FH9nNiJOpHuERkM=
+flNoyI71SVyFt0dPAsf11mdtYM2j6mgy7ZszNIScq-2FW6U3Wm6SWWGoELrMtVq-2F9e1B5Y-2B=
+xzAjU8KGAJ-2FH5XgSJvXpAweL2KRNgRJ0Q" alt=3D"" width=3D"1" height=3D"1" bord=
+er=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0=
+ !important;margin-top:0 !important;margin-bottom:0 !important;margin-right=
+:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bot=
+tom:0 !important;padding-right:0 !important;padding-left:0 !important;"/></=
+body></html>
+--d228b6a89b705181ed9be491b74790096f27f8c52146f8d4c9d6b4b9ce8e--

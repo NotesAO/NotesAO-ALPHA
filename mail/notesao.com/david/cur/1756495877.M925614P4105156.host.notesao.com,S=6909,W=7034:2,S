@@ -1,0 +1,125 @@
+Return-Path: <vanericmartin@gmail.com>
+Delivered-To: david@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id ESqaNgUAsmjEoz4AIW4ynA
+	(envelope-from <vanericmartin@gmail.com>)
+	for <david@notesao.com>; Fri, 29 Aug 2025 14:31:17 -0500
+Return-path: <vanericmartin@gmail.com>
+Envelope-to: david@notesao.com
+Delivery-date: Fri, 29 Aug 2025 14:31:17 -0500
+Received: from mail-lf1-f44.google.com ([209.85.167.44]:49221)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <vanericmartin@gmail.com>)
+	id 1us4oe-0000000HDvz-0Joo
+	for david@notesao.com;
+	Fri, 29 Aug 2025 14:31:17 -0500
+Received: by mail-lf1-f44.google.com with SMTP id 2adb3069b0e04-55f6f7edf45so88386e87.2
+        for <david@notesao.com>; Fri, 29 Aug 2025 12:31:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1756495874; x=1757100674; darn=notesao.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=+e5RIADqI+wgPs/bMtvNPui8SjRD4XC3hAKelotCDt4=;
+        b=W2gCN0Bdkn+TkcInYPwJhlpPdI/M/8MYSc7c5X18QrI1ED7P9PKdaE/6rG6pJiMi/r
+         jmG51m4NXj1JXaeI7uFTBc42YSanyW5l3qZ1F1vcwONKTodWTUa+CqJPvPVBGQ03LrB0
+         f/n2lLq1cVl3ZdsEh17nMqzADWYV5iYdDu6aaQ8jwob2Rlc0er06u3LZyPzkJjfrEvDM
+         SCUvcWY5gSxmTZXB/qOvJtqNafCQp5qHjKsIu91+wjPHY1EPkgmEIaHR3sVtK/7aINKV
+         g5ltpjLEzijvaBDm4VXQbzHS90wQa/KUzWzUB9GXcpdiGmODXfZfQ7IUjUXNvtNDLJkM
+         UsBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1756495874; x=1757100674;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=+e5RIADqI+wgPs/bMtvNPui8SjRD4XC3hAKelotCDt4=;
+        b=itmd7QuB7azmo4F34/DmHkJCifBebIXE10LhVnhcmCij0UxW1bx+xmIp5I6d8xZa6v
+         dCbY59WA1xenh8lleMm5ponjEROWAP9UCsqjoAZaUKRpn47T3x6TA/ckT6oJqfuDeWhD
+         v2LxxHFoYM/1mU8HhLla4+ndWJJPjXTPWk4o8s1h6gkGBLsI5w9JF2E+5XMr9Hx3Uq25
+         goLkTjlYgqEKaWaOaCAiAaK67Dx9qa6QVGZhGxVrErQeij2Pcivbr9tC7XVGkoL/BuXH
+         ofHo3pHHt3VsWrCT/ZdIzKOVvHsEQD7oV1l/O7eEMNOlrDw6s0MIDjdU/3Cuix3jptdS
+         L9Fw==
+X-Gm-Message-State: AOJu0YwsCEW+0R9yjRRvT/cR+0YxA269sxBkNQ0nO92GStxleaUxuMQd
+	adMOMA02kp3HXiyRKPLOfeoNtadiFjEo3aGsBDl00cDCMrEBsm7giLvug/VrixLiapUyTPv5zQA
+	4NZNQtbnZXlbJBcwv/T91oobd1jJ8QTEbknFzkpk=
+X-Gm-Gg: ASbGncvK6YvlBjjSx4dJRGu3K9kr/jlgY40dZvKJcox4BbSquisTXik1LH4AsE2nYeG
+	YVxtOFkK5Qgym2siR9+WsFHzvEfdDbhmlPwWA+R4zxXFhQdHja/mOzNRBbkrHXOLkq1417TS3tC
+	jSnzxv/qL59HgNa4kbfbAmpiHi6K5Q0lqc2F3NkfPZhhrwXiVQCiIqf0/08P4wy90eDVz0gsyAW
+	1oH+yvq
+X-Google-Smtp-Source: AGHT+IEu77jOPIvGblA171q+B2q3iMVUEZHUexDVmqbWqDFyCLGSlPDO1PJN3+4i9Ig66zFMw0XyAx0aGjuMMQOwbxE=
+X-Received: by 2002:a2e:b8c1:0:b0:336:c6bb:10d6 with SMTP id
+ 38308e7fff4ca-336c6bb12f6mr1311601fa.26.1756495874106; Fri, 29 Aug 2025
+ 12:31:14 -0700 (PDT)
+MIME-Version: 1.0
+From: van eric martin <vanericmartin@gmail.com>
+Date: Fri, 29 Aug 2025 14:31:00 -0500
+X-Gm-Features: Ac12FXyTtWLwCEou8s2FlnEnMhBHNVTVRQFMJ8dRHdNoqLkybsoh7he6SudkVGM
+Message-ID: <CALUz6t8P_yPJ_Nkv+OfQ6fa_6MEjFEeVeY3GLa2jqvtwJrCfrQ@mail.gmail.com>
+Subject: Onboarding Fee Link
+To: david@notesao.com
+Content-Type: multipart/alternative; boundary="000000000000a0274b063d8610c4"
+X-Spam-Status: No, score=0.2
+X-Spam-Score: 2
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  https://square.link/u/UAkd29YB https://square.link/u/UAkd29YB
+    
+ Content analysis details:   (0.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.167.44 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.167.44 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [209.85.167.44 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: square.link]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [vanericmartin(at)gmail.com]
+  0.3 HTML_IMAGE_ONLY_04     BODY: HTML: images with 0-400 bytes of words
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 HTML_IMAGE_RATIO_02    BODY: HTML has a low ratio of text to image area
+  0.0 T_REMOTE_IMAGE         Message contains an external image
+X-Spam-Flag: NO
+
+--000000000000a0274b063d8610c4
+Content-Type: text/plain; charset="UTF-8"
+
+https://square.link/u/UAkd29YB
+
+--000000000000a0274b063d8610c4
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><a href=3D"https://square.link/u/UAkd29YB">https://sq=
+uare.link/u/UAkd29YB</a></div><div><div dir=3D"ltr" class=3D"gmail_signatur=
+e" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><img width=3D"420" h=
+eight=3D"132" src=3D"https://ci3.googleusercontent.com/mail-sig/AIorK4yxuv3=
+PigvXvSeVS_ds53Ouf7AohIJUBHGt1T47mdY_va317mZrdgbuBPZKX5Lkn4Txim5gRh94jTd0">=
+<br></div></div></div></div>
+
+--000000000000a0274b063d8610c4--

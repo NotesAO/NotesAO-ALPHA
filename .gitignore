@@ -1,0 +1,50 @@
+# secrets
+config/config.php
+.env
+.env.*
+
+# backups and archives
+backups/
+*.tgz
+*.tar
+*.tar.gz
+*.zip
+*.7z
+
+# outputs
+*.log
+logs/
+log/
+tmp/
+cache/
+GeneratedDocuments/
+Generated_Reports*/
+NotePro-Report-Generator/csv/
+public_html/*/uploads/
+
+# binaries you don’t want in git
+*.pdf
+*.docx
+*.odt
+*.xlsx
+*.xls
+
+# vendors
+node_modules/
+vendor/
+
+# python
+__pycache__/
+*.pyc
+venv*/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+
+# misc
+*_bak.php
+*.orig
+~$*.*
+.~lock*.#

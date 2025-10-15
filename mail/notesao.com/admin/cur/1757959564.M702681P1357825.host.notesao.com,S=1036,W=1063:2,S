@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id xd/QKYxVyGgBuBQAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Mon, 15 Sep 2025 13:06:04 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 15 Sep 2025 13:06:04 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uyDaW-00000005hEJ-2lF0
+	for admin@notesao.com;
+	Mon, 15 Sep 2025 13:06:04 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Giovanna Alvarado
+X-PHP-Script: ffl.notesao.com/intake.php for 108.66.190.28
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: Alvarado.gio23@icloud.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uyDaW-00000005hEJ-2lF0@host.notesao.com>
+Date: Mon, 15 Sep 2025 13:06:04 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

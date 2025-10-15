@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id nsiVNWjOwWgJsikAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 10 Sep 2025 14:15:52 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 10 Sep 2025 14:15:52 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1uwQIK-0000000BSrL-3aiy
+	for admin@notesao.com;
+	Wed, 10 Sep 2025 14:15:52 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Michael Abrams
+X-PHP-Script: ffl.notesao.com/intake.php for 97.154.141.6
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: abeeth0226@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1uwQIK-0000000BSrL-3aiy@host.notesao.com>
+Date: Wed, 10 Sep 2025 14:15:52 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

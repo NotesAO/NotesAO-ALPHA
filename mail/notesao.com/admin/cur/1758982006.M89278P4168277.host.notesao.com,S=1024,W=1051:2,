@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 4XI9BHbv12hVmj8AIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Sat, 27 Sep 2025 09:06:46 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sat, 27 Sep 2025 09:06:46 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v2VZV-0000000HUMB-41WX
+	for admin@notesao.com;
+	Sat, 27 Sep 2025 09:06:46 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for James Flores
+X-PHP-Script: ffl.notesao.com/intake.php for 35.150.21.24
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: jayy.acct@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v2VZV-0000000HUMB-41WX@host.notesao.com>
+Date: Sat, 27 Sep 2025 09:06:45 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

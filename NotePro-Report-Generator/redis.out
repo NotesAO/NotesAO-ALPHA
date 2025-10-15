@@ -1,0 +1,8 @@
+784:C 05 Nov 2024 16:52:47.676 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+784:C 05 Nov 2024 16:52:47.676 # Redis version=5.0.3, bits=64, commit=00000000, modified=0, pid=784, just started
+784:C 05 Nov 2024 16:52:47.676 # Configuration loaded
+784:M 05 Nov 2024 16:52:47.676 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+784:M 05 Nov 2024 16:52:47.676 * Running mode=standalone, port=6380.
+784:M 05 Nov 2024 16:52:47.676 # Server initialized
+784:M 05 Nov 2024 16:52:47.676 * DB loaded from disk: 0.000 seconds
+784:M 05 Nov 2024 16:52:47.676 * Ready to accept connections

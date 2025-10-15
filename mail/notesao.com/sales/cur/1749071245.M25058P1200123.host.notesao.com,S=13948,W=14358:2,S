@@ -1,0 +1,410 @@
+Return-Path: <bounces+13766497-7bb3-sales=notesao.com@em1618.calendly.com>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id hN5wAY21QGj7TxIAIW4ynA
+	(envelope-from <bounces+13766497-7bb3-sales=notesao.com@em1618.calendly.com>)
+	for <sales@notesao.com>; Wed, 04 Jun 2025 16:07:25 -0500
+Return-path: <bounces+13766497-7bb3-sales=notesao.com@em1618.calendly.com>
+Envelope-to: sales@notesao.com
+Delivery-date: Wed, 04 Jun 2025 16:07:25 -0500
+Received: from o1.sg.calendly.com ([149.72.200.43]:31808)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <bounces+13766497-7bb3-sales=notesao.com@em1618.calendly.com>)
+	id 1uMvKU-000000052Cf-2wM4
+	for sales@notesao.com;
+	Wed, 04 Jun 2025 16:07:24 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=calendly.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:to:cc:content-type:from:subject:to;
+	s=d; bh=jiF432yayG1931nZsddNkReTShd4iuaUvJuscd4/1KA=;
+	b=v59dYQNBT7QlyqQAU2Le5G06KgDjs7RX+8eM4IVXLALCDSnZs3+Lvuu99GPfWgV7YXsM
+	L5mCTQtcB/fKBisiQzQfuxeWRxIDd8LdN+23kwkUNkTRWFpgh0fCPsitGhWvTES17WFJ4I
+	VjGRnIU7EWM96GW8ZvWWAbJypkTd1AE18=
+Received: by recvd-cd74f57c6-qww78 with SMTP id recvd-cd74f57c6-qww78-1-6840B589-1D
+	2025-06-04 21:07:21.282833897 +0000 UTC m=+15804.910606806
+Received: from MTM3NjY0OTc (unknown)
+	by geopod-ismtpd-29 (SG) with HTTP
+	id 6sMxw04fSHy447apHrCaIw
+	Wed, 04 Jun 2025 21:07:21.271 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Wed, 04 Jun 2025 21:07:21 +0000 (UTC)
+From: Calendly <notifications@calendly.com>
+Mime-Version: 1.0
+Message-ID: <6sMxw04fSHy447apHrCaIw@geopod-ismtpd-29>
+Subject: van eric martin has invited you to simplify scheduling
+Reply-To: vanericmartin@gmail.com
+categories: organization/invite_member
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EPb69MZZIXej1vY6FJpl0HqMxIsngJ4HLz1q57Ir7VnFwc5B1MThonLYrw?=
+ =?us-ascii?Q?LJEH3rmdi1l8UhoDfVvzFMk09h+F8ThKcdYMS7V?=
+ =?us-ascii?Q?0kW3MJ2iT4hrTMs+KQfNGAKL72KucVcaiUTonlb?=
+ =?us-ascii?Q?+LHDLo9=2FRQhiJtzzFoB27t+H8AURkxR87M=2Fk2CD?=
+ =?us-ascii?Q?=2FaGW+SxvI0HwyuE1V6hhXwxCZPSV9Zp5UVTV7eM?=
+ =?us-ascii?Q?+br91XPnKiOP1G7Ckfp3NQZLVdTww1nfBzzrIgA?= =?us-ascii?Q?M+X4?=
+To: sales@notesao.com
+X-Entity-ID: u001.WmdW7KwdgwZ3/goc1xTppw==
+X-Spam-Status: No, score=-5.7
+X-Spam-Score: -56
+X-Spam-Bar: -----
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Calendly Calendly is a simple, elegant scheduling tool that
+    lets people schedule with you in just a few clicks—no tedious back-and-forth
+    required. Click below to accept the invitation and you'll be up and ru [...]
+    
+ Content analysis details:   (-5.7 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [149.72.200.43 listed in bl.score.senderscore.com]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [149.72.200.43 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [149.72.200.43 listed in sa-trusted.bondedsender.org]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: calendly.com]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF welcome-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  1.8 FREEMAIL_FORGED_REPLYTO Freemail in Reply-To, but not From
+X-Spam-Flag: NO
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" lang=3D"en">
+  <head>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width" />
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" =
+/>
+  <title>Calendly</title>
+
+  <style>
+  /* -------------------------------------
+  GLOBAL
+  ------------------------------------- */
+  * { font-family: "Proxima Nova", "proxima-nova", Helvetica, Arial sans-se=
+rif }
+
+  img {
+    max-width: 100%;
+  }
+  .collapse {
+    margin:0;
+    padding:0;
+  }
+  body {
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:none;
+    width: 100%!important;
+    height: 100%;
+  }
+
+  /* -------------------------------------
+  ELEMENTS
+  ------------------------------------- */
+  .user-customizable-area p { font-size: 16px; margin-top: 12px }
+
+  .workflow-email .user-customizable-area p { font-size: 16px; margin: 0 }
+
+  .workflow-email .user-customizable-area ul,
+  .workflow-email .user-customizable-area ol {
+    margin: 0
+  }
+
+  p.publisher-updated-field, p.updated-field, .user-customizable-area p.eve=
+nt-field {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 22px;
+  }
+
+  p.publisher-updated-field {
+    color: #666A73;
+  }
+
+  p.updated-field, .user-customizable-area p.event-field {
+    font-size: 14px;
+  }
+
+  a, a:visited, a:link { color: rgb(0, 105, 255); }
+
+  .btn {
+    text-decoration:none;
+    color: #FFF;
+    background-color: #666;
+    padding:10px 16px;
+    font-weight:bold;
+    margin-right:10px;
+    text-align:center;
+    cursor:pointer;
+    display: inline-block;
+  }
+
+  p.callout {
+    padding: 10px 0;
+    margin-bottom: 0px;
+  }
+  .callout a {
+    font-weight:bold;
+    color: #2BA6CB;
+  }
+
+  table.social {
+    /* 	padding:15px; */
+    background-color: #ebebeb;
+
+  }
+  .social .soc-btn {
+    padding: 3px 7px;
+    font-size:12px;
+    margin-bottom:10px;
+    text-decoration:none;
+    color: #FFF;font-weight:bold;
+    display:block;
+    text-align:center;
+  }
+  a.fb { background-color: #3B5998!important; }
+  a.tw { background-color: #1daced!important; }
+  a.gp { background-color: #DB4A39!important; }
+  a.ms { background-color: #000!important; }
+
+  .sidebar .soc-btn {
+    display:block;
+    width:100%;
+  }
+
+  /* -------------------------------------
+  BODY
+  ------------------------------------- */
+  table.body-wrap { width: 80%; margin: 20px auto 0;}
+
+  .notice {
+    font-size: 14px;
+    line-height: 1.57;
+    text-align: left;
+    color: #1a1a1a;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 6px;
+  }
+
+  .error-notification {
+    background-color: rgba(227, 22, 0, 0.1);
+    border-color: rgba(227, 22, 0, 1);
+  }
+
+  /* -------------------------------------
+  FOOTER
+  ------------------------------------- */
+  table.footer-wrap { width: 80%;	clear:both!important; margin: 0 auto;}
+  .footer-wrap .container td.content  p { border-top: 1px solid rgb(215,215=
+,215); padding-top:15px;}
+  .footer-wrap .container td.content p {
+    font-size:10px;
+    font-weight: bold;
+
+  }
+
+
+  /* ---------------------------------------------------
+  RESPONSIVENESS
+  Nuke it from orbit. It's the only way to be sure.
+  ------------------------------------------------------ */
+
+  /* Set a max-width, and make it display as block so it will automatically=
+ stretch to that width, but will also shrink down on a phone or something *=
+/
+  .container {
+    display:block!important;
+    max-width:600px!important;
+    margin:0 auto!important; /* makes it centered */
+    clear:both!important;
+  }
+
+  /* This should also be a block element, so that it will fill 100% of the =
+.container */
+  .content {
+    padding:15px;
+    max-width:600px;
+    margin:0 auto;
+    display:block;
+  }
+
+  /* Let's make sure tables in the content area are 100% wide */
+  .content table { width: 100%; }
+
+
+  /* Odds and ends */
+  .column {
+    width: 300px;
+    float:left;
+  }
+  .column tr td { padding: 15px; }
+  .column-wrap {
+    padding:0!important;
+    margin:0 auto;
+    max-width:600px!important;
+  }
+  .column table { width:100%;}
+  .social .column {
+    width: 280px;
+    min-width: 279px;
+    float:left;
+  }
+
+  /* Be sure to place a .clear element after each set of columns, just to b=
+e safe */
+  .clear { display: block; clear: both; }
+
+
+  /* -------------------------------------------
+  PHONE
+  For clients that support media queries.
+  Nothing fancy.
+  -------------------------------------------- */
+  @media only screen and (max-width: 600px) {
+
+    a[class=3D"btn"] { display:block!important; margin-bottom:10px!importan=
+t; background-image:none!important; margin-right:0!important;}
+
+    div[class=3D"column"] { width: auto!important; float:none!important;}
+
+    table.social div[class=3D"column"] {
+      width:auto!important;
+    }
+
+  }
+</style>
+
+</head>
+
+
+    <body bgcolor=3D"rgba(245, 245, 245, 1)" style=3D"background-color: rgb=
+a(245, 245, 245, 1)">
+      <div class=3D"main-wrapper" style=3D"margin: 0 auto; max-width: 600px=
+;">
+
+
+        <table class=3D"body-wrap" style=3D"margin: 0 auto;">
+          <tr>
+            <td style=3D"text-align: center;">
+              <p>
+                <div>
+                  <img style=3D"vertical-align:middle;" alt=3D"Calendly" sr=
+c=3D"http://assets.calendly.com/assets/emails/full_email_logo-c3c0a300278a0=
+032a6fddc0fc74043ae37928a0a2443cadeee60fe8d61085510.png" width=3D"167" heig=
+ht=3D"40" />
+                </div>
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <!-- BODY -->
+        <table class=3D"body-wrap" style=3D"margin: auto 0; font-size: 16px=
+; background-color: #fff; padding: 39px 50px; border-radius: 25px 25px 0px =
+0px; width: 100%">
+          <tr>
+            <td style=3D"color: #1a1a1a; line-height: 22px;">
+              <p>
+  Calendly is a simple, elegant scheduling tool that lets people schedule w=
+ith you in just a few clicks=E2=80=94no tedious back-and-forth required.  C=
+lick below to accept the invitation and you&#39;ll be up and running in a m=
+atter of minutes.
+</p>
+
+
+<p style=3D"text-align: center;">
+  <a href=3D"https://calendly.com/organization/invitations/accept/7b5e966e-=
+615e-4199-9b9b-2b88a4987b9f?key=3D0aafed1a2d7fe5ce1168ae5742b44bfda577e196e=
+46336be09c28fa54c2bb900&amp;utm_source=3Dorginvite"
+    rel=3D"noopener noreferrer"
+    target=3D"_blank"
+    style=3D"
+      display: inline-block;
+      width: 220px;
+      padding: 15px 0;
+      margin: 20px 5px 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      border: 1px solid #006BFF;
+      background-color: #006BFF;
+      border-radius: 50px;
+    ">
+    Accept Invitation
+  </a>
+</p>
+
+<p style=3D"margin-top: 20px">
+  Please note that your Calendly account and billing will be managed by van=
+ eric martin.
+</p>
+
+            </td>
+          </tr>
+        </table><!-- /BODY -->
+
+        <!-- FOOTER -->
+        <table class=3D"footer-wrap" style=3D" width: 100%; padding: 52px 0=
+; background-color: rgba(235, 235, 235, 1); border-radius: 0 0 25px 25px">
+          <tr>
+            <td style=3D"color: rgba(26, 26, 26, 0.6); padding-top: 15px; t=
+ext-align: center;">
+
+              <!-- FOOTER SOCIAL -->
+              <div style=3D"margin-bottom: 26px;">
+                <img style=3D"vertical-align:middle;" alt=3D"Calendly" src=
+=3D"http://assets.calendly.com/assets/emails/full_email_logo-c3c0a300278a00=
+32a6fddc0fc74043ae37928a0a2443cadeee60fe8d61085510.png" width=3D"167" heigh=
+t=3D"40" />
+              </div>
+              <div style=3D"font-size: 14px; font-weight: 300; color: #000;=
+ margin-bottom: 4px;">
+                115 E. Main Street, Suite A1B, Buford, GA 30518
+              </div>
+              <!-- FOOTER SOCIAL -->
+
+              <!-- FOOTER CONTENT -->
+              <p style=3D"font-size: 12px; text-align: center;">
+                  Sent from <a href=3D'https://calendly.com'>Calendly</a>
+              </p>
+              <!-- /FOOTER CONTENT -->
+            </td>
+          </tr>
+        </table><!-- /FOOTER -->
+      </div>
+    <img src=3D"https://click.calendly.com/wf/open?upn=3Du001.47O2DjJnszqz5=
+BkLM6ntPZJwtSOVarKC9RYRTxf4uFRxRCI29JldNUMv0PS6GxzO78qKMy52ZBom-2BaQEH7yq6l=
+oRujlbl6p-2F51PwR2UedzDWSomUIy-2FttkMhqmD8GTdG7GgwtwDPB7OM7p0OSltO0CPHZk7gP=
+Gb0-2F6EdpgxB5AW4xQyN7feNb6hK9qFpQ9JqQJ74MgRcRPJaHNgg3ofuqA-3D-3D" alt=3D""=
+ width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width=
+:1px !important;border-width:0 !important;margin-top:0 !important;margin-bo=
+ttom:0 !important;margin-right:0 !important;margin-left:0 !important;paddin=
+g-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;p=
+adding-left:0 !important;"/></body>
+</html>

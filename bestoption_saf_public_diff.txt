@@ -1,0 +1,114 @@
+Files /home/notesao/safatherhood/public_html/absence-create.php and /home/notesao/bestoption/public_html/absence-create.php differ
+Files /home/notesao/safatherhood/public_html/absence-delete.php and /home/notesao/bestoption/public_html/absence-delete.php differ
+Files /home/notesao/safatherhood/public_html/absence_logic.php and /home/notesao/bestoption/public_html/absence_logic.php differ
+Files /home/notesao/safatherhood/public_html/absence-read.php and /home/notesao/bestoption/public_html/absence-read.php differ
+Files /home/notesao/safatherhood/public_html/absence-update.php and /home/notesao/bestoption/public_html/absence-update.php differ
+Files /home/notesao/safatherhood/public_html/admin/admin_navbar.php and /home/notesao/bestoption/public_html/admin/admin_navbar.php differ
+Files /home/notesao/safatherhood/public_html/admin/client_file_update.php and /home/notesao/bestoption/public_html/admin/client_file_update.php differ
+Only in /home/notesao/bestoption/public_html/admin: error_log
+Files /home/notesao/safatherhood/public_html/attendance_record-create.php and /home/notesao/bestoption/public_html/attendance_record-create.php differ
+Files /home/notesao/safatherhood/public_html/attendance_record-delete.php and /home/notesao/bestoption/public_html/attendance_record-delete.php differ
+Files /home/notesao/safatherhood/public_html/attendance_record-read.php and /home/notesao/bestoption/public_html/attendance_record-read.php differ
+Files /home/notesao/safatherhood/public_html/attendance_record-update.php and /home/notesao/bestoption/public_html/attendance_record-update.php differ
+Files /home/notesao/safatherhood/public_html/auth.php and /home/notesao/bestoption/public_html/auth.php differ
+Only in /home/notesao/bestoption/public_html: bestoptionlogo.png
+Files /home/notesao/safatherhood/public_html/build_report2_table.php and /home/notesao/bestoption/public_html/build_report2_table.php differ
+Files /home/notesao/safatherhood/public_html/case_manager-index.php and /home/notesao/bestoption/public_html/case_manager-index.php differ
+Files /home/notesao/safatherhood/public_html/case_manager-read.php and /home/notesao/bestoption/public_html/case_manager-read.php differ
+Files /home/notesao/safatherhood/public_html/check_absences.php and /home/notesao/bestoption/public_html/check_absences.php differ
+Files /home/notesao/safatherhood/public_html/check_in_step4.php and /home/notesao/bestoption/public_html/check_in_step4.php differ
+Files /home/notesao/safatherhood/public_html/client-contract-upload.php and /home/notesao/bestoption/public_html/client-contract-upload.php differ
+Only in /home/notesao/safatherhood/public_html: client-create-import.php
+Files /home/notesao/safatherhood/public_html/client-create.php and /home/notesao/bestoption/public_html/client-create.php differ
+Files /home/notesao/safatherhood/public_html/client-delete.php and /home/notesao/bestoption/public_html/client-delete.php differ
+Files /home/notesao/safatherhood/public_html/client-event-delete.php and /home/notesao/bestoption/public_html/client-event-delete.php differ
+Files /home/notesao/safatherhood/public_html/client-event-update.php and /home/notesao/bestoption/public_html/client-event-update.php differ
+Files /home/notesao/safatherhood/public_html/client-index.php and /home/notesao/bestoption/public_html/client-index.php differ
+Only in /home/notesao/safatherhood/public_html: clientportal_lib.php
+Only in /home/notesao/safatherhood/public_html: clientportal_links_admin.php
+Files /home/notesao/safatherhood/public_html/clientportal.php and /home/notesao/bestoption/public_html/clientportal.php differ
+Files /home/notesao/safatherhood/public_html/client-read.php and /home/notesao/bestoption/public_html/client-read.php differ
+Files /home/notesao/safatherhood/public_html/client_review_panel.php and /home/notesao/bestoption/public_html/client_review_panel.php differ
+Files /home/notesao/safatherhood/public_html/client-update.php and /home/notesao/bestoption/public_html/client-update.php differ
+Only in /home/notesao/safatherhood/public_html: consent_texts.php
+Files /home/notesao/safatherhood/public_html/curriculum-index.php and /home/notesao/bestoption/public_html/curriculum-index.php differ
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250108.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250116.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250122.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250123.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250128.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250130.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250131.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250201.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250205.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250212.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250214.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250219.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250228.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250304.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250505.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250522.pdf
+Only in /home/notesao/bestoption/public_html/documents/absence_reports: AbsenceReport_20250529.pdf
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_212411.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_213239.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_213335.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_213442.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_213544.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_213656.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_213806.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_214111.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_214355.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_215648.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_215738.zip
+Only in /home/notesao/bestoption/public_html/documents/generate_reports: Generated_Reports_20241204_220437.zip
+Only in /home/notesao/safatherhood/public_html: document-templates.php
+Files /home/notesao/safatherhood/public_html/download2.php and /home/notesao/bestoption/public_html/download2.php differ
+Files /home/notesao/safatherhood/public_html/download.php and /home/notesao/bestoption/public_html/download.php differ
+Files /home/notesao/safatherhood/public_html/error_log and /home/notesao/bestoption/public_html/error_log differ
+Files /home/notesao/safatherhood/public_html/ethnicity-index.php and /home/notesao/bestoption/public_html/ethnicity-index.php differ
+Files /home/notesao/safatherhood/public_html/facilitator-index.php and /home/notesao/bestoption/public_html/facilitator-index.php differ
+Files /home/notesao/safatherhood/public_html/fetch_data_auto.php and /home/notesao/bestoption/public_html/fetch_data_auto.php differ
+Files /home/notesao/safatherhood/public_html/fetch_data.php and /home/notesao/bestoption/public_html/fetch_data.php differ
+Only in /home/notesao/bestoption/public_html: ffllogo.png
+Only in /home/notesao/safatherhood/public_html/GeneratedDocuments: 09.08.25
+Files /home/notesao/safatherhood/public_html/generate_reports.php and /home/notesao/bestoption/public_html/generate_reports.php differ
+Files /home/notesao/safatherhood/public_html/get_task_status.php and /home/notesao/bestoption/public_html/get_task_status.php differ
+Files /home/notesao/safatherhood/public_html/helpers.php and /home/notesao/bestoption/public_html/helpers.php differ
+Files /home/notesao/safatherhood/public_html/home.php and /home/notesao/bestoption/public_html/home.php differ
+Files /home/notesao/safatherhood/public_html/image-create.php and /home/notesao/bestoption/public_html/image-create.php differ
+Files /home/notesao/safatherhood/public_html/image-delete.php and /home/notesao/bestoption/public_html/image-delete.php differ
+Files /home/notesao/safatherhood/public_html/image-read.php and /home/notesao/bestoption/public_html/image-read.php differ
+Files /home/notesao/safatherhood/public_html/image-update.php and /home/notesao/bestoption/public_html/image-update.php differ
+Files /home/notesao/safatherhood/public_html/intake-index.php and /home/notesao/bestoption/public_html/intake-index.php differ
+Files /home/notesao/safatherhood/public_html/intake.php and /home/notesao/bestoption/public_html/intake.php differ
+Files /home/notesao/safatherhood/public_html/intake-review.php and /home/notesao/bestoption/public_html/intake-review.php differ
+Files /home/notesao/safatherhood/public_html/intake-update.php and /home/notesao/bestoption/public_html/intake-update.php differ
+Files /home/notesao/safatherhood/public_html/ledger-create.php and /home/notesao/bestoption/public_html/ledger-create.php differ
+Files /home/notesao/safatherhood/public_html/ledger-delete.php and /home/notesao/bestoption/public_html/ledger-delete.php differ
+Files /home/notesao/safatherhood/public_html/ledger-read.php and /home/notesao/bestoption/public_html/ledger-read.php differ
+Files /home/notesao/safatherhood/public_html/ledger-update.php and /home/notesao/bestoption/public_html/ledger-update.php differ
+Files /home/notesao/safatherhood/public_html/location-create.php and /home/notesao/bestoption/public_html/location-create.php differ
+Files /home/notesao/safatherhood/public_html/location-delete.php and /home/notesao/bestoption/public_html/location-delete.php differ
+Files /home/notesao/safatherhood/public_html/location-read.php and /home/notesao/bestoption/public_html/location-read.php differ
+Files /home/notesao/safatherhood/public_html/location-update.php and /home/notesao/bestoption/public_html/location-update.php differ
+Files /home/notesao/safatherhood/public_html/mar2.php and /home/notesao/bestoption/public_html/mar2.php differ
+Files /home/notesao/safatherhood/public_html/mar.php and /home/notesao/bestoption/public_html/mar.php differ
+Files /home/notesao/safatherhood/public_html/message_csv.php and /home/notesao/bestoption/public_html/message_csv.php differ
+Files /home/notesao/safatherhood/public_html/message_results.php and /home/notesao/bestoption/public_html/message_results.php differ
+Files /home/notesao/safatherhood/public_html/navbar.php and /home/notesao/bestoption/public_html/navbar.php differ
+Files /home/notesao/safatherhood/public_html/officedocuments.php and /home/notesao/bestoption/public_html/officedocuments.php differ
+Only in /home/notesao/safatherhood/public_html: payment-link-admin.php
+Files /home/notesao/safatherhood/public_html/program-select.php and /home/notesao/bestoption/public_html/program-select.php differ
+Files /home/notesao/safatherhood/public_html/referral_type-index.php and /home/notesao/bestoption/public_html/referral_type-index.php differ
+Files /home/notesao/safatherhood/public_html/reportgen_errors.log and /home/notesao/bestoption/public_html/reportgen_errors.log differ
+Files /home/notesao/safatherhood/public_html/reportgen.php and /home/notesao/bestoption/public_html/reportgen.php differ
+Only in /home/notesao/safatherhood/public_html: safatherhoodlogo.png
+Files /home/notesao/safatherhood/public_html/sql_functions.php and /home/notesao/bestoption/public_html/sql_functions.php differ
+Files /home/notesao/safatherhood/public_html/therapy_group-index.php and /home/notesao/bestoption/public_html/therapy_group-index.php differ
+Files /home/notesao/safatherhood/public_html/therapy_session-attendance.php and /home/notesao/bestoption/public_html/therapy_session-attendance.php differ
+Files /home/notesao/safatherhood/public_html/therapy_session-create.php and /home/notesao/bestoption/public_html/therapy_session-create.php differ
+Files /home/notesao/safatherhood/public_html/therapy_session-index.php and /home/notesao/bestoption/public_html/therapy_session-index.php differ
+Files /home/notesao/safatherhood/public_html/therapy_session-read.php and /home/notesao/bestoption/public_html/therapy_session-read.php differ
+Files /home/notesao/safatherhood/public_html/therapy_session-update.php and /home/notesao/bestoption/public_html/therapy_session-update.php differ
+Files /home/notesao/safatherhood/public_html/update_clients.php and /home/notesao/bestoption/public_html/update_clients.php differ
+Only in /home/notesao/safatherhood/public_html: uploads

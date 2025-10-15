@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id i8EFAAHkuGiMjC0AIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 03 Sep 2025 19:57:37 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 03 Sep 2025 19:57:37 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1utyIC-0000000CWYg-413W
+	for admin@notesao.com;
+	Wed, 03 Sep 2025 19:57:36 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Kevin Morrow
+X-PHP-Script: ffl.notesao.com/intake.php for 172.59.195.155
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: motorsports.kdm@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1utyIC-0000000CWYg-413W@host.notesao.com>
+Date: Wed, 03 Sep 2025 19:57:36 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

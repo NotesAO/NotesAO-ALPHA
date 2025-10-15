@@ -1,0 +1,105 @@
+Return-Path: <>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id QCPIJKwur2iQ0isAIW4ynA
+	(envelope-from <>); Wed, 27 Aug 2025 11:13:32 -0500
+Return-path: <>
+Envelope-to: no-reply@notesao.com
+Delivery-date: Wed, 27 Aug 2025 11:13:32 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1urImC-0000000C3F2-2QG0
+	for no-reply@notesao.com;
+	Wed, 27 Aug 2025 11:13:32 -0500
+X-Failed-Recipients: no@gmail.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@notesao.com
+References: <WvJzAfej2HFYmr1n61uyJLvCzBHGL7EozX4Li5vUrk@saferpath.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1756311212-eximdsn-994885786
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1urImC-0000000C3F2-2QG0@host.notesao.com>
+Date: Wed, 27 Aug 2025 11:13:32 -0500
+
+--1756311212-eximdsn-994885786
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  no@gmail.com
+    host gmail-smtp-in.l.google.com [64.233.180.26]
+    SMTP error from remote mail server after RCPT TO:<no@gmail.com>:
+    550-5.1.1 The email account that you tried to reach does not exist. Please try
+    550-5.1.1 double-checking the recipient's email address for typos or
+    550-5.1.1 unnecessary spaces. For more information, go to
+    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser d75a77b69052e-4b2f35b7020si6248401cf.105 - gsmtp
+
+--1756311212-eximdsn-994885786
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;no@gmail.com
+Status: 5.0.0
+Remote-MTA: dns; gmail-smtp-in.l.google.com
+Diagnostic-Code: smtp; 550-5.1.1 The email account that you tried to reach does not exist. Please try
+ 550-5.1.1 double-checking the recipient's email address for typos or
+ 550-5.1.1 unnecessary spaces. For more information, go to
+ 550 5.1.1  https://support.google.com/mail/?p=NoSuchUser d75a77b69052e-4b2f35b7020si6248401cf.105 - gsmtp
+
+--1756311212-eximdsn-994885786
+Content-type: message/rfc822
+
+Return-path: <no-reply@notesao.com>
+Received: from [50.28.37.79] (port=48570 helo=saferpath.notesao.com)
+	by host.notesao.com with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <no-reply@notesao.com>)
+	id 1urImC-0000000C3Eu-3KPa
+	for no@gmail.com;
+	Wed, 27 Aug 2025 11:13:32 -0500
+Date: Wed, 27 Aug 2025 11:13:32 -0500
+To: no@gmail.com
+From: NotesAO <no-reply@notesao.com>
+Subject: Activate your NotesAO account
+Message-ID: <WvJzAfej2HFYmr1n61uyJLvCzBHGL7EozX4Li5vUrk@saferpath.notesao.com>
+X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="b1=_WvJzAfej2HFYmr1n61uyJLvCzBHGL7EozX4Li5vUrk"
+Content-Transfer-Encoding: 8bit
+
+--b1=_WvJzAfej2HFYmr1n61uyJLvCzBHGL7EozX4Li5vUrk
+Content-Type: text/plain; charset=us-ascii
+
+
+                      Hello mdominguez,
+                      An administrator just created an account for you on NotesAO.
+                      Click the button below to activate your account and choose your password:
+                      
+                        Activate Account
+                      
+                      This link works only once.
+
+--b1=_WvJzAfej2HFYmr1n61uyJLvCzBHGL7EozX4Li5vUrk
+Content-Type: text/html; charset=us-ascii
+
+
+                      <p>Hello mdominguez,</p>
+                      <p>An administrator just created an account for you on <strong>NotesAO</strong>.</p>
+                      <p>Click the button below to activate your account and choose your password:</p>
+                      <p>
+                        <a href='https://notesao.com/activate.php?clinic=saferpath&code=a468acda2e8d70ffbaa71abe3fe2fb16526bc8f0e311a3a3a4a5a9b0f2cd112f' style='padding:10px 18px;background:#211c56;color:#fff;
+                          text-decoration:none;border-radius:6px;'>Activate Account</a>
+                      </p>
+                      <p>This link works only once.</p>
+
+
+--b1=_WvJzAfej2HFYmr1n61uyJLvCzBHGL7EozX4Li5vUrk--
+
+
+--1756311212-eximdsn-994885786--

@@ -1,0 +1,370 @@
+Return-Path: <helen.bennett-lopez@thebestoptionsa.com>
+Delivered-To: sales@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id +I7xIPi3HGiF/h0AIW4ynA
+	(envelope-from <helen.bennett-lopez@thebestoptionsa.com>)
+	for <sales@notesao.com>; Thu, 08 May 2025 08:56:08 -0500
+Return-path: <helen.bennett-lopez@thebestoptionsa.com>
+Envelope-to: sales@notesao.com
+Delivery-date: Thu, 08 May 2025 08:56:08 -0500
+Received: from dispatch1-us1.ppe-hosted.com ([67.231.154.183]:53384)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.1)
+	(envelope-from <helen.bennett-lopez@thebestoptionsa.com>)
+	id 1uD1jJ-00000008FLV-42hR
+	for sales@notesao.com;
+	Thu, 08 May 2025 08:56:08 -0500
+Received: from engine.ppe-hosted.com (unknown [10.110.48.51])
+	by dispatch1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTPS id 60BE1200E5
+	for <sales@notesao.com>; Thu,  8 May 2025 13:56:03 +0000 (UTC)
+X-Virus-Scanned: Proofpoint Essentials engine
+Received: from NAM12-BN8-obe.outbound.protection.outlook.com (mail-bn8nam12lp2169.outbound.protection.outlook.com [104.47.55.169])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTPS id 2D46F2400A0
+	for <sales@notesao.com>; Thu,  8 May 2025 13:56:02 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=vFguu+EtIVqocitySLQIJVFcymGjairkBJk9g/ef29C6tPqtyb11ZvhA9MtmPpB5pQtFDpKulJx6L7AK1jkJ9T/jPynfnvCBH2AFqS9/RZZR0j/QG8w9cpHgNiPUCeKqDcqmLnl8eNhdDIZ1L5HSKUTJz0e2aPrA6ptIu8AxR5nGlfYGixN9enq0P7xuzI9YpouF+0a9e1mhWXZlI2K/4N2+dEYjAMaXzi6TMIMyc86y7M/A/wm1MDAMGZT+TR2pG4HpUhgjKpxsbPbYiybw9ObqIG/Kbt4NWrK4g0Xen6gIbtMaQG9ya08g1UugIKHm7okkBHJ1TZnW+M3leFhBwQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=RKe6mcOtI+zBJMlGBX3m8uqQlIjJVVNWG7/WW+nzxWU=;
+ b=ZIUbSB9tRF+ZzQJsLzqsd/Vpdfag6cK6BBBIlntvAR4Y4vuWfxA9u9fBECAdSq/n1jz1b1VTuzAzW6WGxVHmIJV8Ih0eAgssoEC8dzdd7iAVqjTyozsnJ5C2yBWa6P3cVzuMkC+RHwUQSZMH7s3u7YX9cZKWJDSZAxHTn7m8iIaSwTcXmoDNrEgmEliDHVMD1tQ3SjKAAb8gEoPTOmquBcK1iHEh41imRAHpzkEW2bllZjQhVxDgHweYTHKcy63Fu9ZrudBDiiyFx579fBEubcko22sSCIM1q0VqNqpPMOfv0wYJX+sLJ8DpNxUZH19GPj+KwcRCYQ+fChzT1zrnlA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=thebestoptionsa.com; dmarc=pass action=none
+ header.from=thebestoptionsa.com; dkim=pass header.d=thebestoptionsa.com;
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=NETORG4988663.onmicrosoft.com; s=selector1-NETORG4988663-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RKe6mcOtI+zBJMlGBX3m8uqQlIjJVVNWG7/WW+nzxWU=;
+ b=fqQndxhpFFF8igVFPYtyQlonoScfw6PdFpgm695a8bhlj8wzJ6B1+hvfZyyQTyX3He+/GwfUXJmXkPJmOWJsXo7vUifAQOFJ2Le4rZ4l/8cedlZpvebsPGO9tXFR/a72muxnbJzBqB82Lwn362XcdsWOq9bHaiEadsRBKpm2SoQ=
+Received: from CY4PR06MB3334.namprd06.prod.outlook.com (2603:10b6:910:54::32)
+ by PH0PR06MB7558.namprd06.prod.outlook.com (2603:10b6:510:5b::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8699.35; Thu, 8 May
+ 2025 13:55:54 +0000
+Received: from CY4PR06MB3334.namprd06.prod.outlook.com
+ ([fe80::a51c:4dd2:5e4a:5137]) by CY4PR06MB3334.namprd06.prod.outlook.com
+ ([fe80::a51c:4dd2:5e4a:5137%4]) with mapi id 15.20.8678.028; Thu, 8 May 2025
+ 13:55:53 +0000
+From: Helen Bennett-Lopez <helen.bennett-lopez@thebestoptionsa.com>
+To: "sales@notesao.com" <sales@notesao.com>
+Subject: Re: Thank you
+Thread-Topic: Thank you
+Thread-Index: AQHbvgztarBcFBcAPU+P79uv90OZo7PIxVjV
+Date: Thu, 8 May 2025 13:55:53 +0000
+Message-ID:
+ <CY4PR06MB33348ACB5786912CFEA9F27CBA8BA@CY4PR06MB3334.namprd06.prod.outlook.com>
+References: <14565823f56ea9646deb6f17ddfc818f@notesao.com>
+In-Reply-To: <14565823f56ea9646deb6f17ddfc818f@notesao.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=thebestoptionsa.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: CY4PR06MB3334:EE_|PH0PR06MB7558:EE_
+x-ms-office365-filtering-correlation-id: 0b6c49df-a6c5-47e8-f29f-08dd8e380cb5
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|376014|366016|10070799003|1800799024|8096899003|13003099007|38070700018|7053199007;
+x-microsoft-antispam-message-info:
+ =?us-ascii?Q?4baMyJvkilHweGgsgu3dbCdC8Eba+dprH2kp9vSLS3QLMdM9kJZTWzvL4gDO?=
+ =?us-ascii?Q?ouMEQply7oxzEm2tAygT/7LFmTuAhIFLSM9HwqgwRyXdSXgJBElwT3Wf1Qy0?=
+ =?us-ascii?Q?jU7tZQ5xaBhUNeuI0xXw358YCj3O0Qsjwd600YMRqTSkxgQiHvzEIyP4yW6y?=
+ =?us-ascii?Q?d0ukiAIXdluMlhG2wtsIK9aDwiRls6kuy/ZHjcnqO/dKEkaQVkXacmmuapev?=
+ =?us-ascii?Q?SEpd2QIONFNcgLLWvjxLo04YA6ch3V08BCpWgCSXm7P0TlrwNTwehmdbxEa5?=
+ =?us-ascii?Q?QJ6wSIvAhjWQVpbHZlrpe1A6223rVWLiiiUbCwyqmKNzLbBo/N2d0pfuYpg/?=
+ =?us-ascii?Q?K2bi4n6ITTEpEoBfd6g5vw0x2/YQ9G0yY9bRlrbiF5MY2H0VC8/ZAqPsDrvm?=
+ =?us-ascii?Q?mN5YbqKjlYp/T3URCOlES3mzXrfmNxTdDynNSYKHZVX6QWRQavVzP5AYYqUy?=
+ =?us-ascii?Q?K1pPXfuFZ2yo0rfl3JNve2PjZcAHT7ApOpletuHyfhFMAfrToPuc30fs2a2j?=
+ =?us-ascii?Q?s+n9CSbIO2/cMM75lAk9NrvhKPPTCw7hHeqSTFVteHmmD4umJDRZ9TJLJF/J?=
+ =?us-ascii?Q?M3TzP/X4VwUk4wV2ykiGhoW8M32ifffBOJ/uSgapNCCKFKh34Afte/nziEsL?=
+ =?us-ascii?Q?cMPmnVOagAqgMqpVGgproGr+VoVUb6fwH4Rcy/CrotqVuFK8YnknGsAZYQ3x?=
+ =?us-ascii?Q?I2aQrKV2BerG0BXk/EZntVVBLxxCxUrJKR6A+0aKkn5w9/Lb5QaYy7uVtkJn?=
+ =?us-ascii?Q?I0wv8ChqHed8JVvMbFwZA3C6aT8kzLZemmM0WMvitfKovBLQn1ew+LtIKSKq?=
+ =?us-ascii?Q?1lSs0jFLAubv/v2XSbmvkp8nr3IlYlRXLroW/tHd5JtQyG22X0ERgB8rIili?=
+ =?us-ascii?Q?aeQbCU2W+MsTwOebtQPskPo6Vv5jUoC53sqQ9HN9Fu5htHnIejknhAdFfTvZ?=
+ =?us-ascii?Q?dfyEhiCaO7IY9/fk4i3Y4f26S4hDncNht9cePXApd///jAL8ORupTYNgZt2R?=
+ =?us-ascii?Q?eDn0KWhIdg7DdCe3SFSMaE6Z5ukPJb3DfdaBUTaR9P6IYlhTqPmyJmbNAkZg?=
+ =?us-ascii?Q?YDhAuxSvzd0Ui5qxw32TipfG5MZJelrMDZ3ELNq/hAHiMywKPn+aoXif4Qky?=
+ =?us-ascii?Q?TLLTs0hvTDCPHfe5seK8SKvFyndPWZaDzyYnLDFfpJZMq3pbbDbaAR13ELF0?=
+ =?us-ascii?Q?YtFdjy+SpFhHgNsYgVqORVoykjEgo5kJWS0toloVq0bQ+/HI6brwZkMU3uB2?=
+ =?us-ascii?Q?ZuPEykY9GefB3XiNDQ73Ub8mFmaXedczHrE/mGytxVM/FULAagjZLxbiMCRM?=
+ =?us-ascii?Q?uLz51rJgSqgSFXbpoaqx6ucVjxNdXYHe3f2YGwEik57O+EA6nJBqdBhAnV6n?=
+ =?us-ascii?Q?naZ+CYN1iFgfaNYldIHYTFP5KSr/yd0196uoYBrqf69WrOLpb7D1kdjrgjXY?=
+ =?us-ascii?Q?bzQAzA6Mqo8=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CY4PR06MB3334.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(376014)(366016)(10070799003)(1800799024)(8096899003)(13003099007)(38070700018)(7053199007);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?us-ascii?Q?vlZaX6Tb+OPASfEC3Xof4QPhMvsksHQKH/PmbKuS4qQpPoeG7RIszpfFgMGq?=
+ =?us-ascii?Q?DBr9I0XNmtHHOwKb5qTl2pQDMdduHVqfmZoeEDyJAiMAWVRrXKxT1/simUNB?=
+ =?us-ascii?Q?DPxBooS8F79p1OvB29U0XnH+OfpWMB5ZiFOjmvsUwUWd4U/SttWAj4WyDQD2?=
+ =?us-ascii?Q?dDZo8l4FMBwqbGuh6R15lbV+n15/Gd9VZOdZaGQKjo14WyjnxXNdLIxqb/2P?=
+ =?us-ascii?Q?qBI4BLcOvXTp8aDTYeDIf0pMan3eb5E3rjhBDPnYtGZ1pBijV5+YRFydt6O7?=
+ =?us-ascii?Q?xUx5nhAyEnJTIutA60SPAFXeRB+KGbnGrvhI3c1+FBW+ozYR6jByx+nyutJk?=
+ =?us-ascii?Q?z85OeTqPYz6pnc17zxQW/VCqu3SV9u/OI0+i/l8on50uM+csWLu53fsww/IB?=
+ =?us-ascii?Q?25/Xqpdlf9o6JcM7daxq4q7tvisu4AfQp9pES/SI0n0DiNxlLU2ScEl6dor8?=
+ =?us-ascii?Q?C9X5JW32LmjsF4t63Zahf9UHOL37aXWzlLzrXPRd2Ru8C+SauSCp7OucSnSD?=
+ =?us-ascii?Q?I3nAyiS/j/CIIxWOlPkxXmPSN+gBgIO26/COzwz/y2GMc4PsFLUUVx47wb6Y?=
+ =?us-ascii?Q?NHwb5c/PneV6oTeeDGFqYCnMm2+4eVQKUi4mTp5hkrOlLVaPuMnZVgdzWgZ8?=
+ =?us-ascii?Q?RCBtZykv5myRMyTB3NUa3vxEG+QJ5OWsKu5yOfypOefFNNAEgOCtPByQIrVi?=
+ =?us-ascii?Q?mYj5CLteEp9TNHaaxowrSiK5uxxwiRzm8LaAdDJM0RG7rdMSixiuqLh2fOfy?=
+ =?us-ascii?Q?6ZlNLQChAcgI8g2/3rznqzW7hOS6Jpw2YHExpRiIOQwnK6Ocf+h1Vu4dS87a?=
+ =?us-ascii?Q?HA2UQhTF74LY1IvaVACCYbcdThpK7nW/xCbQyAFCrSi88cLp/iqKokuvPFXq?=
+ =?us-ascii?Q?kiO6Bdu+Tu60E/K3RX7mZcTFGG/kH/jgAWlLpZRxMRjogJi5ygUJ4jrw5tmK?=
+ =?us-ascii?Q?lnOKngYd1FF1nbUyEidgvH0upw28NUfzTwguX08MYRhL0sMHHIgoUak//c8B?=
+ =?us-ascii?Q?afch9ikJvWBTkEK3547jBSrFvzuW1a+nb5M6C/KGhygW1aIDcAwYnlb8tN+e?=
+ =?us-ascii?Q?rDTozdKIzCvnFvW465ghqUY5wJWfQ1O3OGmKUTdwfB0osRG5+76FTnMvI+PQ?=
+ =?us-ascii?Q?PFcE/qU3GoqB7EsIepmEUlFd7CxRiFsvDL1PvPvgJA7LpKBMiEjlKXa8sTat?=
+ =?us-ascii?Q?XgHQvZZ6a2uUkqIBkqxX0lvjxZT1NKyAZOu0cN7cu2cIIz59GqNX019cTUCj?=
+ =?us-ascii?Q?MJuMVoBSqjeTEUB9nrn2RcpXwFr7a1nwBMzRgsnXdGONfeurLegkGwcxK5P3?=
+ =?us-ascii?Q?GT6Mc8FFlCfwg/HD/P9eH4xV7zXeKQhSIWvTvt0IMCgQRGx53MJZQIbs5fE2?=
+ =?us-ascii?Q?0lvOeSTawAZ1WQPZmZLh28zg655UUK8iIjwGMMNanl3EStEwbpcMxMW8Wr+M?=
+ =?us-ascii?Q?TFxPDi89shnrskWTs/IeLwOXXil7u/W58+IEHymjxtXZFX5dh4nH3pOVIVmn?=
+ =?us-ascii?Q?L8vYpvfqkD/vArqWwlLgNcx+AiRLBJqh1J7AdsoCS/wtzaKyhwDN3RhWsEwu?=
+ =?us-ascii?Q?H5jTwjoA1B1SXx1QisNGpD4NUl9dE8z6jvAJdQ5yzBXF+Xts5gdxucq52Lxu?=
+ =?us-ascii?Q?6nnqpCm+IvKD4c2RS7TyoSaFnyg25/OL8AbQyQtXyAjqrf65AOfrlrGxrRsM?=
+ =?us-ascii?Q?dlEmAOdWYQdEWg52WUsa3QUHuk0=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_CY4PR06MB33348ACB5786912CFEA9F27CBA8BACY4PR06MB3334namp_"
+MIME-Version: 1.0
+X-OriginatorOrg: thebestoptionsa.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: CY4PR06MB3334.namprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0b6c49df-a6c5-47e8-f29f-08dd8e380cb5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2025 13:55:53.8799
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 72c87848-b9bb-4d5c-a8ab-3d604c3c5371
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sAF66zDnJtvtIc9jUveZqba7lljDTMeDA2IeQbXHYKDeDEGdxxIaCZIpSpnYxD/iDDrU16xD+JWNXTlX/ep80BVmQunGhz0D7ePJsELmR+QhFNVxV/pkNqKivULb13/q
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR06MB7558
+X-MDID: 1746712562-qWGxov3fVUtq
+X-PPE-STACK: {"stack":"us4"}
+X-MDID-O:
+ us4;at1;1746712562;qWGxov3fVUtq;<helen.bennett-lopez@thebestoptionsa.com>;da5315cd059a7d0aea590da2b92e19da
+X-PPE-TRUSTED: V=1;DIR=OUT;
+X-Spam-Status: No, score=0.2
+X-Spam-Score: 2
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Good morning, Would it be possible to speak with you? If so,
+    can you please call me at 21.947.2973. I have a meeting at 10:30, but should
+    be available either before or after. Thank you, 
+ Content analysis details:   (0.2 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [67.231.154.183 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                         [67.231.154.183 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                            [67.231.154.183 listed in bl.score.senderscore.com]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: cloud-protect.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  0.0 ARC_VALID              Message has a valid ARC signature
+  0.0 ARC_SIGNED             Message has a ARC signature
+  0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
+  0.0 KAM_DMARC_STATUS       Test Rule for DKIM or SPF Failure with Strict
+                             Alignment
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or identical to
+                             background
+X-Spam-Flag: NO
+
+--_000_CY4PR06MB33348ACB5786912CFEA9F27CBA8BACY4PR06MB3334namp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Good morning,
+
+Would it be possible to speak with you?  If so, can you please call me at 2=
+1.947.2973.  I have a meeting at 10:30, but should be available either befo=
+re or after.
+
+Thank you,
+
+Helen
+________________________________
+From: sales@notesao.com <sales@notesao.com>
+Sent: Monday, May 5, 2025 5:27 PM
+To: Helen Bennett-Lopez <helen.bennett-lopez@thebestoptionsa.com>
+Subject: Thank you
+
+Helen, Just wanted to send you a quick note thanking you for your time toda=
+y. We appreciate it so much. Please let me know if you have any questions m=
+oving forward. We have a great team and looking forward to working with you=
+ in the near future.
+NkdkJdXPPEBannerStart
+Be Careful With This Message
+From (sales@notesao.com)<https://godaddy.cloud-protect.net/email-details/?k=
+=3Dk1&payload=3D53616c7465645f5f1d087b1f3d6abf3d35bee8f10d16fac1234dd388e7d=
+5152ac14ae48e43732e32274035d351815a3918579fd5f8c719a3d1308676d489257b2d70ac=
+72761e4988c79fc9a7533c71f671b3ff2aeff1023f7b45329e00341692e92e953050511e1c9=
+6386a4bc647b674a668486b5f7f2bbfd57a960fa1d3e5d5c37b31245a2af77bec7ed547a82e=
+46e80d68571375fb29f7f9ee36bf8dcf1487d8f67cd8a8689bd1efb5d4d9ac4a50c8d98453e=
+28e509dda3504bb101c248199829431b820a368a2aa121f67ea9651bd371d95a06eca36633d=
+8ee38fbd73c66efa996c619d214c04428ed5c3219425a81bd95c88c137e509e4752920e3e72=
+638>
+Learn More<https://godaddy.cloud-protect.net/email-details/?k=3Dk1&payload=
+=3D53616c7465645f5f1d087b1f3d6abf3d35bee8f10d16fac1234dd388e7d5152ac14ae48e=
+43732e32274035d351815a3918579fd5f8c719a3d1308676d489257b2d70ac72761e4988c79=
+fc9a7533c71f671b3ff2aeff1023f7b45329e00341692e92e953050511e1c96386a4bc647b6=
+74a668486b5f7f2bbfd57a960fa1d3e5d5c37b31245a2af77bec7ed547a82e46e80d6857137=
+5fb29f7f9ee36bf8dcf1487d8f67cd8a8689bd1efb5d4d9ac4a50c8d98453e28e509dda3504=
+bb101c248199829431b820a368a2aa121f67ea9651bd371d95a06eca36633d8ee38fbd73c66=
+efa996c619d214c04428ed5c3219425a81bd95c88c137e509e4752920e3e72638>
+Newly Registered Domain
+The message was sent from a domain that has been recently registered and co=
+uld be for the purpose of sending spam or malware.
+NkdkJdXPPEBannerEnd
+
+Helen,
+Just wanted to send you a quick note thanking you for your time today.
+We appreciate it so much. Please let me know if you have any questions
+moving forward. We have a great team and looking forward to working with
+you in the near future.
+
+David House
+214-502-4322
+NotesAO
+
+
+--_000_CY4PR06MB33348ACB5786912CFEA9F27CBA8BACY4PR06MB3334namp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+Content-length: 3752
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+Good morning,</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+Would it be possible to speak with you?&nbsp; If so, can you please call me=
+ at 21.947.2973.&nbsp; I have a meeting at 10:30, but should be available e=
+ither before or after.&nbsp;</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+Thank you,</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+Helen</div>
+<div id=3D"appendonsend"></div>
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
+yle=3D"font-size:11pt" color=3D"#000000"><b>From:</b> sales@notesao.com &lt=
+;sales@notesao.com&gt;<br>
+<b>Sent:</b> Monday, May 5, 2025 5:27 PM<br>
+<b>To:</b> Helen Bennett-Lopez &lt;helen.bennett-lopez@thebestoptionsa.com&=
+gt;<br>
+<b>Subject:</b> Thank you</font>
+<div>&nbsp;</div>
+</div>
+<div><span class=3D"x_pfptPreheaderCE2230" style=3D"display:none!important;=
+ visibility:hidden; font-size:1px; color:#ffffff; line-height:1px; max-heig=
+ht:0px; max-width:0px; opacity:0; overflow:hidden">Helen, Just wanted to se=
+nd you a quick note thanking you for
+ your time today. We appreciate it so much. Please let me know if you have =
+any questions moving forward. We have a great team and looking forward to w=
+orking with you in the near future.
+</span>
+<div style=3D"display:none!important; display:none; visibility:hidden; font=
+-size:1px; color:#ffffff; line-height:1px; height:0px; max-height:0px; opac=
+ity:0; overflow:hidden">
+</div>
+<style>
+<!--
+div
+	{margin:0!important;
+	padding:16px!important}
+.x_ExternalClass
+	{width:100%}
+.x_ExternalClass, .x_ExternalClass p, .x_ExternalClass span, .x_ExternalCla=
+ss font, .x_ExternalClass td, .x_ExternalClass div
+	{line-height:100%}
+#x_outlook a
+	{padding:0}
+table
+	{}
+table, td
+	{border-collapse:collapse}
+.x_pfptPreheaderCE2230
+	{display:none!important;
+	visibility:hidden;
+	font-size:1px;
+	line-height:1px;
+	max-height:0px;
+	max-width:0px;
+	opacity:0;
+	overflow:hidden}
+.x_pfptFooterCE2230
+	{margin-bottom:50px!important}
+-->
+</style>
+<pre style=3D"white-space:pre-wrap; overflow:auto">Helen,
+Just wanted to send you a quick note thanking you for your time today.=20
+We appreciate it so much. Please let me know if you have any questions=20
+moving forward. We have a great team and looking forward to working with=20
+you in the near future.
+
+David House
+214-502-4322
+NotesAO
+</pre>
+</div>
+</body>
+</html>
+
+--_000_CY4PR06MB33348ACB5786912CFEA9F27CBA8BACY4PR06MB3334namp_--

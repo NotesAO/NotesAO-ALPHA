@@ -1,0 +1,332 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id wNTEHuvnyWiF0h8AIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Tue, 16 Sep 2025 17:42:51 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Tue, 16 Sep 2025 17:42:51 -0500
+Received: from mail-qv1-f66.google.com ([209.85.219.66]:43184)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	id 1uyeNu-00000008l6j-1p3b
+	for no-reply@ffl.notesao.com;
+	Tue, 16 Sep 2025 17:42:51 -0500
+Received: by mail-qv1-f66.google.com with SMTP id 6a1803df08f44-7240eb21ccaso3010926d6.0
+        for <no-reply@ffl.notesao.com>; Tue, 16 Sep 2025 15:42:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20230601; t=1758062569; x=1758667369; darn=ffl.notesao.com;
+        h=in-reply-to:references:subject:from:date:message-id:auto-submitted
+         :to:from:to:cc:subject:date:message-id:reply-to;
+        bh=MA8b7hw36HLfx+3y5UoXrEtySMvUfScKOLIPt+c+Qq0=;
+        b=ilir7lgDlmVqniXmfkzAQQ+SSadIJRnj4D3x7ojqDTIyW20uAxI/YCbEKOTAH6kmtZ
+         soUwSh6yqbr7MB1IcJznPDjM8iQoYmzXnMSrhWn10y/OiLsOjlwC8TxwWdGeskywOcd9
+         GFDXeVR319S3iiOTWeiqSo+n+UeLZzyvs3lC72HAr6s3Negl6KmMkQ2CWJcpk/K9m8HZ
+         re5ulTdIBCtHakhOnOoRoPMDnCpWUdihnwRe3AP7Z9F8utPvKFUxuk6ztbn0j5l2QEa6
+         eyAY+3atzsjGZdTgBrBLlquARv94oudqvziEKWrx876xlRk/CuhsM+Oo6NmBYtAPMTIg
+         s2dg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1758062569; x=1758667369;
+        h=in-reply-to:references:subject:from:date:message-id:auto-submitted
+         :to:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=MA8b7hw36HLfx+3y5UoXrEtySMvUfScKOLIPt+c+Qq0=;
+        b=aYGQBwcJy4kVlmAWUrcwqBiY6aFdhjF7+Osf2fjcNZ8mqK6TYwxPU0rSrXbJvoh7vD
+         99PBljAa8Eom+HHtgpqTLArgs9gyyf5xIHp+B6UjSWaiAiOy6Ymvo4eY1/F/sW9i02Lo
+         UzHtKY2WnfIQS/+0NqW5gVGpwXmfBRraMMlZgjSGm1+UPYFD3gMAwa/ls1e4MxZ/VPia
+         51hg8ubUTiHcgXJtnMXHjuRyrs/E1rkxkGPhB31d418nnMLcxeR1VVYXQhnJfUXuRdgp
+         9+Ceorb4mCk0/dzYdhet1rweA0BlzJhR8JOXe+gdX5xIYZZ2JiKgKFOMgYKgxCOTgVge
+         9qmA==
+X-Gm-Message-State: AOJu0Yz3gnZVioOlzYrv0B7mtiYlJrU9E64Loc7pZxRAGquySiLAVtu7
+	IbDDNtKwymbY8PsSrcKfiKwIhVAHNmn2Vlm/UpFuaFGGlL635S+j15Bl6g2x3bWQreXPAhY28dE
+	hf6tr6LGojndmK2d6khlKv158Mly5G/01Fkt51bjYD/fsHdwL7o3jM+HEug==
+X-Google-Smtp-Source: AGHT+IEGk1aQDIK6OSiASeEizK4F2bMs6nurfsX0056kSNSY3rv42vTOTEnJrCFQrd3UbCcXQoFNDhh6aPS9q9AjWC8vmMNMp+Cs0D4=
+X-Received: by 2002:a05:6214:f0d:b0:70f:abbb:609a with SMTP id 6a1803df08f44-78d5e5eefabmr51507986d6.19.1758062569189;
+        Tue, 16 Sep 2025 15:42:49 -0700 (PDT)
+Content-Type: multipart/report; boundary="000000000000edeafd063ef2d64b"; report-type=delivery-status
+To: no-reply@ffl.notesao.com
+Received: by 2002:a05:6214:f0d:b0:70f:abbb:609a with SMTP id
+ 6a1803df08f44-78d5e5eefabmr54092586d6.19; Tue, 16 Sep 2025 15:42:49 -0700 (PDT)
+Auto-Submitted: auto-replied
+Message-ID: <68c9e7e9.050a0220.26c42f.b598.GMR@mx.google.com>
+Date: Tue, 16 Sep 2025 15:42:49 -0700 (PDT)
+From: Mail Delivery Subsystem <mailer-daemon@googlemail.com>
+Subject: Delivery Status Notification (Failure)
+References: <E1uyeNs-00000008l2v-1zaj@host.notesao.com>
+In-Reply-To: <E1uyeNs-00000008l2v-1zaj@host.notesao.com>
+X-Failed-Recipients: satch.thomas1819@gmail.com
+X-Spam-Status: No, score=3.3
+X-Spam-Score: 33
+X-Spam-Bar: +++
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  ** Address not found ** Your message wasn't delivered to
+   satch.thomas1819@gmail.com because the address couldn't be found, or is unable
+    to receive mail. Learn more here: https://support.google.com/mail/?p=NoSuchUser
+    
+ Content analysis details:   (3.3 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.219.66 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                          [209.85.219.66 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [209.85.219.66 listed in bl.score.senderscore.com]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: notesao.com]
+                             [URI: googlemail.com]
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail provider
+                             [mailer-daemon(at)googlemail.com]
+  1.6 HTML_IMAGE_ONLY_12     BODY: HTML: images with 800-1200 bytes of words
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.7 HTML_IMAGE_ONLY_20     BODY: HTML: images with 1600-2000 bytes of words
+  0.1 MIME_HEADER_CTYPE_ONLY 'Content-Type' found without required MIME
+                             headers
+  1.0 FREEMAIL_REPLY         From and body contain different freemails
+X-Spam-Flag: NO
+
+--000000000000edeafd063ef2d64b
+Content-Type: multipart/related; boundary="000000000000edeb38063ef2d64c"
+
+--000000000000edeb38063ef2d64c
+Content-Type: multipart/alternative; boundary="000000000000edeb3b063ef2d64d"
+
+--000000000000edeb3b063ef2d64d
+Content-Type: text/plain; charset="UTF-8"
+
+
+** Address not found **
+
+Your message wasn't delivered to satch.thomas1819@gmail.com because the address couldn't be found, or is unable to receive mail.
+
+Learn more here: https://support.google.com/mail/?p=NoSuchUser
+
+The response was:
+
+The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. For more information, go to https://support.google.com/mail/?p=NoSuchUser
+
+--000000000000edeb3b063ef2d64d
+Content-Type: text/html; charset="UTF-8"
+
+
+<html>
+<head>
+<style>
+* {
+font-family:Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" class="email-wrapper" style="padding-top:32px;background-color:#ffffff;"><tbody>
+<tr><td>
+<table cellpadding=0 cellspacing=0><tbody>
+<tr><td style="max-width:560px;padding:24px 24px 32px;background-color:#fafafa;border:1px solid #e0e0e0;border-radius:2px">
+<img style="padding:0 24px 16px 0;float:left" width=72 height=72 alt="Error Icon" src="cid:icon.png">
+<table style="min-width:272px;padding-top:8px"><tbody>
+<tr><td><h2 style="font-size:20px;color:#212121;font-weight:bold;margin:0">
+Address not found
+</h2></td></tr>
+<tr><td style="padding-top:20px;color:#757575;font-size:16px;font-weight:normal;text-align:left">
+Your message wasn't delivered to <a style='color:#212121;text-decoration:none'><b>satch.thomas1819@gmail.com</b></a> because the address couldn't be found, or is unable to receive mail.
+</td></tr>
+<tr><td style="padding-top:24px;color:#4285F4;font-size:14px;font-weight:bold;text-align:left">
+<a style="text-decoration:none" href="https://support.google.com/mail/?p=NoSuchUser">LEARN MORE</a>
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr style="border:none;background-color:#fff;font-size:12.8px;width:90%">
+<td align="left" style="padding:48px 10px">
+The response was:<br/>
+<p style="font-family:monospace">
+The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. For more information, go to https://support.google.com/mail/?p=NoSuchUser
+</p>
+</td>
+</tr>
+</tbody></table>
+</body>
+</html>
+
+--000000000000edeb3b063ef2d64d--
+--000000000000edeb38063ef2d64c
+Content-Type: image/png; name="icon.png"
+Content-Disposition: attachment; filename="icon.png"
+Content-Transfer-Encoding: base64
+Content-ID: <icon.png>
+
+iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA
+GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABTdJREFUeNrsnD9sFEcUh5+PRMqZ
+yA0SPhAUQAQFUkyTgiBASARo6QApqVIkfdxGFJFSgGhJAUIiBaQB0ZIOKVCkwUgURjIg2fxL4kS+
+YDvkbC/388bi8N16Z4/d7J/5PsniuD3fyePP772ZeTsDQRAYQL/UGAJAIEAgQCBAIAAEAgQCBAIE
+AkAgyJT3Mv+Eq7vYK8mTE+MDRCAghQECAeRQA5V2ZOpmg5vDx3NPzRbmGRMEcmTrEbNNB8zWfRD+
+f/Efs2e3zCZvMjaksBg27TfbcuSNPEKP9ZyuAQKtHX2O9ncNgWC57umMPKvRNb0GEKgnLoUyxTQC
+rcns0/6uIRAs8/hGf9cQCJZpTpjdO2f25/03z+mxntM1eLtsZAgiUtX4JcaBCAQIBAgECARQ8CJa
+G5jab4J4pm4WZmO3OALVh802fIwcLkyPkcKAGggAgQCBAIEAgQCBABAIEAjKA/1AnahhbO5FdOOY
+VsrrDbPBYcYKgf5D2wLaV3p+22xh1u17tO3S+DTcvxvagUDeivPgx/a/95J/73w7Sj26Hn4pKo2M
+ehuV/KyBJM6d0f7k6RKx/R63vvL2tmf/ItDdM2ZTP6f7nkp9Y2fDx1v9akmpIU+KSCLVUghUQfSL
+zVKeTklbLxGoctw/nzC5rw8L5KRNbkpnKq6pgSqEClzNnFzY+XnYWrt6VpVk1vbwWvg+RKCKMOUw
+Q1LEOXA+/MX3mpJvGDHb265xtnzmFoUK1HaKQGlMtePYM+q2KKjXuaS1NJYIEKgI8jhEgqHt4cqy
+Ky53j3hyHz2bqSLp2o2LbJ7MxKovkGqXteoWpaOk96O9/yF/dF7NwlS36AuIQIBA5celQK4PIxBE
+4LLzrtoLgaALdSy6CJRkWQCBPGLsTHznomZ9nszUECgJ2ml3WWHe+QVFNPSQx6UdZNtxr9pbEShN
+eTTz8mQXHoHSlke7+Z+c9m6VGoHSkEfs/trLW3wQKApN1V3lGfnGu2Z6BFoLtYCs3GWBPAiUCLVh
+/HoaeRCoT9R873KLM/IgUBfapnCpe5AHgXry4pf412ihEHkQqCdxd5VqrcezhUIESsJMTJ+Pdthp
+Z0WgyNlXXPHc2Mc4IVAELl2Gnh8mhUDvCkfbIVAkcbf/aOoO3fMKhqAD3frTa4quwpn0hUDOkQhI
+YYBAgECAQAAU0QlYObl+5Ug8NcprZkZxjUCxRPVA6zmtEXHCBykskrhjgHXN09PoEcgFl4M4H11j
+nBAoApcj6ZoPGScEAgTKApcDoTw5sgWB+sGlz1n90IBAPdE6j1o21PfcC11jLagL1oFWRyGlKU3p
+OxcSJQ7NZAjkhHp/uG2HFAYIBAgECASAQIBAgECAQAAIBOkxEARBtp9wdVfAMOfIifEBIhCQwgCB
+ABAI0oV2jhxZ+nfBatuPZfgBCy0Eqqo8c01b+uu51XZvzOgDWoHNTGR+pCwpLEd5svuAZXlO2uEr
+PyEQ8hRWHgRCHmqg0sjTnLalv6crJQ8C/U8stqNO0I4+VZOHFIY8COS1PGL2ybd5yUMKK7s8zYmL
+dujyd3n+nESgcsvzZd4/KwIhDwIhT35QA6UyE1qyxZnfvJMHgdKS549JC1qvvJOHFIY8CFR5eV5O
+XimqPAhUdHnmfx+zgxdOFXkoqIGKKs/cswnb/8Oeog8HEai48nxUhiFBIORBIOShBioskkbySCLk
+IQIhDwIhj28p7FApR6b1qlEbHGpkO/rr6215vi/zH1r2x7tApSGFAQIBAgECAQIBIBAgECAQIBBA
+LK8FGADCTxYrr+EVJgAAAABJRU5ErkJggg==
+--000000000000edeb38063ef2d64c--
+--000000000000edeafd063ef2d64b
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; googlemail.com
+Received-From-MTA: dns; no-reply@ffl.notesao.com
+Arrival-Date: Tue, 16 Sep 2025 15:42:48 -0700 (PDT)
+X-Original-Message-ID: <E1uyeNs-00000008l2v-1zaj@host.notesao.com>
+
+Final-Recipient: rfc822; satch.thomas1819@gmail.com
+Action: failed
+Status: 5.1.1
+Diagnostic-Code: smtp; The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. For more information, go to https://support.google.com/mail/?p=NoSuchUser
+Last-Attempt-Date: Tue, 16 Sep 2025 15:42:49 -0700 (PDT)
+
+--000000000000edeafd063ef2d64b
+Content-Type: message/global
+Content-Transfer-Encoding: quoted-printable
+
+X-Google-Smtp-Source: AGHT+IFHXp+xureehscAcnmJ+4+yGLwbSElNtEcdJdXOZEqNIvVIg=
+SF/InbK7iNQ5sq2ncHvC4TL
+X-Received: by 2002:a05:6214:f0d:b0:70f:abbb:609a with SMTP id 6a1803df08f4=
+4-78d5e5eefabmr51507856d6.19.1758062568951;
+        Tue, 16 Sep 2025 15:42:48 -0700 (PDT)
+ARC-Seal: i=3D1; a=3Drsa-sha256; t=3D1758062568; cv=3Dnone;
+        d=3Dgoogle.com; s=3Darc-20240605;
+        b=3DAjXa3hmZmRZPZhXriqNydJ/DFA8Kb4JF22OGqnZ2HA+19eyf/GteUitGeh5ar7w=
+H7q
+         wX0FvShyjUT21dpwJ/NkYJcrQeLVBYjtbMu5ETXvpUDS3qwuu78N9NC5mtz2b6onZn=
+pC
+         IIJLpqLN4ZjRVjklio2qM2v982RZ6q0u2ozWNj2fiKHgANwaIizC25UdEI1z04hMaE=
+s+
+         ve93lD2rvF4VJ1r+rt8IN0y+fBlMTOdM0dHT4Ru8V60Q8rtjSeffKGVc+f13aR+gtG=
+mY
+         xJX3hrWPnoKsm8yHOUvpUPFP0fiFORE/fc5hiiHvxQCMvZvNqZ4ZJ589ToBqo2R3KJ=
+Tk
+         nHxQ=3D=3D
+ARC-Message-Signature: i=3D1; a=3Drsa-sha256; c=3Drelaxed/relaxed; d=3Dgoog=
+le.com; s=3Darc-20240605;
+        h=3Ddate:message-id:precedence:list-unsubscribe-post:list-unsubscri=
+be
+         :mime-version:reply-to:from:subject:to;
+        bh=3DC77ks2AaUhmNQzjTGcKtvhdyapYbe7zBSTM9g39z71A=3D;
+        fh=3DWfRpfwSmf1ZPYRcH9NwePnyWDRO/F217FOrPnlep72M=3D;
+        b=3DlLw3lU9Zgy3yIeM+95DKIhDfBupdGtnY4tqPCXpPVDm74HePbECqM2SbwxiUbun=
+E6o
+         xanwDXmPp55eSGRwCc+NLrpftsVwMOxrjjWS2ySVivG80NGgzYHL35blIT/fQps/Vw=
+Ke
+         xiG363AvmwuqX4nmhEMwwQhYNjYu6+3ZLGZ5yZ0WQC8MH9Jq1ETb2+L2205WdKuk86=
+sm
+         buYCzGROP+YNypVu7Mh/lkeaXX2jFURZhdridzsi9whi79wSNKK3k48IOa/Dr48UAT=
+kW
+         nQ6Gthia2d+Ak3gElhAkhUIav0uuXoQA+g+jA7evue8S73e9hu41z1rzwyaeITCAqj=
+87
+         gmOg=3D=3D;
+        dara=3Dgoogle.com
+ARC-Authentication-Results: i=3D1; mx.google.com;
+       spf=3Dpass (google.com: domain of no-reply@ffl.notesao.com designate=
+s 50.28.37.79 as permitted sender) smtp.mailfrom=3Dno-reply@ffl.notesao.com=
+;
+       dmarc=3Dpass (p=3DNONE sp=3DNONE dis=3DNONE) header.from=3Dnotesao.c=
+om
+Return-Path: <no-reply@ffl.notesao.com>
+Received: from host.notesao.com (host.notesao.com. [50.28.37.79])
+        by mx.google.com with ESMTPS id 6a1803df08f44-78b052862e8si20818626=
+d6.759.2025.09.16.15.42.48
+        for <satch.thomas1819@gmail.com>
+        (version=3DTLS1_3 cipher=3DTLS_AES_256_GCM_SHA384 bits=3D256/256);
+        Tue, 16 Sep 2025 15:42:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of no-reply@ffl.notesao.com designat=
+es 50.28.37.79 as permitted sender) client-ip=3D50.28.37.79;
+Authentication-Results: mx.google.com;
+       spf=3Dpass (google.com: domain of no-reply@ffl.notesao.com designate=
+s 50.28.37.79 as permitted sender) smtp.mailfrom=3Dno-reply@ffl.notesao.com=
+;
+       dmarc=3Dpass (p=3DNONE sp=3DNONE dis=3DNONE) header.from=3Dnotesao.c=
+om
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1uyeNs-00000008l2v-1zaj
+	for satch.thomas1819@gmail.com;
+	Tue, 16 Sep 2025 17:42:48 -0500
+To: satch.thomas1819@gmail.com
+Subject: Free for Life Group =E2=80=94 Reminder
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.188.218
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=3DUTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=3Dsatch.th=
+omas1819%40gmail.com&t=3D0c024c436371101109ae5347212b325271bfe52ff2074b0583=
+ab27a45599650d>
+List-Unsubscribe-Post: List-Unsubscribe=3DOne-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1uyeNs-00000008l2v-1zaj@host.notesao.com>
+Date: Tue, 16 Sep 2025 17:42:48 -0500
+X-AntiAbuse: This header was added to track abuse, please include it with a=
+ny abuse report
+X-AntiAbuse: Primary Hostname - host.notesao.com
+X-AntiAbuse: Original Domain - gmail.com
+X-AntiAbuse: Originator/Caller UID/GID - [1007 976] / [47 12]
+X-AntiAbuse: Sender Address Domain - ffl.notesao.com
+X-Get-Message-Sender-Via: host.notesao.com: authenticated_id: notesao/from_=
+h
+X-Authenticated-Sender: host.notesao.com: no-reply@ffl.notesao.com
+X-Source:=20
+X-Source-Args: /opt/cpanel/ea-php81/root/usr/bin/php-cgi=20
+X-Source-Dir: notesao.com:/ffltest/public_html
+
+<div style=3D"text-align:center;margin:0 0 12px 0"><img src=3D"https://fflt=
+est.notesao.com/ffllogo.png" alt=3D"Free for Life Group" style=3D"max-width=
+:100%;height:auto;display:inline-block;"></div><p>Hi Sautuwaira,</p>
+<p>This is a reminder from Free for Life Group. If you have a session comin=
+g up, please arrive a few minutes early.</p>
+<p>Check your personal link and details in your portal:</p>
+<p><a href=3D"https://ffl.notesao.com/clientportal.php">FFL =E2=80=93 Clien=
+t Portal</a></p>
+<p>=E2=80=94 Free for Life Group</p><hr style=3D"border-top:1px solid #ddd;=
+margin:24px 0;"><p style=3D"font:12px/1.4 Arial,Helvetica,sans-serif;color:=
+#666">This reminder was sent by Free for Life Group. If you no longer wish =
+to receive emails at this address, <a href=3D"https://ffltest.notesao.com/u=
+nsubscribe.php?e=3Dsatch.thomas1819%40gmail.com&amp;t=3D0c024c436371101109a=
+e5347212b325271bfe52ff2074b0583ab27a45599650d">unsubscribe here</a>.</p>
+
+--000000000000edeafd063ef2d64b--

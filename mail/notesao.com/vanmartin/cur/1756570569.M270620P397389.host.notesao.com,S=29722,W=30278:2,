@@ -1,0 +1,556 @@
+Return-Path: <01010198fbc3b3cc-5c5c308b-55be-49fe-b2a9-d9abab87ddd6-000000@amazonses.messaging.squareup.com>
+Delivered-To: vanmartin@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id j/iRD8kjs2hNEAYAIW4ynA
+	(envelope-from <01010198fbc3b3cc-5c5c308b-55be-49fe-b2a9-d9abab87ddd6-000000@amazonses.messaging.squareup.com>)
+	for <vanmartin@notesao.com>; Sat, 30 Aug 2025 11:16:09 -0500
+Return-path: <01010198fbc3b3cc-5c5c308b-55be-49fe-b2a9-d9abab87ddd6-000000@amazonses.messaging.squareup.com>
+Envelope-to: vanmartin@notesao.com
+Delivery-date: Sat, 30 Aug 2025 11:16:09 -0500
+Received: from a27-40.smtp-out.us-west-2.amazonses.com ([54.240.27.40]:58451)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <01010198fbc3b3cc-5c5c308b-55be-49fe-b2a9-d9abab87ddd6-000000@amazonses.messaging.squareup.com>)
+	id 1usOFJ-00000001fN7-3ANx
+	for vanmartin@notesao.com;
+	Sat, 30 Aug 2025 11:16:09 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zkmtl6gy2hsfdpedstduzebbkq3duxs4; d=messaging.squareup.com;
+	t=1756570563;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=NeciP+D2obZupQghrobC6pwZekLs9ZdBMIDZWbMmbK8=;
+	b=Oq7HmZ3MOAIx6YylENn9ma5whbaLSq8t757C1toaLGIfxkxmGqE4sPVHFNfKupfV
+	hZnk2uxGFrl2YMYcHjW0gHvIkSnutHaHuISbUVlgF2FcEahU7VhLn1cAU1JjbzATJbC
+	o5+10/evFrH7FTCzhCY1QnpOknjHJDuCJ0XjMtxQ=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1756570563;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=NeciP+D2obZupQghrobC6pwZekLs9ZdBMIDZWbMmbK8=;
+	b=CwUQoLuBjeaBXP/ceGD40rZkEUIdYXf5IK15BxQSw18ltG5MlVIIh7tHtsNesuFf
+	UjV3dVr+mKaGCoUHCxurYQ5/euCKvICbNR0RjHLo83TXzJTmE2PLfjh5XjuALq9wj9I
+	AUSAOkBQOaWiwG+52qliVrS7p3kBafA3g48UZw7o=
+Date: Sat, 30 Aug 2025 16:16:03 +0000
+From: Square <noreply@messaging.squareup.com>
+To: vanmartin@notesao.com
+Message-ID: <01010198fbc3b3cc-5c5c308b-55be-49fe-b2a9-d9abab87ddd6-000000@us-west-2.amazonses.com>
+Subject: We'd love to get your feedback
+MIME-Version: 1.0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-EMS-Request-ID: 9cb965b1-9064-49e0-8b0a-f4637a55a803
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-ERS-Token: CCAQ3IilwIbXqb72ARi43fu9hqONsIsB
+List-Unsubscribe: <https://squareup.com/email/subscriptions/unsubscribe?scope=marketing&subcategory=surveys&locale=en&request_id=9cb965b1-9064-49e0-8b0a-f4637a55a803&recipient=CCAQ3IilwIbXqb72ARi43fu9hqONsIsB&wastruncated=0>,
+ <mailto:CAEaXgokOWNiOTY1YjEtOTA2NC00OWUwLThiMGEtZjQ2MzdhNTVhODAzEhQKCW1hcmtldGluZxIHc3VydmV5cxogQ0NBUTNJaWx3SWJYcWI3MkFSaTQzZnU5aHFPTnNJc0IiIKPwh82epptnrVHCDH6AREviSLhW1ZLEKePD8F6ZYxmr@reply2.squareup.com>
+Feedback-ID: ::1.us-west-2.Ys0TtaV3ThrL9KaebebAtwQ8vYTqz4B6QHfonsV/uOw=:AmazonSES
+X-SES-Outgoing: 2025.08.30-54.240.27.40
+X-Spam-Status: No, score=0.6
+X-Spam-Score: 6
+X-Spam-Bar: /
+X-Ham-Report: Spam detection software, running on the system "host.notesao.com",
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ root\@localhost for details.
+ Content preview:  Rate your online support experience with Square How was your
+    experience with Square Support Center? 1 Terrible 2 Bad 3 Okay 4 Good 5 Excellent
+    You recently visited Square's online support resources and we wanted to follow
+    up to make sure you are g [...] 
+ Content analysis details:   (0.6 points, 5.0 required)
+  pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+                             query to Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                           [54.240.27.40 listed in sa-trusted.bondedsender.org]
+  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.27.40 listed in sa-accredit.habeas.com]
+  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+                              Validity was blocked.  See
+                             https://knowledge.validity.com/hc/en-us/articles/20961730681243
+                              for more information.
+                             [54.240.27.40 listed in bl.score.senderscore.com]
+  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+                             See
+                             http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+                              for more information.
+                             [URI: squareup.com]
+                             [URI: squarecdn.com]
+                             [URI: getfeedback.com]
+                             [URI: squareupmessaging.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+  0.0 HTML_MESSAGE           BODY: HTML included in message
+  0.1 MIME_HTML_ONLY         BODY: Message only has text/html MIME parts
+  0.6 HTML_MIME_NO_HTML_TAG  HTML-only message, but there is no HTML tag
+X-Spam-Flag: NO
+
+<!--[if !mso]><!-->
+  <div id=3D"preheader" style=3D"font-size: 0;max-height: 0;overflow: hidde=
+n;display: none">Rate your online support experience with Square</div>
+<!--<![endif]-->
+   <div id=3D"container" style=3D"background-color: #fafafa;-webkit-text-si=
+ze-adjust: none;-ms-text-size-adjust: none;-webkit-font-smoothing: antialia=
+sed">
+      <table class=3D"contained" style=3D"table-layout: fixed" width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0">
+         <tr>
+            <td align=3D"center">
+               <table cellpadding=3D"0" cellspacing=3D"0">
+                  <tr>
+                     <td width=3D"660" align=3D"center" bgcolor=3D"#ffffff"=
+>
+                        <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0">
+                           <tr>
+                              <td>
+                                 <table width=3D"100%" class=3D"single defa=
+ult" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0">
+                                    <tr>
+                                       <td align=3D"center" style=3D"paddin=
+g: 0 20px">
+                                          <table cellpadding=3D"0" cellspac=
+ing=3D"0">
+                                             <tr>
+                                                <td width=3D"480" style=3D"=
+padding: 0px 0" class=3D"singleCell">
+                                                   <table width=3D"100%" cl=
+ass=3D"center" style=3D"text-align: center" cellpadding=3D"0" cellspacing=
+=3D"0">
+                                                      <tr>
+                                                         <td align=3D"cente=
+r" style=3D"padding: 32px 0 14px">
+                                                            <table align=3D=
+"center" style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0">
+                                                               <tr>
+                                                                  <td style=
+=3D"font-size: 0;line-height: 0;padding-bottom: 9px"><a href=3D"https://a.s=
+quareupmessaging.com/CL0/https:%2F%2Fsquareup.com%2F/1/01010198fbc3b3cc-5c5=
+c308b-55be-49fe-b2a9-d9abab87ddd6-000000/UllTVBZDDVAvyvsriCiD_l8Zdrqyxd92ha=
+cfbNIDrRM=3D420" id=3D"jewel-hero" style=3D"text-decoration: none"><img src=
+=3D"https://square-mailstrom-production-s.squarecdn.com/_shared/2018/jewel/=
+jewel-text.png" width=3D"22" height=3D"22" border=3D"0" style=3D"display: i=
+nline-block"></a></td>
+                                                               </tr>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                      <tr>
+                                                      <td style=3D"color: #=
+0a0b0f;font-family: esqmarket-medium, -apple-system, BlinkMacSystemFont, He=
+lvetica, sans-serif;font-weight: bold;font-size: 32px;line-height: 40px;pad=
+ding: 0px 0 32px" class=3D"h1">How was your experience with Square Support =
+Center?</td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                                 <table width=3D"100%" class=3D"single defa=
+ult" bgcolor=3D"#ebecec" cellpadding=3D"0" cellspacing=3D"0">
+                                    <tr>
+                                       <td align=3D"center" style=3D"paddin=
+g: 0 0px">
+                                          <table cellpadding=3D"0" cellspac=
+ing=3D"0">
+                                             <tr>
+                                                <td width=3D"600" style=3D"=
+padding: 0px 0" class=3D"singleCell">
+                                                   <table width=3D"100%" cl=
+ass=3D"center" style=3D"text-align: center" cellpadding=3D"0" cellspacing=
+=3D"0">
+                                                      <tr>
+                                                         <td align=3D"cente=
+r">
+                                                            <table style=3D=
+"text-align: center" cellpadding=3D"0" cellspacing=3D"0">
+                                                               <tr>
+                                                                  <td width=
+=3D"470" align=3D"center" style=3D"padding: 24px 0 16px" class=3D"fluidImag=
+e"><img src=3D"https://square-mailstrom-production-s.squarecdn.com/support/=
+HELPPROD-7186/Support-Centerv2.png" width=3D"470" alt=3D"Image" style=3D"wi=
+dth: 100%;height: auto;-ms-interpolation-mode: bicubic;display: block"></td=
+>
+                                                               </tr>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                                 <table width=3D"100%" class=3D"single defa=
+ult" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0">
+                                    <tr>
+                                       <td align=3D"center" style=3D"paddin=
+g: 0 0px">
+                                          <table cellpadding=3D"0" cellspac=
+ing=3D"0">
+                                             <tr>
+                                                <td width=3D"480" style=3D"=
+padding: 24px 0 0px" class=3D"singleCell">
+                                                   <table width=3D"100%" cl=
+ass=3D"center" style=3D"text-align: center" cellpadding=3D"0" cellspacing=
+=3D"0">
+                                                      <tr>
+                                                         <td align=3D"cente=
+r">
+                                                            <table style=3D=
+"text-align: center" cellpadding=3D"0" cellspacing=3D"0">
+                                                               <tr>
+                                                                   <td widt=
+h=3D"20">&#160;</td>
+<td>
+   <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0">
+      <tr>
+         <td style=3D"padding: 8px 0" align=3D"center" class=3D"button ">
+            <table width=3D"inherit" align=3D"center" style=3D"text-align: =
+center" class=3D"buttonTable" cellpadding=3D"0" cellspacing=3D"0">
+               <tr>
+                  <td>
+                     <table align=3D"center" style=3D"text-align: center" c=
+ellpadding=3D"0" cellspacing=3D"0">
+                        <tr>
+                           <td style=3D"width: 100%;font-size: 18px;line-he=
+ight: 18px;font-family: esqmarket, -apple-system, BlinkMacSystemFont, Helve=
+tica, sans-serif;font-weight: normal;-webkit-border-radius: 4px;-moz-border=
+-radius: 4px;border-radius: 4px" align=3D"center" bgcolor=3D"#d6d9dc">
+                             <a href=3D"https://a.squareupmessaging.com/CL0=
+/https:%2F%2Fsquareinsights.getfeedback.com%2Fr%2FBqmykbs6%3Fgf_q%255B97904=
+79%255D=3D1%26eunit=3Db2a7716d9a12c014ca336f2928021f6a%26session_client=3Dw=
+eb%2B-%2Bdesktop%26session_country_code=3DUS/1/01010198fbc3b3cc-5c5c308b-55=
+be-49fe-b2a9-d9abab87ddd6-000000/mB_k9jtI_QSAh-Qzbvsk9mJW4I6qz4LlTAVGqOapR7=
+s=3D420" style=3D"background-color: #d6d9dc;padding: 15px 20px;border: 1px =
+solid #d6d9dc;color: #0a0b0f;text-decoration: none;-webkit-border-radius: 4=
+px;-moz-border-radius: 4px;border-radius: 4px;display: inline-block" id=3D"=
+button-1">
+                               <!--[if gte mso 9]>&#160;<![endif]-->1<!--[i=
+f gte mso 9]>&#160;<![endif]-->
+                              </a>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+        <td style=3D"font-size: 14px;line-height: 22px;color: #0a0b0f;font-=
+family: esqmarket, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif=
+;font-weight: normal" class=3D"p">Terrible</td>
+      </tr>
+   </table>
+</td>
+
+                                                                   <td widt=
+h=3D"20">&#160;</td>
+<td>
+   <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0">
+      <tr>
+         <td style=3D"padding: 8px 0" align=3D"center" class=3D"button ">
+            <table width=3D"inherit" align=3D"center" style=3D"text-align: =
+center" class=3D"buttonTable" cellpadding=3D"0" cellspacing=3D"0">
+               <tr>
+                  <td>
+                     <table align=3D"center" style=3D"text-align: center" c=
+ellpadding=3D"0" cellspacing=3D"0">
+                        <tr>
+                           <td style=3D"width: 100%;font-size: 18px;line-he=
+ight: 18px;font-family: esqmarket, -apple-system, BlinkMacSystemFont, Helve=
+tica, sans-serif;font-weight: normal;-webkit-border-radius: 4px;-moz-border=
+-radius: 4px;border-radius: 4px" align=3D"center" bgcolor=3D"#d6d9dc">
+                             <a href=3D"https://a.squareupmessaging.com/CL0=
+/https:%2F%2Fsquareinsights.getfeedback.com%2Fr%2FBqmykbs6%3Fgf_q%255B97904=
+79%255D=3D2%26eunit=3Db2a7716d9a12c014ca336f2928021f6a%26session_client=3Dw=
+eb%2B-%2Bdesktop%26session_country_code=3DUS/1/01010198fbc3b3cc-5c5c308b-55=
+be-49fe-b2a9-d9abab87ddd6-000000/msSctz7lUwZhcntyF3axK0Ro72y7WwW0aWbrBzjbYi=
+Y=3D420" style=3D"background-color: #d6d9dc;padding: 15px 20px;border: 1px =
+solid #d6d9dc;color: #0a0b0f;text-decoration: none;-webkit-border-radius: 4=
+px;-moz-border-radius: 4px;border-radius: 4px;display: inline-block" id=3D"=
+button-2">
+                               <!--[if gte mso 9]>&#160;<![endif]-->2<!--[i=
+f gte mso 9]>&#160;<![endif]-->
+                              </a>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+        <td style=3D"font-size: 14px;line-height: 22px;color: #0a0b0f;font-=
+family: esqmarket, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif=
+;font-weight: normal" class=3D"p">Bad</td>
+      </tr>
+   </table>
+</td>
+
+                                                                   <td widt=
+h=3D"20">&#160;</td>
+<td>
+   <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0">
+      <tr>
+         <td style=3D"padding: 8px 0" align=3D"center" class=3D"button ">
+            <table width=3D"inherit" align=3D"center" style=3D"text-align: =
+center" class=3D"buttonTable" cellpadding=3D"0" cellspacing=3D"0">
+               <tr>
+                  <td>
+                     <table align=3D"center" style=3D"text-align: center" c=
+ellpadding=3D"0" cellspacing=3D"0">
+                        <tr>
+                           <td style=3D"width: 100%;font-size: 18px;line-he=
+ight: 18px;font-family: esqmarket, -apple-system, BlinkMacSystemFont, Helve=
+tica, sans-serif;font-weight: normal;-webkit-border-radius: 4px;-moz-border=
+-radius: 4px;border-radius: 4px" align=3D"center" bgcolor=3D"#d6d9dc">
+                             <a href=3D"https://a.squareupmessaging.com/CL0=
+/https:%2F%2Fsquareinsights.getfeedback.com%2Fr%2FBqmykbs6%3Fgf_q%255B97904=
+79%255D=3D3%26eunit=3Db2a7716d9a12c014ca336f2928021f6a%26session_client=3Dw=
+eb%2B-%2Bdesktop%26session_country_code=3DUS/1/01010198fbc3b3cc-5c5c308b-55=
+be-49fe-b2a9-d9abab87ddd6-000000/4t7fZpk0KZbA5hW0050GR3ytvn5-qcjRRQEhBO4KNM=
+A=3D420" style=3D"background-color: #d6d9dc;padding: 15px 20px;border: 1px =
+solid #d6d9dc;color: #0a0b0f;text-decoration: none;-webkit-border-radius: 4=
+px;-moz-border-radius: 4px;border-radius: 4px;display: inline-block" id=3D"=
+button-3">
+                               <!--[if gte mso 9]>&#160;<![endif]-->3<!--[i=
+f gte mso 9]>&#160;<![endif]-->
+                              </a>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+        <td style=3D"font-size: 14px;line-height: 22px;color: #0a0b0f;font-=
+family: esqmarket, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif=
+;font-weight: normal" class=3D"p">Okay</td>
+      </tr>
+   </table>
+</td>
+
+                                                                   <td widt=
+h=3D"20">&#160;</td>
+<td>
+   <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0">
+      <tr>
+         <td style=3D"padding: 8px 0" align=3D"center" class=3D"button ">
+            <table width=3D"inherit" align=3D"center" style=3D"text-align: =
+center" class=3D"buttonTable" cellpadding=3D"0" cellspacing=3D"0">
+               <tr>
+                  <td>
+                     <table align=3D"center" style=3D"text-align: center" c=
+ellpadding=3D"0" cellspacing=3D"0">
+                        <tr>
+                           <td style=3D"width: 100%;font-size: 18px;line-he=
+ight: 18px;font-family: esqmarket, -apple-system, BlinkMacSystemFont, Helve=
+tica, sans-serif;font-weight: normal;-webkit-border-radius: 4px;-moz-border=
+-radius: 4px;border-radius: 4px" align=3D"center" bgcolor=3D"#d6d9dc">
+                             <a href=3D"https://a.squareupmessaging.com/CL0=
+/https:%2F%2Fsquareinsights.getfeedback.com%2Fr%2FBqmykbs6%3Fgf_q%255B97904=
+79%255D=3D4%26eunit=3Db2a7716d9a12c014ca336f2928021f6a%26session_client=3Dw=
+eb%2B-%2Bdesktop%26session_country_code=3DUS/1/01010198fbc3b3cc-5c5c308b-55=
+be-49fe-b2a9-d9abab87ddd6-000000/zJ3u-gE_ohnnjqIJn1Cp_eeB7olWqPGwZpOlP_ILHl=
+g=3D420" style=3D"background-color: #d6d9dc;padding: 15px 20px;border: 1px =
+solid #d6d9dc;color: #0a0b0f;text-decoration: none;-webkit-border-radius: 4=
+px;-moz-border-radius: 4px;border-radius: 4px;display: inline-block" id=3D"=
+button-4">
+                               <!--[if gte mso 9]>&#160;<![endif]-->4<!--[i=
+f gte mso 9]>&#160;<![endif]-->
+                              </a>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+        <td style=3D"font-size: 14px;line-height: 22px;color: #0a0b0f;font-=
+family: esqmarket, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif=
+;font-weight: normal" class=3D"p">Good</td>
+      </tr>
+   </table>
+</td>
+
+                                                                   <td widt=
+h=3D"20">&#160;</td>
+<td>
+   <table style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0">
+      <tr>
+         <td style=3D"padding: 8px 0" align=3D"center" class=3D"button ">
+            <table width=3D"inherit" align=3D"center" style=3D"text-align: =
+center" class=3D"buttonTable" cellpadding=3D"0" cellspacing=3D"0">
+               <tr>
+                  <td>
+                     <table align=3D"center" style=3D"text-align: center" c=
+ellpadding=3D"0" cellspacing=3D"0">
+                        <tr>
+                           <td style=3D"width: 100%;font-size: 18px;line-he=
+ight: 18px;font-family: esqmarket, -apple-system, BlinkMacSystemFont, Helve=
+tica, sans-serif;font-weight: normal;-webkit-border-radius: 4px;-moz-border=
+-radius: 4px;border-radius: 4px" align=3D"center" bgcolor=3D"#d6d9dc">
+                             <a href=3D"https://a.squareupmessaging.com/CL0=
+/https:%2F%2Fsquareinsights.getfeedback.com%2Fr%2FBqmykbs6%3Fgf_q%255B97904=
+79%255D=3D5%26eunit=3Db2a7716d9a12c014ca336f2928021f6a%26session_client=3Dw=
+eb%2B-%2Bdesktop%26session_country_code=3DUS/1/01010198fbc3b3cc-5c5c308b-55=
+be-49fe-b2a9-d9abab87ddd6-000000/-kZpM9Xq_lSSwaeOIDxnYnnyytL7AOOkzVvyWvnGTf=
+A=3D420" style=3D"background-color: #d6d9dc;padding: 15px 20px;border: 1px =
+solid #d6d9dc;color: #0a0b0f;text-decoration: none;-webkit-border-radius: 4=
+px;-moz-border-radius: 4px;border-radius: 4px;display: inline-block" id=3D"=
+button-5">
+                               <!--[if gte mso 9]>&#160;<![endif]-->5<!--[i=
+f gte mso 9]>&#160;<![endif]-->
+                              </a>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+        <td style=3D"font-size: 14px;line-height: 22px;color: #0a0b0f;font-=
+family: esqmarket, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif=
+;font-weight: normal" class=3D"p">Excellent</td>
+      </tr>
+   </table>
+</td>
+
+                                                                  <td width=
+=3D"20">&#160;</td>
+                                                               </tr>
+                                                            </table>
+                                                         </td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                                 <table width=3D"100%" class=3D"single defa=
+ult" bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0">
+                                    <tr>
+                                       <td align=3D"center" style=3D"paddin=
+g: 0 20px">
+                                          <table cellpadding=3D"0" cellspac=
+ing=3D"0">
+                                             <tr>
+                                                <td width=3D"480" style=3D"=
+padding: 0px 0 24px" class=3D"singleCell">
+                                                   <table width=3D"100%" cl=
+ass=3D"center" style=3D"text-align: center" cellpadding=3D"0" cellspacing=
+=3D"0">
+                                                      <tr>
+                                                        <td style=3D"font-s=
+ize: 16px;line-height: 27px;color: #0a0b0f;font-family: esqmarket, -apple-s=
+ystem, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: normal;paddin=
+g: 24px 0 16px" class=3D"p">You recently visited Square&#39;s online suppor=
+t resources and we wanted to follow up to make sure you are getting the hel=
+p you need. We value your feedback and are diligently working to improve ou=
+r online support experience and resources.</td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                                 <table width=3D"100%" class=3D"footer" cel=
+lpadding=3D"0" cellspacing=3D"0">
+                                    <tr>
+                                       <td align=3D"center" style=3D"paddin=
+g: 30px 20px 38px" bgcolor=3D"#fafafa">
+                                          <table cellpadding=3D"0" cellspac=
+ing=3D"0">
+                                             <tr>
+                                                <td align=3D"center" style=
+=3D"font-size: 14px;line-height: 22px;color: #1a1a1a;font-family: esqmarket=
+, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: nor=
+mal;padding: 0" class=3D"p" width=3D"450">
+                                                   <a href=3D"https://a.squ=
+areupmessaging.com/CL0/https:%2F%2Fsquareup.com%2F/2/01010198fbc3b3cc-5c5c3=
+08b-55be-49fe-b2a9-d9abab87ddd6-000000/Wz57vZxB3Gnx1wRPLYVn-XevIMo3WLB560mK=
+TSG66Y8=3D420" style=3D"color: #1a1a1a;text-decoration: none;font-family: e=
+sqmarket, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-wei=
+ght: normal">=C2=A9 2025  Square, Inc.</a><br><a style=3D"color: #1a1a1a;te=
+xt-decoration: none;font-family: esqmarket, -apple-system, BlinkMacSystemFo=
+nt, Helvetica, sans-serif;font-weight: normal">1955 Broadway, Suite 600,</a=
+><br><a style=3D"color: #1a1a1a;text-decoration: none;font-family: esqmarke=
+t, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: no=
+rmal">Oakland, CA 94612</a>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td align=3D"center" style=
+=3D"color: #3e4348;font-size: 14px;line-height: 22px;font-family: esqmarket=
+, -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: nor=
+mal;padding: 20px 0 0" class=3D"p" width=3D"450"><a href=3D"https://a.squar=
+eupmessaging.com/CL0/https:%2F%2Fsquareup.com%2Femail%2Fsubscriptions%2Funs=
+ubscribe%3Fscope=3Dmarketing%26subcategory=3Dsurveys%26locale=3Den%26reques=
+t_id=3D9cb965b1-9064-49e0-8b0a-f4637a55a803%26recipient=3DCCAQ3IilwIbXqb72A=
+Ri43fu9hqONsIsB%26wastruncated=3D0/1/01010198fbc3b3cc-5c5c308b-55be-49fe-b2=
+a9-d9abab87ddd6-000000/tTmxdpPau0__qlR5QEZyNvh16FWVQlLPZw-hVfbxPVw=3D420" s=
+tyle=3D"font-size: 14px;line-height: 22px;color: #3e4348;text-decoration: n=
+one;font-family: esqmarket-medium, -apple-system, BlinkMacSystemFont, Helve=
+tica, sans-serif;font-weight: bold">Unsubscribe</a> or <a href=3D"https://a=
+.squareupmessaging.com/CL0/https:%2F%2Fsquareup.com%2Femail%2Fsubscriptions=
+%2Fmanage%3Flocale=3Den%26request_id=3D9cb965b1-9064-49e0-8b0a-f4637a55a803=
+%26recipient=3DCCAQ3IilwIbXqb72ARi43fu9hqONsIsB%26type=3Dseller/1/01010198f=
+bc3b3cc-5c5c308b-55be-49fe-b2a9-d9abab87ddd6-000000/LhBYUwhRoXRXscAggCWpptV=
+WZsy0yCh_QEHFooQN0rU=3D420" style=3D"font-size: 14px;line-height: 22px;colo=
+r: #3e4348;text-decoration: none;font-family: esqmarket-medium, -apple-syst=
+em, BlinkMacSystemFont, Helvetica, sans-serif;font-weight: bold"> Manage&#1=
+60;your&#160;preferences</a></td>
+                                             </tr>
+                                             <tr>
+                                                <td width=3D"520" style=3D"=
+padding-top: 20px" class=3D"center" align=3D"center">
+                                                   <table width=3D"100%" st=
+yle=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0"></table>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                     </td>
+                  </tr>
+               </table>
+            </td>
+         </tr>
+      </table>
+   </div>
+<img alt=3D"" src=3D"http://a.squareupmessaging.com/CI0/01010198fbc3b3cc-5c=
+5c308b-55be-49fe-b2a9-d9abab87ddd6-000000/kCwExGT9FrTz9w2_vJ85usdm4UI1FnDg9=
+06vMd39B68=3D420" style=3D"display: none; width: 1px; height: 1px;">
