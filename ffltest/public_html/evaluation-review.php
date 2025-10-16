@@ -805,7 +805,18 @@ function vtc_render_simple_block(array $row, array $keys, string $title): string
   $i = 1;
   foreach ($keys as $k) {
     $raw = $row[$k] ?? '';
-    $val = ($raw === '' || $raw === null) ? '<span class="text-muted">—</span>' : h((string)$raw);
+    if ($raw === '' || $raw === null) {
+      $val = '<span class="text-muted">—</span>';
+    } else {
+      $s = strtolower(trim((string)$raw));
+      // Only remap booleans on SASSI blocks
+      if (stripos($title, 'sassi') !== false && ($s === '1' || $s === '0')) {
+        $val = ($s === '1') ? 'True' : 'False';
+      } else {
+        $val = h((string)$raw);
+      }
+    }
+
     $out .= '<tr><td class="text-center">'.($i++).'</td><td>'.h(vtc_labelize($k)).'</td><td class="text-center text-nowrap">'.$val.'</td></tr>';
   }
   $out .= '</tbody></table></div>';
