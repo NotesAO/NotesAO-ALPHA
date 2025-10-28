@@ -87,3 +87,5 @@ NotePro-Report-Generator/**/*.zip
 /.gitconfig
 /.vimrc
 /.nano/
+error_log
+*/error_log
