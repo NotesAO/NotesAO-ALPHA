@@ -60,3 +60,17 @@ NotePro-Report-Generator/**/*.tar
 NotePro-Report-Generator/**/*.tar.*
 NotePro-Report-Generator/**/*.tgz
 NotePro-Report-Generator/**/*.zip
+/.ssh/
+/.cpanel/
+/etc/**/admin.rcube.db
+*.db
+*.log
+*.tar
+*.gz
+*.zip
+*.bak
+/node_modules/
+/vendor/
+/.env
+*.key
+*.pem
