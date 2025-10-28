@@ -74,3 +74,16 @@ NotePro-Report-Generator/**/*.zip
 /.env
 *.key
 *.pem
+/.local/
+/.config/
+/cache/
+/mail/
+/git-filter-repo*/
+/error/log
+/.bash_history
+/.bash_profile
+/.bashrc
+/.profile
+/.gitconfig
+/.vimrc
+/.nano/
