@@ -89,3 +89,6 @@ NotePro-Report-Generator/**/*.zip
 /.nano/
 error_log
 */error_log
+
+/.cache/
+/.gitignore_global
