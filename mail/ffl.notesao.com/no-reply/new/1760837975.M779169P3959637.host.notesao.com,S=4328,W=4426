@@ -1,0 +1,98 @@
+Return-Path: <>
+Delivered-To: no-reply@ffl.notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id gLVkLldB9GhVazwAIW4ynA
+	(envelope-from <>)
+	for <no-reply@ffl.notesao.com>; Sat, 18 Oct 2025 20:39:35 -0500
+Return-path: <>
+Envelope-to: no-reply@ffl.notesao.com
+Delivery-date: Sat, 18 Oct 2025 20:39:35 -0500
+Received: from mailnull by host.notesao.com with local (Exim 4.98.2)
+	id 1vAIOV-0000000GcAo-2nKw
+	for no-reply@ffl.notesao.com;
+	Sat, 18 Oct 2025 20:39:35 -0500
+X-Failed-Recipients: sethbuchanon15@yahoo.com
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@host.notesao.com>
+To: no-reply@ffl.notesao.com
+References: <E1vAIOU-0000000Gc95-3CQL@host.notesao.com>
+Content-Type: multipart/report; report-type=delivery-status; boundary=1760837975-eximdsn-155371502
+MIME-Version: 1.0
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <E1vAIOV-0000000GcAo-2nKw@host.notesao.com>
+Date: Sat, 18 Oct 2025 20:39:35 -0500
+
+--1760837975-eximdsn-155371502
+Content-type: text/plain; charset=us-ascii
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  sethbuchanon15@yahoo.com
+    host mta5.am0.yahoodns.net [67.195.204.73]
+    SMTP error from remote mail server after end of data:
+    552 1 Requested mail action aborted, mailbox not found
+
+--1760837975-eximdsn-155371502
+Content-type: message/delivery-status
+
+Reporting-MTA: dns; host.notesao.com
+
+Action: failed
+Final-Recipient: rfc822;sethbuchanon15@yahoo.com
+Status: 5.0.0
+Remote-MTA: dns; mta5.am0.yahoodns.net
+Diagnostic-Code: smtp; 552 1 Requested mail action aborted, mailbox not found
+
+--1760837975-eximdsn-155371502
+Content-type: message/rfc822
+
+Return-path: <no-reply@ffl.notesao.com>
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <no-reply@ffl.notesao.com>)
+	id 1vAIOU-0000000Gc95-3CQL
+	for sethbuchanon15@yahoo.com;
+	Sat, 18 Oct 2025 20:39:34 -0500
+To: sethbuchanon15@yahoo.com
+Subject: Anger Control Group Reminder: Sunday at 9:30 AM
+X-PHP-Script: ffl.notesao.com/client-reminders.php for 172.56.21.52
+ X-PHP-Originating-Script: 1007:client-reminders.php
+From: Free for Life Group <no-reply@ffl.notesao.com>
+Reply-To: admin@notesao.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+List-Unsubscribe: <https://ffltest.notesao.com/unsubscribe.php?e=sethbuchanon15%40yahoo.com&t=fdceb5676e936077c3816214992900179960fdaa1e47970d302d851fd3b47a37>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Precedence: bulk
+X-Mailer: NotesAO-Reminders/1.0
+Message-Id: <E1vAIOU-0000000Gc95-3CQL@host.notesao.com>
+Date: Sat, 18 Oct 2025 20:39:34 -0500
+
+<div style="text-align:center;margin:0 0 12px 0"><img src="https://ffltest.notesao.com/ffllogo.png" alt="Free for Life Group" style="max-width:100%;height:auto;display:inline-block;"></div><p>Hi Seth,</p>
+
+<p><strong>Your Anger Control group is Sunday at 9:30 AM (Sunday, October 19).</strong></p>
+
+<p>
+  Your Waxahachie DPO mandated Anger Control group is scheduled. Waxahachie DPO and Takoya Wiltz expect your presence.
+  Please arrive early. <em>Lockout is 9:40 AM</em>. Your presence is a mandatory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaining in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p>
+
+<p>Where: Virtual (Use your group link):<br><a href="https://freeforlifegroup.com/sunday-anger-control-parole-18-week/">Sunday 9:30 AM Group Link</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href="https://ffl.notesao.com/clientportal.php">FFL – Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR call during office hours (Mon–Fri, 8am–4pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style="border-top:1px solid #ddd;margin:24px 0;"><p style="font:12px/1.4 Arial,Helvetica,sans-serif;color:#666">This reminder was sent by Free for Life Group. If you no longer wish to receive emails at this address, <a href="https://ffltest.notesao.com/unsubscribe.php?e=sethbuchanon15%40yahoo.com&amp;t=fdceb5676e936077c3816214992900179960fdaa1e47970d302d851fd3b47a37">unsubscribe here</a>.</p>
+
+--1760837975-eximdsn-155371502--

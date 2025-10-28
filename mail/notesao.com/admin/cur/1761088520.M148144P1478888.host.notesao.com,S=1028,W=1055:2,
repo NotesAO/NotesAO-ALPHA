@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 9XV/BwgU+GjokBYAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Tue, 21 Oct 2025 18:15:20 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Tue, 21 Oct 2025 18:15:20 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1vBLZY-00000006Cie-02jp
+	for admin@notesao.com;
+	Tue, 21 Oct 2025 18:15:20 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Eric Moreno
+X-PHP-Script: ffl.notesao.com/intake.php for 67.10.193.176
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: ericmoreno370@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1vBLZY-00000006Cie-02jp@host.notesao.com>
+Date: Tue, 21 Oct 2025 18:15:20 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

@@ -4,118 +4,256 @@ check_loggedin($con);
 require_once 'helpers.php';
 require_once 'sql_functions.php';
 
+function source_is_one_time(string $src): bool {
+  return in_array($src, ['Cash','Card','Check','Money Order','Scholarship','Waiver','CPS','Refunded','Other'], true);
+}
+function source_kind(string $src): string {
+  if (in_array($src, ['Scholarship','Waiver','CPS'], true)) return 'adjustment';
+  if ($src === 'Refunded') return 'refund';
+  return 'payment';
+}
+
+
 /* ---------- 1. initialise field values ---------- */
-$first_name=$last_name=$date_of_birth='';
-$program_id = $_SESSION['program_id'];   // keep existing behavior
-$referral_type_id=$client_stage_id=$case_manager_id='';
-$enrollment_date = date('Y-m-d');        // defaults to today
+$first_name=$last_name=$date_of_birth=$email=$phone_number='';
+$cause_number=$other_concerns='';
+$referral_type_id=$ethnicity_id=$gender_id=$client_stage_id='';
+$required_sessions=$fee='';
+$case_manager_id=$therapy_group_id='';
+$emergency_contact=$orientation_date='';
+$exit_date=$exit_reason_id=$exit_note='';
+$weekly_attendance='';
+$birth_place='';
+$intake_packet=0;
+$program_id=$_SESSION['program_id'];
+
+/* Lakeview-only extras */
+$instructor=null;                 // NULL = Not Assigned
+$marital_status='Unknown';        // Unknown | Single | Married | Divorced | Separated | Widowed | Partnered
+$employed='Unknown';              // Unknown | Yes | No
+$ssl_dln='';                      // DL / SSN free text
+$paid_source='Weekly';        // Weekly or one-time method
+$paid_intake=false;           // one-time: paid at intake?
+
+
+$attends_sunday=$attends_monday=$attends_tuesday=
+$attends_wednesday=$attends_thursday=$attends_friday=
+$attends_saturday=$attends_sunday_t4c=0;
 
 /* ---------- 2. initialise error strings ---------- */
 $first_name_err=$last_name_err=$program_id_err='';
-$date_of_birth_err=$referral_type_id_err=$client_stage_id_err='';
-$case_manager_id_err=$enrollment_date_err='';
-
-/* ---------- helpers ---------- */
-function valid_date($s){
-  if (!$s) return false;
-  $d = DateTime::createFromFormat('Y-m-d', $s);
-  return $d && $d->format('Y-m-d') === $s;
-}
+$date_of_birth_err=$email_err=$phone_number_err='';
+$cause_number_err=$referral_type_id_err=$ethnicity_id_err='';
+$gender_id_err=$required_sessions_err=$fee_err='';
+$case_manager_id_err=$therapy_group_id_err=$client_stage_id_err='';
+$other_concerns_err=$emergency_contact_err=$orientation_date_err='';
+$exit_date_err=$exit_reason_id_err=$exit_note_err='';
+$weekly_attendance_err='';
+$birth_place_err='';
+$instructor_err=''; $marital_status_err=''; $employed_err=''; $ssl_dln_err='';
 
 /* ---------- 3. POST: read + server-side guard rails ---------- */
 if ($_SERVER['REQUEST_METHOD']==='POST') {
 
   /* read & trim ------------------------------------------------ */
-  $first_name       = trim($_POST['first_name'] ?? '');
-  $last_name        = trim($_POST['last_name'] ?? '');
-  $date_of_birth    = trim($_POST['date_of_birth'] ?? '');
-  $program_id       = trim($_POST['program_id'] ?? $program_id);
-  $referral_type_id = trim($_POST['referral_type_id'] ?? '');
-  $client_stage_id  = trim($_POST['client_stage_id'] ?? '');
-  $case_manager_id  = trim($_POST['case_manager_id'] ?? '');
-  $enrollment_date  = trim($_POST['enrollment_date'] ?? $enrollment_date);
+  $first_name        =trim($_POST['first_name']??'');
+  $last_name         =trim($_POST['last_name']??'');
+  $date_of_birth     =trim($_POST['date_of_birth']??'');
+  $email             =trim($_POST['email']??'');
+  $phone_number      =formatPhone(trim($_POST['phone_number']??''));
+  $cause_number      =trim($_POST['cause_number']??'');
+  $referral_type_id  =trim($_POST['referral_type_id']??'');
+  $ethnicity_id      =trim($_POST['ethnicity_id']??'');
+  $gender_id         =trim($_POST['gender_id']??'');
+  $required_sessions =trim($_POST['required_sessions']??'');
+  $fee               =trim($_POST['fee']??'');
+  $case_manager_id   =trim($_POST['case_manager_id']??'');
+  $therapy_group_id  =trim($_POST['therapy_group_id']??'');
+  $client_stage_id   =trim($_POST['client_stage_id']??'');
+  $other_concerns    =trim($_POST['other_concerns']??'');
+  $emergency_contact =trim($_POST['emergency_contact']??'');
+  $orientation_date  =trim($_POST['orientation_date']??'');
+  $birth_place       =trim($_POST['birth_place']??'');
+  $intake_packet     =isset($_POST['intake_packet']) ? 1 : 0;
+  $exit_date         =trim($_POST['exit_date']??'');
+  $exit_reason_id    =trim($_POST['exit_reason_id']??'');
+  $exit_note         =trim($_POST['exit_note']??'');
+  $weekly_attendance =trim($_POST['weekly_attendance']??'');
+
+  $attends_sunday    =isset($_POST['attends_sunday']);
+  $attends_monday    =isset($_POST['attends_monday']);
+  $attends_tuesday   =isset($_POST['attends_tuesday']);
+  $attends_wednesday =isset($_POST['attends_wednesday']);
+  $attends_thursday  =isset($_POST['attends_thursday']);
+  $attends_friday    =isset($_POST['attends_friday']);
+  $attends_saturday  =isset($_POST['attends_saturday']);
+  $attends_sunday_t4c=isset($_POST['attends_sunday_t4c']);
+
+  $pid = (int)($_POST['program_id'] ?? $program_id ?? 0);
+
+  $paid_source = $_POST['paid_source'] ?? 'Weekly';
+  $paid_intake = (($_POST['paid_intake'] ?? 'no') === 'yes');
+
+
+  // required_sessions default
+  if ($required_sessions === '' || !preg_match('/^\d+$/', (string)$required_sessions)) {
+      $def = program_required_sessions($pid);
+      if ($def !== null) $required_sessions = (string)$def;
+  }
+
+  // weekly_attendance default (allow 0/1/2)
+  if ($weekly_attendance === '' || !preg_match('/^[012]$/', (string)$weekly_attendance)) {
+      $mpw = $PROGRAM_DEFAULTS[$pid]['meetings_per_week'] ?? null;
+      if ($mpw !== null) $weekly_attendance = (string)$mpw;
+  }
+
+  /* Lakeview-only reads */
+  $instructor_raw    = trim($_POST['instructor'] ?? '');
+  $instructor        = ($instructor_raw==='') ? null : $instructor_raw;
+
+  $marital_status_in = $_POST['marital_status'] ?? 'Unknown';
+  $allowed_ms = ['Unknown','Single','Married','Divorced','Separated','Widowed','Partnered'];
+  $marital_status = in_array($marital_status_in,$allowed_ms,true) ? $marital_status_in : 'Unknown';
+
+  $employed_in = $_POST['employed'] ?? 'Unknown';
+  $allowed_emp = ['Unknown','Yes','No'];
+  $employed = in_array($employed_in,$allowed_emp,true) ? $employed_in : 'Unknown';
+
+  $ssl_dln = trim($_POST['ssl_dln'] ?? '');
 
   $hasErrors=false;
 
-  /* required: names -------------------------------------------- */
-  if($first_name===''){ $first_name_err='Required.'; $hasErrors=true; }
-  if($last_name===''){  $last_name_err='Required.';  $hasErrors=true; }
+  /* blank-field guard (critical ones only) --------------------- */
+  $required = [
+    'first_name'        => &$first_name_err,
+    'last_name'         => &$last_name_err,
+    'date_of_birth'     => &$date_of_birth_err,
+    'phone_number'      => &$phone_number_err,
+    'email'             => &$email_err,
+    'emergency_contact' => &$emergency_contact_err,
+    'orientation_date'  => &$orientation_date_err,
+    'gender_id'         => &$gender_id_err,
+    'ethnicity_id'      => &$ethnicity_id_err,
+    'referral_type_id'  => &$referral_type_id_err,
+    'weekly_attendance' => &$weekly_attendance_err,
+    'fee'               => &$fee_err,  // only when $paid_source === 'Weekly'
+    'case_manager_id'   => &$case_manager_id_err,
+    'therapy_group_id'  => &$therapy_group_id_err,
+  ];
 
-  /* DOB 18-110 yrs --------------------------------------------- */
-  if(!valid_date($date_of_birth)){
-    $date_of_birth_err='Use YYYY-MM-DD.'; $hasErrors=true;
-  } else {
-    $dob_ts = strtotime($date_of_birth);
-    $age = $dob_ts ? (time() - $dob_ts) / 31557600 : 0;
-    if ($age < 18 || $age > 110) {
-      $date_of_birth_err='Age must be 18–110.'; $hasErrors=true;
+  foreach ($required as $field => &$err) {
+    if ($field === 'fee' && $paid_source !== 'Weekly') continue; // conditionally required
+    if (empty($$field)) { $err = 'Required.'; $hasErrors = true; }
+  }
+  unset($err); // break reference
+
+
+  /* phone must already be 999-999-9999 from JS ----------------- */
+  if(!preg_match('/^\d{3}-\d{3}-\d{4}$/',$phone_number)){
+      $phone_number_err='Phone must be 999-999-9999.'; $hasErrors=true;
+  }
+
+  /* e-mail ----------------------------------------------------- */
+  if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+      $email_err='Invalid e-mail.'; $hasErrors=true;
+  }
+
+  /* DOB 18-110 yrs -------------------------------------------- */
+  $dob_ts=strtotime($date_of_birth?:'');
+  $age=$dob_ts?(time()-$dob_ts)/31557600:0;
+  if(!$dob_ts||$age<18||$age>110){
+      $date_of_birth_err='Age must be 18-110.'; $hasErrors=true;
+  }
+
+  /* sessions / week exactly 1 or 2 ---------------------------- */
+  if(!in_array($weekly_attendance,['0','1','2'],true)){
+      $weekly_attendance_err='Must be 0, 1, or 2.'; $hasErrors=true;
+  }
+
+
+  /* day count matches ----------------------------------------- */
+  $dayCnt=$attends_sunday+$attends_sunday_t4c+$attends_monday+$attends_tuesday+
+          $attends_wednesday+$attends_thursday+$attends_friday+$attends_saturday;
+  if($weekly_attendance==='0' && $dayCnt!==0){
+    $weekly_attendance_err='No days should be checked for 0/week programs.'; $hasErrors=true;
+  }
+  if($weekly_attendance==='1' && $dayCnt!==1){
+      $weekly_attendance_err='Select exactly 1 day for 1/week.'; $hasErrors=true;
+  }
+  if($weekly_attendance==='2' && ($dayCnt<1||$dayCnt>2)){
+      $weekly_attendance_err='Select 1–2 days for 2/week.'; $hasErrors=true;
+  }
+
+  /* required sessions numeric --------------------------------- */
+  if($required_sessions!==''&&!preg_match('/^\d+$/',$required_sessions)){
+      $required_sessions_err='Must be a number.'; $hasErrors=true;
+  }
+
+  /* fee positive ≤100 (only for Weekly) ----------------------- */
+  if ($paid_source === 'Weekly') {
+    if ($fee === '' || !is_numeric($fee) || $fee <= 0 || $fee > 100) {
+      $fee_err = 'Fee must be ≤100.'; $hasErrors = true;
     }
   }
 
-  /* required selects ------------------------------------------- */
-  if($program_id==='' || !ctype_digit((string)$program_id)){
-    $program_id_err='Select a program.'; $hasErrors=true;
-  }
-  if($referral_type_id==='' || !ctype_digit((string)$referral_type_id)){
-    $referral_type_id_err='Select a referral type.'; $hasErrors=true;
-  }
-  if($client_stage_id==='' || !ctype_digit((string)$client_stage_id)){
-    $client_stage_id_err='Select a client stage.'; $hasErrors=true;
-  }
-  if($case_manager_id==='' || !ctype_digit((string)$case_manager_id)){
-    $case_manager_id_err='Select a case manager.'; $hasErrors=true;
-  }
 
-  /* enrollment date (default to today if blank) ---------------- */
-  if($enrollment_date===''){ $enrollment_date = date('Y-m-d'); }
-  if(!valid_date($enrollment_date)){
-    $enrollment_date_err='Use YYYY-MM-DD or leave blank for today.'; $hasErrors=true;
-  }
-
-  /* DB insert if all clear ------------------------------------- */
+  /* DB insert if all clear ------------------------------------ */
   if(!$hasErrors){
-    try{
-      $pdo = new PDO(
-        'mysql:host='.db_host.';dbname='.db_name.';charset=utf8mb4',
-        db_user, db_pass, [PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION]
-      );
 
-      // orientation_date is explicitly NULL at creation
+      // Step 4: persist planned payment choice
+      $paid_amount = '0.00';
+      if ($paid_source !== 'Weekly') {
+          $paid_amount = $paid_intake
+              ? number_format((float)($fee === '' ? 0 : $fee), 2, '.', '')
+              : '0.00';
+      }
+
+      $exit_reason_id = 1;
+      $exit_note     = null;
+      $exit_date    = null;
+
+      $pdo=new PDO(
+        'mysql:host='.db_host.';dbname='.db_name.';charset=utf8mb4',
+        db_user,db_pass,[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION]);
+
       $stmt=$pdo->prepare(
-        "INSERT INTO client (
-           program_id, first_name, last_name, date_of_birth,
-           referral_type_id, client_stage_id, case_manager_id,
-           enrollment_date, orientation_date
-         ) VALUES (?,?,?,?,?,?,?,?,?)"
-      );
+      "INSERT INTO client (
+        program_id,first_name,last_name,date_of_birth,gender_id,email,
+        phone_number,cause_number,referral_type_id,ethnicity_id,required_sessions,
+        fee,case_manager_id,therapy_group_id,client_stage_id,other_concerns,
+        emergency_contact,orientation_date,birth_place,intake_packet,
+        exit_date,exit_reason_id,exit_note,
+        weekly_attendance,attends_sunday,attends_sunday_t4c,attends_monday,attends_tuesday,
+        attends_wednesday,attends_thursday,attends_friday,attends_saturday,
+        instructor, marital_status, employed, ssl_dln,
+        paid_source, paid_amount
+      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?,?,?,?, ?,?)");
 
       $stmt->execute([
-        (int)$program_id, $first_name, $last_name, $date_of_birth,
-        (int)$referral_type_id, (int)$client_stage_id, (int)$case_manager_id,
-        $enrollment_date, null
+        $program_id,$first_name,$last_name,$date_of_birth,$gender_id,$email,
+        $phone_number,$cause_number,$referral_type_id,$ethnicity_id,$required_sessions,
+        $fee,$case_manager_id,$therapy_group_id,$client_stage_id,$other_concerns,
+        $emergency_contact,$orientation_date,$birth_place,$intake_packet,
+        $exit_date,$exit_reason_id,$exit_note,
+        $weekly_attendance,$attends_sunday,$attends_sunday_t4c,$attends_monday,$attends_tuesday,
+        $attends_wednesday,$attends_thursday,$attends_friday,$attends_saturday,
+        $instructor,$marital_status,$employed,$ssl_dln,
+        $paid_source,$paid_amount
       ]);
-
       header('Location: client-index.php'); exit;
-    } catch(Throwable $e){
-      $enrollment_date_err = 'Database error: '.htmlspecialchars($e->getMessage());
-    }
   }
+
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>NotesAO – New Client (Quick Enroll)</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      crossorigin="anonymous">
+<title>NotesAO – New Client</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
 <style>
 body{padding-top:56px;font-size:16px}
 .is-warning{border-color:#fd7e14!important;box-shadow:0 0 0 .2rem rgba(253,126,20,.4)}
-.is-invalid + .form-text.text-danger{display:block}
-.card{border-radius:.75rem}
 </style>
 </head>
 <?php require_once 'navbar.php'; ?>
@@ -126,127 +264,503 @@ body{padding-top:56px;font-size:16px}
 
 <form id="clientForm" action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post">
 
-<!-- ========== Row 1: Name / DOB / Enrollment ============================ -->
+<!-- ========== Row 1 ====================================================== -->
 <div class="row">
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
     <div class="form-group">
-      <label>First Name <span class="text-danger">*</span></label>
+      <label>First Name (required)</label>
       <input id="first_name" name="first_name" maxlength="45"
-             class="form-control <?= $first_name_err?'is-invalid':'' ?>"
+             class="form-control is-invalid"
              value="<?=htmlspecialchars($first_name)?>">
       <span class="form-text text-danger"><?=$first_name_err?></span>
     </div>
   </div>
-
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
     <div class="form-group">
-      <label>Last Name <span class="text-danger">*</span></label>
+      <label>Last Name (required)</label>
       <input id="last_name" name="last_name" maxlength="45"
-             class="form-control <?= $last_name_err?'is-invalid':'' ?>"
+             class="form-control is-invalid"
              value="<?=htmlspecialchars($last_name)?>">
       <span class="form-text text-danger"><?=$last_name_err?></span>
     </div>
   </div>
-
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
     <div class="form-group">
-      <label>Date of Birth <span class="text-danger">*</span></label>
+      <label>Date of Birth (required)</label>
       <input type="date" id="date_of_birth" name="date_of_birth"
-             class="form-control <?= $date_of_birth_err?'is-invalid':'' ?>"
+             class="form-control is-invalid"
              value="<?=htmlspecialchars($date_of_birth)?>">
       <span class="form-text text-danger"><?=$date_of_birth_err?></span>
     </div>
   </div>
-
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
     <div class="form-group">
-      <label>Enrollment Date <span class="text-danger">*</span></label>
-      <input type="date" id="enrollment_date" name="enrollment_date"
-             class="form-control <?= $enrollment_date_err?'is-invalid':'' ?>"
-             value="<?=htmlspecialchars($enrollment_date)?>">
-      <span class="form-text text-danger"><?=$enrollment_date_err?></span>
-      <small class="text-muted">Defaults to today if left blank.</small>
+      <label>Birth Place</label>
+      <input name="birth_place" maxlength="15" class="form-control"
+             value="<?=htmlspecialchars($birth_place)?>">
+      <span class="form-text"><?=$birth_place_err?></span>
     </div>
   </div>
 </div>
 
-<!-- ========== Row 2: Program / Referral / Stage / Case Manager ========== -->
+<!-- ========== Row 2 (Gender / Ethnicity / Program) ======================= -->
 <div class="row">
-  <div class="col-12 col-sm-6 col-md-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
     <div class="form-group">
-      <label>Program <span class="text-danger">*</span></label>
-      <select id="program_id" name="program_id"
-              class="form-control <?= $program_id_err?'is-invalid':'' ?>">
-        <option value="" disabled <?=empty($program_id)?'selected':''?>>Select One</option>
-        <?php foreach(get_programs() as $p): ?>
+      <label>Gender (required)</label>
+      <select id="gender_id" name="gender_id" class="form-control is-invalid">
+        <option value="" disabled <?=empty($gender_id)?'selected':''?>>Select One</option>
+        <?php foreach(get_genders() as $g):?>
+          <option value="<?=$g['id']?>" <?=$g['id']==$gender_id?'selected':''?>>
+            <?=htmlspecialchars($g['gender'])?></option>
+        <?php endforeach;?>
+      </select>
+      <span class="form-text text-danger"><?=$gender_id_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Ethnicity (required)</label>
+      <select id="ethnicity_id" name="ethnicity_id" class="form-control is-invalid">
+        <option value="" disabled <?=empty($ethnicity_id)?'selected':''?>>Select One</option>
+        <?php foreach(get_ethnicities() as $e):?>
+          <option value="<?=$e['id']?>" <?=$e['id']==$ethnicity_id?'selected':''?>>
+            <?=htmlspecialchars($e['code'].' - '.$e['name'])?></option>
+        <?php endforeach;?>
+      </select>
+      <span class="form-text text-danger"><?=$ethnicity_id_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Program</label>
+      <select id="program_id" name="program_id" class="form-control is-invalid" readonly>
+        <?php foreach(get_programs() as $p):?>
           <option value="<?=$p['id']?>" <?=$p['id']==$program_id?'selected':''?>>
-            <?=htmlspecialchars($p['name'])?>
-          </option>
-        <?php endforeach; ?>
+            <?=htmlspecialchars($p['name'])?></option>
+        <?php endforeach;?>
       </select>
       <span class="form-text text-danger"><?=$program_id_err?></span>
     </div>
   </div>
 
-  <div class="col-12 col-sm-6 col-md-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2 align-self-end">
+    <div class="form-group form-check mb-3">
+      <input type="checkbox" id="intake_packet" name="intake_packet"
+             class="form-check-input" <?=$intake_packet?'checked':''?>>
+      <label class="form-check-label" for="intake_packet">
+        Received&nbsp;Intake&nbsp;Packet
+      </label>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Row 3 (Phone / Email / Emergency) ========================= -->
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
     <div class="form-group">
-      <label>Referral Type <span class="text-danger">*</span></label>
-      <select id="referral_type_id" name="referral_type_id"
-              class="form-control <?= $referral_type_id_err?'is-invalid':'' ?>">
+      <label>Phone Number (required)</label>
+      <input id="phone_number" name="phone_number" class="form-control is-invalid"
+             placeholder="999-999-9999" value="<?=htmlspecialchars($phone_number)?>">
+      <span class="form-text text-danger"><?=$phone_number_err?></span>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>E-Mail (required)</label>
+      <input id="email" name="email" maxlength="64" class="form-control is-invalid"
+             value="<?=htmlspecialchars($email)?>">
+      <span class="form-text text-danger"><?=$email_err?></span>
+    </div>
+  </div>
+  <div class="col-10 col-md-6">
+    <div class="form-group">
+      <label>Emergency Contact: Name, Phone, & Relation (required)</label>
+      <input id="emergency" name="emergency_contact" maxlength="512"
+             class="form-control is-invalid"
+             value="<?=htmlspecialchars($emergency_contact)?>">
+      <span class="form-text text-danger"><?=$emergency_contact_err?></span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Row 4 (Referral / ReqSess / Sessions/Wk / Fee / CM / Cause) -->
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Referral Type (required)</label>
+      <select id="referral_type_id" name="referral_type_id" class="form-control is-invalid">
         <option value="" disabled <?=empty($referral_type_id)?'selected':''?>>Select One</option>
-        <?php foreach(get_referral_types() as $r): ?>
+        <?php foreach(get_referral_types() as $r):?>
           <option value="<?=$r['id']?>" <?=$r['id']==$referral_type_id?'selected':''?>>
-            <?=htmlspecialchars($r['referral_type'])?>
-          </option>
-        <?php endforeach; ?>
+            <?=htmlspecialchars($r['referral_type'])?></option>
+        <?php endforeach;?>
       </select>
       <span class="form-text text-danger"><?=$referral_type_id_err?></span>
     </div>
   </div>
 
-  <div class="col-12 col-sm-6 col-md-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
     <div class="form-group">
-      <label>Client Stage <span class="text-danger">*</span></label>
-      <select id="client_stage_id" name="client_stage_id"
-              class="form-control <?= $client_stage_id_err?'is-invalid':'' ?>">
-        <option value="" disabled <?=empty($client_stage_id)?'selected':''?>>Select One</option>
-        <?php foreach(get_client_stages() as $s): ?>
-          <option value="<?=$s['id']?>" <?=$s['id']==$client_stage_id?'selected':''?>>
-            <?=htmlspecialchars($s['stage'])?>
-          </option>
-        <?php endforeach; ?>
-      </select>
-      <span class="form-text text-danger"><?=$client_stage_id_err?></span>
+      <label>Required Sessions (required)</label>
+      <input id="required_sessions" name="required_sessions" type="number"
+             class="form-control is-invalid" value="<?=htmlspecialchars($required_sessions)?>">
+      <span class="form-text text-danger"><?=$required_sessions_err?></span>
     </div>
   </div>
 
-  <div class="col-12 col-sm-6 col-md-3">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
     <div class="form-group">
-      <label>Case Manager <span class="text-danger">*</span></label>
-      <select id="case_manager_id" name="case_manager_id"
-              class="form-control <?= $case_manager_id_err?'is-invalid':'' ?>">
-        <option value="" disabled <?=empty($case_manager_id)?'selected':''?>>Select One</option>
-        <?php foreach(get_case_managers() as $m): ?>
-          <option value="<?=$m['id']?>" <?=$m['id']==$case_manager_id?'selected':''?>>
-            <?=htmlspecialchars($m['last_name'].', '.$m['first_name'].' - '.$m['office'])?>
-          </option>
+      <label>Sessions / Week (required)</label>
+      <input id="sessions_per_week" name="weekly_attendance" type="number"
+             class="form-control is-invalid" value="<?=htmlspecialchars($weekly_attendance)?>">
+      <span class="form-text text-danger"><?=$weekly_attendance_err?></span>
+    </div>
+  </div>
+
+  <!-- Payment plan -->
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Payment Source</label>
+      <select id="paid_source" name="paid_source" class="form-control">
+        <?php foreach (['Weekly','Cash','Card','Check','Money Order','Scholarship','Waiver','CPS','Refunded','Other'] as $opt): ?>
+          <option value="<?=$opt?>" <?=$paid_source===$opt?'selected':''?>><?=$opt?></option>
         <?php endforeach; ?>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2" id="paid_intake_group"
+      style="<?= $paid_source==='Weekly' ? 'display:none' : '' ?>">
+    <div class="form-group">
+      <label>Paid at Intake?</label>
+      <select id="paid_intake" name="paid_intake" class="form-control">
+        <option value="no"  <?= !$paid_intake?'selected':'' ?>>No</option>
+        <option value="yes" <?=  $paid_intake?'selected':'' ?>>Yes</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Group Fee <small class="text-muted">(required for Weekly)</small></label>
+
+      <input id="fee" name="fee" type="number" class="form-control is-invalid"
+             value="<?=htmlspecialchars($fee)?>">
+      <span class="form-text text-danger"><?=$fee_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Case Manager (required)</label>
+      <select id="case_manager_id" name="case_manager_id" class="form-control is-invalid">
+        <option value="" disabled <?=empty($case_manager_id)?'selected':''?>>Select One</option>
+        <?php foreach(get_case_managers() as $m):?>
+          <option value="<?=$m['id']?>" <?=$m['id']==$case_manager_id?'selected':''?>>
+            <?=htmlspecialchars($m['last_name'].', '.$m['first_name'].' - '.$m['office'])?></option>
+        <?php endforeach;?>
       </select>
       <span class="form-text text-danger"><?=$case_manager_id_err?></span>
     </div>
   </div>
 </div>
 
-<!-- ========== Actions ==================================================== -->
+<!-- ========== Row 5 (Therapy / Orientation / Stage / Cause) ============= -->
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+    <div class="form-group">
+      <label>Therapy Group (required)</label>
+      <select id="therapy_group_id" name="therapy_group_id" class="form-control is-invalid">
+        <option value="" disabled <?=empty($therapy_group_id)?'selected':''?>>Select One</option>
+        <?php foreach(get_therapy_groups($_SESSION['program_id']) as $g):?>
+          <option value="<?=$g['id']?>" <?=$g['id']==$therapy_group_id?'selected':''?>>
+            <?=htmlspecialchars($g['name'].' - '.$g['address'])?></option>
+        <?php endforeach;?>
+      </select>
+      <span class="form-text text-danger"><?=$therapy_group_id_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Orientation Date (required)</label>
+      <input type="date" id="orientation_date" name="orientation_date"
+             class="form-control is-invalid" value="<?=htmlspecialchars($orientation_date)?>">
+      <span class="form-text text-danger"><?=$orientation_date_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Progress Stage</label>
+      <select id="client_stage_id" name="client_stage_id" class="form-control">
+        <?php foreach(get_client_stages() as $s):?>
+          <option value="<?=$s['id']?>" <?=$s['id']==$client_stage_id?'selected':''?>>
+            <?=htmlspecialchars($s['stage'])?></option>
+        <?php endforeach;?>
+      </select>
+      <span class="form-text text-danger"><?=$client_stage_id_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Cause Number</label>
+      <input name="cause_number" maxlength="15" class="form-control"
+             value="<?=htmlspecialchars($cause_number)?>">
+      <span class="form-text"><?=$cause_number_err?></span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Row 6 (Attendance Day check-boxes) ======================== -->
+<div class="row">
+  <div class="col-12">
+    <label>Attendance Day(s) (required)</label><br>
+    <small class="text-muted">
+      Select&nbsp;1&nbsp;day&nbsp;if&nbsp;Sessions&nbsp;/&nbsp;Week&nbsp;=&nbsp;1,&nbsp;or&nbsp;2&nbsp;days&nbsp;if&nbsp;Sessions&nbsp;/&nbsp;Week&nbsp;=&nbsp;2.&nbsp;
+      <span id="sunHint" class="font-weight-bold bg-warning text-dark px-1" style="display:none">
+        For clients who attend BOTH T4C groups on Sunday check BOTH Sunday checkboxes.
+      </span>
+    </small>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 col-md-8">
+    <?php
+      $chk2 = !empty($_POST['attends_sunday_t4c']) ? 'checked' : '';
+      echo '<div id="sunday2-wrapper" class="form-check form-check-inline mb-2" style="display:none">
+              <input class="form-check-input" type="checkbox" name="attends_sunday_t4c" '.$chk2.'>
+              <label class="form-check-label">Sunday (T4C)</label>
+            </div>';
+      $days = [
+        'sunday'    => 'Sunday',
+        'monday'    => 'Monday',
+        'tuesday'   => 'Tuesday',
+        'wednesday' => 'Wednesday',
+        'thursday'  => 'Thursday',
+        'friday'    => 'Friday',
+        'saturday'  => 'Saturday'
+      ];
+      foreach ($days as $k => $lbl) {
+        $chk = !empty($_POST['attends_'.$k]) ? 'checked' : '';
+        echo '<div class="form-check form-check-inline mb-2">
+                <input class="form-check-input" type="checkbox" name="attends_'.$k.'" '.$chk.'>
+                <label class="form-check-label">'.$lbl.'</label>
+              </div>';
+      }
+    ?>
+  </div>
+</div>
+
+<!-- ========== Row 7 (Other Concerns) ==================================== -->
+<div class="row mt-3">
+  <div class="col-12 col-md-8">
+    <div class="form-group">
+      <label>Other Concerns&nbsp;|&nbsp;Class Conduct</label>
+      <textarea name="other_concerns" rows="3" maxlength="2048"
+                class="form-control"><?=htmlspecialchars($other_concerns)?></textarea>
+      <span class="form-text"><?=$other_concerns_err?></span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Row 8 (Lakeview-only extra fields) ======================== -->
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Instructor</label>
+      <select name="instructor" class="form-control">
+        <option value="" <?= is_null($instructor)?'selected':'' ?>>Not Assigned</option>
+        <?php foreach(get_facilitators() as $f): ?>
+          <option value="<?=htmlspecialchars($f['name'])?>"
+            <?= (!is_null($instructor) && $instructor===$f['name'])?'selected':'' ?>>
+            <?=htmlspecialchars($f['name'])?>
+          </option>
+        <?php endforeach; ?>
+      </select>
+      <span class="form-text text-danger"><?=$instructor_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Marital Status</label>
+      <select name="marital_status" class="form-control">
+        <?php foreach (['Unknown','Single','Married','Divorced','Separated','Widowed','Partnered'] as $opt): ?>
+          <option value="<?=$opt?>" <?=$marital_status===$opt?'selected':''?>><?=$opt?></option>
+        <?php endforeach; ?>
+      </select>
+      <span class="form-text text-danger"><?=$marital_status_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>Employed</label>
+      <select name="employed" class="form-control">
+        <?php foreach (['Unknown','Yes','No'] as $opt): ?>
+          <option value="<?=$opt?>" <?=$employed===$opt?'selected':''?>><?=$opt?></option>
+        <?php endforeach; ?>
+      </select>
+      <span class="form-text text-danger"><?=$employed_err?></span>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+    <div class="form-group">
+      <label>DL / SSN</label>
+      <input name="ssl_dln" maxlength="64" class="form-control" value="<?=htmlspecialchars($ssl_dln)?>">
+      <small class="text-muted">Optional.</small>
+      <span class="form-text text-danger"><?=$ssl_dln_err?></span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Row 9 (Buttons) =========================================== -->
 <div class="row mb-5">
   <div class="col-12">
     <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
     <a href="client-index.php" class="btn btn-secondary ml-2">Cancel</a>
   </div>
 </div>
+</section>
 
-</form>
-</div></section>
+<!-- ======== Front-end live validator =================================== -->
+<script>
+
+  const PROGRAM_REQUIRED = <?php
+    $map=[];
+    foreach ($PROGRAM_DEFAULTS as $pid=>$cfg) { if (isset($cfg['required_sessions'])) $map[$pid]=$cfg['required_sessions']; }
+    echo json_encode($map);
+  ?>;
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const progSel  = document.getElementById('program_id');
+  const sunday2  = document.getElementById('sunday2-wrapper');
+  const sunHint  = document.getElementById('sunHint');
+
+  function toggleSunday2(){
+    const show = (parseInt(progSel.value,10) === 5);
+
+    sunday2.style.display = show ? 'inline-block' : 'none';
+    sunHint.style.display  = show ? 'inline-block' : 'none';
+  }
+  toggleSunday2();
+  progSel.addEventListener('change',toggleSunday2);
+
+  const F={first:'first_name',last:'last_name',dob:'date_of_birth',
+    phone:'phone_number',email:'email',gender:'gender_id',ethnicity:'ethnicity_id',
+    program:'program_id',referral:'referral_type_id',reqSess:'required_sessions',
+    sessWeek:'sessions_per_week',fee:'fee',caseMgr:'case_manager_id',
+    therapyGrp:'therapy_group_id',orient:'orientation_date',emerg:'emergency',
+    paySrc:'paid_source',paidIntake:'paid_intake'};
+
+
+  const critical=new Set([F.first,F.last,F.dob,F.phone,F.email,F.gender,F.ethnicity,
+  F.program,F.referral,F.sessWeek,F.caseMgr,F.therapyGrp,F.orient]);
+
+  Object.values(F).forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el) return;
+    ['input','change','blur'].forEach(evt=>el.addEventListener(evt,()=>validate(el)));
+    validate(el);
+  });
+
+  function validate(el){
+    const v = el.value.trim();
+    let state = 'invalid';
+
+    switch (el.id) {
+      case F.phone: {
+        const d = v.replace(/\D/g,'');
+        if (d.length === 10) {
+          state = 'valid';
+          if (!/-/.test(v)) el.value = d.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+        }
+        break;
+      }
+
+      case F.email:
+        state = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? 'valid' : 'invalid';
+        break;
+
+      case F.dob: {
+        const d = new Date(v);
+        const age = (Date.now() - d) / 3.15576e10;
+        state = (!isNaN(d) && age >= 18 && age <= 110) ? 'valid' : 'invalid';
+        break;
+      }
+
+      case F.sessWeek:
+        state = (v === '0' || v === '1' || v === '2') ? 'valid' : 'invalid';
+        break;
+
+      case F.reqSess: {
+        const pid = parseInt(progSel.value, 10);
+        const def = PROGRAM_REQUIRED[String(pid)] ?? null;
+        if (/^\d+$/.test(v) && +v > 0) {
+          state = (def !== null && +v === def) ? 'valid' : 'warning';
+        } else {
+          state = 'invalid';
+        }
+        break;
+      }
+
+      case F.fee: {
+        const weekly = (document.getElementById('paid_source')?.value === 'Weekly');
+        if (!weekly && v === '') { state = 'valid'; break; }
+        let f = parseFloat(v);
+        if ([32,30].includes(f)) f = 30;
+        else if ([21,20].includes(f)) f = 20;
+        else if ([16,15].includes(f)) f = 15;
+        state = [15,20,30].includes(f) ? 'valid' : ((f > 0 && f <= 100) ? 'warning' : 'invalid');
+        if (!isNaN(f)) el.value = f;
+        break;
+      }
+
+      default:
+        state = v !== '' ? 'valid' : 'invalid';
+    }
+
+    el.classList.remove('is-valid','is-warning','is-invalid');
+    el.classList.add(state === 'valid' ? 'is-valid' : (state === 'warning' ? 'is-warning' : 'is-invalid'));
+    lockSubmit();
+  }
+
+
+  function lockSubmit(){
+    const bad=[...critical].some(id=>document.getElementById(id).classList.contains('is-invalid'));
+    document.getElementById('submitBtn').disabled=bad;
+  }
+
+  // ---- Payment UI toggle (add this block) ----
+  const paySrc = document.getElementById('paid_source');
+  const paidIntakeGroup = document.getElementById('paid_intake_group');
+  const feeInput = document.getElementById('fee');
+
+  function updatePaymentUI(){
+    const weekly = paySrc && paySrc.value === 'Weekly';
+    if (paidIntakeGroup) paidIntakeGroup.style.display = weekly ? 'none' : 'block';
+
+    if (weekly) {
+      validate(feeInput);
+    } else {
+      feeInput.classList.remove('is-invalid','is-warning','is-valid');
+    }
+    lockSubmit();
+  }
+  if (paySrc) {
+    paySrc.addEventListener('change', updatePaymentUI);
+    updatePaymentUI();
+  }
+  // ---- end Payment UI toggle ----
+});
+</script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>

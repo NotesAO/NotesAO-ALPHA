@@ -59,6 +59,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $attends_saturday = isset($_POST['attends_saturday']) ? 1 : 0;
         $therapy_group_id = trim($_POST["therapy_group_id"]);
 
+        // new plan fields from step 4
+        $paid_source = $_POST['paid_source'] ?? 'Weekly';
+        $paid_intake = (($_POST['paid_intake'] ?? 'no') === 'yes');
+        $is_weekly   = ($paid_source === 'Weekly');
+
+        // normalize amounts
+        $fee  = is_numeric($fee)  ? (float)$fee  : 0.0;
+        $paid = is_numeric($paid) ? (float)$paid : 0.0;
+
         $dsn = "mysql:host=".db_host.";dbname=".db_name.";charset=utf8mb4";
         $options = [
           PDO::ATTR_EMULATE_PREPARES   => false, // turn off emulation mode for "real" prepared statements
@@ -109,25 +118,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "Something went wrong. Please try again later.";
         }
 
-        // Insert the fee for attendance
-        $stmt = $pdo->prepare("INSERT INTO ledger (client_id,amount,note) VALUES (?,?,?)");
-        $ledger_note = "Attendance fee session_id " . $therapy_session_id;
-        if($stmt->execute([ $client_id, floatval($fee) * -1.0, $ledger_note ])) {
-            $stmt = null;
-//                header("location: attendance_record-index.php");
-        } else{
-            echo "Something went wrong. Please try again later.";
+        // Insert the fee for attendance (weekly plans only)
+        if ($is_weekly && $fee > 0) {
+            $stmt = $pdo->prepare("INSERT INTO ledger (client_id,amount,note) VALUES (?,?,?)");
+            $ledger_note = "Attendance fee session_id " . $therapy_session_id;
+            if ($stmt->execute([ $client_id, -1.0 * $fee, $ledger_note ])) {
+                $stmt = null;
+            } else {
+                echo "Something went wrong. Please try again later.";
+            }
         }
 
-        // Insert the amont paid at check-in
-        $stmt = $pdo->prepare("INSERT INTO ledger (client_id,amount,note) VALUES (?,?,?)");
-        $ledger_note = "Paid at Check-In session_id " . $therapy_session_id;
-        if($stmt->execute([ $client_id, $paid, $ledger_note ])) {
-            $stmt = null;
-//                header("location: attendance_record-index.php");
-        } else{
-            echo "Something went wrong. Please try again later.";
+        // Insert the amount paid at check-in
+        // For one-time plans already paid at intake, skip.
+        if ($paid > 0 && !(!$is_weekly && $paid_intake)) {
+            $stmt = $pdo->prepare("INSERT INTO ledger (client_id,amount,note) VALUES (?,?,?)");
+            $note_suffix = $is_weekly ? "" : (" - " . $paid_source);
+            $ledger_note = "Paid at Check-In session_id " . $therapy_session_id . $note_suffix;
+            if ($stmt->execute([ $client_id, $paid, $ledger_note ])) {
+                $stmt = null;
+            } else {
+                echo "Something went wrong. Please try again later.";
+            }
         }
+
+
     
 }
 ?>

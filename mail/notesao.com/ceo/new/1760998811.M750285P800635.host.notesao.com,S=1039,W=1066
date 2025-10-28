@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id FwxmK5u19mh7NwwAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Mon, 20 Oct 2025 17:20:11 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Mon, 20 Oct 2025 17:20:11 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1vAyEd-00000003MHN-2aEZ
+	for admin@notesao.com;
+	Mon, 20 Oct 2025 17:20:11 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Christopher Mathis
+X-PHP-Script: ffl.notesao.com/intake.php for 174.202.162.48
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: 2025christopherl@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1vAyEd-00000003MHN-2aEZ@host.notesao.com>
+Date: Mon, 20 Oct 2025 17:20:11 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

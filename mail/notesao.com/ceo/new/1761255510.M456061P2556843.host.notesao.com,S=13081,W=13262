@@ -1,0 +1,181 @@
+Return-Path: <florencep04@gmail.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id 8JLaGVag+mirAycAIW4ynA
+	(envelope-from <florencep04@gmail.com>); Thu, 23 Oct 2025 16:38:30 -0500
+Return-path: <florencep04@gmail.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Thu, 23 Oct 2025 16:38:30 -0500
+Received: from mail-yx1-f52.google.com ([74.125.224.52]:60560)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <florencep04@gmail.com>)
+	id 1vC30x-0000000Aj9J-1LjA
+	for admin@notesao.com;
+	Thu, 23 Oct 2025 16:38:30 -0500
+Received: by mail-yx1-f52.google.com with SMTP id 956f58d0204a3-63e255e9a20so1432837d50.0
+        for <admin@notesao.com>; Thu, 23 Oct 2025 14:38:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1761255509; x=1761860309; darn=notesao.com;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=suLVqyPol/e/XQNwSJC8rLXfeag/RHqpC5KIvwS8oIs=;
+        b=fOSwMFbfACVehGUdPEnhlY9AKcsBnXx6GINO+BbZUTMNsTBb7a3yfzrcBUJ58IU/0u
+         FnypKx2Pfs0tOTkQf6ayCm4WZazlPdkbzb4o44gHHIkIAvD+9K04NwuCmrMe0d4ywyFk
+         5j8h1bV7k03Fi1nrtAzWGhKhtJAGLty0CLQc6Fq/SSgoG0OVfN4bNrDwAE4NWA9SCXnb
+         xhk41mLF+zSISaHKbxEnR42X0wrgRTGyArINDCEirW7tOb5crFZ+oIu7dY0yj5dXs3Ei
+         G1ma1grKNhXdavRP/VGlWE0B129hRoTWlqrnOlJ9KSdZeAYIS8fTb/Q6SWRan9xDl32F
+         /uhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761255509; x=1761860309;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=suLVqyPol/e/XQNwSJC8rLXfeag/RHqpC5KIvwS8oIs=;
+        b=AUiYYtr+bQUHN9ETu1sjqadBwmGtUJwXd+9lzIHr/Xha80euLmeWYuSi92KOwfrlwR
+         7M622KUJZ6eloLxCxqQBEeKTvDIR8lOFGTIUNkdrv3kHI81Ac3qjpqQ8IOhU6EIlg+Y7
+         FrO5OTrALbWezBocYUDppDvXQSP0pKo8xDVSQif2/11TWEBvXEcCtdB19+wqE+c0dBVQ
+         y4c+2DQjs7262FArm+66KSAsnnzLolCsGDASeNZ3udRsziZOUWceJ3rSFmqXoGmjMFU7
+         lQkfKLiQfOdQ+H2Rg+UlEq4DD59QZgfqQS1ZZOlf1LFlq30xMyegJIIPHIHSRozUlYQP
+         JdMw==
+X-Gm-Message-State: AOJu0YwTAWaZ3T5EIp8uf2x4wOtnpH7haIFZTa6gynluybHlugNJ/KhF
+	udiVoc4yYYHs0e1UtGpVXNJOUNy6hqQdJBkhkNJ2GIIm/x+EPNTyEj4I+UAecGi7mKVBVP8/H8k
+	36/ek/YJhY398IYhMKe/GMDlCFRQNoGYCBQ==
+X-Gm-Gg: ASbGncvpObaEHgU8gEthnLswANYa4XAv2yfjaHbEjlfKKLZwfZXgzaNQb3twvuGYleQ
+	7AGdHfPUocPbVsOxzU2cIMCqPPgkLKJj1MkBHH1OO74K3STzOTgXqbJPhzKyQP/+ds4R7keiHg8
+	eFT3BEQJS0h1x20Zl+eC/Ym461vOls56ZvE5EcMa5J3PpCkIHShZ95nwX4efPdDvd5QCGY7Sy22
+	lnYV1/DMybZpeGp3Xwscw0WYC9PNXVYEe5n/w7x9RukLs1rVQYqf63K9Qt74UGrurC4QwP/jvcQ
+	ZE3NTuU3l1MTt1m3CRbWbRZaf05vuFCGiuPKFfq8
+X-Google-Smtp-Source: AGHT+IF554Kc6yrurB+Vj1FN/TwlINAEBTO3tejCe7ByO0YbnraplwyrfuxlQYdYXAXwpsYbf5MbqyWXWMLktEr4U3s=
+X-Received: by 2002:a05:690e:134b:b0:63e:34cb:511 with SMTP id
+ 956f58d0204a3-63e34cb067bmr13683252d50.23.1761255508677; Thu, 23 Oct 2025
+ 14:38:28 -0700 (PDT)
+MIME-Version: 1.0
+References: <E1vC2yj-0000000Aiwz-3DBp@host.notesao.com>
+In-Reply-To: <E1vC2yj-0000000Aiwz-3DBp@host.notesao.com>
+From: Jose Aldama <florencep04@gmail.com>
+Date: Thu, 23 Oct 2025 16:38:17 -0500
+X-Gm-Features: AS18NWC0UugBB_3R09bcmKwfvEfFydC6xBugN-kvlIkuGj_srJtVfGp0YCm6QbU
+Message-ID: <CABXFBGPW9BLui6peWi5=hUPuFXuQEmVgFUVOU3te4u6F8Jz9tw@mail.gmail.com>
+Subject: Re: Thinking for a Change Group Reminder: Thursday at 7:00 PM
+To: admin@notesao.com
+Content-Type: multipart/alternative; boundary="000000000000f4189d0641da4055"
+X-Spam-Status: No, score=2.0
+X-Spam-Score: 20
+X-Spam-Bar: ++
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__Hello?= =?ISO-8859-1?Q?=2C_I_just_want_to_confirm_if_I_miss_my_class_today_a?= =?ISO-8859-1?Q?nd=0A____make_it_up_Sunday_would_it_be_considered_an_?= =?ISO-8859-1?Q?excused_absence=3F_Jose_Aldama=0A___On_Thu=2C_Oct_23=2C_?= =?ISO-8859-1?Q?2025=2C_4=3A36_PM_Free_for_Life_Group_wrote=3A_=0A_Co?= =?ISO-8859-1?Q?ntent_analysis_details=3A___=282=2E0_points=2C_5=2E0_?= =?ISO-8859-1?Q?required=29=0A__pts_rule_name______________descriptio?= =?ISO-8859-1?Q?n=0A_----_----------------------_--------------------?= =?ISO-8859-1?Q?------------------------------=0A_-0=2E0_SPF=5FPASS__?= =?ISO-8859-1?Q?_____________SPF=3A_sender_matches_SPF_record=0A__0=2E0?= =?ISO-8859-1?Q?_RCVD=5FIN=5FVALIDITY=5FRPBL=5FBLOCKED_RBL=3A_ADMINIS?= =?ISO-8859-1?Q?TRATOR_NOTICE=3A_The_query_to=0A_____________________?= =?ISO-8859-1?Q?_________Validity_was_blocked=2E__See=0A_____________?= =?ISO-8859-1?Q?________________https=3A//knowledge=2Evalidity=2Ecom/?= =?ISO-8859-1?Q?hc/en-us/articles/20961730681243=0A__________________?= =?ISO-8859-1?Q?____________for_more_information=2E=0A_______________?= =?ISO-8859-1?Q?______________=5B74=2E125=2E224=2E52_listed_in_bl=2Es?= =?ISO-8859-1?Q?core=2Esenderscore=2Ecom=5D=0A__0=2E0_RCVD=5FIN=5FVAL?= =?ISO-8859-1?Q?IDITY=5FSAFE=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_?= =?ISO-8859-1?Q?The_query_to=0A______________________________Validity?= =?ISO-8859-1?Q?_was_blocked=2E__See=0A_____________________________h?= =?ISO-8859-1?Q?ttps=3A//knowledge=2Evalidity=2Ecom/hc/en-us/articles?= =?ISO-8859-1?Q?/20961730681243=0A______________________________for_m?= =?ISO-8859-1?Q?ore_information=2E=0A_____________________________=5B7?= =?ISO-8859-1?Q?4=2E125=2E224=2E52_listed_in_sa-accredit=2Ehabeas=2Ec?= =?ISO-8859-1?Q?om=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FCERTIFIED=5FBL?= =?ISO-8859-1?Q?OCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The=0A__________?= =?ISO-8859-1?Q?___________________query_to_Validity_was_blocked=2E__?= =?ISO-8859-1?Q?See=0A_____________________________https=3A//knowledg?= =?ISO-8859-1?Q?e=2Evalidity=2Ecom/hc/en-us/articles/20961730681243=0A_?= =?ISO-8859-1?Q?_____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?__________________________=5B74=2E125=2E224=2E52_list?= =?ISO-8859-1?Q?ed_in_sa-trusted=2Ebondedsender=2Eorg=5D=0A_-0=2E1_DK?= =?ISO-8859-1?Q?IM=5FVALID=5FAU__________Message_has_a_valid_DKIM_or_?= =?ISO-8859-1?Q?DK_signature_from_author's=0A________________________?= =?ISO-8859-1?Q?_____domain=0A__0=2E1_DKIM=5FSIGNED____________Messag?= =?ISO-8859-1?Q?e_has_a_DKIM_or_DK_signature=2C_not_necessarily_valid?= =?ISO-8859-1?Q?=0A_-0=2E1_DKIM=5FVALID_____________Message_has_at_le?= =?ISO-8859-1?Q?ast_one_valid_DKIM_or_DK_signature=0A_-0=2E1_DKIM=5FV?= =?ISO-8859-1?Q?ALID=5FEF__________Message_has_a_valid_DKIM_or_DK_sig?= =?ISO-8859-1?Q?nature_from=0A_____________________________envelope-f?= =?ISO-8859-1?Q?rom_domain=0A__0=2E0_FREEMAIL=5FFROM__________Sender_?= =?ISO-8859-1?Q?email_is_commonly_abused_enduser_mail_provider=0A____?= =?ISO-8859-1?Q?_________________________=5Bflorencep04=28at=29gmail=2Ec?= =?ISO-8859-1?Q?om=5D=0A__0=2E2_FREEMAIL=5FENVFROM=5FEND=5FDIGIT_Enve?= =?ISO-8859-1?Q?lope-from_freemail_username_ends_in=0A_______________?= =?ISO-8859-1?Q?______________digit=0A_____________________________=5Bf?= =?ISO-8859-1?Q?lorencep04=28at=29gmail=2Ecom=5D=0A__1=2E2_RCVD=5FIN=5FB?= =?ISO-8859-1?Q?L=5FSPAMCOP=5FNET_RBL=3A_Received_via_a_relay_in_bl=2Es?= =?ISO-8859-1?Q?pamcop=2Enet=0A_______________=5BBlocked_-_see_=3Chtt?= =?ISO-8859-1?Q?ps=3A//www=2Espamcop=2Enet/bl=2Eshtml=3F74=2E125=2E22?= =?ISO-8859-1?Q?4=2E52=3E=5D=0A__0=2E0_URIBL=5FBLOCKED__________ADMIN?= =?ISO-8859-1?Q?ISTRATOR_NOTICE=3A_The_query_to_URIBL_was_blocked=2E=0A?= =?ISO-8859-1?Q?_____________________________See=0A__________________?= =?ISO-8859-1?Q?___________http=3A//wiki=2Eapache=2Eorg/spamassassin/?= =?ISO-8859-1?Q?DnsBlocklists#dnsbl-block=0A_________________________?= =?ISO-8859-1?Q?_____for_more_information=2E=0A______________________?= =?ISO-8859-1?Q?_______=5BURI=3A_notesao=2Ecom=5D=0A__0=2E0_HTML=5FME?= =?ISO-8859-1?Q?SSAGE___________BODY=3A_HTML_included_in_message=0A__?= =?ISO-8859-1?Q?0=2E7_HTML=5FIMAGE=5FONLY=5F28_____BODY=3A_HTML=3A_im?= =?ISO-8859-1?Q?ages_with_2400-2800_bytes_of_words?=
+X-Spam-Flag: NO
+
+--000000000000f4189d0641da4055
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello,
+I just want to confirm if I miss my class today and make it up Sunday would
+it be considered an excused absence?
+
+
+Jose Aldama
+
+On Thu, Oct 23, 2025, 4:36=E2=80=AFPM Free for Life Group <no-reply@ffl.not=
+esao.com>
+wrote:
+
+> [image: Free for Life Group]
+>
+> Hi Jose,
+>
+> *Your Thinking for a Change group is Thursday at 7:00 PM (Thursday,
+> October 23).*
+>
+> Your M; Miller Complex 3210 Miller Avenue, FW
+> <https://www.google.com/maps/search/3210+Miller+Avenue,+FW?entry=3Dgmail&=
+source=3Dg>
+> mandated T4C group is scheduled. M; Miller Complex 3210 Miller Avenue, FW
+> <https://www.google.com/maps/search/3210+Miller+Avenue,+FW?entry=3Dgmail&=
+source=3Dg>
+> and Marina Lebbie expect your presence. Please arrive early. *Lockout is
+> 7:10 PM*. Your presence is a mandatory stipulation. Incarceration occurs
+> for non-attendance. Enjoy life fearlessly by remaining in good standing
+> with CSCD & TDCJ. You've got this!
+>
+> Where: In person =E2=80=94 Arlington Office: 6850 Manhattan Blvd., Fort W=
+orth, TX
+> 76120
+> <https://www.google.com/maps/search/6850+Manhattan+Blvd.,+Fort+Worth,+TX+=
+76120?entry=3Dgmail&source=3Dg>
+>
+> Client Portal (for Make-Up Group Options):
+> FFL =E2=80=93 Client Portal <https://ffl.notesao.com/clientportal.php>
+>
+> Questions? Reply to this email with any attendance or payment concerns OR
+> call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+>
+> Blessings,
+> Free for Life Group
+> ------------------------------
+>
+> This reminder was sent by Free for Life Group. If you no longer wish to
+> receive emails at this address, unsubscribe here
+> <https://ffltest.notesao.com/unsubscribe.php?e=3Dflorencep04%40gmail.com&=
+t=3D63a1561780c7889766f217665c7ef313fd960edcfe706d871c6cadcbc0e0f373>
+> .
+>
+
+--000000000000f4189d0641da4055
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><div>Hello,</div><div dir=3D"auto">I just want to confirm=
+ if I miss my class today and make it up Sunday would it be considered an e=
+xcused absence?</div><div dir=3D"auto"><br></div><div><br></div><div data-s=
+martmail=3D"gmail_signature"><div dir=3D"ltr">Jose Aldama</div></div></div>=
+<br><div class=3D"gmail_quote gmail_quote_container"><div dir=3D"ltr" class=
+=3D"gmail_attr">On Thu, Oct 23, 2025, 4:36=E2=80=AFPM Free for Life Group &=
+lt;<a href=3D"mailto:no-reply@ffl.notesao.com">no-reply@ffl.notesao.com</a>=
+&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 =
+0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div style=3D"text-alig=
+n:center;margin:0 0 12px 0"><img src=3D"https://ffltest.notesao.com/ffllogo=
+.png" alt=3D"Free for Life Group" style=3D"max-width:100%;height:auto;displ=
+ay:inline-block"></div><p>Hi Jose,</p>
+
+<p><strong>Your Thinking for a Change group is Thursday at 7:00 PM (Thursda=
+y, October 23).</strong></p>
+
+<p>
+  Your M; Miller Complex <a href=3D"https://www.google.com/maps/search/3210=
++Miller+Avenue,+FW?entry=3Dgmail&amp;source=3Dg">3210 Miller Avenue, FW</a>=
+ mandated T4C group is scheduled. M; Miller Complex <a href=3D"https://www.=
+google.com/maps/search/3210+Miller+Avenue,+FW?entry=3Dgmail&amp;source=3Dg"=
+>3210 Miller Avenue, FW</a> and Marina Lebbie expect your presence.
+  Please arrive early. <em>Lockout is 7:10 PM</em>. Your presence is a mand=
+atory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remaini=
+ng in good standing with CSCD &amp; TDCJ.
+  You&#39;ve got this!
+</p>
+
+<p>Where: In person =E2=80=94 Arlington Office: <a href=3D"https://www.goog=
+le.com/maps/search/6850+Manhattan+Blvd.,+Fort+Worth,+TX+76120?entry=3Dgmail=
+&amp;source=3Dg">6850 Manhattan Blvd., Fort Worth, TX 76120</a></p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href=3D"https://ffl.notesao.com/clientportal.php" target=3D"_blank" re=
+l=3D"noreferrer">FFL =E2=80=93 Client Portal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR=
+ call during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style=3D"border-top:1px solid #=
+ddd;margin:24px 0"><p style=3D"font:12px/1.4 Arial,Helvetica,sans-serif;col=
+or:#666">This reminder was sent by Free for Life Group. If you no longer wi=
+sh to receive emails at this address, <a href=3D"https://ffltest.notesao.co=
+m/unsubscribe.php?e=3Dflorencep04%40gmail.com&amp;t=3D63a1561780c7889766f21=
+7665c7ef313fd960edcfe706d871c6cadcbc0e0f373" target=3D"_blank" rel=3D"noref=
+errer">unsubscribe here</a>.</p>
+</blockquote></div>
+
+--000000000000f4189d0641da4055--

@@ -32,3 +32,121 @@
 [05-Sep-2025 16:09:30 America/Chicago] No Program ID posted or invalid request.
 [05-Sep-2025 16:09:37 America/Chicago] Current Program in Session: ID=1, Name=DOEP
 [05-Sep-2025 16:09:37 America/Chicago] Program updated successfully: ID=9, Name=Marijuana Education
+[24-Oct-2025 09:52:58 America/Chicago] PHP Warning:  Undefined array key "note" in /home/notesao/lakeview/public_html/client_review_panel.php on line 259
+[24-Oct-2025 10:22:52 America/Chicago] PHP Warning:  Undefined variable $exit_reason_id in /home/notesao/lakeview/public_html/client-update.php on line 27
+[24-Oct-2025 10:22:52 America/Chicago] PHP Warning:  Undefined variable $exit_reason_id in /home/notesao/lakeview/public_html/client-update.php on line 27
+[24-Oct-2025 10:52:16 America/Chicago] PHP Warning:  Undefined variable $paid_amount_in in /home/notesao/lakeview/public_html/client-update.php on line 152
+[24-Oct-2025 10:52:16 America/Chicago] PHP Warning:  Undefined variable $paid_amount_in in /home/notesao/lakeview/public_html/client-update.php on line 153
+[24-Oct-2025 10:52:16 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/notesao/lakeview/public_html/client-update.php:152) in /home/notesao/lakeview/public_html/client-update.php on line 206
+[24-Oct-2025 12:34:07 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '<?=5,3,16,2,12,24,9,1?>)
+
+                                AND e.reason = 'Not...' at line 26 in /home/notesao/lakeview/public_html/home.php:606
+Stack trace:
+#0 /home/notesao/lakeview/public_html/home.php(606): mysqli->query('\n              ...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/home.php on line 606
+[24-Oct-2025 16:58:48 America/Chicago] Current Program in Session: ID=5, Name=Thinking for a Change
+[24-Oct-2025 16:58:48 America/Chicago] No Program ID posted or invalid request.
+[24-Oct-2025 16:58:51 America/Chicago] Current Program in Session: ID=5, Name=Thinking for a Change
+[24-Oct-2025 16:58:51 America/Chicago] Program updated successfully: ID=6, Name=Life Skills/Anti Theft
+[24-Oct-2025 16:59:01 America/Chicago] Current Program in Session: ID=6, Name=Life Skills/Anti Theft
+[24-Oct-2025 16:59:01 America/Chicago] No Program ID posted or invalid request.
+[24-Oct-2025 16:59:04 America/Chicago] Current Program in Session: ID=6, Name=Life Skills/Anti Theft
+[24-Oct-2025 16:59:04 America/Chicago] Program updated successfully: ID=7, Name=BIPP (male)
+[27-Oct-2025 11:58:59 America/Chicago] Current Program in Session: ID=11, Name=SAE
+[27-Oct-2025 11:58:59 America/Chicago] No Program ID posted or invalid request.
+[27-Oct-2025 11:59:04 America/Chicago] Current Program in Session: ID=11, Name=SAE
+[27-Oct-2025 11:59:04 America/Chicago] Program updated successfully: ID=4, Name=Parenting Education
+[27-Oct-2025 14:25:27 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'title' in 'SELECT' in /home/notesao/lakeview/public_html/client_review_panel.php:14
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(14): mysqli->prepare('SELECT id, titl...')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(56): sql_select_all(Object(mysqli), 'SELECT id, titl...', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 14
+[27-Oct-2025 14:27:26 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'program_id' in 'WHERE' in /home/notesao/lakeview/public_html/client_review_panel.php:14
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(14): mysqli->prepare('SELECT *\n      ...')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(56): sql_select_all(Object(mysqli), 'SELECT *\n      ...', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 14
+[27-Oct-2025 14:31:09 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'extra_json' in 'SELECT' in /home/notesao/lakeview/public_html/client_review_panel.php:14
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(14): mysqli->prepare('SELECT JSON_EXT...')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(61): sql_select_all(Object(mysqli), 'SELECT JSON_EXT...', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 14
+[27-Oct-2025 15:38:25 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'session_date' in 'SELECT' in /home/notesao/lakeview/public_html/client_review_panel.php:9
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(9): mysqli->prepare('SELECT session_...')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(606): sql_select_one(Object(mysqli), 'SELECT session_...', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 9
+[27-Oct-2025 15:40:59 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ts.session_date' in 'SELECT' in /home/notesao/lakeview/public_html/client_review_panel.php:9
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(9): mysqli->prepare('SELECT DATE(ts....')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(609): sql_select_one(Object(mysqli), 'SELECT DATE(ts....', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 9
+[27-Oct-2025 15:44:23 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ts.session_date' in 'SELECT' in /home/notesao/lakeview/public_html/client_review_panel.php:9
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(9): mysqli->prepare('SELECT DATE(ts....')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(609): sql_select_one(Object(mysqli), 'SELECT DATE(ts....', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 9
+[27-Oct-2025 15:44:26 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ts.session_date' in 'SELECT' in /home/notesao/lakeview/public_html/client_review_panel.php:9
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(9): mysqli->prepare('SELECT DATE(ts....')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(609): sql_select_one(Object(mysqli), 'SELECT DATE(ts....', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 9
+[27-Oct-2025 15:44:30 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''date') AS session_date
+                FROM attendance_record ar
+           ...' at line 1 in /home/notesao/lakeview/public_html/client_review_panel.php:9
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(9): mysqli->prepare('SELECT DATE(ts....')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(609): sql_select_one(Object(mysqli), 'SELECT DATE(ts....', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 9
+[27-Oct-2025 15:46:29 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'ar.status' in 'WHERE' in /home/notesao/lakeview/public_html/client_review_panel.php:9
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(9): mysqli->prepare('SELECT CAST(ts....')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(609): sql_select_one(Object(mysqli), 'SELECT CAST(ts....', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 9
+[27-Oct-2025 16:08:21 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'name' in 'SELECT' in /home/notesao/lakeview/public_html/client_review_panel.php:9
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(9): mysqli->prepare('SELECT name FRO...')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(53): sql_select_one(Object(mysqli), 'SELECT name FRO...', Array)
+#2 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#3 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 9
+[27-Oct-2025 16:10:35 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?' at line 1 in /home/notesao/lakeview/public_html/client_review_panel.php:21
+Stack trace:
+#0 /home/notesao/lakeview/public_html/client_review_panel.php(21): mysqli->prepare('SHOW COLUMNS FR...')
+#1 /home/notesao/lakeview/public_html/client_review_panel.php(29): column_exists(Object(mysqli), 'client_stage', 'name')
+#2 /home/notesao/lakeview/public_html/client_review_panel.php(34): pick_label_column(Object(mysqli), 'client_stage', Array)
+#3 /home/notesao/lakeview/public_html/client_review_panel.php(76): fetch_label_by_id(Object(mysqli), 'client_stage', 'id', 1, Array)
+#4 /home/notesao/lakeview/public_html/client-review.php(43): include_once('/home/notesao/l...')
+#5 {main}
+  thrown in /home/notesao/lakeview/public_html/client_review_panel.php on line 21
+[28-Oct-2025 10:18:19 America/Chicago] Current Program in Session: ID=4, Name=Parenting Education
+[28-Oct-2025 10:18:19 America/Chicago] No Program ID posted or invalid request.
+[28-Oct-2025 10:18:21 America/Chicago] Current Program in Session: ID=4, Name=Parenting Education
+[28-Oct-2025 10:18:21 America/Chicago] Program updated successfully: ID=7, Name=BIPP (male)
+[28-Oct-2025 10:19:46 America/Chicago] Current Program in Session: ID=4, Name=Parenting Education
+[28-Oct-2025 10:19:46 America/Chicago] No Program ID posted or invalid request.
+[28-Oct-2025 10:19:48 America/Chicago] Current Program in Session: ID=4, Name=Parenting Education
+[28-Oct-2025 10:19:48 America/Chicago] Program updated successfully: ID=7, Name=BIPP (male)
+[28-Oct-2025 10:19:54 America/Chicago] Current Program in Session: ID=7, Name=BIPP (male)
+[28-Oct-2025 10:19:54 America/Chicago] No Program ID posted or invalid request.
+[28-Oct-2025 10:19:57 America/Chicago] Current Program in Session: ID=7, Name=BIPP (male)
+[28-Oct-2025 10:19:57 America/Chicago] Program updated successfully: ID=4, Name=Parenting Education

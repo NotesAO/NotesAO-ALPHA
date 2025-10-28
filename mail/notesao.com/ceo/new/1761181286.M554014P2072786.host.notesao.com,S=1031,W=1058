@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id PdfpH2Z++WjSoB8AIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Wed, 22 Oct 2025 20:01:26 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Wed, 22 Oct 2025 20:01:26 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1vBjhm-00000008hDw-1mHH
+	for admin@notesao.com;
+	Wed, 22 Oct 2025 20:01:26 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for FraDon McGee
+X-PHP-Script: ffl.notesao.com/intake.php for 99.70.241.128
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: Precioustouch65@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1vBjhm-00000008hDw-1mHH@host.notesao.com>
+Date: Wed, 22 Oct 2025 20:01:26 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

@@ -1,0 +1,54 @@
+Return-Path: <noreply@github.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id +M7kDaQ38WjEtCcAIW4ynA
+	(envelope-from <noreply@github.com>); Thu, 16 Oct 2025 13:21:24 -0500
+Return-path: <noreply@github.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Thu, 16 Oct 2025 13:21:24 -0500
+Received: from out-27.smtp.github.com ([192.30.252.210]:56991)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <noreply@github.com>)
+	id 1v9SbN-0000000Av1b-0lkr
+	for admin@notesao.com;
+	Thu, 16 Oct 2025 13:21:24 -0500
+Received: from github.com (hubbernetes-node-91ceb1b.ash1-iad.github.net [10.56.226.74])
+	by smtp.github.com (Postfix) with ESMTPA id E676E600B96
+	for <admin@notesao.com>; Thu, 16 Oct 2025 11:21:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2023; t=1760638882;
+	bh=1i4VcZlYPDus/H91NjeQrGiK4/oQR8ucfM88Uy6IKeg=;
+	h=Date:From:To:Subject:From;
+	b=bhFf8P7ryAm+hRDpSsEqlxr6CUtwT2B4fbvio4MLWNDTS9LnW3I7RTApVOjZkq65/
+	 iqNN4HV9VMNEYOQHUEpqHy8M/tGayimwSd282tGzRaNscZqhbLTBFmibrz2SEtnjmm
+	 9L8Oc5U7/S4APLOKtvgnOXKPRZL1Bw2ncWGwKpfQ=
+Date: Thu, 16 Oct 2025 11:21:22 -0700
+From: GitHub <noreply@github.com>
+To: NotesAO <admin@notesao.com>
+Message-ID: <68f137a2e3a77_e510d89311b@sharedworker-99564f5f4-dbq5q.mail>
+Subject: [GitHub] A third-party OAuth application has been added to your
+ account
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Auto-Response-Suppress: All
+X-Spam-Status: No, score=-0.2
+X-Spam-Score: -1
+X-Spam-Bar: /
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__Hey_N?= =?ISO-8859-1?Q?otesAO!_A_third-party_OAuth_application_=28GitRead=29_?= =?ISO-8859-1?Q?with=0A____read=3Auser_and_user=3Aemail_scopes_was_re?= =?ISO-8859-1?Q?cently_authorized_to_access_your_account=2E=0A____Vis?= =?ISO-8859-1?Q?it_https=3A//github=2Ecom/settings/connections/applic?= =?ISO-8859-1?Q?ations/Ov23li8yMiyQXz=0A____=5B=2E=2E=2E=5D_=0A_Conte?= =?ISO-8859-1?Q?nt_analysis_details=3A___=28-0=2E2_points=2C_5=2E0_re?= =?ISO-8859-1?Q?quired=29=0A__pts_rule_name______________description=0A_?= =?ISO-8859-1?Q?----_----------------------_-------------------------?= =?ISO-8859-1?Q?-------------------------=0A__0=2E0_RCVD=5FIN=5FVALID?= =?ISO-8859-1?Q?ITY=5FCERTIFIED=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE?= =?ISO-8859-1?Q?=3A_The=0A_____________________________query_to_Valid?= =?ISO-8859-1?Q?ity_was_blocked=2E__See=0A___________________________?= =?ISO-8859-1?Q?__https=3A//knowledge=2Evalidity=2Ecom/hc/en-us/artic?= =?ISO-8859-1?Q?les/20961730681243=0A______________________________fo?= =?ISO-8859-1?Q?r_more_information=2E=0A_________________________=5B1?= =?ISO-8859-1?Q?92=2E30=2E252=2E210_listed_in_sa-trusted=2Ebondedsend?= =?ISO-8859-1?Q?er=2Eorg=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FRPBL=5FB?= =?ISO-8859-1?Q?LOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The_query_to=0A_?= =?ISO-8859-1?Q?_____________________________Validity_was_blocked=2E_?= =?ISO-8859-1?Q?_See=0A_____________________________https=3A//knowled?= =?ISO-8859-1?Q?ge=2Evalidity=2Ecom/hc/en-us/articles/20961730681243=0A_?= =?ISO-8859-1?Q?_____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?____________________________=5B192=2E30=2E252=2E210_l?= =?ISO-8859-1?Q?isted_in_bl=2Escore=2Esenderscore=2Ecom=5D=0A__0=2E0_?= =?ISO-8859-1?Q?RCVD=5FIN=5FVALIDITY=5FSAFE=5FBLOCKED_RBL=3A_ADMINIST?= =?ISO-8859-1?Q?RATOR_NOTICE=3A_The_query_to=0A______________________?= =?ISO-8859-1?Q?________Validity_was_blocked=2E__See=0A______________?= =?ISO-8859-1?Q?_______________https=3A//knowledge=2Evalidity=2Ecom/h?= =?ISO-8859-1?Q?c/en-us/articles/20961730681243=0A___________________?= =?ISO-8859-1?Q?___________for_more_information=2E=0A________________?= =?ISO-8859-1?Q?_____________=5B192=2E30=2E252=2E210_listed_in_sa-acc?= =?ISO-8859-1?Q?redit=2Ehabeas=2Ecom=5D=0A_-0=2E0_SPF=5FPASS_________?= =?ISO-8859-1?Q?______SPF=3A_sender_matches_SPF_record=0A_-0=2E1_DKIM?= =?ISO-8859-1?Q?=5FVALID=5FAU__________Message_has_a_valid_DKIM_or_DK?= =?ISO-8859-1?Q?_signature_from_author's=0A__________________________?= =?ISO-8859-1?Q?___domain=0A__0=2E1_DKIM=5FSIGNED____________Message_?= =?ISO-8859-1?Q?has_a_DKIM_or_DK_signature=2C_not_necessarily_valid=0A_?= =?ISO-8859-1?Q?-0=2E1_DKIM=5FVALID_____________Message_has_at_least_?= =?ISO-8859-1?Q?one_valid_DKIM_or_DK_signature=0A_-0=2E1_DKIM=5FVALID?= =?ISO-8859-1?Q?=5FEF__________Message_has_a_valid_DKIM_or_DK_signatu?= =?ISO-8859-1?Q?re_from=0A_____________________________envelope-from_?= =?ISO-8859-1?Q?domain=0A_-0=2E0_DKIMWL=5FWL=5FHIGH_________DKIMwl=2Eo?= =?ISO-8859-1?Q?rg_-_High_trust_sender?=
+X-Spam-Flag: NO
+
+Hey NotesAO!
+
+A third-party OAuth application (GitRead) with read:user and user:email scopes was recently authorized to access your account.
+Visit https://github.com/settings/connections/applications/Ov23li8yMiyQXzudDlCr for more information.
+
+To see this and other security events for your account, visit https://github.com/settings/security-log
+
+If you run into problems, please contact support by visiting https://github.com/contact
+
+Thanks,
+The GitHub Team
+

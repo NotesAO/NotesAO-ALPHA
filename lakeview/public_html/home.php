@@ -5,21 +5,18 @@
 include_once 'auth.php';
 check_loggedin($con); // from your existing code
 
+// dynamic allowed required_sessions from config.php
+$ALLOWED_REQ  = program_required_list();                         // [5,3,16,2,12,2,24,24,9,12,1,12]
+$allowedList  = implode(',', array_map('intval', $ALLOWED_REQ)); // "5,3,16,2,12,2,24,24,9,12,1,12"
+
 // (A) Program switch logic
 // Hardcode or query the programs available
 $hardcoded_programs = [
-        1 => "DOEP",
-        2 => "DWIE",
-        3 => "DWII",
-        4 => "Parenting Education",
-        5 => "Thinking for a Change",
-        6 => "Life Skills/Anti Theft",
-        7 => "BIPP (male)",
-        8 => "BIPP (female)",
-        9 => "Marijuana Education",
-        10 => "Marijuana Intervention",
-        11 => "SAE"
-    ];
+  1=>"DOEP",2=>"DWIE",3=>"DWII",4=>"Parenting Education",5=>"Thinking for a Change",
+  6=>"Life Skills/Anti Theft",7=>"BIPP (male)",8=>"BIPP (female)",
+  9=>"Marijuana Education",10=>"Marijuana Intervention",11=>"SAE",12=>"Anger Management"
+];
+
 
 // Current session-based program ID/Name
 $program_id   = $_SESSION['program_id']   ?? 2;              // default to ID=2 (BIPP male), etc.
@@ -593,7 +590,8 @@ $eightDaysFromNow = date('Y-m-d', strtotime('-8 days'));
                             OR (c.phone_number     IS NULL OR c.phone_number = '')
                             OR (c.gender_id        = 1)
                             OR (
-                                c.required_sessions NOT IN (10,18,27,30,52)
+                                c.required_sessions NOT IN ($allowedList)
+
                                 AND e.reason = 'Not Exited'
                                 )
                             OR (
@@ -629,10 +627,11 @@ $eightDaysFromNow = date('Y-m-d', strtotime('-8 days'));
                                     $reasons[] = "Gender Not Specified";
                                 }
                                 // Check required_sessions
-                                if (!in_array($row['required_sessions'], [10,18,27,30,52]) &&
+                                if (!in_array((int)$row['required_sessions'], $ALLOWED_REQ, true) &&
                                     $row['exit_reason'] === 'Not Exited') {
                                     $reasons[] = "Required Sessions Invalid";
                                 }
+
                                 if ($row['program_id'] != 4 && empty($row['intake_packet'])) {
                                     $reasons[] = "No Intake Packet";
                                 }

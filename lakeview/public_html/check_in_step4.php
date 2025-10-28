@@ -23,6 +23,11 @@ if (isset($_POST['client_id'])) {
     $client_id = $_POST['client_id'];
 }
 $client = get_client_info(trim($client_id));
+$paid_source = $client['paid_source'] ?? 'Weekly';
+$paid_amount = isset($client['paid_amount']) ? (float)$client['paid_amount'] : 0.0;
+$is_weekly   = ($paid_source === 'Weekly');
+$paid_intake = (!$is_weekly && $paid_amount > 0);
+
 if (!isset($client)) {
     // URL doesn't contain valid id parameter. Redirect to error page
     header("location: error.php");
@@ -367,26 +372,60 @@ function buildCalendar($date, $attendance, $excused, $unexcused)
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-1">
-                                <small class="text-muted">Balance</small>
-                                <?php
-                                if ($client["balance"] < 0) {
-                                    echo "<h5 class='text-danger'>";
-                                } else {
-                                    echo "<h5 class='text-success'>";
-                                }
-                                echo htmlspecialchars("$" . $client["balance"]) . "</h5>";
-                                ?>
-                            </div>
-                            <div class="col-1">
-                                <small class="text-muted">Pays</small>
-                                <input name="fee" value="<?php echo htmlspecialchars($client["fee"]); ?>" type="number" placeholder="0.00" step="0.01" min="0" max="999" class="form-control" />
-                            </div>
-                            <div class="col-auto">
-                                <small class="text-muted">Amount Collected @ Check In</small>
-                                <input name="paid" value="<?php echo htmlspecialchars($client["fee"]); ?>" type="number" placeholder="0.00" step="0.01" min="0" max="999" class="form-control" />
-                            </div>
+                        <div class="col-1">
+                            <small class="text-muted">Balance</small>
+                            <?php if ($client["balance"] < 0): ?>
+                            <h5 class='text-danger'><?= htmlspecialchars("$".$client["balance"]) ?></h5>
+                            <?php else: ?>
+                            <h5 class='text-success'><?= htmlspecialchars("$".$client["balance"]) ?></h5>
+                            <?php endif; ?>
                         </div>
+
+                        <div class="col-auto">
+                            <small class="text-muted">Payment Plan</small>
+                            <h5>
+                            <?php if ($is_weekly): ?>
+                                <span class="badge badge-primary">Weekly</span>
+                            <?php else: ?>
+                                <span class="badge badge-info">One-time: <?= htmlspecialchars($paid_source) ?></span>
+                                <?php if ($paid_intake): ?>
+                                <span class="badge badge-success">Paid at intake</span>
+                                <?php else: ?>
+                                <span class="badge badge-warning">Not paid at intake</span>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                            </h5>
+                        </div>
+
+                        <div class="col-1">
+                            <small class="text-muted">Pays</small>
+                            <input
+                            name="fee"
+                            value="<?= htmlspecialchars($client["fee"]) ?>"
+                            type="number" placeholder="0.00" step="0.01" min="0" max="999"
+                            class="form-control"
+                            <?= $is_weekly ? '' : 'disabled' ?>
+                            />
+                            <?php if (!$is_weekly): ?>
+                            <input type="hidden" name="fee" value="<?= htmlspecialchars($client["fee"]) ?>">
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="col-auto">
+                            <small class="text-muted">Amount Collected @ Check In</small>
+                            <input
+                            name="paid"
+                            value="<?= $is_weekly ? htmlspecialchars($client["fee"]) : '0.00' ?>"
+                            type="number" placeholder="0.00" step="0.01" min="0" max="999"
+                            class="form-control"
+                            <?= $paid_intake ? 'readonly' : '' ?>
+                            />
+                            <?php if ($paid_intake): ?>
+                            <small class="text-muted">Already paid at intake</small>
+                            <?php endif; ?>
+                        </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-1">
                                 <small class="text-muted">Attended</small>

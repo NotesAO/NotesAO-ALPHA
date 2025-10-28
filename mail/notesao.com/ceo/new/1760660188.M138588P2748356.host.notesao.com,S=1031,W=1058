@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id ov/zBtyK8WjE7ykAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Thu, 16 Oct 2025 19:16:28 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Thu, 16 Oct 2025 19:16:28 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1v9Y8y-0000000BWyE-01PG
+	for admin@notesao.com;
+	Thu, 16 Oct 2025 19:16:28 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Javier Oliveros
+X-PHP-Script: ffl.notesao.com/intake.php for 173.41.7.27
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: joliverosj2002@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1v9Y8y-0000000BWyE-01PG@host.notesao.com>
+Date: Thu, 16 Oct 2025 19:16:28 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

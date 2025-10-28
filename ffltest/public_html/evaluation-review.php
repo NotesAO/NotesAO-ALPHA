@@ -810,8 +810,8 @@ function vtc_render_simple_block(array $row, array $keys, string $title): string
     } else {
       $s = strtolower(trim((string)$raw));
       // Only remap booleans on SASSI blocks
-      if (stripos($title, 'sassi') !== false && ($s === '1' || $s === '0')) {
-        $val = ($s === '1') ? 'True' : 'False';
+      if (stripos($title, 'sassi') !== false && ($s === '0' || $s === '1')) {
+        $val = ($s === '0') ? 'True' : 'False';
       } else {
         $val = h((string)$raw);
       }
@@ -1042,6 +1042,13 @@ function vtc_render_consents(array $row): string {
 
 // ---- BHS (Beck Hopelessness Scale) scoring & renderer ----
 
+// TEMP: DB stores BHS flipped (True=0, False=1). Invert once here.
+function vtc_bhs_bool01($raw): ?int {
+  $b = vtc_bool01($raw);           // 1=true, 0=false, null
+  if ($b === null) return null;
+  return 1 - $b;                   // flip for BHS only
+}
+
 // normalize stored answers to 1/0/null (true/false)
 function vtc_bool01($raw): ?int {
   if ($raw === '' || $raw === null) return null;
@@ -1065,7 +1072,7 @@ function vtc_bhs_score(array $row, array $keys): array {
     $num = null;
     if (preg_match('/^(\d+)_/', (string)$k, $m)) $num = (int)$m[1];
 
-    $b = vtc_bool01($row[$k] ?? null);  // 1=true, 0=false, null=blank
+    $b = vtc_bhs_bool01($row[$k] ?? null);  // 1=true, 0=false, null=blank
     if ($b === null) continue;
 
     if ($num !== null && in_array($num, $reverse_nums, true)) {
@@ -1112,12 +1119,20 @@ function vtc_render_bhs_block(array $row): string {
   $out .= '<colgroup><col style="width:64px"><col><col style="width:180px"></colgroup>';
   $out .= '<thead class="thead-light"><tr><th class="text-center">#</th><th>Item</th><th class="text-center">Answer</th></tr></thead><tbody>';
 
-  $i = 1;
-  foreach ($keys as $k) {
-    $raw = $row[$k] ?? '';
-    $val = ($raw === '' || $raw === null) ? '<span class="text-muted">—</span>' : h((string)$raw);
-    $out .= '<tr><td class="text-center">'.($i++).'</td><td>'.h(vtc_labelize($k)).'</td><td class="text-center text-nowrap">'.$val.'</td></tr>';
-  }
+    $i = 1;
+    foreach ($keys as $k) {
+      $raw = $row[$k] ?? '';
+      if ($raw === '' || $raw === null) {
+        $val = '<span class="text-muted">—</span>';
+      } else {
+        $b = vtc_bhs_bool01($raw);           // 1, 0, or null
+        if     ($b === 1) $val = 'T';    // show T for 1/true
+        elseif ($b === 0) $val = 'F';    // show F for 0/false
+        else              $val = h((string)$raw); // fallback: show as-is
+      }
+      $out .= '<tr><td class="text-center">'.($i++).'</td><td>'.h(vtc_labelize($k)).'</td><td class="text-center text-nowrap">'.$val.'</td></tr>';
+    }
+
   $out .= '</tbody></table></div>';
 
   return $out;
@@ -2002,8 +2017,9 @@ if (!function_exists('pai_qkey_candidates')) {
                 echo render_kv_table($one, $exclude_pai_items);
             ?>
             <?php else: ?>
-                <?= render_kv_table($one, $exclude_keys_common) ?>
+                <?= vtc_render_review($one, $VTC_DEMOGRAPHIC_FIELDS, $VTC_NARRATIVE_FIELDS) ?>
             <?php endif; ?>
+
         <?php else: ?>
             <div class="text-muted">No matching submission found for this client.</div>
         <?php endif; ?>

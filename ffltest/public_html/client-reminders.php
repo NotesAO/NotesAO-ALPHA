@@ -1502,7 +1502,217 @@ $order = day_ordering();
 
     </div>
 
+  <?php elseif (preg_match('/^\d+$/', (string)$gid)): /* ---- GROUP VIEW (NUMERIC GID) ---- */ ?>
+    <?php
+      $gidNum  = (int)$gid;
+      $gmeta   = $GROUP_META[$gidNum] ?? ['name'=>'','weekday'=>'','time'=>'','address'=>''];
+      $clients = get_clients_for_group($con, $gidNum);
+    ?>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="mb-0">
+        <i class="fas fa-users"></i>
+        <?= htmlspecialchars($gmeta['name'] ?: "Group #$gidNum") ?>
+        <?php if (!empty($gmeta['time'])): ?>
+          <span class="muted">(<?= htmlspecialchars($gmeta['time']) ?>)</span>
+        <?php endif; ?>
+      </h3>
+      <div class="btn-group">
+        <a href="client-reminders.php" class="btn btn-light"><i class="fas fa-arrow-left"></i> All Groups</a>
+        <form method="post" class="mb-0">
+          <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
+          <input type="hidden" name="action" value="quick">
+          <input type="hidden" name="gid" value="<?= (int)$gidNum ?>">
+          <button class="btn btn-success"><i class="fas fa-bolt"></i> Quick Send</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Right: composer -->
+      <div class="col-lg-4 order-lg-2">
+        <div class="card sticky-actions">
+          <div class="card-header"><strong><i class="fas fa-envelope"></i> Compose to Selected</strong></div>
+          <div class="card-body">
+            <form method="post" id="sendGroupForm">
+              <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
+              <input type="hidden" name="action" value="send_group">
+              <input type="hidden" name="gid" value="<?= (int)$gidNum ?>">
+
+              <div class="form-group">
+                <label>From</label>
+                <input type="text" class="form-control" value="<?= htmlspecialchars(defined('MAIL_FROM') ? MAIL_FROM : 'no-reply@ffl.notesao.com') ?>" readonly>
+              </div>
+              <div class="form-group">
+                <label>Subject</label>
+                <input type="text" class="form-control" name="email_subject" value="<?= htmlspecialchars($DEF_SUBJECT) ?>">
+              </div>
+              <div class="form-group">
+                <label>Body</label>
+                <div class="wysiwrap" data-for="email_body_group">
+                  <div class="wysi-toolbar">
+                    <button type="button" data-cmd="bold"><i class="fas fa-bold"></i></button>
+                    <button type="button" data-cmd="italic"><i class="fas fa-italic"></i></button>
+                    <button type="button" data-cmd="underline"><i class="fas fa-underline"></i></button>
+                    <button type="button" data-cmd="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
+                    <button type="button" data-cmd="insertOrderedList"><i class="fas fa-list-ol"></i></button>
+                    <button type="button" data-cmd="formatBlock" data-value="p">P</button>
+                    <button type="button" data-cmd="formatBlock" data-value="h3">H3</button>
+                    <button type="button" data-cmd="createLink">Link</button>
+                    <button type="button" data-cmd="removeFormat">Clear</button>
+                    <button type="button" data-toggle-source>Source</button>
+                  </div>
+                  <div class="wysi-editor" contenteditable="true"><?= $DEF_BODY ?></div>
+                  <textarea class="wysi-source form-control"></textarea>
+                </div>
+                <textarea name="email_body" id="email_body_group" class="d-none"></textarea>
+                <small class="muted">Placeholders: {{first_name}}, {{last_name}}, {{program_name}}, {{group_day}}, {{group_time}}, {{group_link}}</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-paper-plane"></i> Send to Selected
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left: roster -->
+      <div class="col-lg-8 order-lg-1">
+        <?php if (empty($clients)): ?>
+          <div class="alert alert-info">No active clients with email in this group.</div>
+        <?php else: ?>
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <strong>Roster</strong>
+              <div class="select-all text-primary" data-target="roster-<?= (int)$gidNum ?>">
+                <i class="far fa-check-square"></i> Select all
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-sm table-hover mb-0">
+                <thead class="thead-light">
+                  <tr><th style="width:36px;"></th><th>Client</th><th>Email</th></tr>
+                </thead>
+                <tbody id="roster-<?= (int)$gidNum ?>">
+                  <?php foreach ($clients as $c): ?>
+                    <tr>
+                      <td><input type="checkbox" class="client-check" name="client_ids[]" form="sendGroupForm" value="<?= (int)$c['id'] ?>"></td>
+                      <td><?= htmlspecialchars(($c['last_name'] ?? '').', '.($c['first_name'] ?? '')) ?></td>
+                      <td><?= htmlspecialchars($c['email'] ?? '') ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+
+  <?php elseif (preg_match('/^t4c:(sunday|monday|tuesday|wednesday|thursday|friday|saturday)$/i', (string)$gid, $mm)): /* ---- T4C PSEUDO OPEN ---- */ ?>
+    <?php
+      $day = strtolower($mm[1]);
+      [$t4cByDay, $t4cVirtual] = get_t4c_day_rosters($con);
+      $clients = $t4cByDay[$day] ?? [];
+      $meta = t4c_meta_for_day($day);
+      $gmeta = ['name'=>"Thinking for a Change — ".ucfirst($day),'weekday'=>ucfirst($day),'time'=>$meta['time'],'address'=>$meta['address']];
+    ?>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="mb-0"><i class="fas fa-users"></i> T4C — <?= htmlspecialchars(ucfirst($day)) ?> (In-Person)</h3>
+      <div class="btn-group">
+        <a href="client-reminders.php" class="btn btn-light"><i class="fas fa-arrow-left"></i> All Groups</a>
+        <form method="post" class="mb-0">
+          <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
+          <input type="hidden" name="action" value="quick">
+          <input type="hidden" name="gid" value="<?= htmlspecialchars('t4c:'.$day) ?>">
+          <button class="btn btn-success"><i class="fas fa-bolt"></i> Quick Send</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 order-lg-2">
+        <div class="card sticky-actions">
+          <div class="card-header"><strong><i class="fas fa-envelope"></i> Compose to Selected</strong></div>
+          <div class="card-body">
+            <form method="post" id="sendGroupForm">
+              <input type="hidden" name="csrf" value="<?= htmlspecialchars(csrf_token()) ?>">
+              <input type="hidden" name="action" value="send_group">
+              <input type="hidden" name="gid" value="<?= htmlspecialchars('t4c:'.$day) ?>">
+
+              <div class="form-group">
+                <label>From</label>
+                <input type="text" class="form-control" value="<?= htmlspecialchars(defined('MAIL_FROM') ? MAIL_FROM : 'no-reply@ffl.notesao.com') ?>" readonly>
+              </div>
+              <div class="form-group">
+                <label>Subject</label>
+                <input type="text" class="form-control" name="email_subject" value="<?= htmlspecialchars($DEF_SUBJECT) ?>">
+              </div>
+              <div class="form-group">
+                <label>Body</label>
+                <div class="wysiwrap" data-for="email_body_group">
+                  <div class="wysi-toolbar">
+                    <button type="button" data-cmd="bold"><i class="fas fa-bold"></i></button>
+                    <button type="button" data-cmd="italic"><i class="fas fa-italic"></i></button>
+                    <button type="button" data-cmd="underline"><i class="fas fa-underline"></i></button>
+                    <button type="button" data-cmd="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
+                    <button type="button" data-cmd="insertOrderedList"><i class="fas fa-list-ol"></i></button>
+                    <button type="button" data-cmd="formatBlock" data-value="p">P</button>
+                    <button type="button" data-cmd="formatBlock" data-value="h3">H3</button>
+                    <button type="button" data-cmd="createLink">Link</button>
+                    <button type="button" data-cmd="removeFormat">Clear</button>
+                    <button type="button" data-toggle-source>Source</button>
+                  </div>
+                  <div class="wysi-editor" contenteditable="true"><?= $DEF_BODY ?></div>
+                  <textarea class="wysi-source form-control"></textarea>
+                </div>
+                <textarea name="email_body" id="email_body_group" class="d-none"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-paper-plane"></i> Send to Selected
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 order-lg-1">
+        <?php if (empty($clients)): ?>
+          <div class="alert alert-info">No active clients with email for this T4C day.</div>
+        <?php else: ?>
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <strong>Roster</strong>
+              <div class="select-all text-primary" data-target="roster-t4c-<?= htmlspecialchars($day) ?>">
+                <i class="far fa-check-square"></i> Select all
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-sm table-hover mb-0">
+                <thead class="thead-light">
+                  <tr><th style="width:36px;"></th><th>Client</th><th>Email</th></tr>
+                </thead>
+                <tbody id="roster-t4c-<?= htmlspecialchars($day) ?>">
+                  <?php foreach ($clients as $c): ?>
+                    <tr>
+                      <td><input type="checkbox" class="client-check" name="client_ids[]" form="sendGroupForm" value="<?= (int)$c['id'] ?>"></td>
+                      <td><?= htmlspecialchars(($c['last_name'] ?? '').', '.($c['first_name'] ?? '')) ?></td>
+                      <td><?= htmlspecialchars($c['email'] ?? '') ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+
   <?php elseif ($gid===''): ?>
+
 
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h3 class="mb-0"><i class="fas fa-bell"></i> Group Reminders</h3>

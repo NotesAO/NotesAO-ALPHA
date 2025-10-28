@@ -268,8 +268,8 @@ if (!empty($_SESSION['show_thank_you_once'])) {
     <body>
 
     <div class="jumbotron bg-white text-center shadow-sm py-4 mb-4">
-      <a href="https://freeforlifegroup.com" target="_blank" rel="noopener">
-        <img src="lakeviewlogo.png" alt="Free for Life Group"
+      <a href="https://lakevieweducation.com/" target="_blank" rel="noopener">
+        <img src="lakeviewlogo.png" alt="Lakeview Education"
              class="img-fluid mb-1" style="max-width:60%;height:auto">
       </a>
     </div>
@@ -286,8 +286,8 @@ if (!empty($_SESSION['show_thank_you_once'])) {
           <strong>Remember:</strong> use the <em>first link</em> in your e‑mail
           to join your group session.
         </p>
-        <a href="https://freeforlifegroup.com" class="btn btn-primary btn-lg">
-          FreeForLifeGroup.com
+        <a href="https://lakevieweducation.com/" class="btn btn-primary btn-lg">
+          Lakeview Education Home
         </a>
       </div>
     </div>

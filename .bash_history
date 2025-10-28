@@ -1,476 +1,3 @@
-for e in entries:
-    meta = e["meta"]
-    dob  = meta.get("1t1xj-value")                 # DOB field key
-    if not dob:
-        continue
-    fn = meta["u1ptl34-value"]["first"].lower()    # first name field key
-    ln = meta["u1ptl34-value"]["last"].lower()     # last  name field key
-
-    for cid, cfn, cln in by_dob.get(dob, []):
-        score = (difflib.SequenceMatcher(None, fn, cfn).ratio() +
-                 difflib.SequenceMatcher(None, ln, cln).ratio()) / 2
-        if score >= THRESH:
-            matches.append((cid, fn.title(), ln.title(), dob, f"{score:.2f}"))
-            break
-
-# ---- output ------------------------------------------------------------------
-print(f"\nMatched {len(matches)} API entries (DOB exact, name ≥{THRESH*100:.0f}%):\n")
-for cid, fn, ln, dob, sc in sorted(matches, key=lambda x: (ln, fn)):
-    print(f"{cid:5}  {fn} {ln}  ({dob})  score={sc}")
-PY
-
-#1747163661
-python3 ~/ffl_match.py
-#1747163758
-which python3
-#1747163758
-python3 -V
-#1747163758
-which pip3
-#1747163758
-pip3 --version
-#1747163792
-ython3 -m pip install --user --upgrade requests pymysql
-#1747163908
-python3 -m pip install --user --upgrade requests pymysql
-#1747163939
-python3 -m ensurepip --upgrade --user   # installs pip into your user site-packages
-#1747163941
-python3 -m pip install --user --upgrade pip  # upgrade to the latest pip
-#1747163943
-python3 -m pip install --user requests pymysql
-#1747163948
-python3 - <<'PY'
-import sys, importlib
-for pkg in ("requests", "pymysql"):
-    importlib.import_module(pkg)
-print(sys.executable, "imports are OK")
-PY
-
-#1747164207
-nano ~/ffl_match.py
-#1747164303
-python3 ~/ffl_match.py
-#1747164374
-python3 - <<'PY'
-import requests, json, pprint
-resp = requests.get(
-    "https://freeforlifegroup.com/wp-json/frm/v2/forms/15/entries?per_page=2&meta=1",
-    auth=("F3IZ-ONWL-6QLT-5MWH", "x"), timeout=15
-).json()
-pprint.pp(resp)
-PY
-
-#1747164585
-nano ~/ffl_match.py
-#1747164664
-python3 ~/ffl_match.py
-#1747249767
-# compare ffltest → ctc and write a report
-#1747249767
-diff -r --brief      --exclude='*.log' --exclude='error_log' --exclude='*.log.*'      --exclude='logs'  --exclude='*/logs/*'      --exclude='*.tmp' --exclude='*.cache'      --exclude='*.bak' --exclude='*.old'      /home/notesao/ffltest /home/notesao/ctc   | tee ~/diff_ffltest_vs_ctc.txt
-#1747251987
-diff -r --brief      --exclude='*.log' --exclude='error_log' --exclude='*.log.*'      --exclude='logs'  --exclude='*/logs/*'      --exclude='*.tmp' --exclude='*.cache'      --exclude='*.bak' --exclude='*.old'      /home/notesao/ffltest /home/notesao/dwag   | tee ~/diff_ffltest_vs_dwag.txt
-#1747320066
-diff -r --brief      --exclude='*.log' --exclude='error_log' --exclude='*.log.*'      --exclude='logs'  --exclude='*/logs/*'      --exclude='*.tmp' --exclude='*.cache'      --exclude='*.bak' --exclude='*.old'      /home/notesao/ffltest /home/notesao/safatherhood   | tee ~/diff_ffltest_vs_safatherhood.txt
-#1747321681
-diff -r --brief      --exclude='*.log' --exclude='error_log' --exclude='*.log.*'      --exclude='logs'  --exclude='*/logs/*'      --exclude='*.tmp' --exclude='*.cache'      --exclude='*.bak' --exclude='*.old'      /home/notesao/ffltest /home/notesao/transform   | tee ~/diff_ffltest_vs_transform.txt
-#1747340440
-# from your home directory (notesao@host ~)$
-#1747340440
-grep -RIn --color     --exclude-dir="{logs,GeneratedDocuments}"     --exclude="*.{log,tmp,cache,bak,old,zip,pdf,png,jpg,jpeg,gif,svg,ico}"     -e 'facilitator' /home/notesao/ctc/public_html/
-#1747679629
-diff -r --brief --new-file --exclude='.git' --exclude='vendor'      /home/notesao/sandbox/ /home/notesao/ffltest/ | sort
-#1747679793
-diff -r --brief --new-file --exclude='*.log' --include='*.php'      /home/notesao/sandbox/ /home/notesao/ffltest/ | sort
-#1747680053
-diff -r --brief --new-file --exclude='.git' --exclude='vendor'      /home/notesao/sandbox/ /home/notesao/ffltest/ | sort      > /home/notesao/ffltestvsandbox.txt 2>&1
-#1747680146
-# run from *any* directory on the server
-#1747680146
-tmp="$(mktemp)" && diff -r --brief --new-file      --exclude='.git' --exclude='vendor'      /home/notesao/sandbox /home/notesao/ffltest   | awk '/ differ$/{print $2}'   | grep -Ev '(/logs/|/error_log$|\.((docx)|(pdf)|(png)|(zip)|(ico))$)'   | sort > "$tmp" && while read -r f; do     twin="${f/\/sandbox\//\/ffltest\/}"     [ -f "$f" ] && [ -f "$twin" ] && diff -u "$f" "$twin"; done < "$tmp" > /home/notesao/ffltest_vs_sandbox_detailed.patch && rm "$tmp"
-#1747680147
-echo "Detailed diff saved to /home/notesao/ffltest_vs_sandbox_detailed.patch"
-#1747680553
-# Make yourself a scratch directory
-#1747680553
-mkdir -p ~/patch_work
-#1747680553
-# Pull only the files we care about into a smaller diff
-#1747680553
-files='
- public_html/helpers.php
- public_html/home.php
- public_html/navbar.php
- public_html/auth.php
- public_html/client-update.php
- public_html/client-image-upload.php
- sql_functions.php
-'
-#1747680553
-cd ~
-#1747680553
-diff -uNr --exclude='.git' --exclude='vendor'      $(echo "$files" | sed "s_^_sandbox/_")       $(echo "$files" | sed "s_^_ffltest/_")       > ~/patch_work/core_deltas.patch
-#1747680576
-rsync -a ~/sandbox/ ~/sandbox_merge_test/
-#1747680577
-patch -p2 -d ~/sandbox_merge_test/ < ~/patch_work/core_deltas.patch
-#1747680655
-# --------------------------------------------
-#1747680655
-#  build a compact patch of the seven key files
-#1747680655
-#  -------------------------------------------
-#1747680655
-mkdir -p ~/patch_work                    # no error if it already exists
-#1747680655
-files='
- public_html/helpers.php
- public_html/home.php
- public_html/navbar.php
- public_html/auth.php
- public_html/client-update.php
- public_html/client-image-upload.php
- sql_functions.php
-'
-#1747680655
-# create the unified diff
-#1747680655
-diff -uNr --new-file --exclude='.git' --exclude='vendor'   $(echo "$files" | sed "s_^_sandbox/_")    $(echo "$files" | sed "s_^_ffltest/_")    > ~/patch_work/core_deltas.patch 2>/dev/null    # silence “permission denied” lines
-#1747680655
-echo
-#1747680655
-echo "✓ core_deltas.patch written to  ~/patch_work  ($(wc -l < ~/patch_work/core_deltas.patch)  lines)"
-#1747680655
-echo "  view with:   less -R ~/patch_work/core_deltas.patch"
-#1747680739
-cd /home/notesao           # <-- important!
-#1747680739
-files='
- public_html/helpers.php
- public_html/home.php
- public_html/navbar.php
- public_html/auth.php
- public_html/client-update.php
- public_html/client-image-upload.php
- sql_functions.php
-'
-#1747680739
-diff -uNr --new-file --exclude='.git' --exclude='vendor'   $(echo "$files" | sed 's_^_sandbox/_')    $(echo "$files" | sed 's_^_ffltest/_')    > ~/patch_work/core_deltas.patch 2>/dev/null
-#1747680739
-echo "✓ $(wc -l < ~/patch_work/core_deltas.patch) lines written to  ~/patch_work/core_deltas.patch"
-#1747680747
-files='
- public_html/helpers.php
- public_html/home.php
- public_html/navbar.php
- public_html/auth.php
- public_html/client-update.php
- public_html/client-image-upload.php
- sql_functions.php
-'
-#1747680748
-diff -uNr --new-file --exclude='.git' --exclude='vendor'   $(echo "$files" | sed 's_^_/home/notesao/sandbox/_')    $(echo "$files" | sed 's_^_/home/notesao/ffltest/_')    > ~/patch_work/core_deltas.patch 2>/dev/null
-#1747680748
-echo "✓ $(wc -l < ~/patch_work/core_deltas.patch) lines written to  ~/patch_work/core_deltas.patch"
-#1747680751
-less -R ~/patch_work/core_deltas.patch
-#1747680855
-# 0) adjust these if the account name or paths ever change
-#1747680855
-SBOX=/home/notesao/sandbox
-#1747680855
-TEST=/home/notesao/ffltest
-#1747680855
-OUT=/home/notesao/patch_work/core_deltas.patch    # where you want the diff
-#1747680855
-# 1) create the output directory if it doesn’t exist
-#1747680855
-mkdir -p "$(dirname "$OUT")"
-#1747680855
-# 2) make a list of just the files you care about
-#1747680855
-cat > /tmp/filelist.txt <<'EOF'
-public_html/helpers.php
-public_html/home.php
-public_html/navbar.php
-public_html/auth.php
-public_html/client-update.php
-public_html/client-image-upload.php
-sql_functions.php
-EOF
-
-#1747680855
-# 3) build the diff   ( --new-file         == show adds/deletes
-#1747680855
-#                       --binary           == handle binaries safely
-#1747680855
-#                       --exclude='.git'   == ignore VCS clutter )
-#1747680855
-diff -uNr --binary --new-file      --exclude='.git' --exclude='vendor'       $(sed "s|^|$SBOX/|" /tmp/filelist.txt)       $(sed "s|^|$TEST/|" /tmp/filelist.txt)       > "$OUT" 2>/dev/null          # squelch harmless permission‑denied msgs
-#1747680855
-# 4) confirm
-#1747680855
-echo "Wrote $(wc -l < "$OUT") lines to $OUT"
-#1747680920
-diff -uNr --binary --new-file      --exclude='.git' --exclude='vendor'      --exclude='*/logs/*' --exclude='*error_log'      --exclude='*.{png,ico,jpg,jpeg,pdf,docx,zip}'      /home/notesao/sandbox /home/notesao/ffltest      > /home/notesao/patch_work/full_sandbox_vs_ffltest.patch 2>/dev/null
-#1747756037
-chmod +x /home/notesao/sandbox/sandbox_update.sh && cd /home/notesao/sandbox && bash -x ./sandbox_update.sh 2>&1 | tee /tmp/sandbox_update_$(date +%F_%H%M).log
-#1747756059
-chmod +x /home/notesao/sandbox/scripts/sandbox_update.sh && cd /home/notesao/sandbox && bash -x ./sandbox_update.sh 2>&1 | tee /tmp/sandbox_update_$(date +%F_%H%M).log
-#1747756165
-chmod +x /home/notesao/sandbox/scripts/sandbox_update.sh
-#1747756170
-cd /home/notesao/sandbox/scripts
-#1747756175
-bash -x ./sandbox_update.sh 2>&1 | tee /tmp/sandbox_update_$(date +%F_%H%M).log
-#1747756305
-ls -lh /home/notesao/sandbox/backups/
-#1747926497
-gunzip -c ~/sandbox/backups/sandbox_backup_pre_update_2025-05-22.sql.gz \ | mysql -h localhost -u clinicnotepro_sandbox_app -p'PF-m[T-+pF%g' clinicnotepro_sandbox
-#1747926521
-gunzip -c /home/notesao/sandbox/backups/sandbox_backup_pre_update_2025-05-22.sql.gz \ | mysql -h localhost -u clinicnotepro_sandbox_app -p'PF-m[T-+pF%g' clinicnotepro_sandbox
-#1747926547
-# example paths – adjust to match your file names / dates
-#1747926547
-gunzip -c ~/sandbox/backups/client_pre_scramble.sql.gz   | mysql -h localhost -u clinicnotepro_sandbox_app -p'PF-m[T-+pF%g' clinicnotepro_sandbox
-#1747926640
-# list everything with dates / sizes so it’s easy to pick out the right file
-#1747926640
-ls -lh ~/sandbox/backups
-#1747926674
-# one long command (wraps here just for readability)
-#1747926674
-gunzip -c ~/sandbox/backups/sandbox_backup_pre_update_2025-05-22.sql.gz   | mysql -h localhost -u clinicnotepro_sandbox_app           -p'PF-m[T-+pF%g' clinicnotepro_sandbox
-#1748012493
-diff -rupN      --exclude='*.log'      --exclude='*.csv'      --exclude='*.pdf'      /home/notesao/ffltest /home/notesao/sandbox      > /home/notesao/ffltestvsandbox.txt
-#1748013178
-diff -rupN      --exclude='logs'           --exclude='*.log'          --exclude='*.csv'          --exclude='*.pdf'          /home/notesao/ffltest  /home/notesao/sandbox      > /home/notesao/ffltestvsandbox.txt
-#1748013246
-diff -rupN      --exclude='logs'      \        # skips every scripts/logs/ directory
-#1748013246
-     --exclude='error_log' \        # skips public_html/error_log files
-#1748013246
-     --exclude='*.log'          --exclude='*.csv'          --exclude='*.pdf'          /home/notesao/ffltest  /home/notesao/sandbox      > /home/notesao/ffltestvsandbox.txt
-#1748013288
-diff -rupN   --exclude=logs   --exclude=error_log   --exclude='*.log'   --exclude='*.csv'   --exclude='*.pdf'   /home/notesao/ffltest /home/notesao/sandbox   > /home/notesao/ffltestvsandbox.txt
-#1749233425
-grep -RIn --color=auto "globalclinics" /home/notesao 2>/dev/null
-#1749233723
-grep -RIn --color=auto "/home/notesao/clinicpublic/config.php" /home/notesao 2>/dev/null
-#1749235508
-# From any location:
-#1749235508
-tree -a -L 2 /home/notesao/NotePro-Report-Generator
-#1749236617
-tail -f /home/notesao/NotePro-Report-Generator/fetch_data_errors.log
-#1749242248
-find /home/notesao -type d -name .git -prune -print | less
-#1749243208
-rm -rf /home/notesao/denton/.git
-#1749665083
-php /home/notesao/ffltest/public_html/mar2.php > ~/mar2_output.html
-#1749665109
-php -d variables_order=EGPCS     -r 'parse_str("action=Generate&start_date=2025-05-01&end_date=2025-05-31&program_id=2", $_POST); include "/home/notesao/ffltest/public_html/mar2.php";' > ~/mar2_may_output.html
-#1749745756
-ps aux | grep apache2
-#1749745761
-ps aux | grep -E 'nginx|php-fpm'
-#1749745812
-sudo ls -l /proc/1553412/fd
-#1749745829
-sudo cat /proc/1553412/cmdline | tr '\0' ' '
-#1749745844
-sudo kill -9 1553412
-#1749745891
-tail -n 100 /home/notesao/logs/ctc_notesao_com.php.error.log
-#1749746465
-ps -eo pid,etime,pcpu,pmem,cmd | grep 'php-fpm: pool ctc_notesao_com' | grep -v grep
-#1749747020
-# try graceful first …
-#1749747020
-sudo kill -SIGTERM 1554698 1554781
-#1749747040
-tail -n 100 /home/notesao/logs/ctc_notesao_com.php.error.log
-#1749747132
-ps -eo pid,etime,pcpu,pmem,cmd | grep 'php-fpm: pool ctc_notesao_com' | grep -v grep
-#1749747145
-sudo kill -SIGTERM 1570702
-#1749747225
-tail -n 100 /home/notesao/logs/ctc_notesao_com.php.error.log
-#1749747349
-ps -eo pid,etime,pcpu,pmem,cmd | grep 'php-fpm: pool ctc_notesao_com' | grep -v grep
-#1749747357
-sudo kill -SIGTERM 1571851
-#1749747368
-tail -n 100 /home/notesao/logs/ctc_notesao_com.php.error.log
-#1749756140
-ps -eo pid,etime,pcpu,pmem,cmd | grep 'php-fpm: pool ctc_notesao_com' | grep -v grep
-#1749756150
-sudo kill -SIGTERM 1572799
-#1749756167
-tail -n 100 /home/notesao/logs/ctc_notesao_com.php.error.log
-#1749756283
-ps -eo pid,etime,pcpu,pmem,cmd | grep 'php-fpm: pool ctc_notesao_com' | grep -v grep
-#1749756300
-sudo kill -SIGTERM 1628147
-#1749756316
-ps -eo pid,etime,pcpu,pmem,cmd | grep 'php-fpm: pool ctc_notesao_com' | grep -v grep
-#1749756323
-tail -n 100 /home/notesao/logs/ctc_notesao_com.php.error.log
-#1749777451
-scp -P 522 -r notesao@50.28.37.79:/home/notesao/NotePro-Report-Generator ~/Downloads/
-#1749777628
-scp -P 522 -r notesao@50.28.37.79:/home/notesao/NotePro-Report-Generator ~/Downloads/generator/
-#1749777722
-ls -al ~/Downloads/generator/
-#1749823573
-tree -a -L 3 /home/notesao
-#1749823619
-tree -a -L 3 /home/notesao > /home/notesao/notesao_structure.txt
-#1749839728
-grep -Rni --color=auto -E 'ffl|free[[:space:]]+for[[:space:]]+life' /home/notesao/bestoption/
-#1749839769
-grep -Rni --color=auto      --exclude='*.log'      --exclude='*.log.*'      --exclude='*.gz'      --exclude-dir='log'      --exclude-dir='logs'      -E 'ffl|free[[:space:]]+for[[:space:]]+life'      /home/notesao/bestoption/
-#1749839798
-grep -Rni --color=auto --exclude='*.log' --exclude='*.log.*' --exclude='*.gz' --exclude-dir='log' --exclude-dir='logs' -E 'ffl|free[[:space:]]+for[[:space:]]+life' /home/notesao/bestoption/
-#1749840448
-grep -RIn --binary-files=without-match --color=auto      --exclude-dir={.git,log,logs} --exclude='*.log*'      --include='*.{php,js,ts,jsx,tsx,py,sh,pl,rb,html,css}'      -E 'ffl|free[[:space:]]+for[[:space:]]+life' /home/notesao/bestoption/
-#1749840519
-grep -RIn --binary-files=without-match --color=auto      --exclude-dir={.git,log,logs}      --exclude='*error_log*' --exclude='*.log' --exclude='*.log.*'      --include='*.{php,inc,js,ts,jsx,tsx,py,sh,pl,rb,html,css,sql}'      -E 'ffl|free[[:space:]]+for[[:space:]]+life' /home/notesao/bestoption/
-#1749840626
-grep -RIn --binary-files=without-match --color=auto      --exclude-dir={.git,log,logs}      --exclude='*error_log*' --exclude='*.log*'      --include='*.{php,inc,js,ts,jsx,tsx,py,sh,pl,rb,html,css,sql}'      -i -E 'ffl|free[[:space:]]+for[[:space:]]+life' /home/notesao/bestoption/
-#1749840727
-grep -RIn --binary-files=without-match --color=always      --exclude-dir={.git,log,logs}      --exclude='*error_log*' --exclude='*.log*'      --include='*.{php,inc,js,ts,jsx,tsx,py,sh,pl,rb,html,css,sql}'      -i -E 'ffl|free[[:space:]]+for[[:space:]]+life' /home/notesao/bestoption/   | LC_ALL=C sort -f
-#1749841074
-mkdir -p /home/notesao/bestoption && rsync -a /home/notesao/ffltest/ /home/notesao/bestoption/
-#1749841087
-grep -RIn --binary-files=without-match --color=always      --exclude-dir={.git,log,logs}      --exclude='*error_log*' --exclude='*.log*'      --include='*.{php,inc,js,ts,jsx,tsx,py,sh,pl,rb,html,css,sql}'      -i -E 'ffl|free[[:space:]]+for[[:space:]]+life' /home/notesao/bestoption/   | LC_ALL=C sort -f
-#1750098900
-apachetcl -S
-#1750099091
-curl -svI http://50.28.37.79/ 2>&1 | head -20
-#1750099099
-grep -RIl --exclude-dir={.git,logs} "Report Generator" ~/public_html 2>/dev/null
-#1750099105
-stat -c '%n %y' "$(readlink -f /path/to/file/from/grep)"
-#1750099152
-ss -ltnp 2>/dev/null | grep ':80 ' || netstat -ltnp 2>/dev/null | grep ':80 '
-#1750099159
-pgrep -af gunicorn
-#1750099164
-grep -RIl "Report Generator" /home/notesao 2>/dev/null | head
-#1750099180
-apachectl -S 2>&1 | head -15
-#1750099303
-mkdir -p /etc/apache2/conf.d/userdata/std/2_4/_default/
-#1750099330
-sudo mkdir -p /etc/apache2/conf.d/userdata/std/2_4/_default/
-#1750099403
-echo 'RedirectMatch 302 ^/(.*)$ https://notesao.com/$1'  | sudo tee /etc/apache2/conf.d/userdata/std/2_4/_default/redirect-ip.conf >/dev/null
-#1750099416
-sudo /scripts/ensure_vhost_includes --all-users
-#1750099422
-sudo apachectl graceful
-#1750099442
-curl -I http://50.28.37.79/
-#1750099474
-sudo ss -pltn | grep ':80'
-#1750099483
-sudo lsof -iTCP:80 -sTCP:LISTEN -P -n
-#1750099512
-# look through all cPanel include-files for “8002” or “ProxyPass /”
-#1750099512
-sudo egrep -RInH '8002|ProxyPass[[:space:]]+/|RewriteRule[[:space:]]+\^/.*\[P'      /etc/apache2/conf.d/includes /etc/apache2/conf.d/*.conf
-#1750099540
-sudo cp /etc/apache2/conf.d/includes/pre_main_global.conf         /etc/apache2/conf.d/includes/pre_main_global.conf.bak
-#1750099540
-sudo cp /etc/apache2/conf.d/report.notepro.co.conf         /etc/apache2/conf.d/report.notepro.co.conf.bak
-#1750099544
-sudo nano /etc/apache2/conf.d/includes/pre_main_global.conf
-#1750099574
-sudo nano /etc/apache2/conf.d/report.notepro.co.conf
-#1750099607
-sudo /scripts/ensure_vhost_includes --all-users   # cPanel helper
-#1750099607
-sudo apachectl configtest                         # should say “Syntax OK”
-#1750099608
-sudo apachectl graceful                           # reload without downtime
-#1750099616
-curl -I http://50.28.37.79/
-#1750099653
-sudo nano /etc/apache2/conf.d/report.notepro.co.conf
-#1750099702
-sudo mv /etc/apache2/conf.d/report.notepro.co.conf         /etc/apache2/conf.d/report.notepro.co.conf.disabled
-#1750099702
-sudo /scripts/ensure_vhost_includes --all-users
-#1750099703
-sudo apachectl configtest     # should say “Syntax OK”
-#1750099703
-sudo apachectl graceful
-#1750099707
-curl -I  http://50.28.37.79/       # should now give your 302 → notesao.com
-#1750099775
-sudo nano /etc/apache2/conf.d/notepro.co.conf          # file name may differ
-#1750099812
-sudo apachectl -S | less
-#1750099907
-sudo nano +314 /etc/apache2/conf/httpd.conf
-#1750100287
-sudo mkdir -p /etc/apache2/conf.d/userdata/std/2_4/_default
-#1750100287
-sudo tee  /etc/apache2/conf.d/userdata/std/2_4/_default/00-redirect-ip.conf >/dev/null <<'EOF'
-<VirtualHost 50.28.37.79:80>
-    ServerName 50.28.37.79
-    Redirect 302 / https://notesao.com/
-</VirtualHost>
-EOF
-
-#1750100295
-sudo /scripts/ensure_vhost_includes --all-users   # writes the new include paths
-#1750100295
-sudo apachectl configtest                         # should say “Syntax OK”
-#1750100295
-sudo apachectl graceful                           # reloads Apache
-#1750100298
-curl -I http://50.28.37.79/
-#1750100298
-# → 302 Location: https://notesao.com/
-#1750101452
-sudo /usr/local/cpanel/bin/dbmaptool clinicnotepro       --type mysql  --dbs 'clinicnotepro_bestoption'
-#1750101468
-sudo /usr/local/cpanel/bin/dbmaptool clinicnotepro       --type mysql  --dbusers 'clinicnotepro_bestoption_app'
-#1750101477
-/usr/local/cpanel/bin/update_db_cache --force clinicnotepro
-#1750101591
-sudo -i
-#1750101642
-# double-check the YAML now contains the DB
-#1750101642
-sudo grep -R clinicnotepro_bestoption /var/cpanel/databases/clinicnotepro.yaml
-#1750101682
-# still as the *normal* user is fine:
-#1750101682
-sudo /usr/local/cpanel/bin/dbmaptool clinicnotepro --type mysql --list
-#1750101721
-sudo -i                               # become root
-#1750190722
-sudo grep -R --line-number --color=auto -E "^\s*disable_functions\s*=.*shell_exec"      /etc/php* /opt/cpanel/ea-php*/root/etc /home/notesao 2>/dev/null
-#1750190819
-sudo -u notesao which php
-#1750190848
-php -i | grep -E "Loaded Configuration File|Scan this dir"
-#1750190855
-sudo grep -n --color=auto -E "^\s*disable_functions\s*=.*shell_exec"      /opt/cpanel/ea-php81/root/etc/php.ini      /opt/cpanel/ea-php81/root/etc/php.d/*.ini 2>/dev/null
-#1750190889
-# run exactly as shown
-#1750190889
-sudo grep -n --color=auto -E "^\s*disable_functions\s*=.*\bshell_exec\b"      /opt/cpanel/ea-php81/root/etc/php.ini      /opt/cpanel/ea-php81/root/etc/php.d/*.ini 2>/dev/null
-#1750190923
-sudo grep -R -n --color=auto -E "disable_functions.*\bshell_exec\b"      /opt/cpanel/ea-php81/root/etc/php-fpm.d 2>/dev/null
-#1750190954
-# back-up the active pool file
-#1750190954
 sudo cp /opt/cpanel/ea-php81/root/etc/php-fpm.d/sandbox.notesao.com.conf         /opt/cpanel/ea-php81/root/etc/php-fpm.d/sandbox.notesao.com.conf.bak-$(date +%F)
 #1750190954
 # open it in nano (or vim)
@@ -1771,3 +1298,413 @@ comm -13 <(find ffltest -type f -printf '%P\n' | sort) <(find dwag -type f -prin
 git --no-pager diff --no-index --word-diff=color   --word-diff-regex='[^[:space:]]+'   /home/notesao/dwag/public_html/intake-review.php   /home/notesao/safatherhood/public_html/intake-review.php | less -R
 #1760386179
 sdiff -w 180 --suppress-common-lines   /home/notesao/dwag/public_html/intake-review.php   /home/notesao/safatherhood/public_html/intake-review.php
+#1760559362
+sudo du -sh /home/notesao
+#1760558777
+# 1) confirm tar still running
+#1760558777
+pgrep -u notesao -fl tar
+#1760558777
+# 2) watch archive growth (stop anytime with Ctrl+C)
+#1760558777
+f=$(ls -1t /home/notesao/backups/pre-git-clean-fixed-*.tgz | head -n1)
+#1760558777
+while sleep 2; do ls -lh "$f"; done
+#1760559896
+pgrep -u notesao -fl tar || echo "no tar process"
+#1760559896
+ls -lh /home/notesao/backups/pre-git-clean-fixed-20251015-145620.tgz
+#1760559896
+tar -tzf /home/notesao/backups/pre-git-clean-fixed-20251015-145620.tgz | head -n 10
+#1760559896
+tar -tzf /home/notesao/backups/pre-git-clean-fixed-20251015-145620.tgz >/dev/null
+#1760559949
+pgrep -u notesao -fl tar || echo "no tar process"
+#1760559972
+# integrity check
+#1760559972
+tar -tzf /home/notesao/backups/pre-git-clean-fixed-20251015-145620.tgz >/dev/null
+#1760560080
+tar -tzf /home/notesao/backups/pre-git-clean-fixed-20251015-145620.tgz >/dev/null && echo "archive OK"
+#1760560443
+find /home/notesao -type d -name .git -prune -print | sort
+#1760560451
+find /home/notesao -type f -name .git -print | sort
+#1760560458
+find /home/notesao -maxdepth 3 -type f \( -name .gitmodules -o -name .gitattributes \) -print | sort
+#1760560507
+ts=$(date +"%Y%m%d-%H%M%S")
+#1760560507
+find /home/notesao -type d -name .git -prune -print | sort   | tee /home/notesao/backups/git-metadata-$ts.txt
+#1760560903
+find /home/notesao -type d -name .git -prune -exec rm -rf {} +
+#1760560914
+rm -f /home/notesao/Downloads/generator/.gitattributes       /home/notesao/Downloads/.gitattributes       /home/notesao/NotePro-Report-Generator/.gitattributes
+#1760560920
+find /home/notesao -name .git
+#1760560920
+git -C /home/notesao/NotePro-Report-Generator status 2>&1 | head -n1
+#1760560920
+ls -la /home/notesao/NotePro-Report-Generator | head
+#1760561537
+ssh -T git@github.com
+#1760561739
+mkdir -p ~/.ssh
+#1760561739
+chmod 700 ~/.ssh
+#1760561739
+chmod 600 ~/.ssh/id_rsa_github
+#1760561739
+chmod 644 ~/.ssh/id_rsa_github.pub
+#1760561739
+cat > ~/.ssh/config <<'EOF'
+Host github.com
+  HostName ssh.github.com
+  User git
+  Port 443
+  IdentityFile /home/notesao/.ssh/id_rsa_github
+  IdentitiesOnly yes
+EOF
+
+#1760561739
+chmod 600 ~/.ssh/config
+#1760561748
+ssh -T git@github.com
+#1760562099
+cd /home/notesao
+#1760562099
+git init
+#1760562099
+git branch -M main
+#1760562099
+git remote add origin git@github.com:NotesAO/NotesAO-ALPHA.git
+#1760562099
+git add -A
+#1760562177
+cat > /home/notesao/.gitignore <<'EOF'
+# secrets
+config/config.php
+.env
+.env.*
+
+# backups and archives
+backups/
+*.tgz
+*.tar
+*.tar.gz
+*.zip
+*.7z
+
+# outputs
+*.log
+logs/
+log/
+tmp/
+cache/
+GeneratedDocuments/
+Generated_Reports*/
+NotePro-Report-Generator/csv/
+public_html/*/uploads/
+
+# binaries you don’t want in git
+*.pdf
+*.docx
+*.odt
+*.xlsx
+*.xls
+
+# vendors
+node_modules/
+vendor/
+
+# python
+__pycache__/
+*.pyc
+venv*/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+
+# misc
+*_bak.php
+*.orig
+~$*.*
+.~lock*.#
+EOF
+
+#1760562181
+cd /home/notesao
+#1760562181
+git rm -r --cached . 2>/dev/null || true
+#1760562181
+git add -A
+#1760562336
+git commit -m "initial commit from live server (with .gitignore)"
+#1760562360
+git config --global user.name "NotesAO Server"
+#1760562360
+git config --global user.email "admin@notesao.com"
+#1760562366
+git commit -m "initial commit from live server (with .gitignore)"
+#1760562381
+git push -u origin main
+#1760562563
+cd /home/notesao
+#1760562563
+cat >> .gitignore <<'EOF'
+.vscode-server/
+Downloads/
+patch_work/
+EOF
+
+#1760562567
+git rm -r --cached .vscode-server Downloads patch_work
+#1760562577
+git ls-files -z | xargs -0 -I{} bash -lc 'f="{}"; [ -f "$f" ] && [ $(stat -c%s "$f") -gt $((90*1024*1024)) ] && echo "$f"'
+#1760562659
+git commit --amend -m "initial commit from live server (pruned large binaries and downloads)"
+#1760562664
+git push -u origin main
+#1760562735
+cd /home/notesao
+#1760562735
+cat >> .gitignore <<'EOF'
+# NPRG installers and bundles
+NotePro-Report-Generator/LibreOffice_*/
+NotePro-Report-Generator/**/*.rpm
+NotePro-Report-Generator/**/*.deb
+NotePro-Report-Generator/**/*.pkg
+NotePro-Report-Generator/**/*.tar
+NotePro-Report-Generator/**/*.tar.*
+NotePro-Report-Generator/**/*.tgz
+NotePro-Report-Generator/**/*.zip
+EOF
+
+#1760562740
+git rm -r --cached --   "NotePro-Report-Generator/LibreOffice_24.8.2_Linux_x86-64_rpm.tar.gz.1"   "NotePro-Report-Generator/LibreOffice_24.8.2.1_Linux_x86-64_rpm" 2>/dev/null || true
+#1760562746
+git commit --amend -m "initial commit (prune large installers and bundles)"
+#1760562750
+git push -u origin main
+#1760563253
+cd /home/notesao
+#1760563253
+git add -A
+#1760563253
+git commit -m "baseline after initial import"
+#1760563253
+git push
+#1760640179
+# Fast (if ripgrep is installed)
+#1760640179
+rg -n --hidden -S -g '!vendor' -g '!node_modules' 'absence_logic\.php' /home/notesao
+#1760640179
+# Portable grep version
+#1760640179
+grep -RIn --include='*.{php,js,ts,html}' --exclude-dir={vendor,node_modules,.git}   -E 'absence_logic\.php|/absence_logic\.php' /home/notesao 2>/dev/null
+#1760640179
+# Narrow to include/require calls
+#1760640179
+grep -RIn --include='*.php' --exclude-dir={vendor,node_modules,.git}   -E '(include|require)(_once)?\s*\(?["'\''].*absence_logic\.php' /home/notesao
+#1760641539
+php -l /home/notesao/dwag/public_html/absence_logic.php
+#1760641643
+bash -x /home/notesao/dwag/scripts/create_absence.sh
+#1760641878
+cd /home/notesao/dwag/scripts/logs
+#1760641878
+ls -lt absence_*.html | head
+#1760641878
+tail -n 120 $(ls -t absence_*.html | head -1) | sed -n 's/.*\(Checking attendance\|using \|not creating absence\|insertAbsenceRecord\|ERROR\).*/\0/p'
+#1760642062
+bash -x /home/notesao/dwag/scripts/create_absence.sh
+#1760642062
+log=$(ls -t /home/notesao/dwag/scripts/logs/absence_*.html | head -1)
+#1760642062
+grep -E "Checking attendance|start_date|insertAbsenceRecord|awaiting|ERROR|Fatal" "$log" | tail -200
+#1760642179
+bash -x /home/notesao/dwag/scripts/create_absence.sh
+#1760642179
+log=$(ls -t /home/notesao/dwag/scripts/logs/absence_*.html | head -1)
+#1760642179
+grep -E "Checking attendance|start_date|insertAbsenceRecord|awaiting|ERROR|Fatal" "$log" | tail -200
+#1760642729
+bash -x /home/notesao/dwag/scripts/create_absence.sh
+#1760642729
+log=$(ls -t /home/notesao/dwag/scripts/logs/absence_*.html | head -1)
+#1760642729
+grep -E "double attendance|excused prior absence|insertAbsenceRecord|client 11" "$log" | tail -80
+#1760642899
+bash -x /home/notesao/dwag/scripts/create_absence.sh
+#1760642899
+log=$(ls -t /home/notesao/dwag/scripts/logs/absence_*.html | head -1)
+#1760642899
+grep -E "client 11|excused prior absence|insertAbsenceRecord|awaiting|ERROR|Fatal" "$log" | tail -120
+#1760644460
+bash -x /home/notesao/dwag/scripts/create_absence.sh
+#1760644460
+log=$(ls -t /home/notesao/dwag/scripts/logs/absence_*.html | head -1)
+#1760644460
+grep -E "Checking attendance|insertAbsenceRecord|awaiting|ERROR|Fatal" "$log" | tail -200
+#1760644665
+bash -x /home/notesao/dwag/scripts/create_absence.sh
+#1760645058
+cd /home/notesao/
+#1760645084
+cd /home/notesao && out="notesao_tree_$(date +%Y%m%d).txt" && {   echo "== FILE TREE (excluding individual .log* files) ==";   tree -a -F --prune -I '*.log|*.log.*|*.gz|*.bz2|*.xz';   echo; echo "== LOG FILE INDEX (directory → count of logs) ==";   find . -type f \( -name '*.log' -o -name '*.log.*' -o -name '*.gz' -o -name '*.bz2' -o -name '*.xz' \)     -printf '%h\n' | sort | uniq -c | sort -nr;   echo; echo "== DOCX FILES ==";   find . -type f \( -iname '*.docx' -o -iname '*.doc' \) -print | sort; } | tee "$out"
+#1760645547
+cd /home/notesao && out="notesao_tree_$(date +%Y%m%d).txt" && IGNORE='*.log|*.log.*|*.gz|*.bz2|*.xz|*.zip|*.tar|*.tar.gz|*.tgz|*.rpm|AbsenceReport_*.pdf|absence_date_time_*.html|completion_date_time*.html|node_modules|vendor|.git|.vscode|__pycache__|.venv|venv|build|dist|.cache|.npm|.local|.cpanel|.softaculous|.spamassassin|.ssh|.trash|.caldav|http-v2|new_venv|LibreOffice_*' && {   echo "== FILE TREE (filtered) ==";   tree -a -F --prune -I "$IGNORE";   echo; echo "== LOG FILE INDEX (directory → count) ==";   find . -type f \( -name '*.log' -o -name '*.log.*' -o -name 'absence_date_time_*.html' -o -name 'completion_date_time*.html' \)     -printf '%h\n' | sort | uniq -c | sort -nr;   echo; echo "== DOCX FILES ==";   find . -type f \( -iname '*.docx' -o -iname '*.doc' \) -print | sort; } | tee "$out"
+#1760645764
+cd /home/notesao && out="notesao_tree_$(date +%Y%m%d).txt" && IGNORE='
+*.log|*.log.*|*.gz|*.bz2|*.xz|*.zip|*.7z|*.rar|*.tar|*.tar.*|*.tgz|*.txz|
+*.bak|*.old|*.tmp|*.swp|*.iso|*.deb|*.rpm|*.whl|
+AbsenceReport_*.pdf|absence_date_time*.pdf|absence_date_time*.html|completion_*.html|
+node_modules|vendor|__pycache__|.venv|venv|venv311|new_venv|build|dist|
+.git|.vscode|.idea|.pytest_cache|.ruff_cache|.mypy_cache|.tox|coverage|
+.cache|.npm|.local|.cpanel|.softaculous|.spamassassin|.ssh|.trash|.caldav|.dotnet|
+http-v2|LibreOffice_*|.config/libreoffice
+' && {   echo "== FILE TREE (filtered) ==";   tree -a -F --prune -I "$(echo "$IGNORE" | tr -d '\n' | sed 's/|$//')";   echo; echo "== LOG FILE INDEX (directory → count) ==";   find . -type f \( -name '*.log' -o -name '*.log.*' -o -name '*.gz' -o -name '*.bz2' -o -name '*.xz' \)     -printf '%h\n' | sort | uniq -c | sort -nr;   echo; echo "== DOCX FILES ==";   find . -type f \( -iname '*.docx' -o -iname '*.doc' \) -print | sort; } | tee "$out"
+#1760645841
+cd /home/notesao && out="notesao_tree_$(date +%Y%m%d).txt" && IGNORE='
+*.log|*.log.*|*.gz|*.bz2|*.xz|*.zip|*.7z|*.rar|*.tar|*.tar.*|*.tgz|*.txz|
+*.bak|*.old|*.tmp|*.swp|*.iso|*.deb|*.rpm|*.whl|
+AbsenceReport_*.pdf|absence_date_time*.pdf|absence_date_time*.html|completion_*.html|
+node_modules|vendor|__pycache__|.venv|venv|venv311|new_venv|build|dist|
+.git|.vscode|.vscode-server|.vscode-server-insiders|.idea|.pytest_cache|.ruff_cache|.mypy_cache|.tox|coverage|
+.cache|.npm|.local|.cpanel|.softaculous|.spamassassin|.ssh|.trash|.caldav|.dotnet|
+http-v2|LibreOffice_*|.config/libreoffice
+' && {   echo "== FILE TREE (filtered) ==";   tree -a -F --prune -I "$(echo "$IGNORE" | tr -d '\n' | sed 's/|$//')";   echo; echo "== LOG FILE INDEX (directory → count) ==";   find . -type f \( -name '*.log' -o -name '*.log.*' -o -name '*.gz' -o -name '*.bz2' -o -name '*.xz' \)     -printf '%h\n' | sort | uniq -c | sort -nr;   echo; echo "== DOCX FILES ==";   find . -type f \( -iname '*.docx' -o -iname '*.doc' \) -print | sort; } | tee "$out"
+#1760645921
+cd /home/notesao && out="notesao_tree_$(date +%Y%m%d).txt" && IGNORE='
+*.log|*.log.*|*.gz|*.bz2|*.xz|*.zip|*.7z|*.rar|*.tar|*.tar.*|*.tgz|*.txz|
+*.bak|*.old|*.tmp|*.swp|*.iso|*.deb|*.rpm|*.whl|
+AbsenceReport_*.pdf|absence_date_time*.pdf|absence_date_time*.html|completion_*.html|
+node_modules|vendor|__pycache__|.venv|venv|venv311|new_venv|build|dist|tmp|
+.git|.vscode|.vscode-server|.vscode-server-insiders|.idea|.pytest_cache|.ruff_cache|.mypy_cache|.tox|coverage|
+.cache|.npm|.local|.cpanel|.softaculous|.spamassassin|.ssh|.trash|.caldav|.dotnet|
+http-v2|LibreOffice_*|.config/libreoffice
+' && {   echo "== FILE TREE (filtered) ==";   tree -a -F --prune -I "$(echo "$IGNORE" | tr -d '\n' | sed 's/|$//')";   echo; echo "== LOG FILE INDEX (directory → count) ==";   find . -type f \( -name '*.log' -o -name '*.log.*' -o -name '*.gz' -o -name '*.bz2' -o -name '*.xz' \)     -printf '%h\n' | sort | uniq -c | sort -nr;   echo; echo "== DOCX FILES ==";   find . -type f \( -iname '*.docx' -o -iname '*.doc' \) -print | sort; } | tee "$out"
+#1760646151
+cd /home/notesao && out="notesao_tree_$(date +%Y%m%d).txt" && IGNORE='
+*.log|*.log.*|*.gz|*.bz2|*.xz|*.zip|*.7z|*.rar|*.tar|*.tar.*|*.tgz|*.txz|
+*.bak|*.old|*.tmp|*.swp|*.iso|*.deb|*.rpm|*.whl|
+AbsenceReport_*.pdf|absence_date_time*.pdf|absence_date_time*.html|completion_*.html|
+node_modules|vendor|__pycache__|.venv|venv|venv311|new_venv|build|dist|tmp|
+.git|.vscode|.vscode-server|.vscode-server-insiders|.idea|.pytest_cache|.ruff_cache|.mypy_cache|.tox|coverage|
+.cache|.npm|.local|.cpanel|.softaculous|.spamassassin|.ssh|.trash|.caldav|.dotnet|
+http-v2|LibreOffice_*|.config/libreoffice|GeneratedDocuments
+' && {   echo "== FILE TREE (filtered) ==";   tree -a -F --prune -I "$(echo "$IGNORE" | tr -d '\n' | sed 's/|$//')";   echo; echo "== LOG FILE INDEX (directory → count) ==";   find . -type f \( -name '*.log' -o -name '*.log.*' -o -name '*.gz' -o -name '*.bz2' -o -name '*.xz' \)     -printf '%h\n' | sort | uniq -c | sort -nr;   echo; echo "== DOCX FILES ==";   find . -type f \( -iname '*.docx' -o -iname '*.doc' \) -print | sort;   echo; echo "== GeneratedDocuments (folders only, contents hidden) ==";   find . -type d -name 'GeneratedDocuments' -print | sort; } | tee "$out"
+#1760646277
+cd /home/notesao && out="notesao_tree_$(date +%Y%m%d).txt" && IGNORE='
+*.log|*.log.*|error_log|error_log*|
+*.gz|*.bz2|*.xz|*.zip|*.7z|*.rar|*.tar|*.tar.*|*.tgz|*.txz|
+*.bak|*.old|*.tmp|*.swp|*.iso|*.deb|*.rpm|*.whl|*.class|*.jar|*.pack|
+AbsenceReport_*.pdf|absence_*.html|absence_date_time*.pdf|absence_date_time*.html|completion_*.html|
+node_modules|vendor|__pycache__|.venv|venv|venv311|new_venv|build|dist|tmp|
+.git|.vscode|.vscode-server|.vscode-server-insiders|.idea|.pytest_cache|.ruff_cache|.mypy_cache|.tox|coverage|
+.cache|.npm|.local|.cpanel|.cpanel-logs|.softaculous|.spamassassin|.ssh|.trash|.caldav|.dotnet|
+http-v2|LibreOffice_*|.config/libreoffice|uno_packages|.codex|
+backups|
+*/public_html/uploads|*/public_html/uploads/*|uploads|uploads/*|
+phpinfo.php|
+*.png|*.jpg|*.jpeg|*.gif|*.svg|*.webp|*.ico|
+GeneratedDocuments
+' && {   echo "== FILE TREE (filtered) ==";   tree -a -F --prune -I "$(echo "$IGNORE" | tr -d '\n' | sed 's/|$//')";   echo; echo "== LOG FILE INDEX (directory → count) ==";   find . -type f \( -name '*.log' -o -name '*.log.*' -o -name 'error_log' -o -name 'error_log*' \)     -printf '%h\n' | sort | uniq -c | sort -nr;   echo; echo "== DOCX FILES ==";   find . -type f \( -iname '*.docx' -o -iname '*.doc' \) -print | sort;   echo; echo "== GeneratedDocuments (folders only) ==";   find . -type d -name 'GeneratedDocuments' -print | sort; } | tee "$out"
+#1760646572
+cd /home/notesao && out="notesao_tree_$(date +%Y%m%d).txt" && IGNORE='
+*.log|*.log.*|error_log|error_log*|
+*.gz|*.bz2|*.xz|*.zip|*.7z|*.rar|*.tar|*.tar.*|*.tgz|*.txz|
+*.bak|*.old|*.tmp|*.swp|*.iso|*.deb|*.rpm|*.whl|*.class|*.jar|*.pack|
+AbsenceReport_*.pdf|absence_*.html|absence_date_time*.pdf|absence_date_time*.html|completion_*.html|
+node_modules|vendor|__pycache__|.venv|venv|venv311|new_venv|build|dist|tmp|
+.git|.vscode|.vscode-server|.vscode-server-insiders|.idea|.pytest_cache|.ruff_cache|.mypy_cache|.tox|coverage|
+.cache|.npm|.local|.cpanel|.cpanel-logs|.softaculous|.spamassassin|.ssh|.trash|.caldav|.dotnet|
+http-v2|LibreOffice_*|.config/libreoffice|uno_packages|.codex|
+backups|uploads|GeneratedDocuments|mail|Maildir
+' && {   echo "== FILE TREE (filtered; mail files omitted) ==";   tree -a -F --prune -I "$(echo "$IGNORE" | tr -d '\n' | sed 's/|$//')";   echo; echo "== MAIL (folders only) ==";   [ -d mail ] && tree -a -d -F --prune mail;   [ -d Maildir ] && tree -a -d -F --prune Maildir;   echo; echo "== LOG FILE INDEX (directory → count) ==";   find . -type f \( -name '*.log' -o -name '*.log.*' -o -name 'error_log' -o -name 'error_log*' \)     -printf '%h\n' | sort | uniq -c | sort -nr;   echo; echo "== DOCX FILES ==";   find . -type f \( -iname '*.docx' -o -iname '*.doc' \) -print | sort; } | tee "$out"
+#1760554250
+tail -n 200 /home/notesao/dwag-link-debug.log
+#1760555259
+tail -n 200 /home/notesao/logs/dwag_notesao_com.php.error.log | egrep 'DWAG resolve|DWAG resolved link'
+#1760557038
+sudo -u notesao bash -lc ' find /home/notesao -type d -name .git -prune -print | sed "s|/\.git$||" | sort '
+#1760557220
+sudo -u notesao bash -lc '
+mkdir -p /home/notesao/backups
+ts=$(date +"%Y%m%d-%H%M%S")
+tar -czf /home/notesao/backups/pre-git-clean-$ts.tgz /home/notesao
+'
+#1760558102
+pgrep -u notesao -a tar || echo "no tar process"
+#1760558131
+ls -lh /home/notesao/backups/
+#1760558137
+tar -tzf /home/notesao/backups/pre-git-clean-20251015-144020.tgz | head -n 20
+#1760558179
+sudo -u notesao bash -lc '
+set -euo pipefail
+ts=$(date +"%Y%m%d-%H%M%S")
+cd /home
+tar -czf /home/notesao/backups/pre-git-clean-fixed-$ts.tgz \
+  --exclude=notesao/backups \
+  --exclude-vcs \
+  notesao
+'
+#1760720005
+curl -fsSL --connect-timeout 10 --max-time 300   "https://<domain>/absence-logic.php?mode=session&from=2000-01-01&to=$(date +%F)&grace_days=6&dry_run=1"
+#1760720056
+curl -fsSL --connect-timeout 10 --max-time 300 \ "https://saf.notesao.com/absence-logic.php?mode=session&from=2000-01-01&to=$(date +%F)&grace_days=6&dry_run=1"
+#1760720127
+bash -x /home/notesao/safatherhood/scripts/create_absence.sh
+#1760720128
+log=$(ls -t /home/notesao/safatherhood/scripts/logs/absence_*.html | head -1)
+#1760720128
+grep -E "Checking attendance|insertAbsenceRecord|awaiting|ERROR|Fatal" "$log" | tail -200
+#1760720340
+bash -x /home/notesao/safatherhood/scripts/create_absence.sh
+#1760720340
+log=$(ls -t /home/notesao/safatherhood/scripts/logs/absence_*.html | head -1)
+#1760720340
+grep -E "insertAbsenceRecord|ERROR|Fatal" "$log" | tail -200
+#1760720677
+bash -x /home/notesao/safatherhood/scripts/create_absence.sh
+#1760720677
+log=$(ls -t /home/notesao/safatherhood/scripts/logs/absence_*.html | head -1)
+#1760720677
+grep -E "insertAbsenceRecord|ERROR|Fatal" "$log" | tail -200
+#1760721702
+https://safatherhood.notesao.com/absence_logic.php?dry_run=1&grace_days=6
+#1760722294
+bash -x /home/notesao/safatherhood/scripts/create_absence.sh
+#1760722294
+log=$(ls -t /home/notesao/safatherhood/scripts/logs/absence_*.html | head -1)
+#1760722294
+grep -E "Checking attendance|INSERTED|Would INSERT|Skip|awaiting|ERROR|Fatal" "$log" | tail -200
+#1760722734
+bash -x /home/notesao/safatherhood/scripts/create_absence.sh
+#1760722734
+log=$(ls -t /home/notesao/safatherhood/scripts/logs/absence_*.html | head -1)
+#1760722734
+grep -E "INSERTED|Would INSERT|Skip|EXCUSED|ERROR|Fatal" "$log" | tail -300
+#1760723930
+bash -x /home/notesao/safatherhood/scripts/create_absence.sh
+#1760723930
+log=$(ls -t /home/notesao/safatherhood/scripts/logs/absence_*.html | head -1)
+#1760723930
+grep -E "INSERTED|EXCUSED|Would INSERT|Skip|ERROR|Fatal" "$log" | tail -300
+#1761316080
+bash -lc 'cd /home/notesao; comm -23 <(cd ffltest/public_html && find . -type f -printf "%P\n" | sort) <(cd lakeview/public_html && find . -type f -printf "%P\n" | sort) | sed "s#^#/home/notesao/ffltest/public_html/#"'
+#1761316088
+bash -lc 'cd /home/notesao; comm -23 <(cd ffltest/public_html && find . -type f \( -name "*.php" \) -printf "%P\n" | sort) <(cd lakeview/public_html && find . -type f \( -name "*.php" \) -printf "%P\n" | sort) | sed "s#^#/home/notesao/ffltest/public_html/#"'
+#1761324947
+grep -RinI -i -E 'required_?sessions?' /home/notesao/lakeview/   --binary-files=without-match   --exclude-dir={.git,vendor,node_modules,storage,logs,cache,backups}   --exclude='*.{log,csv,tsv,pdf,doc,docx,xls,xlsx,ppt,pptx,zip,tar,tar.gz,gz,bz2,7z}'
+#1761325587
+php -v
+#1761326903
+grep -RinI -i -E 'required_?sessions?' /home/notesao/lakeview/   --binary-files=without-match   --exclude-dir={.git,vendor,node_modules,storage,logs,cache,backups}   --exclude='*.{log,csv,tsv,pdf,doc,docx,xls,xlsx,ppt,pptx,zip,tar,tar.gz,gz,bz2,7z}'
+#1761340954
+grep -RInI -E 'ffl|free[ _-]?for[ _-]?life' /home/notesao/lakeview/ 2>/dev/null
+#1761340990
+grep -RInI --include='*.php' -E 'ffl|free[ _-]?for[ _-]?life' /home/notesao/lakeview/ 2>/dev/null

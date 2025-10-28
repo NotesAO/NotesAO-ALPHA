@@ -1,0 +1,409 @@
+Return-Path: <0101019a11ede073-d1e01818-8120-4cee-a1f9-255e02dce7d2-000000@amazonses.messaging.squareup.com>
+Delivered-To: david@notesao.com
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id sGC7M5NZ+mgGFiUAIW4ynA
+	(envelope-from <0101019a11ede073-d1e01818-8120-4cee-a1f9-255e02dce7d2-000000@amazonses.messaging.squareup.com>)
+	for <david@notesao.com>; Thu, 23 Oct 2025 11:36:35 -0500
+Return-path: <0101019a11ede073-d1e01818-8120-4cee-a1f9-255e02dce7d2-000000@amazonses.messaging.squareup.com>
+Envelope-to: david@notesao.com
+Delivery-date: Thu, 23 Oct 2025 11:36:35 -0500
+Received: from a27-17.smtp-out.us-west-2.amazonses.com ([54.240.27.17]:42959)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+	(Exim 4.98.2)
+	(envelope-from <0101019a11ede073-d1e01818-8120-4cee-a1f9-255e02dce7d2-000000@amazonses.messaging.squareup.com>)
+	id 1vByIm-0000000ACGi-29GS
+	for david@notesao.com;
+	Thu, 23 Oct 2025 11:36:35 -0500
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zkmtl6gy2hsfdpedstduzebbkq3duxs4; d=messaging.squareup.com;
+	t=1761237393;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=IhzRlW2abpPHJbDTGpljX3t6XPGfSLHj0vwij8Ga46s=;
+	b=eXtlhUBjLL39P1SfNACb9bu/YbHMHVOVFt/OJjdjnRICCgUq29ZcV19F7H2zpYGe
+	ACA9Q5jNaDK4Z2Em9j2L/s3BED+qc3HFBJ/ZtoQ5/P8ZoBy1CjQnpma/1wLEP7HFosz
+	qbXZxy2W3K7pdHMc8Dn8o1xHyRLKLY2dDke826Wg=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1761237393;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=IhzRlW2abpPHJbDTGpljX3t6XPGfSLHj0vwij8Ga46s=;
+	b=WxCrpIDUq85Jcsv1PEmsCAj8JZYO4hp98Sfim6fBA9FIhR2J01TrpkRAIDbx7VdE
+	QqDXwzVGPLprhzVuQl7fGxMMihscWQ1Qsot+K8HXy9vpGmUSjfZaW5EFMY3PzjeqlJe
+	5vj59oykRgKvSnFhyFhNOctj1AZZI3j+rUF6/tQ4=
+Date: Thu, 23 Oct 2025 16:36:33 +0000
+From: Square <invoicing@messaging.squareup.com>
+To: david@notesao.com
+Message-ID: <0101019a11ede073-d1e01818-8120-4cee-a1f9-255e02dce7d2-000000@us-west-2.amazonses.com>
+Subject: You sent an invoice reminder (#000002)
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_12115365_850524421.1761237393518"
+X-EMS-Request-ID: 16ee7106-74f5-4eae-917e-ffd0cb438d76
+X-ERS-Token: CAoQ7oHp/Kb1w72PARjCtpGm/YaoprQB
+Feedback-ID: ::1.us-west-2.Ys0TtaV3ThrL9KaebebAtwQ8vYTqz4B6QHfonsV/uOw=:AmazonSES
+X-SES-Outgoing: 2025.10.23-54.240.27.17
+X-Spam-Status: No, score=1.8
+X-Spam-Score: 18
+X-Spam-Bar: +
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__Hello?= =?ISO-8859-1?Q?_NotesAO=2C_You_have_resent_an_invoice_of_$124=2E20_t?= =?ISO-8859-1?Q?o_Andrea=0A____Rathmell=2E_Square_=0A_Content_analysi?= =?ISO-8859-1?Q?s_details=3A___=281=2E8_points=2C_5=2E0_required=29=0A?= =?ISO-8859-1?Q?__pts_rule_name______________description=0A_----_----?= =?ISO-8859-1?Q?------------------_----------------------------------?= =?ISO-8859-1?Q?----------------=0A__0=2E0_URIBL=5FBLOCKED__________A?= =?ISO-8859-1?Q?DMINISTRATOR_NOTICE=3A_The_query_to_URIBL_was_blocked?= =?ISO-8859-1?Q?=2E=0A_____________________________See=0A____________?= =?ISO-8859-1?Q?_________________http=3A//wiki=2Eapache=2Eorg/spamass?= =?ISO-8859-1?Q?assin/DnsBlocklists#dnsbl-block=0A___________________?= =?ISO-8859-1?Q?___________for_more_information=2E=0A________________?= =?ISO-8859-1?Q?_____________=5BURI=3A_awstrack=2Eme=5D=0A___________?= =?ISO-8859-1?Q?__________________=5BURI=3A_cloudfront=2Enet=5D=0A__0?= =?ISO-8859-1?Q?=2E0_RCVD=5FIN=5FVALIDITY=5FRPBL=5FBLOCKED_RBL=3A_ADM?= =?ISO-8859-1?Q?INISTRATOR_NOTICE=3A_The_query_to=0A_________________?= =?ISO-8859-1?Q?_____________Validity_was_blocked=2E__See=0A_________?= =?ISO-8859-1?Q?____________________https=3A//knowledge=2Evalidity=2Ec?= =?ISO-8859-1?Q?om/hc/en-us/articles/20961730681243=0A_______________?= =?ISO-8859-1?Q?_______________for_more_information=2E=0A____________?= =?ISO-8859-1?Q?_________________=5B54=2E240=2E27=2E17_listed_in_bl=2Es?= =?ISO-8859-1?Q?core=2Esenderscore=2Ecom=5D=0A__0=2E0_RCVD=5FIN=5FVAL?= =?ISO-8859-1?Q?IDITY=5FCERTIFIED=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTI?= =?ISO-8859-1?Q?CE=3A_The=0A_____________________________query_to_Val?= =?ISO-8859-1?Q?idity_was_blocked=2E__See=0A_________________________?= =?ISO-8859-1?Q?____https=3A//knowledge=2Evalidity=2Ecom/hc/en-us/art?= =?ISO-8859-1?Q?icles/20961730681243=0A______________________________?= =?ISO-8859-1?Q?for_more_information=2E=0A___________________________?= =?ISO-8859-1?Q?=5B54=2E240=2E27=2E17_listed_in_sa-trusted=2Ebondedse?= =?ISO-8859-1?Q?nder=2Eorg=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FSAFE=5FB?= =?ISO-8859-1?Q?LOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The_query_to=0A_?= =?ISO-8859-1?Q?_____________________________Validity_was_blocked=2E_?= =?ISO-8859-1?Q?_See=0A_____________________________https=3A//knowled?= =?ISO-8859-1?Q?ge=2Evalidity=2Ecom/hc/en-us/articles/20961730681243=0A_?= =?ISO-8859-1?Q?_____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?_____________________________=5B54=2E240=2E27=2E17_li?= =?ISO-8859-1?Q?sted_in_sa-accredit=2Ehabeas=2Ecom=5D=0A__0=2E0_KAM=5FB?= =?ISO-8859-1?Q?ODY=5FMARKETINGBL=5FPCCC_Body_contains_URI_associated?= =?ISO-8859-1?Q?_with=0A_____________________________mass-marketing_=28h?= =?ISO-8859-1?Q?ttps=3A//raptor=2Epccc=2Ecom/RBL=29=0A_______________?= =?ISO-8859-1?Q?______________=5BURI=3A_awstrack=2Eme=5D=0A_-0=2E0_SP?= =?ISO-8859-1?Q?F=5FPASS_______________SPF=3A_sender_matches_SPF_reco?= =?ISO-8859-1?Q?rd=0A_-0=2E1_DKIM=5FVALID=5FAU__________Message_has_a?= =?ISO-8859-1?Q?_valid_DKIM_or_DK_signature_from_author's=0A_________?= =?ISO-8859-1?Q?____________________domain=0A__0=2E1_DKIM=5FSIGNED___?= =?ISO-8859-1?Q?_________Message_has_a_DKIM_or_DK_signature=2C_not_ne?= =?ISO-8859-1?Q?cessarily_valid=0A_-0=2E1_DKIM=5FVALID_____________Me?= =?ISO-8859-1?Q?ssage_has_at_least_one_valid_DKIM_or_DK_signature=0A_?= =?ISO-8859-1?Q?_1=2E0_KAM=5FMARKETINGBL=5FPCCC___Message_contains_UR?= =?ISO-8859-1?Q?I_associated_with=0A_____________________________mass?= =?ISO-8859-1?Q?-marketing_=28https=3A//raptor=2Epccc=2Ecom/RBL=29=0A?= =?ISO-8859-1?Q?__0=2E1_MIME=5FHTML=5FMOSTLY_______BODY=3A_Multipart_?= =?ISO-8859-1?Q?message_mostly_text/html_MIME=0A__0=2E0_HTML=5FMESSAG?= =?ISO-8859-1?Q?E___________BODY=3A_HTML_included_in_message=0A__0=2E8?= =?ISO-8859-1?Q?_KAM=5FINFOUSMEBIZ________Prevalent_use_of=0A________?= =?ISO-8859-1?Q?_____________________=2Einfo|=2Eus|=2Eme|=2Eme=2Euk|=2Eb?= =?ISO-8859-1?Q?iz|xyz|id|rocks|life=0A_____________________________d?= =?ISO-8859-1?Q?omains_in_spam/malware?=
+X-Spam-Flag: NO
+
+------=_Part_12115365_850524421.1761237393518
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello NotesAO,
+
+You have resent an invoice of $124.20 to Andrea Rathmell.
+
+
+------=_Part_12115365_850524421.1761237393518
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html;charset=3Dutf-8">
+<title>Square</title>
+<!--[if mso]>  <style type=3D"text/css" data-premailer=3D"ignore">
+    .codelink a { color: #343B42; text-decoration: none }
+    a { color: #343B42; text-decoration: none }
+    .button td { background-color: #343B42 }
+    .nomso { display: none; font-size: 0; line-height: 0 }
+    table { font-size: 1px; line-height:0; mso-margin-top-alt: 1px; }
+    table.MsoNormalTable { font-family: esqmarket, Helvetica, sans-serif }
+    .durv { line-height: 14px !important }
+  </style><![endif]--><!--[if !mso]><!--><style type=3D"text/css" data-prem=
+ailer=3D"ignore">@font-face { font-family: "esqmarket"; src: url("https://d=
+l6rt3mwcjzxg.cloudfront.net/assets/sqmarket/sqmarket-regular.woff") format(=
+"woff"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "esqmarket-medium"; src: url("https://dl6rt3mwcjz=
+xg.cloudfront.net/assets/sqmarket/sqmarket-medium.woff") format("woff"); fo=
+nt-weight: 600; font-style: normal; }
+</style>
+<!--<![endif]--><style type=3D"text/css" data-premailer=3D"ignore">a[x-appl=
+e-data-detectors] { color: inherit !important; text-decoration: none !impor=
+tant; font-size: inherit !important; font-family: inherit !important; font-=
+weight: inherit !important; line-height: inherit !important; }
+
+#hero a { color: #ffffff; }
+
+body { width: 100% !important; margin: 0 auto !important; padding: 0; }
+
+table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rsp=
+ace: 0pt; }
+
+@media only screen and (min-width: 281px) { #container { position: relative=
+; top: 0; left: 0; right: 0; bottom: 0; } }
+div[style*=3D"margin: 16px 0"] { margin:0 !important; }
+@media screen and (min-width: 281px) and (max-width: 599px) and (-webkit-mi=
+n-device-pixel-ratio: 0) {#container .fullWidth a { display: block !importa=
+nt; }
+#container .column { width: inherit !important; }
+#container .column .embiggen { width: 420px !important; max-width: 420px !i=
+mportant; }
+#container .column .embiggen .list td:first-child { width: inherit !importa=
+nt; }
+#container .column .embiggen .list td:last-child { width: 500px !important;=
+ }
+#container .column .embiggen .button td { width: inherit !important; }
+#container .column .embiggen img { max-width: 100% !important; }
+}</style>
+</head>
+<body style=3D"background-color: #F5F6F7;margin: 0" bgcolor=3D"#F5F6F7">
+<style type=3D"text/css">
+body {
+background: #F5F6F7; margin: 0;
+}
+</style>
+<!--[if !mso]><!--><div id=3D"preheader" style=3D"display: none;font-size: =
+0;max-height: 0;overflow: hidden">NotesAO sent a reminder for invoice #0000=
+02 Monthly subscription to Andrea Rathmell.</div>
+<!--<![endif]--><div id=3D"container" style=3D"-ms-text-size-adjust: none;-=
+webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none"><table c=
+lass=3D"contained" style=3D"table-layout: fixed" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td align=3D"center"><table bgcolor=3D"#222222=
+"  cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"500" align=3D"cente=
+r" bgcolor=3D"#ffffff"><table  cellpadding=3D"0" cellspacing=3D"0">
+<tr><td><table style=3D"background-color: white" width=3D"100%" class=3D"si=
+ngle invert" bgcolor=3D"white" cellpadding=3D"0" cellspacing=3D"0"><tr><td =
+align=3D"center" style=3D"padding: 0 0px"><table  cellpadding=3D"0" cellspa=
+cing=3D"0"><tr><td width=3D"520" style=3D"padding: 0px 0" class=3D"singleCe=
+ll"><table width=3D"100%" class=3D"center" style=3D"text-align: center" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tr><td align=3D"center" class=3D"icon"><table width=3D"inherit" style=3D"t=
+ext-align: center" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"pad=
+ding: 16px 0"><img src=3D"https://seller-brand-assets-f.squarecdn.com/MLYDA=
+WQ5ZEP3N/f8e1759dd33c3934ba032e8702ec3f67.png?bg-color=3D255%2C255%2C255&am=
+p;fit=3Dbounds&amp;format=3Djpeg&amp;width=3D640" width=3D"" height=3D"auto=
+" alt=3D"Image" style=3D"display: inline-block;max-width: 320px"></td></tr>=
+</table></td></tr>
+<tr><td class=3D"separator" style=3D"border-top-color: #D5D7D9;border-top-s=
+tyle: solid;border-top-width: 1px"></td></tr>
+</table></td></tr></table></td></tr></table>
+</td></tr>
+<tr><td align=3D"center"><table width=3D"100%"  cellpadding=3D"0" cellspaci=
+ng=3D"0"><tr><td width=3D"" style=3D"color: #343B42;font-family: esqmarket-=
+medium, Helvetica, sans-serif;font-size: 16px;font-weight: 600;line-height:=
+ 24px;padding: 24px 0 0px;text-align: center" class=3D"h2 center " align=3D=
+"center">NotesAO</td></tr></table></td></tr><table style=3D"background-colo=
+r: #ffffff" width=3D"100%" class=3D"single " bgcolor=3D"#ffffff" cellpaddin=
+g=3D"0" cellspacing=3D"0"><tr><td align=3D"center" style=3D"padding: 0 20px=
+"><table  cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"400" style=
+=3D"padding: 8px 0 0px" class=3D"singleCell"><table width=3D"100%" class=3D=
+"left" style=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><=
+td align=3D"center"><table width=3D"100%" style=3D"text-align: left" cellpa=
+dding=3D"0" cellspacing=3D"0"><tr><td width=3D"" style=3D"color: #71767B;fo=
+nt-family: esqmarket, Helvetica, sans-serif;font-size: 16px;font-weight: no=
+rmal;line-height: 24px;padding: 0px 0 8px;text-align: center" class=3D"p ce=
+nter " align=3D"center">Invoice Reminder Sent</td></tr></table></td></tr></=
+table></td></tr></table></td></tr></table>
+<hr class=3D"separator" style=3D"background-color: #D5D7D9;border-width: 0p=
+x;height: 1px;width: 32px">
+<table style=3D"background-color: #ffffff" width=3D"100%" class=3D"single "=
+ bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"c=
+enter" style=3D"padding: 0 20px"><table  cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td width=3D"400" style=3D"padding: 0px 0 8px" class=3D"singleCell"><=
+table width=3D"100%" class=3D"left" style=3D"text-align: left" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td align=3D"center"><table width=3D"100%" sty=
+le=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td width=
+=3D"" style=3D"color: #343B42;font-family: esqmarket-medium, Helvetica, san=
+s-serif;font-size: 44px;font-weight: 600;line-height: 48px;padding: 8px 0 0=
+px;text-align: center" class=3D"h1 center " align=3D"center">$124.20</td></=
+tr></table></td></tr><tr><td align=3D"center"><table width=3D"100%" style=
+=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"=
+" style=3D"color: #e52817;font-family: esqmarket, Helvetica, sans-serif;fon=
+t-size: 16px;font-weight: normal;line-height: 24px;padding: 8px 0 0px;text-=
+align: center" class=3D"p center " align=3D"center">Overdue since October 2=
+0, 2025</td></tr></table></td></tr><tr><td style=3D"padding: 24px 0 0"></td=
+></tr><tr><td class=3D"separator" style=3D"border-top-color: #D5D7D9;border=
+-top-style: solid;border-top-width: 1px"></td></tr>
+<tr><td style=3D"padding: 24px 0 0"></td></tr>
+<tr><td align=3D"left"><table width=3D"100%" style=3D"text-align: left" cel=
+lpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"" style=3D"color: #343B42=
+;font-family: esqmarket-medium, Helvetica, sans-serif;font-size: 14px;font-=
+weight: 600;line-height: 22px;text-align: left" class=3D"h3 left " align=3D=
+"left">Monthly subscription</td></tr></table></td></tr><tr><td align=3D"lef=
+t"><table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0" cells=
+pacing=3D"0"><tr><td width=3D"" style=3D"color: #343B42;font-family: esqmar=
+ket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-height:=
+ 22px;text-align: left" class=3D"p left " align=3D"left">Invoice #000002</t=
+d></tr></table></td></tr><tr><td align=3D"left"><table width=3D"100%" style=
+=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"=
+" style=3D"color: #343B42;font-family: esqmarket, Helvetica, sans-serif;fon=
+t-size: 14px;font-weight: normal;line-height: 22px;text-align: left" class=
+=3D"p left " align=3D"left">October 20, 2025</td></tr></table></td></tr><tr=
+><td align=3D"left"><table width=3D"100%" style=3D"text-align: left" cellpa=
+dding=3D"0" cellspacing=3D"0"><tr><td width=3D"" style=3D"color: #343B42;fo=
+nt-family: esqmarket-medium, Helvetica, sans-serif;font-size: 14px;font-wei=
+ght: 600;line-height: 22px;padding: 24px 0 0px;text-align: left" class=3D"h=
+3 left " align=3D"left">Customer</td></tr></table></td></tr>
+<tr><td align=3D"left"><table width=3D"100%" style=3D"text-align: left" cel=
+lpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"" style=3D"color: #343B42=
+;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight:=
+ normal;line-height: 22px;text-align: left" class=3D"p left " align=3D"left=
+">Andrea Rathmell</td></tr></table></td></tr>
+<tr><td align=3D"left"><table width=3D"100%" style=3D"text-align: left" cel=
+lpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"" style=3D"color: #343B42=
+;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight:=
+ normal;line-height: 22px;text-align: left" class=3D"p left " align=3D"left=
+">Safer Path</td></tr></table></td></tr>
+<tr><td align=3D"left"><table width=3D"100%" style=3D"text-align: left" cel=
+lpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"" style=3D"color: #343B42=
+;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight:=
+ normal;line-height: 22px;text-align: left" class=3D"p left " align=3D"left=
+"><a href=3D"mailto:arathmell@saferpathfvs.org" id=3D"p-4" style=3D"color: =
+#2996cc;text-decoration: none">arathmell@saferpathfvs.org</a></td></tr></ta=
+ble></td></tr>
+<tr><td align=3D"left"><table width=3D"100%" style=3D"text-align: left" cel=
+lpadding=3D"0" cellspacing=3D"0"><tr><td width=3D"" style=3D"color: #343B42=
+;font-family: esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight:=
+ normal;line-height: 22px;text-align: left" class=3D"p left " align=3D"left=
+"></td></tr></table></td></tr><tr><td align=3D"left"><table width=3D"100%" =
+style=3D"text-align: left" cellpadding=3D"0" cellspacing=3D"0"><tr><td widt=
+h=3D"" style=3D"color: #343B42;font-family: esqmarket, Helvetica, sans-seri=
+f;font-size: 14px;font-weight: normal;line-height: 22px;text-align: left" c=
+lass=3D"p left " align=3D"left"></td></tr></table></td></tr><tr><td align=
+=3D"left"><table width=3D"100%" style=3D"text-align: left" cellpadding=3D"0=
+" cellspacing=3D"0"><tr><td width=3D"" style=3D"color: #343B42;font-family:=
+ esqmarket, Helvetica, sans-serif;font-size: 14px;font-weight: normal;line-=
+height: 22px;padding: 24px 0 0px;text-align: left" class=3D"p left " align=
+=3D"left"><a href=3D"https://wcssssxs.r.us-west-2.awstrack.me/L0/https:%2F%=
+2Fsquareup.com%2Finvoices%2Fattachments%2Fdownload%2Fpdf%2Finvoice%3Ftoken=
+=3DeyJhbGciOiJIUzI1NiJ9.eyJpbnZvaWNlX3Rva2VuIjoiaW52OjAtQ2hBR0lSWEtDVjFJWWw=
+3cXFzU1BnQ2UyRU9VTCIsInNlZWQiOiIyMDI1LTEwLTIzIDE2OjM2OjMxICswMDAwIn0.79E02T=
+YoQrQL-3eu_LZk81F_3GjgMR_hcPkTHbxE_Ms%26inline=3Dtrue/1/0101019a11ede073-d1=
+e01818-8120-4cee-a1f9-255e02dce7d2-000000/wAh06Qr18SphNGM6bmkdee-HviA=3D450=
+" id=3D"p-6" style=3D"color: #2996cc;text-decoration: none">Download Invoic=
+e PDF</a></td></tr></table></td></tr><tr><td style=3D"padding: 8px 0 0"></t=
+d></tr><tr><td ><table class=3D"tabDat soft_frame" style=3D"border: 1px sol=
+id #D5D7D9;border-collapse: separate;border-radius: 4px;margin: 10px 0px;te=
+xt-align: left;width: 100%" cellpadding=3D"0" cellspacing=3D"0"><tr style=
+=3D"vertical-align: top"><td style=3D"vertical-align: top" valign=3D"top"><=
+table class=3D"tabDat soft_frame_content" style=3D"margin: 0px 24px;text-al=
+ign: left" cellpadding=3D"0" cellspacing=3D"0">
+<tr style=3D"vertical-align: top"><td align=3D"left" style=3D"vertical-alig=
+n: top" valign=3D"top"><table width=3D"100%" style=3D"text-align: left" cel=
+lpadding=3D"0" cellspacing=3D"0"><tr style=3D"vertical-align: top"><td widt=
+h=3D"" style=3D"color: #343B42;font-family: esqmarket-medium, Helvetica, sa=
+ns-serif;font-size: 16px;font-weight: 600;line-height: 24px;padding: 24px 0=
+ 0px;text-align: left;vertical-align: top" class=3D"h2 left " align=3D"left=
+" valign=3D"top">Invoice summary</td></tr></table></td></tr><tr style=3D"ve=
+rtical-align: top"><td style=3D"vertical-align: top" valign=3D"top"><table =
+class=3D"tabDat" style=3D"text-align: left" cellpadding=3D"0" cellspacing=
+=3D"0"><tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket-medium, He=
+lvetica, sans-serif;font-size: 14px;font-weight: 600;line-height: 22px;padd=
+ing: 24px 0 0px;vertical-align: top" class=3D"key text bold p" valign=3D"to=
+p"><div style=3D"padding-right: 20px"><b style=3D"color: #343B42;font-famil=
+y: esqmarket-medium, Helvetica, sans-serif;font-weight: 600">Subscription -=
+ $120</b></div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket-medium, Hel=
+vetica, sans-serif;font-size: 14px;font-weight: 600;line-height: 22px;paddi=
+ng: 24px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" c=
+lass=3D"value text bold p" align=3D"right" valign=3D"top">$120.00</td>
+</tr><tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket, Helvetica=
+, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding:=
+ 24px 0 0px;vertical-align: top" class=3D"key text p" valign=3D"top"><div s=
+tyle=3D"padding-right: 20px"></div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket, Helvetica,=
+ sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: =
+24px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class=
+=3D"value text p" align=3D"right" valign=3D"top"></td>
+</tr>
+<tr style=3D"vertical-align: top">
+<td class=3D"separator" style=3D"border-top-color: #D5D7D9;border-top-style=
+: solid;border-top-width: 1px;vertical-align: top" valign=3D"top"></td>
+<td class=3D"separator" style=3D"border-top-color: #D5D7D9;border-top-style=
+: solid;border-top-width: 1px;vertical-align: top" valign=3D"top"></td>
+</tr><tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket, Helvetica=
+, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding:=
+ 0px 0 24px;vertical-align: top" class=3D"key text p" valign=3D"top"><div s=
+tyle=3D"padding-right: 20px"></div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket, Helvetica,=
+ sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: =
+0px 0 24px;text-align: right;vertical-align: top;white-space: nowrap" class=
+=3D"value text p" align=3D"right" valign=3D"top"></td>
+</tr><tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket, Helvetica=
+, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding:=
+ 0px 0;vertical-align: top" class=3D"key text p" valign=3D"top"><div style=
+=3D"padding-right: 20px">Subtotal</div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket, Helvetica,=
+ sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: =
+0px 0;text-align: right;vertical-align: top;white-space: nowrap" class=3D"v=
+alue text p" align=3D"right" valign=3D"top">$120.00</td>
+</tr>
+<tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket, Helvetica=
+, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding:=
+ 8px 0 0px;vertical-align: top" class=3D"key text p" valign=3D"top"><div st=
+yle=3D"padding-right: 20px"></div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket, Helvetica,=
+ sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: =
+8px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class=
+=3D"value text p" align=3D"right" valign=3D"top"></td>
+</tr><tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket, Helvetica=
+, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding:=
+ 0px 0 8px;vertical-align: top" class=3D"key text p" valign=3D"top"><div st=
+yle=3D"padding-right: 20px">Administrative Fee (3.5%)</div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket, Helvetica,=
+ sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: =
+0px 0 8px;text-align: right;vertical-align: top;white-space: nowrap" class=
+=3D"value text p" align=3D"right" valign=3D"top">$4.20</td>
+</tr><tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket, Helvetica=
+, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding:=
+ 16px 0 0px;vertical-align: top" class=3D"key text p" valign=3D"top"><div s=
+tyle=3D"padding-right: 20px"></div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket, Helvetica,=
+ sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: =
+16px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class=
+=3D"value text p" align=3D"right" valign=3D"top"></td>
+</tr>
+<tr style=3D"vertical-align: top">
+<td class=3D"separator" style=3D"border-top-color: #D5D7D9;border-top-style=
+: solid;border-top-width: 1px;vertical-align: top" valign=3D"top"></td>
+<td class=3D"separator" style=3D"border-top-color: #D5D7D9;border-top-style=
+: solid;border-top-width: 1px;vertical-align: top" valign=3D"top"></td>
+</tr>
+<tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket, Helvetica=
+, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding:=
+ 0px 0 24px;vertical-align: top" class=3D"key text p" valign=3D"top"><div s=
+tyle=3D"padding-right: 20px"></div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket, Helvetica,=
+ sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: =
+0px 0 24px;text-align: right;vertical-align: top;white-space: nowrap" class=
+=3D"value text p" align=3D"right" valign=3D"top"></td>
+</tr><tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket-medium, He=
+lvetica, sans-serif;font-size: 16px;font-weight: 600;line-height: 24px;padd=
+ing: 0px 0;vertical-align: top" class=3D"key text h2" valign=3D"top"><div s=
+tyle=3D"padding-right: 20px">Total Due</div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket-medium, Hel=
+vetica, sans-serif;font-size: 16px;font-weight: 600;line-height: 24px;paddi=
+ng: 0px 0;text-align: right;vertical-align: top;white-space: nowrap" class=
+=3D"value text h2" align=3D"right" valign=3D"top">$124.20</td>
+</tr><tr style=3D"vertical-align: top">
+<td width=3D"450" style=3D"color: #343B42;font-family: esqmarket, Helvetica=
+, sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding:=
+ 24px 0 0px;vertical-align: top" class=3D"key text p" valign=3D"top"><div s=
+tyle=3D"padding-right: 20px"></div></td>
+<td width=3D"70" style=3D"color: #343B42;font-family: esqmarket, Helvetica,=
+ sans-serif;font-size: 14px;font-weight: normal;line-height: 22px;padding: =
+24px 0 0px;text-align: right;vertical-align: top;white-space: nowrap" class=
+=3D"value text p" align=3D"right" valign=3D"top"></td>
+</tr>
+</table></td></tr></table></td></tr></table></td></tr><tr><td style=3D"padd=
+ing: 24px 0 0"></td></tr>
+<tr><td ><table class=3D"tabDat" style=3D"text-align: left" cellpadding=3D"=
+0" cellspacing=3D"0"></table></td></tr>
+</table></td></tr></table></td></tr></table>
+<table style=3D"background-color: #F5F6F7" width=3D"100%" class=3D"single "=
+ bgcolor=3D"#F5F6F7" cellpadding=3D"0" cellspacing=3D"0"><tr><td align=3D"c=
+enter" style=3D"padding: 0 20px"><table  cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td width=3D"400" style=3D"padding: 32px 0" class=3D"singleCell"><tab=
+le width=3D"100%" class=3D"center" style=3D"text-align: center" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td align=3D"center"><table width=3D"100%" sty=
+le=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0"><tr><td width=
+=3D"" style=3D"color: #343B42;font-family: esqmarket, Helvetica, sans-serif=
+;font-size: 14px;font-weight: normal;line-height: 22px;text-align: center" =
+class=3D"p center " align=3D"center">Square
+</td></tr></table></td></tr><tr><td align=3D"center"><table width=3D"100%" =
+style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0"><tr><td wi=
+dth=3D"" style=3D"color: #343B42;font-family: esqmarket, Helvetica, sans-se=
+rif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: cente=
+r" class=3D"p center " align=3D"center">1955 Broadway, Suite 600
+</td></tr></table></td></tr><tr><td align=3D"center"><table width=3D"100%" =
+style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0"><tr><td wi=
+dth=3D"" style=3D"color: #343B42;font-family: esqmarket, Helvetica, sans-se=
+rif;font-size: 14px;font-weight: normal;line-height: 22px;text-align: cente=
+r" class=3D"p center " align=3D"center">Oakland, CA 94612
+</td></tr></table></td></tr><tr><td align=3D"center"><table width=3D"100%" =
+style=3D"text-align: center" cellpadding=3D"0" cellspacing=3D"0"><tr><td wi=
+dth=3D"" style=3D"color: #343B42;font-family: esqmarket, Helvetica, sans-se=
+rif;font-size: 14px;font-weight: normal;line-height: 22px;padding: 8px 0 0p=
+x;text-align: center" class=3D"p center " align=3D"center"><a href=3D"https=
+://wcssssxs.r.us-west-2.awstrack.me/L0/https:%2F%2Fsquareup.com%2Fus%2Fen%2=
+Flegal%2Fgeneral%2Fprivacy/1/0101019a11ede073-d1e01818-8120-4cee-a1f9-255e0=
+2dce7d2-000000/VJhJGvHYN27tXQ3w-dOAeCluK60=3D450" style=3D"color: #2996cc;t=
+ext-decoration: none">Square Privacy Policy</a></td></tr></table></td></tr>=
+<tr><td style=3D"padding: 8px 0 0"></td></tr>
+<tr><td align=3D"center"><img src=3D"https://d1g145x70srn7h.cloudfront.net/=
+images/email/jewel-grey-22.png" width=3D"22" height=3D"22" style=3D"display=
+: block"></td></tr>
+</table></td></tr></table></td></tr></table>
+</table></td></tr></table></td></tr></table></div>
+<img alt=3D"" src=3D"https://wcssssxs.r.us-west-2.awstrack.me/I0/0101019a11=
+ede073-d1e01818-8120-4cee-a1f9-255e02dce7d2-000000/qLAkOwBUbtn5hFxuqgChZJ3i=
+8rs=3D450" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+------=_Part_12115365_850524421.1761237393518--

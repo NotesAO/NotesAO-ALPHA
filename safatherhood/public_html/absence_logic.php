@@ -1,229 +1,335 @@
 <?php
-require_once "../config/config.php";
-require_once "helpers.php";
-require_once "sql_functions.php";
+/**
+ * SAF absence_logic.php
+ * ---------------------
+ * Generates absence rows for active clients based on attends_{day} flags and recorded attendance.
+ * Behavior:
+ *  - Inserts an absence only if 6 full days have passed after the missed scheduled day.
+ *  - Only considers clients with exit_reason_id = 1 (Active) and not exited (exit_date is NULL) by default.
+ *  - Ignores weekly_attendance field entirely.
+ *  - T4C (program_id = 1): allow "double attendance" within the ISO week to cover one missing scheduled day,
+ *    then a rolling 21-day window for any remaining surplus attendance.
+ *  - Never duplicates an absence if one already exists for the client on that date (excused or not).
+ *  - Never creates absences for days the client is not scheduled to attend (attends_{weekday} = 0).
+ *  - Lookback window defaults to the last 8 weeks; configurable via ?lookback_weeks=N.
+ *  - Dry-run support via ?dry=1. Restrict to a single client via ?client_id=ID.
+ *
+ * Tables referenced (expected):
+ *  - client(id, program_id, exit_reason_id, exit_date, orientation_date,
+ *           attends_sunday ... attends_saturday, required_sessions, therapy_group_id, first_name, last_name)
+ *  - attendance_record(id, client_id, therapy_session_id)
+ *  - therapy_session(id, date)
+ *  - absence(id, client_id, date, note)
+ */
+declare(strict_types=1);
+date_default_timezone_set('America/Chicago');
 
-function buildAbsenceRecords()
-{
-    global $link;
+require_once __DIR__ . '/../config/config.php'; // provides $link (mysqli) and DB constants
+require_once __DIR__ . '/helpers.php';           // optional h() helper if present
 
-    // For clients - Not exited, with orientation date
-    // Maybe require at least 1 attendance record ?
-    // exclude clients who have attendance count >= required sessions
-    $sql = "SELECT id, orientation_date, first_attendance.date first_attendance, weekly_attendance, attends_sunday, attends_monday, attends_tuesday, attends_wednesday, attends_thursday, attends_friday, attends_saturday from client c 
-        LEFT JOIN (SELECT ar.client_id client_id, MIN(ts.date) date FROM attendance_record ar LEFT JOIN therapy_session ts ON ar.therapy_session_id = ts.id GROUP BY ar.client_id) as first_attendance ON c.id = first_attendance.client_id
-        LEFT JOIN (SELECT ar.client_id client_id, count(ar.client_id) count FROM attendance_record ar GROUP BY ar.client_id) as sessions_attended ON c.id = sessions_attended.client_id
-        where c.exit_date is null and c.orientation_date is not null and c.weekly_attendance > 0 and c.required_sessions > sessions_attended.count";
-    if ($stmt = mysqli_prepare($link, $sql)) {
-        if (mysqli_stmt_execute($stmt)) {
-            $result = mysqli_stmt_get_result($stmt);
-            if (mysqli_stmt_execute($stmt)) {
-                $result = mysqli_stmt_get_result($stmt);
-                while ($row = mysqli_fetch_assoc($result)) {
-                    buildAbsenceRecordsForClient($row["id"], $row["first_attendance"], $row["weekly_attendance"], $row);
-                }
-            } else {
-                echo "ERROR <br>" . $stmt->error . "<br>";
-            }
-        } else {
-            echo "ERROR <br>" . $stmt->error . "<br>";
-        }
-    }
+if (!function_exists('h')) {
+  function h($v){ return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
 }
 
-// Starting at orientation date? First Attendance?  4 weeks ago?
-// Build list of all days that should have attendance based on day of week and attends_x
-// If attendance record with +-6 days then No Absence otherwise absence
-// Remove expected day and attendance day and repeat until all expected days are removed
+// Inputs
+$dry            = isset($_GET['dry']) ? (int)$_GET['dry'] : 0;
+$onlyClientId   = isset($_GET['client_id']) ? (int)$_GET['client_id'] : 0;
+$includeExited  = isset($_GET['include_exited']) ? (int)$_GET['include_exited'] : 0;
+$lookbackWeeks  = isset($_GET['lookback_weeks']) ? max(1, (int)$_GET['lookback_weeks']) : 8;
 
-function buildAbsenceRecordsForClient($client_id, $start_date, $weekly_attendance, $row)
-{
-    echo "<b>Checking attendance for client " . $client_id . "</b><br>";
-    echo "orientation date: " . $row['orientation_date'] . "<br>";
+// message from the creator: hi and good luck! try finding my other easter eggs (34td)
 
-    $start_date = (new DateTime($start_date))->setTime(0, 0, 0, 0);
+// Bounds
+$today        = (new DateTimeImmutable('today'));
+$cutoffDate   = $today->modify('-6 days'); // wait 6 days before inserting an absence
+$lookbackFrom = $today->modify("-{$lookbackWeeks} weeks");
 
-    // Don't generate absences more than 4 weeks ago
-    // Limiting the lookback is tricky because because of the +- 6days window.
-    // If you limit the generation of required days then old attendance can satisify
-    // more than 1 attendnace day.  Going to try blocking the creation of OLD absences
-    // As an alternative
-    $maxOld = (new DateTime("-2 weeks"))->setTime(0, 0, 0, 0);
+// Fetch candidate clients
+$clients = fetch_clients($onlyClientId, $includeExited);
+printf("<p>Mode: %s | Clients: %d | Cutoff: %s | Lookback start: %s</p>",
+  $dry ? 'DRY' : 'LIVE',
+  count($clients),
+  $cutoffDate->format('Y-m-d'),
+  $lookbackFrom->format('Y-m-d')
+);
 
-    $stop_date = (new DateTime())->setTime(0, 0, 0, 0);  // midnight
-    echo "start_date: " . $start_date->format('Y-m-d H:i:s') . " stop_date: " . $stop_date->format('Y-m-d H:i:s') . "<br>";
+foreach ($clients as $row) {
+  process_client($row, $cutoffDate, $lookbackFrom, (bool)$dry);
+}
 
-    $attended_days = get_client_attendance_days(trim($client_id));
+echo "<hr><p>Done.</p>";
 
-    $temp = get_client_absence_days(trim($client_id));
-    $excused_absence_days = $temp[0];
-    $unexcused_absence_days = $temp[1];
+/* ====================================================================== */
+/* Logic                                                                  */
+/* ====================================================================== */
 
-    $required_days = [];
-    $date_idx = clone($start_date);
-    while ($date_idx < $stop_date) {
-        if(isRequiredDOW($date_idx, $row)) {
-            $required_days[] = clone($date_idx);
-        }
-        $date_idx->modify('+ 1 day');
-    }
+function fetch_clients(int $onlyClientId, int $includeExited): array {
+  /** @var mysqli $link */
+  global $link;
 
-    // Remove days where requierd day == attended
-    // This helps for multiple day/week programs where 2nd attendnace was being counted as make
-    // up for previous absence.  While technically correct it was confusing for the user
-    $absence_candidates = [];
-    while(count($required_days) > 0){
-        $requiredDay = array_shift($required_days);
-        $key = array_search($requiredDay->format("Y-m-d"), $attended_days);
-        if($key !== false) {
-echo "using attendance on " . $requiredDay->format("Y-m-d") . " to satisify " .  $requiredDay->format("Y-m-d"). "<br>";
-            unset($attended_days[$key]); 
-        }
+  $where = [];
+  $params = [];
+  $types = '';
+
+  // Only clients who are scheduled at least one day
+  $where[] = "(COALESCE(attends_sunday,0)+COALESCE(attends_monday,0)+COALESCE(attends_tuesday,0)+COALESCE(attends_wednesday,0)+COALESCE(attends_thursday,0)+COALESCE(attends_friday,0)+COALESCE(attends_saturday,0)) > 0";
+
+  if (!$includeExited) {
+    $where[] = "(exit_date IS NULL AND (exit_reason_id IS NULL OR exit_reason_id = 1))";
+  }
+
+  // Must have an orientation date or at least one attendance historically
+  $having_start = " (orientation_date IS NOT NULL OR first_attendance IS NOT NULL) ";
+
+  if ($onlyClientId > 0) {
+    $where[] = "c.id = ?";
+    $types  .= 'i';
+    $params[] = $onlyClientId;
+  }
+
+  $sql = "
+    SELECT
+      c.id,
+      c.first_name, c.last_name,
+      c.program_id,
+      c.orientation_date,
+      c.required_sessions,
+      c.attends_sunday, c.attends_monday, c.attends_tuesday, c.attends_wednesday, c.attends_thursday, c.attends_friday, c.attends_saturday
+    , (
+        SELECT MIN(ts.date)
+        FROM attendance_record ar
+        JOIN therapy_session ts ON ts.id = ar.therapy_session_id
+        WHERE ar.client_id = c.id
+      ) AS first_attendance
+    FROM client c
+    WHERE " . implode(' AND ', $where) . "
+    HAVING {$having_start}
+    ORDER BY c.id ASC
+  ";
+
+  $stmt = $link->prepare($sql);
+  if (!$stmt) { echo "<pre>Prepare failed: " . h($link->error) . "</pre>"; return []; }
+  if ($types !== '') { $stmt->bind_param($types, ...$params); }
+  if (!$stmt->execute()) { echo "<pre>Execute failed: " . h($stmt->error) . "</pre>"; return []; }
+  $res = $stmt->get_result();
+  $rows = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
+  $stmt->close();
+  return $rows;
+}
+
+/**
+ * Build absences for one client.
+ */
+function process_client(array $c, DateTimeImmutable $cutoffDate, DateTimeImmutable $lookbackFrom, bool $dry): void {
+  /** @var mysqli $link */
+  global $link;
+
+  $cid = (int)$c['id'];
+  $progId = (int)($c['program_id'] ?? 0);
+
+  $startDate = resolve_start_date($c, $lookbackFrom);
+  if (!$startDate) {
+    printf("<p>Client %d: no start date. Skipped.</p>", $cid);
+    return;
+  }
+
+  printf("<h3>Client %d — %s %s (program_id=%d)</h3>", $cid, h($c['first_name']??''), h($c['last_name']??''), $progId);
+  printf("<p>Start=%s | Cutoff=%s</p>", $startDate->format('Y-m-d'), $cutoffDate->format('Y-m-d'));
+
+  // Attendance map: date => count
+  $attendCounts = fetch_attendance_counts($cid, $startDate, $cutoffDate);
+
+  // Existing absences set
+  $existingAbsences = fetch_existing_absences($cid, $startDate, $cutoffDate);
+
+  // Build required scheduled days list
+  $requiredDays = enumerate_required_days($c, $startDate, $cutoffDate);
+
+   // Decide per scheduled day
+    foreach ($requiredDays as $d) {
+    $dateStr = $d->format('Y-m-d');
+
+    if ($d > $cutoffDate) { printf("<div>Skip: %s in 6-day wait</div>", $dateStr); continue; }
+    if (isset($existingAbsences[$dateStr])) { printf("<div>Skip: absence exists %s</div>", $dateStr); continue; }
+    if (!empty($attendCounts[$dateStr]))   { printf("<div>Skip: attended %s</div>", $dateStr); continue; }
+
+    // Makeup after within +1..+6 days → insert EXCUSED absence
+    if (consume_attendance_after($attendCounts, $d, 6)) {
+        if ($dry) { printf("<div>[DRY] Would INSERT EXCUSED %s</div>", $dateStr); }
         else {
-            $absence_candidates[] = $requiredDay;
+        $ok = insert_absence($cid, $dateStr, true);
+        printf("<div>%s EXCUSED %s</div>", $ok ? 'INSERTED' : 'ERROR', $dateStr);
         }
+        continue;
     }
 
-    // reset required days to the days that didn't have attendance
-    $required_days = $absence_candidates;
-    while(count($required_days) > 0){
-        $requiredDay = array_shift($required_days);
-        $found = false;
-
-        // Check existing absences FIRST. Helps with multiple attendance in week.
-        $key = array_search($requiredDay->format("Y-m-d"), $excused_absence_days);
-        if($key !== false) {
-echo "using excused absence " . $requiredDay->format("Y-m-d") . " to satisify " .  $requiredDay->format("Y-m-d"). "<br>";
-            // Already an excused absence on that day
-            $found = true;
-            // Remove the absence so it can't be used to satisify another absence
-            unset($excused_absence_days[$key]); 
-        }
-
-        // Check for unexcused absence
-        if(!$found) {
-            $key = array_search($requiredDay->format("Y-m-d"), $unexcused_absence_days);
-            if($key !== false) {
-echo "using un-excused absence " . $requiredDay->format("Y-m-d") . " to satisify " .  $requiredDay->format("Y-m-d"). "<br>";
-                // Already an un-excused absence on that day
-                $found = true;
-                // Remove the absence so it can't be used to satisify another absence
-                unset($unexcused_absence_days[$key]); 
-            }
-        }
-                
-        if(!$found) {
-            // Look from -6 to +6 from $required_day for makeup attendance
-            $date_idx = clone($requiredDay);
-            $date_idx-> modify('-6 days');
-
-            $i = 0;
-            while($i < 13 && !$found) {
-                $key = array_search($date_idx->format("Y-m-d"), $attended_days);
-                if($key !== false) {
-echo "using makeup attendance " . $date_idx->format("Y-m-d") . " to satisify " .  $requiredDay->format("Y-m-d"). "<br>";
-                    $found = true;
-                    // Remove the attendance day so it can't be used to satisify another required attendance
-                    unset($attended_days[$key]); 
-                }
-                $i++;
-                $date_idx->modify('+1 day');
-            }
-        }
-
-        // No absences until after 6 day grace period
-        $grace_date = (new DateTime("-6 days"))->setTime(0, 0, 0, 0);  // 6 days ago
-
-        if(!$found) {
-            if($requiredDay < $maxOld) {
-                echo "not creating absence " . $requiredDay->format("Y-m-d") . " because it's too old.<br>";
-            }
-            else if ($requiredDay > $grace_date) {
-                echo "not creating absence " . $requiredDay->format("Y-m-d") . " because it's too recent.<br>";
-            }
-            else {
-                insertAbsenceRecord($client_id, $requiredDay->format("Y-m-d"));
-            }
-        }
+    // Attendance within -1..-6 days before → covered, no absence
+    if (consume_attendance_before($attendCounts, $d, 6)) {
+        printf("<div>Skip: covered by earlier attendance near %s</div>", $dateStr);
+        continue;
     }
+
+    // True absence
+    if ($dry) { printf("<div>[DRY] Would INSERT %s</div>", $dateStr); }
+    else {
+        $ok = insert_absence($cid, $dateStr, false);
+        printf("<div>%s %s</div>", $ok ? 'INSERTED' : 'ERROR', $dateStr);
+    }
+    }
+
 }
 
-function isRequiredDOW($date, $row)
-{
-    $dayOfWeek = $date->format("w");
-    if ($dayOfWeek == "0") {
-        return $row['attends_sunday'] == 1;
-    } elseif ($dayOfWeek == "1") {
-        return $row['attends_monday'] == 1;
-    } elseif ($dayOfWeek == "2") {
-        return $row['attends_tuesday'] == 1;
-    } elseif ($dayOfWeek == "3") {
-        return $row['attends_wednesday'] == 1;
-    } elseif ($dayOfWeek == "4") {
-        return $row['attends_thursday'] == 1;
-    } elseif ($dayOfWeek == "5") {
-        return $row['attends_friday'] == 1;
-    } elseif ($dayOfWeek == "6") {
-        return $row['attends_saturday'] == 1;
-    }
-    
-    return $false;
+/** Start date preference: orientation_date else first_attendance, capped by lookback window. */
+function resolve_start_date(array $c, DateTimeImmutable $lookbackFrom): ?DateTimeImmutable {
+  $od = !empty($c['orientation_date']) ? (new DateTimeImmutable($c['orientation_date']))->setTime(0,0,0) : null;
+  $fa = !empty($c['first_attendance']) ? (new DateTimeImmutable($c['first_attendance']))->setTime(0,0,0) : null;
+
+  $chosen = $od ?: $fa;
+  if (!$chosen) return null;
+
+  if ($chosen < $lookbackFrom) $chosen = $lookbackFrom;
+  return $chosen;
 }
 
-function insertAbsenceRecord($client_id, $date)
-{
-    $dsn = "mysql:host=" . db_host . ";dbname=" . db_name . ";charset=utf8mb4";
-    $options = [
-        PDO::ATTR_EMULATE_PREPARES   => false, // turn off emulation mode for "real" prepared statements
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, //turn on errors in the form of exceptions
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, //make the default fetch be an associative array
-    ];
-    try {
-        $pdo = new PDO($dsn, db_user, db_pass, $options);
-    } catch (Exception $e) {
-        error_log($e->getMessage());
-        exit('Error creating absence record'); //something a user can understand
+/** Build required days list based on attends_{weekday} flags from start..cutoff inclusive. */
+function enumerate_required_days(array $c, DateTimeImmutable $from, DateTimeImmutable $to): array {
+  $flags = [
+    0 => (int)($c['attends_sunday'] ?? 0),
+    1 => (int)($c['attends_monday'] ?? 0),
+    2 => (int)($c['attends_tuesday'] ?? 0),
+    3 => (int)($c['attends_wednesday'] ?? 0),
+    4 => (int)($c['attends_thursday'] ?? 0),
+    5 => (int)($c['attends_friday'] ?? 0),
+    6 => (int)($c['attends_saturday'] ?? 0),
+  ];
+  $days = [];
+  for ($d = $from; $d <= $to; $d = $d->modify('+1 day')) {
+    $dow = (int)$d->format('w'); // 0=Sun..6=Sat
+    if (!empty($flags[$dow])) {
+      $days[] = $d;
     }
+  }
+  return $days;
+}
 
-    $vars = parse_columns('attendance_record', $_POST);
-    $stmt = $pdo->prepare("INSERT INTO absence (client_id, date, note) VALUES (?,?,?)");
+/** Attendance counts by date between from..to. */
+function fetch_attendance_counts(int $cid, DateTimeImmutable $from, DateTimeImmutable $to): array {
+  global $link;
+  $sql = "
+    SELECT DATE(ts.date) AS d, COUNT(*) AS cnt
+    FROM attendance_record ar
+    JOIN therapy_session ts ON ts.id = ar.therapy_session_id
+    WHERE ar.client_id = ?
+      AND ts.date BETWEEN ? AND ?
+    GROUP BY DATE(ts.date)
+  ";
+  $stmt = $link->prepare($sql);
+  $fromS = $from->format('Y-m-d');
+  $toS   = $to->format('Y-m-d');
+  $stmt->bind_param('iss', $cid, $fromS, $toS);
+  $stmt->execute();
+  $res = $stmt->get_result();
+  $out = [];
+  while ($row = $res->fetch_assoc()) {
+    $out[$row['d']] = (int)$row['cnt'];   // keys like 'YYYY-MM-DD'
+  }
+  $stmt->close();
+  return $out;
+}
 
-    $today = new DateTime();
-    $note = "Auto generated " . $today->format("Y-m-d");
+/** Existing absences between from..to as a set. */
+function fetch_existing_absences(int $cid, DateTimeImmutable $from, DateTimeImmutable $to): array {
+  /** @var mysqli $link */
+  global $link;
 
-    echo "insertAbsenceRecord client: " . $client_id . " date: " . $date . " note: " . $note . "<br>";
-    if ($stmt->execute([$client_id, $date, $note])) {
-         $stmt = null;
+  $sql = "SELECT date FROM absence WHERE client_id = ? AND date BETWEEN ? AND ?";
+  $stmt = $link->prepare($sql);
+  $fromS = $from->format('Y-m-d');
+  $toS   = $to->format('Y-m-d');
+  $stmt->bind_param('iss', $cid, $fromS, $toS);
+  $stmt->execute();
+  $res = $stmt->get_result();
+  $out = [];
+  while ($row = $res->fetch_assoc()) {
+    $out[$row['date']] = true;
+  }
+  $stmt->close();
+  return $out;
+}
+
+function consume_attendance_after(array &$attendCounts, DateTimeImmutable $d, int $days=6): bool {
+  for ($i = 1; $i <= $days; $i++) {
+    $k = $d->modify("+{$i} days")->format('Y-m-d');
+    if (!empty($attendCounts[$k])) {
+      $attendCounts[$k]--;
+      if ($attendCounts[$k] <= 0) unset($attendCounts[$k]);
+      return true;
+    }
+  }
+  return false;
+}
+function consume_attendance_before(array &$attendCounts, DateTimeImmutable $d, int $days=6): bool {
+  for ($i = 1; $i <= $days; $i++) {
+    $k = $d->modify("-{$i} days")->format('Y-m-d');
+    if (!empty($attendCounts[$k])) {
+      $attendCounts[$k]--;
+      if ($attendCounts[$k] <= 0) unset($attendCounts[$k]);
+      return true;
+    }
+  }
+  return false;
+}
+
+
+function insert_absence(int $cid, string $date, bool $excused=false): bool {
+  $dsn = "mysql:host=" . db_host . ";dbname=" . db_name . ";charset=utf8mb4";
+  $opts = [
+    PDO::ATTR_EMULATE_PREPARES=>false,
+    PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,
+  ];
+  try { $pdo = new PDO($dsn, db_user, db_pass, $opts); } catch (Throwable $e) { error_log($e->getMessage()); return false; }
+
+  $note = "Auto generated " . date('Y-m-d');
+  $hasExcusedCol = false;
+  try {
+    $chk = $pdo->prepare("SELECT 1 FROM information_schema.COLUMNS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='absence' AND COLUMN_NAME='excused' LIMIT 1");
+    $chk->execute(); $hasExcusedCol = (bool)$chk->fetchColumn();
+  } catch (Throwable $e) { /* ignore */ }
+
+  try {
+    if ($hasExcusedCol) {
+      $st = $pdo->prepare("INSERT INTO absence (client_id, date, note, excused) VALUES (?, ?, ?, ?)");
+      return $st->execute([$cid, $date, $note, $excused ? 1 : 0]);
     } else {
-         echo "Error creating absence record";
+      // no column: encode state in the note
+      if ($excused) $note .= " [EXCUSED]";
+      $st = $pdo->prepare("INSERT INTO absence (client_id, date, note) VALUES (?, ?, ?)");
+      return $st->execute([$cid, $date, $note]);
     }
+  } catch (Throwable $e) {
+    error_log("Insert absence failed cid={$cid} date={$date}: ".$e->getMessage());
+    return false;
+  }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>NotesAO - Absence Report</title>
-    <!-- FAVICON LINKS (from index.html) -->
-    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
-
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#211c56">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="/favicons/apple-touch-icon-ipad-pro.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
-
-    <link rel="manifest" href="/favicons/site.webmanifest">
-    <meta name="apple-mobile-web-app-title" content="NotesAO">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <meta charset="utf-8" />
+  <title>SAF Absence Logic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body{padding:16px}
+    .muted{color:#6c757d}
+    h3{margin-top:24px}
+  </style>
 </head>
-
 <body>
-    <?php buildAbsenceRecords(); ?>
+  <h2>SAF Absence Logic</h2>
+  <p class="muted">Adds absences 6 days after a missed scheduled day. T4C allows weekly make-up by surplus attendance.</p>
 </body>
+</html>

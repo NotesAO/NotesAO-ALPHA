@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id GS2+BxlC9WhS4AIAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Sun, 19 Oct 2025 14:55:05 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sun, 19 Oct 2025 14:55:05 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1vAZUf-00000000n2A-04bs
+	for admin@notesao.com;
+	Sun, 19 Oct 2025 14:55:05 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Justin Garcia
+X-PHP-Script: ffl.notesao.com/intake.php for 107.115.171.81
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: jcgcsone@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1vAZUf-00000000n2A-04bs@host.notesao.com>
+Date: Sun, 19 Oct 2025 14:55:05 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php

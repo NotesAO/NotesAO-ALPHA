@@ -1,0 +1,112 @@
+Return-Path: <randalllhoover@icloud.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id BVhzGqLG82gLbDkAIW4ynA
+	(envelope-from <randalllhoover@icloud.com>); Sat, 18 Oct 2025 11:56:02 -0500
+Return-path: <randalllhoover@icloud.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Sat, 18 Oct 2025 11:56:02 -0500
+Received: from p-west3-cluster4-host2-snip4-8.eps.apple.com ([57.103.74.189]:56700 helo=outbound.ms.icloud.com)
+	by host.notesao.com with esmtps  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.2)
+	(envelope-from <randalllhoover@icloud.com>)
+	id 1vAADs-0000000Fmyi-2lJP
+	for admin@notesao.com;
+	Sat, 18 Oct 2025 11:56:02 -0500
+Received: from outbound.ms.icloud.com (unknown [127.0.0.2])
+	by p00-icloudmta-asmtp-us-west-3a-100-percent-8 (Postfix) with ESMTPS id DF23C1800294
+	for <admin@notesao.com>; Sat, 18 Oct 2025 16:55:59 +0000 (UTC)
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com; s=1a1hai; bh=KemSsLl64BS43KP0FKAyVUaC50hJshLDSj5HQkz9pPM=; h=Content-Type:From:Mime-Version:Subject:Date:Message-Id:To:x-icloud-hme; b=Ec295nXPeMig11KSPDdajg4OQ5Xbv5rYAkeGQieFd6+PhsN6/n4uT49Oxsk+zpeuH8D30R2SuhZ1iHGzC3MldJ3oKAUcSgEX3y88N3HR9PQA4lNSUMKbJ++PX9lgPQAN292Ery1o9A5BBWm++BjwTuukeJ1MUNGI6ImBvQ4pRrejjknfW69k1NrvYZmqc0qgvEos/VgyCQOQxiMPn/5sJu2fr8mSAX8T5Fgjlph/zfLAfdCDvHhzieuTk1BHH8cotf/hj3M4NPkGQ91imej7K0TxuVQMvVGlmewO0qTfOSijvS7hDMOZ93ydfPn+AX7xk02smNGXlRV5iXZC9PFWdg==
+Received: from smtpclient.apple (unknown [17.57.154.37])
+	by p00-icloudmta-asmtp-us-west-3a-100-percent-8 (Postfix) with ESMTPSA id 2F651180028A
+	for <admin@notesao.com>; Sat, 18 Oct 2025 16:55:59 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=Apple-Mail-AFFA1064-5840-44C9-9232-CBA0F8547B6E
+Content-Transfer-Encoding: 7bit
+From: Randall Hoover <randalllhoover@icloud.com>
+Mime-Version: 1.0 (1.0)
+Subject: Re: Men's BIPP Group Reminder: Tuesday at 7:00 PM
+Date: Sat, 18 Oct 2025 11:55:41 -0500
+Message-Id: <6B52C6F4-4DFB-4984-A07D-A54E580031B4@icloud.com>
+References: <DB62B600-14A3-4CE5-87C0-1E7F5AAD56A7@icloud.com>
+In-Reply-To: <DB62B600-14A3-4CE5-87C0-1E7F5AAD56A7@icloud.com>
+To: admin@notesao.com
+X-Mailer: iPhone Mail (21F90)
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMDE4MDEyMiBTYWx0ZWRfXyCXz9po7QMTX
+ 19NjQ6eukBfMyEeEYj7sk75XhoD12yWipG9jyuOZzzuExtdhVjMPfWdkmEOCfhnYyiVDi5PUPa8
+ ptonZw3ZSSMFYetmUFQpEzuRaS8+H4X/6Q4HR81Jt3r7vFbLy6NPg42GFNmv2iEA3t1K/gIaMQU
+ +nWCLQRh1U4kkdcFLYzaRi3J54XlKW2l/QsmNG0pufbGVz+W+lGOEsTEHx+pUyRGBqkbF8oZCuC
+ ACG7u152pMX6w7yCVG0nENdlG1ugvAM6wD/Lk/pTYxDXn1/niGes5MJiXXaeHEcmNxJUxZ63M=
+X-Proofpoint-ORIG-GUID: 0JCZgtZjEUeE2RPSP95_QmW04CZ_awJu
+X-Proofpoint-GUID: 0JCZgtZjEUeE2RPSP95_QmW04CZ_awJu
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.80.40
+ definitions=2025-10-18_06,2025-10-13_01,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ suspectscore=0 clxscore=1015 spamscore=0 phishscore=0 adultscore=0
+ bulkscore=0 malwarescore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.22.0-2506270000 definitions=main-2510180122
+X-JNJ: AAAAAAABcTuZVBorOBzFXYKkj/xvsjKVhn87gNZhlsOfSa5KlwUizF+bw4+LjRRMC5TkBuRiT14CdhioUUwaVM1D2EKZ17qOkghqDusDd7U9Qd3s0wDFI0+/I0aCX+mq+34DJ0/rLPqePRW+3QP9d9vkbQMOzTywTnw/FfFFYXrCODFzZVGBDwHkx560yMAmRQdYoP7YgJnFzzliik5cvjqdNSD+WOVxnfPJI+8mthUYvWWSoAtjRpmov6SS1ozAkY0Hxhf1vwKZFQyBFUHaXs+fkWKcnHsECymJCXMfY6xCMv7GSmIGuzL21gIemb9/5+tyu6Eulh1A5Tzgv15kUjWmFLeaAg6pnkIN2/YqpAp3tATYl0+/mTiJiTyHFDt33LdwESSVforv8+I/njce83OukOYSqhf5FnMnF2UIQ6IR8zgJv3CClpjgLP1Hrx2JRH4TFTMiFD+qXO9JGADS8x+if462kTA/jkQMXZ2MxzV5bAHowH4Ep0xGsTd2+xMQUKtjEvNtUnwqY3EODTPkOE2YpjFDaFgg3/7DKILUhd95m5vcuX+XnY0XQ+IMJEDgnhBGvk7Jc+VvNwMEN3mQymj/WrMrfDXnNohf1j3/QhQZ6UUHTF7h43U3wh5JUsWNDEWz+tAj59xJsWPRTvZc8fgqDDljgskagRYJ7JFt+mi00StwibPt
+X-Spam-Status: No, score=1.9
+X-Spam-Score: 19
+X-Spam-Bar: +
+X-Ham-Report: =?ISO-8859-1?Q?Spam_detection_software=2C_running_on_the_system_=22host=2Enotesao=2Ec?= =?ISO-8859-1?Q?om=22=2C=0A_has_NOT_identified_this_incoming_email_as?= =?ISO-8859-1?Q?_spam=2E__The_original=0A_message_has_been_attached_t?= =?ISO-8859-1?Q?o_this_so_you_can_view_it_or_label=0A_similar_future_?= =?ISO-8859-1?Q?email=2E__If_you_have_any_questions=2C_see=0A_root=5C=40?= =?ISO-8859-1?Q?localhost_for_details=2E=0A_Content_preview=3A__Will_?= =?ISO-8859-1?Q?be_there_Sunday_at_7_Sent_from_my_iPhone_On_Oct_15=2C_?= =?ISO-8859-1?Q?2025=2C=0A____at_5=3A44_AM=2C_Randall_Hoover_wrote=3A_?= =?ISO-8859-1?Q?=0A_Content_analysis_details=3A___=281=2E9_points=2C_?= =?ISO-8859-1?Q?5=2E0_required=29=0A__pts_rule_name______________desc?= =?ISO-8859-1?Q?ription=0A_----_----------------------_--------------?= =?ISO-8859-1?Q?------------------------------------=0A__0=2E0_URIBL=5FB?= =?ISO-8859-1?Q?LOCKED__________ADMINISTRATOR_NOTICE=3A_The_query_to_?= =?ISO-8859-1?Q?URIBL_was_blocked=2E=0A_____________________________S?= =?ISO-8859-1?Q?ee=0A_____________________________http=3A//wiki=2Eapa?= =?ISO-8859-1?Q?che=2Eorg/spamassassin/DnsBlocklists#dnsbl-block=0A__?= =?ISO-8859-1?Q?____________________________for_more_information=2E=0A?= =?ISO-8859-1?Q?_____________________________=5BURI=3A_icloud=2Ecom=5D=0A?= =?ISO-8859-1?Q?__0=2E0_RCVD=5FIN=5FVALIDITY=5FSAFE=5FBLOCKED_RBL=3A_?= =?ISO-8859-1?Q?ADMINISTRATOR_NOTICE=3A_The_query_to=0A______________?= =?ISO-8859-1?Q?________________Validity_was_blocked=2E__See=0A______?= =?ISO-8859-1?Q?_______________________https=3A//knowledge=2Evalidity?= =?ISO-8859-1?Q?=2Ecom/hc/en-us/articles/20961730681243=0A___________?= =?ISO-8859-1?Q?___________________for_more_information=2E=0A________?= =?ISO-8859-1?Q?_____________________=5B57=2E103=2E74=2E189_listed_in?= =?ISO-8859-1?Q?_sa-accredit=2Ehabeas=2Ecom=5D=0A__0=2E0_RCVD=5FIN=5FV?= =?ISO-8859-1?Q?ALIDITY=5FCERTIFIED=5FBLOCKED_RBL=3A_ADMINISTRATOR_NO?= =?ISO-8859-1?Q?TICE=3A_The=0A_____________________________query_to_V?= =?ISO-8859-1?Q?alidity_was_blocked=2E__See=0A_______________________?= =?ISO-8859-1?Q?______https=3A//knowledge=2Evalidity=2Ecom/hc/en-us/a?= =?ISO-8859-1?Q?rticles/20961730681243=0A____________________________?= =?ISO-8859-1?Q?__for_more_information=2E=0A_________________________?= =?ISO-8859-1?Q?_=5B57=2E103=2E74=2E189_listed_in_sa-trusted=2Ebonded?= =?ISO-8859-1?Q?sender=2Eorg=5D=0A__0=2E0_RCVD=5FIN=5FVALIDITY=5FRPBL?= =?ISO-8859-1?Q?=5FBLOCKED_RBL=3A_ADMINISTRATOR_NOTICE=3A_The_query_t?= =?ISO-8859-1?Q?o=0A______________________________Validity_was_blocke?= =?ISO-8859-1?Q?d=2E__See=0A_____________________________https=3A//kn?= =?ISO-8859-1?Q?owledge=2Evalidity=2Ecom/hc/en-us/articles/2096173068?= =?ISO-8859-1?Q?1243=0A______________________________for_more_informa?= =?ISO-8859-1?Q?tion=2E=0A_____________________________=5B57=2E103=2E7?= =?ISO-8859-1?Q?4=2E189_listed_in_bl=2Escore=2Esenderscore=2Ecom=5D=0A?= =?ISO-8859-1?Q?_-0=2E0_SPF=5FHELO=5FPASS__________SPF=3A_HELO_matche?= =?ISO-8859-1?Q?s_SPF_record=0A_-0=2E0_SPF=5FPASS_______________SPF=3A_?= =?ISO-8859-1?Q?sender_matches_SPF_record=0A_-0=2E1_DKIM=5FVALID=5FAU?= =?ISO-8859-1?Q?__________Message_has_a_valid_DKIM_or_DK_signature_fr?= =?ISO-8859-1?Q?om_author's=0A_____________________________domain=0A_?= =?ISO-8859-1?Q?-0=2E1_DKIM=5FVALID_____________Message_has_at_least_?= =?ISO-8859-1?Q?one_valid_DKIM_or_DK_signature=0A_-0=2E1_DKIM=5FVALID?= =?ISO-8859-1?Q?=5FEF__________Message_has_a_valid_DKIM_or_DK_signatu?= =?ISO-8859-1?Q?re_from=0A_____________________________envelope-from_?= =?ISO-8859-1?Q?domain=0A__0=2E1_DKIM=5FSIGNED____________Message_has?= =?ISO-8859-1?Q?_a_DKIM_or_DK_signature=2C_not_necessarily_valid=0A__?= =?ISO-8859-1?Q?0=2E0_FREEMAIL=5FFROM__________Sender_email_is_common?= =?ISO-8859-1?Q?ly_abused_enduser_mail_provider=0A___________________?= =?ISO-8859-1?Q?__________=5Brandalllhoover=28at=29icloud=2Ecom=5D=0A?= =?ISO-8859-1?Q?__0=2E1_MIME=5FHTML=5FONLY_________BODY=3A_Message_on?= =?ISO-8859-1?Q?ly_has_text/html_MIME_parts=0A__0=2E0_HTML=5FMESSAGE_?= =?ISO-8859-1?Q?__________BODY=3A_HTML_included_in_message=0A__0=2E7_?= =?ISO-8859-1?Q?MPART=5FALT=5FDIFF_________BODY=3A_HTML_and_text_part?= =?ISO-8859-1?Q?s_are_different=0A__1=2E3_HTML=5FIMAGE=5FONLY=5F24___?= =?ISO-8859-1?Q?__BODY=3A_HTML=3A_images_with_2000-2400_bytes_of_word?= =?ISO-8859-1?Q?s=0A__0=2E0_MIME=5FQP=5FLONG=5FLINE______RAW=3A_Quote?= =?ISO-8859-1?Q?d-printable_line_longer_than_76_chars=0A__0=2E0_MIME=5FH?= =?ISO-8859-1?Q?TML=5FONLY=5FMULTI___Multipart_message_only_has_text/?= =?ISO-8859-1?Q?html_MIME_parts?=
+X-Spam-Flag: NO
+
+
+--Apple-Mail-AFFA1064-5840-44C9-9232-CBA0F8547B6E
+Content-Type: text/html;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charset=3D=
+utf-8"></head><body dir=3D"auto">Will be there Sunday at 7<br id=3D"lineBrea=
+kAtBeginningOfSignature"><div dir=3D"ltr">Sent from my iPhone</div><div dir=3D=
+"ltr"><br><blockquote type=3D"cite">On Oct 15, 2025, at 5:44=E2=80=AFAM, Ran=
+dall Hoover &lt;randalllhoover@icloud.com&gt; wrote:<br><br></blockquote></d=
+iv><blockquote type=3D"cite"><div dir=3D"ltr">=EF=BB=BF<meta http-equiv=3D"c=
+ontent-type" content=3D"text/html; charset=3Dutf-8">I will be attending this=
+ weekend.<div>Randall Hoover<br id=3D"lineBreakAtBeginningOfSignature"><div d=
+ir=3D"ltr">Sent from my iPhone</div><div dir=3D"ltr"><br><blockquote type=3D=
+"cite">On Oct 14, 2025, at 4:58=E2=80=AFPM, Free for Life Group &lt;no-reply=
+@ffl.notesao.com&gt; wrote:<br><br></blockquote></div><blockquote type=3D"ci=
+te"><div dir=3D"ltr">=EF=BB=BF<div style=3D"text-align:center;margin:0 0 12p=
+x 0"><img src=3D"https://ffltest.notesao.com/ffllogo.png" alt=3D"Free for Li=
+fe Group" style=3D"max-width:100%;height:auto;display:inline-block;" data-un=
+ique-identifier=3D""></div><p>Hi Randall,</p>
+
+<p><strong>Your Men's BIPP group is Tuesday at 7:00 PM (Tuesday, October 14)=
+.</strong></p>
+
+<p>
+  Your M; Miller Complex 3210 Miller Avenue, FW mandated BIPP group is sched=
+uled. M; Miller Complex 3210 Miller Avenue, FW and B Lee expect your presenc=
+e.
+  Please arrive early. <em>Lockout is 7:10 PM</em>. Your presence is a manda=
+tory stipulation.
+  Incarceration occurs for non-attendance. Enjoy life fearlessly by remainin=
+g in good standing with CSCD &amp; TDCJ.
+  You've got this!
+</p>
+
+<p>Where: 1100 East Lancaster Ave Fort Worth TX 76102</p>
+
+<p>
+  Client Portal (for Make-Up Group Options):<br>
+  <a href=3D"https://ffl.notesao.com/clientportal.php">FFL =E2=80=93 Client P=
+ortal</a>
+</p>
+
+<p>
+  Questions? Reply to this email with any attendance or payment concerns OR c=
+all during office hours (Mon=E2=80=93Fri, 8am=E2=80=934pm).
+</p>
+
+<p>Blessings,<br>Free for Life Group</p><hr style=3D"border-top:1px solid #d=
+dd;margin:24px 0;"><p style=3D"font:12px/1.4 Arial,Helvetica,sans-serif;colo=
+r:#666">This reminder was sent by Free for Life Group. If you no longer wish=
+ to receive emails at this address, <a href=3D"https://ffltest.notesao.com/u=
+nsubscribe.php?e=3Drandalllhoover%40icloud.com&amp;t=3Df7e1b69c7f45a5ca52fa4=
+89a4c17268f53fd31f28fa54a2b4994c69d496ae25e">unsubscribe here</a>.</p>
+</div></blockquote></div></div></blockquote></body></html>=
+
+--Apple-Mail-AFFA1064-5840-44C9-9232-CBA0F8547B6E--

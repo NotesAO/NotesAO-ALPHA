@@ -466,6 +466,23 @@
             mysqli_stmt_close($stmt);
             return $resultarray;
         }
+
+        function get_facilitators() {
+            global $link;
+            $rows = [];
+            $sql = "SELECT id, CONCAT(first_name,' ',last_name) AS name
+                    FROM facilitator
+                    ORDER BY last_name, first_name";
+            if ($stmt = mysqli_prepare($link, $sql)) {
+                if (mysqli_stmt_execute($stmt)) {
+                    $res = mysqli_stmt_get_result($stmt);
+                    while ($r = mysqli_fetch_assoc($res)) { $rows[] = $r; }
+                }
+                mysqli_stmt_close($stmt);
+            }
+            return $rows;
+        }
+
         
         function get_client_info($client_id) {
             global $link;
@@ -514,6 +531,23 @@
             case when drug_alcohol = 0 then 'false' else 'true' end as drug_alcohol,
             case when inappropriate_behavior_to_staff  = 0 then 'false' else 'true' end as inappropriate_behavior_to_staff,
             other_concerns other_concerns,
+
+            c.instructor AS instructor,
+            c.referral_email AS referral_email,
+            c.sid AS sid,
+            c.address AS address,
+            c.city AS city,
+            c.state_zip AS state_zip,
+            c.ssl_dln AS ssl_dln,
+            c.marital_status AS marital_status,
+            c.employed AS employed,
+            c.UA_positive AS UA_positive,
+            c.prescription_use AS prescription_use,
+            c.paid_amount AS paid_amount,
+            c.paid_source AS paid_source,
+            c.paid_note AS paid_note,
+            c.county AS county,
+
             behavior_contract_status behavior_contract_status,
             behavior_contract_signed_date behavior_contract_signed_date,
             attends_sunday, attends_sunday_t4c, attends_monday, attends_tuesday, attends_wednesday, attends_thursday, attends_friday, attends_saturday

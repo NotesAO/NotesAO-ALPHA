@@ -20,11 +20,29 @@ check_loggedin($con);
         exit();
     }
 
-    $ledger_results = get_client_ledger(trim($client_id));
-    if(!isset($ledger_results)){
-        header("location: error.php");
-        exit();
-    }
+    // fetch rows directly to reflect new columns
+    $pdo = new PDO("mysql:host=".db_host.";dbname=".db_name.";charset=utf8mb4", db_user, db_pass, [
+        PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
+    ]);
+
+    $rows = $pdo->prepare("
+        SELECT id AS ledger_id,
+                occurred_at,
+                kind, subtype, method,
+                COALESCE(memo, note) AS memo,
+                amount
+        FROM ledger
+        WHERE client_id = ? AND voided_at IS NULL AND kind <> 'allocation'
+        ORDER BY occurred_at DESC, id DESC
+    ");
+    $rows->execute([(int)$client_id]);
+    $rows = $rows->fetchAll();
+
+    $bal = $pdo->prepare("SELECT COALESCE(ROUND(SUM(amount),2),0.00) AS balance
+                        FROM ledger WHERE client_id=? AND voided_at IS NULL AND kind <> 'allocation'");
+    $bal->execute([(int)$client_id]);
+    $balance = $bal->fetch()['balance'];
+
 ?>
 
 <!DOCTYPE html>
@@ -155,7 +173,8 @@ check_loggedin($con);
                 </div>
                 <div class="col-1">
                     <small class="text-muted">Balance</small>
-                    <h4><?php echo htmlspecialchars("$" . $client["balance"]); ?></h4>
+                    <h4><?= '$'.htmlspecialchars($balance) ?></h4>
+
                 </div>
             </div>
 
@@ -165,29 +184,32 @@ check_loggedin($con);
                     <table class='table table-bordered table-striped'>
                     <thead>
                         <tr>
-                            <th>Create Date</th>
+                            <th>Occurred</th>
+                            <th>Kind</th>
+                            <th>Subtype</th>
+                            <th>Method</th>
                             <th>Note</th>
-                            <th>Amount</th>
+                            <th class="text-right">Amount</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                            $num_rows = count($ledger_results);
-                            for($i=0; $i<$num_rows; $i++){
-                                $row = $ledger_results[$i];
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['create_date']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['note']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['amount']) . "</td>";
-                                echo "<td>";
-                                echo "<a href='ledger-update.php?id=". $row['ledger_id'] . "&client_id=" . $client_id . "' title='Update' data-toggle='tooltip' class='btn btn-primary'>Update</a>";
-                                echo "<a href='ledger-delete.php?id=". $row['ledger_id'] . "&client_id=" . $client_id . "' title='Delete' data-toggle='tooltip' class='btn btn-primary'>Delete</a>";
-                                echo "</td>";
-                                echo "</tr>";
-                            }
-                        ?>
+                        <?php foreach ($rows as $r): ?>
+                            <tr>
+                            <td><?= htmlspecialchars($r['occurred_at']) ?></td>
+                            <td><?= htmlspecialchars($r['kind']) ?></td>
+                            <td><?= htmlspecialchars($r['subtype'] ?? '') ?></td>
+                            <td><?= htmlspecialchars($r['method'] ?? '') ?></td>
+                            <td><?= htmlspecialchars($r['memo'] ?? '') ?></td>
+                            <td class="text-right"><?= htmlspecialchars(number_format((float)$r['amount'],2)) ?></td>
+                            <td>
+                                <a href="ledger-update.php?id=<?= (int)$r['ledger_id'] ?>&client_id=<?= (int)$client_id ?>" class="btn btn-primary">Update</a>
+                                <a href="ledger-delete.php?id=<?= (int)$r['ledger_id'] ?>&client_id=<?= (int)$client_id ?>" class="btn btn-primary">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                     </tbody>
+
                     </table>
                 </div>
             </div>

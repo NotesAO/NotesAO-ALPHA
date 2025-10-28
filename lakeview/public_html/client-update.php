@@ -4,6 +4,24 @@ check_loggedin($con);
 require_once "helpers.php";
 require_once "sql_functions.php";
 
+function lv_map_payment_source(string $src): array {
+    // returns [$kind,$subtype,$method,$sign]  sign: +1 for charge/refund, -1 for payment/credit
+    $src = trim($src);
+    switch ($src) {
+        case 'Cash':  return ['payment', null, 'cash', -1];
+        case 'Card':  return ['payment', null, 'card', -1];
+        case 'Check': return ['payment', null, 'check', -1];
+        case 'Money Order': return ['payment', null, 'check', -1];
+        case 'Scholarship': return ['adjustment','scholarship', null, -1];
+        case 'Waiver': return ['adjustment','waiver', null, -1];
+        case 'CPS':   return ['adjustment','cps', null, -1];
+        case 'Refunded': return ['refund', null, null, +1];
+        case 'Other': return ['payment', 'other', 'unknown', -1];
+        default:      return ['payment', null, 'unknown', -1];
+    }
+}
+
+
 // Define variables and initialize with empty values
 $first_name = "";
 $last_name = "";
@@ -24,7 +42,7 @@ $note = "";
 $emergency_contact = "";
 $orientation_date = "";
 $exit_date = NULL;
-$exit_reason_id = NULL;
+
 $exit_note = "";
 $weekly_attendance = "";
 $attends_sunday = false;
@@ -49,6 +67,13 @@ $behavior_contract_status = "";
 $behavior_contract_signed_date = "";
 $birth_place = "";
 $intake_packet =0;
+
+$instructor=""; $referral_email=""; $sid="";
+$address=""; $city=""; $state_zip=""; $ssl_dln="";
+$marital_status=""; $employed=""; $UA_positive=""; $prescription_use="";
+$paid_amount=""; $paid_source=""; $paid_note="";
+$county="";
+
 
 $first_name_err = "";
 $last_name_err = "";
@@ -111,7 +136,8 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     $emergency_contact = trim($_POST["emergency_contact"]);
     $orientation_date = trim($_POST["orientation_date"]);
     $exit_date = trim($_POST["exit_date"]);
-    $exit_reason_id = trim($_POST["exit_reason_id"]);
+    $exit_reason_id = ($_POST["exit_reason_id"] ?? "") === "" ? null : (int)$_POST["exit_reason_id"];
+
     $exit_note = trim($_POST["exit_note"]);
     $weekly_attendance = trim($_POST["weekly_attendance"]);
     $attends_sunday = isset($_POST['attends_sunday']) ? 1 : 0;
@@ -126,6 +152,27 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     $behavior_contract_signed_date = trim($_POST["behavior_contract_signed_date"] ?? "");
     $birth_place = trim($_POST["birth_place"]);
     $intake_packet = isset($_POST['intake_packet']) ? 1 : 0;
+    $instructor = trim($_POST["instructor"] ?? "");
+    $instructor = ($instructor === "") ? NULL : $instructor;
+    $referral_email = trim($_POST["referral_email"] ?? "");
+    $sid = trim($_POST["sid"] ?? "");
+    $address = trim($_POST["address"] ?? "");
+    $city = trim($_POST["city"] ?? "");
+    $state_zip = trim($_POST["state_zip"] ?? "");
+    $ssl_dln = trim($_POST["ssl_dln"] ?? "");
+    $marital_status= $_POST["marital_status"] ?? "Unknown";
+    $employed      = $_POST["employed"]     ?? "Unknown";
+    $UA_positive   = $_POST["UA_positive"]  ?? "Unknown";
+    $prescription_use = trim($_POST["prescription_use"] ?? "");
+    $paid_amount_raw = trim($_POST["paid_amount"] ?? "");
+    $paid_amount = ($paid_amount_raw === "")
+        ? "0.00"
+        : number_format((float)$paid_amount_raw, 2, '.', '');
+
+    $paid_source   = $_POST["paid_source"]  ?? "Unknown";
+    $paid_note = trim($_POST["paid_note"] ?? "");
+    $county = trim($_POST["county"] ?? "");
+
 
     $speaksSignificantlyInGroup = isset($_POST['speaksSignificantlyInGroup']) ? 1 : 0;
     $respectfulTowardsGroup = isset($_POST['respectfulTowardsGroup']) ? 1 : 0;
@@ -135,6 +182,21 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     $blamesVictim = isset($_POST['blamesVictim']) ? 1 : 0;
     $drugAlcohol = isset($_POST['drugAlcohol']) ? 1 : 0;
     $inappropriateBehavior = isset($_POST['inappropriateBehavior']) ? 1 : 0;
+
+    $pid = (int)$program_id;
+
+    // required_sessions default
+    if ($required_sessions === '' || !preg_match('/^\d+$/', (string)$required_sessions)) {
+        $def = program_required_sessions($pid);
+        if ($def !== null) $required_sessions = (string)$def;
+    }
+
+    // weekly_attendance default (0/1/2 allowed)
+    if ($weekly_attendance === '' || !preg_match('/^[012]$/', (string)$weekly_attendance)) {
+        $mpw = $PROGRAM_DEFAULTS[$pid]['meetings_per_week'] ?? null;
+        if ($mpw !== null) $weekly_attendance = (string)$mpw;
+    }
+
 
     // Prepare an update statement
     $dsn = "mysql:host=" . db_host . ";dbname=" . db_name . ";charset=utf8mb4";
@@ -155,18 +217,65 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     if (empty($orientation_date)) $orientation_date = NULL;
     if (empty($exit_date)) $exit_date = NULL;
 
-    $stmt = $pdo->prepare("UPDATE client SET program_id=?,first_name=?,last_name=?,date_of_birth=?,gender_id=?,email=?,phone_number=?,cause_number=?,referral_type_id=?,ethnicity_id=?,required_sessions=?,fee=?,case_manager_id=?,therapy_group_id=?,client_stage_id=?,note=?,emergency_contact=?,orientation_date=?,exit_date=?,exit_reason_id=?,exit_note=?,speaksSignificantlyInGroup=?,respectfulTowardsGroup=?,takesResponsibilityForPastBehavior=?,disruptiveOrArgumentitive=?,inappropriateHumor=?,blamesVictim=?,drug_alcohol=?,inappropriate_behavior_to_staff=?,other_concerns=?,weekly_attendance=?,attends_sunday=?,attends_sunday_t4c=?,attends_monday=?,attends_tuesday=?,attends_wednesday=?,attends_thursday=?,attends_friday=?,attends_saturday=?,behavior_contract_status=?,behavior_contract_signed_date=?,birth_place=?,intake_packet=? WHERE id=?");
-    if (!$stmt->execute([$program_id, $first_name, $last_name, $date_of_birth, $gender_id, $email, $phone_number, $cause_number, $referral_type_id, $ethnicity_id, $required_sessions, $fee, $case_manager_id, $therapy_group_id, $client_stage_id, $note, $emergency_contact, $orientation_date, $exit_date, $exit_reason_id, $exit_note, $speaksSignificantlyInGroup, $respectfulTowardsGroup, $takesResponsibilityForPastBehavior, $disruptiveOrArgumentitive, $inappropriateHumor, $blamesVictim, $drugAlcohol, $inappropriateBehavior, $other_concerns, $weekly_attendance, $attends_sunday, $attends_sunday_t4c, $attends_monday, $attends_tuesday, $attends_wednesday, $attends_thursday, $attends_friday, $attends_saturday, $behavior_contract_status, $behavior_contract_signed_date, $birth_place, $intake_packet, $id])) {
-        echo "Something went wrong. Please try again later.";
-        header("location: error.php");
-    } else {
-        $stmt = null;
-        header("location: client-review.php?client_id=$id");
+    $stmt = $pdo->prepare("
+    UPDATE client SET
+    program_id=?,first_name=?,last_name=?,date_of_birth=?,gender_id=?,email=?,phone_number=?,cause_number=?,referral_type_id=?,ethnicity_id=?,required_sessions=?,fee=?,case_manager_id=?,therapy_group_id=?,client_stage_id=?,note=?,emergency_contact=?,orientation_date=?,exit_date=?,exit_reason_id=?,exit_note=?,
+    speaksSignificantlyInGroup=?,respectfulTowardsGroup=?,takesResponsibilityForPastBehavior=?,disruptiveOrArgumentitive=?,inappropriateHumor=?,blamesVictim=?,drug_alcohol=?,inappropriate_behavior_to_staff=?,other_concerns=?,weekly_attendance=?,
+    attends_sunday=?,attends_sunday_t4c=?,attends_monday=?,attends_tuesday=?,attends_wednesday=?,attends_thursday=?,attends_friday=?,attends_saturday=?,
+    behavior_contract_status=?,behavior_contract_signed_date=?,birth_place=?,intake_packet=?,
+    instructor=?,referral_email=?,sid=?,address=?,city=?,state_zip=?,ssl_dln=?,marital_status=?,employed=?,UA_positive=?,prescription_use=?,paid_amount=?,paid_source=?,paid_note=?,county=?
+    WHERE id=?");
+
+    $ok = $stmt->execute([
+    $program_id,$first_name,$last_name,$date_of_birth,$gender_id,$email,$phone_number,$cause_number,$referral_type_id,$ethnicity_id,$required_sessions,$fee,$case_manager_id,$therapy_group_id,$client_stage_id,$note,$emergency_contact,$orientation_date,$exit_date,$exit_reason_id,$exit_note,
+    $speaksSignificantlyInGroup,$respectfulTowardsGroup,$takesResponsibilityForPastBehavior,$disruptiveOrArgumentitive,$inappropriateHumor,$blamesVictim,$drugAlcohol,$inappropriateBehavior,$other_concerns,$weekly_attendance,
+    $attends_sunday,$attends_sunday_t4c,$attends_monday,$attends_tuesday,$attends_wednesday,$attends_thursday,$attends_friday,$attends_saturday,
+    $behavior_contract_status,$behavior_contract_signed_date,$birth_place,$intake_packet,
+    $instructor,$referral_email,$sid,$address,$city,$state_zip,$ssl_dln,$marital_status,$employed,$UA_positive,$prescription_use,$paid_amount,$paid_source,$paid_note,$county,
+    $id
+    ]);
+
+    if (!$ok) {
+    header("location: error.php"); exit;
     }
+
+    /* quick-add ledger row if a payment/credit/refund was entered */
+    $amt = (float)$paid_amount;
+    if ($amt > 0.0) {
+    [$kind,$subtype,$method,$sign] = lv_map_payment_source($paid_source);
+    $signed = round($sign * $amt, 2);
+    $now    = (new DateTime('now', new DateTimeZone('UTC')))->format('Y-m-d H:i:s');
+
+    $ins = $pdo->prepare("
+        INSERT INTO ledger
+        (client_id, program_id, occurred_at, kind, subtype, method, amount, note, memo, source)
+        VALUES (?,?,?,?,?,?,?,?,?,?)
+    ");
+    $ins->execute([
+        (int)$id,
+        ($program_id === '' ? null : (int)$program_id),
+        $now,
+        $kind,
+        $subtype,
+        $method,
+        $signed,
+        'Client Update',
+        ($paid_note === '' ? null : $paid_note),
+        'manual'
+    ]);
+
+    // optional: clear quick fields so they don’t persist on the form next load
+    // $pdo->prepare("UPDATE client SET paid_amount='0.00', paid_note=NULL WHERE id=?")->execute([(int)$id]);
+    }
+
+    header("location: client-review.php?client_id=$id");
+    exit;
+
+
 } else {
     // Check existence of id parameter before processing further
     $_GET["id"] = trim($_GET["id"]);
-    if (isset($_GET["id"]) && !empty($_GET["id"])) {
+    if (isset($_GET["id"]) && $_GET["id"] !== "") {
         // Get URL parameter
         $id =  trim($_GET["id"]);
 
@@ -228,6 +337,32 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $behavior_contract_signed_date = $row["behavior_contract_signed_date"];
                     $birth_place = $row["birth_place"];
                     $intake_packet = $row["intake_packet"];
+                    $instructor = htmlspecialchars($row["instructor"] ?? "");
+                    $referral_email = htmlspecialchars($row["referral_email"] ?? "");
+                    $sid = htmlspecialchars($row["sid"] ?? "");
+                    $address = htmlspecialchars($row["address"] ?? "");
+                    $city = htmlspecialchars($row["city"] ?? "");
+                    $state_zip = htmlspecialchars($row["state_zip"] ?? "");
+                    $ssl_dln = htmlspecialchars($row["ssl_dln"] ?? "");
+                    $marital_status = htmlspecialchars($row["marital_status"] ?? "");
+                    $employed = htmlspecialchars($row["employed"] ?? "");
+                    $UA_positive = htmlspecialchars($row["UA_positive"] ?? "");
+                    $prescription_use = htmlspecialchars($row["prescription_use"] ?? "");
+                    $paid_amount = htmlspecialchars($row["paid_amount"] ?? "");
+                    $paid_source = htmlspecialchars($row["paid_source"] ?? "");
+                    $paid_note = htmlspecialchars($row["paid_note"] ?? "");
+                    $county = htmlspecialchars($row["county"] ?? "");
+
+                    if ($required_sessions === '' || $required_sessions === '0') {
+                        $rs = program_required_sessions((int)$program_id);
+                        if ($rs !== null) $required_sessions = (string)$rs;
+                    }
+                    if ($weekly_attendance === '' || !preg_match('/^[012]$/', (string)$weekly_attendance)) {
+                        $mpw = $PROGRAM_DEFAULTS[(int)$program_id]['meetings_per_week'] ?? null;
+                        if ($mpw !== null) $weekly_attendance = (string)$mpw;
+                    }
+
+
                 } else {
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -458,6 +593,147 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>Instructor</label>
+                            <select name="instructor" class="form-control">
+                            <option value="" <?= $instructor==="" ? "selected" : "" ?>>Not Assigned</option>
+                            <?php foreach (get_facilitators() as $f): ?>
+                                <option value="<?=htmlspecialchars($f['name'])?>"
+                                <?= ($instructor === $f['name'] ? "selected" : "") ?>>
+                                <?=htmlspecialchars($f['name'])?>
+                                </option>
+                            <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="form-group">
+                        <label>Referral Email</label>
+                        <input type="email" name="referral_email" class="form-control" value="<?=$referral_email?>">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                        <label>SID</label>
+                        <input type="text" name="sid" class="form-control" value="<?=$sid?>">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                        <label>County</label>
+                        <input type="text" name="county" class="form-control" value="<?=$county?>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5">
+                        <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" name="address" class="form-control" value="<?=$address?>">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="city" class="form-control" value="<?=$city?>">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                        <label>State / ZIP</label>
+                        <input type="text" name="state_zip" class="form-control" value="<?=$state_zip?>">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+                        <label>DL / SSN</label>
+                        <input type="text" name="ssl_dln" class="form-control" value="<?=$ssl_dln?>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>Marital Status</label>
+                            <select name="marital_status" class="form-control">
+                            <?php
+                                $opts = ["Unknown","Single","Married","Divorced","Separated","Widowed","Partnered"];
+                                foreach ($opts as $opt) {
+                                $sel = ($marital_status===$opt) ? "selected" : "";
+                                echo "<option value=\"{$opt}\" {$sel}>{$opt}</option>";
+                                }
+                            ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>Employed</label>
+                            <select name="employed" class="form-control">
+                            <option value="Unknown" <?= $employed==="Unknown"?"selected":"" ?>>Unknown</option>
+                            <option value="Yes"     <?= $employed==="Yes"    ?"selected":"" ?>>Yes</option>
+                            <option value="No"      <?= $employed==="No"     ?"selected":"" ?>>No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>UA Positive</label>
+                            <select name="UA_positive" class="form-control">
+                            <option value="Unknown" <?= $UA_positive==="Unknown"?"selected":"" ?>>Unknown</option>
+                            <option value="No"      <?= $UA_positive==="No"     ?"selected":"" ?>>No</option>
+                            <option value="Yes"     <?= $UA_positive==="Yes"    ?"selected":"" ?>>Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="form-group">
+                        <label>Prescription Use</label>
+                        <input type="text" name="prescription_use" class="form-control" value="<?=$prescription_use?>">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2">
+                        <div class="form-group">
+                            <label>Paid Amount</label>
+                            <input type="number" step="0.01" min="0"
+                                name="paid_amount" class="form-control" value="<?=$paid_amount?>">
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label>Paid Source</label>
+                            <select name="paid_source" class="form-control">
+                            <?php
+                                $sources = ["Unknown","Cash","Card","Check","Money Order","Scholarship","Waiver","CPS","Refunded","Other"];
+                                foreach ($sources as $src) {
+                                $sel = ($paid_source===$src) ? "selected" : "";
+                                echo "<option value=\"{$src}\" {$sel}>{$src}</option>";
+                                }
+                            ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-5">
+                        <div class="form-group">
+                        <label>Payment Note</label>
+                        <input type="text" name="paid_note" class="form-control" value="<?=$paid_note?>">
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Row 4 -->
                 <div class="row">
                     <div class="col-1">
@@ -482,9 +758,10 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                         <div class="form-group">
                             <label>Required Sessions</label>
                             <input type="number"
-                                   name="required_sessions"
-                                   class="form-control"
-                                   value="<?php echo ($required_sessions == "") ? "15" : $required_sessions; ?>">
+                                name="required_sessions"
+                                class="form-control"
+                                value="<?= htmlspecialchars($required_sessions === '' ? (program_required_sessions((int)$program_id) ?? '') : $required_sessions) ?>">
+
                             <span class="form-text"><?php echo $required_sessions_err; ?></span>
                         </div>
                     </div>
@@ -492,10 +769,11 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                         <div class="form-group">
                             <label>Session per Week</label>
                             <input type="number"
-                                   name="weekly_attendance"
-                                   step="1"
-                                   class="form-control"
-                                   value="<?php echo ($weekly_attendance == "") ? "1" : $weekly_attendance; ?>">
+                                name="weekly_attendance"
+                                step="1"
+                                class="form-control"
+                                value="<?= htmlspecialchars($weekly_attendance === '' ? ($PROGRAM_DEFAULTS[(int)$program_id]['meetings_per_week'] ?? '') : $weekly_attendance) ?>">
+
                             <span class="form-text"><?php echo $weekly_attendance_err; ?></span>
                         </div>
                     </div>
@@ -833,25 +1111,19 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     Behavior Contract Fields
                     ======================= -->
                 <br>    
+                <!-- keep ONE block only -->
                 <div class="form-group">
                     <label for="behavior_contract_status">Behavior Contract Status</label>
                     <select name="behavior_contract_status" id="behavior_contract_status" class="form-control">
-                        <option value="Not Needed" <?= ($row['behavior_contract_status'] === "Not Needed") ? "selected" : "" ?>>Not Needed</option>
-                        <option value="Needed"     <?= ($row['behavior_contract_status'] === "Needed") ? "selected" : "" ?>>Needed</option>
-                        <option value="Signed"     <?= ($row['behavior_contract_status'] === "Signed") ? "selected" : "" ?>>Signed</option>
+                        <option value="Not Needed" <?= $behavior_contract_status==="Not Needed"?"selected":"" ?>>Not Needed</option>
+                        <option value="Needed"     <?= $behavior_contract_status==="Needed"?"selected":"" ?>>Needed</option>
+                        <option value="Signed"     <?= $behavior_contract_status==="Signed"?"selected":"" ?>>Signed</option>
                     </select>
+
+                    <label class="mt-2" for="behavior_contract_signed_date">Behavior Contract Signed Date</label>
+                    <input type="date" name="behavior_contract_signed_date" id="behavior_contract_signed_date"
+                            class="form-control" value="<?= htmlspecialchars($behavior_contract_signed_date ?? '') ?>">
                 </div>
-
-                <div class="form-group">
-                    <label for="behavior_contract_signed_date">Behavior Contract Signed Date</label>
-                    <input type="date" 
-                        name="behavior_contract_signed_date" 
-                        id="behavior_contract_signed_date" 
-                        class="form-control"
-                        value="<?= htmlspecialchars($row['behavior_contract_signed_date'] ?? '') ?>">
-                </div>
-
-
 
                 <!-- Submission -->
                 <div class="row">

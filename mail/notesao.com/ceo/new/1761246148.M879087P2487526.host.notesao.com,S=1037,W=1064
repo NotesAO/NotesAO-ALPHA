@@ -1,0 +1,27 @@
+Return-Path: <reporting@ffl.notesao.com>
+Received: from host.notesao.com
+	by host.notesao.com with LMTP
+	id QJtUNMR7+mjm9CUAIW4ynA
+	(envelope-from <reporting@ffl.notesao.com>); Thu, 23 Oct 2025 14:02:28 -0500
+Return-path: <reporting@ffl.notesao.com>
+Envelope-to: admin@notesao.com
+Delivery-date: Thu, 23 Oct 2025 14:02:28 -0500
+Received: from notesao by host.notesao.com with local (Exim 4.98.2)
+	(envelope-from <reporting@ffl.notesao.com>)
+	id 1vC0Zw-0000000ARCU-3EBO
+	for admin@notesao.com;
+	Thu, 23 Oct 2025 14:02:28 -0500
+To: admin@notesao.com
+Subject: Free for Life Group has received a new Intake Packet for Candelaro Henson
+X-PHP-Script: ffl.notesao.com/intake.php for 172.59.195.97
+ X-PHP-Originating-Script: 1007:intake.php
+From: reporting@ffl.notesao.com
+Reply-To: candelarohenson91@gmail.com
+X-Mailer: PHP/8.1.33
+Message-Id: <E1vC0Zw-0000000ARCU-3EBO@host.notesao.com>
+Date: Thu, 23 Oct 2025 14:02:28 -0500
+
+A new online intake packet was submitted.
+
+View pending & submitted packets:
+https://ffl.notesao.com/intake-index.php
