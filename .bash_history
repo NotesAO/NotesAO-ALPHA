@@ -1,486 +1,3 @@
-sudo cp /opt/cpanel/ea-php81/root/etc/php-fpm.d/sandbox.notesao.com.conf         /opt/cpanel/ea-php81/root/etc/php-fpm.d/sandbox.notesao.com.conf.bak-$(date +%F)
-#1750190954
-# open it in nano (or vim)
-#1750190954
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/sandbox.notesao.com.conf
-#1750190981
-sudo systemctl reload ea-php81-php-fpm
-#1750355077
-sudo grep -R "disable_functions" /etc/php /opt/cpanel /usr/local/lib/php.ini /usr/local/etc/php /usr/local/php /home/*/php.ini 2>/dev/null
-#1750355110
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/dwag.clinic.notepro.co.conf
-#1750355176
-sudo systemctl restart ea-php81-php-fpm
-#1750355181
-sudo systemctl status ea-php81-php-fpm
-#1750355255
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/dwag.clinic.notepro.co.conf
-#1750355288
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/dwag.notesao.com.conf
-#1750355309
-/opt/cpanel/ea-php81/root/etc/php-fpm.d/notesao.com.conf
-#1750355314
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/notesao.com.conf
-#1750355340
-/opt/cpanel/ea-php81/root/etc/php-fpm.d/ctc.clinic.notepro.co.conf
-#1750355343
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/ctc.clinic.notepro.co.conf
-#1750355361
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/transform.clinic.notepro.co.conf
-#1750355384
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/safatherhood.clinic.notepro.co.conf
-#1750355403
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/sandbox.notesao.com.conf
-#1750355415
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/ffltest.clinic.notepro.co.conf
-#1750355437
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/denton.clinic.notepro.co.conf
-#1750355480
-sudo nano /opt/cpanel/ea-php81/root/etc/php.ini
-#1750355541
-sudo nano /opt/cpanel/ea-php81/root/etc/php.d/ssp.ini
-#1750355559
-sudo systemctl restart ea-php81-php-fpm
-#1750880128
-cd /home/notesao && { command -v tree >/dev/null   && tree -a -F --dirsfirst   || find . -print; } > /home/notesao/notesao_structure.txt
-#1750880470
-cd /home/notesao && tree -a -F --dirsfirst -I 'logs|log|*.log|tmp|cache|vendor|node_modules|.git|*.zip|*.gz|*.tar|*.sql|*.csv|*.pdf'    > /home/notesao/notesao_structure_clean.txt
-#1750880533
-cd /home/notesao && find .   \( -path './logs' -o -path './logs/*'      -o -path './log'  -o -path './log/*'      -o -name '*.log'      -o -path './tmp'  -o -path './tmp/*'      -o -path './cache' -o -path './cache/*'      -o -path './vendor' -o -path './vendor/*'      -o -path './node_modules' -o -path './node_modules/*'      -o -path './.git' -o -path './.git/*'      -o -name '*.zip' -o -name '*.gz' -o -name '*.tar'      -o -name '*.sql' -o -name '*.csv' -o -name '*.pdf' \) -prune -o -print   > /home/notesao/notesao_structure_clean.txt
-#1750880606
-cd /home/notesao/public_html/ && tree -a -F --dirsfirst -I 'logs|log|*.log|tmp|cache|vendor|node_modules|.git|*.zip|*.gz|*.tar|*.sql|*.csv|*.pdf'    > /home/notesao/notesao_structure_clean.txt
-#1750880710
-cd /home/notesao && tree -a -F --dirsfirst   -I 'logs|log|*.log|tmp|cache|vendor|node_modules|.git|*.zip|*.gz|*.tar|*.sql|*.csv|*.pdf|bestoption|dwag|safatherhood|sandbox|transform'   > /home/notesao/notesao_structure_clean.txt
-#1750880818
-cd /home/notesao && tree -a -F --dirsfirst   -I 'logs|log|*.log|tmp|cache|vendor|node_modules|.git|*.zip|*.gz|*.tar|*.sql|*.csv|*.pdf|bestoption|dwag|safatherhood|sandbox|transform|Downloads'   > /home/notesao/notesao_structure_clean.txt
-#1750880906
-# 1) Make the lib directory
-#1750880906
-mkdir /home/notesao/lib
-#1750880906
-# 2) Install PHPMailer (if you haven’t yet)
-#1750880906
-cd /home/notesao
-#1750880906
-composer require phpmailer/phpmailer
-#1750880974
-nano /home/notesao/lib/mailer.php
-#1750881048
-nano /home/notesao/public_html/forgot_password.php
-#1750952443
-cd /home/notesao
-#1750952452
-composer require phpmailer/phpmailer
-#1750952506
-nano /home/notesao/public_html/reset_password.php
-#1750952636
-# show the last 50 error-log lines written by forgot_password.php & mailer.php
-#1750952636
-tail -n 50 /home/notesao/public_html/forgot_password.error.log 2>/dev/null   || tail -n 50 $(php -r 'echo ini_get("error_log");') 2>/dev/null
-#1750952684
-tail -n 50 /home/notesao/public_html/forgot_password.error.log
-#1750952709
-php -r "
-require '/home/notesao/vendor/autoload.php';
-require '/home/notesao/global_config.php';
-use PHPMailer\PHPMailer\PHPMailer;
-
-try {
-    \$mail = new PHPMailer(true);
-    \$mail->SMTPDebug  = 3;                 // VERY verbose
-    \$mail->Debugoutput = function(\$str) { echo \$str; };  // print to terminal
-
-    \$mail->isSMTP();
-    \$mail->Host       = smtp_host;
-    \$mail->SMTPAuth   = true;
-    \$mail->Username   = smtp_user;
-    \$mail->Password   = smtp_pass;
-    \$mail->SMTPSecure = smtp_secure;       // 'tls' or 'ssl'
-    \$mail->Port       = smtp_port;
-
-    \$mail->setFrom(smtp_from, smtp_from_name);
-    \$mail->addAddress('you@example.com');  // <-- put any real address you can read
-    \$mail->Subject = 'NotesAO SMTP test';
-    \$mail->Body    = 'If you see this, SMTP worked.';
-
-    \$mail->send();
-    echo \"\\nMAIL SENT SUCCESSFULLY\\n\";
-} catch (Exception \$e) {
-    echo \"\\nERROR: \" . \$mail->ErrorInfo . \"\\n\";
-}"
-#1750957945
-tail -n 50 /home/notesao/ffltest/public_html/forgot_password.error.log 2>/dev/null
-#1750957995
-php -r 'echo "PHP error_log = ", ini_get("error_log"), PHP_EOL;'
-#1750958127
-# show the 10 most recently-modified error_log files
-#1750958127
-find /home/notesao/ffltest -name error_log -printf '%TY-%Tm-%Td %TH:%TM %p\n'   | sort -r | head
-#1750958137
-tail -n 100 /home/notesao/ffltest/public_html/admin/error_log
-#1750958164
-tail -n 100 /home/notesao/ffltest/public_html/error_log
-#1750958636
-# run from any folder
-#1750958636
-php -r "
-require '/home/notesao/lib/mailer.php';
-send_email('you@example.com','SMTP trace','If you see this, SMTP worked.')
-    ? print(\"sent\\n\")
-    : print(\"fail\\n\");
-"
-#1750958651
-php -r "
-require '/home/notesao/lib/mailer.php';
-send_email('admin@notesao.com','SMTP trace','If you see this, SMTP worked.')
-    ? print(\"sent\\n\")
-    : print(\"fail\\n\");
-"
-#1750958663
-# look at the last few lines the CLI just wrote
-#1750958663
-tail -n 20 ./error_log
-#1750959012
-# from the clinic folder
-#1750959012
-grep -n "send_email(" admin/accounts.php
-#1750959038
-grep -n "send_email("/home/notesao/ffltest/public_html/admin/accounts.php
-#1750959102
-# 1) Go to the folder that really holds accounts.php
-#1750959102
-cd /home/notesao/ffltest/public_html/admin
-#1750959102
-# 2) Search for every call to send_email() and show the line numbers
-#1750959103
-grep -n "send_email(" accounts.php
-#1750958936
-tail -f /home/notesao/ffltest/public_html/admin/error_log
-#1750959470
-# folder the public site points to
-#1750959471
-tail -n 40 /home/notesao/public_html/error_log
-#1750959475
-tail -n 40 /home/notesao/ffltest/public_html/error_log
-#1750959664
-# main domain’s PHP error log – try this first
-#1750959664
-tail -n 40 /home/notesao/error_log
-#1750959678
-# sometimes Apache writes fatals here
-#1750959678
-grep -i "activate.php" -R /home/notesao | head
-#1750959763
-ls -l /home/notesao/public_html/activate.php
-#1750959763
-# very likely → “No such file or directory”
-#1750959775
-php -l /home/notesao/public_html/activate.php
-#1750959834
-# the main vhost error log is usually here on cPanel boxes
-#1750959834
-tail -f /usr/local/apache/logs/error_log | grep -i activate.php
-#1750960100
-tail -f /home/notesao/public_html/error_log      # root site
-#1750960100
-tail -f /home/notesao/ffltest/public_html/error_log   # clinic site
-#1750960167
-# main vhost log           (most cPanel boxes)
-#1750960167
-tail -f /usr/local/apache/logs/error_log
-#1750960249
-# root-site PHP errors for notesao.com
-#1750960249
-tail -f /home/notesao/error_log
-#1752089802
-curl -sIL https://ffl.notesao.com | grep -i "Strict-Transport-Security"
-#1752092141
-mysql -u root -p -e "SHOW DATABASES LIKE 'clinicnotepro_%';"
-#1752157927
-cd /home/notesao/ffltest/public_html && grep -Eo "(include|include_once|require|require_once)[^;]+" home.php   | sed -E "s/(include(_once)?|require(_once)?)[[:space:]]*\(?[[:space:]]*['\"]([^'\"]+)['\"].*/\4/"   | sort -u
-#1752157975
-cd /home/notesao/ffltest/public_html && grep -Eo "require(_once)?[[:space:]]*\([[:space:]]*['\"][^'\"]+['\"]|include(_once)?[[:space:]]*\([[:space:]]*['\"][^'\"]+['\"]" home.php   | sed -E "s/.*['\"]([^'\"]+)['\"].*/\1/"   | sort -u
-#1752158152
-cd /home/notesao/ffltest/public_html && (   queue="auth.php navbar.php"; declare -A seen;   while [ -n "$queue" ]; do     set -- $queue; file=$1; queue="${queue#"$file"}"; queue="${queue#" "}";     [[ -z $file || -n ${seen[$file]} ]] && continue; seen[$file]=1;     echo "$file";     includes=$(grep -Eo "(require|include)(_once)?[[:space:]]*\([[:space:]]*['\"][^'\"]+['\"]" "$file" 2>/dev/null \
-               | sed -E "s/.*['\"]([^'\"]+)['\"].*/\1/");     queue="$queue $includes";   done; ) | sort -u
-#1752158657
-cd /home/notesao/ffltest && grep -RIl --exclude-dir={vendor,node_modules,logs,cache}     -E "(FROM|JOIN|UPDATE|INTO)[[:space:]]+\`?accounts\`?"     --include="*.php" . | sort -u
-#1752159406
-cd /home/notesao/
-#1752162255
-# lists every file & folder (hidden files too) under /home/notesao/adminclinic
-#1752162255
-# and drops it in a text file you can scroll or share
-#1752162255
-cd /home/notesao/adminclinic && tree -a -F --dirsfirst > /home/notesao/adminclinic_structure.txt
-#1752162255
-# view it
-#1752162255
-less /home/notesao/adminclinic_structure.txt
-#1752165824
-cd /home/notesao/adminclinic && tree -a -F --dirsfirst > /home/notesao/adminclinic_structure.txt
-#1752165826
-less /home/notesao/adminclinic_structure.txt
-#1752259330
-php -i | grep -iE '^(disable_functions|Loaded Configuration File)'
-#1752259343
-grep -Rns --color=auto --exclude-dir={vendor,node_modules} -E '\bexec\s*\('     /home/notesao/sandbox/public_html
-#1752259418
-grep -Rns --color=auto -E '^\s*disable_functions\s*=.*\bexec\b'     /opt/cpanel/ea-php*/root/etc 2>/dev/null
-#1752259428
-find /home/notesao \( -name '*.ini' -o -name '.user.ini' \) -type f -print0 | xargs -0 grep -n --color=auto -E '^\s*disable_functions\s*=.*\bexec\b'
-#1752259467
-##############################################################################
-#1752259467
-# 1) Show every FPM pool file that disables exec()
-#1752259467
-##############################################################################
-#1752259467
-grep -Rns --color=auto -E '^\s*php_admin_value\s+disable_functions\s*=.*\bexec\b'     /opt/cpanel/ea-php*/root/etc/php-fpm.d 2>/dev/null
-#1752259478
-##############################################################################
-#1752259478
-# 2) Check all additional *.ini files that FPM loads for this PHP version
-#1752259478
-##############################################################################
-#1752259478
-grep -Rns --color=auto -E '^\s*disable_functions\s*=.*\bexec\b'     /opt/cpanel/ea-php*/root/etc/php.d 2>/dev/null
-#1752259554
-sudo grep -Rns --color=auto -E '^\s*(php_(admin|value)\s+)?disable_functions\s*=.*' / 2>/dev/null
-#1752259584
-grep -Rns --color=auto -E '^\s*(php_(admin|value)\s+)?disable_functions\s*=.*' $HOME /opt 2>/dev/null
-#1752259745
-sudo grep -Rns --color=auto -E     '(php_admin_value\[?disable_functions\]?|disable_functions)\s*=\s*[^#\n]*\bexec\b'     /etc /opt /home/notesao 2>/dev/null
-#1752259793
-nano /home/notesao/sandbox/public_html/.user.ini
-#1752259815
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/sandbox.notesao.com.conf
-#1752259837
-sudo systemctl restart ea-php81-php-fpm
-#1752262066
-sudo grep -Rns --color=auto -E     '(php_admin_value\[?disable_functions\]?|disable_functions)\s*=\s*[^#\n]*\bexec\b'     /etc /opt /home/notesao 2>/dev/null
-#1752262484
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/sandbox.notesao.com.conf
-#1752262552
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/ffltest.notesao.com.conf
-#1752262572
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/dwag.notesao.com.conf
-#1752262595
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/transform.notesao.com.conf
-#1752262620
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/notepro.co.conf
-#1752262642
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/ctc.clinic.notepro.co.conf
-#1752262664
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/dwag.clinic.notepro.co.conf
-#1752262693
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/transform.clinic.notepro.co.conf
-#1752262716
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/safatherhood.notesao.com.conf
-#1752262737
-/opt/cpanel/ea-php81/root/etc/php-fpm.d/safatherhood.clinic.notepro.co.conf
-#1752262741
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/safatherhood.clinic.notepro.co.conf
-#1752262763
-/opt/cpanel/ea-php81/root/etc/php-fpm.d/notesao.com.conf
-#1752262766
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/notesao.com.conf
-#1752262789
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/denton.clinic.notepro.co.conf
-#1752262811
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/ffltest.clinic.notepro.co.conf
-#1752262835
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/ctc.notesao.com.conf
-#1752262855
-sudo nano /opt/cpanel/ea-php82/root/etc/php-fpm.d/sandbox.clinic.notepro.co.conf
-#1752262877
-sudo nano /opt/cpanel/ea-php82/root/etc/php-fpm.d/clinic.notepro.co.conf
-#1752262903
-sudo systemctl restart ea-php81-php-fpm
-#1752262905
-sudo systemctl restart ea-php82-php-fpm
-#1752262912
-sudo grep -Rns --color=auto -E   'php_admin_value\[?disable_functions\]? = .*exec|shell_exec'   /opt/cpanel/ea-php81/root/etc/php-fpm.d   /opt/cpanel/ea-php82/root/etc/php-fpm.d
-#1752262982
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/ffltest.notesao.com.conf
-#1752262997
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/dwag.notesao.com.conf
-#1752263321
-sudo dnf makecache
-#1752263542
-sudo grep -Rns --color=auto -E   'php_admin_value\[?disable_functions\]? = .*exec|shell_exec'   /opt/cpanel/ea-php81/root/etc/php-fpm.d   /opt/cpanel/ea-php82/root/etc/php-fpm.d
-#1752434339
-cd ~          # go to your home directory
-#1752434339
-pwd           # just to be sure where you are
-#1752434347
-cd public_html   # this is the document-root for https://notesao.com
-#1752434347
-ls -a            # list *all* files, including dotfiles
-#1752434366
-cd /home/notesao/public_html
-#1752434366
-nano .htaccess          # (or use vi if you prefer)
-#1752434404
-php -r 'echo getenv("RECAPTCHA_SECRET"), PHP_EOL;'
-#1752434470
-cd /home/notesao/public_html
-#1752434470
-nano .htaccess
-#1752435284
-sudo grep -A2 -B2 "NotesAO Interest Lead" /var/log/exim_mainlog | tail -n 40
-#1752435520
-grep -A2 -B2 'NotesAO Interest Lead' /var/log/exim_mainlog | tail -n 20
-#1752435576
-exim -bp | exiqsumm
-#1752435595
-sudo grep -A2 -B2 "NotesAO Interest Lead" /var/log/exim_mainlog | tail -n 40
-#1752768822
-mysql -uroot -e "
-  SHOW DATABASES LIKE 'clinicnotepro_sage';
-  SHOW DATABASES LIKE 'clinicnotepro_lankford';
-"
-#1752768888
-mysql -uroot -p'6Ydlwg90Tb-wt7' -e "SHOW DATABASES LIKE 'clinicnotepro_sage'; SHOW DATABASES LIKE 'clinicnotepro_lankford';"
-#1752768938
-ls /var/cpanel/users
-#1752768996
-sudo -i
-#1752789063
-OUT="/home/notesao/directory_overview_$(date +%Y%m%d).txt"
-#1752789063
-{   echo "NotesAO directory overview – generated $(date)"; echo;    echo "──────────────────────────────────────────────────────────────";   echo "1. /home/notesao/ffltest/";   echo "   • Clinic‑specific web root for the FFLTEST clinic.";   echo "   • Contains PHP scripts, assets, and cron jobs that are";   echo "     unique to that clinic (e.g., client‑create.php, custom";   echo "     branding, favicon logic, nightly DB‑backup scripts).";   echo "   • Mirrors the public_html layout but is sandboxed to the";   echo "     clinic’s own database (clinicnotepro_ffltest).";   echo;   tree -L 2 /home/notesao/ffltest/;   echo; echo;    echo "──────────────────────────────────────────────────────────────";   echo "2. /home/notesao/NotePro-Report-Generator/";   echo "   • Centralised Flask / PHP hybrid that builds MAR, progress";   echo "     reports, BIPP letters, CSV dumps, etc.";   echo "   • Key sub‑folders:";   echo "       templates/   – Jinja & PHP templates per clinic";   echo "       csv/         – Auto‑generated CSVs, {Clinic}_report*.csv";   echo "       scripts/     – Python helpers (Celery tasks, LibreOffice";   echo "                      conversions, behaviour‑contract scripts)";   echo "       static/      – Shared JS (Chart.js helpers), CSS, logos";   echo "   • Gunicorn + Celery run from here (port 8002 by default).";   echo;   tree -L 2 /home/notesao/NotePro-Report-Generator/;   echo; echo;    echo "──────────────────────────────────────────────────────────────";   echo "3. /home/notesao/public_html/";   echo "   • Primary Apache/Nginx document root.";   echo "   • Holds the main NotesAO (notesao.com) front‑end, plus";   echo "     shared resources every sub‑domain can symlink to.";   echo "   • Typical contents:";   echo "       index.php         – marketing / landing page";   echo "       auth/             – global authentication helpers";   echo "       client.php        – now migrated to per‑clinic sub‑domains";   echo "       assets/           – global CSS/JS/fonts";   echo "       .well-known/      – ACME challenges for SSL";   echo "       cron/             – shell & PHP maintenance scripts";   echo;   tree -L 2 /home/notesao/public_html/;   echo; } > "$OUT"
-#1752789063
-echo "Overview written to: $OUT"
-#1752853911
-# Show the main php.ini the CLI is using
-#1752853911
-php -i | grep -E 'Loaded Configuration File'
-#1752853911
-# Show the directory PHP scans for additional .ini/.conf snippets
-#1752853911
-php -i | grep 'Scan this dir'
-#1752853911
-# Show the full, merged disabled_functions list seen by the CLI
-#1752853911
-php -i | grep disabled_functions
-#1752853999
-php -i | grep disable_functions
-#1752854021
-sudo grep -Rin --color      --include='*.ini'      -E '^[[:space:]]*disable_functions\s*=.*(exec|shell_exec|system|passthru|popen|proc_open)'      /opt/cpanel/ea-php81/root/etc 2>/dev/null
-#1752854080
-sudo grep -Rin --color 'disable_functions'      /opt/cpanel/ea-php81/root/etc/php-fpm.d 2>/dev/null
-#1752854181
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/dwag.notesao.com.conf
-#1752854298
-# List only .conf files for dwag that PHP‑FPM actually reads
-#1752854298
-sudo ls /opt/cpanel/ea-php*/root/etc/php-fpm.d | grep -E '^dwag\..*\.conf$'
-#1752854340
-sudo nano /opt/cpanel/ea-php81/root/etc/php-fpm.d/dwag.clinic.notepro.co.conf
-#1752854376
-sudo /scripts/restartsrv_php-fpm        # cPanel helper
-#1752854376
-# or, generic:
-#1752854376
-# sudo systemctl reload ea-php81-php-fpm
-#1752854656
-sudo grep -Rin --color      --include='*.ini' --include='*.conf'      -E '(^|php_(admin_)?value\[?)disable_functions[[:space:]]*=[^#;]*\b(exec|shell_exec|system|passthru|popen|proc_open)\b'      /opt/cpanel/ea-php* /etc/php* 2>/dev/null
-#1752854665
-# .user.ini or php.ini placed in dwag or parent dirs
-#1752854665
-find /home/notesao -type f \( -name '.user.ini' -o -name 'php.ini' \) -print -exec grep -Hn 'disable_functions' {} \;
-#1752854665
-# .htaccess style overrides (Apache only):
-#1752854665
-grep -Rin --color 'php_value[[:space:]]\+disable_functions' /home/notesao 2>/dev/null
-#1752854782
-grep -Hn 'disable_functions'    /home/notesao/dwag/public_html/{.user.ini,php.ini}
-#1752854823
-grep -Hn 'disable_functions' /home/notesao/dwag/public_html/{.user.ini,php.ini}
-#1752854906
-grep -RHIin --color 'disable_functions' /home/notesao/dwag 2>/dev/null
-#1752854962
-sudo grep -RHIin --color      -E '(^|\[|\s)(disable_functions|php_value\[?disable_functions)\s*=\s*[^#;\n]*\b(exec|shell_exec)\b'      /etc/php*      /opt/cpanel/ea-php*/root/etc      /home/notesao 2>/dev/null
-#1752855056
-echo '<?php phpinfo();' | sudo tee /home/notesao/dwag/public_html/info.php
-#1752855061
-curl -s https://dwag.notesao.com/info.php | grep -E 'PHP Version|Server API|Loaded Configuration|disable_functions' | head
-#1752855229
-sudo grep -RHIin --color      -E 'disable_functions[^=]*=[[:space:]]*[^#;\n]*\b(exec|shell_exec)\b'      /etc/php*      /opt/cpanel/ea-php*/root/etc      /home/notesao 2>/dev/null
-#1752855365
-sudo sed -i   -E 's/php_admin_value\[disable_functions\] = ([^#]*)(exec,?|,?shell_exec)//g'   /opt/cpanel/ea-php81/root/etc/php-fpm.d/*.conf
-#1753993023
-cd /home/notesao/sandbox/backups
-#1753993034
-mv sandbox_backup_post_update_2025-07-31.sql.gz    sandbox_backup_post_update_2025-07-31_pre-fix.sql.gz
-#1753993047
-mysqldump --single-transaction --quick --skip-triggers   -h localhost -u clinicnotepro_sandbox_app -p'PF-m[T-+pF%g'   clinicnotepro_sandbox | gzip > sandbox_backup_post_update_2025-07-31.sql.gz
-#1753993055
-ls -lh sandbox_backup_post_update_2025-07-31.sql.gz
-#1753993055
-# quick integrity check (header only)
-#1753993055
-gunzip -c sandbox_backup_post_update_2025-07-31.sql.gz | head
-#1753993186
-chmod +x /home/notesao/sandbox/scripts/sandbox_update.sh
-#1753993192
-/home/notesao/sandbox/scripts/sandbox_update.sh | tee ~/sandbox_update_$(date +%F_%H%M).log
-#1753993269
-gunzip -c /home/notesao/sandbox/backups/manual_pre_run_2025-07-31_*.sql.gz | mysql -h localhost -u clinicnotepro_sandbox_app -p'PF-m[T-+pF%g' clinicnotepro_sandbox
-#1753993303
-cd /home/notesao/sandbox/backups
-#1753993303
-ls -lh *.sql.gz
-#1753993341
-cd /home/notesao/sandbox/backups
-#1753993341
-gunzip -c sandbox_backup_pre_update_2025-07-31.sql.gz | mysql -h localhost -u clinicnotepro_sandbox_app -p'PF-m[T-+pF%g' clinicnotepro_sandbox
-#1753993350
-mysql -h localhost -u clinicnotepro_sandbox_app -p'PF-m[T-+pF%g'   -e "SELECT program_id, COUNT(*) AS clients FROM client GROUP BY program_id;"   clinicnotepro_sandbox
-#1754058326
-cd /home/notesao/sandbox/backups
-#1754058326
-gunzip -c sandbox_backup_post_update_2025-07-31_pre-fix.sql.gz | mysql -h localhost         -u clinicnotepro_sandbox_app         -p'PF-m[T-+pF%g'         clinicnotepro_sandbox
-#1754059513
-cd /home/notesao/sandbox/backups
-#1754059513
-# remove the bad 108 KB dump
-#1754059513
-rm  sandbox_backup_post_update_2025-07-31.sql.gz
-#1754059513
-# promote the good one
-#1754059513
-mv  sandbox_backup_post_update_2025-07-31_pre-fix.sql.gz     sandbox_backup_post_update_2025-07-31.sql.gz
-#1754060029
-# from the directory that contains sandbox_update.sh
-#1754060029
-chmod +x sandbox_update.sh          # if not already executable
-#1754060029
-./sandbox_update.sh | tee ~/sandbox_update_test_$(date +%F_%H%M).log
-#1754060053
-# locate it
-#1754060053
-ls /home/notesao/sandbox/scripts 2>/dev/null | grep sandbox_update.sh
-#1754060053
-# or
-#1754060053
-ls /home/notesao/sandbox | grep sandbox_update.sh
-#1754060082
-# 1 – make sure it’s executable (only needed once)
-#1754060082
-chmod +x /home/notesao/sandbox/scripts/sandbox_update.sh
-#1754060082
-# 2 – execute and capture output in a log
-#1754060082
-/home/notesao/sandbox/scripts/sandbox_update.sh   | tee ~/sandbox_update_test_$(date +%F_%H%M).log
-#1754060236
-/home/notesao/sandbox/scripts/sandbox_update.sh   | tee ~/sandbox_update_test_fix_$(date +%F_%H%M).log
-#1754060348
-/home/notesao/sandbox/scripts/sandbox_update.sh   | tee ~/sandbox_update_test_fix2_$(date +%F_%H%M).log
-#1754062782
-grep -Eni '^\s*(insert|update|delete|alter|create|drop).*clinicnotepro_ffltest'         /home/notesao/sandbox/scripts/sandbox_update.sh
-#1754062791
 mysql -h localhost -u clinicnotepro_sandbox_app -p'PF-m[T-+pF%g'   -e "SHOW GRANTS FOR CURRENT_USER\G"
 #1754063653
 /home/notesao/sandbox/scripts/sandbox_update.sh box_update_test_>   | tee ~/sandbox_update_test_fix2_$(date +%F_%H%M).log
@@ -1708,3 +1225,437 @@ grep -RinI -i -E 'required_?sessions?' /home/notesao/lakeview/   --binary-files=
 grep -RInI -E 'ffl|free[ _-]?for[ _-]?life' /home/notesao/lakeview/ 2>/dev/null
 #1761340990
 grep -RInI --include='*.php' -E 'ffl|free[ _-]?for[ _-]?life' /home/notesao/lakeview/ 2>/dev/null
+#1761668456
+git remote -v
+#1761668466
+git remote show origin
+#1761668485
+git branch -vv
+#1761668643
+# 1) Make sure the right key is used for GitHub
+#1761668643
+cat <<'EOF' >> ~/.ssh/config
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_github
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+EOF
+
+#1761668643
+chmod 600 ~/.ssh/config
+#1761668643
+# 2) Start agent and add key (enter passphrase once)
+#1761668643
+eval "$(ssh-agent -s)"
+#1761668643
+ssh-add ~/.ssh/id_rsa_github
+#1761668756
+ssh-add -l
+#1761668756
+ssh -T git@github.com        # expect: “Hi NotesAO! …”
+#1761668905
+ssh -T git@github.com     # expect: "Hi NotesAO! You've successfully authenticated..."
+#1761669066
+eval "$(ssh-agent -s)"
+#1761669087
+ssh-add -t ~/.ssh/id_rsa_github
+#1761669095
+ssh-add 8h -t ~/.ssh/id_rsa_github
+#1761669185
+ssh-add -d ~/.ssh/id_rsa_github
+#1761669203
+ssh-add -t 8h ~/.ssh/id_rsa_github
+#1761669224
+ssh-add -l
+#1761669235
+ssh -T git@github.com
+#1761669366
+git fetch origin
+#1761669383
+git status
+#1761669667
+git rev-parse --show-toplevel
+#1761669698
+cat >> .gitignore <<'EOF'
+/.ssh/
+/.cpanel/
+/etc/**/admin.rcube.db
+*.db
+*.log
+*.tar
+*.gz
+*.zip
+*.bak
+/node_modules/
+/vendor/
+/.env
+*.key
+*.pem
+EOF
+
+#1761669698
+git rm -r --cached .ssh .cpanel etc/notesao.com/admin.rcube.db || true
+#1761669698
+git add .gitignore
+#1761669698
+git commit -m "chore: untrack secrets and system artifacts"
+#1761669723
+git fetch origin
+#1761669724
+git branch safekeep/origin-main origin/main
+#1761669735
+git merge -s ours --no-edit origin/main
+#1761669735
+git push origin main
+#1761669893
+# rewrite history to drop sensitive paths everywhere
+#1761669893
+pip install git-filter-repo --user 2>/dev/null || true
+#1761669894
+git filter-repo --force   --path-glob '.ssh/**'   --path-glob '.cpanel/**'   --path 'etc/notesao.com/admin.rcube.db'   --invert-paths
+#1761669898
+# force update remote (branch protection must be off temporarily)
+#1761669898
+git push --force --prune origin --all
+#1761669898
+git push --force --prune origin --tags
+#1761669898
+# rotate the GitHub SSH key that was ever committed
+#1761669898
+ssh-keygen -t ed25519 -C "server-2025-10" -f ~/.ssh/id_ed25519_github
+#1761670012
+# 0) Update SSH config to use the new ed25519 key
+#1761670012
+awk 'BEGIN{p=1} /Host github.com/{p=0} {if(p)print} END{}' ~/.ssh/config > ~/.ssh/config.tmp || true
+#1761670012
+cat >> ~/.ssh/config <<'EOF'
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_github
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+EOF
+
+#1761670012
+mv -f ~/.ssh/config.tmp ~/.ssh/config 2>/dev/null || true
+#1761670012
+chmod 600 ~/.ssh/config
+#1761670012
+# 1) Load the new key for 8 hours
+#1761670012
+eval "$(ssh-agent -s)"
+#1761670012
+ssh-add -t 8h ~/.ssh/id_ed25519_github
+#1761670012
+# 2) Add the pubkey to GitHub → Settings → SSH and GPG keys
+#1761670012
+cat ~/.ssh/id_ed25519_github.pub
+#1761670012
+# add it in the UI, then test:
+#1761670012
+ssh -T git@github.com
+#1761670113
+cp -a ~/.ssh/config ~/.ssh/config.bak.$(date +%s) 2>/dev/null || true
+#1761670113
+cat > ~/.ssh/config <<'EOF'
+Host github.com
+  HostName ssh.github.com
+  Port 443
+  User git
+  IdentityFile ~/.ssh/id_ed25519_github
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+EOF
+
+#1761670113
+chmod 600 ~/.ssh/config
+#1761670117
+ssh -T git@github.com
+#1761670117
+# if host-key warning or mismatch:
+#1761670117
+ssh-keygen -R github.com 2>/dev/null; ssh-keygen -R ssh.github.com 2>/dev/null
+#1761670117
+ssh -T git@github.com
+#1761670210
+# 1) Clean rewrite ~/.ssh/config for GitHub over 443
+#1761670210
+install -d -m 700 ~/.ssh
+#1761670210
+cat > ~/.ssh/config <<'EOF'
+Host github.com
+  HostName ssh.github.com
+  Port 443
+  User git
+  IdentityFile ~/.ssh/id_ed25519_github
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+EOF
+
+#1761670210
+chmod 600 ~/.ssh/config
+#1761670210
+chmod 600 ~/.ssh/id_ed25519_github
+#1761670210
+chmod 644 ~/.ssh/id_ed25519_github.pub
+#1761670217
+# 2) Reload agent and ensure ONLY the new key is offered
+#1761670217
+eval "$(ssh-agent -s)"
+#1761670217
+ssh-add -D
+#1761670217
+ssh-add -t 8h ~/.ssh/id_ed25519_github
+#1761670217
+ssh-add -l
+#1761670224
+# 3) Test SSH on 443 with verbose output
+#1761670224
+ssh -vvT git@github.com
+#1761670224
+# success => "Hi <account>! You've successfully authenticated..."
+#1761670224
+# if still "Permission denied (publickey)", the pubkey is not added to a GitHub user that has access.
+#1761670224
+# Add the key here: GitHub → profile avatar → Settings → SSH and GPG keys → New SSH key
+#1761670224
+# then re-run the ssh test
+#1761670238
+# 4) Re-add origin explicitly on 443 and force-push rewritten history
+#1761670238
+git remote add origin ssh://git@ssh.github.com:443/NotesAO/NotesAO-ALPHA.git 2>/dev/null || git remote set-url origin ssh://git@ssh.github.com:443/NotesAO/NotesAO-ALPHA.git
+#1761670238
+git remote -v
+#1761670238
+# disable branch protection temporarily, then:
+#1761670238
+git push --force --prune origin main
+#1761670239
+git push --force --prune origin --tags
+#1761670481
+ssh -T git@github.com
+#1761670553
+# verify remote on 443
+#1761670553
+git remote -v
+#1761670553
+# push new history (disable branch protection first if enabled)
+#1761670553
+git push --force --prune origin main
+#1761670578
+git push --force --prune origin --tags
+#1761670662
+# confirm local == remote
+#1761670662
+git rev-parse HEAD
+#1761670662
+git ls-remote origin -h refs/heads/main | cut -f1
+#1761670663
+# both should show 7e5d296...
+#1761670914
+# remove old RSA key from GitHub (UI), then on server:
+#1761670914
+ssh-add -d ~/.ssh/id_rsa_github 2>/dev/null || true
+#1761670914
+rm -f ~/.ssh/id_rsa_github ~/.ssh/id_rsa_github.pub ~/.ssh/id_rsa_github.*
+#1761670926
+git config --global pull.rebase true
+#1761670926
+git config --global rebase.autoStash true
+#1761670926
+git config --global fetch.prune true
+#1761670926
+git config --global push.autoSetupRemote true
+#1761670932
+# pre-commit hook
+#1761670932
+cat > .git/hooks/pre-commit <<'SH'
+#!/bin/sh
+if git diff --cached --name-only | grep -E '^(\.ssh/|\.cpanel/|etc/notesao\.com/admin\.rcube\.db)'; then
+  echo "Blocked commit: sensitive path staged."
+  exit 1
+fi
+SH
+
+#1761670932
+chmod +x .git/hooks/pre-commit
+#1761671026
+# ~/.bash_profile (or ~/.bashrc)
+#1761671026
+if ! ssh-add -l >/dev/null 2>&1; then   eval "$(ssh-agent -s)";   ssh-add -t 8h ~/.ssh/id_ed25519_github; fi
+#1761671031
+cat >> ~/.gitignore_global <<'EOF'
+.DS_Store
+Thumbs.db
+*.swp
+.vscode-server/
+.cache/
+__pycache__/
+*.pyc
+.venv/
+venv/
+EOF
+
+#1761671031
+git config --global core.excludesfile ~/.gitignore_global
+#1761671037
+git remote -v
+#1761671037
+ssh -T git@github.com
+#1761671057
+git remote -v
+#1761671057
+ssh -T git@github.com
+#1761671107
+cat >> ~/.bash_profile <<'EOF'
+# Load GitHub key for 8h if no keys loaded
+if ! ssh-add -l >/dev/null 2>&1; then
+  eval "$(ssh-agent -s)"
+  ssh-add -t 8h ~/.ssh/id_ed25519_github
+fi
+EOF
+
+#1761671107
+# apply now
+#1761671107
+source ~/.bash_profile
+#1761671114
+git remote -v
+#1761671114
+ssh -T git@github.com
+#1761671940
+cat >> .gitignore <<'EOF'
+/.local/
+/.config/
+/cache/
+/mail/
+/git-filter-repo*/
+/error/log
+/.bash_history
+/.bash_profile
+/.bashrc
+/.profile
+/.gitconfig
+/.vimrc
+/.nano/
+EOF
+
+#1761671940
+git rm -r --cached .local .config mail git-filter-repo error/log   .bash_profile .bashrc .profile .gitconfig .vimrc 2>/dev/null || true
+#1761671940
+git add .gitignore
+#1761671940
+git commit -m "chore: ignore home, mail, and pip-user artifacts; untrack cached"
+#1761671940
+git push origin main
+#1761672036
+# 1) create a branch from your current HEAD (with the gitignore commit)
+#1761672036
+git switch -c chore/gitignore-hardening
+#1761672036
+# 2) push the branch
+#1761672036
+git push -u origin HEAD
+#1761672037
+# 3) restore local main to the remote state
+#1761672037
+git switch main
+#1761672037
+git reset --hard origin/main
+#1761672266
+git switch main
+#1761672266
+git pull --rebase origin main
+#1761672266
+git branch -d chore/gitignore-hardening
+#1761672381
+# update refs and overwrite local working tree to match remote main
+#1761672381
+git fetch origin
+#1761672382
+git reset --hard origin/main
+#1761672382
+# optional: delete the remote topic branch
+#1761672382
+git push origin --delete chore/gitignore-hardening  # ok if this errors
+#1761672392
+git switch -c chore/ignore-error_log
+#1761672392
+printf "error_log\n*/error_log\n" >> .gitignore
+#1761672392
+git add .gitignore
+#1761672392
+git commit -m "chore: ignore PHP error_log files"
+#1761672392
+git push -u origin HEAD
+#1761672415
+git switch main
+#1761672415
+git pull --rebase origin main
+#1761672657
+git fetch origin
+#1761672658
+git reset --hard origin/main
+#1761672664
+git pull --rebase origin main
+#1761672664
+git status
+#1761672812
+git restore --staged --worktree mail/
+#1761672812
+git status   # should be clean or only show untracked .cache/, .gitignore_global
+#1761672823
+git restore --staged --worktree mail/
+#1761672823
+git status   # should be clean or only show untracked .cache/, .gitignore_global
+#1761672887
+# new branch
+#1761672887
+git switch -c chore/ignore-dotcache
+#1761672887
+# ignore .cache and your global ignore file
+#1761672887
+printf "\n/.cache/\n/.gitignore_global\n" >> .gitignore
+#1761672887
+git add .gitignore
+#1761672887
+git commit -m "chore: ignore .cache and .gitignore_global"
+#1761672887
+git push -u origin HEAD
+#1761672905
+git switch main
+#1761672905
+git pull --rebase origin main
+#1761672905
+git branch -d chore/ignore-dotcache
+#1761672905
+git status  # should be clean
+#1761673003
+# restore the missing tracked file (note the quotes for the comma)
+#1761673003
+git restore -- 'mail/notesao.com/sales/new/1761666444.M610766P987796.host.notesao.com,S=1475,W=1508'
+#1761673003
+git status   # should show only untracked .cache/ and .gitignore_global
+#1761673003
+git pull --rebase origin main
+#1761673014
+git switch -c chore/ignore-mail
+#1761673014
+grep -qxF '/mail/' .gitignore || printf "\n/mail/\n" >> .gitignore
+#1761673014
+git rm -r --cached mail
+#1761673017
+git add .gitignore
+#1761673017
+git commit -m "chore: ignore mail; untrack maildir"
+#1761673027
+git push -u origin HEAD
+#1761673064
+git switch main
+#1761673072
+git pull --rebase origin main
+#1761673072
+git branch -d chore/ignore-mail

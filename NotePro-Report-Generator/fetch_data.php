@@ -56,10 +56,19 @@ if (!in_array($clinic_folder, $valid_clinics)) {
  * ------------------------------------------------------------------*/
 $EXTRA_COLS = [
     'safatherhood' => [
-        'restarted'   => 'TINYINT(1)  DEFAULT 0',
-        'progress_ok' => 'TINYINT(1)  DEFAULT 1',
-        'class_day'   => 'VARCHAR(12) DEFAULT NULL'
+        'restarted'                => 'TINYINT(1)  DEFAULT 0',
+        'progress_ok'              => 'TINYINT(1)  DEFAULT 1',
+        'class_day'                => "VARCHAR(12) DEFAULT NULL",
+
+        // new — required by curriculum report CSV
+        'facilitator_office'       => "VARCHAR(45) DEFAULT NULL",
+        'facilitator_first_name'   => "VARCHAR(45) DEFAULT NULL",
+        'facilitator_last_name'    => "VARCHAR(45) DEFAULT NULL",
+        'instructor_office'        => "VARCHAR(45) DEFAULT NULL",
+        'instructor_first_name'    => "VARCHAR(45) DEFAULT NULL",
+        'instructor_last_name'     => "VARCHAR(45) DEFAULT NULL"
     ],
+
     'sandbox' => [
         'real_client_id' => 'INT(11) DEFAULT NULL'
     ],
@@ -92,8 +101,55 @@ $EXTRA_SELECTS = [         // ←  <<<  PASTE THE BLOCK HERE
     'safatherhood' => [
         'restarted'   => 'c.restarted',
         'progress_ok' => 'c.progress_ok',
-        'class_day'   => "'Saturday'"
+        'class_day'   => "'Saturday'",
+
+        // office not present on facilitator in this schema — leave NULL
+        'facilitator_office' => 'NULL',
+        'instructor_office'  => 'NULL',
+
+        // facilitator = primary facilitator on the client's latest attended session
+        'facilitator_first_name' => "(
+            SELECT f.first_name
+            FROM attendance_record ar
+            JOIN therapy_session ts ON ts.id = ar.therapy_session_id
+            JOIN facilitator f      ON f.id = ts.facilitator_id
+            WHERE ar.client_id = c.id AND ts.facilitator_id IS NOT NULL
+            ORDER BY ts.`date` DESC
+            LIMIT 1
+        )",
+        'facilitator_last_name' => "(
+            SELECT f.last_name
+            FROM attendance_record ar
+            JOIN therapy_session ts ON ts.id = ar.therapy_session_id
+            JOIN facilitator f      ON f.id = ts.facilitator_id
+            WHERE ar.client_id = c.id AND ts.facilitator_id IS NOT NULL
+            ORDER BY ts.`date` DESC
+            LIMIT 1
+        )",
+
+        // instructor = co-facilitator on the client's latest attended session
+        'instructor_first_name' => "(
+            SELECT f2.first_name
+            FROM attendance_record ar
+            JOIN therapy_session ts ON ts.id = ar.therapy_session_id
+            JOIN facilitator f2     ON f2.id = ts.co_facilitator_id
+            WHERE ar.client_id = c.id AND ts.co_facilitator_id IS NOT NULL
+            ORDER BY ts.`date` DESC
+            LIMIT 1
+        )",
+        'instructor_last_name' => "(
+            SELECT f2.last_name
+            FROM attendance_record ar
+            JOIN therapy_session ts ON ts.id = ar.therapy_session_id
+            JOIN facilitator f2     ON f2.id = ts.co_facilitator_id
+            WHERE ar.client_id = c.id AND ts.co_facilitator_id IS NOT NULL
+            ORDER BY ts.`date` DESC
+            LIMIT 1
+        )"
     ],
+
+
+
     /* ---------- sandbox ---------- */
     'sandbox' => [
         'real_client_id' => 'c.id'

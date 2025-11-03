@@ -92,3 +92,6 @@ error_log
 
 /.cache/
 /.gitignore_global
+
+# ignore server mail spools
+mail/

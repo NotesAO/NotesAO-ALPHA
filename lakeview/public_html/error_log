@@ -150,3 +150,143 @@ Stack trace:
 [28-Oct-2025 10:19:54 America/Chicago] No Program ID posted or invalid request.
 [28-Oct-2025 10:19:57 America/Chicago] Current Program in Session: ID=7, Name=BIPP (male)
 [28-Oct-2025 10:19:57 America/Chicago] Program updated successfully: ID=4, Name=Parenting Education
+[28-Oct-2025 16:42:32 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'program_name' in 'SELECT' in /home/notesao/lakeview/public_html/intake.php:36
+Stack trace:
+#0 /home/notesao/lakeview/public_html/intake.php(36): mysqli->query('SELECT id, COAL...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/intake.php on line 36
+[30-Oct-2025 15:34:08 America/Chicago] Current Program in Session: ID=2, Name=DWIE
+[30-Oct-2025 15:34:08 America/Chicago] No Program ID posted or invalid request.
+[30-Oct-2025 15:34:18 America/Chicago] Current Program in Session: ID=2, Name=DWIE
+[30-Oct-2025 15:34:18 America/Chicago] Program updated successfully: ID=7, Name=BIPP (male)
+[30-Oct-2025 15:41:21 America/Chicago] Current Program in Session: ID=7, Name=BIPP (male)
+[30-Oct-2025 15:41:21 America/Chicago] No Program ID posted or invalid request.
+[30-Oct-2025 15:41:27 America/Chicago] Current Program in Session: ID=7, Name=BIPP (male)
+[30-Oct-2025 15:41:27 America/Chicago] Program updated successfully: ID=4, Name=Parenting Education
+[30-Oct-2025 15:48:50 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Set" not found in /home/notesao/lakeview/public_html/intake.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/lakeview/public_html/intake.php on line 20
+[30-Oct-2025 15:48:53 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Set" not found in /home/notesao/lakeview/public_html/intake.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/lakeview/public_html/intake.php on line 20
+[30-Oct-2025 15:49:22 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Set" not found in /home/notesao/lakeview/public_html/intake.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/notesao/lakeview/public_html/intake.php on line 20
+[30-Oct-2025 15:52:19 America/Chicago] Current Program in Session: ID=12, Name=Anger Management
+[30-Oct-2025 15:52:19 America/Chicago] No Program ID posted or invalid request.
+[30-Oct-2025 15:52:27 America/Chicago] Current Program in Session: ID=12, Name=Anger Management
+[30-Oct-2025 15:52:27 America/Chicago] Program updated successfully: ID=1, Name=DOEP
+[30-Oct-2025 15:54:38 America/Chicago] Current Program in Session: ID=1, Name=DOEP
+[30-Oct-2025 15:54:38 America/Chicago] No Program ID posted or invalid request.
+[30-Oct-2025 15:55:07 America/Chicago] Current Program in Session: ID=1, Name=DOEP
+[30-Oct-2025 15:55:07 America/Chicago] No Program ID posted or invalid request.
+[30-Oct-2025 15:55:10 America/Chicago] Current Program in Session: ID=1, Name=DOEP
+[30-Oct-2025 15:55:10 America/Chicago] Program updated successfully: ID=1, Name=DOEP
+[30-Oct-2025 15:58:10 America/Chicago] Current Program in Session: ID=1, Name=DOEP
+[30-Oct-2025 15:58:10 America/Chicago] No Program ID posted or invalid request.
+[30-Oct-2025 15:58:16 America/Chicago] Current Program in Session: ID=1, Name=DOEP
+[30-Oct-2025 15:58:16 America/Chicago] Program updated successfully: ID=3, Name=DWII
+[31-Oct-2025 09:39:49 America/Chicago] Current Program in Session: ID=2, Name=DWIE
+[31-Oct-2025 09:39:49 America/Chicago] No Program ID posted or invalid request.
+[31-Oct-2025 09:39:53 America/Chicago] Current Program in Session: ID=2, Name=DWIE
+[31-Oct-2025 09:39:53 America/Chicago] Program updated successfully: ID=10, Name=Marijuana Intervention
+[31-Oct-2025 09:40:24 America/Chicago] Current Program in Session: ID=10, Name=Marijuana Intervention
+[31-Oct-2025 09:40:24 America/Chicago] No Program ID posted or invalid request.
+[31-Oct-2025 09:40:27 America/Chicago] Current Program in Session: ID=10, Name=Marijuana Intervention
+[31-Oct-2025 09:40:27 America/Chicago] Program updated successfully: ID=9, Name=Marijuana Education
+[31-Oct-2025 09:44:45 America/Chicago] Current Program in Session: ID=2, Name=DWIE
+[31-Oct-2025 09:44:45 America/Chicago] No Program ID posted or invalid request.
+[31-Oct-2025 09:44:47 America/Chicago] Current Program in Session: ID=2, Name=DWIE
+[31-Oct-2025 09:44:47 America/Chicago] Program updated successfully: ID=4, Name=Parenting Education
+[31-Oct-2025 09:45:05 America/Chicago] Current Program in Session: ID=4, Name=Parenting Education
+[31-Oct-2025 09:45:05 America/Chicago] No Program ID posted or invalid request.
+[31-Oct-2025 09:45:07 America/Chicago] Current Program in Session: ID=4, Name=Parenting Education
+[31-Oct-2025 09:45:07 America/Chicago] Program updated successfully: ID=6, Name=Life Skills/Anti Theft
+[31-Oct-2025 12:19:00 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/notesao/lakeview/public_html/evaluations-ndp.php:97
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-ndp.php(97): mysqli->prepare('\n    INSERT INT...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-ndp.php on line 97
+[31-Oct-2025 12:27:39 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/notesao/lakeview/public_html/evaluations-ndp.php:172
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-ndp.php(172): mysqli->prepare('\n    INSERT INT...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-ndp.php on line 172
+[31-Oct-2025 12:29:42 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/notesao/lakeview/public_html/evaluations-ndp.php:173
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-ndp.php(173): mysqli->prepare('\n    INSERT INT...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-ndp.php on line 173
+[31-Oct-2025 12:30:46 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/notesao/lakeview/public_html/evaluations-ndp.php:173
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-ndp.php(173): mysqli->prepare('\n    INSERT INT...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-ndp.php on line 173
+[31-Oct-2025 12:58:12 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column '49_i_use_tobacco_regularly' in 'INSERT INTO' in /home/notesao/lakeview/public_html/evaluations-sassi.php:285
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-sassi.php(285): mysqli->prepare('INSERT INTO `ev...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-sassi.php on line 285
+[31-Oct-2025 13:25:35 America/Chicago] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/notesao/lakeview/public_html/evaluations-dwii-a.php:105
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-dwii-a.php(105): mysqli_stmt->bind_param('ssssssssissssss', 'Gabriel', 'Thomas', '2025-10-31', 'Joshua Guzman', 'Good', 'No, maybe weed ...', 'yes and no they...', 'drinking', 1, 'not drinking', 1, 'https://calendl...', 'Ft\xD3\x96', 'Mozilla/5.0 (Wi...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-dwii-a.php on line 105
+[31-Oct-2025 13:27:44 America/Chicago] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/notesao/lakeview/public_html/evaluations-dwii-a.php:106
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-dwii-a.php(106): mysqli_stmt->bind_param('ssssssssisissss', 'Gabriel', 'Thomas', '2025-10-31', 'Joshua Guzman', 'Good', 'No, maybe weed ...', 'yes and no they...', 'drinking', 1, 'not drinking', 1, 'https://calendl...', 'Ft\xD3\x96', 'Mozilla/5.0 (Wi...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-dwii-a.php on line 106
+[31-Oct-2025 13:28:04 America/Chicago] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/notesao/lakeview/public_html/evaluations-dwii-a.php:106
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-dwii-a.php(106): mysqli_stmt->bind_param('ssssssssisissss', 'Gabriel', 'Thomas', '2025-10-31', 'Joshua Guzman', 'Good', 'No, maybe weed ...', 'yes and no they...', 'drinking', 1, 'not drinking', 1, 'https://calendl...', 'Ft\xD3\x96', 'Mozilla/5.0 (Wi...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-dwii-a.php on line 106
+[31-Oct-2025 13:29:00 America/Chicago] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/notesao/lakeview/public_html/evaluations-dwii-a.php:106
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-dwii-a.php(106): mysqli_stmt->bind_param('ssssssssisissss', 'Gabriel', 'Thomas', '2025-10-31', 'Joshua Guzman', 'Good morning', 'Yes, just a lit...', 'yes they are su...', 'drinking, its t...', 1, 'drinking less a...', 1, 'https://calendl...', 'Ft\xD3\x96', 'Mozilla/5.0 (Wi...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-dwii-a.php on line 106
+[31-Oct-2025 14:09:56 America/Chicago] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/notesao/lakeview/public_html/evaluations-dwii-exit.php:178
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-dwii-exit.php(178): mysqli_stmt->bind_param('ssss s ii i i s...', 'gabecthomas@gma...', '2025-10-31', 'Gabriel', 'Thomas', 'Joshua Guzman', 1, 1, 1, 1, '2 times a week ...', 1, 1, 'counseling,inpa...', '', 'i get hungover ...', 'good program', 'Ft\xD3\x96', 'Mozilla/5.0 (Wi...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-dwii-exit.php on line 178
+[31-Oct-2025 14:48:14 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/notesao/lakeview/public_html/evaluations-dwii-b.php:109
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluations-dwii-b.php(109): mysqli->prepare('\n    INSERT INT...')
+#1 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluations-dwii-b.php on line 109
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $sassi in /home/notesao/lakeview/public_html/evaluation-review.php on line 1891
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $sassi in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $dwii_a in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $dwii_b in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $dwii_exit in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $ndp in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $bdi_lv in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $dast in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $vtc in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:36:10 America/Chicago] PHP Warning:  Undefined variable $pai in /home/notesao/lakeview/public_html/evaluation-review.php on line 1901
+[31-Oct-2025 16:42:52 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'dob' in 'SELECT' in /home/notesao/lakeview/public_html/evaluation-review.php:2013
+Stack trace:
+#0 /home/notesao/lakeview/public_html/evaluation-review.php(2013): mysqli->prepare('SELECT `dob` AS...')
+#1 /home/notesao/lakeview/public_html/evaluation-review.php(1943): find_dob_in_client_table(Object(mysqli), 'gabriel', 'thomas')
+#2 {main}
+  thrown in /home/notesao/lakeview/public_html/evaluation-review.php on line 2013
+[03-Nov-2025 11:13:07 America/Chicago] PHP Fatal error:  Cannot redeclare sql_select_one() (previously declared in /home/notesao/lakeview/public_html/clientportal.php:40) in /home/notesao/lakeview/public_html/clientportal_lib.php on line 47
+[03-Nov-2025 11:27:59 America/Chicago] Current Program in Session: ID=7, Name=BIPP (male)
+[03-Nov-2025 11:27:59 America/Chicago] No Program ID posted or invalid request.
+[03-Nov-2025 11:28:02 America/Chicago] Current Program in Session: ID=7, Name=BIPP (male)
+[03-Nov-2025 11:28:02 America/Chicago] Program updated successfully: ID=5, Name=Thinking for a Change
+[03-Nov-2025 13:27:56 America/Chicago] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'paid_date' in 'SELECT' in /home/notesao/lakeview/public_html/clientportal_lib.php:31
+Stack trace:
+#0 /home/notesao/lakeview/public_html/clientportal_lib.php(31): mysqli->prepare('SELECT id, firs...')
+#1 /home/notesao/lakeview/public_html/clientportal.php(91): sql_select_one(Object(mysqli), 'SELECT id, firs...', Array)
+#2 {main}
+  thrown in /home/notesao/lakeview/public_html/clientportal_lib.php on line 31
+[03-Nov-2025 15:35:19 America/Chicago] PHP Parse error:  syntax error, unexpected variable "$first_day" in /home/notesao/lakeview/public_html/client_review_panel.php on line 232
+[03-Nov-2025 16:34:52 America/Chicago] Current Program in Session: ID=7, Name=BIPP (male)
+[03-Nov-2025 16:34:52 America/Chicago] No Program ID posted or invalid request.

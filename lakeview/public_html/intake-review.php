@@ -10,7 +10,9 @@ declare(strict_types=1);
 
 include_once 'auth.php';
 include_once '../config/config.php';
+if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 check_loggedin($con, '../index.php'); // $con used by auth; $link from config
+
 
 /* ------------------------------------------------------------------ */
 /* Helpers                                                            */
@@ -61,6 +63,34 @@ function csrf_check(): void {
         exit(json_encode(['ok' => false, 'msg' => 'Invalid CSRF token']));
     }
 }
+
+// --- Program resolution ---
+function program_name_by_id(mysqli $db, int $id): ?string {
+  if ($id <= 0) return null;
+  foreach ([
+    'SELECT name FROM program WHERE id=? LIMIT 1',
+    'SELECT program_name AS name FROM programs WHERE program_id=? LIMIT 1',
+    'SELECT name FROM programs WHERE id=? LIMIT 1',
+  ] as $sql) {
+    if ($st = $db->prepare($sql)) {
+      $st->bind_param('i', $id); $st->execute();
+      if ($row = $st->get_result()->fetch_assoc()) { $st->close(); return (string)$row['name']; }
+      $st->close();
+    }
+  }
+  return null;
+}
+function program_code_from_name(?string $name): string {
+  $n = strtolower((string)$name);
+  if ($n==='') return 'default';
+  if (str_contains($n,'life') || str_contains($n,'anti-theft')) return 'lsat';
+  if (str_contains($n,'parent')) return 'parent';
+  if (str_contains($n,'doep')) return 'doep';
+  if (str_contains($n,'dwie') || str_contains($n,'dwi ed')) return 'dwie';
+  if (str_contains($n,'dwii') || str_contains($n,'intervention') || str_contains($n,'repeat')) return 'dwii';
+  return 'default';
+}
+
 /* -------- NEW HELPERS ------------------------------------------------ */
 
 /** mm/dd/yyyy */
@@ -210,7 +240,80 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'impor
         exit;
     }
 
-    // TODO: copy fields from intake_packet → client table here...
+    // 1) Pull the intake row we are importing
+    $src = null;
+    if ($st = $link->prepare("SELECT * FROM intake_packet WHERE intake_id = ? LIMIT 1")) {
+        $st->bind_param('i', $intakeId);
+        $st->execute();
+        $src = $st->get_result()->fetch_assoc() ?: null;
+        $st->close();
+    }
+    if (!$src) {
+        echo json_encode(['ok' => false, 'msg' => 'Intake row not found']);
+        exit;
+    }
+
+    // 2) Verify target client exists
+    $exists = false;
+    if ($st = $link->prepare("SELECT id FROM client WHERE id = ?")) {
+        $st->bind_param('i', $clientId);
+        $st->execute();
+        $exists = (bool)$st->get_result()->fetch_row();
+        $st->close();
+    }
+    if (!$exists) {
+        echo json_encode(['ok' => false, 'msg' => 'Client ID not found']);
+        exit;
+    }
+
+    // 3) Map fields from intake_packet → client
+    $updateSql = "
+    UPDATE client SET
+        first_name              = ?,
+        last_name               = ?,
+        email                   = ?,
+        phone_number            = ?,
+        date_of_birth           = ?,
+        address_street          = ?,
+        address_city            = ?,
+        address_state           = ?,
+        address_zip             = ?,
+        drivers_license_number  = ?,
+        gender_id               = ?,
+        referral_type_id        = ?,
+        referring_officer_name  = ?,
+        referring_officer_email = ?
+    WHERE id = ?
+    ";
+
+    $first  = (string)($src['first_name'] ?? '');
+    $last   = (string)($src['last_name'] ?? '');
+    $email  = (string)($src['email'] ?? '');
+    $phone  = (string)($src['phone_number'] ?? $src['phone_cell'] ?? '');
+    $dob    = (string)($src['date_of_birth'] ?? '');
+    $st1    = (string)($src['address_street'] ?? '');
+    $cty    = (string)($src['address_city'] ?? '');
+    $stt    = (string)($src['address_state'] ?? '');
+    $zip    = (string)($src['address_zip'] ?? '');
+    $dl     = (string)($src['drivers_license_number'] ?? $src['id_number'] ?? '');
+    $gid    = (int)   ($src['gender_id'] ?? 1);
+    $ref    = (int)   ($src['referral_type_id'] ?? 0);
+    $offn   = (string)($src['referring_officer_name'] ?? $src['referral_contact_name'] ?? '');
+    $offe   = (string)($src['referring_officer_email'] ?? '');
+
+    $st = $link->prepare($updateSql);
+    $st->bind_param(
+        'ssssssssssiissi',
+        $first,$last,$email,$phone,$dob,$st1,$cty,$stt,$zip,$dl,$gid,$ref,$offn,$offe,$clientId
+    );
+    $okCopy = $st->execute();
+    $st->close();
+
+    if (!$okCopy) {
+        echo json_encode(['ok' => false, 'msg' => 'Copy failed']);
+        exit;
+    }
+
 
     // mark intake row as imported
     $stmt = $link->prepare("
@@ -275,6 +378,12 @@ if (!$row) {
     exit('Packet not found.');
 }
 
+// --- program resolver (used by the unique views below) ---
+$programId   = (int)($row['program_id'] ?? 0);
+$programName = program_name_by_id($link, $programId) ?: ($row['program_name'] ?? '');
+$programCode = program_code_from_name($programName);
+
+
 /* convenience */
 $g   = $row['gender_id']        ?? null;
 $r   = $row['race_id']          ?? null;
@@ -292,9 +401,6 @@ $created_at   = $row['created_at'] ?? $row['created'] ?? null;
 <title>Intake Packet | Review</title>
 <!-- re‑use your existing favicon / Bootstrap links -->
       <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
-      <link rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
       <style>
         body{font-family:system-ui,Arial;background:#f5f6fa;padding:2rem}
         .card{max-width:720px;margin:0 auto;border:0;border-radius:8px;
@@ -318,8 +424,6 @@ $created_at   = $row['created_at'] ?? $row['created'] ?? null;
 <link rel="manifest" href="/favicons/site.webmanifest">
 <meta name="apple-mobile-web-app-title" content="NotesAO">
 <!-- Bootstrap CSS/JS -->
-<link rel="stylesheet" 
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -356,114 +460,376 @@ $created_at   = $row['created_at'] ?? $row['created'] ?? null;
 
 <div class="container-fluid pt-4">
 
-  <!-- Page header / actions -->
-    <div class="d-flex justify-content-between align-items-center mb-3">
+  <!-- Page header / actions (always visible) -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
     <h1 class="h3 mb-0">Intake Packet #<?= h($id) ?></h1>
     <div class="btn-group">
-        <a class="btn btn-secondary btn-md" href="intake-index.php">
+      <a class="btn btn-secondary btn-md" href="intake-index.php">
         <i class="fas fa-arrow-left"></i> Back to Intake Packets
-        </a>
+      </a>
 
-        <button id="btnVerify"
-                class="btn btn-outline-primary btn-md"
-                data-toggle="modal"
-                data-target="#verifyModal"
-                <?= $alreadyVerified ? 'disabled' : '' ?>>
+      <button id="btnVerify"
+              class="btn btn-outline-primary btn-md"
+              data-toggle="modal"
+              data-target="#verifyModal"
+              <?= $alreadyVerified ? 'disabled' : '' ?>>
         <i class="fas fa-check"></i> Mark Verified
-        </button>
+      </button>
 
-        <button id="btnImport"
-                class="btn btn-outline-success btn-md"
-                data-toggle="modal"
-                data-target="#importModal"
-                <?= $suspectedClient ? '' : 'disabled' ?>
-                data-client-id="<?= $suspectedClient ? (int)$suspectedClient['client_id'] : '' ?>">
-          <i class="fas fa-user-plus"></i> Import to Client
-        </button>
-
+      <button id="btnImport"
+              class="btn btn-outline-success btn-md"
+              data-toggle="modal"
+              data-target="#importModal"
+              <?= $suspectedClient ? '' : 'disabled' ?>
+              data-client-id="<?= $suspectedClient ? (int)$suspectedClient['client_id'] : '' ?>">
+        <i class="fas fa-user-plus"></i> Import to Client
+      </button>
     </div>
-    </div>
+  </div>
 
-    <!-- Verify Modal -->
-    <div class="modal fade" id="verifyModal" tabindex="-1" role="dialog" aria-labelledby="verifyModalLabel" aria-hidden="true">
+  <!-- Verify Modal -->
+  <div class="modal fade" id="verifyModal" tabindex="-1" role="dialog" aria-labelledby="verifyModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <form id="verifyForm" class="modal-content">
+      <form id="verifyForm" class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="verifyModalLabel">Verify Intake Packet</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+          <h5 class="modal-title" id="verifyModalLabel">Verify Intake Packet</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
-            <p>
-            I, <strong><?= h($_SESSION['name'] ?? $_SESSION['username'] ?? 'Unknown') ?></strong>,
-            verify this intake packet has been reviewed and is completely correct.
-            </p>
-
-            <input type="hidden" name="action" value="verify">
-            <input type="hidden" name="id" value="<?= h($id) ?>">
-            <input type="hidden" name="csrf" value="<?= h($csrf) ?>">
+          <p>I, <strong><?= h($_SESSION['name'] ?? $_SESSION['username'] ?? 'Unknown') ?></strong>, verify this intake packet has been reviewed and is completely correct.</p>
+          <input type="hidden" name="action" value="verify">
+          <input type="hidden" name="id" value="<?= h($id) ?>">
+          <input type="hidden" name="csrf" value="<?= h($csrf) ?>">
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">Yes, Mark Verified</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Yes, Mark Verified</button>
         </div>
-        </form>
+      </form>
     </div>
-    </div>
+  </div>
 
-    <!-- Import Modal -->
-    <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <form id="importForm" class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="importModalLabel">Import to Client</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <?php if ($suspectedClient): ?>
-              <div class="alert alert-info">
-                Suspected match:
-                <strong><?= h($suspectedClient['first_name'].' '.$suspectedClient['last_name']) ?></strong>
-                (<?= dt_date($suspectedClient['date_of_birth']) ?>) – ID:
-                <strong><?= (int)$suspectedClient['client_id'] ?></strong>
-              </div>
-            <?php else: ?>
-              <div class="alert alert-warning">
-                No suspected client found. You can still create a brand new client from this intake (future step).
-              </div>
-            <?php endif; ?>
-
-            <input type="hidden" name="action" value="import_to_client">
-            <input type="hidden" name="csrf" value="<?= h($csrf) ?>">
-            <input type="hidden" name="intake_id" value="<?= (int)$id ?>">
-            <input type="hidden" name="client_id"  value="<?= $suspectedClient ? (int)$suspectedClient['client_id'] : '' ?>">
-
-            <p class="mb-1"><strong>What will happen (you’ll finish this):</strong></p>
-            <ul class="mb-3">
-              <li>Copy intake fields into the existing client (or create a new client).</li>
-              <li>Mark this intake as <em>imported_to_client = 1</em> and store <em>imported_client_id</em>.</li>
-            </ul>
-
-            <div class="form-group">
-              <label>Confirm / override Client ID to import into:</label>
-              <input type="number" class="form-control" name="client_id_override"
-                    value="<?= $suspectedClient ? (int)$suspectedClient['client_id'] : '' ?>">
-              <small class="form-text text-muted">Leave blank to use the suspected client above, or enter a specific client ID.</small>
+  <!-- Import Modal -->
+  <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="importModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <form id="importForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="importModalLabel">Import to Client</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <?php if ($suspectedClient): ?>
+            <div class="alert alert-info">
+              Suspected match:
+              <strong><?= h($suspectedClient['first_name'].' '.$suspectedClient['last_name']) ?></strong>
+              (<?= dt_date($suspectedClient['date_of_birth']) ?>) – ID:
+              <strong><?= (int)$suspectedClient['client_id'] ?></strong>
             </div>
+          <?php else: ?>
+            <div class="alert alert-warning">No suspected client found. You can still create a brand new client from this intake (future step).</div>
+          <?php endif; ?>
 
+          <input type="hidden" name="action" value="import_to_client">
+          <input type="hidden" name="csrf" value="<?= h($csrf) ?>">
+          <input type="hidden" name="intake_id" value="<?= (int)$id ?>">
+          <input type="hidden" name="client_id"  value="<?= $suspectedClient ? (int)$suspectedClient['client_id'] : '' ?>">
+
+          <p class="mb-1"><strong>What will happen:</strong></p>
+          <ul class="mb-3">
+            <li>Copy intake fields into the existing client (or create a new client).</li>
+            <li>Mark this intake as <em>imported_to_client = 1</em> and store <em>imported_client_id</em>.</li>
+          </ul>
+
+          <div class="form-group">
+            <label>Confirm / override Client ID to import into:</label>
+            <input type="number" class="form-control" name="client_id_override"
+                   value="<?= $suspectedClient ? (int)$suspectedClient['client_id'] : '' ?>">
+            <small class="form-text text-muted">Leave blank to use the suspected client above, or enter a specific client ID.</small>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button id="btnDoImport" type="submit" class="btn btn-success" <?= $suspectedClient ? '' : 'disabled' ?>>Import</button>
-          </div>
-        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button id="btnDoImport" type="submit" class="btn btn-success" <?= $suspectedClient ? '' : 'disabled' ?>>Import</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <?php
+  /* ========================= UNIQUE PROGRAM VIEWS ========================= */
+  if ($programCode === 'lsat'): ?>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Contact & Demographics', [
+          'First Name'        => v($row['first_name']),
+          'Last Name'         => v($row['last_name']),
+          'Email'             => v($row['email']),
+          'Phone'             => phone_fmt($row['phone_number'] ?? $row['phone_cell'] ?? ''),
+          'Date of Birth'     => dt_date($row['date_of_birth']),
+          'Gender'            => h($genderMap[(string)($row['gender_id'] ?? '')] ?? (string)($row['gender_id'] ?? '')),
+          'DL / ID Number'    => v($row['drivers_license_number'] ?? $row['id_number'] ?? null),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Case / Charge', [
+          'County of Arrest'  => v($row['county_of_arrest']),
+          'Charge Reason'     => v($row['charge_reason']),
+          'Offense Level'     => v($row['offense_level']),
+        ]); ?>
+
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-xl-6">
+        <?php
+          $ref_display = ($row['referral_contact_name_and_county'] ?? '')
+                        ?: trim(($row['referral_contact_name'] ?? '').(
+                            ($row['referral_contact_location'] ?? '') ? ' ('.$row['referral_contact_location'].')' : ''
+                          ));
+          cardTable('Referral', [
+            'Referral Contact' => v($ref_display),
+          ]);
+        ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Consents / Acknowledgments', [
+          'Rules Page Viewed'        => yesno($row['rules_page'] ?? null),
+          // Intake uses agree_disclosure → consent_disclosure. Fall back to older name if present.
+          'Consent to Disclose Info' => yesno(($row['consent_disclosure'] ?? null) ?? ($row['consent_ack_disclosure'] ?? null)),
+        ]); ?>
 
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Signature', [
+          'Digital Signature' => v($row['digital_signature']),
+          'Signature Date'    => dt_date($row['signature_date']),
+          'Submitted' => dt_date($row['today_date'] ?? null),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('System Flags', [
+          'Thank-You Page Seen' => yesno($row['thank_you_page'] ?? null),
+        ]); ?>
+
+      </div>
+    </div>
+  <?php   /* end LSAT */ ?>
+
+
+  <?php
+  /* ---- Parenting Education ---- */
+  elseif ($programCode === 'parent'): ?>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Contact', [
+          'First Name'    => v($row['first_name']),
+          'Last Name'     => v($row['last_name']),
+          'Email'         => v($row['email']),
+          'Phone'         => phone_fmt($row['phone_number'] ?? $row['phone_cell'] ?? ''),
+          'Date of Birth' => dt_date($row['date_of_birth']),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Referral / Court', [
+          'Officer / Case Manager' => v($row['referring_officer_name']),
+          'Officer E-mail'         => v($row['referring_officer_email']),
+          'Case / Cause #'         => v($row['case_cause_number']),
+          'Current Charge / Situation' => v($row['current_arrest_or_investigation']),
+        ]); ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Substance-Related History', [
+          'Failed Drug Test'            => v($row['failed_drug_test']),
+          'Received Substance Treatment'=> v($row['received_substance_treatment']),
+          'Drug of Choice'              => v($row['drug_of_choice']),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Consents', [
+          'Confidentiality Page Viewed' => yesno($row['confidentiality_notice_page'] ?? null),
+          'Share Attendance Only'       => yesno($row['consent_share_attendance_only'] ?? null),
+        ]); ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Signature', [
+          'Digital Signature' => v($row['digital_signature']),
+          'Signature Date'    => dt_date($row['signature_date']),
+          'Submitted (Today Date)' => dt_date($row['today_date'] ?? null),
+        ]); ?>
+      </div>
+    </div>
+  <?php  /* end Parenting */ ?>
+
+
+  <?php elseif ($programCode === 'doep'): ?>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Contact', [
+          'First Name'    => v($row['first_name']),
+          'Last Name'     => v($row['last_name']),
+          'Email'         => v($row['email']),
+          'Phone'         => phone_fmt($row['phone_number'] ?? $row['phone_cell'] ?? ''),
+          'Date of Birth' => dt_date($row['date_of_birth']),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Employment / Family Impact', [
+          'Employment Status'              => v($row['employment_status']),
+          'Employment History (3y)'        => v($row['employment_history_list']),
+          'Total Unemployment Last 3y'     => v($row['unemployment_total_last_3_years']),
+          'Family Problems Due To Use'     => v($row['family_problems_due_to_use']),
+        ]); ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Use History', [
+          'Drug of Choice'                     => v($row['drug_of_choice']),
+          'Age First Arrest'                   => v($row['age_first_arrest']),
+          'Age First Drug-Related Arrest'      => v($row['age_first_drug_related_arrest']),
+          'Age First Alcohol-Related Arrest'   => v($row['age_first_alcohol_related_arrest']),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Perception / Help', [
+          'Thinks Alcohol or Drug Problem' => v($row['thought_has_alcohol_or_drug_problem']),
+          'Thinks Alcohol Problem'         => v($row['thought_has_alcohol_problem']),
+          'Thinks Drug Problem'            => v($row['thought_has_drug_problem']),
+          'Received Help'                  => v($row['received_help']),
+          'Attended Help Types'            => v($row['attended_help_types']),
+          'Progress Shared With Court'     => yesno($row['consent_progress_shared_with_court'] ?? null),
+        ]); ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Signature', [
+          'Digital Signature' => v($row['digital_signature']),
+          'Signature Date'    => dt_date($row['signature_date']),
+        ]); ?>
+      </div>
+    </div>
+  <?php /* end DOEP */ ?>
+
+
+  <?php elseif ($programCode === 'dwie'): ?>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Contact', [
+          'First Name'    => v($row['first_name']),
+          'Last Name'     => v($row['last_name']),
+          'Email'         => v($row['email']),
+          'Phone'         => phone_fmt($row['phone_number'] ?? $row['phone_cell'] ?? ''),
+          'Date of Birth' => dt_date($row['date_of_birth']),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Case', [
+          'Case / Cause #'                => v($row['case_cause_number']),
+          'Current Arrest / Investigation'=> v($row['current_arrest_or_investigation']),
+          'Age First Alcohol-Related Arrest' => v($row['age_first_alcohol_related_arrest']),
+        ]); ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('History', [
+          'Thinks Alcohol Problem'        => v($row['thought_has_alcohol_problem']),
+          'Received Help'                 => v($row['received_help']),
+          'Attended Help Types'           => v($row['attended_help_types']),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Consents', [
+          'Progress Shared With Court'    => yesno($row['consent_progress_shared_with_court'] ?? null),
+          'Confidentiality Page Viewed'   => yesno($row['confidentiality_notice_page'] ?? null),
+        ]); ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Signature', [
+          'Digital Signature' => v($row['digital_signature']),
+          'Signature Date'    => dt_date($row['signature_date']),
+        ]); ?>
+      </div>
+    </div>
+  <?php  /* end DWIE */ ?>
+
+
+  <?php elseif ($programCode === 'dwii'): ?>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Contact', [
+          'First Name'    => v($row['first_name']),
+          'Last Name'     => v($row['last_name']),
+          'Email'         => v($row['email']),
+          'Phone'         => phone_fmt($row['phone_number'] ?? $row['phone_cell'] ?? ''),
+          'Date of Birth' => dt_date($row['date_of_birth']),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('Case', [
+          'Case / Cause #'                => v($row['case_cause_number']),
+          'Current Arrest / Investigation'=> v($row['current_arrest_or_investigation']),
+          'Age First Alcohol-Related Arrest' => v($row['age_first_alcohol_related_arrest']),
+        ]); ?>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Program Agreements', [
+          'Participant Agreement'        => yesno($row['participant_agreement'] ?? null),
+          'Compliance Acknowledgement'   => yesno($row['compliance_acknowledgement'] ?? null),
+        ]); ?>
+      </div>
+      <div class="col-xl-6">
+        <?php cardTable('History / Help', [
+          'Thinks Alcohol Problem'       => v($row['thought_has_alcohol_problem']),
+          'Received Help'                => v($row['received_help']),
+          'Attended Help Types'          => v($row['attended_help_types']),
+          'Progress Shared With Court'   => yesno($row['consent_progress_shared_with_court'] ?? null),
+        ]); ?>
+      </div>
+
+      <?php cardTable('Program Flags', [
+        'SASSI Notice E-mailed' => yesno($row['post_submit_notice_sassi_email'] ?? null),
+      ]); ?>
+
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6">
+        <?php cardTable('Signature', [
+          'Digital Signature' => v($row['digital_signature']),
+          'Signature Date'    => dt_date($row['signature_date']),
+        ]); ?>
+      </div>
+    </div>
+  <?php  /* end DWII */ ?>
+
+  <?php else: ?>
 
 
   <!-- META (full width) -->
@@ -521,11 +887,11 @@ $created_at   = $row['created_at'] ?? $row['created'] ?? null;
         'First Name'            => v($row['first_name']),
         'Last Name'             => v($row['last_name']),
         'Email'                 => v($row['email']),
-        'Cell Phone'        => phone_fmt($row['phone_cell']),
+        'Cell Phone'        => phone_fmt($row['phone_number']),
         'Date of Birth'     => dt_date($row['date_of_birth']),
         'Gender'                => h($genderMap[(string)$g] ?? (string)$g),
         'Program'           => h($programMap[(string)($row['program_id'] ?? '')] ?? (string)($row['program_id'] ?? '')),
-        'DL / ID Number'        => v($row['id_number']),
+        'DL / ID Number'        => v($row['drivers_license_number']),
 
         '__hr'                  => '',
 
@@ -746,6 +1112,8 @@ $created_at   = $row['created_at'] ?? $row['created'] ?? null;
   </div>
 
 </div><!-- /.container-fluid -->
+<?php endif; ?>
+
 
 <script>
 (function() {

@@ -81,6 +81,9 @@ $username     = $_SESSION['name'] ?? 'User';
                     <a class="dropdown-item" href="curriculum-index.php">
                         <i class="fas fa-book"></i> Curriculum
                     </a>
+                    <a class="dropdown-item" href="evaluation-index.php">
+                        <i class="fas fa-star"></i> Evaluations
+                    </a>
 
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Reporting</h6>
@@ -115,6 +118,8 @@ $username     = $_SESSION['name'] ?? 'User';
                            . '<i class="fas fa-users-cog"></i> Groups</a>';
                         echo '<a class="dropdown-item" href="referral_type-index.php">'
                            . '<i class="fas fa-handshake"></i> Referral Types</a>';
+                        echo '<a class="dropdown-item" href="client-group-dates.php">'
+                           . '<i class="fas fa-calendar-alt"></i> Group Dates</a>';
                         echo '<a class="dropdown-item" href="./admin">'
                            . '<i class="fas fa-tools"></i> Tools</a>';
                     }

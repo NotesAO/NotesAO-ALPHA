@@ -64,8 +64,9 @@ $whereProg=$program_id?"WHERE program_id=".(int)$program_id:'';
 $search=$_GET['search']??'';
 $order =$_GET['order']??'created_at';
 $sort  =strtolower($_GET['sort']??'desc'); $sort=$sort==='asc'?'asc':'desc';
-$allowed=['created_at','first_name','last_name','email','phone_cell',
+$allowed=['created_at','first_name','last_name','date_of_birth','email','phone_cell','phone_number',
           'packet_complete','staff_verified','imported_to_client'];
+
 if(!in_array($order,$allowed,true)) $order='created_at';
 $toggle_sort=$sort==='asc'?'desc':'asc';
 $url_prefix='search='.urlencode($search).'&sort='.$toggle_sort;
@@ -79,12 +80,15 @@ if($rDup=mysqli_query($link,$qDup)) while($d=mysqli_fetch_assoc($rDup))
 
 /* main sql */
 $sql="SELECT intake_id,created_at,DATE_FORMAT(created_at,'%Y-%m-%d %H:%i') created_fmt,
-             first_name,last_name,date_of_birth,email,phone_cell,
+             first_name,last_name,date_of_birth,email,
+             COALESCE(phone_cell,phone_number) AS phone,
              packet_complete,staff_verified,imported_to_client
       FROM intake_packet $whereProg";
+
 if($search!==''){
    $esc=mysqli_real_escape_string($link,$search);
-   $sql.=($whereProg?' AND ':' WHERE ')."CONCAT_WS(' ',first_name,last_name,email,phone_cell) LIKE '%$esc%'";
+   $sql.=($whereProg?' AND ':' WHERE ')."CONCAT_WS(' ',first_name,last_name,email,phone_cell,phone_number,drivers_license_number,date_of_birth) LIKE '%$esc%'";
+
 }
 $sql.=($order==='created_at')
      ?" ORDER BY created_at DESC,last_name ASC,first_name ASC"
@@ -94,7 +98,8 @@ $result=mysqli_query($link,$sql); $rowCount=$result?mysqli_num_rows($result):0;
 /* ---------------------------------------------------------------
  *  Build list of *all* columns to compare
  * ---------------------------------------------------------------*/
-$skip=['intake_id','created_at','verified_at'];      // skip meta fields
+$skip=['intake_id','created_at','verified_at','updated_at'];
+
 $fieldsToCompare=[];
 $desc=mysqli_query($link,"DESCRIBE intake_packet");
 while($c=mysqli_fetch_assoc($desc)){
@@ -159,7 +164,8 @@ while($c=mysqli_fetch_assoc($desc)){
  <td><?=h($r['last_name'])?><?=$dup?' <span class="badge badge-warning">dup</span>':''?></td>
  <td><?=h($r['date_of_birth'])?></td>
  <td><?=h($r['email'])?></td>
- <td><?=h($r['phone_cell'])?></td>
+ <td><?=h($r['phone'])?></td>
+
  <td><?=$r['packet_complete']?'Yes':'No'?></td>
  <td><?=$r['staff_verified']?'Yes':'No'?></td>
  <td><?=$r['imported_to_client']?'Yes':'No'?></td>
