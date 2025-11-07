@@ -676,7 +676,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <label>Other Concerns</label>
+                            <label>Attendance & Behavior Concerns (Back office use only)</label>
                             <textarea name="other_concerns"
                                       maxlength="2048"
                                       class="form-control"><?php echo $other_concerns; ?></textarea>

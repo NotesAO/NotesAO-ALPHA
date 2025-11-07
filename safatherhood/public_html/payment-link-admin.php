@@ -1,5 +1,5 @@
 <?php
-// payment-link-admin.php — Admin page to set global payment link and reduced-fee promo note
+// payment-link-admin.php — Admin page to set per-fee payment links and promo notes
 require_once __DIR__ . '/auth.php';     // provides $con (mysqli) + session
 check_loggedin($con);
 
@@ -74,12 +74,21 @@ function get_setting(mysqli $con, string $key): string {
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
-   Load existing values (GLOBAL ONLY)
-   - payment_link_url : the single link used by the portal (your $25 “regular” link)
-   - promo.note       : text shown only when client fee is 10 or 15
+   Load existing values
+   - payment_link_url        : required, used for $25 and as fallback
+   - payment_link_url_15     : optional override when fee == 15
+   - payment_link_url_10     : optional override when fee == 10
+   - promo.note.25/.15/.10   : optional per-fee notes shown next to button
+   - promo.note              : legacy fallback used if .15/.10 absent
    ─────────────────────────────────────────────────────────────────────────── */
-$payment_link_url = get_setting($con, 'payment_link_url');
-$promo_note       = get_setting($con, 'promo.note');
+$link25 = get_setting($con, 'payment_link_url');     // legacy key retained
+$link15 = get_setting($con, 'payment_link_url_15');
+$link10 = get_setting($con, 'payment_link_url_10');
+
+$note25 = get_setting($con, 'promo.note.25');
+$note15 = get_setting($con, 'promo.note.15');
+$note10 = get_setting($con, 'promo.note.10');
+$noteLegacy = get_setting($con, 'promo.note');       // fallback for 10/15 if per-fee blank
 
 /* ───────────────────────────────────────────────────────────────────────────
    POST: save
@@ -88,28 +97,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['act'] ?? '') === 'save') {
   if (!isset($_POST['csrf']) || !hash_equals($CSRF, (string)$_POST['csrf'])) {
     $flash_err[] = 'Security check failed. Please refresh and try again.';
   } else {
-    $new_link = trim((string)($_POST['payment_link_url'] ?? ''));
-    $new_note = trim((string)($_POST['promo_note'] ?? ''));
+    $new25 = trim((string)($_POST['payment_link_url_25'] ?? ''));
+    $new15 = trim((string)($_POST['payment_link_url_15'] ?? ''));
+    $new10 = trim((string)($_POST['payment_link_url_10'] ?? ''));
 
-    // validate URL (required)
-    if ($new_link === '' || !preg_match('~^https?://[^\s]+$~i', $new_link)) {
-      $flash_err[] = 'Please provide a valid HTTPS URL for the payment link.';
+    $n25 = trim((string)($_POST['promo_note_25'] ?? ''));
+    $n15 = trim((string)($_POST['promo_note_15'] ?? ''));
+    $n10 = trim((string)($_POST['promo_note_10'] ?? ''));
+    $nLegacy = trim((string)($_POST['promo_note_legacy'] ?? '')); // optional legacy
+
+    $is_url = function(string $u): bool {
+      if ($u === '') return true; // allow blank for optional overrides
+      return (bool)preg_match('~^https?://[^\s]+$~i', $u);
+    };
+
+    // required: $25 link
+    if ($new25 === '' || !$is_url($new25)) {
+      $flash_err[] = 'Provide a valid HTTPS URL for the $25 link.';
     }
+    if (!$is_url($new15)) $flash_err[] = 'Invalid $15 link URL.';
+    if (!$is_url($new10)) $flash_err[] = 'Invalid $10 link URL.';
 
-    // optional, but keep promo note reasonably short
-    if (mb_strlen($new_note) > 140) {
-      $flash_err[] = 'Promo note is too long (max 140 chars).';
+    foreach ([['$25 note',$n25],['$15 note',$n15],['$10 note',$n10],['legacy note',$nLegacy]] as [$label,$val]) {
+      if (mb_strlen($val) > 140) $flash_err[] = "$label is too long (max 140 chars).";
     }
 
     if (!$flash_err) {
-      $ok1 = save_setting($con, 'payment_link_url', $new_link);
-      $ok2 = save_setting($con, 'promo.note', $new_note);
+      $ok = true;
+      $ok = $ok && save_setting($con, 'payment_link_url', $new25);   // keep legacy key
+      $ok = $ok && save_setting($con, 'payment_link_url_15', $new15);
+      $ok = $ok && save_setting($con, 'payment_link_url_10', $new10);
 
-      if ($ok1 && $ok2) {
+      $ok = $ok && save_setting($con, 'promo.note.25', $n25);
+      $ok = $ok && save_setting($con, 'promo.note.15', $n15);
+      $ok = $ok && save_setting($con, 'promo.note.10', $n10);
+      // keep legacy for older portal code still reading promo.note
+      $ok = $ok && save_setting($con, 'promo.note', $nLegacy);
+
+      if ($ok) {
         $flash_ok[] = 'Settings saved.';
+
         // refresh
-        $payment_link_url = get_setting($con, 'payment_link_url');
-        $promo_note       = get_setting($con, 'promo.note');
+        $link25 = get_setting($con, 'payment_link_url');
+        $link15 = get_setting($con, 'payment_link_url_15');
+        $link10 = get_setting($con, 'payment_link_url_10');
+
+        $note25 = get_setting($con, 'promo.note.25');
+        $note15 = get_setting($con, 'promo.note.15');
+        $note10 = get_setting($con, 'promo.note.10');
+        $noteLegacy = get_setting($con, 'promo.note');
       } else {
         $flash_err[] = 'A database error occurred while saving settings.';
       }
@@ -128,6 +164,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['act'] ?? '') === 'save') {
   body { padding-top:56px; background:#f6f7fb; }
   .safe-card { background:#fff; border:1px solid #dee2e6; border-radius:.5rem; box-shadow:0 2px 6px rgba(0,0,0,.06); }
   .form-help { font-size:.9rem; color:#6b7280; }
+  .fee-badge { font-weight:600; }
 </style>
 </head>
 <body>
@@ -135,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['act'] ?? '') === 'save') {
 <?php require_once 'navbar.php'; ?>
 
 <section class="pt-4">
-  <div class="container" style="max-width:820px">
+  <div class="container" style="max-width:880px">
 
     <h1 class="h4 mb-3">Client Portal — Payment Settings</h1>
 
@@ -153,36 +190,82 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['act'] ?? '') === 'save') {
 
     <div class="safe-card p-3 p-sm-4 mb-4">
       <p class="form-help mb-3">
-        Configure a <strong>single global payment link</strong> used by the client portal (this is your
-        regular <strong>$25</strong> link). If a client’s fee is <strong>$10 or $15</strong>, the portal will
-        display the <strong>promo note</strong> you set below (e.g., “Use code REDUCED at checkout.”).
+        Configure per-fee payment behavior. The <span class="fee-badge">$25</span> link is required and acts as the default. 
+        The <span class="fee-badge">$15</span> and <span class="fee-badge">$10</span> links are optional; if left blank the portal falls back to the $25 link.
+        Notes are optional and shown next to the button for the matching fee.
       </p>
 
-      <form method="post">
+      <form method="post" novalidate>
         <input type="hidden" name="csrf" value="<?=h($CSRF)?>">
         <input type="hidden" name="act" value="save">
 
-        <div class="mb-3">
-          <label class="font-weight-bold">Global payment link (regular $25)</label>
-          <input type="url"
-                 class="form-control"
-                 name="payment_link_url"
-                 placeholder="https://…"
-                 value="<?= h($payment_link_url) ?>"
-                 required>
-          <small class="form-help">Key: <code>payment_link_url</code></small>
-        </div>
+        <!-- $25 -->
+        <fieldset class="border rounded p-3 mb-4">
+          <legend class="w-auto px-2 small mb-0">Fee = $25 (Regular)</legend>
+          <div class="mb-3">
+            <label class="font-weight-bold">Payment link (required)</label>
+            <input type="url" class="form-control" name="payment_link_url_25"
+                   placeholder="https://…" value="<?=h($link25)?>" required>
+            <small class="form-help">Key: <code>payment_link_url</code></small>
+          </div>
+          <div class="mb-0">
+            <label class="font-weight-bold">Note shown next to button (optional)</label>
+            <input type="text" class="form-control" name="promo_note_25" maxlength="140"
+                   placeholder="Optional message for $25 payers"
+                   value="<?=h($note25)?>">
+            <small class="form-help">Key: <code>promo.note.25</code></small>
+          </div>
+        </fieldset>
 
-        <div class="mb-3">
-          <label class="font-weight-bold">Promo note for reduced fees ($10/$15)</label>
-          <input type="text"
-                 class="form-control"
-                 name="promo_note"
-                 maxlength="140"
-                 placeholder="e.g., Use code REDUCED at checkout."
-                 value="<?= h($promo_note) ?>">
-          <small class="form-help">Key: <code>promo.note</code> (shown only when client fee is 10 or 15)</small>
-        </div>
+        <!-- $15 -->
+        <fieldset class="border rounded p-3 mb-4">
+          <legend class="w-auto px-2 small mb-0">Fee = $15 (Reduced)</legend>
+          <div class="mb-3">
+            <label class="font-weight-bold">Payment link override (optional)</label>
+            <input type="url" class="form-control" name="payment_link_url_15"
+                   placeholder="https://…  (leave blank to use $25 link)"
+                   value="<?=h($link15)?>">
+            <small class="form-help">Key: <code>payment_link_url_15</code></small>
+          </div>
+          <div class="mb-0">
+            <label class="font-weight-bold">Note shown next to button (optional)</label>
+            <input type="text" class="form-control" name="promo_note_15" maxlength="140"
+                   placeholder="e.g., Use code REDUCED15 at checkout."
+                   value="<?=h($note15)?>">
+            <small class="form-help">Key: <code>promo.note.15</code></small>
+          </div>
+        </fieldset>
+
+        <!-- $10 -->
+        <fieldset class="border rounded p-3 mb-4">
+          <legend class="w-auto px-2 small mb-0">Fee = $10 (Reduced)</legend>
+          <div class="mb-3">
+            <label class="font-weight-bold">Payment link override (optional)</label>
+            <input type="url" class="form-control" name="payment_link_url_10"
+                   placeholder="https://…  (leave blank to use $25 link)"
+                   value="<?=h($link10)?>">
+            <small class="form-help">Key: <code>payment_link_url_10</code></small>
+          </div>
+          <div class="mb-0">
+            <label class="font-weight-bold">Note shown next to button (optional)</label>
+            <input type="text" class="form-control" name="promo_note_10" maxlength="140"
+                   placeholder="e.g., Use code REDUCED10 at checkout."
+                   value="<?=h($note10)?>">
+            <small class="form-help">Key: <code>promo.note.10</code></small>
+          </div>
+        </fieldset>
+
+        <!-- Legacy promo note for backward compatibility -->
+        <details class="mb-3">
+          <summary class="text-muted">Legacy compatibility</summary>
+          <div class="mt-2">
+            <label class="font-weight-bold">Legacy promo note for reduced fees</label>
+            <input type="text" class="form-control" name="promo_note_legacy" maxlength="140"
+                   placeholder="Used only by older portal code"
+                   value="<?=h($noteLegacy)?>">
+            <small class="form-help">Key: <code>promo.note</code> (used if <code>promo.note.15</code>/<code>.10</code> are blank)</small>
+          </div>
+        </details>
 
         <div class="d-flex justify-content-end">
           <button type="submit" class="btn btn-primary">Save changes</button>
@@ -192,10 +275,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['act'] ?? '') === 'save') {
     </div>
 
     <div class="small text-muted">
-      <strong>Portal behavior:</strong>
-      the client portal reads <code>payment_link_url</code> for the “Pay Now” button.
-      If the client’s <em>fee</em> is <strong>10</strong> or <strong>15</strong>, it also shows
-      <code>promo.note</code>. No per-group links or promos are used.
+      <strong>Portal selection logic:</strong>
+      <pre class="mt-2 mb-0"><code>
+// $fee is 25, 15, or 10 (int)
+$link = get_setting($con, 'payment_link_url');               // $25 base
+if ($fee === 15) $link = get_setting($con, 'payment_link_url_15') ?: $link;
+if ($fee === 10) $link = get_setting($con, 'payment_link_url_10') ?: $link;
+
+$note = '';
+if ($fee === 25) $note = get_setting($con, 'promo.note.25') ?: '';
+if ($fee === 15) $note = get_setting($con, 'promo.note.15') ?: (get_setting($con, 'promo.note') ?: '');
+if ($fee === 10) $note = get_setting($con, 'promo.note.10') ?: (get_setting($con, 'promo.note') ?: '');
+      </code></pre>
     </div>
 
   </div>

@@ -338,6 +338,30 @@ function badgeYN($v, $yes='Yes', $no='No', $yesClass='success', $noClass='second
   return "<span class=\"badge badge-$cls\">".h($label)."</span>";
 }
 
+function fmtTime($t) {
+  $t = trim((string)$t);
+  if ($t === '' || $t === '00:00:00') return '—';
+  $dt = DateTime::createFromFormat('H:i:s', $t);
+  return $dt ? $dt->format('g:i A') : h($t);
+}
+function dowLabel($v) {
+  $v = trim((string)$v);
+  if ($v === '') return '—';
+  if (ctype_digit($v)) {
+    $map = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    $i = (int)$v;
+    return isset($map[$i]) ? $map[$i] : h($v);
+  }
+  return h($v);
+}
+function victimGenderAge($gender, $age) {
+  $gender = trim((string)$gender);
+  $age = trim((string)$age);
+  if ($age === '' || $age === '0') return ($gender !== '') ? $gender : '—';
+  return trim($gender.' '.$age);
+}
+
+
 // Labels (adjust if clinic uses different mappings)
 $PROGRAM_MAP = [1=>'Thinking for a Change', 2=>'BIPP (male)', 3=>'BIPP (female)', 4=>'Anger Control', 5=>'Veterans Court'];
 $REFERRAL_MAP = [0=>'Other',1=>'Probation',2=>'Parole',3=>'Pretrial',4=>'CPS',5=>'Attorney',6=>'VTC'];
@@ -388,6 +412,7 @@ $CONSENTS = [
   ['key'=>'p8c_responsibility', 'title'=>'Taking Responsibility (8c)',              'date'=>$row['program_date_8cb'] ?? null],
   ['key'=>'p8d_virtual',        'title'=>'Virtual Group Rules (8d)',                'date'=>$row['vgr_date_8d'] ?? null],
   ['key'=>'p8e_termination',    'title'=>'Termination Policy (8e)',                 'date'=>$row['termination_date_8e'] ?? null],
+  ['key'=>'p8f_hold_harmless', 'title'=>'Hold Harmless Agreement (8f)', 'date'=>$row['hold_harmless_date'] ?? null],
 ];
 
 $programLabel  = $PROGRAM_MAP[(int)($row['program_id'] ?? 0)] ?? ($row['program_id'] ?? '');
@@ -971,6 +996,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'impor
 
         <?php
         $race_ethnicity = race_text($row['race_id'] ?? null);
+        if ($race_ethnicity === '' && isset($row['ethnicity_id'])) {
+          $race_ethnicity = fetch_ethnicity_label($db, (int)$row['ethnicity_id']);
+        }
+
         ?>
 
         <div class="row">
@@ -1169,7 +1198,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'impor
               <tbody>
               <tr><th class="w-50">Relationship to victim</th><td><?= h($row['victim_relationship'] ?? '') ?></td></tr>
               <tr><th>Victim First/Last</th><td><?= h(trim(($row['victim_first_name'] ?? '') . ' ' . ($row['victim_last_name'] ?? ''))) ?></td></tr>
-              <tr><th>Victim Gender/Age</th><td><?= h(trim(($row['victim_gender'] ?? '') . ' ' . ($row['victim_age'] ?? ''))) ?></td></tr>
+              <tr><th>Victim Gender/Age</th><td><?= h(victimGenderAge(($row['victim_gender'] ?? ''), ($row['victim_age'] ?? ''))) ?></td></tr>
+
               <tr><th>Victim Contact</th><td><?= h(trim(($row['victim_phone'] ?? '') . ' ' . ($row['victim_email'] ?? ''))) ?></td></tr>
               <tr><th>Victim Address</th><td><?= h(trim(($row['victim_address'] ?? '') . ' ' . ($row['victim_city'] ?? '') . ', ' . ($row['victim_state'] ?? '') . ' ' . ($row['victim_zip'] ?? ''))) ?></td></tr>
               </tbody>
@@ -1282,6 +1312,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'impor
           <tr><th>Personal Goal</th><td><?php echo h($row['personal_goal'] ?? ''); ?></td></tr>
           <tr><th>Counselor Name</th><td><?php echo h($row['counselor_name'] ?? ''); ?></td></tr>
           <tr><th>Chosen Group Time</th><td><?php echo h($row['chosen_group_time'] ?? ''); ?></td></tr>
+          <?php /* 8c scheduling (optional) */ ?>
+          <tr><th>Start Date (8c)</th><td><?= fmtDate($row['start_date_8c'] ?? null); ?></td></tr>
+          <tr><th>Start Day of Week (8c)</th><td><?= dowLabel($row['start_dow_8c'] ?? ''); ?></td></tr>
+          <tr><th>Start Time (8c)</th><td><?= fmtTime($row['start_time_8c'] ?? ''); ?></td></tr>
+
           </tbody>
         </table>
       </div>

@@ -25,6 +25,18 @@ check_loggedin($con);
         header("location: error.php");
         exit();
     }
+    /* ---- POST: delete one attended session + its milestones ---- */
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_attendance'])) {
+        csrf_check();
+        $c_id = (int)($client_id ?: ($_POST['client_id'] ?? 0));
+        $s_id = (int)($_POST['therapy_session_id'] ?? 0);
+        if ($c_id && $s_id) {
+            delete_client_session($con, $c_id, $s_id);
+        }
+        header("Location: client-attendance.php?client_id=".$c_id);
+        exit;
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -188,8 +200,14 @@ check_loggedin($con);
                                 $row = $attendance_results[$i];
                                 echo "<tr>";
                                 echo "<td>" . htmlspecialchars($row['date']) . "</td>";
-                                if('present' == $row['status']) {
-                                    echo "<td>&#x2705</td>";
+                                if ('present' == $row['status']) {
+                                    $session_id = (int)$row['record_id']; // this is therapy_session_id for present rows
+                                    echo '<form method="post" class="d-inline" onsubmit="return confirm(\'Delete this attendance and its milestones?\')">';
+                                    echo '  <input type="hidden" name="csrf" value="'.htmlspecialchars(csrf_token(), ENT_QUOTES).'">';
+                                    echo '  <input type="hidden" name="client_id" value="'.(int)$client_id.'">';
+                                    echo '  <input type="hidden" name="therapy_session_id" value="'.$session_id.'">';
+                                    echo '  <button type="submit" name="delete_attendance" value="1" class="btn btn-sm btn-outline-danger">Delete</button>';
+                                    echo '</form>';
                                 }
                                 else if('excused' == $row['status']) {
                                     echo "<td>&#x2716</td>";

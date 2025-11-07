@@ -44,7 +44,7 @@ if (php_sapi_name() === 'cli' && !isset($con)) {
 }
 
 // Validate clinic_folder
-$valid_clinics = ['sandbox', 'ffltest', 'ctc', 'safatherhood', 'dwag', 'transform', 'bestoption'];
+$valid_clinics = ['sandbox', 'ffltest', 'ctc', 'safatherhood', 'dwag', 'transform', 'bestoption', 'lakeview'];
 if (!in_array($clinic_folder, $valid_clinics)) {
     error_log("Invalid clinic folder provided: " . $clinic_folder);
     echo json_encode(["status" => "error", "message" => "Invalid clinic folder."]);
@@ -94,6 +94,58 @@ $EXTRA_COLS = [
         
 
     ],
+    'lakeview' => [
+        // assessments
+        'pretest'                => "VARCHAR(32)  DEFAULT NULL",
+        'posttest'               => "VARCHAR(32)  DEFAULT NULL",
+        'knowledge_increase'     => "VARCHAR(32)  DEFAULT NULL",
+
+        // payment metadata on client
+        'paid_flag'              => "TINYINT(1)   DEFAULT NULL",
+        'paid_amount'            => "DECIMAL(10,2) DEFAULT NULL",
+        'paid_source'            => "VARCHAR(64)  DEFAULT NULL",
+        'paid_note'              => "VARCHAR(255) DEFAULT NULL",
+
+        // dates (Lakeview-specific copies)
+        'enrollment_date_dt'     => "DATE         DEFAULT NULL",
+        'exit_date_dt'           => "DATE         DEFAULT NULL",
+
+        // DOEP/DWII style fields
+        'bac'                    => "VARCHAR(16)  DEFAULT NULL",
+        'screening'              => "VARCHAR(64)  DEFAULT NULL",
+        'fap'                    => "VARCHAR(64)  DEFAULT NULL",
+        'arrest'                 => "VARCHAR(64)  DEFAULT NULL",
+        'aa'                     => "VARCHAR(64)  DEFAULT NULL",
+        'fw'                     => "VARCHAR(64)  DEFAULT NULL",
+        'wb'                     => "VARCHAR(64)  DEFAULT NULL",
+        'dps'                    => "VARCHAR(64)  DEFAULT NULL",
+        'lr'                     => "VARCHAR(64)  DEFAULT NULL",
+        'reentry'                => "TINYINT(1)   DEFAULT NULL",
+        'reentry_plan'           => "TEXT         DEFAULT NULL",
+        'eval_letter'            => "TINYINT(1)   DEFAULT NULL",
+        'sid'                    => "VARCHAR(32)  DEFAULT NULL",
+
+        // program toggles (from program p)
+        'billing_mode'           => "VARCHAR(32)  DEFAULT NULL",
+        'expected_sessions'      => "INT          DEFAULT NULL",
+        'uses_weekly_attendance' => "TINYINT(1)   DEFAULT NULL",
+        'uses_milestones'        => "TINYINT(1)   DEFAULT NULL",
+
+        // finance rollups (views) + last payment detail
+        'total_paid'             => "DECIMAL(12,2) DEFAULT NULL",
+        'due'                    => "DECIMAL(12,2) DEFAULT NULL",
+        'last_payment_at'        => "DATETIME      DEFAULT NULL",
+        'payment_entries'        => "INT           DEFAULT NULL",
+        'last_payment_method'    => "VARCHAR(32)   DEFAULT NULL",
+        'last_payment_source'    => "VARCHAR(32)   DEFAULT NULL",
+        'last_payment_subtype'   => "VARCHAR(32)   DEFAULT NULL",
+        'last_payment_on'        => "DATETIME      DEFAULT NULL",
+
+        // optional Lakeview extras already on client
+        'county'                 => "VARCHAR(64)   DEFAULT NULL",
+        'instructor'             => "VARCHAR(64)   DEFAULT NULL",
+    ],
+
 ];
 
 $EXTRA_SELECTS = [         // ←  <<<  PASTE THE BLOCK HERE
@@ -174,11 +226,85 @@ $EXTRA_SELECTS = [         // ←  <<<  PASTE THE BLOCK HERE
         'facilitator_last_name'  => "(SELECT f.last_name  FROM facilitator f WHERE f.id = c.facilitator_id)",
         'facilitator_email'      => "(SELECT f.email      FROM facilitator f WHERE f.id = c.facilitator_id)",
         'facilitator_phone'      => "(SELECT f.phone      FROM facilitator f WHERE f.id = c.facilitator_id)",
-        
-
-
-
     ],
+    'lakeview' => [
+        // assessments
+        'pretest'                => 'c.pretest',
+        'posttest'               => 'c.posttest',
+        'knowledge_increase'     => 'c.knowledge_increase',
+
+        // payment metadata
+        'paid_flag'              => 'c.paid_flag',
+        'paid_amount'            => 'c.paid_amount',
+        'paid_source'            => 'c.paid_source',
+        'paid_note'              => 'c.paid_note',
+
+        // dates
+        'enrollment_date_dt'     => 'c.enrollment_date_dt',
+        'exit_date_dt'           => 'c.exit_date_dt',
+
+        // DOEP/DWII style
+        'bac'                    => 'c.bac',
+        'screening'              => 'c.screening',
+        'fap'                    => 'c.fap',
+        'arrest'                 => 'c.arrest',
+        'aa'                     => 'c.aa',
+        'fw'                     => 'c.fw',
+        'wb'                     => 'c.wb',
+        'dps'                    => 'c.dps',
+        'lr'                     => 'c.lr',
+        'reentry'                => 'c.reentry',
+        'reentry_plan'           => 'c.reentry_plan',
+        'eval_letter'            => 'c.eval_letter',
+        'sid'                    => 'c.sid',
+
+        // program toggles (program p is already joined in populate_report2)
+        'billing_mode'           => 'p.billing_mode',
+        'expected_sessions'      => 'p.expected_sessions',
+        'uses_weekly_attendance' => 'p.uses_weekly_attendance',
+        'uses_milestones'        => 'p.uses_milestones',
+
+        // finance rollups (preferred via views)
+        'total_paid'             => '(SELECT vf.total_paid      FROM v_client_finance vf  WHERE vf.client_id = c.id)',
+        'due'                    => '(SELECT vf.due             FROM v_client_finance vf  WHERE vf.client_id = c.id)',
+        'last_payment_at'        => '(SELECT vf.last_payment_at FROM v_client_finance vf  WHERE vf.client_id = c.id)',
+        'payment_entries'        => '(SELECT vf.entries         FROM v_client_finance vf  WHERE vf.client_id = c.id)',
+
+        // last payment details from ledger (latest non-voided payment)
+        'last_payment_method'    => "(
+            SELECT l.method
+            FROM ledger l
+            WHERE l.client_id = c.id AND l.kind = 'payment' AND l.voided_at IS NULL
+            ORDER BY l.occurred_at DESC
+            LIMIT 1
+        )",
+        'last_payment_source'    => "(
+            SELECT l.source
+            FROM ledger l
+            WHERE l.client_id = c.id AND l.kind = 'payment' AND l.voided_at IS NULL
+            ORDER BY l.occurred_at DESC
+            LIMIT 1
+        )",
+        'last_payment_subtype'   => "(
+            SELECT l.subtype
+            FROM ledger l
+            WHERE l.client_id = c.id AND l.kind = 'payment' AND l.voided_at IS NULL
+            ORDER BY l.occurred_at DESC
+            LIMIT 1
+        )",
+        'last_payment_on'        => "(
+            SELECT l.occurred_at
+            FROM ledger l
+            WHERE l.client_id = c.id AND l.kind = 'payment' AND l.voided_at IS NULL
+            ORDER BY l.occurred_at DESC
+            LIMIT 1
+        )",
+
+        // optional extras
+        'county'                 => 'c.county',
+        'instructor'             => 'c.instructor',
+    ],
+
 ];
 
 $extra_cols_for_clinic    = $EXTRA_COLS[$clinic_folder]    ?? [];   // DDL

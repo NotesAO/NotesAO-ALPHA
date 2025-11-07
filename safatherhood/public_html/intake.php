@@ -25,7 +25,6 @@ const ADMIN_ALERT_EMAILS = [
   'amandag@aitscm.org',
   'nathaliaa@aitscm.org',
   'isaiahr@aitscm.org',
-  'albertc@aitscm.org',
 ];
 
 // (optional) back-compat if other code still uses the old constant
@@ -87,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_check();
 
     // ---- Bare-minimum fields that must never be empty
-    foreach (['first_name','last_name','date_of_birth','email','phone_cell','digital_signature',
+    foreach (['first_name','last_name','date_of_birth','email','phone_cell',
               'referral_type_id','additional_charge_details','discipline_desc','last_substance_use'] as $req) {
         $v = postv($req);
         if ($v === null || $v === '') fail("Missing required field: $req");
@@ -98,11 +97,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Required client consents (defend against scripted POSTs)
     foreach ([
       'agree_confidentiality',       // Page 1
-      'agree_disclosure',            // 8a
+      'consent_8a_ack',            // 8a
       'agree_disclosure_partners',   // 8b  (correct key)
       'agree_program_8c',            // 8c  (program agreement)
       'agree_responsibility_8c',     // 8c  (taking responsibility)
       'agree_termination_8e',        // 8e
+      'agree_hold_harmless',
     ] as $ck) {
       if (postb($ck) !== 1) fail('You must accept all required agreements.');
     }
@@ -137,6 +137,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $referral_type_id = post_enum('referral_type_id', ['0','1','2','3','4','5','6']);
     if ($referral_type_id === null) fail('Bad or missing referral type.');
+
+    $needOfficer = in_array($referral_type_id, ['1','2','3','4','5'], true); // Probation..Attorney
+    if ($needOfficer) {
+        foreach (['referring_officer_name','referring_officer_email','referring_officer_phone'] as $k) {
+            $v = postv($k);
+            if ($v === null || $v === '') fail("Missing required field: $k");
+        }
+        if (!post_email('referring_officer_email')) fail('Please provide a valid officer email address.');
+    }
+
 
     // Email validation (primary required, officer optional)
     if (!post_email('email')) fail('Please provide a valid email address.');
@@ -184,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     /** Field lists */
     $victimContactAll = [
-      'victim_first_name','victim_last_name','victim_gender','victim_dob','victim_age',
+      'victim_first_name','victim_last_name','victim_gender','victim_age',
       'victim_phone','victim_email','victim_address','victim_city','victim_state','victim_zip'
     ];
 
@@ -203,11 +213,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 fail("Missing required field (Page 7): $k");
             }
         }
-        $vdob = postv('victim_dob');
-        $vage = postv('victim_age');
-        if (($vdob === null || $vdob === '') && ($vage === null || $vage === '')) {
-            fail('Please provide the victim’s DOB or an estimated age.');
+        // NEW
+        $victim_age_raw = postv('victim_age');
+        $victim_age = ($victim_age_raw !== null && $victim_age_raw !== '') ? (int)$victim_age_raw : null;
+        if ($victim_age !== null && ($victim_age < 0 || $victim_age > 120)) {
+            fail('Victim age must be between 0 and 120.');
         }
+        if ($victim_age === null) {
+            fail('Please provide the victim’s estimated age.');
+        }
+
     } else {
         // NO knowledge → do NOT require contact info.
         // If user typed any contact anyway, enforce a minimal consistent set.
@@ -218,11 +233,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     fail("Missing required field (Page 7): $k");
                 }
             }
-            $vdob = postv('victim_dob');
-            $vage = postv('victim_age');
-            if (($vdob === null || $vdob === '') && ($vage === null || $vage === '')) {
-                fail('Please provide the victim’s DOB or an estimated age.');
+            // NEW
+            $victim_age_raw = postv('victim_age');
+            $victim_age = ($victim_age_raw !== null && $victim_age_raw !== '') ? (int)$victim_age_raw : null;
+            if ($victim_age === null) {
+                fail('Please provide the victim’s estimated age.');
             }
+            if ($victim_age < 0 || $victim_age > 120) {
+                fail('Victim age must be between 0 and 120.');
+            }
+
         }
     }
 
@@ -303,6 +323,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $intake_date_ymd    = postv('intake_date') ?: date('Y-m-d'); // user can pick, fallback today
     $signature_date_ymd = date('Y-m-d');                        // always today (server decides)
 
+    $signature_date_ymd = enforce_signature_date($signature_date_ymd, $intake_date_ymd);
 
     // Enforce legal ordering: signature ≤ intake
 
@@ -319,6 +340,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $release_date = date('Y-m-d', $ts);
 
+    // 8f – Hold Harmless Agreement
+    $hh_sig = trim((string) postv('hold_harmless_signature'));
+    $hh_date_raw = postv('hold_harmless_date');
+    if ($hh_sig === '' || !$hh_date_raw) {
+        fail('Please sign and date the Hold Harmless Agreement.');
+    }
+    $hh_ts = strtotime($hh_date_raw);
+    if ($hh_ts === false) {
+        fail('Invalid date for the Hold Harmless Agreement.');
+    }
+    $hh_date = date('Y-m-d', $hh_ts);
 
 
 
@@ -433,7 +465,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'victim_zip'              => postv('victim_zip'),
         'live_with_victim'        => postb('live_with_victim'),
         'children_with_victim'    => postv('children_under_18'),
-        'victim_dob'                => postv('victim_dob'),
         'victim_relationship_other' => postv('victim_relationship_other'),
         'children_live_with_you_p7' => postv('children_live_with_you_p7'),         // 0/1/2
         'children_live_with_you_p7_other' => postv('children_live_with_you_p7_other'),
@@ -441,15 +472,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'consent_release_sig_name'    => $release_sig_name,
         'consent_release_signed_date' => $release_date,
 
-        'sworn_sig_name'          => $sworn_sig_name,
-        'sworn_signed_date'       => $sworn_date,
-
         /* Consents ----------------------------------------------------- */
         'consent_confidentiality'    => postb('agree_confidentiality'),     // existing
-        'consent_disclosure'         => postb('agree_disclosure'),          // 8a
-        'consent8a_agree'            => postb('agree_disclosure'),          // 8a (duplicate for clarity)
-        'consent8a_signature' => postv('consent8a_signature'),
-        'consent8a_date'      => postv('consent8a_date'),   // normalize with Y-m-d if you prefer
+        'consent_disclosure'         => postb('consent_8a_ack'),          // 8a
+        'consent8a_agree'            => postb('consent_8a_ack'),          // 8a (duplicate for clarity)
+        'consent8a_signature' => postv('participant_signature'),
+        'consent8a_date'      => postv('participant_signature_date'),
 
         'consent_partner_info'       => postb('agree_disclosure_partners'), // 8b  (updated)
         'consent_program_agreement'  => postb('agree_program_8c'),          // 8c  (updated)
@@ -461,7 +489,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'consent_virtual_rules'      => $agree_virtual,                     // 8d (derived)
 
         'confidentiality_sig_p1'  => postv('consent_p1_signature'),
-        'confidentiality_date_p1' => postv('consent_p1_date'),
+        'confidentiality_date_p1' => $consent_p1_date,
 
         /* Page 8b – Consent for Disclosure of Information for Partners */
         'victim_relationship_8b'  => postv('victim_relationship_8b'),
@@ -507,6 +535,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'termination_date_8e'      => postv('termination_date_8e'),
 
 
+        'consent_hold_harmless'   => postb('agree_hold_harmless'),
+        'hold_harmless_signature' => $hh_sig,
+        'hold_harmless_date'      => $hh_date,
+
 
         /* BIPP goals / notes ------------------------------------------ */
         'reasons'               => implode(', ', $_POST['reasons'] ?? []),
@@ -518,7 +550,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         /* Signature & meta -------------------------------------------- */
         'intake_date'           => $intake_date_ymd,
-        'digital_signature'     => postv('digital_signature'),
+        'digital_signature'     => postv('digital_signature') ?: $consent_p1_signature,
         'signature_date'        => $signature_date_ymd,
 
         'packet_complete'       => 1
@@ -928,7 +960,8 @@ if (!empty($_SESSION['show_thank_you_once'])) {
 
 
 <h1>BIPP Intake Packet</h1>
-<form method="post" autocomplete="off">
+<form id="intakeForm" method="post" autocomplete="off">
+  <input type="Hidden" name="intake_date" id="intake_date" value="<?= date('Y-m-d') ?>">
   <input type="hidden" name="csrf_token" value="<?= htmlspecialchars(csrf_token(),ENT_QUOTES) ?>">
 
     <!-- ===== Introduction / Instructions ===== -->
@@ -1151,6 +1184,10 @@ if (!empty($_SESSION['show_thank_you_once'])) {
             group discussions.</li>
     </ul>
 
+    <p><strong>I agree to receive phone calls and text messages from San Antonio Fatherhood Campaign.</strong></p>
+
+    <p>I hereby agree that my groups shall be video/audio recorded merely for the purposes of security, training, and quality assurance to be viewed by San Antonio Fatherhood Campaign facilitators and building security. These video/audio recordings will depict varius educational services offered by San Antonio Fatherhood Campaign. The video/audio recordings may be kept for up to 14 days after session is conducted for each program unless they are being retained for internal training purposes or we have been notified of pending litigation and have been request not to destroy the recording(s).</p>
+
     <p><strong>Observers may occasionally sit in on a group.</strong> Observers must sign a confidentiality
     statement. Observers may include student interns, trainees, other professionals, or community
     members. This facility is video-recorded for security purposes, and treatment sessions may be
@@ -1162,7 +1199,7 @@ if (!empty($_SESSION['show_thank_you_once'])) {
     <ul>
         <li>Inform your counselor directly.</li>
         <li>If unresolved, report concerns to your counselor's immediate supervisor, Executive Director
-            Van Martin, at 817-501-5102.</li>
+            Greg Marshall, at 210-227-3463 ext. 2012.</li>
         <li>If further resolution is needed, contact the Texas Council on Family Violence at 800-525-1978.</li>
     </ul>
 
@@ -1937,15 +1974,6 @@ if (!empty($_SESSION['show_thank_you_once'])) {
           </div>
         </div>
 
-        <div class="row no-gap mt-3">
-          <div class="col-md-6">
-            <label>Victim's Date of Birth</label>
-            <input name="victim_dob" type="date" class="form-control">
-            <small class="text-muted">DOB or estimated age is required if you selected “I do not have knowledge…”.</small>
-          </div>
-          
-        </div>
-
 
         <div class="row no-gap mt-3">
           <div class="col-md-6">
@@ -2294,26 +2322,61 @@ if (!empty($_SESSION['show_thank_you_once'])) {
       <p>Case records are subject to subpoena; and Information disclosed by batterers during an assessment (intake), group sessions, and exit is confidential and shall not be shared with victims.</p>
     </div>
 
-    <div class="form-check mb-2">
-      <input class="form-check-input" type="checkbox" id="agree_disclosure" name="agree_disclosure" required>
-      <label class="form-check-label" for="agree_disclosure">
-        By checking "I Agree", I confirm that I have read, understood, and agree to abide by the terms and conditions outlined above. I acknowledge my rights and responsibilities as described, and I accept these terms as a condition of participation in the San Antonio Fatherhood Campaign - Batterers Intervention & Prevention Program.
-      </label>
+    <!-- 8a. Acknowledgment + Signature + Date -->
+    <div class="mb-3">
+      <!-- send 0 when unchecked -->
+      <input type="hidden" name="consent_8a_ack" value="0">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox"
+              id="consent_8a_ack" name="consent_8a_ack" value="1" required>
+        <label class="form-check-label" for="consent_8a_ack">
+          By checking "I Agree", I confirm that I have read, understood, and agree to abide by the terms and conditions outlined above. I acknowledge my rights and responsibilities as described, and I accept these terms as a condition of participation in the San Antonio Fatherhood Campaign - Batterers Intervention & Prevention Program.
+        </label>
+        <div class="invalid-feedback">Required.</div>
+      </div>
     </div>
 
-    <!-- Participant signature + date (both required) -->
+    <!-- Participant signature + date (both required when agreed) -->
     <div class="row g-3 mb-3">
       <div class="col-md-6">
-        <label for="participant_signature" class="form-label fw-semibold">Participant Signature <span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="participant_signature" name="participant_signature" required>
+        <label for="participant_signature" class="form-label fw-semibold">
+          Participant Signature <span class="text-danger">*</span>
+        </label>
+        <input type="text" class="form-control"
+              id="participant_signature" name="participant_signature"
+              pattern="\S.+" required>
+        <div class="form-text">Type your full legal name.</div>
+        <div class="invalid-feedback">Signature required.</div>
       </div>
       <div class="col-md-6">
-        <label for="participant_signature_date" class="form-label fw-semibold">Date <span class="text-danger">*</span></label>
-        <input type="date" class="form-control" id="participant_signature_date" name="participant_signature_date" required>
+        <label for="participant_signature_date" class="form-label fw-semibold">
+          Date <span class="text-danger">*</span>
+        </label>
+        <input type="date" class="form-control"
+              id="participant_signature_date" name="participant_signature_date"
+              value="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d') ?>" required>
+        <div class="invalid-feedback">Valid date required.</div>
       </div>
     </div>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ack  = document.getElementById('consent_8a_ack');
+      const sig  = document.getElementById('participant_signature');
+      const date = document.getElementById('participant_signature_date');
 
+      function sync() {
+        const on = ack.checked;
+        sig.disabled  = !on;
+        date.disabled = !on;
+        if (on && !date.value) {
+          date.value = new Date().toISOString().slice(0,10);
+        }
+      }
+      ack.addEventListener('change', sync);
+      sync();
+    });
+    </script>
 
     <div class="nav-buttons mt-3">
       <button type="button" class="btn btn-secondary prev">Previous</button>
@@ -2426,6 +2489,8 @@ if (!empty($_SESSION['show_thank_you_once'])) {
       <p>I hereby agree to respect the confidentiality rights of my fellow client/group members. I further understand that a violation of this rule shall result in immediate termination from the program and shall be reported to the proper authorities.</p>
       <p>I hereby agree to notify a staff person of any and all emergencies that I am either a part of or a witness to.</p>
       <p>I understand that Fatherhood Campaign - BIPP is committed to helping me gain a better understanding of my problems and how to find productive solutions and that it is the main goal of my psycho educational classes.</p>
+      <p>I understand that I will always keep my phone and contact information current with San Antonio Fatherhood Campaign so that I can receive phone calls and text messages pertaining to group and clinical services.</p>
+      <p>I understand that Community Supervisions & Corrections Department (CSCD), Probation, Parole, CPS, or TDCJ will notify San Antonio Fatherhood Campaign about my attendance and that San Antonio Fatherhood Campaign needs to be able to reach me so they may guide me in succssfully adhering to program stipulations.</p>
     </div>
 
     <div class="form-check mb-2">
@@ -2571,24 +2636,23 @@ if (!empty($_SESSION['show_thank_you_once'])) {
     </div>
 
     <!-- Participant signature + date (both required) -->
-    <div class="row g-3 mb-3 mt-2">
-      <div class="col-md-6">
-        <label for="vgr_signature_8d" class="form-label fw-semibold">Participant Signature <span class="text-danger">*</span></label>
-        <input type="text" class="form-control" id="vgr_signature_8d" name="vgr_signature_8d" required>
+    <div class="row mt-3">
+      <div class="col-md-7">
+        <label for="vgr_signature_8d" class="form-label">Participant Signature<span class="text-danger">*</span></label>
+        <input type="text" id="vgr_signature_8d" name="vgr_signature_8d" class="form-control" required>
       </div>
-      <div class="col-md-6">
-        <label for="vgr_date_8d" class="form-label fw-semibold">Date <span class="text-danger">*</span></label>
-        <input type="date" class="form-control" id="vgr_date_8d" name="vgr_date_8d" required>
+      <div class="col-md-5">
+        <label for="vgr_date_8d" class="form-label">Date</label>
+        <input type="date" id="vgr_date_8d" name="vgr_date_8d" class="form-control" required>
       </div>
     </div>
+
 
     <div class="nav-buttons mt-3">
       <button type="button" class="btn btn-secondary prev">Previous</button>
       <button type="button" class="btn btn-primary next">Next</button>
     </div>
   </fieldset>
-
-
 
 
   <!-- ================================================================== -->
@@ -2652,6 +2716,96 @@ if (!empty($_SESSION['show_thank_you_once'])) {
       <button type="button" class="btn btn-primary next">Next</button>
     </div>
   </fieldset>
+
+
+  <!-- ================================================================== -->
+  <!-- 8f. HOLD HARMLESS AGREEMENT — formatted like 8e                     -->
+  <!-- ================================================================== -->
+  <fieldset class="step" id="step-hold-harmless">
+    <legend>8f&nbsp;&nbsp;Hold Harmless Agreement</legend>
+
+    <div class="border p-3 mb-3 rounded bg-light">
+      <h6 class="mb-2">Hold Harmless and Indemnification Agreement</h6>
+
+      <p>Indemnitor and Indemnitee may be referred to individually as “Party” and collectively as the “Parties.”</p>
+      <p><strong>Whereas.</strong> Indemnitor wishes to participate in the Free for Life Group’s Batterers Intervention and Prevention Program (BIPP), held in person and facilitated by the Indemnitee (the “Activity”), and acknowledges the potential risks associated with participation.</p>
+      <p><strong>Now, therefore.</strong> For valuable consideration, the receipt and sufficiency of which is acknowledged, the Parties agree as follows:</p>
+
+      <ol class="mb-3 ps-3">
+        <li class="mb-2">
+          <strong>Indemnification.</strong>
+          To the fullest extent permitted by law, Indemnitor shall indemnify, defend, and hold harmless the Indemnitee and its directors, officers, employees, agents, contractors, volunteers, affiliates, and insurers (the “Released Parties”) from and against any and all claims, actions, demands, liabilities, judgments, losses, damages, fines, penalties, costs, and expenses (including reasonable attorney’s fees and court costs) arising out of or related to participation in the Activity, including personal injury, illness, death, psychological harm, property damage, or violations of law, whether caused in whole or in part by the negligence or fault of the Released Parties.
+        </li>
+        <li class="mb-2">
+          <strong>Exceptions.</strong>
+          The indemnification obligation does not apply to Claims resulting solely from the gross negligence or willful misconduct of the Indemnitee, or to the extent covered by insurance maintained by the Indemnitee.
+        </li>
+        <li class="mb-2">
+          <strong>Notice of Claim.</strong>
+          Indemnitee shall provide Indemnitor prompt written notice of any Claim within ten (10) business days of discovery, with reasonable detail to evaluate indemnity obligations.
+        </li>
+        <li class="mb-2">
+          <strong>Duty to Defend.</strong>
+          Indemnitor may assume control of the defense of any Claim. If Indemnitor elects not to assume the defense, Indemnitee may defend and seek reimbursement. No settlement shall be entered into by either Party without the prior written consent of the other, not to be unreasonably withheld.
+        </li>
+        <li class="mb-2">
+          <strong>Assumption of Risk.</strong>
+          Indemnitor expressly acknowledges and voluntarily assumes risks inherent in the Activity, which may include emotional distress, verbal conflicts, and exposure to communicable diseases.
+        </li>
+        <li class="mb-2">
+          <strong>Mutual Representations.</strong>
+          Each Party represents it has full power and authority to enter into and perform this Agreement, which is a valid and binding obligation.
+        </li>
+        <li class="mb-2">
+          <strong>Amendments.</strong>
+          This Agreement may be amended only by a written document signed by both Parties.
+        </li>
+        <li class="mb-2">
+          <strong>Governing Law.</strong>
+          This Agreement shall be governed by the laws of the State of Texas, excluding conflict of laws principles.
+        </li>
+        <li class="mb-2">
+          <strong>Dispute Resolution.</strong>
+          Any dispute shall first be submitted to mediation. If mediation is unsuccessful, the matter shall be resolved through binding arbitration under the rules of the American Arbitration Association.
+        </li>
+        <li class="mb-1">
+          <strong>Miscellaneous.</strong>
+          <ul class="mb-0">
+            <li>No Waiver: Failure to enforce any provision is not a waiver.</li>
+            <li>Assignment: No Party may assign this Agreement without prior written consent.</li>
+            <li>Severability: If any provision is invalid, the remainder remains in effect.</li>
+            <li>Entire Agreement: This document is the entire agreement of the Parties.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p class="mb-0"><em>In witness whereof,</em> this Agreement is executed as of the Effective Date written below.</p>
+    </div>
+
+    <div class="form-check mb-2">
+      <input class="form-check-input" type="checkbox" id="agree_hold_harmless" name="agree_hold_harmless" required>
+      <label class="form-check-label" for="agree_hold_harmless">
+        By checking “I Agree,” I confirm I have read and understood the Hold Harmless and Indemnification Agreement above and agree to its terms as a condition of participation in the program.
+      </label>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-7">
+        <label for="hold_harmless_signature" class="form-label fw-semibold">Participant Signature <span class="text-danger">*</span></label>
+        <input type="text" id="hold_harmless_signature" name="hold_harmless_signature" class="form-control" required>
+      </div>
+      <div class="col-md-5">
+        <label for="hold_harmless_date" class="form-label fw-semibold">Date <span class="text-danger">*</span></label>
+        <input type="date" id="hold_harmless_date" name="hold_harmless_date" class="form-control" required>
+      </div>
+    </div>
+
+    <div class="nav-buttons mt-3">
+      <button type="button" class="btn btn-secondary prev">Previous</button>
+      <button type="button" class="btn btn-primary next">Next</button>
+    </div>
+  </fieldset>
+
 
 
 
@@ -2772,14 +2926,21 @@ if (!empty($_SESSION['show_thank_you_once'])) {
 
     <!-- Date signed -->
     <div class="mt-3">
-      <label for="signature_date">Date Signed</label>
-      <input type="date" id="signature_date" name="signature_date" class="form-control" readonly>
+      <label for="signature_date" class="form-label fw-semibold">Date <span class="text-danger">*</span></label>
+      <input type="date"
+            id="signature_date"
+            name="signature_date"
+            value="<?= date('Y-m-d') ?>"
+            max="<?= date('Y-m-d') ?>"
+            required>
+
     </div>
 
     <div class="nav-buttons mt-4">
       <button type="button" class="btn btn-secondary prev">Previous</button>
-      <button type="submit" class="btn btn-success">Submit Intake Packet</button>
+      <button type="submit" class="btn btn-success" id="finalSubmit">Submit Intake Packet</button>
     </div>
+
   </fieldset>
 </form>
 
@@ -3084,7 +3245,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const victimGender = document.querySelector('select[name="victim_gender"]');
   const victimPhone  = document.querySelector('input[name="victim_phone"]');
   const victimAge    = document.querySelector('input[name="victim_age"]');
-  const victimDOB    = document.querySelector('input[name="victim_dob"]');
 
   function getVK() {
     return vkRadios.find(r => r.checked)?.value ?? '';
@@ -3220,7 +3380,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (steps[current].id !== 'step-victim') return true;
     const mode = getVK() || '0';
 
-    const anyProvided = ['victim_first_name','victim_last_name','victim_gender','victim_phone','victim_email','victim_address','victim_city','victim_state','victim_zip','victim_dob','victim_age']
+    const anyProvided = ['victim_first_name','victim_last_name','victim_gender','victim_phone','victim_email','victim_address','victim_city','victim_state','victim_zip','victim_age']
       .some(n => (form.elements[n]?.value || '').trim() !== '');
 
     const needDOBorAge = (mode === '1') || (mode === '0' && anyProvided);
@@ -3428,6 +3588,42 @@ document.addEventListener('submit', function (e) {
 })();
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form  = document.getElementById('intakeForm');
+  const steps = Array.from(document.querySelectorAll('fieldset.step'));
+  let idx = steps.findIndex(fs => fs.classList.contains('active'));
+  if (idx < 0) idx = 0;
+
+  function setStep(n){
+    idx = Math.max(0, Math.min(n, steps.length - 1));
+    steps.forEach((fs,i) => {
+      fs.classList.toggle('active', i === idx);
+      fs.querySelectorAll('input,select,textarea,button').forEach(el => {
+        if (i === idx) el.removeAttribute('disabled');
+        else el.setAttribute('disabled','disabled');
+      });
+    });
+    // show submit only on last step
+    const submitBtn = document.getElementById('finalSubmit');
+    if (submitBtn) submitBtn.style.display = (idx === steps.length - 1) ? '' : 'none';
+  }
+
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('button.next,button.prev');
+    if (!b) return;
+    e.preventDefault();
+    if (b.classList.contains('next')) setStep(idx + 1);
+    else setStep(idx - 1);
+  });
+
+  // guard against any element named "submit" shadowing form.submit
+  const bad = form.querySelectorAll('[name="submit"],#submit');
+  bad.forEach(el => el.setAttribute('name','submit_btn'));
+
+  setStep(idx);
+});
+</script>
 
 
 

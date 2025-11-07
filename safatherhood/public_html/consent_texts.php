@@ -1,137 +1,81 @@
 <?php
-/** Auto-generated from intake.php consent sections */
+/** Consent language mirrored from intake.php (SAFATHERHOOD – BIPP) */
 $CONSENT_TEXT = [
+
+  // Page 1 — Statement of Confidentiality & Consent for Treatment
   'p1_confidentiality' => <<<'HTML'
-<p>Confidentiality is defined as keeping private the information shared by you, the client, with your
-    counselor. On occasion, other employees may need access to your record for agency teaching,
-    supervision, and administrative purposes. These staff members will also respect the privacy of your
-    records. In accordance with the Texas Department of Criminal Justice – Community Justice Assistance Division
-    and Texas Council on Family Violence Battering Intervention &amp; Prevention Program guidelines, clients are
-    required to sign Consent for Release of Information, which permits information to be released to the
-    victim/partner and/or her designated representative, law enforcement, the courts, correction
-    agencies, and any others in accordance with agency policy.</p>
+<p>Confidentiality is defined as keeping private the information shared by you, the client, with your counselor. On occasion, other employees may need access to your record for agency teaching, supervision, and administrative purposes. These staff members will also respect the privacy of your records. In accordance with the Texas Department of Criminal Justice – Community Justice Assistance Division and Texas Council on Family Violence Battering Intervention &amp; Prevention Program guidelines, clients are required to sign Consent for Release of Information, which permits information to be released to the victim/partner and/or her designated representative, law enforcement, the courts, correction agencies, and any others in accordance with agency policy.</p>
 
-    <p><strong>As a client, you have the right to withhold or release information to other individuals or
-    agencies.</strong> A statement signed by you is required before any information may be released to anyone
-    outside San Antonio Fatherhood Campaign – BIPP. This right applies with the following exceptions:</p>
+<p><strong>As a client, you have the right to withhold or release information to other individuals or agencies.</strong> A statement signed by you is required before any information may be released to anyone outside San Antonio Fatherhood Campaign – BIPP. This right applies with the following exceptions:</p>
+<ul>
+  <li>When a court of law subpoenas information shared by you with your counselor.</li>
+  <li>When there is reasonable concern that harm may come to you or others, as in child abuse, elder abuse, and abuse of a disabled person. Staff will notify appropriate agencies, including TDPRS (Texas Department of Protective and Regulatory Services), in accordance with applicable laws.</li>
+  <li>When staff determines there is a probability of imminent physical injury to self or others. Staff may notify medical or law-enforcement personnel and/or the victim/partner (Section 611.004(a) of the Texas Health and Safety Code).</li>
+  <li>When there is disclosure of sexual misconduct or sexual exploitation by a previous therapist or mental-health professional.</li>
+</ul>
 
-    <ul>
-        <li>When a court of law subpoenas information shared by you with your counselor.</li>
-        <li>When there is reasonable concern that harm may come to you or others, as in child abuse, elder
-            abuse, and abuse of a disabled person. Staff will notify appropriate agencies, including TDPRS
-            (Texas Department of Protective and Regulatory Services), in accordance with applicable laws.</li>
-        <li>When staff determines there is a probability of imminent physical injury to self or others.
-            Staff may notify medical or law-enforcement personnel and/or the victim/partner
-            (Section 611.004(a) of the Texas Health and Safety Code).</li>
-        <li>When there is disclosure of sexual misconduct or sexual exploitation by a previous therapist or
-            mental-health professional.</li>
-    </ul>
+<p><strong>A licensee shall report if required by any of the following laws:</strong></p>
+<ul>
+  <li><em>Health and Safety Code, Chapter 161, Subchapter K</em>, concerning abuse, neglect, or illegal, unprofessional, or unethical conduct in facilities providing mental-health services.</li>
+  <li><em>Civil Practice and Remedies Code, §81.006</em>, concerning sexual exploitation by a mental-health service provider.</li>
+  <li>All personal data and possibly additional information will be submitted to TDCJ-CJAD for program assessments and research.</li>
+  <li><strong>Media involvement:</strong> Any media contact arranged by the San Antonio Fatherhood Campaign program will include the presence of a San Antonio Fatherhood Campaign employee to protect victim confidentiality.</li>
+</ul>
 
-    <p><strong>A licensee shall report if required by any of the following laws:</strong></p>
-    <ul>
-        <li><em>Health and Safety Code, Chapter 161, Subchapter K</em>, concerning abuse, neglect, or
-            illegal, unprofessional, or unethical conduct in facilities providing mental-health services.</li>
-        <li><em>Civil Practice and Remedies Code, §81.006</em>, concerning sexual exploitation by a
-            mental-health service provider.</li>
-        <li>All personal data and possibly additional information will be submitted to TDCJ-CJAD for program
-            assessments and research.</li>
-        <li><strong>Media involvement:</strong> Any media contact arranged by the San Antonio Fatherhood Campaign program
-            will include the presence of a San Antonio Fatherhood Campaign employee to protect victim confidentiality.</li>
-    </ul>
+<p><strong>We ask that you keep confidential information you may learn about other clients who are receiving services from San Antonio Fatherhood Campaign – BIPP.</strong></p>
 
-    <p><strong>We ask that you keep confidential information you may learn about other clients who are
-    receiving services from San Antonio Fatherhood Campaign – BIPP.</strong></p>
+<p><strong>San Antonio Fatherhood Campaign requires facilitators and participants to:</strong></p>
+<ul>
+  <li>Disable any devices that could collect information from the environment, such as Google Home Assistant, Amazon Alexa, or Apple Siri.</li>
+  <li>Not record or take screenshots of group discussions.</li>
+  <li>Ensure they are in a private space and not in any public area such as a park, yard, or open area. Other people not in the group should not hear or observe the group.</li>
+  <li>Not use the virtual group session to expel their partner or children from the residence. Participants must relocate to another location or private room in the residence.</li>
+  <li>Ensure that children are safe and cared for, but not interrupting the session or listening to group discussions.</li>
+</ul>
 
-    <p><strong>San Antonio Fatherhood Campaign requires facilitators and participants to:</strong></p>
-    <ul>
-        <li>Disable any devices that could collect information from the environment, such as Google Home
-            Assistant, Amazon Alexa, or Apple Siri.</li>
-        <li>Not record or take screenshots of group discussions.</li>
-        <li>Ensure they are in a private space and not in any public area such as a park, yard, or open
-            area. Other people not in the group should not hear or observe the group.</li>
-        <li>Not use the virtual group session to expel their partner or children from the residence.
-            Participants must relocate to another location or private room in the residence.</li>
-        <li>Ensure that children are safe and cared for, but not interrupting the session or listening to
-            group discussions.</li>
-    </ul>
+<p><strong>Observers may occasionally sit in on a group.</strong> Observers must sign a confidentiality agreement prior to sitting in on a group and will be introduced to the group by the facilitator(s). The observer will be responsible for maintaining confidentiality of any personal disclosure of group members. This facility is video-recorded for security purposes, and treatment sessions may be video/audio recorded for quality assurance.</p>
 
-    <p><strong>Observers may occasionally sit in on a group.</strong> Observers must sign a confidentiality
-    agreement prior to sitting in on a group and will be introduced to the group by the facilitator(s). The
-    observer will be responsible for maintaining confidentiality of any personal disclosure of group
-    members. This facility is video-recorded for security purposes, and treatment sessions may be
-    video/audio recorded for quality assurance.</p>
+<!-- Your requested addition -->
+<p>I hereby agree that my groups shall be video/audio recorded merely for the purposes of security, training, and quality assurance to be viewed by San Antonio Fatherhood Campaign facilitators and building security. These video/audio recordings will depict varius educational services offered by San Antonio Fatherhood Campaign. The video/audio recordings may be kept for up to 14 days after session is conducted for each program unless they are being retained for internal training purposes or we have been notified of pending litigation and have been request not to destroy the recording(s).</p>
 
-    <p><strong>Ethics &amp; Grievances:</strong> All agency services will be delivered in as professional and
-    ethical a manner as possible. While specific results cannot be guaranteed, if you have concerns
-    about the professional performance of your counselor:</p>
-    <ul>
-        <li>Inform your counselor directly.</li>
-        <li>If unresolved, report concerns to your counselor's immediate supervisor, Executive Director
-            Van Martin, at 817-501-5102.</li>
-        <li>If further resolution is needed, contact the Texas Council on Family Violence at 800-525-1978.</li>
-    </ul>
+<p><strong>Ethics &amp; Grievances:</strong> All agency services will be delivered in as professional and ethical a manner as possible. While specific results cannot be guaranteed, if you have concerns about the professional performance of your counselor:</p>
+<ul>
+  <li>Inform your counselor directly.</li>
+  <li>If unresolved, report concerns to your counselor's immediate supervisor, Executive Director Van Martin, at 817-501-5102.</li>
+  <li>If further resolution is needed, contact the Texas Council on Family Violence at 800-525-1978.</li>
+</ul>
 
-    <!-- Page 1 – Additional consent language -->
-    <p><strong>Important:</strong> Any no-shows, late arrivals, dismissals, missing
-    classes, appointments, drops, or cancellations for any services will be assessed a fee. This fee is
-    not refundable or transferable to future sessions. All policies are subject to change without prior notice.
-    If you have any concerns, please inform the staff.</p>
+<p><strong>Important:</strong> Any no-shows, late arrivals, dismissals, missing classes, appointments, drops, or cancellations for any services will be assessed a fee. This fee is not refundable or transferable to future sessions. All policies are subject to change without prior notice. If you have any concerns, please inform the staff.</p>
 
-    <p>By signing this form, you agree to complete the assigned number of hours and to comply with
-    agency rules and regulations. Failure to comply with these requirements will result in dismissal
-    and notification to the referral agency.</p>
+<p>By signing this form, you agree to complete the assigned number of hours and to comply with agency rules and regulations. Failure to comply with these requirements will result in dismissal and notification to the referral agency.</p>
 
-    <p><strong>My Signature below authorizes</strong> my American with Disabilities Accommodation (ADA),
-    consent to receive text and emails about SAFC services such as reminders about classes and payment
-    notifications. Message and data rates from my mobile phone carrier may apply.</p>
+<p><strong>My Signature below authorizes</strong> my American with Disabilities Accommodation (ADA), consent to receive text and emails about SAFC services such as reminders about classes and payment notifications. Message and data rates from my mobile phone carrier may apply.</p>
 HTML,
+
+  // 8a — Consent for Disclosure of Information (Referral)
   'p8a_disclosure' => <<<'HTML'
-<p>I understand that such disclosure will be made for the purpose of reporting attendance,
-progress reports, referrals and facilitating victim safety.</p>
-<p>I understand that I may revoke this consent at any time in writing. I further understand
-that this consent form gives Fatherhood Campaign - BIPP permission to share confidential
-information; and that, unless earlier revoked by me, this authorization shall expire
-1 year after completion of or termination from the program. I further authorize the
-Fatherhood Campaign - BIPP to share confidential information in the way described above.</p>
-<p>Release of information is voluntary, I understand I have a right to refuse to sign this
-consent. I further understand that refusal to sign this consent may affect my ability to
-participate in the program, in accordance with Texas Department of Criminal Justice – Community
-Justice Assistance Division and Texas Council on Family Violence Battering Intervention &amp;
-Prevention Project guidelines.</p>
-<p>I also understand that it will be necessary for Fatherhood Campaign - BIPP to release my
-information regarding my attendance and/or lack of attendance, my progress/lack of progress,
-and information about my participation to and from the above organizations/persons:</p>
-<p>That when it is determined that there is probability of imminent physical injury by me to
-myself or to others, based on the or my actions to myself or others, that the program can
-notify medical or law-enforcement personnel and/or the victim/partner, and that the program
-has the right to contact the Texas Department of Family and Protective Services (TDFPS).</p>
-<p>That personal data and possibly additional information will be
-submitted to TDCJ-CJAD for program assessments and research.</p>
+<p>I understand that such disclosure will be made for the purpose of reporting attendance, progress reports, referrals and facilitating victim safety.</p>
+<p>I understand that I may revoke this consent at any time in writing. I further understand that this consent form gives Fatherhood Campaign - BIPP permission to share confidential information; and that, unless earlier revoked by me, this authorization shall expire 1 year after completion of or termination from the program. I further authorize the Fatherhood Campaign - BIPP to share confidential information in the way described above.</p>
+<p>Release of information is voluntary, I understand I have a right to refuse to sign this consent. I further understand that refusal to sign this consent may affect my ability to participate in the program, in accordance with Texas Department of Criminal Justice – Community Justice Assistance Division and Texas Council on Family Violence Battering Intervention &amp; Prevention Project guidelines.</p>
+<p>I also understand that it will be necessary for Fatherhood Campaign - BIPP to release my information regarding my attendance and/or lack of attendance, my progress/lack of progress, and information about my participation to and from the above organizations/persons. When it is determined that there is probability of imminent physical injury by me to myself or to others, the program can notify medical or law-enforcement personnel and/or the victim/partner, and the program has the right to contact the Texas Department of Family and Protective Services (TDFPS). Personal data and possibly additional information will be submitted to TDCJ-CJAD for program assessments and research.</p>
 HTML,
+
+  // 8b — Partner/Victim Information disclosure
   'p8b_partners' => <<<'HTML'
-<p>I understand that such disclosure will be made for the purpose of reporting attendance,
-progress reports, referrals and facilitating victim safety.</p>
-<p>Disclosure is limited to information regarding attendance, progress, participation, and
-termination information concerning Fatherhood Campaign - Batterers Intervention &amp; Prevention Program.</p>
-<p>I understand my right to confidentiality. I further understand that I may revoke this consent
-at any time. However, I also understand that this consent shall remain in effect for the period
-of time necessary to accomplish the purpose. I also understand that a refusal to sign
-this consent form may result in the Fatherhood Campaign - BIPP declining service to me.</p>
-<p>Fatherhood Campaign - BIPP reserves the right to dismiss any client who refuses to sign
-this consent form. This is in accordance with the Texas Department of Criminal Justice – Community
-Justice Assistance Division and Texas Council on Family Violence Battering Intervention and Prevention
-Project guidelines.</p>
+<p>I understand that such disclosure will be made for the purpose of reporting attendance, progress reports, referrals and facilitating victim safety.</p>
+<p>Disclosure is limited to information regarding attendance, progress, participation, and termination information concerning Fatherhood Campaign - Batterers Intervention &amp; Prevention Program.</p>
+<p>I understand my right to confidentiality. I further understand that I may revoke this consent at any time. However, I also understand that this consent shall remain in effect for the period of time necessary to accomplish the purpose. I also understand that a refusal to sign this consent form may result in the Fatherhood Campaign - BIPP declining service to me.</p>
+<p>Fatherhood Campaign - BIPP reserves the right to dismiss any client who refuses to sign this consent form. This is in accordance with the Texas Department of Criminal Justice – Community Justice Assistance Division and Texas Council on Family Violence Battering Intervention and Prevention Project guidelines.</p>
 HTML,
+
+  // 8c — Program Agreement
   'p8c_program' => <<<'HTML'
 <h6 class="mb-2">Program Agreement (8c)</h6>
 <p>Fee per session is $25.00; this fee is one demonstration of accountability and responsibility for actions as a batterer. Fees are subject to change. Assessment and orientation are not included toward the 36 hours.</p>
 
-<p><strong>Start Details (non-editable):</strong> I agree to start on <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>,
-on <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>,
-from <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>.</p>
+<p><strong>Start Details (non-editable):</strong> I agree to start on <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>, on <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>, from <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>.</p>
 
-<p>Battering Intervention and Prevention Program consists of a minimum of thirty-six (36) hours of group sessions
-in a minimum of twenty (20) weekly sessions, not to exceed one session per week.</p>
+<p>Battering Intervention and Prevention Program consists of a minimum of thirty-six (36) hours of group sessions in a minimum of twenty (20) weekly sessions, not to exceed one session per week.</p>
 <p>Exit Session. If dismissed, the client must apply to re-enter the Fatherhood Campaign – BIPP; if allowed to re-enter, the client will not re-enter the program until any previous balance is paid.</p>
 <p>Clients who miss three (3) consecutive sessions (group or individual) will be discharged. Fatherhood Campaign – BIPP is not responsible for absences; it is the client’s responsibility to make up or reschedule any missing sessions. Supervising officer, judge, or court determines case outcomes related to absences.</p>
 <p>There are no excused absences. Incarceration is an inexcusable absence. Any charges filed regarding any offense related to domestic violence is an automatic dismissal.</p>
@@ -153,13 +97,16 @@ in a minimum of twenty (20) weekly sessions, not to exceed one session per week.
 <p>I agree to notify a staff person of any and all emergencies that I am either a part of or a witness to.</p>
 <p>Fatherhood Campaign – BIPP is committed to establishing non-violence in families. It is the main goal of these psycho-educational classes.</p>
 HTML,
+
+  // 8c — Taking Responsibility (part 2)
   'p8c_responsibility' => <<<'HTML'
 <h6 class="mb-2">Taking Responsibility</h6>
 <p>During group discussions, participants may not blame anyone else for their own behaviors.</p>
 HTML,
+
+  // 8d — Virtual Group Rules
   'p8d_virtual' => <<<'HTML'
 <p class="mb-2">Please Review and Adhere to the Group rules for a successful group experience:</p>
-
 <ol class="vgr-list mb-0 ps-3">
   <li class="rule-hanging">Payment on-line does not guarantee credit for attending a group session.</li>
   <li class="rule-hanging">Attendance is taken during the group-that will determine credit for attending.</li>
@@ -182,6 +129,8 @@ HTML,
   <li class="rule-hanging">Any violations of these rules may result in removal from the session.</li>
 </ol>
 HTML,
+
+  // 8e — Policy for Clients & Termination Policy
   'p8e_termination' => <<<'HTML'
 <h6 class="mb-2">Policy For Clients and Termination Policy</h6>
 <p>I have received a copy of the “Policy for Clients” for San Antonio Fatherhood Campaign – BIPP, including the client rights, responsibilities and I agree to enter the Fatherhood Campaign - BIPP.</p>
@@ -212,4 +161,36 @@ HTML,
 <p>The above Termination Policy applies to clients who are dismissed or who request to be terminated and assumes that clients must consult with their counselor before choosing to stop services before making this final decision.</p>
 <p>Fatherhood Campaign - BIPP will provide batterers at the time of intake information regarding Batterers Intervention &amp; Prevention Program guidelines for discharge and the circumstances under which they can be terminated before completion.</p>
 HTML,
+
+  // 8f — Hold Harmless and Indemnification Agreement
+  'p8f_hold_harmless' => <<<'HTML'
+<h6 class="mb-2">Hold Harmless and Indemnification Agreement</h6>
+
+<p>Indemnitor and Indemnitee may be referred to individually as “Party” and collectively as the “Parties.”</p>
+<p><strong>Whereas.</strong> Indemnitor wishes to participate in the Free for Life Group’s Batterers Intervention and Prevention Program (BIPP), held in person and facilitated by the Indemnitee (the “Activity”), and acknowledges the potential risks associated with participation.</p>
+<p><strong>Now, therefore.</strong> For valuable consideration, the receipt and sufficiency of which is acknowledged, the Parties agree as follows:</p>
+
+<ol class="mb-3 ps-3">
+  <li class="mb-2"><strong>Indemnification.</strong> To the fullest extent permitted by law, Indemnitor shall indemnify, defend, and hold harmless the Indemnitee and its directors, officers, employees, agents, contractors, volunteers, affiliates, and insurers (the “Released Parties”) from and against any and all claims, actions, demands, liabilities, judgments, losses, damages, fines, penalties, costs, and expenses (including reasonable attorney’s fees and court costs) arising out of or related to participation in the Activity, including personal injury, illness, death, psychological harm, property damage, or violations of law, whether caused in whole or in part by the negligence or fault of the Released Parties.</li>
+  <li class="mb-2"><strong>Exceptions.</strong> The indemnification obligation does not apply to Claims resulting solely from the gross negligence or willful misconduct of the Indemnitee, or to the extent covered by insurance maintained by the Indemnitee.</li>
+  <li class="mb-2"><strong>Notice of Claim.</strong> Indemnitee shall provide Indemnitor prompt written notice of any Claim within ten (10) business days of discovery, with reasonable detail to evaluate indemnity obligations.</li>
+  <li class="mb-2"><strong>Duty to Defend.</strong> Indemnitor may assume control of the defense of any Claim. If Indemnitor elects not to assume the defense, Indemnitee may defend and seek reimbursement. No settlement shall be entered into by either Party without the prior written consent of the other, not to be unreasonably withheld.</li>
+  <li class="mb-2"><strong>Assumption of Risk.</strong> Indemnitor expressly acknowledges and voluntarily assumes risks inherent in the Activity, which may include emotional distress, verbal conflicts, and exposure to communicable diseases.</li>
+  <li class="mb-2"><strong>Mutual Representations.</strong> Each Party represents it has full power and authority to enter into and perform this Agreement, which is a valid and binding obligation.</li>
+  <li class="mb-2"><strong>Amendments.</strong> This Agreement may be amended only by a written document signed by both Parties.</li>
+  <li class="mb-2"><strong>Governing Law.</strong> This Agreement shall be governed by the laws of the State of Texas, excluding conflict of laws principles.</li>
+  <li class="mb-2"><strong>Dispute Resolution.</strong> Any dispute shall first be submitted to mediation. If mediation is unsuccessful, the matter shall be resolved through binding arbitration under the rules of the American Arbitration Association.</li>
+  <li class="mb-1"><strong>Miscellaneous.</strong>
+    <ul class="mb-0">
+      <li>No Waiver: Failure to enforce any provision is not a waiver.</li>
+      <li>Assignment: No Party may assign this Agreement without prior written consent.</li>
+      <li>Severability: If any provision is invalid, the remainder remains in effect.</li>
+      <li>Entire Agreement: This document is the entire agreement of the Parties.</li>
+    </ul>
+  </li>
+</ol>
+
+<p class="mb-0"><em>In witness whereof,</em> this Agreement is executed as of the Effective Date written below.</p>
+HTML,
+
 ];

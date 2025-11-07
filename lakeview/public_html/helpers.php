@@ -134,3 +134,33 @@ function formatPhone($inputPhone)
 
     return $inputPhone;
 }
+
+/* ---- Attendance deletes (attendance + milestones) ---- */
+if (!function_exists('delete_client_session')) {
+    function delete_client_session(mysqli $db, int $client_id, int $session_id): void {
+        if ($st = $db->prepare("DELETE FROM attendance_curriculum WHERE client_id=? AND session_id=?")) {
+            $st->bind_param('ii', $client_id, $session_id);
+            $st->execute();
+        }
+        if ($st = $db->prepare("DELETE FROM attendance_record WHERE client_id=? AND therapy_session_id=? LIMIT 1")) {
+            $st->bind_param('ii', $client_id, $session_id);
+            $st->execute();
+        }
+    }
+}
+
+/* ---- Minimal CSRF for POST actions ---- */
+if (!function_exists('csrf_token')) {
+    function csrf_token(): string {
+        if (empty($_SESSION['csrf'])) $_SESSION['csrf'] = bin2hex(random_bytes(16));
+        return $_SESSION['csrf'];
+    }
+}
+if (!function_exists('csrf_check')) {
+    function csrf_check(): void {
+        if (($_POST['csrf'] ?? '') !== ($_SESSION['csrf'] ?? '')) {
+            http_response_code(403);
+            exit('Invalid CSRF token.');
+        }
+    }
+}

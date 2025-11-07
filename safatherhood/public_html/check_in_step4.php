@@ -512,7 +512,7 @@ function buildCalendar($date, $attendance, $excused, $unexcused)
                         </div>
                         <div class="row">
                             <div class="col-7">
-                                <small class="text-muted">Other Concerns</small>
+                                <small class="text-muted">Attendance & Behavior Concerns (Back office use only)</small>
                                 <textarea type="text" name="other_concerns" maxlength="2048" class="form-control"><?php echo htmlspecialchars($client["other_concerns"]); ?></textarea>
                             </div>
                         </div>

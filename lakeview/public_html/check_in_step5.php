@@ -26,7 +26,7 @@ if (isset($_GET['client_id'])) {
 if (isset($_POST['client_id'])) {
     $client_id = $_POST['client_id'];
 }
-if(!isset($client_id)){
+if ($client_id === '' || $client_id === null) {
     header("location: error.php");
     exit();
 }
@@ -48,8 +48,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $disruptiveOrArgumentitive = isset($_POST['disruptiveOrArgumentitive']) ? 1 : 0;
         $inappropriateHumor = isset($_POST['inappropriateHumor']) ? 1 : 0;
         $blamesVictim = isset($_POST['blamesVictim']) ? 1 : 0;
-        $drugAlcohol = isset($_POST['drugAlcohol']) ? 1 : 0;
-        $inappropriateBehavior = isset($_POST['inappropriateBehavior']) ? 1 : 0;
+        $drugAlcohol = (isset($_POST['drug_alcohol']) || isset($_POST['drugAlcohol'])) ? 1 : 0;
+        $inappropriateBehavior = (isset($_POST['inappropriate_behavior_to_staff']) || isset($_POST['inappropriateBehavior'])) ? 1 : 0;
         $attends_sunday = isset($_POST['attends_sunday']) ? 1 : 0;
         $attends_monday = isset($_POST['attends_monday']) ? 1 : 0;
         $attends_tuesday = isset($_POST['attends_tuesday']) ? 1 : 0;
@@ -83,12 +83,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         // Insert the attendance Record
         $vars = parse_columns('attendance_record', $_POST);
-        $stmt = $pdo->prepare("INSERT INTO attendance_record (client_id,therapy_session_id) VALUES (?,?)");
-        if($stmt->execute([ $client_id,$therapy_session_id ])) {
+        // Safe insert if mass check-in already created a record
+        $stmt = $pdo->prepare("INSERT IGNORE INTO attendance_record (client_id, therapy_session_id) VALUES (?, ?)");
+        if ($stmt->execute([$client_id, $therapy_session_id])) { $stmt = null; } else { echo "Something went wrong. Please try again later."; }
+
+        // Try to mark as attended if those columns exist (ignore error if not)
+        try {
+            $stmt = $pdo->prepare("UPDATE attendance_record SET attended=1, excused=0 WHERE client_id=? AND therapy_session_id=?");
+            $stmt->execute([$client_id, $therapy_session_id]);
             $stmt = null;
-//                header("location: attendance_record-index.php");
-        } else{
-            echo "Something went wrong. Please try again later.";
+        } catch (Throwable $e) {
+            // table without attended/excused; ignore
         }
 
         // Update the client conduct
@@ -118,30 +123,94 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "Something went wrong. Please try again later.";
         }
 
-        // Insert the fee for attendance (weekly plans only)
+        // Insert the fee for attendance (weekly plans only) — idempotent by note
         if ($is_weekly && $fee > 0) {
-            $stmt = $pdo->prepare("INSERT INTO ledger (client_id,amount,note) VALUES (?,?,?)");
             $ledger_note = "Attendance fee session_id " . $therapy_session_id;
-            if ($stmt->execute([ $client_id, -1.0 * $fee, $ledger_note ])) {
-                $stmt = null;
-            } else {
-                echo "Something went wrong. Please try again later.";
+            $stmt = $pdo->prepare("SELECT 1 FROM ledger WHERE client_id=? AND note=? LIMIT 1");
+            $stmt->execute([$client_id, $ledger_note]);
+            if (!$stmt->fetch()) {
+                $stmt = $pdo->prepare("INSERT INTO ledger (client_id,amount,note) VALUES (?,?,?)");
+                if (!$stmt->execute([$client_id, -1.0 * $fee, $ledger_note])) {
+                    echo "Something went wrong. Please try again later.";
+                }
             }
         }
 
-        // Insert the amount paid at check-in
-        // For one-time plans already paid at intake, skip.
+
+        // Insert the amount paid at check-in (skip if one-time already paid at intake). Idempotent by note
         if ($paid > 0 && !(!$is_weekly && $paid_intake)) {
-            $stmt = $pdo->prepare("INSERT INTO ledger (client_id,amount,note) VALUES (?,?,?)");
             $note_suffix = $is_weekly ? "" : (" - " . $paid_source);
             $ledger_note = "Paid at Check-In session_id " . $therapy_session_id . $note_suffix;
-            if ($stmt->execute([ $client_id, $paid, $ledger_note ])) {
-                $stmt = null;
-            } else {
-                echo "Something went wrong. Please try again later.";
+
+            $stmt = $pdo->prepare("SELECT 1 FROM ledger WHERE client_id=? AND note=? LIMIT 1");
+            $stmt->execute([$client_id, $ledger_note]);
+            if (!$stmt->fetch()) {
+                $stmt = $pdo->prepare("INSERT INTO ledger (client_id,amount,note) VALUES (?,?,?)");
+                if (!$stmt->execute([$client_id, $paid, $ledger_note])) {
+                    echo "Something went wrong. Please try again later.";
+                }
             }
         }
 
+
+        // ---- Milestone completions from Step 4 ----
+        $milestones = isset($_POST['milestone_complete']) && is_array($_POST['milestone_complete'])
+            ? array_values(array_unique(array_map('intval', $_POST['milestone_complete'])))
+            : [];
+
+        if ($milestones) {
+            // resolve client's program_id
+            $pid = 0;
+            $stmt = $pdo->prepare("SELECT program_id FROM client WHERE id=?");
+            $stmt->execute([$client_id]);
+            if ($row = $stmt->fetch()) $pid = (int)$row['program_id'];
+            $stmt = null;
+
+            // session date stamp (midday to avoid boundary issues)
+            $sessDate = null;
+            $stmt = $pdo->prepare("SELECT DATE(`date`) AS d FROM therapy_session WHERE id=?");
+            $stmt->execute([$therapy_session_id]);
+            if ($row = $stmt->fetch()) { $sessDate = $row['d']; }
+            $stmt = null;
+            $stampDT = ($sessDate ?: date('Y-m-d')).' 12:00:00';
+            $user_id = (int)($_SESSION['id'] ?? 0);
+
+            // upsert attendance_curriculum rows with session link
+            $sql = "INSERT INTO attendance_curriculum
+                        (client_id, program_id, curriculum_id, session_id, completed_at, staff_user_id, source)
+                    VALUES (?, ?, ?, ?, ?, ?, 'checkin')
+                    ON DUPLICATE KEY UPDATE
+                        completed_at=VALUES(completed_at),
+                        session_id=VALUES(session_id),
+                        staff_user_id=VALUES(staff_user_id),
+                        source=VALUES(source)";
+            $ins = $pdo->prepare($sql);
+
+            foreach ($milestones as $curId) {
+                $ins->execute([
+                    (int)$client_id,
+                    (int)$pid,
+                    (int)$curId,
+                    (int)$therapy_session_id,
+                    $stampDT,
+                    $user_id
+                ]);
+            }
+            $ins = null;
+
+            // ensure attendance exists and marked attended=1, excused=0
+            try {
+                $stmt = $pdo->prepare("INSERT IGNORE INTO attendance_record (client_id, therapy_session_id) VALUES (?, ?)");
+                $stmt->execute([$client_id, $therapy_session_id]);
+                $stmt = null;
+
+                $stmt = $pdo->prepare("UPDATE attendance_record SET attended=1, excused=0 WHERE client_id=? AND therapy_session_id=?");
+                $stmt->execute([$client_id, $therapy_session_id]);
+                $stmt = null;
+            } catch (Throwable $e) {
+                // ignore if schema lacks attended/excused
+            }
+        }
 
     
 }
