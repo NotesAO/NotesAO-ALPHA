@@ -105,7 +105,7 @@ $eightDaysFromNow = date('Y-m-d', strtotime('-8 days'));
         }
         .two-cols {
             column-count: 2;
-            column-gap 1.5rem;
+            column-gap: 1.5rem;
         }
         .two-cols li {
             break-inside: avoid;
@@ -332,7 +332,6 @@ $eightDaysFromNow = date('Y-m-d', strtotime('-8 days'));
                   JOIN program p ON c.program_id = p.id
                   JOIN exit_reason e ON c.exit_reason_id = e.id
                  WHERE e.reason = 'Not Exited'
-                   AND p.id <> 5
                  GROUP BY p.name
             ";
             $chartLabels = [];
@@ -378,533 +377,386 @@ $eightDaysFromNow = date('Y-m-d', strtotime('-8 days'));
         </div>
     </div>
 
-    <!-- Row: New Clients, New Absences, Missing Info -->
+    <!-- Row: Left = 1,2,4,5 | Right = 3 -->
     <div class="row">
-        <div class="col-md-6">
-            <!-- 1) NEW CLIENTS -->
-            <!-- 1) NEW CLIENTS -->
-            <div class="card border-success mb-4">
-                <div class="card-header bg-success text-white">
-                    <i class="fas fa-user-plus"></i>
-                    New Clients (<?= date('F j, Y', strtotime($yesterday)) ?>)
-                </div>
-                
-                <!-- Adjust p-2 for slightly tighter padding if you wish -->
-                <div class="card-body p-2">
-                    <div id="newClientsContent" style="max-height:200px; overflow:hidden; transition:max-height 0.4s ease;">
-                    <?php
-                    $sqlNewClients = "
-                        SELECT c.first_name, c.last_name,
-                                c.orientation_date,
-                                p.name AS program_name
-                            FROM client c
-                            JOIN program p ON c.program_id = p.id
-                        WHERE c.orientation_date = ?
-                        ORDER BY p.name, c.last_name
-                    ";
-                    if ($stmt = $con->prepare($sqlNewClients)) {
-                        $stmt->bind_param("s", $yesterday);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
+    <!-- LEFT COLUMN: 1) New Clients, 2) New Absences, 4) New Phones, 5) Behavior Contracts -->
+    <div class="col-md-6">
 
-                        $newClientsData = [];
-                        while ($row = $result->fetch_assoc()) {
-                            $progName = $row['program_name'];
-                            if (!isset($newClientsData[$progName])) {
-                                $newClientsData[$progName] = [];
-                            }
-                            $fullName = $row['first_name'] . ' ' . $row['last_name'];
-                            $newClientsData[$progName][] = $fullName;
-                        }
-                        $stmt->close();
-
-                        if (!empty($newClientsData)) {
-                            foreach ($newClientsData as $programName => $clients) {
-                                echo "<h5 class='font-weight-bold mt-3'>$programName</h5>";
-                                echo "<ul class='list-unstyled pl-3'>";
-                                foreach ($clients as $cName) {
-                                    echo "<li><i class='fas fa-user text-secondary'></i> $cName</li>";
-                                }
-                                echo "</ul>";
-                            }
-                        } else {
-                            echo "<p>No New Clients</p>";
-                        }
-                    } else {
-                        echo "<p class='text-danger'>[Error preparing new clients query]</p>";
-                    }
-                    ?>
-                    </div><!-- /#newClientsContent -->
-                </div><!-- /.card-body -->
-
-                <div class="card-footer text-center">
-                    <button id="toggleNewClientsBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
-                </div>
-                </div><!-- /.card -->
-
-                <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var toggleBtn = document.getElementById('toggleNewClientsBtn');
-                    var contentDiv = document.getElementById('newClientsContent');
-                    var isCollapsed = true;
-
-                    toggleBtn.addEventListener('click', function() {
-                        if (isCollapsed) {
-                            // Expand
-                            contentDiv.style.maxHeight = '2000px';
-                            toggleBtn.textContent = 'Show Less';
-                        } else {
-                            // Collapse
-                            contentDiv.style.maxHeight = '200px';
-                            toggleBtn.textContent = 'Show More';
-                        }
-                        isCollapsed = !isCollapsed;
-                    });
-                });
-                </script>
-
-
-            <!-- 2) NEW ABSENCES -->
-            <div class="card border-info">
-                <div class="card-header bg-info text-white">
-                    <i class="fas fa-user-times"></i>
-                    New Absences (<?= date('F j, Y', strtotime($eightDaysFromNow)) ?>)
-                </div>
-
-                <div class="card-body p-2">
-                    <div id="newAbsencesContent" style="max-height:550px; overflow:hidden; transition:max-height 0.4s ease;">
-                    <?php
-                    $sqlAbsences = "
-                        SELECT a.date AS absence_date,
-                            c.first_name, c.last_name,
-                            p.name AS program_name
-                        FROM absence a
-                        JOIN client c ON a.client_id = c.id
-                        JOIN program p ON c.program_id = p.id
-                        WHERE a.date = ?
-                        AND a.excused = 0
-                        ORDER BY p.name, c.last_name
-                    ";
-
-                    if ($stmt = $con->prepare($sqlAbsences)) {
-                        $stmt->bind_param("s", $eightDaysFromNow);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-
-                        $absencesData = []; 
-                        while ($row = $result->fetch_assoc()) {
-                            $prog = $row['program_name'];
-                            if (!isset($absencesData[$prog])) {
-                                $absencesData[$prog] = [];
-                            }
-                            $absencesData[$prog][] = $row['first_name'] . ' ' . $row['last_name'];
-                        }
-                        $stmt->close();
-
-                        if (!empty($absencesData)) {
-                            foreach ($absencesData as $programName => $clients) {
-                                echo "<h5 class='font-weight-bold mt-3'>$programName</h5>";
-                                echo "<ul class='list-unstyled pl-3'>";
-                                foreach ($clients as $cName) {
-                                    echo "<li><i class='fas fa-user text-secondary'></i> $cName</li>";
-                                }
-                                echo "</ul>";
-                            }
-                        } 
-
-                        // Move "No New Absences" lower for better visual alignment
-                        echo "<h6 class='font-weight-bold mt-3'></h6>"; // Empty header to align with other sections
-                        if (empty($absencesData)) {
-                            echo "<p class='pl-3'>No New Absences</p>";
-                        }
-                    } else {
-                        echo "<p class='text-danger'>[Error preparing absences query]</p>";
-                    }
-                    ?>
-                    </div>
-                </div>
-
-
-                <div class="card-footer text-center">
-                    <button id="toggleNewAbsencesBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
-                </div>
-                </div><!-- /.card -->
-
-                <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var toggleBtn = document.getElementById('toggleNewAbsencesBtn');
-                    var contentDiv = document.getElementById('newAbsencesContent');
-                    var isCollapsed = true;
-
-                    toggleBtn.addEventListener('click', function() {
-                        if (isCollapsed) {
-                            // Expand
-                            contentDiv.style.maxHeight = '2000px';
-                            toggleBtn.textContent = 'Show Less';
-                        } else {
-                            // Collapse
-                            contentDiv.style.maxHeight = '550px';
-                            toggleBtn.textContent = 'Show More';
-                        }
-                        isCollapsed = !isCollapsed;
-                    });
-                });
-                </script>
-
-        </div><!-- /.col-md-6 -->
-
-        <div class="col-md-6">
-        <!-- 3) CLIENTS WITH MISSING INFORMATION -->
-        <div class="card border-warning">
-            <div class="card-header bg-warning text-white">
-                <i class="fas fa-exclamation-circle"></i> Clients with Missing Info
-            </div>
-            <!-- Adjust card-body padding to taste; p-2 is just a bit tighter -->
-            <div class="card-body p-2">
-                <!-- Collapsible Wrapper -->
-                <div id="missingInfoContent" style="max-height:805px; overflow:hidden; transition:max-height 0.4s ease;">
-                    <?php
-                    $sqlMissing = "
-                        SELECT 
-                            c.id,
-                            c.program_id,          -- add this
-                            c.first_name,
-                            c.last_name,
-                            cm.last_name AS cm_lastname,
-                            p.name     AS program_name,
-                            c.orientation_date,
-                            c.phone_number,
-                            c.required_sessions,
-                            e.reason   AS exit_reason,
-                            c.gender_id,
-                            c.intake_packet
-                        FROM client c
-                        JOIN program p       ON c.program_id = p.id
-                        LEFT JOIN case_manager cm ON c.case_manager_id = cm.id
-                        LEFT JOIN exit_reason   e   ON c.exit_reason_id = e.id
-                        WHERE c.exit_reason_id = 1
-                        AND p.id <> 5
-                        AND (
-                                cm.last_name = '1 officer not listed'
-                            OR (c.orientation_date IS NULL OR c.orientation_date = '0000-00-00')
-                            OR (c.phone_number     IS NULL OR c.phone_number = '')
-                            OR (c.gender_id        = 1)
-                            OR (
-                                c.required_sessions NOT IN ($allowedList)
-
-                                AND e.reason = 'Not Exited'
-                                )
-                            OR (
-                                p.id NOT IN (4,5)
-                                AND (c.intake_packet IS NULL OR c.intake_packet = 0)
-                                )
-                        )
-                        ORDER BY p.name, c.last_name
-                    ";
-
-
-                    if ($resMissing = $con->query($sqlMissing)) {
-                        if ($resMissing->num_rows > 0) {
-                            $missingData = [];
-                            while ($row = $resMissing->fetch_assoc()) {
-                                $prog = $row['program_name'];
-                                if (!isset($missingData[$prog])) {
-                                    $missingData[$prog] = [];
-                                }
-
-                                // Build an array of which fields are "missing"
-                                $reasons = [];
-                                if ($row['cm_lastname'] === '1 officer not listed') {
-                                    $reasons[] = "No Officer Listed";
-                                }
-                                if (empty($row['orientation_date']) || $row['orientation_date'] === '0000-00-00') {
-                                    $reasons[] = "No Orientation Date";
-                                }
-                                if (empty($row['phone_number'])) {
-                                    $reasons[] = "No Phone Number";
-                                }
-                                if ($row['gender_id'] == 1) {
-                                    $reasons[] = "Gender Not Specified";
-                                }
-                                // Check required_sessions
-                                if (!in_array((int)$row['required_sessions'], $ALLOWED_REQ, true) &&
-                                    $row['exit_reason'] === 'Not Exited') {
-                                    $reasons[] = "Required Sessions Invalid";
-                                }
-
-                                if ($row['program_id'] != 4 && empty($row['intake_packet'])) {
-                                    $reasons[] = "No Intake Packet";
-                                }
-
-                                $clientName = $row['first_name'] . ' ' . $row['last_name'];
-                                $missingData[$prog][] = [
-                                    'name'   => $clientName,
-                                    'issues' => $reasons
-                                ];
-                            }
-
-                            // Output all missing-info clients grouped by Program
-                            foreach ($missingData as $programName => $clients) {
-                                echo "<h5 class='font-weight-bold mt-3'>$programName</h5>";
-                                $extraClass = (count($clients) > 10) ? ' two-cols' : '';
-                                echo "<ul class='list-unstyled pl-4 mb-0$extraClass'>";
-
-                                foreach ($clients as $info) {
-                                    echo "<li class='mb-3'>";
-                                    echo "<strong><i class='fas fa-user text-danger'></i> {$info['name']}</strong><br>";
-                                    foreach ($info['issues'] as $i) {
-                                        echo "<span class='text-danger'>- $i</span><br>";
-                                    }
-                                    echo "</li>";
-                                }
-                                echo "</ul>";
-                            }
-                        } else {
-                            echo "<p>No clients with missing info found.</p>";
-                        }
-                    } else {
-                        echo "<p class='text-danger'>[Error executing missing info query]</p>";
-                    }
-                    ?>
-                </div> <!-- /#missingInfoContent -->
-            </div><!-- /.card-body -->
-
-            <!-- Collapsible Toggle Button -->
-            <div class="card-footer text-center">
-                <button id="toggleMissingBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
-            </div>
-        </div><!-- /.card -->
-
-
-        <!-- 4) CLIENTS WITH NEW PHONE NUMBERS -->
-        <div class="card border-dark">
-            <div class="card-header bg-dark text-white">
-                <i class="fas fa-phone-alt"></i> Clients with New Phone Numbers (past 7 days)
-            </div>
-
-            <div class="card-body p-2">
-                <div id="newPhonesContent" style="max-height:400px; overflow:hidden; transition:max-height 0.4s ease;">
-                <?php
-                // get the cut-off date
-                $sevenDaysAgo = date('Y-m-d', strtotime('-7 days'));
-                $baselineTs   = '2025-05-09 13:21:40';
-
-                $sqlNewPhones = "
-                    SELECT c.first_name, c.last_name, c.phone_number,
-                        p.name AS program_name
-                    FROM client c
-                    JOIN program p ON c.program_id = p.id
-                    WHERE c.phone_number <> ''                  -- has a number
-                    AND c.phone_updated_at >= ?  
-                    AND c.phone_updated_at  >  ?             -- ≥ 7-days-ago
-                    AND c.exit_reason_id     = 1
-                    AND p.id                <> 5
-                    AND (
-                         c.orientation_date is NULL
-                         OR DATE(c.phone_updated_at) <> c.orientation_date
-                        )
-                    ORDER BY p.name, c.last_name
-
-                ";
-
-                if ($stmt = $con->prepare($sqlNewPhones)) {
-                    $stmt->bind_param("ss", $sevenDaysAgo, $baselineTs);
-                    $stmt->execute();
-                    $res = $stmt->get_result();
-
-                    $data = [];
-                    while ($row = $res->fetch_assoc()) {
-                        $prog = $row['program_name'];
-                        if (!isset($data[$prog])) $data[$prog] = [];
-                        $data[$prog][] = $row;
-                    }
-                    $stmt->close();
-
-                    if (!empty($data)) {
-                        foreach ($data as $programName => $clients) {
-                            echo "<h5 class='font-weight-bold mt-3'>$programName</h5>";
-                            echo "<ul class='list-unstyled pl-3'>";
-                            foreach ($clients as $c) {
-                                $name = htmlspecialchars($c['first_name'].' '.$c['last_name']);
-                                $phone = htmlspecialchars($c['phone_number']);
-                                echo "<li><i class='fas fa-user text-secondary'></i> $name &nbsp; <span class='text-muted'>( $phone )</span></li>";
-                            }
-                            echo "</ul>";
-                        }
-                    } else {
-                        echo "<p>No phone-number changes found.</p>";
-                    }
-                } else {
-                    echo "<p class='text-danger'>[Error preparing phone query]</p>";
-                }
-                ?>
-            </div><!-- /#newPhonesContent -->
+        <!-- 1) NEW CLIENTS -->
+        <div class="card border-success mb-4">
+        <div class="card-header bg-success text-white">
+            <i class="fas fa-user-plus"></i>
+            New Clients (<?= date('F j, Y', strtotime($yesterday)) ?>)
         </div>
-
-        <div class="card-footer text-center">
-            <button id="toggleNewPhonesBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
-        </div>
-    </div>
-
-    <!-- 5) CLIENTS WITH BEHAVIOR CONTRACTS -->
-    <div class="card border-danger">
-        <div class="card-header bg-danger text-white">
-            <i class="fas fa-file-signature"></i>
-            Clients with Behavior Contracts
-        </div>
-
         <div class="card-body p-2">
-            <div id="contractContent" style="max-height:400px; overflow:hidden; transition:max-height .4s ease;">
-
-        <?php
-        /* ---------- date helpers ---------- */
-        $sevenDaysAgo = date('Y-m-d', strtotime('-7 days'));
-
-        /* ---------- 1) NEEDED ---------- */
-        $sqlNeeded = "
-        SELECT c.first_name, c.last_name, p.name AS program_name
-            FROM client c
-            JOIN program p ON p.id = c.program_id
-        WHERE c.behavior_contract_status = 'Needed'
-            AND c.exit_reason_id = 1      -- still active
-            AND p.id <> 5                 -- exclude Veterans Court
-        ORDER BY p.name, c.last_name
-        ";
-
-        /* ---------- 2) SIGNED in last 7 days ---------- */
-        $sqlSigned = "
-        SELECT c.first_name, c.last_name, p.name AS program_name
-            FROM client c
-            JOIN program p ON p.id = c.program_id
-        WHERE c.behavior_contract_status = 'Signed'
-            AND c.behavior_contract_signed_date >= ?
-            AND c.exit_reason_id = 1
-            AND p.id <> 5
-        ORDER BY p.name, c.last_name
-        ";
-
-        /* Helper to render a section */
-        function renderContractSection($con, $sql, $typeLabel, $param = null) {
-            if ($stmt = $con->prepare($sql)) {
-                if ($param !== null) $stmt->bind_param("s", $param);
+            <div id="newClientsContent" style="max-height:200px; overflow:hidden; transition:max-height 0.4s ease;">
+            <?php
+            $sqlNewClients = "
+                SELECT c.first_name, c.last_name, c.orientation_date, p.name AS program_name
+                FROM client c
+                JOIN program p ON c.program_id = p.id
+                WHERE c.orientation_date = ?
+                ORDER BY p.name, c.last_name
+            ";
+            if ($stmt = $con->prepare($sqlNewClients)) {
+                $stmt->bind_param("s", $yesterday);
                 $stmt->execute();
-                $res = $stmt->get_result();
-
-                $byProg = [];
-                while ($row = $res->fetch_assoc()) {
-                    $byProg[$row['program_name']][] =
-                        htmlspecialchars($row['first_name'].' '.$row['last_name']);
+                $result = $stmt->get_result();
+                $newClientsData = [];
+                while ($row = $result->fetch_assoc()) {
+                $progName = $row['program_name'];
+                if (!isset($newClientsData[$progName])) $newClientsData[$progName] = [];
+                $newClientsData[$progName][] = $row['first_name'].' '.$row['last_name'];
                 }
                 $stmt->close();
 
-                /* nothing? -> return false without printing anything */
-                if (empty($byProg)) {
-                    return false;
-                }
-
-                /* we have rows → show header and list */
-                echo "<h5 class='font-weight-bold mt-2'>$typeLabel</h5>";
-                foreach ($byProg as $prog => $names) {
-                    echo "<strong class='pl-2'>$prog</strong>";
-                    echo "<ul class='list-unstyled pl-4 mb-2'>";
-                    foreach ($names as $n)
-                        echo "<li><i class='fas fa-user text-secondary'></i> $n</li>";
+                if (!empty($newClientsData)) {
+                foreach ($newClientsData as $programName => $clients) {
+                    echo "<h5 class='font-weight-bold mt-3'>".htmlspecialchars($programName)."</h5>";
+                    echo "<ul class='list-unstyled pl-3'>";
+                    foreach ($clients as $cName) {
+                    echo "<li><i class='fas fa-user text-secondary'></i> ".htmlspecialchars($cName)."</li>";
+                    }
                     echo "</ul>";
                 }
-                return true;   // something printed
+                } else {
+                echo "<p>No New Clients</p>";
+                }
+            } else {
+                echo "<p class='text-danger'>[Error preparing new clients query]</p>";
+            }
+            ?>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button id="toggleNewClientsBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
+        </div>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('toggleNewClientsBtn');
+            var div = document.getElementById('newClientsContent');
+            var collapsed = true;
+            btn.addEventListener('click', function(){
+            div.style.maxHeight = collapsed ? '2000px' : '200px';
+            btn.textContent = collapsed ? 'Show Less' : 'Show More';
+            collapsed = !collapsed;
+            });
+        });
+        </script>
+
+        <!-- 2) NEW ABSENCES -->
+        <div class="card border-info">
+        <div class="card-header bg-info text-white">
+            <i class="fas fa-user-times"></i>
+            New Absences (<?= date('F j, Y', strtotime($eightDaysFromNow)) ?>)
+        </div>
+        <div class="card-body p-2">
+            <div id="newAbsencesContent" style="max-height:550px; overflow:hidden; transition:max-height 0.4s ease;">
+            <?php
+            $sqlAbsences = "
+                SELECT a.date AS absence_date, c.first_name, c.last_name, p.name AS program_name
+                FROM absence a
+                JOIN client c ON a.client_id = c.id
+                JOIN program p ON c.program_id = p.id
+                WHERE a.date = ? AND a.excused = 0
+                ORDER BY p.name, c.last_name
+            ";
+            if ($stmt = $con->prepare($sqlAbsences)) {
+                $stmt->bind_param("s", $eightDaysFromNow);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $absencesData = [];
+                while ($row = $result->fetch_assoc()) {
+                $prog = $row['program_name'];
+                if (!isset($absencesData[$prog])) $absencesData[$prog] = [];
+                $absencesData[$prog][] = $row['first_name'].' '.$row['last_name'];
+                }
+                $stmt->close();
+
+                if (!empty($absencesData)) {
+                foreach ($absencesData as $programName => $clients) {
+                    echo "<h5 class='font-weight-bold mt-3'>".htmlspecialchars($programName)."</h5>";
+                    echo "<ul class='list-unstyled pl-3'>";
+                    foreach ($clients as $cName) {
+                    echo "<li><i class='fas fa-user text-secondary'></i> ".htmlspecialchars($cName)."</li>";
+                    }
+                    echo "</ul>";
+                }
+                }
+                echo "<h6 class='font-weight-bold mt-3'></h6>";
+                if (empty($absencesData)) echo "<p class='pl-3'>No New Absences</p>";
+            } else {
+                echo "<p class='text-danger'>[Error preparing absences query]</p>";
+            }
+            ?>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button id="toggleNewAbsencesBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
+        </div>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('toggleNewAbsencesBtn');
+            var div = document.getElementById('newAbsencesContent');
+            var collapsed = true;
+            btn.addEventListener('click', function(){
+            div.style.maxHeight = collapsed ? '2000px' : '550px';
+            btn.textContent = collapsed ? 'Show Less' : 'Show More';
+            collapsed = !collapsed;
+            });
+        });
+        </script>
+
+        <!-- 4) CLIENTS WITH NEW PHONE NUMBERS -->
+        <div class="card border-dark">
+        <div class="card-header bg-dark text-white">
+            <i class="fas fa-phone-alt"></i> Clients with New Phone Numbers (past 7 days)
+        </div>
+        <div class="card-body p-2">
+            <div id="newPhonesContent" style="max-height:400px; overflow:hidden; transition:max-height 0.4s ease;">
+            <?php
+            $sevenDaysAgo = date('Y-m-d', strtotime('-7 days'));
+            $baselineTs   = '2025-05-09 13:21:40';
+            $sqlNewPhones = "
+                SELECT c.first_name, c.last_name, c.phone_number, p.name AS program_name
+                FROM client c
+                JOIN program p ON c.program_id = p.id
+                WHERE TRIM(c.phone_number) <> ''
+                AND c.phone_updated_at >= ?
+                AND c.phone_updated_at  >  ?
+                AND c.exit_reason_id     = 1
+                AND (c.orientation_date IS NULL OR DATE(c.phone_updated_at) <> c.orientation_date)
+                ORDER BY p.name, c.last_name
+            ";
+            if ($stmt = $con->prepare($sqlNewPhones)) {
+                $stmt->bind_param("ss", $sevenDaysAgo, $baselineTs);
+                $stmt->execute();
+                $res = $stmt->get_result();
+                $data = [];
+                while ($row = $res->fetch_assoc()) {
+                $prog = $row['program_name'];
+                if (!isset($data[$prog])) $data[$prog] = [];
+                $data[$prog][] = $row;
+                }
+                $stmt->close();
+
+                if (!empty($data)) {
+                foreach ($data as $programName => $clients) {
+                    echo "<h5 class='font-weight-bold mt-3'>".htmlspecialchars($programName)."</h5>";
+                    echo "<ul class='list-unstyled pl-3'>";
+                    foreach ($clients as $c) {
+                    $name  = htmlspecialchars($c['first_name'].' '.$c['last_name']);
+                    $phone = htmlspecialchars($c['phone_number']);
+                    echo "<li><i class='fas fa-user text-secondary'></i> $name &nbsp; <span class='text-muted'>( $phone )</span></li>";
+                    }
+                    echo "</ul>";
+                }
+                } else {
+                echo "<p>No phone-number changes found.</p>";
+                }
+            } else {
+                echo "<p class='text-danger'>[Error preparing phone query]</p>";
+            }
+            ?>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button id="toggleNewPhonesBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
+        </div>
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('toggleNewPhonesBtn');
+            var div = document.getElementById('newPhonesContent');
+            var collapsed = true;
+            btn.addEventListener('click', function () {
+            div.style.maxHeight = collapsed ? '3000px' : '400px';
+            btn.textContent = collapsed ? 'Show Less' : 'Show More';
+            collapsed = !collapsed;
+            });
+        });
+        </script>
+
+        <!-- 5) CLIENTS WITH BEHAVIOR CONTRACTS -->
+        <div class="card border-danger">
+        <div class="card-header bg-danger text-white">
+            <i class="fas a-file-signature"></i>
+            Clients with Behavior Contracts
+        </div>
+        <div class="card-body p-2">
+            <div id="contractContent" style="max-height:400px; overflow:hidden; transition-max-height .4s ease;">
+            <?php
+            $sevenDaysAgo = date('Y-m-d', strtotime('-7 days'));
+
+            $sqlNeeded = "
+                SELECT c.first_name, c.last_name, p.name AS program_name
+                FROM client c
+                JOIN program p ON p.id = c.program_id
+                WHERE c.behavior_contract_status = 'Needed'
+                AND c.exit_reason_id = 1
+                ORDER BY p.name, c.last_name
+            ";
+
+            $sqlSigned = "
+                SELECT c.first_name, c.last_name, p.name AS program_name
+                FROM client c
+                JOIN program p ON p.id = c.program_id
+                WHERE c.behavior_contract_status = 'Signed'
+                AND c.behavior_contract_signed_date >= ?
+                AND c.exit_reason_id = 1
+                ORDER BY p.name, c.last_name
+            ";
+
+            function renderContractSection($con, $sql, $typeLabel, $param = null) {
+                if ($stmt = $con->prepare($sql)) {
+                if ($param !== null) $stmt->bind_param("s", $param);
+                $stmt->execute();
+                $res = $stmt->get_result();
+                $byProg = [];
+                while ($row = $res->fetch_assoc()) {
+                    $byProg[$row['program_name']][] = htmlspecialchars($row['first_name'].' '.$row['last_name']);
+                }
+                $stmt->close();
+
+                if (empty($byProg)) return false;
+
+                echo "<h5 class='font-weight-bold mt-2'>".htmlspecialchars($typeLabel)."</h5>";
+                foreach ($byProg as $prog => $names) {
+                    echo "<strong class='pl-2'>".htmlspecialchars($prog)."</strong>";
+                    echo "<ul class='list-unstyled pl-4 mb-2'>";
+                    foreach ($names as $n) echo "<li><i class='fas fa-user text-secondary'></i> $n</li>";
+                    echo "</ul>";
+                }
+                return true;
+                }
+                echo "<p class='text-danger'>[Error preparing ".htmlspecialchars($typeLabel)." query]</p>";
+                return true;
             }
 
-            /* query failed – show error but count it as “printed” so the fallback isn’t shown too */
-            echo "<p class='text-danger'>[Error preparing $typeLabel query]</p>";
-            return true;
-        }
+            $anyContracts = false;
+            $anyContracts |= renderContractSection($con, $sqlNeeded, 'Needed');
+            $anyContracts |= renderContractSection($con, $sqlSigned, 'Signed (last 7 days)', $sevenDaysAgo);
 
-
-
-        /* ---------- output Needed & Signed sections ---------- */
-        /* ---------- output Needed & Signed sections ---------- */
-        $anyContracts = false;          // ← NEW LINE
-
-        $anyContracts |= renderContractSection($con, $sqlNeeded, 'Needed');                    // ← EDIT
-        $anyContracts |= renderContractSection($con, $sqlSigned, 'Signed (last 7 days)', $sevenDaysAgo); // ← EDIT
-
-        if (!$anyContracts) {
-            /* was mb-0 → change to mb-2 (or drop the class entirely) */
-            echo "<p class='pl-2 mb-2'>No new behavior contracts found.</p>";
-        }
-
-
-
-        ?>
-
-            </div><!-- /#contractContent -->
+            if (!$anyContracts) echo "<p class='pl-2 mb-2'>No new behavior contracts found.</p>";
+            ?>
+            </div>
         </div>
-
         <div class="card-footer text-center">
             <button id="toggleContractsBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
         </div>
-    </div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded',function(){
-    const btn  = document.getElementById('toggleContractsBtn');
-    const wrap = document.getElementById('contractContent');
-    let collapsed = true;
-    btn.addEventListener('click',()=>{
-        wrap.style.maxHeight = collapsed ? '3000px' : '400px';
-        btn.textContent      = collapsed ? 'Show Less' : 'Show More';
-        collapsed = !collapsed;
-    });
-    });
-    </script>
-
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var btn   = document.getElementById('toggleNewPhonesBtn');
-        var wrap  = document.getElementById('newPhonesContent');
-        var collapsed = true;
-
-        btn.addEventListener('click', function () {
-            if (collapsed) {
-                wrap.style.maxHeight = '3000px';
-                btn.textContent = 'Show Less';
-            } else {
-                wrap.style.maxHeight = '400px';
-                btn.textContent = 'Show More';
-            }
+        </div>
+        <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            var btn  = document.getElementById('toggleContractsBtn');
+            var div = document.getElementById('contractContent');
+            var collapsed = true;
+            btn.addEventListener('click',function(){
+            div.style.maxHeight = collapsed ? '3000px' : '400px';
+            btn.textContent     = collapsed ? 'Show Less' : 'Show More';
             collapsed = !collapsed;
-        });
-    });
-    </script>
-
-
-
-</div><!-- /.col-md-6 -->
-
-            <!-- Script to Expand/Collapse the Missing-Info block -->
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var toggleMissingBtn = document.getElementById('toggleMissingBtn');
-                var missingInfoDiv   = document.getElementById('missingInfoContent');
-                var isCollapsed      = true;
-
-                toggleMissingBtn.addEventListener('click', function() {
-                    if (isCollapsed) {
-                        // Expand to something large so all content is visible
-                        missingInfoDiv.style.maxHeight = '4000px';
-                        toggleMissingBtn.textContent = 'Show Less';
-                    } else {
-                        // Collapse back
-                        missingInfoDiv.style.maxHeight = '805px';
-                        toggleMissingBtn.textContent = 'Show More';
-                    }
-                    isCollapsed = !isCollapsed;
-                });
             });
-            </script>
+        });
+        </script>
 
+    </div><!-- /.col-md-6 LEFT -->
+
+    <!-- RIGHT COLUMN: 3) Clients with Missing Info -->
+    <div class="col-md-6">
+        <div class="card border-warning">
+        <div class="card-header bg-warning text-white">
+            <i class="fas fa-exclamation-circle"></i> Clients with Missing Info
+        </div>
+        <div class="card-body p-2">
+            <div id="missingInfoContent" style="max-height:805px; overflow:hidden; transition:max-height 0.4s ease;">
+            <?php
+            $sqlMissing = "
+                SELECT 
+                c.id,
+                c.program_id,
+                c.first_name,
+                c.last_name,
+                cm.last_name AS cm_lastname,
+                p.name     AS program_name,
+                c.orientation_date,
+                c.phone_number,
+                c.required_sessions,
+                e.reason   AS exit_reason,
+                c.gender_id
+                FROM client c
+                JOIN program p       ON c.program_id = p.id
+                LEFT JOIN case_manager cm ON c.case_manager_id = cm.id
+                LEFT JOIN exit_reason   e   ON c.exit_reason_id = e.id
+                WHERE c.exit_reason_id = 1
+                AND (
+                        cm.last_name = '1 officer not listed'
+                    OR (c.orientation_date IS NULL OR c.orientation_date = '0000-00-00')
+                    OR (c.phone_number IS NULL OR TRIM(c.phone_number) = '')
+                    OR (c.gender_id = 1)
+                    OR (c.required_sessions NOT IN ($allowedList) AND e.reason = 'Not Exited')
+                )
+                ORDER BY p.name, c.last_name
+            ";
+
+            if ($resMissing = $con->query($sqlMissing)) {
+                if ($resMissing->num_rows > 0) {
+                $missingData = [];
+                while ($row = $resMissing->fetch_assoc()) {
+                    $prog = $row['program_name'];
+                    if (!isset($missingData[$prog])) $missingData[$prog] = [];
+                    $reasons = [];
+                    if ($row['cm_lastname'] === '1 officer not listed') $reasons[] = "No Officer Listed";
+                    if (empty($row['orientation_date']) || $row['orientation_date'] === '0000-00-00') $reasons[] = "No Orientation Date";
+                    if (empty($row['phone_number']) || trim($row['phone_number']) === '') $reasons[] = "No Phone Number";
+                    if ($row['gender_id'] == 1) $reasons[] = "Gender Not Specified";
+                    if (!in_array((int)$row['required_sessions'], $ALLOWED_REQ, true) && $row['exit_reason'] === 'Not Exited') {
+                    $reasons[] = "Required Sessions Invalid";
+                    }
+                    $missingData[$prog][] = ['name' => $row['first_name'].' '.$row['last_name'], 'issues' => $reasons];
+                }
+
+                foreach ($missingData as $programName => $clients) {
+                    echo "<h5 class='font-weight-bold mt-3'>".htmlspecialchars($programName)."</h5>";
+                    $extraClass = (count($clients) > 10) ? ' two-cols' : '';
+                    echo "<ul class='list-unstyled pl-4 mb-0$extraClass'>";
+                    foreach ($clients as $info) {
+                    echo "<li class='mb-3'>";
+                    echo "<strong><i class='fas fa-user text-danger'></i> ".htmlspecialchars($info['name'])."</strong><br>";
+                    foreach ($info['issues'] as $i) echo "<span class='text-danger'>- ".htmlspecialchars($i)."</span><br>";
+                    echo "</li>";
+                    }
+                    echo "</ul>";
+                }
+                } else {
+                echo "<p>No clients with missing info found.</p>";
+                }
+            } else {
+                echo "<p class='text-danger'>[Error executing missing info query]</p>";
+            }
+            ?>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <button id="toggleMissingBtn" class="btn btn-sm btn-outline-secondary">Show More</button>
+        </div>
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.getElementById('toggleMissingBtn');
+            var div = document.getElementById('missingInfoContent');
+            var collapsed = true;
+            btn.addEventListener('click', function() {
+            div.style.maxHeight = collapsed ? '4000px' : '805px';
+            btn.textContent = collapsed ? 'Show Less' : 'Show More';
+            collapsed = !collapsed;
+            });
+        });
+        </script>
+    </div><!-- /.col-md-6 RIGHT -->
     </div><!-- /.row -->
+
 
 
     <!-- ================== ADDITIONAL CHARTS SECTION ================== -->
@@ -922,19 +774,19 @@ $eightDaysFromNow = date('Y-m-d', strtotime('-8 days'));
 
     // 2) SQL to collect monthly success/fail per program
     $sqlData = "
-      SELECT
+    SELECT
         p.name AS program_name,
         YEAR(c.orientation_date) AS yr,
         MONTH(c.orientation_date) AS mn,
         SUM(CASE WHEN c.exit_reason_id IN (1,3,8) THEN 1 ELSE 0 END) AS success_count,
         SUM(CASE WHEN c.exit_reason_id IN (2,4,5,6,7) THEN 1 ELSE 0 END) AS fail_count
-      FROM client c
-      JOIN program p ON c.program_id = p.id
-      WHERE c.orientation_date >= ?
-        AND p.id <> 5
-      GROUP BY p.name, YEAR(c.orientation_date), MONTH(c.orientation_date)
-      ORDER BY p.name, yr, mn
+    FROM client c
+    JOIN program p ON c.program_id = p.id
+    WHERE c.orientation_date >= ?
+    GROUP BY p.name, YEAR(c.orientation_date), MONTH(c.orientation_date)
+    ORDER BY p.name, yr, mn
     ";
+
 
     $programData = []; // $programData[$progName][$YYYYMM] = [ 'success'=>X, 'fail'=>Y ]
 
@@ -1211,11 +1063,10 @@ $eightDaysFromNow = date('Y-m-d', strtotime('-8 days'));
         JOIN referral_type r ON c.referral_type_id = r.id
         JOIN exit_reason e   ON c.exit_reason_id = e.id
         WHERE e.reason = 'Not Exited'
-        AND p.id <> 5       -- Exclude Veterans Court (program_id=5)
-        AND r.id <> 6       -- Exclude referral type VTC (referral_type_id=6)
         GROUP BY p.id, r.id
         ORDER BY p.id, r.id
     ";
+
 
     $chartDataByProgram = [];
     if ($res = $con->query($sqlReferralBreakdown)) {

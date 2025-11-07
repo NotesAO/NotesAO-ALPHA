@@ -369,17 +369,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $foundClient = $client;
                 log_event("✅ Match found: " . json_encode($client));
 
-                // Payment link by therapy_group
-                $needed_keys = [
-                    'payment_link_url',
-                    'paylink.tg.' . (int)$foundClient['therapy_group_id'],
-                ];
-                
-                $payment_link = portal_payment_link_for_group(
-                    get_settings_map($con, ['paylink.tg.'.(int)$foundClient['therapy_group_id'], 'payment_link_url']),
-                    (int)$foundClient['therapy_group_id']
-                );
-
+                // Global payment link + optional promo note (no per-group links)
+                $settings     = get_settings_map($con, ['payment_link_url','promo.note']);
+                $payment_link = trim((string)($settings['payment_link_url'] ?? ''));
+                $promo_note   = trim((string)($settings['promo.note'] ?? ''));
 
                 // Attendance arrays for the modal
                 $attendanceDays = $excusedDays = $unexcusedDays = [];
@@ -601,7 +594,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
+        /* ---------------- Billing (global link) ---------------- */
+        ?>
+        <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title mb-2">Billing</h5>
 
+            <div class="row">
+            <div class="col-sm-4">
+                <small class="text-muted d-block">Fee</small>
+                <strong>$<?= h(number_format((float)($foundClient['fee'] ?? 0), 2)) ?></strong>
+            </div>
+            <div class="col-sm-4">
+                <small class="text-muted d-block">Current Balance</small>
+                <?php $bal=(float)($foundClient['balance']??0); $balClass=$bal>0?'text-danger':'text-success'; ?>
+                <strong class="<?= $balClass ?>">$<?= h(number_format($bal,2)) ?></strong>
+            </div>
+            </div>
+
+            <?php
+            // Show promo ONLY if fee is 10 or 15
+            $fee_int = (int) round((float)($foundClient['fee'] ?? 0));
+            if (in_array($fee_int, [10,15], true)) {
+                $note = $promo_note !== '' ? $promo_note : 'Use code REDUCED at checkout.';
+                echo '<div class="mt-2 small text-danger"><strong>Promo:</strong> ' . h($note) . '</div>';
+            }
+            ?>
+
+            <?php if (!empty($payment_link)): ?>
+            <div class="mt-2">
+                <small class="text-muted d-block">Payment Link</small>
+                <a href="<?= h($payment_link) ?>" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Pay Now</a>
+                <div><small class="text-muted"><?= h($payment_link) ?></small></div>
+            </div>
+            <?php else: ?>
+            <div class="mt-2 text-danger small">Payment link is not configured. Please contact the office.</div>
+            <?php endif; ?>
+        </div>
+        </div>
+        <?php
+        /* -------------- end Billing card -------------- */
 
         // Build make-up options if empty
         if (empty($makeups)) {

@@ -1,197 +1,293 @@
 <?php
+declare(strict_types=1);
 ob_start();
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-// -------------------------
-// LOGGING SETUP (optional)
-// -------------------------
-$log_file = '/home/notesao/logs/client.error.log';
-ini_set('log_errors', 1);
-ini_set('error_log', $log_file);
-
-function log_event($message) {
-    global $log_file;
-    error_log("[" . date('Y-m-d H:i:s') . "] " . $message . PHP_EOL, 3, $log_file);
+if (!function_exists('h')) {
+    function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
 }
 
-log_event("=== New page load: clientportal.php ===");
-
-// -------------------------
-// DB CONFIG
-// -------------------------
+/* -----------------------------------------------------------
+ * DB CONFIG  (client-facing portal uses direct credentials)
+ * ----------------------------------------------------------- */
 define('db_host', '50.28.37.79');
 define('db_name', 'clinicnotepro_lakeview');
 define('db_user', 'clinicnotepro_lakeview_app');
 define('db_pass', 'PF-m[T-+pF%g');
 
-// -------------------------
-// CONNECT TO CLIENT DB
-// -------------------------
-$con = new mysqli(db_host, db_user, db_pass, db_name);
-if ($con->connect_error) {
-    log_event("❌ DB connection failed: " . $con->connect_error);
-    die("Database connection failed.");
+/* -----------------------------------------------------------
+ * DB CONNECT
+ * ----------------------------------------------------------- */
+$con = @new mysqli(db_host, db_user, db_pass, db_name);
+if ($con->connect_errno) {
+    http_response_code(500);
+    exit('Database connection error.');
 }
-log_event("✅ DB connected");
+$con->set_charset('utf8mb4');
 
-// -------------------------
-// HELPER: Convert IDs to text
-// -------------------------
-function getProgramName($program_id) {
-    switch($program_id) {
-        case 1: return "Thinking for a Change";
-        case 2: return "Men's BIPP";
-        case 3: return "Women's BIPP";
-        case 4: return "Anger Control";  // <-- Added for program_id=4
-        default: return "Other/Unknown Program";
-    }
+/* -----------------------------------------------------------
+ * LIB (includes SQL helpers + group/billing/date utilities)
+ * ----------------------------------------------------------- */
+require_once __DIR__ . '/clientportal_lib.php';
+
+/* -----------------------------------------------------------
+ * Small helpers specific to this page
+ * ----------------------------------------------------------- */
+function program_name(mysqli $con, int $id): string {
+    $row = sql_select_one($con, "SELECT name FROM program WHERE id = ? LIMIT 1", [(string)$id]);
+    return $row['name'] ?? 'Program';
 }
-
-function getReferralName($referral_id) {
-    switch($referral_id) {
-        case 1: return "Probation";
-        case 2: return "Parole / CPS";
-        case 3: return "Pretrial";
-        case 4: return "CPS";
-        case 5: return "Attorney";
-        case 6: return "VTC";
-        default: return "Other/Unknown Referral";
-    }
+function referral_name(mysqli $con, int $id): string {
+    $row = sql_select_one($con, "SELECT referral_type FROM referral_type WHERE id = ? LIMIT 1", [(string)$id]);
+    return $row['referral_type'] ?? 'Referral';
 }
 
 /**
- * Normalise referral IDs so CPS (4) is treated like Parole (2).
- * Extend or alter the map array if you ever need more aliases.
+ * Load primary therapy group meta safely (checks optional columns).
+ * Returns:
+ *  [
+ *    'id'=>int, 'name'=>string, 'address'=>string|null,
+ *    'day_label'=>string|null, 'time_label'=>string|null,
+ *    'is_virtual'=>bool, 'join_link'=>string
+ *  ] or null
  */
-function normalizeReferralId(int $id): int
-{
-    static $map = [
-        4 => 1,   // CPS -> Parole
-        // 7 => 2, // example: something else -> Parole
+function load_primary_group_meta(mysqli $con, int $therapy_group_id, int $program_id): ?array {
+    if ($therapy_group_id <= 0) return null;
+
+    $cols = ['id'];
+    foreach (['name','address','day_label','time_label'] as $c) {
+        if (column_exists($con, 'therapy_group', $c)) $cols[] = $c;
+    }
+    $sql = "SELECT ".implode(',', $cols)." FROM therapy_group WHERE id = ? LIMIT 1";
+    $tg  = sql_select_one($con, $sql, [(string)$therapy_group_id]);
+    if (!$tg) return null;
+
+    $name      = (string)($tg['name'] ?? '');
+    $address   = isset($tg['address']) ? (string)$tg['address'] : '';
+    $dayLabel  = isset($tg['day_label']) ? (string)$tg['day_label'] : '';
+    $timeLabel = isset($tg['time_label']) ? (string)$tg['time_label'] : '';
+
+    // All programs are virtual; prefer the program-level link so every slot uses the same URL.
+    $isVirtual = true;
+    $joinLink  = resolve_join_link_for(0, $program_id) ?: resolve_join_link_for($therapy_group_id, $program_id);
+
+    return [
+        'id'         => (int)$tg['id'],
+        'name'       => $name,
+        'address'    => $address,
+        'day_label'  => $dayLabel,
+        'time_label' => $timeLabel,
+        'is_virtual' => $isVirtual,
+        'join_link'  => $joinLink,
     ];
-    return $map[$id] ?? $id;
 }
 
 
-// -----------------------------------------------------------------------------
-// FULL GROUP DATA
-// Each entry includes 'day_time' for short label in make-up list
-// -----------------------------------------------------------------------------
-$groupData = [
-    
-];
+/**
+ * Load “other weekly” groups for the same program (excluding primary).
+ * If therapy_group.program_id exists, query it; otherwise fall back to
+ * the static mapping from the lib (get_weekly_slots_for_program()).
+ *
+ * Returns array of rows each with keys similar to load_primary_group_meta, but some
+ * may be partial if using the static fallbacks.
+ */
+function load_other_weekly_groups(mysqli $con, int $program_id, ?int $exclude_tg_id = null): array {
+    $rows = [];
 
-foreach ($groupData as &$g) {          // & makes it modify in-place
-    $g['referral_type_id'] = normalizeReferralId((int)$g['referral_type_id']);
-}
-unset($g);                             // break the reference
-
-
-// ----------------------------------------------------
-// PROCESS LOGIN / LOOKUP
-// ----------------------------------------------------
-$foundClient   = null;
-$error_message = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $first_name  = trim($_POST['first_name'] ?? '');
-    $last_name   = trim($_POST['last_name'] ?? '');
-    $dob_year  = trim($_POST['dob_year'] ?? '');
-    $dob_month = trim($_POST['dob_month'] ?? '');
-    $dob_day   = trim($_POST['dob_day'] ?? '');
-    $birth_place = trim($_POST['birth_place'] ?? '');
-   
-    // Basic validation: ensure all are non-empty
-    if ($first_name && $last_name && $dob_year && $dob_month && $dob_day) {
-        // reassemble into YYYY-MM-DD
-        // zero-pad month/day to 2 digits if needed
-        $dob = sprintf('%04d-%02d-%02d', $dob_year, $dob_month, $dob_day);
-
-        log_event("📨 POST received | fn={$first_name}, ln={$last_name}, dob={$dob}, bp={$birth_place}");
-
-        // ... proceed with your existing logic ...
-    } else {
-        $error_message = "First name, last name, and full DOB are required.";
-        log_event("⚠️ Required fields missing (fn, ln, or dob).");
+    $hasProgramId = column_exists($con, 'therapy_group', 'program_id');
+    $selCols = ['id'];
+    foreach (['name','address','day_label','time_label','program_id'] as $c) {
+        if (column_exists($con, 'therapy_group', $c)) $selCols[] = $c;
     }
 
-    log_event("📨 POST received | fn={$first_name}, ln={$last_name}, dob={$dob}, bp={$birth_place}");
+    if ($hasProgramId) {
+        $sql = "SELECT ".implode(',', $selCols)." FROM therapy_group WHERE program_id = ? ORDER BY name";
+        $rowsDb = sql_select_all($con, $sql, [(string)$program_id]);
 
-    if ($first_name && $last_name && $dob) {
-        // Pull from client table
-        $sql = "
-            SELECT 
-                c.first_name, c.last_name, c.date_of_birth, c.birth_place,
-                c.gender_id, c.referral_type_id, c.required_sessions, c.fee,
-                c.therapy_group_id,
-                c.program_id,
-                c.weekly_attendance,
-                c.attends_sunday, c.attends_monday, c.attends_tuesday,
-                c.attends_wednesday, c.attends_thursday, c.attends_friday,
-                c.attends_saturday
-            FROM client c
-            WHERE LOWER(c.first_name) = LOWER(?)
-              AND LOWER(c.last_name) = LOWER(?)
-              AND c.date_of_birth = ?
-              AND (c.birth_place IS NULL OR LOWER(c.birth_place) = LOWER(?))
-            LIMIT 1
-        ";
-        $stmt = $con->prepare($sql);
-        if (!$stmt) {
-            $error_message = "Server error (SQL).";
-            log_event("❌ SQL prepare failed: " . $con->error);
-        } else {
-            $stmt->bind_param('ssss', $first_name, $last_name, $dob, $birth_place);
-            $stmt->execute();
-            $result = $stmt->get_result();
+        // Count non-default choices (excluding the current primary if provided)
+        $nonDefault = array_values(array_filter($rowsDb, function($r) use ($exclude_tg_id) {
+            $isDefault  = isset($r['name']) && preg_match('/default/i', (string)$r['name']);
+            $isExcluded = $exclude_tg_id && isset($r['id']) && (int)$r['id'] === (int)$exclude_tg_id;
+            return !$isDefault && !$isExcluded;
+        }));
 
-            if ($client = $result->fetch_assoc()) {
-                $_SESSION['client_verified'] = true;
-                $foundClient = $client;
-                log_event("✅ Match found: " . json_encode($client));
-            } else {
-                $error_message = "No matching client record found.";
-                log_event("❌ No match found for that name/DOB/birth_place.");
-            }
-            $stmt->close();
+        foreach ($rowsDb as $r) {
+            $id = (int)$r['id'];
+            if ($exclude_tg_id && $id === (int)$exclude_tg_id) continue;
+
+            $name = (string)($r['name'] ?? '');
+            $isDefault = preg_match('/default/i', $name) === 1;
+
+            // Hide “Default Group” when there is at least one other option
+            if ($isDefault && count($nonDefault) > 0) continue;
+
+            $rows[] = [
+                'id'         => $id,
+                'name'       => $name,
+                'address'    => (string)($r['address'] ?? ''),
+                'day_label'  => (string)($r['day_label'] ?? ''),
+                'time_label' => (string)($r['time_label'] ?? ''),
+                // All virtual. Use the program-level link for consistency.
+                'is_virtual' => true,
+                'join_link'  => resolve_join_link_for(0, $program_id),
+            ];
         }
     } else {
-        $error_message = "First name, last name, and DOB are required.";
-        log_event("⚠️ Required fields missing.");
+        // Static fallback
+        $slots = get_weekly_slots_for_program($program_id);
+        foreach ($slots as $label) {
+            $rows[] = [
+                'id'         => 0,
+                'name'       => $label,
+                'address'    => '',
+                'day_label'  => '',
+                'time_label' => '',
+                'is_virtual' => true,
+                'join_link'  => resolve_join_link_for(0, $program_id),
+            ];
+        }
+    }
+
+    return $rows;
+}
+
+
+/**
+ * Build billing view model.
+ * Status possibilities:
+ *  - 'no_charge' (CPS)
+ *  - 'paid'      (Parenting fee met or other heuristic)
+ *  - 'due'       (needs payment; link provided)
+ *  - 'unknown'   (fallback text)
+ */
+function build_billing_view_model(mysqli $con, array $client): array {
+    $refId = (int)($client['referral_type_id'] ?? 0);
+    $pid   = (int)($client['program_id'] ?? 0);
+
+    // CPS
+    if ($refId === 4) {
+        return [
+            'status'   => 'no_charge',
+            'headline' => 'CPS — No Charge',
+            'subtext'  => 'Your case is listed as CPS. Payment is not required.',
+            'pay_link' => '',
+        ];
+    }
+
+    // Use optional payment status helper if columns exist
+    $pstat = client_payment_status_for_portal($con, $client); // checks for paid_amount/paid_source safely
+    if (($pstat['known'] ?? false) && ($pstat['status'] ?? '') === 'paid') {
+        return [
+            'status'   => 'paid',
+            'headline' => 'Paid',
+            'subtext'  => $pstat['detail'] ?? '',
+            'pay_link' => '',
+        ];
+    }
+
+    // Otherwise, show link
+    $link = portal_payment_link_for_client($client);
+    return [
+        'status'   => $link ? 'due' : 'unknown',
+        'headline' => $link ? 'Payment Due' : 'Billing Information',
+        'subtext'  => $link ? 'Please complete your payment using the link below.' : 'Please contact the office for billing assistance.',
+        'pay_link' => $link,
+    ];
+}
+
+/* -----------------------------------------------------------
+ * Sign out
+ * ----------------------------------------------------------- */
+if (isset($_GET['signout'])) {
+    unset($_SESSION['client_verified'], $_SESSION['client_id']);
+    header('Location: '.$_SERVER['PHP_SELF']);
+    exit;
+}
+
+/* -----------------------------------------------------------
+ * POST: identity check (First, Last, DOB, optional Birth Place)
+ * ----------------------------------------------------------- */
+$error_message = '';
+$client = null;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $first_name  = trim((string)($_POST['first_name'] ?? ''));
+    $last_name   = trim((string)($_POST['last_name'] ?? ''));
+    $dob_year    = trim((string)($_POST['dob_year'] ?? ''));
+    $dob_month   = trim((string)($_POST['dob_month'] ?? ''));
+    $dob_day     = trim((string)($_POST['dob_day'] ?? ''));
+    $birth_place = trim((string)($_POST['birth_place'] ?? ''));
+
+    if ($first_name !== '' && $last_name !== '' && $dob_year !== '' && $dob_month !== '' && $dob_day !== '') {
+        $dob = sprintf('%04d-%02d-%02d', (int)$dob_year, (int)$dob_month, (int)$dob_day);
+
+        // Build SQL dynamically so birth_place is only enforced when provided
+        $sql = "SELECT id, first_name, last_name, date_of_birth, birth_place,
+                       program_id, therapy_group_id, referral_type_id,
+                       required_sessions, fee, gender_id
+                FROM client
+                WHERE LOWER(first_name)=LOWER(?) AND LOWER(last_name)=LOWER(?)
+                  AND date_of_birth = ?";
+        $params = [$first_name, $last_name, $dob];
+
+        if ($birth_place !== '') {
+            $sql .= " AND LOWER(birth_place) = LOWER(?)";
+            $params[] = $birth_place;
+        }
+
+        $sql .= " LIMIT 1";
+        $client = sql_select_one($con, $sql, $params);
+
+        if ($client) {
+            $_SESSION['client_verified'] = true;
+            $_SESSION['client_id'] = (int)$client['id'];
+            header('Location: '.$_SERVER['PHP_SELF']);
+            exit;
+        } else {
+            $error_message = 'No matching client found.';
+        }
+    } else {
+        $error_message = 'All fields are required.';
     }
 }
 
-$con->close();
-log_event("🔒 DB connection closed.");
-?>
+/* -----------------------------------------------------------
+ * If session is verified, pull client again by id
+ * ----------------------------------------------------------- */
+if (empty($client) && !empty($_SESSION['client_verified']) && !empty($_SESSION['client_id'])) {
+    $client = sql_select_one(
+        $con,
+        "SELECT id, first_name, last_name, date_of_birth, birth_place,
+                program_id, therapy_group_id, referral_type_id,
+                required_sessions, fee, gender_id
+         FROM client
+         WHERE id = ? LIMIT 1",
+        [(string)$_SESSION['client_id']]
+    );
+}
 
-<!DOCTYPE html>
+/* -----------------------------------------------------------
+ * Render
+ * ----------------------------------------------------------- */
+?>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Client Portal - NotesAO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- FAVICON LINKS (from index.html) -->
+    <!-- Favicons (optional) -->
     <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
-
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#211c56">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="/favicons/apple-touch-icon-ipad-pro.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
-
     <link rel="manifest" href="/favicons/site.webmanifest">
-    <meta name="apple-mobile-web-app-title" content="NotesAO">
 
+    <!-- Bootstrap 4.5 + deps -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -203,42 +299,41 @@ log_event("🔒 DB connection closed.");
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
         .container {
-            background: white;
+            background: #fff;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            max-width: 700px;
+            max-width: 860px;
             width: 100%;
         }
-        input, button {
-            border-radius: 8px;
-        }
-        .error-message {
-            background: #d9534f;
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-        .info-table td { padding: 4px 8px; }
+        .error { background:#d9534f; color:#fff; padding:10px; border-radius:8px; margin-top:10px; }
+        label { margin-top: .75rem; font-weight: 500; }
+        .small-muted { color:#6c757d; font-size:.875rem; }
+        .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+        .list-card .row + .row { border-top: 1px solid #eee; margin-top: .75rem; padding-top: .75rem; }
+        .badge-soft { background:#f1f3f5; color:#555; font-weight:600; }
     </style>
 </head>
 <body>
-
 <div class="container">
-    <a href="https://lakevieweducation.com">
-        <img alt="Lakeview" src="lakeviewlogo.png" class="img-fluid mb-3">
+  <div class="text-center">
+    <a href="https://lakevieweducation.com/">
+        <img src="lakeviewlogo.png" alt="Lakeview Education"
+             class="img-fluid mb-3" style="max-height:150px;">
     </a>
-    <h2 class="text-center">Client Portal</h2>
+  </div>
 
-    <?php if (!empty($error_message)) : ?>
-        <div class="error-message">❌ <?= htmlspecialchars($error_message) ?></div>
-    <?php endif; ?>
+  <h2 class="text-center">Client Portal</h2>
 
-    <!-- Simple lookup form -->
+  <?php if (!empty($error_message)): ?>
+    <div class="error"><?= h($error_message) ?></div>
+  <?php endif; ?>
+
+  <?php if (empty($client)): ?>
+    <!-- Sign-in -->
     <form method="post">
         <label>First Name:</label>
         <input type="text" name="first_name" class="form-control" required>
@@ -248,379 +343,239 @@ log_event("🔒 DB connection closed.");
 
         <label>Date of Birth:</label>
         <div class="form-row">
-        <div class="col">
-            <select name="dob_month" class="form-control" required>
-            <option value="">Month</option>
-            <?php
-            for ($m = 1; $m <= 12; $m++) {
-                $monthName = date("F", mktime(0, 0, 0, $m, 1));
-                echo "<option value='$m'>$monthName</option>";
-            }
-            ?>
-            </select>
-        </div>
-        <div class="col">
-            <select name="dob_day" class="form-control" required>
-            <option value="">Day</option>
-            <?php
-            for ($d = 1; $d <= 31; $d++) {
-                echo "<option value='$d'>$d</option>";
-            }
-            ?>
-            </select>
-        </div>
-        <div class="col">
-            <select name="dob_year" class="form-control" required>
-            <option value="">Year</option>
-            <?php
-            for ($y = 1930; $y <= (int)date('Y'); $y++) {
-                echo "<option value='$y'>$y</option>";
-            }
-            ?>
-            </select>
-        </div>
+            <div class="col">
+                <select name="dob_month" class="form-control" required>
+                    <option value="">Month</option>
+                    <?php for ($m=1; $m<=12; $m++):
+                        $monthName = date("F", mktime(0,0,0,$m,1)); ?>
+                        <option value="<?= $m ?>"><?= $monthName ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
+            <div class="col">
+                <select name="dob_day" class="form-control" required>
+                    <option value="">Day</option>
+                    <?php for ($d=1; $d<=31; $d++): ?>
+                        <option value="<?= $d ?>"><?= $d ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
+            <div class="col">
+                <select name="dob_year" class="form-control" required>
+                    <option value="">Year</option>
+                    <?php for ($y=1930; $y<= (int)date('Y'); $y++): ?>
+                        <option value="<?= $y ?>"><?= $y ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
         </div>
 
-
-
+        <label>Birth Place (optional):</label>
+        <input type="text" name="birth_place" class="form-control" placeholder="City or City, State">
 
         <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
     </form>
-</div>
 
-<?php if ($foundClient): ?>
-<!-- Modal showing group info -->
-<div class="modal fade" id="clientModal" tabindex="-1" role="dialog" aria-labelledby="clientModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title">Welcome, <?= htmlspecialchars($foundClient['first_name']) ?>!</h5>
-        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-      </div>
-      <div class="modal-body">
-      <?php
-        // ------------------------------------------------------
-        // 1) Extract client data
-        // ------------------------------------------------------
-        $clientProgramId   = (int)$foundClient['program_id'];
-        $clientReferralId  = (int)$foundClient['referral_type_id'];
-        $clientReferralId = normalizeReferralId($clientReferralId);
-        $clientGenderId    = (int)$foundClient['gender_id'];
-        $clientSessions    = (int)$foundClient['required_sessions'];
-        $clientFee         = (float)$foundClient['fee'];
-        $clientGroupId     = (int)$foundClient['therapy_group_id'];
+  <?php else: ?>
+    <?php
+      $pid     = (int)($client['program_id'] ?? 0);
+      $tgid    = (int)($client['therapy_group_id'] ?? 0);
+      $refId   = (int)($client['referral_type_id'] ?? 0);
+      $fee     = isset($client['fee']) && $client['fee'] !== '' ? (float)$client['fee'] : null;
+      $reqSess = (int)($client['required_sessions'] ?? 0);
 
-        $progName     = getProgramName($clientProgramId);
-        $referralName = getReferralName($clientReferralId);
-
-        // ------------------------------------------------------
-        // 2) Always display Program/Referral/RequiredSessions/Fee
-        // ------------------------------------------------------
-        echo '<table class="info-table">';
-        echo '<tr><td><strong>Program:</strong></td><td>'   . htmlspecialchars($progName)     . '</td></tr>';
-        echo '<tr><td><strong>Referral:</strong></td><td>'  . htmlspecialchars($referralName) . '</td></tr>';
-        echo '<tr><td><strong>Required Sessions:</strong></td><td>' 
-            . htmlspecialchars($clientSessions) . '</td></tr>';
-        echo '<tr><td><strong>Fee:</strong></td><td>$'
-            . htmlspecialchars($clientFee) . '</td></tr>';
-        echo '</table>';
-        echo '<hr>';
-
-        // We'll use a simple flag to skip the $finalGroup logic if T4C
-        $skipGroupLogic = false;
-
-        // ------------------------------------------------------
-        // 3) If T4C (program_id=1), show T4C block & skip $finalGroup
-        // ------------------------------------------------------
-        if ($clientProgramId === 1) {
-            $skipGroupLogic = true;
-
-            echo "<p><strong>Your Assigned Group(s):</strong></p>";
-
-            // Convert 'attends_...' columns to booleans for T4C days
-            $attends = [
-                'sunday'    => (int)$foundClient['attends_sunday'],
-                'monday'    => (int)$foundClient['attends_monday'],
-                'wednesday' => (int)$foundClient['attends_wednesday'],
-                'thursday'  => (int)$foundClient['attends_thursday'],
-                'friday'    => (int)$foundClient['attends_friday']
-            ];
-
-            // Check if therapy_group_id indicates Virtual T4C (116)
-            if ($clientGroupId === 116) {
-                // ---------- Virtual T4C ----------
-                $groupDisplay = [];
+      $pName   = program_name($con, $pid);
+      $rName   = referral_name($con, $refId);
 
 
-                if (!empty($groupDisplay)) {
-                    echo "<ul>";
-                    foreach ($groupDisplay as $item) {
-                        echo "<li>$item</li>";
-                    }
-                    echo "</ul>";
+      // Primary group meta + Other weekly sessions
+      $primary = $tgid > 0 ? load_primary_group_meta($con, $tgid, $pid) : null;
+      $others  = load_other_weekly_groups($con, $pid, $tgid ?: null);
+
+      // Upcoming variable dates (program and TG-scoped)
+      $upcomingDates = get_upcoming_group_dates($con, $pid, $tgid ?: null, 5);
+
+      // Billing view model
+      $billing = build_billing_view_model($con, $client);
+    ?>
+
+    <!-- Header card -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title mb-3"><?= h($client['first_name'].' '.$client['last_name']) ?></h5>
+        <div class="row">
+          <div class="col-md-6 col-6">
+            <div class="small-muted">Program</div>
+            <div><strong><?= h($pName) ?></strong></div>
+          </div>
+          <div class="col-md-6 col-6">
+            <div class="small-muted">Referral</div>
+            <div><strong><?= h($rName) ?></strong></div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-6 col-6">
+            <div class="small-muted">Required Sessions</div>
+            <div><strong><?= $reqSess > 0 ? h((string)$reqSess) : '—' ?></strong></div>
+          </div>
+          <div class="col-md-6 col-6">
+            <div class="small-muted">Your Fee</div>
+            <div><strong>
+              <?php
+                if ($billing['status'] === 'no_charge') {
+                    echo 'CPS — No Charge';
+                } elseif ($billing['status'] === 'paid') {
+                    echo 'Paid';
                 } else {
-                    echo "<p class='text-danger'>
-                            ⚠️ No valid attendance days marked for T4C virtual group.
-                          </p>";
+                    echo $fee !== null ? ('$'.number_format($fee, 2). ' per session') : 'See billing section';
                 }
-
-            } else {
-                // ---------- In-Person T4C ----------
-                $groupDisplay = [];
-
-                if ($attends['sunday']) {
-                    $groupDisplay[] = "Sunday: 2:30PM AND/OR 5PM — 6850 Manhattan Blvd Ste. 205, Arlington, TX 76120";
-                }
-                if ($attends['monday']) {
-                    $groupDisplay[] = "Monday: 10AM OR 7PM — 1100 East Lancaster Ave, Fort Worth, TX 76102";
-                }
-                if ($attends['wednesday']) {
-                    $groupDisplay[] = "Wednesday: 7PM — 1100 East Lancaster Ave, Fort Worth, TX 76102";
-                }
-                if ($attends['thursday']) {
-                    $groupDisplay[] = "Thursday: 7PM — 6850 Manhattan Blvd Ste. 205, Arlington, TX 76120";
-                }
-                if ($attends['friday']) {
-                    $groupDisplay[] = "Friday: 10AM — 1100 East Lancaster Ave, Fort Worth, TX 76102";
-                }
-
-                if (!empty($groupDisplay)) {
-                    echo "<ul>";
-                    foreach ($groupDisplay as $line) {
-                        echo "<li>" . htmlspecialchars($line) . "</li>";
-                    }
-                    echo "</ul>";
-                } else {
-                    echo "<p class='text-danger'>
-                            ⚠️ No attendance days marked for T4C in-person groups.
-                          </p>";
-                }
-            }
-
-            // Done with T4C. We won't do finalGroup logic below.
-
-        } // end if T4C
-
-        // ------------------------------------------------------
-        // 4) If not T4C, do pass-1 / pass-2 finalGroup logic
-        // ------------------------------------------------------
-        if (!$skipGroupLogic) {
-            // PASS 1: EXACT match
-            $exactMatch = null;
-            foreach ($groupData as $g) {
-                // If Anger Control or T4C, skip referral check:
-                // (Though T4C is absent from $groupData, so it won't matter)
-                $refOK = in_array($clientProgramId, [1, 4])
-                    ? true
-                    : (isset($g['referral_type_id']) && $g['referral_type_id'] === $clientReferralId);
-
-                if (
-                    $g['program_id']        === $clientProgramId &&
-                    $refOK &&
-                    $g['gender_id']         === $clientGenderId &&
-                    $g['required_sessions'] === $clientSessions &&
-                    (float)$g['fee']        === $clientFee &&
-                    $g['therapy_group_id']  === $clientGroupId
-                ) {
-                    $exactMatch = $g;
-                    break;
-                }
-            }
-
-            // PASS 2: fallback ignoring fee
-            $finalGroup = $exactMatch;
-            if (!$exactMatch) {
-                log_event("⚠️ No exact match on fee. Attempting fallback ignoring fee.");
-
-                foreach ($groupData as $g) {
-                    $refOK = ($clientProgramId === 4)
-                        ? true
-                        : (isset($g['referral_type_id']) && $g['referral_type_id'] === $clientReferralId);
-
-                    if (
-                        $g['program_id']        === $clientProgramId &&
-                        $refOK &&
-                        $g['gender_id']         === $clientGenderId &&
-                        $g['required_sessions'] === $clientSessions &&
-                        $g['therapy_group_id']  === $clientGroupId
-                    ) {
-                        $finalGroup = $g;
-                        break;
-                    }
-                }
-            }
-
-            // If we have a finalGroup, show BIPP or Anger info
-            if ($finalGroup) {
-                // If fallback, show note
-                if (!$exactMatch) {
-                    echo "<div class='alert alert-warning' role='alert'>
-                            <strong>Note:</strong> The fee on your record ($"
-                          . htmlspecialchars($clientFee)
-                          . ") did not match exactly. We matched on your other info.
-                          </div>";
-                }
-
-                // Distinguish BIPP in-person vs virtual vs Anger
-                $inPersonIds    = [103, 107, 117];
-                $isInPersonBIPP = in_array($finalGroup['therapy_group_id'], $inPersonIds);
-
-                echo "<p><strong>Your Assigned Group:</strong></p>";
-
-                if ($clientProgramId === 4) {
-                    // ---------- ANGER CONTROL ----------
-                    echo "<p>" . htmlspecialchars($finalGroup['label']) . "</p>";
-                    echo "<p>"
-                       . "<a href='" . htmlspecialchars($finalGroup['link']) . "' target='_blank'>"
-                       . htmlspecialchars($finalGroup['link'])
-                       . "</a></p>";
-
-                    // Show only the "other day" as single makeup
-                    $otherId = ($finalGroup['therapy_group_id'] === 114) ? 119 : 114;
-
-                    // Attempt to find that single "other day" group
-                    $otherGroup = null;
-                    foreach ($groupData as $mg) {
-                        if (
-                            $mg['program_id']       === 4 &&
-                            $mg['therapy_group_id'] === $otherId &&
-                            $mg['required_sessions']=== $clientSessions &&
-                            (float)$mg['fee']       === $clientFee
-                        ) {
-                            $otherGroup = $mg;
-                            break;
-                        }
-                    }
-
-                    if ($otherGroup) {
-                        echo "<hr><p><strong>Make‐Up Group:</strong></p>";
-                        echo "<p>" . htmlspecialchars($otherGroup['label']) . "<br>";
-                        echo "<a href='" . htmlspecialchars($otherGroup['link']) . "' target='_blank'>";
-                        echo htmlspecialchars($otherGroup['link']);
-                        echo "</a></p>";
-                    } else {
-                        echo "<hr><p><em>No make‐up group found.</em></p>";
-                    }
-
-                } elseif ($isInPersonBIPP) {
-                    // ---------- BIPP IN-PERSON ----------
-                    echo "<p>" . htmlspecialchars($finalGroup['label']) . "</p>";
-                    echo "<p>Location: 1100 East Lancaster Ave, Fort Worth, TX 76102</p>";
-                    echo "<p>Time: " . htmlspecialchars($finalGroup['day_time']) . "</p>";
-
-                    // Gather possible in-person BIPP makeups
-                    $makeupGroups = [];
-                    foreach ($groupData as $mg) {
-                        // skip same row
-                        if ($mg === $finalGroup) continue;
-                        if ($mg['therapy_group_id'] === $clientGroupId) continue;
-
-                        if (
-                            $mg['program_id']       === $clientProgramId &&
-                            isset($mg['referral_type_id']) &&
-                            $mg['referral_type_id']=== $clientReferralId &&
-                            $mg['gender_id']        === $clientGenderId &&
-                            $mg['required_sessions']== $clientSessions
-                        ) {
-                            // must match same fee if you want
-                            if ((float)$mg['fee'] === $clientFee) {
-                                if (in_array($mg['therapy_group_id'], $inPersonIds)) {
-                                    $makeupGroups[] = $mg;
-                                }
-                            }
-                        }
-                    }
-
-                    if (!empty($makeupGroups)) {
-                        echo "<hr><p><strong>Make‐Up Groups (In-Person):</strong></p>";
-                        echo "<ul>";
-                        foreach ($makeupGroups as $mu) {
-                            echo "<li><strong>" . htmlspecialchars($mu['label']) . "</strong><br>";
-                            echo "Location: 1100 East Lancaster Ave, Fort Worth, TX 76102<br>";
-                            echo "Time: " . htmlspecialchars($mu['day_time']) . "</li>";
-                        }
-                        echo "</ul>";
-                    } else {
-                        echo "<hr><p><em>No make‐up groups found matching your same fee/program/referral/sessions.</em></p>";
-                    }
-
-                } else {
-                    // ---------- BIPP VIRTUAL ----------
-                    echo "<p>" . htmlspecialchars($finalGroup['label']) . "<br>";
-                    echo "<a href='" . htmlspecialchars($finalGroup['link']) . "' target='_blank'>";
-                    echo htmlspecialchars($finalGroup['link']);
-                    echo "</a></p>";
-
-                    // Gather BIPP virtual makeups
-                    $makeupGroups = [];
-                    foreach ($groupData as $mg) {
-                        // skip same row
-                        if ($mg === $finalGroup) continue;
-                        if ($mg['therapy_group_id'] === $clientGroupId) continue;
-
-                        if (
-                            $mg['program_id']       === $clientProgramId &&
-                            isset($mg['referral_type_id']) &&
-                            $mg['referral_type_id']=== $clientReferralId &&
-                            $mg['gender_id']        === $clientGenderId &&
-                            $mg['required_sessions']== $clientSessions
-                        ) {
-                            if ((float)$mg['fee'] === $clientFee) {
-                                // must not be in-person
-                                if (!in_array($mg['therapy_group_id'], $inPersonIds)) {
-                                    $makeupGroups[] = $mg;
-                                }
-                            }
-                        }
-                    }
-
-                    if (!empty($makeupGroups)) {
-                        echo "<hr><p><strong>Make‐Up Groups (Virtual):</strong></p>";
-                        echo "<ul>";
-                        foreach ($makeupGroups as $mu) {
-                            $short = $mu['day_time'] ?? $mu['label'];
-                            echo "<li><a href='" . htmlspecialchars($mu['link']) . "' target='_blank'>"
-                                 . htmlspecialchars($short) . "</a></li>";
-                        }
-                        echo "</ul>";
-                    } else {
-                        echo "<hr><p><em>No make‐up groups found matching your same fee/program/referral/sessions.</em></p>";
-                    }
-                }
-
-            } else {
-                // No finalGroup
-                echo "<div class='alert alert-danger' role='alert'>
-                        <strong>No matching link found</strong> for your group.
-                        Please verify your data or contact the administrator.
-                      </div>";
-            }
-        } // end if !$skipGroupLogic
-      ?>
-      <hr>
-
-      <?php if ($clientProgramId === 2 || $clientProgramId === 3): ?>
-        <p>
-          <strong>Additional Admin/Reference:</strong><br>
-          Virtual BIPP Intake Packet:
-          <a href="https://lakeview.notesao.com/intake.php" target="_blank">
-            Click Here
-          </a>
-        </p>
-      <?php endif; ?>
-      
+              ?>
+            </strong></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Primary Group -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Your Primary Group</h5>
+        <?php if ($primary): ?>
+          <div class="list-card">
+            <div class="row">
+              <div class="col-md-7">
+                <div><strong><?= h($primary['name'] ?: 'Group #'.$primary['id']) ?></strong></div>
+                <?php if ($primary['day_label'] || $primary['time_label']): ?>
+                  <div class="small-muted">
+                    <?= h(trim(($primary['day_label'] ?? '').' '.($primary['time_label'] ?? ''))) ?>
+                  </div>
+                <?php endif; ?>
+                <?php if (!$primary['is_virtual'] && $primary['address']): ?>
+                  <div class="small-muted">Location: <?= h($primary['address']) ?></div>
+                <?php elseif ($primary['is_virtual']): ?>
+                  <span class="badge badge-soft">Virtual</span>
+                <?php endif; ?>
+              </div>
+              <div class="col-md-5 text-md-right mt-2 mt-md-0">
+                <?php
+                    // Always use the program-level Zoom for Lakeview (all virtual).
+                    $plink = trim((string)($primary['join_link'] ?? ''));
+                    if ($plink === '') { $plink = resolve_join_link_for($tgid, $pid); }
+                ?>
+                <?php if ($plink !== ''): ?>
+                    <a class="btn btn-outline-secondary" target="_blank" rel="noopener"
+                    href="<?= h($plink) ?>">Open Class Link</a>
+                    <div class="small-muted mt-2">
+                    Zoom: <span class="code"><?= h($plink) ?></span>
+                    </div>
+                <?php else: ?>
+                    <div class="small-muted">Your facilitator will provide the access link if needed.</div>
+                <?php endif; ?>
+              </div>
+
+
+            </div>
+          </div>
+        <?php else: ?>
+          <p class="mb-0">No primary group is assigned to your account yet. Please contact the office.</p>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <!-- Upcoming Dates (for programs where dates vary) -->
+    <?php if (!empty($upcomingDates)): ?>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Upcoming Dates</h5>
+          <?php foreach ($upcomingDates as $d): ?>
+            <div class="row">
+              <div class="col-md-8">
+                <div><strong><?= h(format_portal_datetime($d['starts_at'])) ?></strong></div>
+                <?php if (!empty($d['note'])): ?>
+                  <div class="small-muted"><?= h($d['note']) ?></div>
+                <?php endif; ?>
+              </div>
+              <div class="col-md-4 text-md-right mt-2 mt-md-0">
+                <?php
+                  // If primary is virtual and has a link, offer it; else fall back to program default link if any
+                  $join = resolve_join_link_for($tgid, $pid);
+
+                ?>
+                <?php if ($join): ?>
+                  <a class="btn btn-outline-secondary" target="_blank" rel="noopener" href="<?= h($join) ?>">Open Class Link</a>
+                <?php endif; ?>
+              </div>
+            </div>
+          <?php endforeach; ?>
+          <div class="small-muted mt-2">If you do not see a date that works, please contact the office.</div>
+        </div>
+      </div>
+    <?php endif; ?>
+
+    <!-- Other Weekly Sessions -->
+    <?php if (!empty($others)): ?>
+        <div class="card mb-3">
+            <div class="card-body">
+            <h5 class="card-title">Other Weekly Sessions You Can Attend</h5>
+            <div class="list-card">
+                <?php foreach ($others as $row): ?>
+                <div class="row">
+                    <div class="col-md-7">
+                    <div><strong><?= h($row['name'] ?: 'Group #'.$row['id']) ?></strong></div>
+                    <?php if (!empty($row['day_label']) || !empty($row['time_label'])): ?>
+                        <div class="small-muted"><?= h(trim(($row['day_label'] ?? '').' '.($row['time_label'] ?? ''))) ?></div>
+                    <?php endif; ?>
+                    <?php if (empty($row['is_virtual']) && !empty($row['address'])): ?>
+                        <div class="small-muted">Location: <?= h($row['address']) ?></div>
+                    <?php elseif (!empty($row['is_virtual'])): ?>
+                        <span class="badge badge-soft">Virtual</span>
+                    <?php endif; ?>
+                    </div>
+                    <div class="col-md-5 text-md-right mt-2 mt-md-0">
+                    <?php $olink = trim((string)($row['join_link'] ?? '')); ?>
+                    <?php if ($olink !== ''): ?>
+                        <a class="btn btn-outline-secondary" target="_blank" rel="noopener"
+                        href="<?= h($olink) ?>">Open Class Link</a>
+                    <?php else: ?>
+                        <div class="small-muted">Your facilitator will provide the access link if needed.</div>
+                    <?php endif; ?>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="small-muted mt-2">Note: Make-up attendance policies may apply. Contact your facilitator for guidance.</div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+
+    <!-- Billing -->
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Billing</h5>
+        <p class="mb-2"><strong><?= h($billing['headline'] ?? '') ?></strong></p>
+        <?php if (!empty($billing['subtext'])): ?>
+          <p class="small-muted"><?= h($billing['subtext']) ?></p>
+        <?php endif; ?>
+
+        <?php if (($billing['status'] ?? '') === 'due' && !empty($billing['pay_link'])): ?>
+          <a class="btn btn-primary" target="_blank" rel="noopener" href="<?= h($billing['pay_link']) ?>">Pay Now</a>
+          <div class="small-muted mt-2"><?= h($billing['pay_link']) ?></div>
+        <?php elseif (($billing['status'] ?? '') === 'no_charge'): ?>
+          <div class="text-success">No payment is required for your case.</div>
+        <?php elseif (($billing['status'] ?? '') === 'paid'): ?>
+          <div class="text-success">Thank you! Your payment has been recorded.</div>
+        <?php else: ?>
+          <div class="small-muted">For assistance with payments, please contact the office.</div>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a class="btn btn-link" href="<?= h($_SERVER['PHP_SELF']) ?>?signout=1">Close</a>
+    </div>
+  <?php endif; ?>
 </div>
-
-<script>
-$(document).ready(function() {
-    $('#clientModal').modal('show');
-});
-</script>
-<?php endif; ?>
-
-
 </body>
 </html>

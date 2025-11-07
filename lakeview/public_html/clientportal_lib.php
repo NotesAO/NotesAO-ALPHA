@@ -1,198 +1,368 @@
 <?php
-// -----------------------------------------------------------------------------
-// clientportal_lib.php  (LIBRARY ONLY)
-// -----------------------------------------------------------------------------
-// PURPOSE:
-//   Given a client id, return the "regular group" URL exactly like the client
-//   portal would. NO output, NO session_start, NO constant definitions, NO
-//   DB connect/close. Uses the provided $con (mysqli) from the caller.
-//
-// HOW TO USE:
-//   1) Paste your existing $groupData mapping into the section below.
-//      Keep each entry structure like:
-//         [
-//           'program_id'        => 2,
-//           'referral_type_id'  => 2,
-//           'gender_id'         => 2,           // 1=male, 2=female, 3=any (example)
-//           'required_sessions' => 18,
-//           'fee'               => 15,
-//           'therapy_group_id'  => 106,         // exact DB group id (if applicable)
-//           'label'             => "Saturday Men's Parole/CPS 18 Week (9AM)",
-//           'day_time'          => "Saturday 9AM",
-//           'link'              => "https://..."
-//         ]
-//   2) Include this file from pages that need {{group_link}}:
-//          require_once 'clientportal_lib.php';
-//   3) The reminders page will call:
-//          notesao_regular_group_link($con, $clientId)
-// -----------------------------------------------------------------------------
-
 declare(strict_types=1);
 
-/* ============================================================================
- * 1) GROUP DATA (PASTE YOUR MAPPING HERE)
- * ========================================================================== */
-$groupData = [
-    // ===================== SATURDAY 9AM Men’s Virtual BIPP (id=106) =====================
-    
-    
-
-];
-
-/* ============================================================================
- * 2) HELPERS (pure functions; no side effects)
- * ========================================================================== */
-
 /**
- * Default client portal URL when no mapping can be resolved.
- */
-function clientportal_default_url(): string {
-    $base = defined('APP_BASE_URL') ? APP_BASE_URL : 'https://lakeview.notesao.com';
-    return rtrim($base, '/') . '/client.php';
-}
-
-/**
- * Some portals normalize referral types (e.g., aliases collapse to a canonical id).
- * If you have a specific mapping in your original portal, apply it here.
- * Current default: identity.
- */
-function normalizeReferralId(int $refId): int {
-    // TODO: If your portal maps multiple IDs to a canonical value, apply here.
-    // Example:
-    // $map = [ 10 => 2, 11 => 2, 12 => 2 ]; // map 10/11/12 to 2
-    // return $map[$refId] ?? $refId;
-    return $refId;
-}
-
-/**
- * Gender compatibility:
- *   - 3 in groupData = "any"
- *   - otherwise must equal client's gender
- */
-function gender_matches(int $groupGender, int $clientGender): bool {
-    return ($groupGender === 3) || ($groupGender === $clientGender);
-}
-
-/**
- * Compute a score for how well a groupData row matches the client profile.
- * Higher score = better match.
- */
-function score_group_candidate(array $g, array $c): int {
-    $score = 0;
-    // Hard filter already: program & gender
-    // Strong match on exact therapy_group_id
-    if ((int)$g['therapy_group_id'] === (int)$c['therapy_group_id']) $score += 8;
-    // Referral type match (after normalization)
-    if ((int)$g['referral_type_id'] === normalizeReferralId((int)$c['referral_type_id'])) $score += 4;
-    // Required sessions match
-    if ((int)$g['required_sessions'] === (int)$c['required_sessions']) $score += 2;
-    // Fee match
-    if ((int)$g['fee'] === (int)$c['fee']) $score += 1;
-
-    return $score;
-}
-
-/**
- * Tie-break: prefer candidates with therapy_group_id exact match, then lower fee,
- * then first encountered (stable).
- */
-function better_than(array $a, array $b, array $client): bool {
-    if ($a['score'] !== $b['score']) return $a['score'] > $b['score'];
-
-    $tgA = (int)$a['row']['therapy_group_id'];
-    $tgB = (int)$b['row']['therapy_group_id'];
-    $want = (int)$client['therapy_group_id'];
-
-    $aExact = ($tgA === $want);
-    $bExact = ($tgB === $want);
-    if ($aExact !== $bExact) return $aExact; // exact wins
-
-    // Prefer lower fee
-    $feeA = (int)$a['row']['fee'];
-    $feeB = (int)$b['row']['fee'];
-    if ($feeA !== $feeB) return $feeA < $feeB;
-
-    // Otherwise keep existing winner (stable)
-    return false;
-}
-
-/* ============================================================================
- * 3) PUBLIC API
- * ========================================================================== */
-
-/**
- * Return the client's regular group URL using $groupData mapping.
+ * Lakeview — clientportal_lib.php
+ * --------------------------------
+ * Purpose
+ * - Resolve join links (Zoom) by therapy_group override, else by program default.
+ * - Resolve payment links per program (Parenting has a direct Square link; others use Payment Options).
+ * - Provide {{group_link}} for reminder templates via notesao_regular_group_link().
+ * - NEW: Support programs whose dates "vary" via clientportal_group_dates table.
  *
- * - Pull minimal client profile (single query).
- * - Filter candidates by program_id and gender (3 = any).
- * - Score candidates by therapy_group, referral_type, required_sessions, fee.
- * - Return best link; fallback to portal if none.
+ * Assumptions from Lakeview materials:
+ * Program → Zoom
+ *   1 DOEP                      → https://us02web.zoom.us/j/81309717789
+ *   2 DWIE                      → https://us02web.zoom.us/j/87628712130
+ *   3 DWII                      → https://us02web.zoom.us/j/82208338625
+ *   4 Parenting Education       → https://us02web.zoom.us/j/89109797950
+ *   5 Thinking for a Change     → https://us02web.zoom.us/j/85959298570
+ *   6 Life Skills / Anti-Theft  → https://us02web.zoom.us/j/84878523499
+ *   9 Marijuana Education       → https://us02web.zoom.us/j/87320225450
+ *  10 Marijuana Intervention    → https://us02web.zoom.us/j/87320225450  (same as above)
+ *  11 SAE                       → facilitator provides link (no static Zoom listed)
+ *  12 Anger Management          → https://us02web.zoom.us/j/82611581194
+ *
+ * Payments:
+ *  - Parenting Education has a direct Square checkout link ($75) from the doc.
+ *  - All other programs route to the clinic Payment Options page.
+ *  - CPS cases are “No charge” (UI handles hiding button).
+ *
+ * Variable-date programs:
+ *  - Use clientportal_group_dates to publish upcoming one-off dates (optionally scoped to a therapy_group).
+ *  - Helpers here fetch and format the next/next-few dates for display in the portal or reminders.
+ */
+
+// ---------------------------------------------------------------------
+// Generic SQL helpers
+// ---------------------------------------------------------------------
+if (!function_exists('sql_select_one')) {
+    function sql_select_one(mysqli $con, string $sql, array $params = []): ?array {
+        $stmt = $con->prepare($sql);
+        if (!$stmt) return null;
+        if ($params) $stmt->bind_param(str_repeat('s', count($params)), ...$params);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $res ? $res->fetch_assoc() : null;
+        $stmt->close();
+        return $row ?: null;
+    }
+}
+
+if (!function_exists('sql_select_all')) {
+    function sql_select_all(mysqli $con, string $sql, array $params = []): array {
+        $stmt = $con->prepare($sql);
+        if (!$stmt) return [];
+        if ($params) $stmt->bind_param(str_repeat('s', count($params)), ...$params);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $rows = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
+        $stmt->close();
+        return $rows;
+    }
+}
+
+/**
+ * Safe column existence check for optional fields.
+ */
+if (!function_exists('column_exists')) {
+    function column_exists(mysqli $con, string $table, string $column): bool {
+        // basic identifier whitelist
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $table)) return false;
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $column)) return false;
+        $tableEsc = $con->real_escape_string($table);
+        $colEsc   = $con->real_escape_string($column);
+        $sql = "SHOW COLUMNS FROM `$tableEsc` LIKE '$colEsc'";
+        if ($res = $con->query($sql)) {
+            $ok = $res->num_rows > 0;
+            $res->free();
+            return $ok;
+        }
+        return false;
+    }
+}
+
+// ---------------------------------------------------------------------
+// Basic portal helpers
+// ---------------------------------------------------------------------
+function clientportal_default_url(): string {
+    return '/clientportal.php';
+}
+
+// ---------------------------------------------------------------------
+// Join-link mapping (Zoom)
+// ---------------------------------------------------------------------
+
+// TG-specific overrides (leave empty unless a particular TG differs from program default)
+function join_links_by_therapy_group(): array {
+    return [
+        // Example:
+        // 123 => 'https://us02web.zoom.us/j/XXXXXXXXXXX',
+    ];
+}
+
+// Program defaults (source: Lakeview doc)
+function join_links_by_program(): array {
+    return [
+         1  => 'https://us02web.zoom.us/j/81309717789', // DOEP
+         2  => 'https://us02web.zoom.us/j/87628712130', // DWIE
+         3  => 'https://us02web.zoom.us/j/82208338625', // DWII
+         4  => 'https://us02web.zoom.us/j/89109797950', // Parenting
+         5  => 'https://us02web.zoom.us/j/85959298570', // Thinking for a Change
+         6  => 'https://us02web.zoom.us/j/84878523499', // Life Skills / Anti-Theft
+         7  => 'https://us02web.zoom.us/j/86047659700', // BIPP (male)
+         8  => 'https://us02web.zoom.us/j/83137357345', // BIPP (female)
+         9  => 'https://us02web.zoom.us/j/87320225450', // Marijuana Education
+        10  => 'https://us02web.zoom.us/j/87320225450', // Marijuana Intervention
+        // 11 SAE intentionally omitted → no static Zoom provided
+        12  => 'https://us02web.zoom.us/j/82611581194', // Anger Management
+    ];
+}
+
+
+/**
+ * Resolve the join link for a given TG and Program.
+ * Order: TG override → Program default → empty string.
+ */
+function resolve_join_link_for(int $therapy_group_id, int $program_id): string {
+    $tgMap = join_links_by_therapy_group();
+    if ($therapy_group_id > 0 && isset($tgMap[$therapy_group_id])) {
+        return (string)$tgMap[$therapy_group_id];
+    }
+    $progMap = join_links_by_program();
+    return $progMap[$program_id] ?? '';
+}
+
+// ---------------------------------------------------------------------
+// Payment links + optional payment status helper
+// ---------------------------------------------------------------------
+function payment_options_url(): string {
+    return 'https://lakevieweducation.com/payment-options';
+}
+
+// Parenting explicit Square link from document
+function parenting_square_pay_url(): string {
+    return 'https://checkout.square.site/pay/eb1333e9e236459b9d893006a95c046d';
+}
+
+/**
+ * Resolve payment link for a client row (expects at least program_id).
+ * - Parenting (program_id=4) uses the Square link.
+ * - All others use the Payment Options page.
+ * UI layer should suppress the button for CPS “No charge”.
+ *
+ * NOTE: DO NOT reference non-existent columns here to avoid fatals.
+ */
+function portal_payment_link_for_client(array $client): string {
+    $pid = (int)($client['program_id'] ?? 0);
+    if ($pid === 4) return parenting_square_pay_url(); // Parenting Education
+    return payment_options_url();
+}
+
+/**
+ * Optional payment status exposer for the portal UI.
+ * Returns an array like:
+ *   [
+ *     'known'        => true|false,   // did we find columns / data?
+ *     'status'       => 'paid'|'partial'|'unpaid'|'unknown',
+ *     'detail'       => 'Payment received ($75 via Square)' | '—',
+ *     'paid_amount'  => float|null,
+ *     'paid_source'  => string|null,
+ *   ]
+ *
+ * This method checks for existence of client.paid_amount / client.paid_source first.
+ * If they do not exist, it returns ['known' => false, 'status' => 'unknown', ...]
+ *
+ * You can ignore this helper if you’re not ready to surface status.
+ */
+function client_payment_status_for_portal(mysqli $con, array $client): array {
+    $rowId = (int)($client['id'] ?? 0);
+    if ($rowId <= 0) {
+        return ['known'=>false,'status'=>'unknown','detail'=>'—','paid_amount'=>null,'paid_source'=>null];
+    }
+
+    $hasPaidAmount = column_exists($con, 'client', 'paid_amount');
+    $hasPaidSource = column_exists($con, 'client', 'paid_source');
+
+    if (!$hasPaidAmount && !$hasPaidSource) {
+        return ['known'=>false,'status'=>'unknown','detail'=>'—','paid_amount'=>null,'paid_source'=>null];
+    }
+
+    $cols = ['id'];
+    if ($hasPaidAmount) $cols[] = 'paid_amount';
+    if ($hasPaidSource) $cols[] = 'paid_source';
+    $sql  = "SELECT ".implode(',', $cols)." FROM client WHERE id = ? LIMIT 1";
+    $rec  = sql_select_one($con, $sql, [(string)$rowId]) ?? [];
+
+    $amt = isset($rec['paid_amount']) ? (float)$rec['paid_amount'] : null;
+    $src = isset($rec['paid_source']) ? (string)$rec['paid_source'] : null;
+
+    if ($amt !== null && $amt > 0) {
+        // Heuristic: treat >= 75 as “paid” for Parenting single fee; tune as needed per program.
+        $status = 'partial';
+        if ((int)($client['program_id'] ?? 0) === 4 && $amt >= 75) {
+            $status = 'paid';
+        }
+        $detail = 'Payment received ($'.number_format((float)$amt, 2).($src ? ' via '.$src : '').')';
+        return ['known'=>true,'status'=>$status,'detail'=>$detail,'paid_amount'=>$amt,'paid_source'=>$src];
+    }
+
+    return ['known'=>true,'status'=>'unpaid','detail'=>'No payment on file','paid_amount'=>null,'paid_source'=>null];
+}
+
+// ---------------------------------------------------------------------
+// Variable-date programs — clientportal_group_dates
+// ---------------------------------------------------------------------
+
+/**
+ * Return upcoming one-off dates for a program (optionally scoped to a TG).
+ * If $therapy_group_id is provided, results include BOTH TG matches and program-level (NULL TG),
+ * with TG-specific rows preferred first.
+ *
+ * @return array<array{ id:int, program_id:int, therapy_group_id:?int, starts_at:string, note:?string }>
+ */
+function get_upcoming_group_dates(mysqli $con, int $program_id, ?int $therapy_group_id = null, int $limit = 5): array {
+    $limit = max(1, min(50, $limit)); // clamp
+    if ($therapy_group_id !== null) {
+        // TG-specific first, then program-level (NULL)
+        $sql = "
+            SELECT gd.*
+            FROM clientportal_group_dates gd
+            WHERE gd.program_id = ?
+              AND gd.starts_at >= NOW()
+              AND (gd.therapy_group_id = ? OR gd.therapy_group_id IS NULL)
+            ORDER BY (gd.therapy_group_id IS NULL) ASC, gd.starts_at ASC
+            LIMIT $limit
+        ";
+        return sql_select_all($con, $sql, [(string)$program_id, (string)$therapy_group_id]);
+    } else {
+        // Only program-level rows
+        $sql = "
+            SELECT gd.*
+            FROM clientportal_group_dates gd
+            WHERE gd.program_id = ?
+              AND gd.therapy_group_id IS NULL
+              AND gd.starts_at >= NOW()
+            ORDER BY gd.starts_at ASC
+            LIMIT $limit
+        ";
+        return sql_select_all($con, $sql, [(string)$program_id]);
+    }
+}
+
+/**
+ * Quick check: does this program have any upcoming variable dates?
+ */
+function program_has_upcoming_variable_dates(mysqli $con, int $program_id, ?int $therapy_group_id = null): bool {
+    $rows = get_upcoming_group_dates($con, $program_id, $therapy_group_id, 1);
+    return !empty($rows);
+}
+
+/**
+ * Format a DATETIME for client-facing display.
+ */
+function format_portal_datetime(string $mysqlDateTime): string {
+    $ts = strtotime($mysqlDateTime);
+    return $ts ? date('l, F j, Y g:i A', $ts) : $mysqlDateTime;
+}
+
+/**
+ * Find the very next upcoming date (if any) for a client’s program/group.
+ * Returns: ['id'=>int,'starts_at'=>string,'note'=>?string] or null.
+ */
+function next_group_date_for_client(mysqli $con, array $client): ?array {
+    $pid  = (int)($client['program_id'] ?? 0);
+    $tgid = isset($client['therapy_group_id']) ? (int)$client['therapy_group_id'] : null;
+    if ($pid <= 0) return null;
+
+    $rows = get_upcoming_group_dates($con, $pid, $tgid, 1);
+    if (!$rows) return null;
+
+    $row = $rows[0];
+    return [
+        'id'        => (int)$row['id'],
+        'starts_at' => $row['starts_at'],
+        'note'      => $row['note'] ?? null,
+    ];
+}
+
+/**
+ * For reminder scripts: return up to $limit upcoming starts_at values (ISO strings)
+ * scoped to a particular client’s program/group.
+ */
+function upcoming_group_datetimes_for_client(mysqli $con, int $clientId, int $limit = 3): array {
+    $cli = sql_select_one(
+        $con,
+        "SELECT program_id, therapy_group_id FROM client WHERE id = ? LIMIT 1",
+        [(string)$clientId]
+    );
+    if (!$cli) return [];
+
+    $pid  = (int)$cli['program_id'];
+    $tgid = isset($cli['therapy_group_id']) ? (int)$cli['therapy_group_id'] : null;
+
+    $rows = get_upcoming_group_dates($con, $pid, $tgid, $limit);
+    return array_map(fn($r) => (string)$r['starts_at'], $rows);
+}
+
+// ---------------------------------------------------------------------
+// Weekly schedule mapping (static) — for programs that DO have fixed weekly times
+// Leave entries empty for “dates vary” programs; UI should switch to variable dates.
+// ---------------------------------------------------------------------
+function weekly_slots_by_program(): array {
+    return [
+        // Examples if you decide to display weekly fixed slots:
+        // 5  => [ 'Mon 7:00 PM (Virtual)', 'Wed 7:00 PM (Virtual)' ], // Thinking for a Change
+        // 12 => [ 'Thu 6:00 PM (Virtual)' ],                         // Anger Management
+        // Programs like DOEP (1), DWIE (2), DWII (3) → leave empty so variable dates show instead.
+    ];
+}
+
+/**
+ * Convenience: Get weekly slots text array for a given program_id.
+ */
+function get_weekly_slots_for_program(int $program_id): array {
+    $map = weekly_slots_by_program();
+    return $map[$program_id] ?? [];
+}
+
+// ---------------------------------------------------------------------
+// Reminder template helper: {{group_link}}
+// ---------------------------------------------------------------------
+/**
+ * Returns the best URL for {{group_link}} in reminder emails:
+ * - If the client’s therapy_group appears to be virtual (address == 'Virtual')
+ *   and we can resolve a join link, return that join link.
+ * - Otherwise, return the portal URL.
+ *
+ * Variable-dates control *dates*, not links. Links still come from TG override / program default.
  */
 function notesao_regular_group_link(mysqli $con, int $clientId): string {
-    // Fetch minimal profile for matching
-    $stmt = $con->prepare("
-        SELECT id, program_id, referral_type_id, gender_id, required_sessions, fee, therapy_group_id
-        FROM client
-        WHERE id = ?
-        LIMIT 1
-    ");
-    if (!$stmt) {
-        // Can't prepare => safe fallback
-        return clientportal_default_url();
+    $client = sql_select_one(
+        $con,
+        "SELECT therapy_group_id, program_id FROM client WHERE id = ? LIMIT 1",
+        [(string)$clientId]
+    );
+    if (!$client) return clientportal_default_url();
+
+    $tgId = (int)($client['therapy_group_id'] ?? 0);
+    $pid  = (int)($client['program_id'] ?? 0);
+
+    // Read TG meta to determine virtual vs in-person
+    $tg = null;
+    if ($tgId > 0) {
+        $tg = sql_select_one(
+            $con,
+            "SELECT address FROM therapy_group WHERE id = ? LIMIT 1",
+            [(string)$tgId]
+        );
     }
-    $stmt->bind_param('i', $clientId);
-    $stmt->execute();
-    $res = $stmt->get_result();
-    $client = $res ? $res->fetch_assoc() : null;
-    $stmt->close();
+    $address   = (string)($tg['address'] ?? '');
+    $isVirtual = strcasecmp($address, 'Virtual') === 0;
 
-    if (!$client) {
-        return clientportal_default_url();
-    }
-
-    // Ensure ints
-    $client['program_id']        = (int)$client['program_id'];
-    $client['referral_type_id']  = normalizeReferralId((int)$client['referral_type_id']);
-    $client['gender_id']         = (int)$client['gender_id'];
-    $client['required_sessions'] = (int)$client['required_sessions'];
-    $client['fee']               = (int)$client['fee'];
-    $client['therapy_group_id']  = (int)$client['therapy_group_id'];
-
-    // Use the global mapping (paste above). If empty, fallback.
-    global $groupData;
-    if (empty($groupData) || !is_array($groupData)) {
-        return clientportal_default_url();
-    }
-
-    // Filter & score candidates
-    $best = null; // ['row' => array, 'score' => int]
-    foreach ($groupData as $row) {
-        // Skip incomplete rows
-        if (!isset(
-            $row['program_id'], $row['referral_type_id'], $row['gender_id'],
-            $row['required_sessions'], $row['fee'],
-            $row['therapy_group_id'], $row['link']
-        )) {
-            continue;
-        }
-
-        // Program must match
-        if ((int)$row['program_id'] !== $client['program_id']) continue;
-
-        // Gender check (3 = any)
-        if (!gender_matches((int)$row['gender_id'], $client['gender_id'])) continue;
-
-        // Score
-        $score = score_group_candidate($row, $client);
-        $candidate = ['row' => $row, 'score' => $score];
-
-        if ($best === null || better_than($candidate, $best, $client)) {
-            $best = $candidate;
-        }
-    }
-
-    if ($best && !empty($best['row']['link'])) {
-        return (string)$best['row']['link'];
+    if ($isVirtual) {
+        $join = resolve_join_link_for($tgId, $pid);
+        if ($join !== '') return $join;
     }
 
     return clientportal_default_url();

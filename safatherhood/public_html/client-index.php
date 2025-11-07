@@ -70,7 +70,7 @@ if (!empty($_GET['search'])) {
                     </div>
 
                     <?php
-                    $orderBy = array('c.first_name', 'c.last_name', 'date_of_birth', 'phone_number', 'required_sessions', 'sessions_attended', 'case_mgr', 'note', 'orientation_date', 'exit_date', 'stage_of_change', 'group_name', 'last_attended');
+                    $orderBy = array('c.first_name', 'c.last_name', 'date_of_birth', 'phone_number', 'required_sessions', 'absence_unexcused', 'sessions_attended', 'case_mgr', 'note', 'orientation_date', 'exit_date', 'stage_of_change', 'group_name', 'last_attended');
                     $order = 'c.last_name';
                     if (isset($_GET['order']) && in_array($_GET['order'], $orderBy)) {
                         $order = $_GET['order'];
@@ -110,7 +110,9 @@ if (!empty($_GET['search'])) {
                     
                     <?php
                     $sql = "SELECT c.id, c.first_name, c.last_name, c.date_of_birth, c.phone_number, tg.name group_name, c.orientation_date,
-                    c.exit_date, c.required_sessions, cs.stage stage_of_change, c.note, sessions_attended, last_attended, concat(cm.first_name, ' ', cm.last_name) case_mgr
+                    c.exit_date, c.required_sessions, 
+                    (SELECT COUNT(*) FROM absence ab WHERE c.id = ab.client_id AND ab.excused <> '1') AS absence_unexcused,
+                    cs.stage stage_of_change, c.note, sessions_attended, last_attended, concat(cm.first_name, ' ', cm.last_name) case_mgr
                     from client c 
                     LEFT JOIN case_manager cm ON c.case_manager_id = cm.id
                     LEFT JOIN therapy_group tg ON c.therapy_group_id = tg.id
@@ -158,6 +160,7 @@ if (!empty($_GET['search'])) {
                         echo "<th><a href=?$url_prefix&order=last_attended>Last Attended</th>";
                         echo "<th><a href=?$url_prefix&order=sessions_attended>Sessions Attended</th>";
                         echo "<th><a href=?$url_prefix&order=required_sessions>Sessions Required</th>";
+                        echo "<th><a href=\"?$url_prefix&order=absence_unexcused\">Unexcused&nbsp;Absences</a></th>";
                         echo "<th><a href=?$url_prefix&order=stage_of_change>Stage of Change</th>";
                         echo "<th><a href=?$url_prefix&order=case_mgr>Case Manager</th>";
                         echo "<th><a href=?$url_prefix&order=group_name>Group</th>";
@@ -180,6 +183,7 @@ if (!empty($_GET['search'])) {
                                 echo "<td>" . htmlspecialchars($row['last_attended'] ?? '') . "</td>";
                                 echo "<td>" . htmlspecialchars($row['sessions_attended'] ?? '') . "</td>";
                                 echo "<td>" . htmlspecialchars($row['required_sessions'] ?? '') . "</td>";
+                                echo   "<td>" . htmlspecialchars($row['absence_unexcused'] ?? '') . "</td>";
                                 echo "<td>" . htmlspecialchars($row['stage_of_change'] ?? '') . "</td>";
                                 echo "<td>" . htmlspecialchars($row['case_mgr'] ?? '') . "</td>";
                                 echo "<td>" . htmlspecialchars($row['group_name'] ?? '') . "</td>";

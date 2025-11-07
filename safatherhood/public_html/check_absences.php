@@ -33,7 +33,7 @@ function sanitize_csv_file($file_path) {
 }
 
 // Define paths
-$clinic_folder = 'safatherhoojd'; // Hardcoded clinic folder
+$clinic_folder = 'safatherhood'; // Hardcoded clinic folder
 $base_dir = '/home/notesao/NotePro-Report-Generator';
 $python_script = "$base_dir/check_absences.py";
 $venv_python = "$base_dir/venv311/bin/python";

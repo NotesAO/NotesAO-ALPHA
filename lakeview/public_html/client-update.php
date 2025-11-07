@@ -241,7 +241,8 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 
     /* quick-add ledger row if a payment/credit/refund was entered */
     $amt = (float)$paid_amount;
-    if ($amt > 0.0) {
+    if ($amt > 0.0 && strcasecmp($paid_source, 'Unknown') !== 0) {
+
     [$kind,$subtype,$method,$sign] = lv_map_payment_source($paid_source);
     $signed = round($sign * $amt, 2);
     $now    = (new DateTime('now', new DateTimeZone('UTC')))->format('Y-m-d H:i:s');
@@ -443,701 +444,449 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                 </div>
             </div>
             
-            <!-- The Form -->
             <form autocomplete="off"
-                  action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>"
-                  method="post">
-                
-                <!-- Row 1 -->
-                <div class="row">
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text"
-                                   name="first_name"
-                                   maxlength="45"
-                                   class="form-control"
-                                   value="<?php echo $first_name; ?>">
-                            <span class="form-text"><?php echo $first_name_err; ?></span>
-                        </div>
+                action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>"
+                method="post">
+
+            <!-- 1) Identity -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Identity</h5></div>
+                <div class="card-body">
+                <div class="form-row">
+                    <div class="col-3">
+                    <label>First Name</label>
+                    <input type="text" name="first_name" maxlength="45" class="form-control" value="<?php echo $first_name; ?>">
+                    <span class="form-text"><?php echo $first_name_err; ?></span>
                     </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text"
-                                   name="last_name"
-                                   maxlength="45"
-                                   class="form-control"
-                                   value="<?php echo $last_name; ?>">
-                            <span class="form-text"><?php echo $last_name_err; ?></span>
-                        </div>
+                    <div class="col-3">
+                    <label>Last Name</label>
+                    <input type="text" name="last_name" maxlength="45" class="form-control" value="<?php echo $last_name; ?>">
+                    <span class="form-text"><?php echo $last_name_err; ?></span>
                     </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Date of Birth</label>
-                            <input type="date"
-                                   name="date_of_birth"
-                                   class="form-control"
-                                   value="<?php echo $date_of_birth; ?>">
-                            <span class="form-text"><?php echo $date_of_birth_err; ?></span>
-                        </div>
+                    <div class="col-3">
+                    <label>Date of Birth</label>
+                    <input type="date" name="date_of_birth" class="form-control" value="<?php echo $date_of_birth; ?>">
+                    <span class="form-text"><?php echo $date_of_birth_err; ?></span>
                     </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Birth Place</label>
-                            <input type="text"
-                                name="birth_place"
-                                maxlength="128"
-                                class="form-control"
-                                value="<?php echo $birth_place; ?>">
-                            <span class="form-text"><?php echo $birth_place_err; ?></span>
-                        </div>
+                    <div class="col-3">
+                    <label>Birth Place</label>
+                    <input type="text" name="birth_place" maxlength="128" class="form-control" value="<?php echo $birth_place; ?>">
+                    <span class="form-text"><?php echo $birth_place_err; ?></span>
                     </div>
                 </div>
+                </div>
+            </div>
 
-                <!-- Row 2  ─────────────────────────────────────────────────────────────── -->
-                <div class="row">
-                <!-- Gender dropdown -->
-                <div class="col-2">
-                    <div class="form-group">
+            <!-- 2) Demographics & Status -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Demographics & Status</h5></div>
+                <div class="card-body">
+                <div class="form-row">
+                    <div class="col-3">
                     <label>Gender</label>
                     <select class="form-control" id="gender_id" name="gender_id">
                         <?php foreach (get_genders() as $g): ?>
-                        <option value="<?=$g['id']?>" <?=$g['id']==$gender_id?'selected':''?>>
-                            <?=htmlspecialchars($g['gender'])?></option>
+                        <option value="<?=$g['id']?>" <?=$g['id']==$gender_id?'selected':''?>><?=htmlspecialchars($g['gender'])?></option>
                         <?php endforeach; ?>
                     </select>
                     <span class="form-text"><?=$gender_id_err?></span>
                     </div>
-                </div>
-
-                <!-- Ethnicity dropdown -->
-                <div class="col-2">
-                    <div class="form-group">
+                    <div class="col-3">
                     <label>Ethnicity</label>
                     <select class="form-control" id="ethnicity_id" name="ethnicity_id">
                         <?php foreach (get_ethnicities() as $e): ?>
-                        <option value="<?=$e['id']?>" <?=$e['id']==$ethnicity_id?'selected':''?>>
-                            <?=htmlspecialchars($e['code'].' - '.$e['name'])?></option>
+                        <option value="<?=$e['id']?>" <?=$e['id']==$ethnicity_id?'selected':''?>><?=htmlspecialchars($e['code'].' - '.$e['name'])?></option>
                         <?php endforeach; ?>
                     </select>
                     <span class="form-text"><?=$ethnicity_id_err?></span>
                     </div>
+                    <div class="col-3">
+                    <label>Marital Status</label>
+                    <select name="marital_status" class="form-control">
+                        <?php $opts = ["Unknown","Single","Married","Divorced","Separated","Widowed","Partnered"];
+                        foreach ($opts as $opt) { $sel = ($marital_status===$opt) ? "selected" : ""; echo "<option value=\"{$opt}\" {$sel}>{$opt}</option>"; } ?>
+                    </select>
+                    </div>
+                    <div class="col-3">
+                    <label>Employed</label>
+                    <select name="employed" class="form-control">
+                        <option value="Unknown" <?= $employed==="Unknown"?"selected":"" ?>>Unknown</option>
+                        <option value="Yes"     <?= $employed==="Yes"    ?"selected":"" ?>>Yes</option>
+                        <option value="No"      <?= $employed==="No"     ?"selected":"" ?>>No</option>
+                    </select>
+                    </div>
                 </div>
+                <div class="form-row mt-2">
+                    <div class="col-3">
+                    <label>UA Positive</label>
+                    <select name="UA_positive" class="form-control">
+                        <option value="Unknown" <?= $UA_positive==="Unknown"?"selected":"" ?>>Unknown</option>
+                        <option value="No"      <?= $UA_positive==="No"     ?"selected":"" ?>>No</option>
+                        <option value="Yes"     <?= $UA_positive==="Yes"    ?"selected":"" ?>>Yes</option>
+                    </select>
+                    </div>
+                    <div class="col-5">
+                    <label>Prescription Use</label>
+                    <input type="text" name="prescription_use" class="form-control" value="<?=$prescription_use?>">
+                    </div>
+                    <div class="col-4 d-flex align-items-end">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="intake_packet" name="intake_packet" <?= $intake_packet ? 'checked' : '' ?>>
+                        <label class="form-check-label" for="intake_packet">Received&nbsp;Intake&nbsp;Packet</label>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
 
-                <!-- Program dropdown -->
-                <div class="col-2">
-                    <div class="form-group">
+            <!-- 3) Program & Group -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Program & Group</h5></div>
+                <div class="card-body">
+                <div class="form-row">
+                    <div class="col-3">
                     <label>Program</label>
                     <select class="form-control" id="program_id" name="program_id">
                         <?php foreach (get_programs() as $p): ?>
-                        <option value="<?=$p['id']?>" <?=$p['id']==$program_id?'selected':''?>>
-                            <?=htmlspecialchars($p['name'])?></option>
+                        <option value="<?=$p['id']?>" <?=$p['id']==$program_id?'selected':''?>><?=htmlspecialchars($p['name'])?></option>
                         <?php endforeach; ?>
                     </select>
                     <span class="form-text"><?=$program_id_err?></span>
                     </div>
+                    <div class="col-4">
+                    <label>Therapy Group</label>
+                    <select class="form-control" id="therapy_group_id" name="therapy_group_id">
+                        <?php $groups = get_therapy_groups(); foreach ($groups as $group):
+                        $value = htmlspecialchars($group["name"]." - ".$group["address"]);
+                        $selected = ($group["id"] == $therapy_group_id) ? 'selected' : ''; ?>
+                        <option value="<?=$group['id']?>" <?=$selected?>><?=$value?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <span class="form-text"><?=$therapy_group_id_err?></span>
+                    </div>
+                    <div class="col-3">
+                    <label>Case Manager</label>
+                    <select class="form-control" id="case_manager_id" name="case_manager_id">
+                        <?php $managers = get_case_managers(); foreach ($managers as $manager):
+                        $value = htmlspecialchars($manager["last_name"].", ".$manager["first_name"]." - ".$manager["office"]);
+                        $selected = ($manager["id"] == $case_manager_id) ? 'selected' : ''; ?>
+                        <option value="<?=$manager['id']?>" <?=$selected?>><?=$value?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <span class="form-text"><?=$case_manager_id_err?></span>
+                    </div>
+                    <div class="col-2">
+                    <label>Progress Stage</label>
+                    <select class="form-control" id="client_stage_id" name="client_stage_id">
+                        <?php $stages = get_client_stages(); foreach ($stages as $stage):
+                        $value = htmlspecialchars($stage["stage"]);
+                        $selected = ($stage["id"] == $client_stage_id) ? 'selected' : ''; ?>
+                        <option value="<?=$stage['id']?>" <?=$selected?>><?=$value?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <span class="form-text"><?=$client_stage_id_err?></span>
+                    </div>
                 </div>
 
-                <!-- ✔ Intake-packet checkbox (new column) -->
-                <div class="col-2 d-flex align-items-end">
-                    <div class="form-check mb-3">
-                    <input class="form-check-input"
-                            type="checkbox"
-                            id="intake_packet"
-                            name="intake_packet"
-                            <?= $intake_packet ? 'checked' : '' ?>>
-                    <label class="form-check-label" for="intake_packet">
-                        Received&nbsp;Intake&nbsp;Packet
-                    </label>
+                <div class="form-row mt-2">
+                    <div class="col-2">
+                    <label>Required Sessions</label>
+                    <input type="number" name="required_sessions" class="form-control"
+                            value="<?= htmlspecialchars($required_sessions === '' ? (program_required_sessions((int)$program_id) ?? '') : $required_sessions) ?>">
+                    <span class="form-text"><?=$required_sessions_err?></span>
+                    </div>
+                    <div class="col-2">
+                    <label>Sessions per Week</label>
+                    <input type="number" name="weekly_attendance" step="1" class="form-control"
+                            value="<?= htmlspecialchars($weekly_attendance === '' ? ($PROGRAM_DEFAULTS[(int)$program_id]['meetings_per_week'] ?? '') : $weekly_attendance) ?>">
+                    <span class="form-text"><?=$weekly_attendance_err?></span>
+                    </div>
+                    <div class="col-2">
+                    <label>Fee per Session</label>
+                    <input type="number" name="fee" step="1.00" class="form-control" value="<?php echo ($fee == "") ? "30.00" : $fee; ?>">
+                    <span class="form-text"><?=$fee_err?></span>
+                    </div>
+                    <div class="col-3">
+                    <label>Orientation Date</label>
+                    <input type="date" name="orientation_date" class="form-control" value="<?php echo $orientation_date; ?>">
+                    <span class="form-text"><?=$orientation_date_err?></span>
+                    </div>
+                    <div class="col-3">
+                    <label>Instructor</label>
+                    <select name="instructor" class="form-control">
+                        <option value="" <?= $instructor==="" ? "selected" : "" ?>>Not Assigned</option>
+                        <?php foreach (get_facilitators() as $f): ?>
+                        <option value="<?=htmlspecialchars($f['name'])?>" <?= ($instructor === $f['name'] ? "selected" : "") ?>><?=htmlspecialchars($f['name'])?></option>
+                        <?php endforeach; ?>
+                    </select>
                     </div>
                 </div>
                 </div>
+            </div>
 
-
-                <!-- Row 3 -->
-                <div class="row">
+            <!-- 4) Referral & Case -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Referral & Case</h5></div>
+                <div class="card-body">
+                <div class="form-row">
                     <div class="col-2">
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="text"
-                                   name="phone_number"
-                                   maxlength="45"
-                                   class="form-control"
-                                   value="<?php echo $phone_number; ?>">
-                            <span class="form-text"><?php echo $phone_number_err; ?></span>
-                        </div>
+                    <label>Referral Type</label>
+                    <select class="form-control" id="referral_type_id" name="referral_type_id">
+                        <?php $referral_types = get_referral_types();
+                        foreach ($referral_types as $referral_type) {
+                        $value = htmlspecialchars($referral_type["referral_type"]);
+                        $selected = ($referral_type["id"] == $referral_type_id) ? 'selected' : '';
+                        echo "<option value='{$referral_type['id']}' {$selected}>$value</option>";
+                        } ?>
+                    </select>
+                    <span class="form-text"><?=$referral_type_id_err?></span>
+                    </div>
+                    <div class="col-3">
+                    <label>Cause Number</label>
+                    <input type="text" name="cause_number" maxlength="15" class="form-control" value="<?php echo $cause_number; ?>">
+                    <span class="form-text"><?=$cause_number_err?></span>
+                    </div>
+                    <div class="col-3">
+                    <label>Referral Email</label>
+                    <input type="email" name="referral_email" class="form-control" value="<?=$referral_email?>">
                     </div>
                     <div class="col-2">
-                        <div class="form-group">
-                            <label>E-Mail</label>
-                            <input type="text"
-                                   name="email"
-                                   maxlength="64"
-                                   class="form-control"
-                                   autocomplete="off"
-                                   value="<?php echo $email; ?>">
-                            <span class="form-text"><?php echo $email_err; ?></span>
-                        </div>
+                    <label>SID</label>
+                    <input type="text" name="sid" class="form-control" value="<?=$sid?>">
+                    </div>
+                    <div class="col-2">
+                    <label>County</label>
+                    <input type="text" name="county" class="form-control" value="<?=$county?>">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 5) Contact & Address -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Contact & Address</h5></div>
+                <div class="card-body">
+                <div class="form-row">
+                    <div class="col-3">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone_number" maxlength="45" class="form-control" value="<?php echo $phone_number; ?>">
+                    <span class="form-text"><?php echo $phone_number_err; ?></span>
+                    </div>
+                    <div class="col-4">
+                    <label>E-Mail</label>
+                    <input type="text" name="email" maxlength="64" class="form-control" autocomplete="off" value="<?php echo $email; ?>">
+                    <span class="form-text"><?php echo $email_err; ?></span>
+                    </div>
+                    <div class="col-5">
+                    <label>Emergency Contact</label>
+                    <input type="text" name="emergency_contact" maxlength="512" class="form-control" value="<?php echo $emergency_contact; ?>">
+                    <span class="form-text"><?php echo $emergency_contact_err; ?></span>
+                    </div>
+                </div>
+                <div class="form-row mt-2">
+                    <div class="col-5">
+                    <label>Address</label>
+                    <input type="text" name="address" class="form-control" value="<?=$address?>">
+                    </div>
+                    <div class="col-3">
+                    <label>City</label>
+                    <input type="text" name="city" class="form-control" value="<?=$city?>">
+                    </div>
+                    <div class="col-2">
+                    <label>State / ZIP</label>
+                    <input type="text" name="state_zip" class="form-control" value="<?=$state_zip?>">
+                    </div>
+                    <div class="col-2">
+                    <label>DL / SSN</label>
+                    <input type="text" name="ssl_dln" class="form-control" value="<?=$ssl_dln?>">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 6) Attendance -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Attendance</h5></div>
+                <div class="card-body">
+                <label>Attendance Day(s) — select planned days</label>
+                <div class="mb-2">
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="attends_sunday"     <?php if ($attends_sunday == "1") echo "checked"; ?> >
+                    <label class="form-check-label">Sunday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="attends_monday"     <?php if ($attends_monday == "1") echo "checked"; ?> >
+                    <label class="form-check-label">Monday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="attends_tuesday"    <?php if ($attends_tuesday == "1") echo "checked"; ?> >
+                    <label class="form-check-label">Tuesday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="attends_wednesday"  <?php if ($attends_wednesday == "1") echo "checked"; ?> >
+                    <label class="form-check-label">Wednesday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="attends_thursday"   <?php if ($attends_thursday == "1") echo "checked"; ?> >
+                    <label class="form-check-label">Thursday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="attends_friday"     <?php if ($attends_friday == "1") echo "checked"; ?> >
+                    <label class="form-check-label">Friday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="attends_saturday"   <?php if ($attends_saturday == "1") echo "checked"; ?> >
+                    <label class="form-check-label">Saturday</label>
+                    </div>
+                    <div id="sun2wrap" class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="attends_sunday_t4c" <?= $attends_sunday_t4c ? 'checked' : '' ?>>
+                    <label class="form-check-label">Sunday&nbsp;(2× T4C)</label>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 7) Payments -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Payments</h5></div>
+                <div class="card-body">
+                <div class="form-row">
+                    <div class="col-2">
+                    <label>Paid Amount</label>
+                    <input type="number" step="0.01" min="0" name="paid_amount" class="form-control" value="<?=$paid_amount?>">
+                    </div>
+                    <div class="col-3">
+                    <label>Paid Source</label>
+                    <select name="paid_source" class="form-control">
+                        <?php $sources = ["Unknown","Cash","Card","Check","Money Order","Scholarship","Waiver","CPS","Refunded","Other"];
+                        foreach ($sources as $src) { $sel = ($paid_source===$src) ? "selected" : ""; echo "<option value=\"{$src}\" {$sel}>{$src}</option>"; } ?>
+                    </select>
                     </div>
                     <div class="col-7">
-                        <div class="form-group">
-                            <label>Emergency Contact</label>
-                            <input type="text"
-                                   name="emergency_contact"
-                                   maxlength="512"
-                                   class="form-control"
-                                   value="<?php echo $emergency_contact; ?>">
-                            <span class="form-text"><?php echo $emergency_contact_err; ?></span>
-                        </div>
+                    <label>Payment Note</label>
+                    <input type="text" name="paid_note" class="form-control" value="<?=$paid_note?>">
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 8) Conduct & Behavior Contract -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Conduct & Behavior Contract</h5></div>
+                <div class="card-body">
+                <div class="mb-2">
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="speaksSignificantlyInGroup" <?php if ($speaksSignificantlyInGroup == "1") echo "checked"; ?>>
+                    <label class="form-check-label">Excessive speaking</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="respectfulTowardsGroup" <?php if ($respectfulTowardsGroup == "1") echo "checked"; ?>>
+                    <label class="form-check-label">Respectful</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="takesResponsibilityForPastBehavior" <?php if ($takesResponsibilityForPastBehavior == "1") echo "checked"; ?>>
+                    <label class="form-check-label">Takes responsibility</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="disruptiveOrArgumentitive" <?php if ($disruptiveOrArgumentitive == "1") echo "checked"; ?>>
+                    <label class="form-check-label">Disruptive</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="inappropriateHumor" <?php if ($inappropriateHumor == "1") echo "checked"; ?>>
+                    <label class="form-check-label">Inappropriate humor</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="blamesVictim" <?php if ($blamesVictim == "1") echo "checked"; ?>>
+                    <label class="form-check-label">Blames victim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="drugAlcohol" <?php if ($drugAlcohol == "1") echo "checked"; ?>>
+                    <label class="form-check-label">Alcohol or drugs</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="inappropriateBehavior" <?php if ($inappropriateBehavior == "1") echo "checked"; ?>>
+                    <label class="form-check-label">Inappropriate behavior</label>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-3">
-                        <div class="form-group">
-                            <label>Instructor</label>
-                            <select name="instructor" class="form-control">
-                            <option value="" <?= $instructor==="" ? "selected" : "" ?>>Not Assigned</option>
-                            <?php foreach (get_facilitators() as $f): ?>
-                                <option value="<?=htmlspecialchars($f['name'])?>"
-                                <?= ($instructor === $f['name'] ? "selected" : "") ?>>
-                                <?=htmlspecialchars($f['name'])?>
-                                </option>
-                            <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-3">
-                        <div class="form-group">
-                        <label>Referral Email</label>
-                        <input type="email" name="referral_email" class="form-control" value="<?=$referral_email?>">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                        <label>SID</label>
-                        <input type="text" name="sid" class="form-control" value="<?=$sid?>">
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="form-group">
-                        <label>County</label>
-                        <input type="text" name="county" class="form-control" value="<?=$county?>">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-5">
-                        <div class="form-group">
-                        <label>Address</label>
-                        <input type="text" name="address" class="form-control" value="<?=$address?>">
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="form-group">
-                        <label>City</label>
-                        <input type="text" name="city" class="form-control" value="<?=$city?>">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                        <label>State / ZIP</label>
-                        <input type="text" name="state_zip" class="form-control" value="<?=$state_zip?>">
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                        <label>DL / SSN</label>
-                        <input type="text" name="ssl_dln" class="form-control" value="<?=$ssl_dln?>">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-3">
-                        <div class="form-group">
-                            <label>Marital Status</label>
-                            <select name="marital_status" class="form-control">
-                            <?php
-                                $opts = ["Unknown","Single","Married","Divorced","Separated","Widowed","Partnered"];
-                                foreach ($opts as $opt) {
-                                $sel = ($marital_status===$opt) ? "selected" : "";
-                                echo "<option value=\"{$opt}\" {$sel}>{$opt}</option>";
-                                }
-                            ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-3">
-                        <div class="form-group">
-                            <label>Employed</label>
-                            <select name="employed" class="form-control">
-                            <option value="Unknown" <?= $employed==="Unknown"?"selected":"" ?>>Unknown</option>
-                            <option value="Yes"     <?= $employed==="Yes"    ?"selected":"" ?>>Yes</option>
-                            <option value="No"      <?= $employed==="No"     ?"selected":"" ?>>No</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>UA Positive</label>
-                            <select name="UA_positive" class="form-control">
-                            <option value="Unknown" <?= $UA_positive==="Unknown"?"selected":"" ?>>Unknown</option>
-                            <option value="No"      <?= $UA_positive==="No"     ?"selected":"" ?>>No</option>
-                            <option value="Yes"     <?= $UA_positive==="Yes"    ?"selected":"" ?>>Yes</option>
-                            </select>
-                        </div>
-                    </div>
-
+                <div class="form-row">
                     <div class="col-4">
-                        <div class="form-group">
-                        <label>Prescription Use</label>
-                        <input type="text" name="prescription_use" class="form-control" value="<?=$prescription_use?>">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Paid Amount</label>
-                            <input type="number" step="0.01" min="0"
-                                name="paid_amount" class="form-control" value="<?=$paid_amount?>">
-                        </div>
-                    </div>
-
-                    <div class="col-3">
-                        <div class="form-group">
-                            <label>Paid Source</label>
-                            <select name="paid_source" class="form-control">
-                            <?php
-                                $sources = ["Unknown","Cash","Card","Check","Money Order","Scholarship","Waiver","CPS","Refunded","Other"];
-                                foreach ($sources as $src) {
-                                $sel = ($paid_source===$src) ? "selected" : "";
-                                echo "<option value=\"{$src}\" {$sel}>{$src}</option>";
-                                }
-                            ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-5">
-                        <div class="form-group">
-                        <label>Payment Note</label>
-                        <input type="text" name="paid_note" class="form-control" value="<?=$paid_note?>">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 4 -->
-                <div class="row">
-                    <div class="col-1">
-                        <div class="form-group">
-                            <label>Referral Type</label>
-                            <select class="form-control"
-                                    id="referral_type_id"
-                                    name="referral_type_id">
-                                <?php
-                                    $referral_types = get_referral_types();
-                                    foreach ($referral_types as $referral_type) {
-                                        $value = htmlspecialchars($referral_type["referral_type"]);
-                                        $selected = ($referral_type["id"] == $referral_type_id) ? 'selected' : '';
-                                        echo "<option value='{$referral_type['id']}' {$selected}>$value</option>";
-                                    }
-                                ?>
-                            </select>
-                            <span class="form-text"><?php echo $referral_type_id_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="form-group">
-                            <label>Required Sessions</label>
-                            <input type="number"
-                                name="required_sessions"
-                                class="form-control"
-                                value="<?= htmlspecialchars($required_sessions === '' ? (program_required_sessions((int)$program_id) ?? '') : $required_sessions) ?>">
-
-                            <span class="form-text"><?php echo $required_sessions_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="form-group">
-                            <label>Session per Week</label>
-                            <input type="number"
-                                name="weekly_attendance"
-                                step="1"
-                                class="form-control"
-                                value="<?= htmlspecialchars($weekly_attendance === '' ? ($PROGRAM_DEFAULTS[(int)$program_id]['meetings_per_week'] ?? '') : $weekly_attendance) ?>">
-
-                            <span class="form-text"><?php echo $weekly_attendance_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <div class="form-group">
-                            <label>Fee per Session</label>
-                            <input type="number"
-                                   name="fee"
-                                   step="1.00"
-                                   class="form-control"
-                                   value="<?php echo ($fee == "") ? "30.00" : $fee; ?>">
-                            <span class="form-text"><?php echo $fee_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Case Manager</label>
-                            <select class="form-control"
-                                    id="case_manager_id"
-                                    name="case_manager_id">
-                                <?php
-                                    $managers = get_case_managers();
-                                    foreach ($managers as $manager) {
-                                        $value = htmlspecialchars($manager["last_name"] . ", " . $manager["first_name"] . " - " . $manager["office"]);
-                                        $selected = ($manager["id"] == $case_manager_id) ? 'selected' : '';
-                                        echo "<option value='{$manager['id']}' {$selected}>$value</option>";
-                                    }
-                                ?>
-                            </select>
-                            <span class="form-text"><?php echo $case_manager_id_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>cause_number</label>
-                            <input type="text"
-                                   name="cause_number"
-                                   maxlength="15"
-                                   class="form-control"
-                                   value="<?php echo $cause_number; ?>">
-                            <span class="form-text"><?php echo $cause_number_err; ?></span>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <!-- Row 5 -->
-                <div class="row">
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label>Therapy Group</label>
-                            <select class="form-control"
-                                    id="therapy_group_id"
-                                    name="therapy_group_id">
-                                <?php
-                                    $groups = get_therapy_groups();
-                                    foreach ($groups as $group) {
-                                        $value = htmlspecialchars($group["name"] . " - " . $group["address"]);
-                                        $selected = ($group["id"] == $therapy_group_id) ? 'selected' : '';
-                                        echo "<option value='{$group['id']}' {$selected}>$value</option>";
-                                    }
-                                ?>
-                            </select>
-                            <span class="form-text"><?php echo $therapy_group_id_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Orientation Date</label>
-                            <input type="date"
-                                   name="orientation_date"
-                                   class="form-control"
-                                   value="<?php echo $orientation_date; ?>">
-                            <span class="form-text"><?php echo $orientation_date_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Progress Stage</label>
-                            <select class="form-control"
-                                    id="client_stage_id"
-                                    name="client_stage_id">
-                                <?php
-                                    $stages = get_client_stages();
-                                    foreach ($stages as $stage) {
-                                        $value = htmlspecialchars($stage["stage"]);
-                                        $selected = ($stage["id"] == $client_stage_id) ? 'selected' : '';
-                                        echo "<option value='{$stage['id']}' {$selected}>$value</option>";
-                                    }
-                                ?>
-                            </select>
-                            <span class="form-text"><?php echo $client_stage_id_err; ?></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Attendance Fields -->
-                <div class="row">
-                    <div class="col-6">
-                        <label>Attendance Day(s) - Select the days of the week the client plans to attend class</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <!-- Sunday -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="attends_sunday"
-                                   <?php if ($attends_sunday == "1") echo "checked"; ?>>
-                            <label class="form-check-label" for="attends_sunday">Sunday</label>
-                        </div>
-                        <!-- Monday -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="attends_monday"
-                                   <?php if ($attends_monday == "1") echo "checked"; ?>>
-                            <label class="form-check-label" for="attends_monday">Monday</label>
-                        </div>
-                        <!-- Tuesday -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="attends_tuesday"
-                                   <?php if ($attends_tuesday == "1") echo "checked"; ?>>
-                            <label class="form-check-label" for="attends_tuesday">Tuesday</label>
-                        </div>
-                        <!-- Wednesday -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="attends_wednesday"
-                                   <?php if ($attends_wednesday == "1") echo "checked"; ?>>
-                            <label class="form-check-label" for="attends_wednesday">Wednesday</label>
-                        </div>
-                        <!-- Thursday -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="attends_thursday"
-                                   <?php if ($attends_thursday == "1") echo "checked"; ?>>
-                            <label class="form-check-label" for="attends_thursday">Thursday</label>
-                        </div>
-                        <!-- Friday -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="attends_friday"
-                                   <?php if ($attends_friday == "1") echo "checked"; ?>>
-                            <label class="form-check-label" for="attends_friday">Friday</label>
-                        </div>
-                        <!-- Saturday -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="attends_saturday"
-                                   <?php if ($attends_saturday == "1") echo "checked"; ?>>
-                            <label class="form-check-label" for="attends_saturday">Saturday</label>
-                        </div>
-                        <!-- extra Sunday (2× T4C) - only visible for Thinking for a Change -->
-                        <div id="sun2wrap" class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                    type="checkbox"
-                                    name="attends_sunday_t4c"
-                                    <?= $attends_sunday_t4c ? 'checked' : '' ?>>
-                            <label class="form-check-label">Sunday&nbsp;(2× T4C)</label>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Client Notes & Other Concerns -->
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Client Notes</label>
-                            <textarea name="note"
-                                      maxlength="2048"
-                                      class="form-control"><?php echo $note; ?></textarea>
-                            <span class="form-text"><?php echo $note_err; ?></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label>Other Concerns</label>
-                            <textarea name="other_concerns"
-                                      maxlength="2048"
-                                      class="form-control"><?php echo $other_concerns; ?></textarea>
-                            <span class="form-text"><?php echo $other_concerns_err; ?></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Exit Info -->
-                <div class="row">
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Exit Date</label>
-                            <input type="date"
-                                   name="exit_date"
-                                   class="form-control"
-                                   value="<?php echo $exit_date; ?>">
-                            <span class="form-text"><?php echo $exit_date_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Exit Reason</label>
-                            <select class="form-control"
-                                    id="exit_reason_id"
-                                    name="exit_reason_id">
-                                <?php
-                                    $exit_reasons = get_exit_reasons();
-                                    foreach ($exit_reasons as $exit_reason) {
-                                        $value = htmlspecialchars($exit_reason["reason"]);
-                                        $selected = ($exit_reason["id"] == $exit_reason_id) ? 'selected' : '';
-                                        echo "<option value='{$exit_reason['id']}' {$selected}>$value</option>";
-                                    }
-                                ?>
-                            </select>
-                            <span class="form-text"><?php echo $exit_reason_id_err; ?></span>
-                        </div>
-                    </div>
-                    <div class="col-5">
-                        <div class="form-group">
-                            <label>Exit Notes</label>
-                            <textarea name="exit_note"
-                                      maxlength="512"
-                                      class="form-control"><?php echo $exit_note; ?></textarea>
-                            <span class="form-text"><?php echo $exit_note_err; ?></span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Behavior Checkboxes -->
-                <div class="row">
-                
-                    <div class="col">
-                        <label>Conduct</label>
-                        <br>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="speaksSignificantlyInGroup"
-                                   <?php if ($speaksSignificantlyInGroup == "1") echo "checked"; ?>>
-                            <label class="form-check-label"
-                                   for="speaksSignificantlyInGroup">Excessive speaking</label>
-                        </div>
-                        
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="respectfulTowardsGroup"
-                                   <?php if ($respectfulTowardsGroup == "1") echo "checked"; ?>>
-                            <label class="form-check-label"
-                                   for="respectfulTowardsGroup">Respectful</label>
-                        </div>
-                        
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="takesResponsibilityForPastBehavior"
-                                   <?php if ($takesResponsibilityForPastBehavior == "1") echo "checked"; ?>>
-                            <label class="form-check-label"
-                                   for="takesResponsibilityForPastBehavior">Takes responsibility</label>
-                        </div>
-                        
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="disruptiveOrArgumentitive"
-                                   <?php if ($disruptiveOrArgumentitive == "1") echo "checked"; ?>>
-                            <label class="form-check-label"
-                                   for="disruptiveOrArgumentitive">Disruptive</label>
-                        </div>
-                        
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="inappropriateHumor"
-                                   <?php if ($inappropriateHumor == "1") echo "checked"; ?>>
-                            <label class="form-check-label"
-                                   for="inappropriateHumor">Inappropriate humor</label>
-                        </div>
-                        
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="blamesVictim"
-                                   <?php if ($blamesVictim == "1") echo "checked"; ?>>
-                            <label class="form-check-label"
-                                   for="blamesVictim">Blames victim</label>
-                        </div>
-                        
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="drugAlcohol"
-                                   <?php if ($drugAlcohol == "1") echo "checked"; ?>>
-                            <label class="form-check-label"
-                                   for="drugAlcohol">Alcohol or drugs</label>
-                        </div>
-                        
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input"
-                                   type="checkbox"
-                                   value=""
-                                   name="inappropriateBehavior"
-                                   <?php if ($inappropriateBehavior == "1") echo "checked"; ?>>
-                            <label class="form-check-label"
-                                   for="inappropriateBehavior">Inappropriate behavior</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- =======================
-                    Behavior Contract Fields
-                    ======================= -->
-                <br>    
-                <!-- keep ONE block only -->
-                <div class="form-group">
-                    <label for="behavior_contract_status">Behavior Contract Status</label>
+                    <label>Behavior Contract Status</label>
                     <select name="behavior_contract_status" id="behavior_contract_status" class="form-control">
                         <option value="Not Needed" <?= $behavior_contract_status==="Not Needed"?"selected":"" ?>>Not Needed</option>
                         <option value="Needed"     <?= $behavior_contract_status==="Needed"?"selected":"" ?>>Needed</option>
                         <option value="Signed"     <?= $behavior_contract_status==="Signed"?"selected":"" ?>>Signed</option>
                     </select>
-
-                    <label class="mt-2" for="behavior_contract_signed_date">Behavior Contract Signed Date</label>
-                    <input type="date" name="behavior_contract_signed_date" id="behavior_contract_signed_date"
-                            class="form-control" value="<?= htmlspecialchars($behavior_contract_signed_date ?? '') ?>">
-                </div>
-
-                <!-- Submission -->
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <!-- Hidden input to keep track of client id -->
-                            <input type="hidden" name="id" value="<?php echo $id; ?>" />
-                            <input type="submit" class="btn btn-primary" value="Submit">
-                            <a href="client-review.php?client_id=<?php echo $id; ?>"
-                               class="btn btn-secondary">Cancel</a>
-                        </div>
+                    </div>
+                    <div class="col-4">
+                    <label>Behavior Contract Signed Date</label>
+                    <input type="date" name="behavior_contract_signed_date" id="behavior_contract_signed_date" class="form-control" value="<?= htmlspecialchars($behavior_contract_signed_date ?? '') ?>">
                     </div>
                 </div>
+                </div>
+            </div>
+
+            <!-- 9) Notes -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Notes</h5></div>
+                <div class="card-body">
+                <div class="form-row">
+                    <div class="col-6">
+                    <label>Client Notes</label>
+                    <textarea name="note" maxlength="2048" class="form-control"><?php echo $note; ?></textarea>
+                    <span class="form-text"><?php echo $note_err; ?></span>
+                    </div>
+                    <div class="col-6">
+                    <label>Other Concerns</label>
+                    <textarea name="other_concerns" maxlength="2048" class="form-control"><?php echo $other_concerns; ?></textarea>
+                    <span class="form-text"><?php echo $other_concerns_err; ?></span>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- 10) Exit -->
+            <div class="card mb-3">
+                <div class="card-header"><h5 class="mb-0">Exit</h5></div>
+                <div class="card-body">
+                <div class="form-row">
+                    <div class="col-3">
+                    <label>Exit Date</label>
+                    <input type="date" name="exit_date" class="form-control" value="<?php echo $exit_date; ?>">
+                    <span class="form-text"><?php echo $exit_date_err; ?></span>
+                    </div>
+                    <div class="col-3">
+                    <label>Exit Reason</label>
+                    <select class="form-control" id="exit_reason_id" name="exit_reason_id">
+                        <?php $exit_reasons = get_exit_reasons(); foreach ($exit_reasons as $exit_reason):
+                        $value = htmlspecialchars($exit_reason["reason"]);
+                        $selected = ($exit_reason["id"] == $exit_reason_id) ? 'selected' : ''; ?>
+                        <option value="<?=$exit_reason['id']?>" <?=$selected?>><?=$value?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <span class="form-text"><?php echo $exit_reason_id_err; ?></span>
+                    </div>
+                    <div class="col-6">
+                    <label>Exit Notes</label>
+                    <textarea name="exit_note" maxlength="512" class="form-control"><?php echo $exit_note; ?></textarea>
+                    <span class="form-text"><?php echo $exit_note_err; ?></span>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="d-flex justify-content-between align-items-center">
+                <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                <div>
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <a href="client-review.php?client_id=<?php echo $id; ?>" class="btn btn-secondary">Cancel</a>
+                </div>
+            </div>
+
             </form>
+
+
         </div> <!-- /.container-fluid -->
     </section>
 

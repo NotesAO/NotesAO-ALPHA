@@ -289,6 +289,21 @@ if (isset($_GET['action']) && $_GET['action'] === 'fetch_data') {
                 <div id="check-absences-message" class="mt-3 text-dark"></div>
             </div>
 
+            <!-- CHECK BALANCES -->
+            <div class="mb-4">
+                <button
+                    class="btn btn-warning btn-block mb-2"
+                    id="checkBalancesButton"
+                    title="Check Balances"
+                    type="button"
+                    onclick="checkBalances()"
+                >
+                    <i class="fas fa-dollar-sign"></i> Check Balances
+                </button>
+                <div id="check-balances-message" class="mt-3 text-dark"></div>
+            </div>
+
+
             <hr class="section-divider"/>
 
             <!-- REMINDER -->
@@ -602,6 +617,47 @@ function checkAbsences() {
         }
     });
 }
+
+/* -------------------------------------------------------------------
+   3b) CHECK BALANCES
+   ------------------------------------------------------------------- */
+function checkBalances() {
+    const msg = document.getElementById('check-balances-message');
+    msg.innerText = 'Processing...';
+
+    $.ajax({
+        url: 'check_balances.php',     // uses today’s date and default filters
+        type: 'GET',
+        dataType: 'json',
+        // If you later add UI filters, pass them via "data: { program_id: 2, min_balance: 5, include_exited: 1 }"
+        success: function(response) {
+            if (response.status === 'success') {
+                if (response.download_link) {
+                    const link = response.download_link;
+                    const filename = link.substring(link.lastIndexOf('/') + 1);
+
+                    const a = document.createElement('a');
+                    a.href = link;
+                    a.download = filename;
+                    a.target = '_blank';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+
+                    msg.innerText = 'Balance Report downloaded successfully.';
+                } else {
+                    msg.innerText = 'Error: No download link provided.';
+                }
+            } else {
+                msg.innerText = 'Error: ' + response.message;
+            }
+        },
+        error: function(xhr) {
+            msg.innerText = 'Error occurred: ' + xhr.status + ' ' + xhr.statusText;
+        }
+    });
+}
+
 
 /* -------------------------------------------------------------------
    4) GENERATE REPORTS (Background)

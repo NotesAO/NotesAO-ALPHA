@@ -155,6 +155,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $post = $_POST;
 
+  // --- 8f explicit defaults (Hold Harmless) ---
+  if (!array_key_exists('consent_hold_harmless', $post) || $post['consent_hold_harmless'] === '') {
+    $post['consent_hold_harmless'] = '1';
+  }
+  if ((empty($post['hold_harmless_date']) || $post['hold_harmless_date'] === '0000-00-00')
+      && !empty($post['signature_date'])) {
+    $post['hold_harmless_date'] = $post['signature_date'];
+  }
+
+  // Normalize HTML5 datetime-local (YYYY-MM-DDTHH:MM) → 'YYYY-MM-DD HH:MM:SS'
+  foreach ($DB_COLS as $c => $t) {
+    $t = strtolower($t);
+    $isDT = (strpos($t,'datetime') === 0 || strpos($t,'timestamp') === 0);
+    if ($isDT && isset($post[$c]) && $post[$c] !== '') {
+      $v = str_replace('T',' ', trim((string)$post[$c]));
+      if (preg_match('/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}$/', $v)) { $v .= ':00'; }
+      $post[$c] = $v;
+    }
+  }
+
+
   // Auto-fill missing dates with signature_date (except DOBs/created_at)
   $sig = trim((string)($post['signature_date'] ?? ''));
   if ($sig !== '') {
@@ -326,34 +347,38 @@ $SECTIONS = [
     'sworn_sig_name','sworn_signed_date'
   ],
 
-  // Pages 1 and 8a–8e – all consent toggles/dates/signatures (including 8c start fields and 8d initials)
-  'Consents (Pages 1 & 8a–8e)' => [
-    // Page 1
-    'confidentiality_sig_p1','confidentiality_date_p1',
-    'consent_confidentiality','consent_disclosure','consent_partner_info',
-    'consent_program_agreement','consent_responsibility','consent_virtual_rules','consent_policy_termination',
+    // Pages 1 and 8a–8f – all consent toggles/dates/signatures (including 8c start fields and 8d initials)
+    'Consents (Pages 1 & 8a–8f)' => [
+      // Page 1
+      'confidentiality_sig_p1','confidentiality_date_p1',
+      'consent_confidentiality','consent_disclosure','consent_partner_info',
+      'consent_program_agreement','consent_responsibility','consent_virtual_rules','consent_policy_termination',
 
-    // 8a — Release to agencies
-    'consent8a_referral_type','consent8a_signature','consent8a_date','consent8a_agree',
+      // 8a — Release to agencies
+      'consent8a_referral_type','consent8a_signature','consent8a_date','consent8a_agree',
 
-    // 8b — Disclosure partner field + sig/date
-    'victim_relationship_8b','disclosure_signature_8b','disclosure_date_8b',
+      // 8b — Disclosure partner field + sig/date
+      'victim_relationship_8b','disclosure_signature_8b','disclosure_date_8b',
 
-    // 8c — Program agreement (start date, DOW, time + two sign/date lines)
-    'start_date_8c','start_dow_8c','start_time_8c',
-    'program_signature_8ca','program_date_8ca',
-    'program_signature_8cb','program_date_8cb',
+      // 8c — Program agreement (start date, DOW, time + two sign/date lines)
+      'start_date_8c','start_dow_8c','start_time_8c',
+      'program_signature_8ca','program_date_8ca',
+      'program_signature_8cb','program_date_8cb',
 
-    // 8d — Virtual group rules (initial each + sign/date)
-    'vgr_initial_1','vgr_initial_2','vgr_initial_3','vgr_initial_4','vgr_initial_5',
-    'vgr_initial_6','vgr_initial_7','vgr_initial_8','vgr_initial_9','vgr_initial_10',
-    'vgr_initial_11','vgr_initial_12','vgr_initial_13','vgr_initial_14','vgr_initial_15',
-    'vgr_initial_16','vgr_initial_17','vgr_initial_18','vgr_initial_19',
-    'vgr_signature_8d','vgr_date_8d',
+      // 8d — Virtual group rules (initial each + sign/date)
+      'vgr_initial_1','vgr_initial_2','vgr_initial_3','vgr_initial_4','vgr_initial_5',
+      'vgr_initial_6','vgr_initial_7','vgr_initial_8','vgr_initial_9','vgr_initial_10',
+      'vgr_initial_11','vgr_initial_12','vgr_initial_13','vgr_initial_14','vgr_initial_15',
+      'vgr_initial_16','vgr_initial_17','vgr_initial_18','vgr_initial_19',
+      'vgr_signature_8d','vgr_date_8d',
 
-    // 8e — Policy & termination
-    'termination_signature_8e','termination_date_8e',
-  ],
+      // 8e — Policy & termination
+      'termination_signature_8e','termination_date_8e',
+
+      // 8f — Hold Harmless
+      'consent_hold_harmless','hold_harmless_signature','hold_harmless_date',
+    ],
+
 
   // Page 7b — VTA
   'VTA (Victim Treatment Assessment)' => array_merge(

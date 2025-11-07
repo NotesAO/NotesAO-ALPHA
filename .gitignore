@@ -1,94 +1,41 @@
-# secrets
-config/config.php
-.env
-.env.*
+# --- user/home noise
+.bash_history
+.gitconfig
+.lastlogin
+.cache/
+.config/
+.local/
+.dotnet/
+.codex/
 
-# backups and archives
-backups/
-*.tgz
-*.tar
-*.tar.gz
-*.zip
-*.7z
+# --- cPanel mail, roundcube, etc
+etc/**
 
-# outputs
+# --- logs
+error_log
+**/error_log
 *.log
 logs/
-log/
-tmp/
-cache/
-GeneratedDocuments/
-Generated_Reports*/
+**/logs/
+
+# --- python noise
+**/__pycache__/
+**/*.pyc
+
+# --- build artifacts and generated outputs
+NotePro-Report-Generator/GeneratedDocuments/
 NotePro-Report-Generator/csv/
-public_html/*/uploads/
+NotePro-Report-Generator/tasks/
+NotePro-Report-Generator/venv*/
+public_html/**/GeneratedDocuments/
 
-# binaries you don’t want in git
-*.pdf
-*.docx
-*.odt
-*.xlsx
-*.xls
-
-# vendors
-node_modules/
-vendor/
-
-# python
-__pycache__/
-*.pyc
-venv*/
-.pytest_cache/
-
-# IDE
+# --- IDE/OS
+.DS_Store
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 
-# misc
-*_bak.php
-*.orig
-~$*.*
-.~lock*.#
-.vscode-server/
-Downloads/
-patch_work/
-# NPRG installers and bundles
-NotePro-Report-Generator/LibreOffice_*/
-NotePro-Report-Generator/**/*.rpm
-NotePro-Report-Generator/**/*.deb
-NotePro-Report-Generator/**/*.pkg
-NotePro-Report-Generator/**/*.tar
-NotePro-Report-Generator/**/*.tar.*
-NotePro-Report-Generator/**/*.tgz
-NotePro-Report-Generator/**/*.zip
-/.ssh/
-/.cpanel/
-/etc/**/admin.rcube.db
-*.db
-*.log
-*.tar
-*.gz
-*.zip
-*.bak
-/node_modules/
-/vendor/
-/.env
-*.key
-*.pem
-/.local/
-/.config/
-/cache/
-/mail/
-/git-filter-repo*/
-/error/log
-/.bash_history
-/.bash_profile
-/.bashrc
-/.profile
-/.gitconfig
-/.vimrc
-/.nano/
-error_log
-*/error_log
-
-/.cache/
-/.gitignore_global
+# --- secrets examples (track only samples)
+**/config/config.php
+**/config/secrets.php

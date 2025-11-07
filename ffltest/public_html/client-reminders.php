@@ -146,7 +146,7 @@ function get_all_groups(mysqli $con): array {
     return qall($con,$sql);
 }
 function get_clients_for_group(mysqli $con, int $groupId): array {
-    $sql="SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id
+    $sql="SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id, referral_type_id
 
           FROM client
           WHERE therapy_group_id=?
@@ -159,6 +159,7 @@ function get_all_active_clients(mysqli $con): array {
     $sql="SELECT
              id, first_name, last_name, email,
              program_id, therapy_group_id, gender_id, case_manager_id,
+             referral_type_id,  -- ADDED
              attends_sunday, attends_monday, attends_tuesday,
              attends_wednesday, attends_thursday, attends_friday, attends_saturday
           FROM client
@@ -167,6 +168,7 @@ function get_all_active_clients(mysqli $con): array {
           ORDER BY last_name, first_name";
     return qall($con,$sql);
 }
+
 
 
 /* -----------------------------------------------
@@ -179,8 +181,8 @@ function get_t4c_day_rosters(mysqli $con): array {
     $rosters=[];
     foreach ($days as $d) {
         $col="attends_{$d}";
-        $sql="SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id
-
+        $sql="SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id,
+                     referral_type_id  -- ADDED
               FROM client
               WHERE program_id=1
                 AND exit_date IS NULL
@@ -189,8 +191,8 @@ function get_t4c_day_rosters(mysqli $con): array {
               ORDER BY last_name, first_name";
         $rosters[$d]=qall($con,$sql);
     }
-    $virtual=qall($con,"SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id
-
+    $virtual=qall($con,"SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id,
+                               referral_type_id  -- ADDED
                         FROM client
                         WHERE program_id=1
                           AND exit_date IS NULL
@@ -199,6 +201,7 @@ function get_t4c_day_rosters(mysqli $con): array {
                         ORDER BY last_name, first_name");
     return [$rosters,$virtual];
 }
+
 
 function program_name_from_id(int $pid): string {
   return [1=>'Thinking for a Change', 2=>"Men's BIPP", 3=>"Women's BIPP", 4=>'Anger Control'][$pid] ?? 'Program';
@@ -745,36 +748,53 @@ function render_makeup_blocks(mysqli $con, array $client): array {
   return [$tonightHtml,$moreHtml,$next['date']];
 }
 
+function _addr_norm(string $s): string {
+    return preg_replace('/[^a-z0-9]/', '', strtolower($s));
+}
 
 
 function referral_type_label(?int $refId): string {
     // TODO: adjust to your actual referral_type_id values
     $map = [
-        1 => 'Court',
+        0 => 'other',
+        1 => 'Probation',
         2 => 'Parole',
-        3 => 'Probation',
+        3 => 'Pretrial',
         4 => 'CPS',
-        5 => 'Self-Pay',
+        5 => 'Attorney',
+        6 => 'VTC',
     ];
-    return $map[$refId ?? 0] ?? '';
+    return $map[$refId ?? -1] ?? '';
 }
 
 function build_officer_sentence(array $off): string {
     $name = trim($off['name'] ?? '');
-    $office = trim($off['office'] ?? '');
-    if ($name && $office) return $office . " and " . $name . " expect your presence.";
-    if ($name) return $name . " expects your presence.";
-    if ($office) return $office . " expects your presence.";
-    return "";
+    return $name !== '' ? ($name . ' expects your presence.') : '';
 }
 
-function build_referral_sentence(array $client, array $off, string $programShort): string {
-    $label = referral_type_label(isset($client['referral_type_id']) ? (int)$client['referral_type_id'] : null);
-    $office = trim($off['office'] ?? '');
-    if ($office !== '') return "Your " . $office . " mandated " . $programShort . " group is scheduled.";
-    if ($label !== '') return "Your " . $label . " mandated " . $programShort . " group is scheduled.";
-    return "Your " . $programShort . " group is scheduled.";
+// REPLACE your build_referral_sentence with this:
+function build_referral_sentence(array $client, string $programShort, string $whenPhrase): string {
+    $label   = referral_type_label(isset($client['referral_type_id']) ? (int)$client['referral_type_id'] : null);
+    $mandate = $label !== '' ? $label : 'Court';
+
+    // Bold "tonight + date" and also bold the time (keep the literal ", at " unbolded)
+    $when = '';
+    $wp = trim($whenPhrase);
+    if ($wp !== '') {
+        if (preg_match('/^(.*)(,\s*at\s*)(.+)$/i', $wp, $m)) {
+            $lead = trim($m[1]);   // e.g., "tonight Tuesday, November 1st"
+            $sep  = $m[2];         // ", at "
+            $time = trim($m[3]);   // e.g., "9:00 AM"
+            $when = ' <strong>'.$lead.'</strong>'.$sep.'<strong>'.$time.'</strong>';
+        } else {
+            $when = ' <strong>'.$wp.'</strong>';
+        }
+    }
+
+    return "Your {$mandate} mandated {$programShort} group is scheduled{$when}.";
 }
+
+
 
 /**
  * Where line:
@@ -784,8 +804,17 @@ function build_referral_sentence(array $client, array $off, string $programShort
 function build_meeting_where(array $gmeta, string $groupLink, ?string $weekday, ?string $timeDisp): string {
     $addr = trim($gmeta['address'] ?? '');
     if ($addr !== '') {
-        return 'Where: ' . htmlspecialchars($addr, ENT_QUOTES, 'UTF-8');
+        $out = 'Where: ' . htmlspecialchars($addr, ENT_QUOTES, 'UTF-8');
+
+        // Optional one-off note for FW main office
+        $target = '1100 East Lancaster Ave Fort Worth TX 76102';
+        if (_addr_norm($addr) === _addr_norm($target) || _addr_norm($addr) === _addr_norm(default_bipp_inperson_address())) {
+            $out .= '<br><em>Note: Park on Kentucky Ave.</em>';
+        }
+        return $out;
     }
+
+    // Virtual fallback (unchanged)
     $label = trim(trim((string)$weekday) . ' ' . trim((string)$timeDisp));
     $label = $label !== '' ? ($label . ' Group Link') : 'Group Link';
     $alink = '<a href="' . htmlspecialchars($groupLink, ENT_QUOTES, 'UTF-8') . '">'
@@ -793,6 +822,7 @@ function build_meeting_where(array $gmeta, string $groupLink, ?string $weekday, 
            . '</a>';
     return 'Where: Virtual (Use your group link):<br>' . $alink;
 }
+
 
 
 
@@ -810,11 +840,12 @@ function expand_placeholders(array $client, array $gmeta, string $subject, strin
     $programShort = ($pid === 1) ? 'T4C' : (($pid === 2 || $pid === 3) ? 'BIPP' : ($pid === 4 ? 'Anger Control' : 'Program'));
     $genderPossessive = ($gid === 2) ? "Men's" : (($gid === 3) ? "Women's" : "Client's");
 
-    // --- next occurrence + lockout (10 min after start) ---
     $weekday = $gmeta['weekday'] ?? null;
     $timeDisp = $gmeta['time'] ?? null;
     $next_group_date = '';
     $lockout_time = '';
+    $whenPhrase = '';
+
     if ($weekday && $timeDisp && preg_match('/^\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\s*$/i', $timeDisp, $m)) {
         $wdMap = ['sunday'=>0,'monday'=>1,'tuesday'=>2,'wednesday'=>3,'thursday'=>4,'friday'=>5,'saturday'=>6];
         $idx = $wdMap[strtolower($weekday)] ?? null;
@@ -822,18 +853,28 @@ function expand_placeholders(array $client, array $gmeta, string $subject, strin
             $hh=(int)$m[1]; $mm=(int)($m[2] ?? 0); $ampm=strtoupper($m[3]);
             if ($hh === 12) $hh = 0;
             if ($ampm === 'PM') $hh += 12;
-            $tz = new DateTimeZone('America/Chicago');
+
+            $tz  = new DateTimeZone('America/Chicago');
             $now = new DateTime('now', $tz);
+
+            // Next occurrence on/after now
             $target = (clone $now)->setTime($hh, $mm, 0);
             $todayIdx = (int)$now->format('w');
             $daysAhead = ($idx - $todayIdx + 7) % 7;
             if ($daysAhead === 0 && $target <= $now) $daysAhead = 7;
             if ($daysAhead > 0) $target->modify("+{$daysAhead} days");
 
-            $next_group_date = $target->format('l, F j');
+            // Display pieces
+            $dnum = (int)$target->format('j');
+            $dateStr = $target->format('l, F ') . $dnum . ordinal_suffix($dnum);
+            $next_group_date = $dateStr;
             $lockout_time = (clone $target)->modify('+10 minutes')->format('g:i A');
+
+            $tonight = ($daysAhead === 0) ? 'tonight ' : '';
+            $whenPhrase = $tonight . $dateStr . ', at ' . $timeDisp;
         }
     }
+
 
     // --- per-client link & officer/case manager ---
     $groupLink = resolve_group_link($con, $client);
@@ -841,8 +882,9 @@ function expand_placeholders(array $client, array $gmeta, string $subject, strin
 
     // --- custom sentences ---
     $subject_prefix     = subject_prefix_for($client);
-    $referral_sentence  = build_referral_sentence($client, $off, $programShort);
+    $referral_sentence  = build_referral_sentence($client, $programShort, $whenPhrase);
     $officer_sentence   = build_officer_sentence($off);
+
 
     // --- meeting text (with labeled link for virtual) ---
     $meeting_where = build_meeting_where($gmeta, $groupLink, $weekday, $timeDisp);
@@ -957,6 +999,8 @@ function send_html_mail(string $to, string $subject, string $htmlBody, string $f
     $from    = $from ?: (defined('MAIL_FROM') ? MAIL_FROM : 'no-reply@ffl.notesao.com');
     $replyTo = defined('MAIL_REPLY_TO') ? MAIL_REPLY_TO : 'admin@notesao.com';
 
+
+
     $headers = [
         "From: Free for Life Group <{$from}>",
         "Reply-To: {$replyTo}",
@@ -1019,8 +1063,6 @@ $DEF_SUBJECT = "{{subject_prefix}} Group Reminder: {{group_day}} at {{group_time
 $DEF_BODY = <<<HTML
 <p>Hi {{first_name}},</p>
 
-<p><strong>Your {{program_name}} group is {{group_day}} at {{group_time}} ({{next_group_date}}).</strong></p>
-
 <p>
   {{referral_sentence}} {{officer_sentence}}
   Please arrive early. <em>Lockout is {{lockout_time}}</em>. Your presence is a mandatory stipulation.
@@ -1036,7 +1078,7 @@ $DEF_BODY = <<<HTML
 </p>
 
 <p>
-  Questions? Reply to this email with any attendance or payment concerns OR call during office hours (Mon–Fri, 8am–4pm).
+  Questions? DO NOT Reply to this email. Email: vanericmartin@gmail.com with any attendance or payment concerns OR Call (817) 501-5102 during office hours (Mon–Fri, 8am–4pm).
 </p>
 
 <p>Blessings,<br>Free for Life Group</p>
@@ -1190,8 +1232,11 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
             } else { $gmeta = ['name'=>'','weekday'=>'','time'=>'','address'=>'']; }
 
             foreach ($ids as $cid) {
-                $c = qone($con,"SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id
+                $c = qone($con,"SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id,
+                                      referral_type_id  -- ADDED
                                 FROM client WHERE id=?",[(int)$cid],'i');
+
+
                 if (!$c || empty($c['email'])) { $failed++; $errs[] = "Missing email for #$cid"; continue; }
                 if (is_unsubscribed($con, $c['email'])) { $failed++; $errs[] = "Unsubscribed: {$c['email']}"; continue; }
 
@@ -1261,7 +1306,10 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
             $gmeta = ['name'=>"Make-Up for $makeupDay",'weekday'=>$makeupDay,'time'=>'','address'=>''];
 
             foreach ($ids as $cid) {
-                $c = qone($con,"SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id FROM client WHERE id=?",[(int)$cid],'i');
+                $c = qone($con,"SELECT id, first_name, last_name, email, program_id, therapy_group_id, gender_id, case_manager_id,
+                                      referral_type_id  -- ADDED
+                                FROM client WHERE id=?",[(int)$cid],'i');
+
                 if (!$c || empty($c['email'])) { $failed++; $errs[]="Missing email for #$cid"; continue; }
                 if (is_unsubscribed($con, $c['email'])) { $failed++; $errs[]="Unsubscribed: {$c['email']}"; continue; }
 

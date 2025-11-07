@@ -143,7 +143,7 @@ $username     = $_SESSION['name'] ?? 'User';
                         echo '<div class="dropdown-submenu">';
                         echo '  <a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-window-restore"></i> Client Portal</a>';
                         echo '  <div class="dropdown-menu">';
-                        // echo '    <a class="dropdown-item" href="payment-link-admin.php"><i class="fas fa-credit-card"></i> Payment Links (CP)</a>';
+                        echo '    <a class="dropdown-item" href="payment-link-admin.php"><i class="fas fa-credit-card"></i> Payment Links (CP)</a>';
                         echo '    <a class="dropdown-item" href="clientportal_links_admin.php"><i class="fas fa-video"></i> Zoom Links (CP)</a>';
                         echo '  </div>';
                         echo '</div>';

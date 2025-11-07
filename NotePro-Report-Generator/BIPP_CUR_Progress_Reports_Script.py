@@ -685,7 +685,8 @@ def fetch_curriculum_note_for_client(client_id):
            AND ts.date >= %s
            AND ts.date < %s
            AND ts.curriculum_id IS NOT NULL
-           AND ts.curriculum_id <> ''
+           AND ts.curriculum_id <> 0
+
          ORDER BY ts.date ASC
     """
     db_cursor.execute(sql, (client_id, start_date, end_date))
@@ -760,6 +761,88 @@ def render_and_save(template_path, doc_type, context, output_dir):
         record_error(f"Render failed for {doc_type} / {context.get('last_name','')}, {context.get('first_name','')}: {e}")
         return None
 
+from typing import List, Tuple
+
+def _fmt_mmddyy(d):
+    try:
+        return d.strftime('%m/%d/%y')
+    except Exception:
+        return ''
+
+def fetch_curriculum_note_recent(client_id: int, max_items: int = 4, window_days: int = 28) -> str:
+    """
+    SAFatherhood monthly run:
+    - Look back `window_days` (default 28)
+    - Take MOST RECENT up to `max_items` curriculum-tagged sessions
+    - For each, try to map to Excel notes (Part Name/Part Note). If no match,
+      fall back to DB title so we never return blank.
+    - Works even if only 1 session exists.
+    """
+    if client_id is None:
+        return ""
+
+    today = datetime.now().date()
+    start_date = today - timedelta(days=window_days)
+    end_date   = today  # exclusive
+
+    sql = """
+        SELECT ts.date AS session_date,
+               ts.curriculum_id AS cid,
+               COALESCE(cur.long_description, cur.short_description) AS db_title
+          FROM attendance_record ar
+          JOIN therapy_session ts ON ts.id = ar.therapy_session_id
+          LEFT JOIN curriculum cur ON cur.id = ts.curriculum_id
+         WHERE ar.client_id = %s
+           AND ts.date >= %s
+           AND ts.date < %s
+           AND ts.curriculum_id IS NOT NULL
+           AND ts.curriculum_id <> 0
+
+         ORDER BY ts.date DESC
+         LIMIT %s
+    """
+    db_cursor.execute(sql, (client_id, start_date, end_date, max_items))
+    rows = db_cursor.fetchall() or []
+    logging.debug(f"[cur_recent] client={client_id} rows={len(rows)} window={start_date}..{end_date}")
+
+    if not rows:
+        return ""
+
+    # Build display lines (most-recent first)
+    lines: List[str] = []
+    for idx, r in enumerate(rows, start=1):
+        title = (r.get('db_title') or '').strip()
+        ses_dt = r.get('session_date')
+        date_s = _fmt_mmddyy(ses_dt)
+
+        # Try to map to Excel to pull richer 'Part Name' / 'Part Note'
+        mapped = None
+        if title:
+            mapped = find_curriculum_row_by_title(title)
+
+        if mapped is not None:
+            part_name = str(mapped.get('Part Name', '')).strip()
+            part_note = str(mapped.get('Part Note', '')).strip()
+            header = part_name or title or "Curriculum"
+            if date_s:
+                lines.append(f"{header} — {date_s} (Week {idx})")
+            else:
+                lines.append(f"{header} (Week {idx})")
+            if part_note:
+                lines.append(part_note)
+        else:
+            # Fallback to DB title only
+            if title:
+                if date_s:
+                    lines.append(f"{title} — {date_s} (Week {idx})")
+                else:
+                    lines.append(f"{title} (Week {idx})")
+        lines.append("")  # spacer
+
+    note = "\n".join(lines).strip()
+    logging.debug(f"[cur_recent] built_lines={len(lines)} total_chars={len(note)}")
+    return note
+
 
 def generate_documents(row, output_dir_path):
     # We already have row placeholders from fill_placeholders
@@ -770,8 +853,14 @@ def generate_documents(row, output_dir_path):
     #    e.g. "January 14th, 2025 through February 4th, 2025"
     # ------------------------------------------------------------------
     # Usually you want 22 days ago as the start and "yesterday" as the end
-    start_dt = datetime.now().date() - timedelta(days=22)  # e.g. Jan 14
-    end_dt   = datetime.now().date() - timedelta(days=1)   # e.g. Feb 4
+        # Banner range: 4 weeks for safatherhood, 22 days otherwise (backwards-compatible)
+    if clinic_folder.lower() == 'safatherhood':
+        start_dt = datetime.now().date() - timedelta(days=28)
+        end_dt   = datetime.now().date() - timedelta(days=1)
+    else:
+        start_dt = datetime.now().date() - timedelta(days=22)
+        end_dt   = datetime.now().date() - timedelta(days=1)
+
     
     def format_friendly_date(dt):
         """Optional: add day-number suffix (1st, 2nd, 3rd, etc.)"""
@@ -793,7 +882,7 @@ def generate_documents(row, output_dir_path):
     end_str   = format_friendly_date(end_dt)
     context["client_note_dates"] = f"{start_str} through {end_str}"
 
-    # Overwrite 'client_note' from DB + Excel
+        # Overwrite 'client_note' from DB + Excel
     client_id_str = str(context.get("client_id", "")).strip()
 
     # normalize common float-ish IDs like "123.0"
@@ -810,14 +899,15 @@ def generate_documents(row, output_dir_path):
         context["client_note"] = ""
     else:
         client_id = int(client_id_str)
-        # Fetch final note from the function below
-        final_note = fetch_curriculum_note_for_client(client_id)
 
+        if clinic_folder.lower() == 'safatherhood':
+            # Monthly, last 4 weeks; most recent first; still works if only 1 found
+            final_note = fetch_curriculum_note_recent(client_id, max_items=4, window_days=28)
+        else:
+            # Keep existing behavior for all other clinics
+            final_note = fetch_curriculum_note_for_client(client_id)
 
-        # ---------------------------------------------------------
-        # Manual string replacement for the placeholders 
-        # ({{first_name}}, {{gender1}}, etc.)
-        # ---------------------------------------------------------
+        # Replace placeholders like {{first_name}}, {{gender1}}, etc.
         replacements = {
             "{{first_name}}": context.get("first_name", ""),
             "{{gender1}}":    context.get("gender1", ""),
@@ -831,6 +921,12 @@ def generate_documents(row, output_dir_path):
             final_note = final_note.replace(placeholder, value)
 
         context["client_note"] = final_note
+        if clinic_folder.lower() == 'safatherhood' and not final_note:
+            record_error(f"[WARN] No curriculum-tagged sessions in the last 28 days for client_id={client_id}.")
+
+        logging.debug(f"[note] client_id={client_id} chars={len(final_note)}")
+
+
 
     # The doc uses "report_date" for today's date
     now = datetime.now()

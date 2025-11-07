@@ -266,7 +266,7 @@
                     <h5><?php echo htmlspecialchars($client["referral_type"]); ?></h5>
                 </div>
                 <div class="col-3">
-                    <small class="text-muted">Cause Number</small>
+                    <small class="text-muted">DL Number</small>
                     <h5><?php echo htmlspecialchars($client["cause_number"]); ?></h5>
                 </div>
                 <div class="col-4">
@@ -293,7 +293,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <small class="text-muted">Other Concerns</small>
+                    <small class="text-muted">Attendance & Behavior Concerns (Back office use only)</small>
                     <h5><?php echo htmlspecialchars($client["other_concerns"]); ?></h5>
                 </div>
             </div>

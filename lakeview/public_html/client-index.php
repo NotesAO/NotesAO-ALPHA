@@ -59,6 +59,14 @@ $MILESTONE_MODE = is_milestone_program($link,$program_id);
 </head>
 <?php require_once('navbar.php'); ?>
 
+<?php
+// guard: must have a program selected
+if ($program_id <= 0) {
+    echo '<div class="container mt-4"><div class="alert alert-warning">No program selected.</div></div>';
+    exit;
+}
+?>
+
 <body>
 <section class="pt-5">
 <div class="container-fluid">
@@ -160,7 +168,11 @@ $MILESTONE_MODE = is_milestone_program($link,$program_id);
 
     if (!empty($search)) {
         $s = mysqli_real_escape_string($link, $search);
-        $sql .= " AND CONCAT_WS (c.first_name,c.last_name,date_of_birth,c.phone_number,note,tg.name,concat(cm.first_name, ' ', cm.last_name),tg.name) LIKE '%$s%'";
+        $sql .= " AND CONCAT_WS(' ',
+                c.first_name,c.last_name,c.date_of_birth,c.phone_number,c.note,
+                tg.name, CONCAT(cm.first_name,' ',cm.last_name)
+        ) LIKE '%$s%'";
+
     }
 
     if (!empty($order)) {
