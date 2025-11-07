@@ -63,3 +63,8 @@ backups/**
 */import/**/.idea/
 ~$*.docx
 *.tmp
+# more clinic artifacts
+*/db/table_structure.docx
+*/report/merge/connection_setup.docx
+patch_work/**
+vendor/**
