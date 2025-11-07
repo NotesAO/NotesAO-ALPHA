@@ -39,3 +39,8 @@ public_html/**/GeneratedDocuments/
 # --- secrets examples (track only samples)
 **/config/config.php
 **/config/secrets.php
+# --- large installers and archives (keep out of git)
+NotePro-Report-Generator/LibreOffice_*/
+NotePro-Report-Generator/*.tar.gz
+**/*.rpm
+**/*.deb
