@@ -44,3 +44,22 @@ NotePro-Report-Generator/LibreOffice_*/
 NotePro-Report-Generator/*.tar.gz
 **/*.rpm
 **/*.deb
+# clinic artifacts (not source)
+*/config/db/table_structure.docx
+*/documents/**
+*/report/mar/**
+*/report/merge/samples/**
+*/public_html/GeneratedDocuments/**
+*/public_html/uploads/**
+
+# backups and archives
+backups/**
+**/*.tgz
+**/*.tar.gz
+**/*.zip
+
+# import scratch + IDE clutter
+*/import/**/.vscode/
+*/import/**/.idea/
+~$*.docx
+*.tmp
